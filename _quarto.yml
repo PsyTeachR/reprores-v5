@@ -1,0 +1,103 @@
+lang: en
+project:
+  type: book
+  output-dir: docs
+  resources: resources
+
+execute:
+  freeze: auto
+
+book:
+  title: 'Data Skills for Reproducible Research'
+  author: "Lisa DeBruine, Dale Barr, Emily Nordmann, Rebecca Lai, David Pharis"
+  description: "This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations."
+  cover-image: images/logos/logo.png
+  image: images/logos/logo.png
+  favicon: images/logos/favicon.ico
+  # cookie-consent: true
+  google-analytics: "G-6NP3MF25W3"
+  page-navigation: true
+  search: true
+  # comments:
+  #   hypothesis:
+  #     theme: clean
+  #     openSidebar: false
+  repo-url: https://github.com/psyteachr/reprores-v4/
+  repo-branch: master
+  repo-actions: [edit, issue, source]
+  # downloads: [pdf, epub]
+  sharing:
+  - twitter
+  - facebook
+  - linkedin
+  # sidebar:
+  #   style: docked
+  #   background: light
+  margin-header: "<a href='https://doi.org/10.5281/zenodo.6365077'><img src='https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg' alt='DOI'></a>"
+  page-footer:
+    left: "CC-BY 2024, psyTeachR"
+    right:
+    - icon: github
+      href: https://github.com/psyteachr/reprores-v4
+    - icon: https://zenodo.org/badge/DOI/10.5281/zenodo.6527194.svg
+      href: https://doi.org/10.5281/zenodo.6527194
+  chapters:
+  - index.qmd
+  - 01-intro.qmd
+  - 02-reports.qmd
+  # - 03-viz.qmd
+  # - 04-summary.qmd
+  # - 05-join.qmd
+  # - 06-tidy.qmd
+  # - 07-wrangle.qmd
+  # - 08-func.qmd
+  # - 09-sim.qmd
+  # - 10-next.qmd
+  # - 11-refs.qmd
+  # - 12-license.qmd
+  appendices:
+  - app-installing-r.qmd
+  - app-symbols.qmd
+  - app-conventions.qmd
+  - app-teams.qmd
+  - app-datasets.qmd
+  - app-exercises.qmd
+  - app-debugging.qmd
+  - app-import.qmd
+  - app-datatypes.qmd
+  - app-dates.qmd
+  - app-styling.qmd
+  - app-webpage.qmd
+
+bibliography:
+  - include/book.bib
+  - include/packages.bib
+csl: include/apa.csl
+
+format:
+  html:
+    theme:
+      light:
+      - flatly
+      - include/light.scss
+      dark:
+      - darkly
+      - include/dark.scss
+    css:
+    - include/psyteachr.css
+    - include/webex.css
+    - include/style.css
+    df-print: kable
+    html-table-processing: none
+    toc-expand: 4
+    code-link: true
+    code-fold: false
+    code-line-numbers: true
+    code-overflow: wrap
+    code-copy: hover
+    highlight-style: a11y
+    # mainfont: ''
+    # monofont: ''
+    include-after-body:
+    - include/webex.js
+    - include/script.js

@@ -1,0 +1,12 @@
+^renv$
+^renv\.lock$
+^LICENSE\.md$
+^data-raw$
+^.*\.Rproj$
+^\.Rproj\.user$
+^book$
+^docs$
+^README\.Rmd$
+^README\.html$
+^\.zenodo\.json$
+^_render_book.R$

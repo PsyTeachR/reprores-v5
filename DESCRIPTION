@@ -1,0 +1,87 @@
+Package: reprores
+Title: Data Skills for Reproducible Research
+Version: 4.0.0.0001
+Date: 2024-09-05
+Authors@R: 
+  c(
+    person(
+        given = "Lisa", 
+        family = "DeBruine", 
+        role = c("aut", "cre"), 
+        email = "debruine@gmail.com", 
+        comment = c(ORCID = "0000-0002-7523-5539")
+    ),
+    person(
+        given = "Dale", 
+        family = "Barr", 
+        role = c("aut"), 
+        email = "dale.barr@glasgow.ac.uk", 
+        comment = c(ORCID = "0000-0002-1121-4608")
+    ),
+    person(
+        given = "Rebecca", 
+        family = "Lai", 
+        role = c("ctb"), 
+        email = "rebecca.lai@glasgow.ac.uk", 
+        comment = c(ORCID = "0000-0001-7055-2036")
+    ),
+    person(
+        given = "David", 
+        family = "Pharis", 
+        role = c("ctb"), 
+        email = "2870330p@student.gla.ac.uk", 
+        comment = c(ORCID = "")
+    ))
+Description: This course provides an overview of skills needed for reproducible research and open science using the statistical programming language R. Students will learn about data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations, and reproducible workflows. Learning is reinforced through weekly assignments that involve working with different types of data.
+License: CC BY 4.0 + LICENSE 
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports: 
+    installr,
+    quarto,
+    glossary,
+    rmarkdown,
+    zip,
+    webexercises,
+    R.utils,
+    dplyr,
+    tidyr,
+    ggplot2,
+    tibble,
+    readr,
+    lubridate,
+    purrr,
+    stringr,
+    plotly,
+    pwr,
+    MASS,
+    broom,
+    readxl,
+    knitr,
+    shiny,
+    shinyjs,
+    shinydashboard,
+    ukbabynames,
+    patchwork,
+    rio,
+    haven,
+    rstudioapi,
+    glue,
+    tidytext,
+    ggwordcloud,
+    googlesheets4,
+    waffle,
+    flexdashboard,
+    treemap,
+    beepr,
+    skimr,
+    DT,
+    kableExtra,
+    papaja
+VignetteBuilder: knitr
+Depends: 
+    R (>= 4.1)
+URL: https://github.com/psyteachr/reprores-v4
+BugReports: https://github.com/psyteachr/reprores-v4/issues

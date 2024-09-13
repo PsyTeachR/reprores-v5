@@ -1,0 +1,15 @@
+{
+  "hash": "6e1137dab60f1b5c4dff0bb55bdc355c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Datasets {#datasets}\n\nYou can download a [zip file of the datasets](data/data.zip). Each data table comes with a codebook in [Psych-DS](https://psych-ds.github.io/) JSON format.\n\n\n::: {.cell layout-align=\"center\"}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

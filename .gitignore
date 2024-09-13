@@ -1,0 +1,13 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+_bookdown_files
+inst/doc
+msc-data-skills.Rproj
+
+/.quarto/
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto

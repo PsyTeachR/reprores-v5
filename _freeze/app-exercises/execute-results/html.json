@@ -1,0 +1,15 @@
+{
+  "hash": "caaa892db1ee42131b376ff8bbc408ac",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Exercises {#exercises}\n\nYou can download all [exercises and data files](exercises/exercises.zip) below as a ZIP archive. The answers are not included in the zip file.\n\n\n::: {.cell layout-align=\"center\"}\n* Chapter 1: Intro to R, functions, R markdown\n* Exercise: [Rmd](exercises/01_intro_exercise.qmd) | [html](exercises/01_intro_exercise.html); Answers: [Rmd](exercises/01_intro_answers.qmd) | [html](exercises/01_intro_answers.html)\n* Chapter 2: Create an R Markdown project\n* Exercise: [Rmd](exercises/02_repro_exercise.qmd) | [html](exercises/02_repro_exercise.html); Answers: [Rmd](exercises/02_repro_answers.qmd) | [html](exercises/02_repro_answers.html)\n* Chapter 3: Data visualisation\n* Exercise: [Rmd](exercises/03_ggplot_exercise.qmd) | [html](exercises/03_ggplot_exercise.html); Answers: [Rmd](exercises/03_ggplot_answers.qmd) | [html](exercises/03_ggplot_answers.html)\n* Chapter 4: Data\n* Exercise: [Rmd](exercises/04_data_exercise.qmd) | [html](exercises/04_data_exercise.html); Answers: [Rmd](exercises/04_data_answers.qmd) | [html](exercises/04_data_answers.html)\n* Chapter 5: Data relations\n* Exercise: [Rmd](exercises/05_joins_exercise.qmd) | [html](exercises/05_joins_exercise.html); Answers: [Rmd](exercises/05_joins_answers.qmd) | [html](exercises/05_joins_answers.html)\n* Chapter 6: Tidy Data\n* Exercise: [Rmd](exercises/06_tidyr_exercise.qmd) | [html](exercises/06_tidyr_exercise.html); Answers: [Rmd](exercises/06_tidyr_answers.qmd) | [html](exercises/06_tidyr_answers.html)\n* Chapter 7: Data wrangling\n* Exercise: [Rmd](exercises/07_dplyr_exercise.qmd) | [html](exercises/07_dplyr_exercise.html); Answers: [Rmd](exercises/07_dplyr_answers.qmd) | [html](exercises/07_dplyr_answers.html)\n* Chapter 8: Functions and iteration\n* Exercise: [Rmd](exercises/08_func_exercise.qmd) | [html](exercises/08_func_exercise.html); Answers: [Rmd](exercises/08_func_answers.qmd) | [html](exercises/08_func_answers.html)\n* Chapter 9: Simulation\n* Exercise: [Rmd](exercises/09_sim_exercise.qmd) | [html](exercises/09_sim_exercise.html); Answers: [Rmd](exercises/09_sim_answers.qmd) | [html](exercises/09_sim_answers.html)\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

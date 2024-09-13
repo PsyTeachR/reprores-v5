@@ -1,0 +1,7 @@
+character	factor	integer	double	logical	date
+A	high	1	1.5	TRUE	2024-09-05
+B	low	2	2.5	TRUE	2024-09-04
+C	med	3	3.5	FALSE	2024-09-03
+D	high	4	4.5	FALSE	2024-09-02
+E	low	5	5.5		2024-09-01
+F	med	6	6.5	TRUE	2024-08-31

@@ -1,0 +1,28 @@
+{
+    "description": "The 2021-2022 version of the course book for the Data Skills for Reproducible Research MSc course in the School of Psychology and Neuroscience at the University of Glasgow.", 
+    "license": "cc-by-sa", 
+    "title": "Data Skills for Reproducible Research", 
+    "version": "2.0.0",
+    "upload_type": "software", 
+    "publication_date": "2021-09-18", 
+    "creators": [
+        {
+            "name": "Lisa DeBruine",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-7523-5539"
+        }, 
+        {
+            "name": "Dale Barr",
+            "affiliation": "University of Glasgow",
+            "orcid": "0000-0002-1121-4608"
+        }
+    ], 
+    "access_right": "open", 
+    "related_identifiers": [
+        {
+            "scheme": "url", 
+            "identifier": "https://PsyTeachR.github.io/reprores-v2/", 
+            "relation": "isSupplementTo"
+        }
+    ]
+}
