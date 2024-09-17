@@ -218,7 +218,8 @@ Add an ordered list of different text styles to your document, like bold, italic
 
 Add a new level-2 header called "Code Chunks", skip a line, and add the following text at the end:
 
-```{r verbatim = "r"}
+```{r}
+#| echo: fenced
 # this is a code chunk
 ```
 
@@ -308,17 +309,17 @@ We're going to write a basic report for this dataset using quarto to show you so
 
 Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. Add the following just below the YAML header. 
 
-````{verbatim}
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```{r}
+#| echo: fenced
+#| label: setup
+#| include: false
 
 library(tidyverse)
 ```
-````
 
-The function `knitr::opts_chunk$set()` allows you to set default values for how code chunks work. Here, we have set `echo = TRUE`, which mean that code chunks will be displayed in our rendered output file, not hidden. You might want to show your code when preparing supplemental materials for your thesis, but hide code chunks in the main part of the thesis, just using code to create plots and tables. We also set `message = FALSE`, which means that the report won't contain the messages some R functions output, which are helpful when you're writing and debugging code, but usually not something you want in a report.
+The chunk option `label` designates this as the setup chunk, and the `include` option makes sure that this chunk and any output it produces don't end up in your rendered document.
 
-The function `library(tidyverse)` makes tidyverse functions available to your script. The part in curly brackets, `{r setup, include=FALSE}` tells quarto that this code chunk is using the R language, its name is "setup" (naming chunks can be useful when debugging a script with a lot of code chunks), and that you don't want any of this code or its output shown in the rendered document. 
+The function `library(tidyverse)` makes tidyverse functions available to your script.
 
 
 ### Online sources {#sec-loading-online}
@@ -425,9 +426,8 @@ Try and match up the inline code with what is in the `group_counts` table. Of no
 Add another line that reports the total numbers of participants in the **experimental** condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
 
 `r hide()`
-```{verbatim, lang="md", filename="02-reports.qmd"}
+```{verbatim, lang="markdown", filename="02-reports.qmd"}
 The total number of participants in the **experimental** condition was `r group_counts$n[2]`.
-
 ```
 `r unhide()`
 
@@ -529,25 +529,26 @@ format:
 
 Also, add the following text above the chunk containing the table, and add the two commented lines to the chunk. These set the figure label so you can reference it in the document, and the table caption. The label must start with "tbl-" to automatically add it to the numbered list of tables.
 
-````{verbatim}
+```{verbatim, lang='markdown'}
 All data are shown in @tbl-raw-data.
+```
 
-```{r, echo = FALSE}
+```{r}
+#| echo: fenced
 #| label: tbl-raw-data
 #| tbl-cap: The raw data from the study.
-#| 
 smalldata
 ```
-````
 
-Now, when you render your document, tables with display in "kable" format, which looks much nicer. 
 
-All data are shown in @tbl-raw-data.
+Now, when you render your document, tables will display in "kable" format, which looks much nicer. 
 
-```{r, echo = FALSE}
-#| label: tbl-raw-data
+All data are shown in @tbl-raw-data2.
+
+```{r}
+#| label: tbl-raw-data2
+#| echo: false
 #| tbl-cap: The raw data from the study.
-#| 
 smalldata
 ```
 
@@ -560,47 +561,63 @@ If you're feeling confident with what we have covered so far, you can also explo
 
 ## Refining your report
 
-### Chunk defaults {#sec-rmd-setup}
+### Execution defaults {#sec-execute}
 
 Let's finish by tidying up the report and organising our code a bit better. 
 
-You can set more default options for your document in the setup chunk. Type the following code into the console to see the full list of options that you can set and their default values. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.
+You can set more default options for your document in the YAML header. The help pages for [quarto execution options](https://quarto.org/docs/computations/execution-options.html) has a full list of options. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.
 
-```{r, eval = FALSE, filename="Run in the console"}
-# list option default values
-str(knitr::opts_chunk$get())
+Add the code below to your YAML header and then try changing each option from `false` to `true` and changing the numeric values then render the file again to see the difference it makes.
+
+```{verbatim, lang='yaml'}
+---
+execute:
+  echo: false     # whether to show code chunks
+  message: false  # whether to show messages from your code
+  warning: false  # whether to show warnings from your code
+  fig-width: 8    # figure width in inches (at 96 dpi)
+  fig-height: 5   # figure height in inches (at 96 dpi)
+  out-width:"50%" # figures/images span 50% of the page width
+---
 ```
 
+You can also override defaults in a code cell. See [quarto code cells help](https://quarto.org/docs/reference/cells/cells-knitr.html) for a full list of options.
 
-Replace the code in your setup chunk with the below code and then try changing each option from `FALSE` to `TRUE` and changing the numeric values then knit the file again to see the difference it makes.
 
-````{verbatim}
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(
-  echo       = FALSE, # whether to show code chunks
-  message    = FALSE, # whether to show messages from your code
-  warning    = FALSE, # whether to show warnings from your code
-  fig.width  = 8,     # figure width in inches (at 96 dpi)
-  fig.height = 5,     # figure height in inches (at 96 dpi)
-  out.width = "50%"   # figures/images span 50% of the page width
-)
-```
-````
 
 ::: {.callout-warning collapse="true"}
 ## Figure versus output dimensions
 
-Note that `fig.width` and `fig.height` control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, `out.width` controls the **display** size of both existing images and figures generated by R. This is usually set as a percentage of the page width.
+Note that `fig-width` and `fig-height` control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, `out-width` controls the **display** size of both existing images and figures generated by R. This is usually set as a percentage of the page width.
 
-```{r fig-full-100, echo = FALSE, fig.width=8, fig.height=5, out.width="100%", fig.cap="A plot with the default values of fig.width = 8, fig.height = 5, out.width = \"100%\""}
+```{r}
+#| echo: fenced
+#| label: fig-full-100
+#| fig-width: 8
+#| fig-height: 5
+#| out-width: '100%'
+#| fig-cap: A plot with the default values
 ggplot2::last_plot()
 ```
 
-```{r fig-half-100, echo = FALSE, fig.width=4, fig.height=2.5, out.width="100%", fig.cap="The same plot with half the default width and height: fig.width = 4, fig.height = 2.5, out.width = \"100%\""}
+```{r}
+#| echo: fenced
+#| label: fig-half-100
+#| fig-width: 4
+#| fig-height: 2.5
+#| out-width: '100%'
+#| fig-cap: The same plot with half the default width and height
+
 ggplot2::last_plot()
 ```
 
-```{r fig-half-50, echo = FALSE, fig.width=4, fig.height=2.5, out.width="50%", fig.cap="The same plot as above at half the output width: fig.width = 4, fig.height = 2.5, out.width = \"50%\""}
+```{r}
+#| echo: fenced
+#| label: fig-half-50
+#| fig-width: 4
+#| fig-height: 2.5
+#| out-width: '50%'
+#| fig-cap: The same plot as above at half the output width
 ggplot2::last_plot()
 ```
 
@@ -614,11 +631,11 @@ For example, by default you might want to hide your code but there also might be
 
 Additionally, you can also override the default image display size or dimensions.
 
-```{r change-image, eval = FALSE, verbatim = "r, out.width='25%'"}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/3f/P-51_Mustang_edit1.jpg")
-```
-
-```{r change-image2, eval=FALSE, verbatim = "r, fig.width = 10, fig.height = 20", filename="02-reports.qmd"}
+```{r}
+#| echo: fenced
+#| label: fig-change-height
+#| fig-width: 10
+#| fig-height: 5
 ggplot(data = smalldata, 
        mapping = aes(x = pre, 
                      y = post, 
@@ -639,15 +656,17 @@ You should add the packages you need in your setup chunk using `library()`. Ofte
 
 Finally, the `r glossary("YAML")` header is the bit at the very top of your quarto document. You can set several options here as well. 
 
-    ---
-    title: "Reports"
-    author: "Your name"
-    format:
-      html:
-        df-print: paged
-        theme: superhero
-        toc: true
-    ---
+```{verbatim}
+---
+title: "Reports"
+author: "Your name"
+format:
+  html:
+    df-print: paged
+    theme: superhero
+    toc: true
+---
+```
 
 ::: {.callout-note}
 ## Try
@@ -659,9 +678,8 @@ The `df-print: paged` option prints data frames using `rmarkdown::paged_table()`
 
 The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). Try changing the theme to see which one you like best.
 
-```{r fig-bootswatch, echo=FALSE, fig.cap="Light themes in versions 3 and 4."}
-knitr::include_graphics("images/reports/bootswatch.png")
-```
+
+![Light themes in versions 3 and 4.](images/reports/bootswatch.png){#fig-bootswatch}
 
 ::: {.callout-warning}
 ## YAML formatting
@@ -681,15 +699,17 @@ The error message will tell you exactly where the problem is (the second charact
 
 The table of contents is created by setting `toc: true`. It will be displayed at the top of your document unless you set `toc_float: true` or include `toc_float:` with its options `collapsed` and `smooth_scroll` (options for a setting are indented under it). 
 
-    ---
-    output:
-      html_document:
-        toc: true
-        toc_float:
-          collapsed: false
-          smooth_scroll: false
-        toc_depth: 3
-    ---
+```{verbatim, lang="yaml"}
+---
+output:
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 3
+---
+```
 
 This will use the markdown header structure to create the table of contents. `toc_depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`). Add `{-}` after the header title to remove it from the table of contents (e.g., `### Overview {-}`).
 
@@ -703,21 +723,25 @@ If your table of contents isn't showing up correctly, this probably means that y
 
 So far we've just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg> [@R-tinytex] and run the following code in the console (do **not** add this to your Rmd file):
 
-```{r eval=FALSE, filename="Run in the console"}
+```{r}
+#| eval: false
+#| filename: Run in the console
 install.packages("tinytex")
 tinytex::install_tinytex()
 ```
 
 Once you've done this, update your YAML heading to add a `pdf_document` section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html` with `pdf`, you may need to remove some options if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
 
-    ---
-    format:
-      pdf:
-        df-print: kable
-        toc: TRUE
-    ---
+```{verbatim, lang='yaml'}
+---
+format:
+  pdf:
+    df-print: kable
+    toc: TRUE
+---
+```
 
-There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation]( https://quarto.org/docs/output-formats/all-formats.html) for more infomation. 
+There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation](https://quarto.org/docs/output-formats/all-formats.html) for more information. 
 
 ### Summary {#sec-reports-summary}
 
@@ -785,21 +809,18 @@ tasks <- tibble::tribble(
 )
 ```
 
-Figure out how to make it so that code chunks don't show in your knitted document ([@sec-rmd-setup]).
+Figure out how to make it so that code chunks don't show in your rendered document ([@sec-execute]).
 
 `r hide()`
 
-You can set the default to `echo = FALSE` in the setup chunk at the top of the script.
+You can set the execution default to `echo: false` in the YAML header at the top of the script.
 
-```{r, eval = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{verbatim}
+execute:
+  echo: false
 ```
 
-To set visibility for a specific code chunk, put `echo = FALSE` inside the curly brackets.
-
-```{r, verbatim = "r, echo=FALSE"}
-# code to hide
-```
+To set visibility for a specific code chunk, put `#| echo: false` at the top of the code chunk.
 
 `r unhide()`
 
@@ -828,13 +849,13 @@ knitr::include_graphics("https://psyteachr.github.io/ads-v2/images/logos/logo.pn
 
 You can add an image from the web using its URL:
 
-```
-![Applied Data Skills](https://psyteachr.github.io/ads-v2/images/logos/logo.png)
+```{verbatim}
+![Applied Data Skills](https://psyteachr.github.io/images/reprores.png)
 ```
     
 Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:
 
-```
+```{verbatim}
 ![Applied Data Skills](images/logos/logo.png)
 ```
     
@@ -875,15 +896,9 @@ glossary_table()
 
 ## Further Resources {#sec-resources-reports}
 
--   [R Markdown Cheat Sheet](https://www.rstudio.org/links/r_markdown_cheat_sheet)
-<!--
--   [R Markdown reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
--->
--   [R Markdown Tutorial](https://rmarkdown.rstudio.com/lesson-1.html)
--   [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J. J. Allaire, & Garrett Grolemund
+-   [Quarto Guide](https://quarto.org/docs/guide/)
 -   [Project Structure](https://slides.djnavarro.net/project-structure/) by Danielle Navarro
 -   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
--   [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html)
 -   [gt](https://gt.rstudio.com/)
 
 
