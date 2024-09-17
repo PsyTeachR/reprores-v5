@@ -2,10 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
-<title>Data Skills for Reproducible Research - 2&nbsp; Reports</title>
+<title>2&nbsp; Reports – Data Skills for Reproducible Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -31,7 +31,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -56,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -99,7 +100,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -108,8 +115,10 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script type="text/javascript">
 
@@ -126,41 +135,41 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-reports.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-reports.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Skills for Reproducible Research</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/psyteachr/reprores-v4/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Share"><i class="bi bi-share"></i></a>
+      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
 <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-bi-twitter pe-1"></i>
+              <i class="bi bi-twitter pe-1"></i>
             Twitter
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-bi-facebook pe-1"></i>
+              <i class="bi bi-facebook pe-1"></i>
             Facebook
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-bi-linkedin pe-1"></i>
+              <i class="bi bi-linkedin pe-1"></i>
             LinkedIn
             </a>
           </li>
@@ -197,9 +206,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -280,7 +289,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
     </ul>
 </div>
-</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
@@ -350,7 +359,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li><a href="#sec-glossary-reports" id="toc-sec-glossary-reports" class="nav-link" data-scroll-target="#sec-glossary-reports"><span class="header-section-number">2.6</span> Glossary</a></li>
   <li><a href="#sec-resources-reports" id="toc-sec-resources-reports" class="nav-link" data-scroll-target="#sec-resources-reports"><span class="header-section-number">2.7</span> Further Resources</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/psyteachr/reprores-v4/edit/master/02-reports.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action">Report an issue</a></p><p><a href="https://github.com/psyteachr/reprores-v4/blob/master/02-reports.qmd" class="toc-action">View source</a></p></div></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/02-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/02-reports.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -366,6 +375,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     
   </div>
   
+
 
 </header><section id="sec-ilo-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-ilo-reports">Intended Learning Outcomes</h2>
 <ul>
@@ -401,7 +411,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 <p>Download the <a href="https://rstudio.github.io/cheatsheets/html/quarto.html">Quarto Cheat Sheet</a> and <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>.</p>
 </section><section id="sec-setup-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-setup-reports">Setup</h2>
-<p>For reference, here are the packages we will use in this chapter. You may need to install them, as explained in <a href="01-intro.html#sec-install-package"><span>Section&nbsp;1.2.1</span></a>, if running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘packagename’</code>.</p>
+<p>For reference, here are the packages we will use in this chapter. You may need to install them, as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.2.1</span></a>, if running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘packagename’</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -462,7 +472,8 @@ Avoid long path names
 </ul>
 <p>RStudio will restart itself and open with this new project directory as the working directory.</p>
 <div id="fig-new-proj" class="quarto-layout-panel">
-<figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-new-proj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img src="images/reports/new_proj_1.png" class="img-fluid figure-img"></p>
 </div>
@@ -473,8 +484,10 @@ Avoid long path names
 <p><img src="images/reports/new_proj_3.png" class="img-fluid figure-img"></p>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: Starting a new project.</figcaption><p></p>
-</figure>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-new-proj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Starting a new project.
+</figcaption></figure>
 </div>
 <p>Click on the Files tab in the lower right pane to see the contents of the project directory. You will see a file called <code>reprores.Rproj</code>, which is a file that contains all of the project information. When you’re in the Finder/Explorer, you can double-click on it to open up the project.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -588,7 +601,7 @@ Source versus visual editor
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/reports/visual-editor-example.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">The example code above shown in the visual editor.</figcaption></figure>
+<figcaption>The example code above shown in the visual editor.</figcaption></figure>
 </div>
 </div>
 </div>
@@ -605,7 +618,7 @@ author: "Lisa DeBruine"
 format: html
 ---</code></pre>
 <p>This is the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., <code>date: 2024-10-04</code>.</p>
-<p>You will learn in <a href="#sec-yaml"><span>Section&nbsp;2.4.4</span></a> how to further customise your document using information in the header.</p>
+<p>You will learn in <a href="#sec-yaml" class="quarto-xref"><span>Section 2.4.4</span></a> how to further customise your document using information in the header.</p>
 </section><section id="basic-markdown" class="level3" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="basic-markdown">
 <span class="header-section-number">2.2.3</span> Basic Markdown</h3>
 <p>Now replace all of the text beneath the header with the following text:</p>
@@ -638,7 +651,7 @@ Text Styles
 <p>Add a new level-2 header called “Code Chunks”, skip a line, and add the following text at the end:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co"># this is a code chunk</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="in"># this is a code chunk</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>What you have created is a <a href="https://psyteachr.github.io/glossary/c#chunk" target="_blank" class="glossary" title="A section of code in an R Markdown file">code chunk</a>. In quarto, anything written between lines that start with three backticks is processed as code, and anything written outside is processed as markdown. This makes it easy to combine both text and code in one document. On the default RStudio appearance theme, code chunks are grey and plain text is white, but the actual colours will depend on which theme you have applied.</p>
@@ -655,7 +668,7 @@ Code chunk errors
 <p>When you create a new code chunk you should notice that the grey box starts and ends with three backticks ```. One common mistake is to accidentally delete these backticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your Markdown doesn’t look right, check that you haven’t deleted the backticks.</p>
 </div>
 </div>
-<p>In your code chunk, write the code you created in <a href="01-intro.html#sec-objects"><span>Section&nbsp;1.3</span></a>.</p>
+<p>In your code chunk, write the code you created in <a href="01-intro.html#sec-objects" class="quarto-xref"><span>Section 1.3</span></a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -677,7 +690,7 @@ Console vs scripts
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In <a href="01-intro.html"><span>Chapter&nbsp;1</span></a>, we asked you to type code into the console. Now, we want you to put code into code chunks in quarto files to make the code reproducible. This way, you can re-run your code any time the data changes to update the report, and you or others can inspect the code to identify and fix any errors.</p>
+<p>In <a href="01-intro.html" class="quarto-xref"><span>Chapter 1</span></a>, we asked you to type code into the console. Now, we want you to put code into code chunks in quarto files to make the code reproducible. This way, you can re-run your code any time the data changes to update the report, and you or others can inspect the code to identify and fix any errors.</p>
 <p>However, there will still be times that you need to put code in the console instead of in a script, such as when you install a new package. In this book, code chunks will be labelled with whether you should run them in the console or add the code to a script.</p>
 </div>
 </div>
@@ -686,14 +699,22 @@ Console vs scripts
 <p>When you’re working in a quarto document, there are several ways to run your lines of code.</p>
 <p>First, you can highlight the code you want to run and then click <if>Run &gt; Run Selected Line(s)</if>, however this is tedious and can cause problems if you don’t highlight <em>exactly</em> the code you want to run.</p>
 <p>Alternatively, you can press the green “play” button at the top-right of the code chunk and this will run <strong>all</strong> lines of code in that chunk.</p>
-<div id="fig-run-current" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/reports/run-current.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.2: Click the green arrow to run all the code in the current chunk.</figcaption></figure>
+<div id="fig-run-current" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-current-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/reports/run-current.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-current-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Click the green arrow to run all the code in the current chunk.
+</figcaption></figure>
 </div>
 <p>Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!</p>
-<div id="fig-run-line" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><video src="images/reports/run-line.mov" class="img-fluid" controls=""><a href="images/reports/run-line.mov">Video</a></video></p>
-<figcaption class="figure-caption">Figure&nbsp;2.3: Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything.</figcaption></figure>
+<div id="fig-run-line" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<video src="images/reports/run-line.mov" class="img-fluid" controls=""><a href="images/reports/run-line.mov">Video</a></video>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything.
+</figcaption></figure>
 </div>
 <p>Run your code using each of the methods above. You should see the variables <code>name</code>, <code>age</code>, <code>today</code>, and <code>halloween</code> appear in the environment pane. (Restart R to reset.)</p>
 </section><section id="sec-rmd-inline-r" class="level3" data-number="2.2.6"><h3 data-number="2.2.6" class="anchored" data-anchor-id="sec-rmd-inline-r">
@@ -705,7 +726,7 @@ Console vs scripts
 <span id="cb6-3"><a href="#cb6-3"></a>which is my favourite holiday.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="sec-render" class="level3" data-number="2.2.7"><h3 data-number="2.2.7" class="anchored" data-anchor-id="sec-render">
 <span class="header-section-number">2.2.7</span> Rendering your file</h3>
-<p>Now we are going to <a href="https://psyteachr.github.io/glossary/r#render" target="_blank" class="glossary" title="To create a file (usually an image or PDF) or widget from source code">render</a> the file into a document type of our choosing. In this case we’ll create a default html file, but you will learn how to create other files like Word and PDF in <a href="#sec-formats"><span>Section&nbsp;2.4.6</span></a>. To render your file, click the <if>Render</if> button at the top of the source pane.</p>
+<p>Now we are going to <a href="https://psyteachr.github.io/glossary/r#render" target="_blank" class="glossary" title="To create a file (usually an image or PDF) or widget from source code">render</a> the file into a document type of our choosing. In this case we’ll create a default html file, but you will learn how to create other files like Word and PDF in <a href="#sec-formats" class="quarto-xref"><span>Section 2.4.6</span></a>. To render your file, click the <if>Render</if> button at the top of the source pane.</p>
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
@@ -868,7 +889,7 @@ View smalldata
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">group</th>
 <th style="text-align: right;">n</th>
@@ -946,7 +967,7 @@ Solution
 </div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="02-reports_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="02-reports_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -954,9 +975,13 @@ Solution
 <p>You can also include images that you did not create in R using the markdown syntax for images. This is very similar to loading data in that you can either use an image that is stored on your computer, or via a url.</p>
 <p>The general syntax for adding an image in markdown is <code>![caption](url){#fig-name}</code>. You can leave the caption blank, but must include the square brackets. The curly brackets are optional, and allow you to reference the figure as <code>@fig-name</code> (change the “name” part for each new figure). You can also add other formatting options in the curly brackets, like an image width or CSS styles.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="al">![The ReproRes logo](images/logos/logo.png)</span>{#fig-logo width="33%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-logo" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/logos/logo.png" class="img-fluid figure-img" style="width:33.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.4: The ReproRes logo</figcaption></figure>
+<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/logos/logo.png" class="img-fluid figure-img" style="width:33.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: The ReproRes logo
+</figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
@@ -974,7 +999,7 @@ Image Licenses
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/reports/google-images.png" class="img-fluid figure-img" style="width:100.0%" alt="Screenshot of Google Images interface with Usage Rights selections open."></p>
+<figure class="figure"><p><img src="images/reports/google-images.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Screenshot of Google Images interface with Usage Rights selections open."></p>
 </figure>
 </div>
 </div>
@@ -1020,15 +1045,17 @@ Image Licenses
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a>All data are shown in @tbl-raw-data.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co">#| label: tbl-raw-data</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="co">#| tbl-cap: The raw data from the study.</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>smalldata</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="in">#| label: tbl-raw-data</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="in">#| tbl-cap: The raw data from the study.</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a><span class="in">smalldata</span></span>
 <span id="cb21-5"><a href="#cb21-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-raw-data" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: The raw data from the study.
+</figcaption><div aria-describedby="tbl-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<div id="tbl-raw-data" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;2.1: The raw data from the study.</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">id</th>
 <th style="text-align: left;">group</th>
@@ -1100,16 +1127,20 @@ Image Licenses
 </table>
 </div>
 </div>
+</div>
+</figure>
 </div>
 </div>
 <p>Now, when you render your document, tables will display in “kable” format, which looks much nicer.</p>
-<p>All data are shown in <a href="#tbl-raw-data2">Table&nbsp;<span>2.2</span></a>.</p>
+<p>All data are shown in <a href="#tbl-raw-data2" class="quarto-xref">Table&nbsp;<span>2.2</span></a>.</p>
 <div class="cell" data-layout-align="center">
+<div id="tbl-raw-data2" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-raw-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: The raw data from the study.
+</figcaption><div aria-describedby="tbl-raw-data2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<div id="tbl-raw-data2" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;2.2: The raw data from the study.</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">id</th>
 <th style="text-align: left;">group</th>
@@ -1181,6 +1212,8 @@ Image Licenses
 </table>
 </div>
 </div>
+</div>
+</figure>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1231,50 +1264,62 @@ Figure versus output dimensions
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="co">#| label: fig-full-100</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="co">#| out-width: '100%'</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="co">#| fig-cap: A plot with the default values</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="in">#| label: fig-full-100</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="in">#| fig-cap: A plot with the default values</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb23-8"><a href="#cb23-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-full-100" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="02-reports_files/figure-html/fig-full-100-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.5: A plot with the default values</figcaption></figure>
+<div id="fig-full-100" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-reports_files/figure-html/fig-full-100-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: A plot with the default values
+</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1"></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#| label: fig-half-100</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="co">#| fig-height: 2.5</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="co">#| out-width: '100%'</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="co">#| fig-cap: The same plot with half the default width and height</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="in">#| label: fig-half-100</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a><span class="in">#| fig-cap: The same plot with half the default width and height</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a></span>
-<span id="cb24-8"><a href="#cb24-8"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
+<span id="cb24-8"><a href="#cb24-8"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb24-9"><a href="#cb24-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-100" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="02-reports_files/figure-html/fig-half-100-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.6: The same plot with half the default width and height</figcaption></figure>
+<div id="fig-half-100" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-reports_files/figure-html/fig-half-100-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: The same plot with half the default width and height
+</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="co">#| label: fig-half-50</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="co">#| fig-height: 2.5</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="co">#| out-width: '50%'</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="co">#| fig-cap: The same plot as above at half the output width</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="in">#| label: fig-half-50</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="in">#| out-width: '50%'</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="in">#| fig-cap: The same plot as above at half the output width</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="in">ggplot2::last_plot()</span></span>
 <span id="cb25-8"><a href="#cb25-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-50" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="02-reports_files/figure-html/fig-half-50-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.7: The same plot as above at half the output width</figcaption></figure>
+<div id="fig-half-50" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-reports_files/figure-html/fig-half-50-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: The same plot as above at half the output width
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1288,22 +1333,26 @@ Figure versus output dimensions
 <p>Additionally, you can also override the default image display size or dimensions.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="co">#| label: fig-change-height</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> smalldata, </span>
-<span id="cb26-6"><a href="#cb26-6"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> pre, </span>
-<span id="cb26-7"><a href="#cb26-7"></a>                     <span class="at">y =</span> post, </span>
-<span id="cb26-8"><a href="#cb26-8"></a>                     <span class="at">color =</span> group)) <span class="sc">+</span></span>
-<span id="cb26-9"><a href="#cb26-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb26-10"><a href="#cb26-10"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pre-test Score"</span>,</span>
-<span id="cb26-11"><a href="#cb26-11"></a>       <span class="at">y =</span> <span class="st">"Post-test Score"</span>,</span>
-<span id="cb26-12"><a href="#cb26-12"></a>       <span class="at">title =</span> <span class="st">"Relationship between pre- and post-test by group"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="in">#| label: fig-change-height</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="in">ggplot(data = smalldata, </span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="in">       mapping = aes(x = pre, </span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="in">                     y = post, </span></span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="in">                     color = group)) +</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a><span class="in">  geom_point() +</span></span>
+<span id="cb26-10"><a href="#cb26-10"></a><span class="in">  labs(x = "Pre-test Score",</span></span>
+<span id="cb26-11"><a href="#cb26-11"></a><span class="in">       y = "Post-test Score",</span></span>
+<span id="cb26-12"><a href="#cb26-12"></a><span class="in">       title = "Relationship between pre- and post-test by group")</span></span>
 <span id="cb26-13"><a href="#cb26-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-change-height" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="02-reports_files/figure-html/fig-change-height-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.8: <strong>?(caption)</strong></figcaption></figure>
+<div id="fig-change-height" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" width="100%">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="02-reports_files/figure-html/fig-change-height-1.png" id="fig-change-height" class="img-fluid quarto-figure quarto-figure-center anchored figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1338,9 +1387,13 @@ Try
 </div>
 <p>The <code>df-print: paged</code> option prints data frames using <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">rmarkdown::paged_table()</a></code> automatically. You can use <code>df_print: kable</code> to default to the simple kable style, but you will need the code from <span class="quarto-unresolved-ref">?sec-rmd-tables</span> for more complex tables with kableExtra.</p>
 <p>The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can <a href="https://bootswatch.com/4/">view and download more themes</a>. Try changing the theme to see which one you like best.</p>
-<div id="fig-bootswatch" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/reports/bootswatch.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;2.9: Light themes in versions 3 and 4.</figcaption></figure>
+<div id="fig-bootswatch" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-bootswatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/reports/bootswatch.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootswatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9: Light themes in versions 3 and 4.
+</figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1415,10 +1468,10 @@ Malformated ToC
 <p>Below are some additional exercises that will let you apply what you have learned in this chapter. We would suggest taking a break before you do these - it might feel slightly more effortful, but spreading out your practice will help you learn more in the long run.</p>
 <section id="sec-exercises-reports-project" class="level3" data-number="2.5.1"><h3 data-number="2.5.1" class="anchored" data-anchor-id="sec-exercises-reports-project">
 <span class="header-section-number">2.5.1</span> New project</h3>
-<p>Create a new project called “demo_report” (<a href="#sec-projects"><span>Section&nbsp;2.1</span></a>).</p>
+<p>Create a new project called “demo_report” (<a href="#sec-projects" class="quarto-xref"><span>Section 2.1</span></a>).</p>
 </section><section id="sec-exercises-reports-setup" class="level3" data-number="2.5.2"><h3 data-number="2.5.2" class="anchored" data-anchor-id="sec-exercises-reports-setup">
 <span class="header-section-number">2.5.2</span> New script</h3>
-<p>In the “demo_report” project, create a new Rmarkdown document called “job.Rmd” (<span class="quarto-unresolved-ref">?sec-rmarkdown</span>). Edit the YAML header to output tables using kable and set a custom theme (<a href="#sec-yaml"><span>Section&nbsp;2.4.4</span></a>).</p>
+<p>In the “demo_report” project, create a new Rmarkdown document called “job.Rmd” (<span class="quarto-unresolved-ref">?sec-rmarkdown</span>). Edit the YAML header to output tables using kable and set a custom theme (<a href="#sec-yaml" class="quarto-xref"><span>Section 2.4.4</span></a>).</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -1449,7 +1502,7 @@ and teaching computational skills.
 </div>
 </section><section id="sec-exercises-reports-tables" class="level3" data-number="2.5.4"><h3 data-number="2.5.4" class="anchored" data-anchor-id="sec-exercises-reports-tables">
 <span class="header-section-number">2.5.4</span> Tables</h3>
-<p>Use the following code to load a small table of tasks (<a href="#sec-code-chunks"><span>Section&nbsp;2.2.4</span></a>). Edit it to be relevant to your job (you can change the categories entirely if you want).</p>
+<p>Use the following code to load a small table of tasks (<a href="#sec-code-chunks" class="quarto-xref"><span>Section 2.2.4</span></a>). Edit it to be relevant to your job (you can change the categories entirely if you want).</p>
 <div class="cell" data-layout-align="center">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -1463,7 +1516,7 @@ and teaching computational skills.
 <span id="cb34-6"><a href="#cb34-6"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>Figure out how to make it so that code chunks don’t show in your rendered document (<a href="#sec-execute"><span>Section&nbsp;2.4.1</span></a>).</p>
+<p>Figure out how to make it so that code chunks don’t show in your rendered document (<a href="#sec-execute" class="quarto-xref"><span>Section 2.4.1</span></a>).</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -1487,28 +1540,28 @@ Solution
 <span id="cb36-6"><a href="#cb36-6"></a>                                    <span class="at">color =</span> <span class="st">"purple"</span>)</span>
 <span id="cb36-7"><a href="#cb36-7"></a>k_highlight</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="lightable-minimal table table-sm table-striped small" data-quarto-postprocess="true">
-<thead><tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; font-style: italic; color: purple !important;">task</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-style: italic; color: purple !important;">category</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; font-style: italic; color: purple !important;">frequency</th>
-</tr></thead>
+<table class=" lightable-minimal" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;font-style: italic;color: purple !important;"> task </th>
+   <th style="text-align:left;font-style: italic;color: purple !important;"> category </th>
+   <th style="text-align:left;font-style: italic;color: purple !important;"> frequency </th>
+  </tr></thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">Respond to tweets</td>
-<td style="text-align: left;">social media</td>
-<td style="text-align: left;">daily</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Create a twitter poll</td>
-<td style="text-align: left;">social media</td>
-<td style="text-align: left;">weekly</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Make the sales report</td>
-<td style="text-align: left;">reporting</td>
-<td style="text-align: left;">montly</td>
-</tr>
+<tr>
+<td style="text-align:left;"> Respond to tweets </td>
+   <td style="text-align:left;"> social media </td>
+   <td style="text-align:left;"> daily </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Create a twitter poll </td>
+   <td style="text-align:left;"> social media </td>
+   <td style="text-align:left;"> weekly </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Make the sales report </td>
+   <td style="text-align:left;"> reporting </td>
+   <td style="text-align:left;"> montly </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -1516,7 +1569,7 @@ Solution
 </div>
 </section><section id="sec-exercises-reports-images" class="level3" data-number="2.5.5"><h3 data-number="2.5.5" class="anchored" data-anchor-id="sec-exercises-reports-images">
 <span class="header-section-number">2.5.5</span> Images</h3>
-<p>Add an image of anything relevant (<a href="#sec-rmd-images"><span>Section&nbsp;2.3.6</span></a>).</p>
+<p>Add an image of anything relevant (<a href="#sec-rmd-images" class="quarto-xref"><span>Section 2.3.6</span></a>).</p>
 <div class="cell" data-layout-align="center" data-webex.hide="true">
 <div class="webex-solution">
 <button>
@@ -1525,7 +1578,7 @@ Solution
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"https://psyteachr.github.io/ads-v2/images/logos/logo.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://psyteachr.github.io/ads-v2/images/logos/logo.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="https://psyteachr.github.io/ads-v2/images/logos/logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1542,7 +1595,7 @@ Alternative Solution
 </div>
 </section><section id="sec-exercises-reports-inline" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-exercises-reports-inline">
 <span class="header-section-number">2.5.6</span> Inline R</h3>
-<p>Use inline R to include the version of R you are using in the following sentence: “This report was created using R version 4.2.1 (2022-06-23).” You can get the version using the object <code>R.version.string</code> (<a href="#sec-rmd-inline-r"><span>Section&nbsp;2.2.6</span></a>).</p>
+<p>Use inline R to include the version of R you are using in the following sentence: “This report was created using R version 4.2.1 (2022-06-23).” You can get the version using the object <code>R.version.string</code> (<a href="#sec-rmd-inline-r" class="quarto-xref"><span>Section 2.2.6</span></a>).</p>
 <div class="webex-solution">
 <button>
 Solution
@@ -1568,60 +1621,60 @@ Solution
 <span class="header-section-number">2.6</span> Glossary</h2>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">definition</th>
-</tr></thead>
+<table>
+<thead><tr>
+<th style="text-align:left;"> term </th>
+   <th style="text-align:left;"> definition </th>
+  </tr></thead>
 <tbody>
-<tr class="odd">
-<td style="text-align: left;">[chunk](https://psyteachr.github.io/glossary/c#chunk){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A section of code in an R Markdown file</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[comment](https://psyteachr.github.io/glossary/c#comment){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">Comments are text that R will not run as code. You can annotate .R files or chunks in R Markdown files with comments by prefacing each line of the comment with one or more hash symbols (#).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">[directory](https://psyteachr.github.io/glossary/d#directory){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A collection or "folder" of files on a computer.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[extension](https://psyteachr.github.io/glossary/e#extension){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">[markdown](https://psyteachr.github.io/glossary/m#markdown){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[project](https://psyteachr.github.io/glossary/p#project){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A way to organise related files in RStudio</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">[quarto](https://psyteachr.github.io/glossary/q#quarto){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">An open-source scientific and technical publishing system.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[r-markdown](https://psyteachr.github.io/glossary/r#r-markdown){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">[render](https://psyteachr.github.io/glossary/r#render){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">To create a file (usually an image or PDF) or widget from source code</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[script](https://psyteachr.github.io/glossary/s#script){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A plain-text file that contains commands in a coding language, such as R.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">[working-directory](https://psyteachr.github.io/glossary/w#working-directory){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">The filepath where R is currently reading and writing files.</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">[yaml](https://psyteachr.github.io/glossary/y#yaml){target='_blank' class='glossary'}</td>
-<td style="text-align: left;">A structured format for information</td>
-</tr>
+<tr>
+<td style="text-align:left;"> [chunk](https://psyteachr.github.io/glossary/c#chunk){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A section of code in an R Markdown file </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [comment](https://psyteachr.github.io/glossary/c#comment){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> Comments are text that R will not run as code. You can annotate .R files or chunks in R Markdown files with comments by prefacing each line of the comment with one or more hash symbols (#). </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [directory](https://psyteachr.github.io/glossary/d#directory){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A collection or "folder" of files on a computer. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [extension](https://psyteachr.github.io/glossary/e#extension){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd). </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [markdown](https://psyteachr.github.io/glossary/m#markdown){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A way to specify formatting, such as headers, paragraphs, lists, bolding, and links. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [project](https://psyteachr.github.io/glossary/p#project){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A way to organise related files in RStudio </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [quarto](https://psyteachr.github.io/glossary/q#quarto){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> An open-source scientific and technical publishing system. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [r-markdown](https://psyteachr.github.io/glossary/r#r-markdown){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [render](https://psyteachr.github.io/glossary/r#render){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> To create a file (usually an image or PDF) or widget from source code </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [script](https://psyteachr.github.io/glossary/s#script){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A plain-text file that contains commands in a coding language, such as R. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [working-directory](https://psyteachr.github.io/glossary/w#working-directory){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> The filepath where R is currently reading and writing files. </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> [yaml](https://psyteachr.github.io/glossary/y#yaml){target='_blank' class='glossary'} </td>
+   <td style="text-align:left;"> A structured format for information </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -1638,7 +1691,7 @@ Solution
 </ul>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-R-tinytex" class="csl-entry" role="listitem">
 Xie, Y. (2022). <em>Tinytex: Helper functions to install and maintain TeX live, and compile LaTeX documents</em>. <a href="https://github.com/rstudio/tinytex">https://github.com/rstudio/tinytex</a>
 </div>
@@ -1880,6 +1933,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
   }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
   const toggleColorMode = (alternate) => {
     // Switch the stylesheets
     const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
@@ -1946,13 +2026,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -1987,18 +2069,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2030,11 +2101,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v4");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2044,8 +2161,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2057,7 +2183,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2101,6 +2350,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2126,6 +2376,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2185,22 +2461,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./01-intro.html" class="pagination-link">
+      <a href="./01-intro.html" class="pagination-link" aria-label="Intro to R and RStudio">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R and RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./app-installing-r.html" class="pagination-link">
+      <a href="./app-installing-r.html" class="pagination-link" aria-label="Installing &amp; Updating R">
         <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Installing &amp; Updating R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
-    <div class="nav-footer-left">CC-BY 2024, psyTeachR</div>   
+    <div class="nav-footer-left">
+<p>CC-BY 2024, psyTeachR</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/02-reports.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/02-reports.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item compact">

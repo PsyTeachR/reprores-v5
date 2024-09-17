@@ -9,7 +9,7 @@ This book will use the following conventions:
 * Glossary items: `r glossary("ordinal")`
 * Citations: @R-tidyverse
 * Internal links: @sec-intro
-* External links: [Mastering Shiny](https://mastering-shiny.org/){target="_blank"}
+* External links: [Mastering Shiny](https://mastering-shiny.org/)
 * Mac-specific: <mac>Cmd-Shift-F10</mac> 
 * Windows-specific: <pc>Ctl-Shift-F10</pc>
 
@@ -66,23 +66,41 @@ Try it yourself.
 
 ## Code and Output
 
-```{r}
-# code chunks
-paste("Code", "Output", 1, sep = " ")
-```
-
-```{r, eval = FALSE, verbatim="r, fig.width = 2, fig.height = 2"}
-# code chunks with headers
-hist(rnorm(100000))
-```
-
-```{verbatim, lang = "md"}
+```{verbatim, lang = "markdown"}
 ## Markdown Example
 
 * Inline code: `r nrow(iris)`
 * *Italics*
 * **Bold**
 ```
+
+```{r}
+# code chunks
+paste("Code", "Output", 1, sep = " ")
+```
+
+
+```{r}
+#| echo: fenced
+#| fig-cap: "Set `#| echo: fenced` for code chunks with headers"
+#| label: fig-fenced-example
+#‎| fig-cap: "#| Set `echo: fenced` for code chunks with headers"
+#‎| echo: false
+
+hist(rnorm(100000))
+```
+
+:::{.callout-warning collapse="true"}
+## Showing `echo` in fenced code blocks
+
+Use a version of `#‎|` with an invisible character to show options in a fenced code block that you don't actually want to apply to this chunk, such as a second `echo` or a duplicate `label`. Copy and edit the text below into RStudio and you'll see a red highlighted dot between `#` and `|`. These lines have to go *below* any lines that you do want to apply to this code block.
+
+```
+#‎| echo: false
+```
+:::
+
+
 
 
 

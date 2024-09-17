@@ -88,6 +88,9 @@ format:
     - include/webex.css
     - include/style.css
     df-print: kable
+    link-external-icon: true
+    link-external-newwindow: true
+    link-external-filter: ^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v4
     html-table-processing: none
     toc-expand: 4
     code-link: true

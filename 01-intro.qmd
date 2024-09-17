@@ -20,10 +20,10 @@ library(devtools)
 
 * built-in (you can always use these without loading any packages)
     * base:: `.rs.restartR()`, `as.Date()`, `library()`, `paste()`, `sample()`, `Sys.Date()`
-    * utils:: `?`, `install.packages()`, `vignette()`
+    * utils:: `help()`, `install.packages()`, `vignette()`
 * other (you need to load each package to use these)
-    * beepr:: `beep()`
-    * devtools:: `install_github()`
+    * beepr:: `beepr::beep()`
+    * devtools:: `devtools::install_github()`
 
 ## Setup {#sec-setup-intro .unnumbered}
 
@@ -45,7 +45,7 @@ rstudioapi::versionInfo()$release_name
 ```
 
 
-This book was created using `r R.version.string` (`r R.version$nickname`) and RStudio version 2024.4.2.764 (Chocolate Cosmos). Most of the content of this book will work fine in versions of R above 4.0 and earlier versions of RStudio, although there may be some small differences in the interface.
+This book was created using `r R.version.string` (`r R.version$nickname`) and RStudio version 2024.4.2.764 (Chocolate Cosmos). It was rendered with quarto version `r quarto::quarto_version()`.  Most of the content of this book will work fine in versions of R above 4.0 and earlier versions of RStudio, although there may be some small differences in the interface. 
 :::
 
 <!-- TODO: render the book in earlier versions to find out the limits here -->
