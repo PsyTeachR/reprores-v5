@@ -1,9 +1,11 @@
 # Iteration & Functions {#sec-func}
 
-<div class="right meme"><img src="images/memes/functions.jpg" 
-     alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions." /></div>
+::: {.meme .right}
+![](images/memes/functions.jpg){fig-alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions."}
+:::
 
-## Learning Objectives {#ilo-func}
+
+## Learning Objectives {#sec-ilo-func .unnumbered}
 
 You will learn about functions and iteration by using simulation to calculate a power analysis for an independent samples t-test.
 
@@ -31,20 +33,19 @@ The topics below are not (yet) covered in these materials, but they are directio
 9. Work with **nested data frames** in `dplyr`
 10. Capture and deal with errors using 'adverb' functions `purrr::safely()` and `purrr::possibly()`
 
+In the next two lectures, we are going to learn more about `r glossary("iteration")` (doing the same commands over and over) and custom `r glossary("function", "functions")` through a data simulation exercise, which will also prepare us more traditional statistical topics.
 
-In the next two lectures, we are going to learn more about `r glossary("iteration")` (doing the same commands over and over) and custom `r glossary("function", "functions")` through a data simulation exercise, which will also lead us into more traditional statistical topics.
+## Setup  {#sec-setup-func .unnumbered}
 
-## Setup  {#setup-func}
-
-1. Open your `reprores-class-notes` project 
-1. Create a new quarto file called `08-func.Rmd`
+1. Open your `reprores` project 
+1. Create a new quarto file called `03-dataviz.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-```{r setup-func, results = 'hide', warning = FALSE, message = FALSE, verbatim = "r setup, include = FALSE"}
-knitr::opts_chunk$set(echo = TRUE)
-
-# packages needed for this chapter
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 library(tidyverse)  # loads purrr for iteration
 library(broom)      # converts test output to tidy tables
 
@@ -527,11 +528,13 @@ Calculate power via simulation and `power.t.test` for the following tests:
 * 20 subjects/group, A: m = 10, SD = 1; B: m = 12, SD = 1.5
 :::
 
-## Glossary {#glossary-func}
+## Glossary {#sec-glossary-func .unnumbered}
 
-`r glossary_table()`
+```{r, echo = FALSE}
+glossary_table()
+```
 
-## Further Resources {#resources-func}
+## Further Resources {#sec-resources-func .unnumbered}
 
 * Chapters 19 and 21 of [R for Data Science](http://r4ds.had.co.nz)
 * [Apply functions with purrr cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf)

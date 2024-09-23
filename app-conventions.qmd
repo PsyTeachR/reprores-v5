@@ -35,6 +35,8 @@ cat("* What is a p-value?", longmcq(opts))
 You found it!
 ```
 
+
+
 ## Callout boxes
 
 [See the [quarto reference](https://quarto.org/docs/authoring/callouts.html) for more options.]{.aside}
@@ -43,7 +45,9 @@ You found it!
 Informational asides.
 :::
 
-::: {.callout-tip}
+::: {.callout-tip collapse="true"}
+## Click to expand 
+
 Tips
 :::
 
@@ -59,8 +63,7 @@ Notes about things that could cause serious errors.
 Notes about things that are important.
 :::
 
-::: {.callout-note .try collapse="true"}
-## Try (click to expand)
+::: {.try}
 Try it yourself.
 :::
 

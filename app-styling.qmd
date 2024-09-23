@@ -360,7 +360,7 @@ windowsFonts("Comic Sans MS" = windowsFont("Comic Sans MS"))
 
 The <pkg>showtext</pkg> package is a flexible way to add fonts.
 
-If you have a .ttf file from a font site, like [Font Squirrel](https://www.fontsquirrel.com){target="_blank"}, you can load the file directly using `font_add()`. Set `regular` as the path to the file for the regular version of the font, and optionally add other versions. Set the `family` to the name you want to use for the font. You will need to include any local font files if you are sharing your script with others.
+If you have a .ttf file from a font site, like [Font Squirrel](https://www.fontsquirrel.com), you can load the file directly using `font_add()`. Set `regular` as the path to the file for the regular version of the font, and optionally add other versions. Set the `family` to the name you want to use for the font. You will need to include any local font files if you are sharing your script with others.
 
 ```{r, echo = TRUE}
 library(showtext)
@@ -376,7 +376,7 @@ font_add(
 )
 ```
 
-To download fonts directly from [Google fonts](https://fonts.google.com/){target="_blank"}, use the function `font_add_google()`, set the `name` to the exact name from the site, and the `family` to the name you want to use for the font.
+To download fonts directly from [Google fonts](https://fonts.google.com/), use the function `font_add_google()`, set the `name` to the exact name from the site, and the `family` to the name you want to use for the font.
 
 ```{r, echo = TRUE}
 # download fonts from Google

@@ -61,7 +61,7 @@ If you accidentally close the website and want to look at it again, you don't ha
 
 If you include linked content like image files, make sure they are copied to your main project directory and linked using `r glossary("relative path", "relative paths")`.
 
-To get your webpage online, copy the contents of the `docs` directory to a web server. If you don't have access to a web server, you can make free websites using a GitHub repository and [GitHub Pages](https://pages.github.com/){target="_blank"}).
+To get your webpage online, copy the contents of the `docs` directory to a web server. If you don't have access to a web server, you can make free websites using a GitHub repository and [GitHub Pages](https://pages.github.com/)).
 
 
 ## Styles {#sec-webpage-styles}

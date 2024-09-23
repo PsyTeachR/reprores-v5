@@ -1,6 +1,6 @@
 # Dates and Times {#sec-dates-times}
 
-Working with dates and times can be a little tricky, but the <pkg>lubridate", "https://lubridate.tidyverse.org/")` package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing `vignette("lubridate")` in the console pane. The [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html){target="_blank"} in R for Data Science also gives a helpful overview.
+Working with dates and times can be a little tricky, but the <pkg>lubridate", "https://lubridate.tidyverse.org/")` package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing `vignette("lubridate")` in the console pane. The [Dates and Times](https://r4ds.had.co.nz/dates-and-times.html) in R for Data Science also gives a helpful overview.
 
 This appendix is a quick intro to some of the most useful functions for making reproducible reports.
 
@@ -65,7 +65,7 @@ dmy("3JAN22")
 dmy("3rd of January in the year 2022")
 ```
 
-::: {.callout-note .try}
+::: {.try}
 See if you can make a date format that one of the parsers *can't* handle.
 :::
 
@@ -120,7 +120,7 @@ month(jan1, label = TRUE)
 month(jan1, label = TRUE, abbr = TRUE)
 ```
 
-::: {.callout-note .try}
+::: {.try}
 What day of the week were you born?
 
 ```{r, webex.hide = TRUE}
@@ -139,7 +139,7 @@ You can add and subtract dates. For example, you can get the dates two weeks fro
 today() + weeks(1)
 ```
 
-::: {.callout-note .try}
+::: {.try}
 What day of the week will your 100th birthday be? 
 
 ```{r, webex.hide = TRUE}

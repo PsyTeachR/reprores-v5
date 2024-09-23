@@ -16,14 +16,7 @@
 8. Be able to [troubleshoot](#Troubleshooting) common data import problems [(video)](https://youtu.be/gcxn4LJ_vAI){class="video"}
 :::
 
-## Functions used {#functions-summary}
-
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(janitor)
-```
+## Functions used {#sec-func-summary .unnumbered}
 
 * built-in (you can always use these without loading any packages)
     * base:: `c()`, `dput()`, `library()`, `max()`, `mean()`, `min()`, `sum()`
@@ -35,22 +28,23 @@ library(janitor)
 * other (you need to load each package to use these)
     * janitor:: `clean_names()`
 
-## Setup {#sec-setup-summary}
+## Setup {#sec-setup-summary .unnumbered}
 
-1. Open your `reprores-class-notes` project 
+1. Open your `reprores` project 
 1. Create a new quarto file called `04-data.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-```{r setup-data, results = 'hide', warning = FALSE, message = FALSE, verbatim = "r setup, include = FALSE"}
-knitr::opts_chunk$set(echo = TRUE)
+
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 
 # packages needed for this chapter
 library(tidyverse)     # loads readr for importing data
                        #   and tibble for creating tables
 library(readxl)        # importing excel files
-library(googlesheets4) # importing google sheets
-library(haven)         # importing SPSS files
 library(jsonlite)      # importing JSON files
 library(rio)           # importing and exporting many types of files
 library(skimr)         # summarising datasets
@@ -59,7 +53,7 @@ library(janitor)       # clean up data
 
 Download the [Data import cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf).
 
-## Import Data {#sec-data}
+## Import Data {#sec-import-data}
 
 The data we'll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at [Method of Delivery](https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb), but we'll be working from a saved version. 
 
@@ -280,7 +274,7 @@ mcq1 <- c(answer = "`count(births, induced, sort = TRUE)`",
   longmcq()
 ```
 
-::: {.callout-note .try}
+::: {.try}
 How would you create the table of counts below? 
 
 ```{r, echo = FALSE}
@@ -464,7 +458,7 @@ births_per_year_type_age <- births %>%
 head(births_per_year_type_age)
 ```
 
-::: {.callout-note .try}
+::: {.try}
 Re-write the code above using `group_by()` instead of the `.by` argument?
 :::
 
@@ -496,14 +490,13 @@ Take a break and then try one (or more) of the following:
 
 Once you're done, share your knitted report and the Rmd file on Teams in the Week 04 channel.
 
-## Glossary {#sec-glossary-summary}
+## Glossary {#sec-glossary-summary .unnumbered}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-summary}
+## Further resources {#sec-resources-summary .unnumbered}
 
 * [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 3: Data Transformation ](https://r4ds.hadley.nz/data-transform) in *R for Data Science*
-* [kableExtra vignettes](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html)

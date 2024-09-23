@@ -1,6 +1,6 @@
-# Next Steps {#next}
+# Next Steps {#sec-next}
 
-## Learning Objectives {#ilo-next}
+## Learning Objectives {#sec-ilo-next .unnumbered}
 
 * Create and customise advanced types of plots
 * Structure data in report, presentation, and dashboard formats
@@ -10,14 +10,15 @@
 
 ### Set-up {#setup-custom-viz}
 
-1. Open your `reprores-class-notes` project 
-1. Create a new quarto file called `10-viz.Rmd`
+1. Open your `reprores` project 
+1. Create a new quarto file called `10-viz.qmd`
 1. Update the YAML header 
-1. Replace the setup chunk with the one below
-1. Check that you have all packages installed
+1. Replace the setup chunk with the one below: 
 
-```{r setup-custom-viz, results = 'hide', warning = FALSE, message = FALSE, verbatim = "r setup, include = FALSE"}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 
 # packages needed for this chapter section
 library(tidyverse)   # for data wrangling
@@ -703,13 +704,15 @@ There are so many more options for data visualisation in R than we have time to 
 
 ### Set-up {#setup-custom-reports}
 
-1. Close the file `10-viz.Rmd`
-1. Create a new quarto file called `10-reports.Rmd`
+1. Close the file `10-viz.qmd`
+1. Create a new quarto file called `11-reports.qmd`
 1. Update the YAML header 
-1. Replace the setup chunk with the one below
+1. Replace the setup chunk with the one below: 
 
-```{r setup-custom-reports, results = 'hide', warning = FALSE, message = FALSE, verbatim = "r setup, include = FALSE"}
-knitr::opts_chunk$set(echo = TRUE)
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 
 # packages needed for this chapter section
 library(tidyverse)     # data wrangling functions
@@ -721,7 +724,7 @@ library(DT)            # for interactive tables
 
 ### Interactive tables
 
-One way to make your reports more exciting is to use interactive tables. The `DT::datatable()` function displays a table with some extra interactive elements to allow readers to search and reorder the data, as well as controlling the number of rows shown at once. This can be especially helpful. This only works with HTML output types. The [DT website](https://rstudio.github.io/DT/){target="_blank"} has extensive tutorials, but we'll cover the basics here.
+One way to make your reports more exciting is to use interactive tables. The `DT::datatable()` function displays a table with some extra interactive elements to allow readers to search and reorder the data, as well as controlling the number of rows shown at once. This can be especially helpful. This only works with HTML output types. The [DT website](https://rstudio.github.io/DT/) has extensive tutorials, but we'll cover the basics here.
 
 ```{r}
 library(DT)
@@ -733,7 +736,7 @@ datatable(data = scotpop)
 ```
 
 
-You can customise the display, such as changing column names, adding a caption, moving the location of the filter boxes, removing row names, applying [classes](https://datatables.net/manual/styling/classes){target="_blank"} to change table appearance, and applying [advanced options](https://datatables.net/reference/option/){target="_blank"}.
+You can customise the display, such as changing column names, adding a caption, moving the location of the filter boxes, removing row names, applying [classes](https://datatables.net/manual/styling/classes) to change table appearance, and applying [advanced options](https://datatables.net/reference/option/).
 
 ```{r}
 # https://datatables.net/reference/option/
@@ -845,7 +848,7 @@ The code below shows how to load some packages, display two tables in a tabset, 
 
 Change the size of your web browser to see how the boxes, tables and figures change.
 
-The best way to figure out how to format a dashboard is trial and error, but you can also look at some [sample layouts](https://pkgs.rstudio.com/flexdashboard/articles/layouts.html){target="_blank"}.
+The best way to figure out how to format a dashboard is trial and error, but you can also look at some [sample layouts](https://pkgs.rstudio.com/flexdashboard/articles/layouts.html).
 
 #### Books
 
@@ -869,7 +872,7 @@ To get truly interactive, you can take your R coding to the next level and learn
 
 This is well outside the scope of this class, but the skills you've learned here provide a good start. The free book [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/) by one of the authors of this book can get you started creating shiny apps.
 
-### Resources {#resources-report}
+### Resources {#sec-resources-report .unnumbered}
 
 * [RStudio Formats](https://rmarkdown.rstudio.com/formats.html)
 * [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook)

@@ -37,15 +37,6 @@ write_csv(untidy_data, "data/untidy_data.csv")
 
 ## Functions used {#functions-tidy}
 
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(stringr)
-```
-
 * built-in (you can always use these without loading any packages)
     * base:: `library()`, `c()`, `list()`
 * tidyverse (you can use all these with `library(tidyverse)`)
@@ -56,20 +47,22 @@ library(stringr)
     * stringr:: `str_replace_all()`
     
 
+## Set-up {#sec-setup-tidy .unnumbered}
 
-## Walkthrough video {#sec-walkthrough-tidy .unnumbered}
+1. Open your `reprores` project 
+1. Create a new quarto file called `06-tidy.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below: 
 
-There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/3f9cbd60-622e-4128-95e7-d825e5fa922c/public). Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 
-## Set-up {#sec-setup-tidy}
-
-First, create a new project for the work we'll do in this chapter named `r path("08-tidy")`. Second, open and save and new R Markdown document named `tidy.Rmd`, delete the welcome text and load the required packages for this chapter.
-
-```{r setup-tidy, message=FALSE, verbatim="r setup, include=FALSE"}
 library(tidyverse) # for data wrangling
 ```
 
-You'll need to make a folder called "data" and download two data files into it: 
+You'll also need to make a folder called "data" and download two data files into it: 
 <a href="https://psyteachr.github.io/ads-v2/data/tidy_data.csv" download>tidy_data.csv</a> and
 <a href="https://psyteachr.github.io/ads-v2/data/untidy_data.csv" download>untidy_data.csv</a>.
 
@@ -91,7 +84,7 @@ A `r glossary("variable")` is one type of information about the observation. For
 
 A `r glossary("value")` is the data for one variable for one observation. For example, the value of the date variable from the observation of a sale might be `2021-08-20`.
 
-::: {.callout-note .try}
+::: {.try}
 The following table is data that shows the number of items each customer bought each year.
 
 ```{r, echo = FALSE}
@@ -147,7 +140,7 @@ You would probably normally use Excel to
 4.  add `item_2018 + item_2019 + item_2020` to get the total number of items bought per customer
 5.  add `totalprice_2018 + totalprice_2019 + totalprice_2020` to get the total price per customer
 
-::: {.callout-note .try}
+::: {.try}
 Think about how many steps in Excel this would be if there were 10 years in the table, or a different number of years each time you encountered data like this.
 :::
 
@@ -263,7 +256,7 @@ ggplot(long_totalprice, aes(x = totalprice, fill = year)) +
 ```
 
 
-::: {.callout-note .try}
+::: {.try}
 Create a long version of the following table of how many million followers each band has on different social media platforms. You don't need to use code, just sketch it in a notebook or make a table in a spreadsheet.
 
 | band               | twitter | instagram |
@@ -852,13 +845,13 @@ If your head hurts a bit at this point, rest assured it's absolutely normal. As 
 
 Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 08 channel.
 
-## Glossary {#sec-glossary-tidy}
+## Glossary {#sec-glossary-tidy .unnumbered}
 
-```{r, echo = FALSE, results='asis'}
+```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-tidy}
+## Further resources {#sec-resources-tidy .unnumbered}
 
 -   [Data tidying cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
 -   [Tidy Data](http://vita.had.co.nz/papers/tidy-data.html)

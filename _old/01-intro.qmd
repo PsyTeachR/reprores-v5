@@ -521,7 +521,7 @@ If the function help doesn't help, or you're not even sure what function you nee
 
 ### Vignettes
 
-Many packages, especially [tidyverse](https://www.tidyverse.org/packages/){target="_blank"} ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. 
+Many packages, especially [tidyverse](https://www.tidyverse.org/packages/) ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. 
 ```{r, eval = FALSE}
 # opens a list of available vignettes
 vignette(package = "ggplot2")
@@ -559,4 +559,4 @@ glossary::book()
 
 * [Chapter 1: Introduction](http://r4ds.had.co.nz/introduction.html) in *R for Data Science*
 * [RStudio IDE Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
-* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}
+* [RStudio Cloud](https://rstudio.cloud/)

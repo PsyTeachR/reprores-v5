@@ -39,14 +39,17 @@
 }
 
 /* references with hanging indent */
+
 .csl-entry {
-  padding-left: 2em ;
+  margin-left: 0;
+  padding-left: 0 ;
   text-indent: -2em ;
 }
 
 pkg {
   font-weight: 400;
   font-family: monospace;
+  font-size: 90%;
 }
 pkg::before { content: "{"; }
 pkg::after { content: "}"; }
@@ -75,22 +78,23 @@ body {
 
 /* set styles for alert boxes */
 
-div.callout-note.callout-captioned.try .callout-icon::before {
-  background-image: url("../images/alerts/rainbow.svg");
-  background-position-y: top;
+.try {
+  margin-bottom: 1em;
+  padding: 0.5em 0.25em 0 0.25em;
+  border-radius: 0.25em;
+  background-color: hsla(248, 28%, 48%, .05);
+  border: 0.5px solid var(--purple);
+  border-left: 6px solid transparent;
 }
 
-div.callout-note.callout-style-default.try > .callout-header {
-  background-color: hsla(248, 28%, 48%, .2);
-}
-
-div.callout-note.callout.try {
-  border-left-color: var(--purple);
-}
-
-div.callout-note.callout-captioned.ilo .callout-icon::before {
-  background-image: url("../images/alerts/rainbow.svg");
-  background-position-y: top;
+.try {
+  margin-left: 12px;
+  box-shadow: -2px 0 0 0px var(--purple),
+              -4px 0 0 0px var(--blue),
+              -6px 0 0 0px var(--green),
+              -8px 0 0 0px var(--yellow),
+              -10px 0 0 0px var(--orange),
+              -12px 0 0 0px var(--pink);
 }
 
 /* mac and PC icons */
@@ -132,3 +136,46 @@ pc::before {
     vertical-align: text-top;
   }
 }
+
+/* soft-wrap code blocks */
+code.sourceCode > span {
+  left: 0 !important;
+}
+
+code.sourceCode > span > a { 
+  margin-left: -60px;
+}
+
+.cell-output code {
+  white-space: pre-wrap;
+  border: 1px solid grey;
+  padding: 1em;
+}
+
+.terminal {
+  background-color: #88888811;
+  border: 5px solid #D6DADC;
+  padding: 0.5em 1em 0 1em;
+  margin-bottom: 0.5em;
+}
+
+if {
+  display: inline;
+  font-weight: 900;
+  font-size: 90%;
+  background-color: #00FF0011;
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+a.glossary {
+  font-style: italic;
+}
+/* override external icon */
+code a.external::after,
+a.glossary::after {
+  margin-left: 0;
+  padding: 0;
+  background-image: none;
+}
+

@@ -3,7 +3,7 @@
 <div class="right meme"><img src="images/memes/sim.jpg"
      alt="Morpheus from The Matrix. Top text: What if I told you; Bottom text: Ur in a simulation, inside a simulation, inside another simulation, inside a taco, inside a taco cat, inside a Taco Bell, inside an Arby's. Inside another simulation" /></div>
 
-## Learning Objectives {#ilo-sim}
+## Learning Objectives {#sec-ilo-sim .unnumbered}
 
 ### Basic {-}
 
@@ -33,17 +33,18 @@
 6. Calculate power over a range of study parameters
 
 
-## Setup {#setup-sim}
+## Setup {#sec-setup-sim .unnumbered}
 
-1. Open your `reprores-class-notes` project 
-1. Create a new quarto file called `09-sim.Rmd`
+1. Open your `reprores` project 
+1. Create a new quarto file called `09-sim.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-```{r setup-sim, results = 'hide', warning = FALSE, message = FALSE, verbatim = "r setup, include = FALSE"}
-knitr::opts_chunk$set(echo = TRUE)
 
-# packages needed for this chapter
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 library(tidyverse) # for data wrangling
 library(faux)      # data simulation
 library(plotly)    # create a 3D plot to visualise correlations
@@ -327,7 +328,7 @@ bvn3 |>
 
 ### Faux
 
-Alternatively, you can use the package [faux](https://debruine.github.io/faux/){target="_blank"} to generate any number of correlated variables. It also has a function for checking the parameters of your new simulated data (`check_sim_stats()`).
+Alternatively, you can use the package [faux](https://debruine.github.io/faux/) to generate any number of correlated variables. It also has a function for checking the parameters of your new simulated data (`check_sim_stats()`).
 
 ```{r faux-rnorm-multi}
 bvn3 <- rnorm_multi(
@@ -373,7 +374,7 @@ You can use the `check_sim_stats()` function, but you need to set the argument `
 check_sim_stats(pet_data, between = "pet")
 ```
 
-See the [faux website](https://debruine.github.io/faux/){target="_blank"} for more detailed tutorials.
+See the [faux website](https://debruine.github.io/faux/) for more detailed tutorials.
 
 
 ## Statistical terms {#stat-terms}
@@ -849,11 +850,13 @@ ggplot(power_table, aes(n, power)) +
 
 ```
 
-## Glossary {#glossary-sim}
+## Glossary {#sec-glossary-sim .unnumbered}
 
-`r glossary_table()`
+```{r, echo = FALSE}
+glossary_table()
+```
 
-## Further Resources {#resources8}
+## Further Resources {#sec-resources-sim .unnumbered}
 
 * [Distribution Shiny App](http://shiny.psy.gla.ac.uk/debruine/simulate/) (or run `reprores::app("simulate")`
 * [Simulation tutorials](https://debruine.github.io/data-sim-workshops/) by Lisa DeBruine

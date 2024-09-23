@@ -174,13 +174,73 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-reports.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Visualisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-join.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Relations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Tidying</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-wrangle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Iteration &amp; Functions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-sim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Probability &amp; Simulation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-next.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-refs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">11-refs.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-license.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licence/Citation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -273,7 +333,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
 </div></div>
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="4"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
@@ -345,7 +405,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     position: absolute;
   }
 </style>
-<div class="cell" data-layout-align="center">
 <ul class="colordemo">
 <li style="background-color: #000000;">
 <span>black</span>
@@ -1853,15 +1912,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li style="background-color: #ffaeb9;">
 <span>lightpink1</span>
 </li>
-</ul>
-</div>
-</section><section id="alpha" class="level3" data-number="K.1.2"><h3 data-number="K.1.2" class="anchored" data-anchor-id="alpha">
+</ul></section><section id="alpha" class="level3" data-number="K.1.2"><h3 data-number="K.1.2" class="anchored" data-anchor-id="alpha">
 <span class="header-section-number">K.1.2</span> Alpha</h3>
 <p>The <code>alpha</code> argument changes transparency (0 = totally transparent, 1 = totally opaque).</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/alpha-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/alpha-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Varying alpha values.</figcaption></figure>
 </div>
 </div>
@@ -1869,10 +1926,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="shape" class="level3" data-number="K.1.3"><h3 data-number="K.1.3" class="anchored" data-anchor-id="shape">
 <span class="header-section-number">K.1.3</span> Shape</h3>
 <p>The <code>shape</code> argument changes the shape of points.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/shape-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/shape-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>The 25 shape values</figcaption></figure>
 </div>
 </div>
@@ -1880,10 +1937,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="linetype" class="level3" data-number="K.1.4"><h3 data-number="K.1.4" class="anchored" data-anchor-id="linetype">
 <span class="header-section-number">K.1.4</span> Linetype</h3>
 <p>You can probably guess what the <code>linetype</code> argument does.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/linetype-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/linetype-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>The 6 linetype values at different sizes.</figcaption></figure>
 </div>
 </div>
@@ -1891,10 +1948,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section></section><section id="palettes" class="level2" data-number="K.2"><h2 data-number="K.2" class="anchored" data-anchor-id="palettes">
 <span class="header-section-number">K.2</span> Palettes</h2>
 <p>Discrete palettes change depending on the number of categories.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Default discrete palette with different numbers of levels.</figcaption></figure>
 </div>
 </div>
@@ -1905,10 +1962,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <section id="discrete-viridis-palettes" class="level4" data-number="K.2.1.1"><h4 data-number="K.2.1.1" class="anchored" data-anchor-id="discrete-viridis-palettes">
 <span class="header-section-number">K.2.1.1</span> Discrete Viridis Palettes</h4>
 <p>Set <a href="https://psyteachr.github.io/glossary/d#discrete" target="_blank" class="glossary" title="Data that can only take certain values, such as integers.">discrete</a> viridis colours with <code>scale_colour_viridis_d()</code> or <code>scale_fill_viridis_d()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Discrete viridis palettes.</figcaption></figure>
 </div>
 </div>
@@ -1929,10 +1986,10 @@ Note
 </section><section id="continuous-viridis-palettes" class="level4" data-number="K.2.1.2"><h4 data-number="K.2.1.2" class="anchored" data-anchor-id="continuous-viridis-palettes">
 <span class="header-section-number">K.2.1.2</span> Continuous Viridis Palettes</h4>
 <p>Set <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a> viridis colours with <code>scale_colour_viridis_c()</code> or <code>scale_fill_viridis_c()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Continuous viridis palettes.</figcaption></figure>
 </div>
 </div>
@@ -1943,10 +2000,10 @@ Note
 <section id="qualitative-brewer-palettes" class="level4" data-number="K.2.2.1"><h4 data-number="K.2.2.1" class="anchored" data-anchor-id="qualitative-brewer-palettes">
 <span class="header-section-number">K.2.2.1</span> Qualitative Brewer Palettes</h4>
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> data with up to 8 categories (some palettes can handle up to 12). The “Paired” palette is useful if your categories are arranged in pairs.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Qualitative brewer palettes.</figcaption></figure>
 </div>
 </div>
@@ -1954,10 +2011,10 @@ Note
 </section><section id="sequential-brewer-palettes" class="level4" data-number="K.2.2.2"><h4 data-number="K.2.2.2" class="anchored" data-anchor-id="sequential-brewer-palettes">
 <span class="header-section-number">K.2.2.2</span> Sequential Brewer Palettes</h4>
 <p>These palettes are good for up to 9 <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with a lot of categories.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Sequential brewer palettes.</figcaption></figure>
 </div>
 </div>
@@ -1965,10 +2022,10 @@ Note
 </section><section id="diverging-brewer-palettes" class="level4" data-number="K.2.2.3"><h4 data-number="K.2.2.3" class="anchored" data-anchor-id="diverging-brewer-palettes">
 <span class="header-section-number">K.2.2.3</span> Diverging Brewer Palettes</h4>
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Diverging brewer palettes.</figcaption></figure>
 </div>
 </div>
@@ -1976,10 +2033,10 @@ Note
 </section></section></section><section id="sec-themes-appendix" class="level2" data-number="K.3"><h2 data-number="K.3" class="anchored" data-anchor-id="sec-themes-appendix">
 <span class="header-section-number">K.3</span> Themes</h2>
 <p><pkg>ggplot2</pkg> has 8 built-in themes that you can add to a plot like <code>plot + theme_bw()</code> or set as the default theme at the top of your script like <code>theme_set(theme_bw())</code>.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>{ggplot2} themes.</figcaption></figure>
 </div>
 </div>
@@ -1987,10 +2044,10 @@ Note
 <section id="ggthemes" class="level3" data-number="K.3.1"><h3 data-number="K.3.1" class="anchored" data-anchor-id="ggthemes">
 <span class="header-section-number">K.3.1</span> ggthemes</h3>
 <p>You can get more themes from add-on packages, like <pkg>ggthemes”, “https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/”)<code>. Most of the themes also have custom</code>scale_<code>functions like</code>scale_colour_economist()`. Their website has extensive examples and instructions for alternate or dark versions of these themes.</pkg></p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>{ggthemes} themes.</figcaption></figure>
 </div>
 </div>
@@ -1998,7 +2055,7 @@ Note
 </section><section id="fonts" class="level3" data-number="K.3.2"><h3 data-number="K.3.2" class="anchored" data-anchor-id="fonts">
 <span class="header-section-number">K.3.2</span> Fonts</h3>
 <p>You can customise the fonts used in themes. All computers should be able to recognise the families “sans”, “serif”, and “mono”, and some computers will be able to access other installed fonts by name.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>sans <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"sans"</span>) <span class="sc">+</span> </span>
 <span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">ggtitle</span>(<span class="st">"Sans"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3"></a>serif <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"serif"</span>) <span class="sc">+</span> </span>
@@ -2011,7 +2068,7 @@ Note
 <span id="cb1-10"><a href="#cb1-10"></a>sans <span class="sc">+</span> serif <span class="sc">+</span> mono <span class="sc">+</span> font <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/theme-font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/theme-font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Different fonts.</figcaption></figure>
 </div>
 </div>
@@ -2030,8 +2087,8 @@ Warning
 </div>
 </div>
 <p>The <pkg>showtext</pkg> package is a flexible way to add fonts.</p>
-<p>If you have a .ttf file from a font site, like <a href="https://www.fontsquirrel.com" target="_blank">Font Squirrel</a>, you can load the file directly using <code>font_add()</code>. Set <code>regular</code> as the path to the file for the regular version of the font, and optionally add other versions. Set the <code>family</code> to the name you want to use for the font. You will need to include any local font files if you are sharing your script with others.</p>
-<div class="cell" data-layout-align="center">
+<p>If you have a .ttf file from a font site, like <a href="https://www.fontsquirrel.com">Font Squirrel</a>, you can load the file directly using <code>font_add()</code>. Set <code>regular</code> as the path to the file for the regular version of the font, and optionally add other versions. Set the <code>family</code> to the name you want to use for the font. You will need to include any local font files if you are sharing your script with others.</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(showtext)</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># font from https://www.fontsquirrel.com/fonts/SF-Cartoonist-Hand</span></span>
@@ -2044,18 +2101,18 @@ Warning
 <span id="cb2-10"><a href="#cb2-10"></a>  <span class="at">family =</span> <span class="st">"cartoonist"</span> </span>
 <span id="cb2-11"><a href="#cb2-11"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>To download fonts directly from <a href="https://fonts.google.com/" target="_blank">Google fonts</a>, use the function <code>font_add_google()</code>, set the <code>name</code> to the exact name from the site, and the <code>family</code> to the name you want to use for the font.</p>
-<div class="cell" data-layout-align="center">
+<p>To download fonts directly from <a href="https://fonts.google.com/">Google fonts</a>, use the function <code>font_add_google()</code>, set the <code>name</code> to the exact name from the site, and the <code>family</code> to the name you want to use for the font.</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># download fonts from Google</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Courgette"</span>, <span class="at">family =</span> <span class="st">"courgette"</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Poiret One"</span>, <span class="at">family =</span> <span class="st">"poiret"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After you’ve added fonts from local files or Google, you need to make them available to R using <code>showtext_auto()</code>. You will have to do these steps in each script where you want to use the custom fonts.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">showtext_auto</span>() <span class="co"># load the fonts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To change the fonts used overall in a plot, use the <code>theme()</code> function and set <code>text</code> to <code>element_text(family = "new_font_family")</code>.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"courgette"</span>)) <span class="sc">+</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggtitle</span>(<span class="st">"Courgette"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3"></a>b <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"cartoonist"</span>)) <span class="sc">+</span></span>
@@ -2066,13 +2123,13 @@ Warning
 <span id="cb5-8"><a href="#cb5-8"></a>a <span class="sc">+</span> b <span class="sc">+</span> c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Custom Fonts.</figcaption></figure>
 </div>
 </div>
 </div>
 <p>To set the fonts for individual elements in the plot, you need to find the specific argument for that element. You can use the argument <code>face</code> to choose “bold”, “italic”, or “bolditalic” versions, if they are available.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>g <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Cartoonist Hand"</span>) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">theme</span>(</span>
 <span id="cb6-3"><a href="#cb6-3"></a>    <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"cartoonist"</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
@@ -2081,7 +2138,7 @@ Warning
 <span id="cb6-6"><a href="#cb6-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-styling_files/figure-html/demo-multi-text-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/demo-multi-text-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Multiple custom fonts on the same plot.</figcaption></figure>
 </div>
 </div>
@@ -2263,20 +2320,12 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' ';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
-  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
-
-  $("footer div.row div:eq(1) p").html(
-    psyteachr + license + cite
-  );
-
   function move_sidebar() {
     var w = window.innerWidth;
-    if (w < 992) {
-      $("#toc").appendTo($("#main-nav"));
+    if (w < 768) {
+      $("#TOC").appendTo($("#quarto-sidebar .sidebar-menu-container"));
     } else {
-      $("#toc").appendTo($("div.sidebar-chapter"));
+      $("#TOC").appendTo($("#quarto-margin-sidebar"));
     }
   }
   move_sidebar();
@@ -2580,125 +2629,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         return "";
       }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;

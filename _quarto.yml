@@ -7,6 +7,20 @@ project:
 execute:
   freeze: auto
 
+editor: 
+  render-on-save: false
+
+# default knitr options
+knitr:
+  opts_chunk:
+    echo: true
+    results: "hold"
+    message: false
+    warning: true
+    error: true
+    out-width: '100%'
+    fig-path: "images/figures/"
+
 book:
   title: 'Data Skills for Reproducible Research'
   author: "Lisa DeBruine, Dale Barr, Emily Nordmann, Rebecca Lai, David Pharis"
@@ -45,16 +59,16 @@ book:
   - index.qmd
   - 01-intro.qmd
   - 02-reports.qmd
-  # - 03-viz.qmd
-  # - 04-summary.qmd
-  # - 05-join.qmd
-  # - 06-tidy.qmd
-  # - 07-wrangle.qmd
-  # - 08-func.qmd
-  # - 09-sim.qmd
-  # - 10-next.qmd
-  # - 11-refs.qmd
-  # - 12-license.qmd
+  - 03-viz.qmd
+  - 04-summary.qmd
+  - 05-join.qmd
+  - 06-tidy.qmd
+  - 07-wrangle.qmd
+  - 08-func.qmd
+  - 09-sim.qmd
+  - 10-next.qmd
+  - 11-refs.qmd
+  - 12-license.qmd
   appendices:
   - app-installing-r.qmd
   - app-symbols.qmd
@@ -88,17 +102,22 @@ format:
     - include/webex.css
     - include/style.css
     df-print: kable
+    html-table-processing: none
     link-external-icon: true
     link-external-newwindow: true
     link-external-filter: ^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v4
-    html-table-processing: none
-    toc-expand: 4
+    toc-depth: 3
+    toc-expand: 2
     code-link: true
     code-fold: false
     code-line-numbers: true
     code-overflow: wrap
     code-copy: hover
+    fig-width: 8
+    fig-height: 5
+    fig-align: 'center'
     highlight-style: a11y
+    crossrefs-hover: false
     # mainfont: ''
     # monofont: ''
     include-after-body:

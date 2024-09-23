@@ -155,11 +155,11 @@ demo_xls <- readxl::read_excel("data/demo.xlsx")
 demo_sav <- haven::read_sav("data/demo.sav")
 ```
 
-::: {.callout-note .try}
+::: {.try}
 Look at the help for each function above and read through the Arguments section to see how you can customise import.
 :::
 
-If you keep data in Google Sheets, you can access it directly from R using `<pkg>googlesheets4", "https://googlesheets4.tidyverse.org/")`. The code below imports data from a [public sheet](https://docs.google.com/spreadsheets/d/16dkq0YL0J7fyAwT1pdgj1bNNrheckAU_2-DKuuM6aGI){target="_blank"}. You can set the `ss` argument to the entire `r glossary("URL")` for the target sheet, or just the section after "https://docs.google.com/spreadsheets/d/".
+If you keep data in Google Sheets, you can access it directly from R using `<pkg>googlesheets4", "https://googlesheets4.tidyverse.org/")`. The code below imports data from a [public sheet](https://docs.google.com/spreadsheets/d/16dkq0YL0J7fyAwT1pdgj1bNNrheckAU_2-DKuuM6aGI). You can set the `ss` argument to the entire `r glossary("URL")` for the target sheet, or just the section after "https://docs.google.com/spreadsheets/d/".
 
 ```{r, message = FALSE}
 gs4_deauth() # skip authorisation for public data
@@ -338,7 +338,7 @@ demo <- read_sheet(ss = sheet_id, sheet = "letters")
 ```
 
 
-::: {.callout-note .try}
+::: {.try}
 * Create a new table called `family` with the first name, last name, and age of your family members (biological, adopted, or chosen). 
 * Save it to a CSV file called "family.csv". 
 * Clear the object from your environment by restarting R or with the code `remove(family)`.

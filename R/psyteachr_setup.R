@@ -1,46 +1,19 @@
 # psyTeachR styles and functions
 # do not edit!!!!!
 
-suppressPackageStartupMessages({
-  #library(tidyverse)
-  library(glossary)
-  #library(patchwork)
-})
-
-glossary_path("psyteachr")
-glossary_popup("hover")
-
-# default knitr options
-knitr::opts_chunk$set(
-  echo       = TRUE,
-  results    = "hold",
-  out.width  = '100%',
-  fig.width  = 8,
-  fig.height = 5,
-  fig.align  = 'center',
-  fig.path = "images/figures/"
-)
+if (requireNamespace("glossary", quietly = TRUE)) {
+  suppressPackageStartupMessages({
+    library(glossary)
+  })
+  
+  glossary_path("psyteachr")
+  glossary_popup("hover")
+}
 
 ## set global theme options for figures
-ggplot2::theme_set(ggplot2::theme_bw())
-
-## set class for a chunk using class="className"
-knitr::knit_hooks$set(class = function(before, options, envir) {
-  if (before) {
-    sprintf("<div class = '%s'>", options$class)
-  } else {
-    "</div>"
-  }
-})
-
-## verbatim code chunks
-knitr::knit_hooks$set(verbatim = function(before, options, envir) {
-  if (before) {
-    sprintf("<div class='verbatim'><pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;{%s}</code></pre>", options$verbatim)
-  } else {
-    "<pre class='sourceCode r'><code class='sourceCode R'>&#96;&#96;&#96;</code></pre></div>"
-  }
-})
+if (requireNamespace("ggplot2", quietly = TRUE)) {
+  ggplot2::theme_set(ggplot2::theme_bw())
+}
 
 
 ## palette with psyTeachR logo colour
@@ -53,10 +26,12 @@ psyteachr_colours <- function(vals = 1:6) {
     "blue" = "#467AAC",
     "purple" = "#61589C"
   )
-
+  
   unname(ptrc[vals])
 }
 psyteachr_colors <- psyteachr_colours
+
+
 
 # inline code highlighting and styles
 

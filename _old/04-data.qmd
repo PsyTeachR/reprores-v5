@@ -101,7 +101,7 @@ We'll learn more about data formats to better represent data like this in Chapte
 
 You may think all of your column names and factor labels are intuitive, but other researchers and future you will thank you for creating a data dictionary. 
 
-You can create a data dictionary manually, or use an R package to help you make them for data you've imported to R. Crystal Lewis [reviews some of these](https://github.com/Cghlewis/codebook-pkg-comparison){target="_blank"}, like [codebookr](https://brad-cannell.github.io/codebookr/){target="_blank"}.
+You can create a data dictionary manually, or use an R package to help you make them for data you've imported to R. Crystal Lewis [reviews some of these](https://github.com/Cghlewis/codebook-pkg-comparison), like [codebookr](https://brad-cannell.github.io/codebookr/).
 
 ### No calculations in the raw data files
 
@@ -112,7 +112,7 @@ That's what we're learning R for!
 There are ways to extract this computationally, but they're complex and annoying to deal with. When you are tempted to use colour to highlight something like outliers, add a column with TRUE/FALSE or text values instead.
 
 ::: {.try data-latex=""}
-Find a paper in [Psychological Science](https://journals.sagepub.com/home/pss){target="_blank"} or another journal that encourages data sharing. Find a paper you're interested in that shares data (usually has this badge <img src="images/data/open-data.png" style="height: 1.5em;">) and download the data (usually listed in the "Open Practices" section at the end). Access their data and assess how well they follow each of the guidelines above.
+Find a paper in [Psychological Science](https://journals.sagepub.com/home/pss) or another journal that encourages data sharing. Find a paper you're interested in that shares data (usually has this badge <img src="images/data/open-data.png" style="height: 1.5em;">) and download the data (usually listed in the "Open Practices" section at the end). Access their data and assess how well they follow each of the guidelines above.
 :::
 
 

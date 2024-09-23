@@ -153,7 +153,7 @@ Depending on your settings, you may also see a directory called `.Rproj.user`, w
 In this lesson, we will learn to make an R Markdown document with a table of contents, appropriate headers, code chunks, tables, images, inline R, and a bibliography. 
 
 ::: {.info data-latex=""}
-There is a new type of reproducible report format called [quarto](https://quarto.org/){target="_blank"} that is very similar to R Markdown. We won't be using quarto in this class because it has a few small differences that get confusing if you're learning both quarto and R Markdown at the same time, but you should be able to pick up quarto very easily once you've learned R Markdown.
+There is a new type of reproducible report format called [quarto](https://quarto.org/) that is very similar to R Markdown. We won't be using quarto in this class because it has a few small differences that get confusing if you're learning both quarto and R Markdown at the same time, but you should be able to pick up quarto very easily once you've learned R Markdown.
 :::
 
 We will use `r glossary("R Markdown")` to create reproducible reports, which enables mixing of text and code. A reproducible script will contain sections of code in code blocks. A code block starts and ends with three backtick symbols in a row, with some information about the code between curly brackets, such as `{r chunk-name, echo=FALSE}` (this runs the code, but does not show the text of the code block in the compiled document). The text outside of code blocks is written in `r glossary("markdown")`, which is a way to specify formatting, such as headers, paragraphs, lists, bolding, and links.
@@ -208,7 +208,7 @@ When you Create a new quarto file in RStudio using the default template, a setup
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-You can set more default options for code chunks here. See the [knitr options documentation](https://yihui.name/knitr/options/){target="_blank"} for explanations of the possible options.
+You can set more default options for code chunks here. See the [knitr options documentation](https://yihui.name/knitr/options/) for explanations of the possible options.
 
 ```{r knitr-setup2, eval=FALSE, verbatim="r setup, include=FALSE"}
 knitr::opts_chunk$set(
@@ -537,7 +537,7 @@ See the [last section](#conclusion) for concluding remarks.
 
 ## Bibliography
 
-There are several ways to do in-text references and automatically generate a [bibliography](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html){target="_blank"} in R Markdown. Markdown files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
+There are several ways to do in-text references and automatically generate a [bibliography](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html) in R Markdown. Markdown files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
 
 ```
 ---
@@ -558,9 +558,9 @@ Most reference software like EndNote or Zotero has exporting options that can ex
 Please start using a reference manager consistently through your research career. It will make your life so much easier. Zotero is probably the best one.
 :::
 
-1. If you don't already have one, set up a [Zotero](https://www.zotero.org/){target="_blank"} account  
-2. Add the [connector for your web browser](https://www.zotero.org/download/){target="_blank"} (if you're on a computer you can add browser extensions to)  
-3. Navigate to [Easing Into Open Science](https://doi.org/10.1525/collabra.18684){target="_blank"} and add this reference to your library with the browser connector  
+1. If you don't already have one, set up a [Zotero](https://www.zotero.org/) account  
+2. Add the [connector for your web browser](https://www.zotero.org/download/) (if you're on a computer you can add browser extensions to)  
+3. Navigate to [Easing Into Open Science](https://doi.org/10.1525/collabra.18684) and add this reference to your library with the browser connector  
 4. Go to your library and make a new collection called "Open Research" (click on the + icon after **`My Library`**)  
 5. Drag the reference to Easing Into Open Science into this collection  
 6. Export this collection as BibTex  
@@ -600,7 +600,7 @@ You can add references to a journal article in the following format:
 }
 ```
 
-See [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/){target="_blank"} for instructions on citing books, technical reports, and more.
+See [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/) for instructions on citing books, technical reports, and more.
 
 You can get the reference for an R package using the functions `citation()` and `toBibtex()`. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "ggplot2") before the first comma to refer to the reference.
 
@@ -651,7 +651,7 @@ nocite: '@*'
 
 ### Citation Styles
 
-You can search a [list of style files](https://www.zotero.org/styles){target="_blank"} for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
+You can search a [list of style files](https://www.zotero.org/styles) for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
 
 ::: {.try data-latex=""}
 Add some citations to your refs.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.

@@ -7,35 +7,27 @@
 
 ## Functions used {#functions-joins}
 
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(tibble)
-library(purrr)
-library(stringr)
-```
-
 * built-in (you can always use these without loading any packages)
     * base:: `library()`, `dir.create()`, `list.files()`, `as.numeric()`, `as.factor()`, `as.character()`, `as.data.frame()`
 * tidyverse (you can use all these with `library(tidyverse)`)
-    * readr:: `write_csv()`, `read_csv()`
-    * dplyr:: `left_join()`, `right_join()`, `inner_join()`, `full_join()`, `semi_join()`, `anti_join()`, `bind_rows()`, `bind_cols()`, `intersect()`, `union()`, `setdiff()`, `mutate()`
-    * tibble:: `tibble()`, `as_tibble()`
-    * purrr:: `map_df()`
-    * stringr:: `str_replace_all()`
+    * readr:: `readr::write_csv()`, `readr::read_csv()`
+    * dplyr:: `dplyr::left_join()`, `dplyr::right_join()`, `dplyr::inner_join()`, `dplyr::full_join()`, `dplyr::semi_join()`, `dplyr::anti_join()`, `dplyr::bind_rows()`, `dplyr::bind_cols()`, `dplyr::intersect()`, `dplyr::union()`, `dplyr::setdiff()`, `dplyr::mutate()`
+    * tibble:: `tibble::tibble()`, `tibble::as_tibble()`
+    * purrr:: `purrr::map_df()`
+    * stringr:: `stringr::str_replace_all()`
 
-
-
-## Walkthrough video {#sec-walkthrough-joins .unnumbered}
-
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/519bb538-58b3-4710-85df-d71c56001a5d/public) Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Set-up {#sec-setup-joins}
 
-First, create a new project for the work we'll do in this chapter named `r path("07-relations")`. Second, open and save a new R Markdown document named `relations.Rmd`, delete the welcome text, and load the required packages for this chapter.
+1. Open your `reprores` project 
+1. Create a new quarto file called `05-relations.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below: 
 
-```{r setup-joins, message=FALSE, verbatim="r setup, include=FALSE"}
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 library(tidyverse)     # includes readr & tibble
 ```
 
@@ -61,7 +53,11 @@ customers <- tibble(
 )
 ```
 
-`r kable(customers, caption="Demo customers table.")`
+```{r}
+#| echo: false
+#| fig-cap: Demo customers table
+customers
+```
 
 `orders` has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.
 
@@ -72,7 +68,13 @@ orders <- tibble(
 )
 ```
 
-`r kable(orders, caption="Demo orders table.")`
+
+```{r}
+#| echo: false
+#| fig-cap: Demo orders table.
+
+orders
+```
 
 ## Mutating Joins
 
@@ -481,7 +483,7 @@ There's lots of different use cases for the `****_join()` functions. These exerc
 
 ### Grade data
 
-The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumeric scale (there's more information in your summative report [assessment information sheet](https://sway.office.com/k0CnXGd6RjbVokkR){target="_blank"}). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16). 
+The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumeric scale (there's more information in your summative report [assessment information sheet](https://sway.office.com/k0CnXGd6RjbVokkR)). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16). 
 
 Often when we're working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.
 
@@ -607,13 +609,13 @@ no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 
 Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.
 
-## Glossary {#sec-glossary-joins}
+## Glossary {#sec-glossary-joines .unnumbered}
 
-```{r, echo = FALSE, results='asis'}
+```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-joins}
+## Further resources {#sec-resources-joins .unnumbered}
 
 * [Data transformation cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 19: Joins](https://r4ds.hadley.nz/joins) in *R for Data Science*

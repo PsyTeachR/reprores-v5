@@ -89,26 +89,3 @@ a.video {
 
 .inline-figure { border: none; }
 
-
-.cell-output code {
-  white-space: pre-wrap;
-  border: 1px solid grey;
-  padding: 1em;
-}
-
-.terminal {
-  background-color: #88888811;
-  border: 5px solid #D6DADC;
-  padding: 0.5em 1em 0 1em;
-  margin-bottom: 0.5em;
-}
-
-if {
-  display: inline;
-  font-weight: 900;
-  font-size: 90%;
-  background-color: #00FF0011;
-  padding: 0.125rem 0.25rem;
-  border-radius: 0.25rem;
-}
-

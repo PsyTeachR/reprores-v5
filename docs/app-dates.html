@@ -174,13 +174,73 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Intro to R and RStudio</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02-reports.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Data Visualisation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data Summaries</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-join.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data Relations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-tidy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Tidying</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-wrangle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Wrangling</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Iteration &amp; Functions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-sim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Probability &amp; Simulation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-next.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Next Steps</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-refs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">11-refs.html</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-license.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licence/Citation</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -273,7 +333,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p><a href="https://doi.org/10.5281/zenodo.6365077"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.6365077.svg" alt="DOI"></a></p>
 </div></div>
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="4"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li><a href="#formats" id="toc-formats" class="nav-link active" data-scroll-target="#formats"><span class="header-section-number">J.1</span> Formats</a></li>
@@ -306,9 +366,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><p>Working with dates and times can be a little tricky, but the <pkg>lubridate”, “https://lubridate.tidyverse.org/”)<code>package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing</code>vignette(“lubridate”)` in the console pane. The <a href="https://r4ds.had.co.nz/dates-and-times.html" target="_blank">Dates and Times</a> in R for Data Science also gives a helpful overview.</pkg></p>
+</header><p>Working with dates and times can be a little tricky, but the <pkg>lubridate”, “https://lubridate.tidyverse.org/”)<code>package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing</code>vignette(“lubridate”)` in the console pane. The <a href="https://r4ds.had.co.nz/dates-and-times.html">Dates and Times</a> in R for Data Science also gives a helpful overview.</pkg></p>
 <p>This appendix is a quick intro to some of the most useful functions for making reproducible reports.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># packages needed for this appendix</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -316,7 +376,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <section id="formats" class="level2" data-number="J.1"><h2 data-number="J.1" class="anchored" data-anchor-id="formats">
 <span class="header-section-number">J.1</span> Formats</h2>
 <p>While there is only one correct way to write date (The ISO 8601 format of “YYYY-MM-DD”), dates can be found in many formats. When you are reading a data file, you might need to specify the date format so it can be read properly. Date format specification uses abbreviations to represent the different ways people can write. the year, month, and day (as well as hours, minutes, and seconds). For example, the date <code>2023-01-03</code> is represented by the formatting string <code>"%Y-%m-%d</code>. The fastest way to find the list of formatting abbreviations is to look in the help for the function <code>col_date()</code>.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Run in the console</strong></pre>
@@ -324,7 +384,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>?col_date</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create a table with some different date formats</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>date_formats <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="at">best =</span> <span class="st">"2022-01-03"</span>,</span>
@@ -350,7 +410,7 @@ date (1): best
 </div>
 </div>
 <p>You can see that only the first column read as a date, and the rest read as characters. You can set the date format using the <code>col_types</code> argument and two helper functions, <code>cols()</code> and <code>col_date()</code>.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>ct <span class="ot">&lt;-</span> <span class="fu">cols</span>(<span class="at">ok =</span> <span class="fu">col_date</span>(<span class="st">"%Y %B %d"</span>),</span>
 <span id="cb5-2"><a href="#cb5-2"></a>           <span class="at">bad =</span> <span class="fu">col_date</span>(<span class="st">"%B %d, %Y"</span>),</span>
 <span id="cb5-3"><a href="#cb5-3"></a>           <span class="at">terrible =</span> <span class="fu">col_date</span>(<span class="st">"%a is %m %y %d"</span>))</span>
@@ -379,7 +439,7 @@ date (1): best
 </section><section id="parsing" class="level2" data-number="J.2"><h2 data-number="J.2" class="anchored" data-anchor-id="parsing">
 <span class="header-section-number">J.2</span> Parsing</h2>
 <p>The <code>ymd</code> functions can deal with almost all date formats, regardless of the punctuation used in the format. All of the examples below produce a date in the standard format “2022-01-03”.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># year-month-day orders</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="fu">ymd</span>(<span class="st">"22 Jan 3"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="fu">ymd</span>(<span class="st">"2022 January 3rd"</span>)</span>
@@ -392,21 +452,11 @@ date (1): best
 <span id="cb6-10"><a href="#cb6-10"></a><span class="fu">dmy</span>(<span class="st">"3JAN22"</span>)</span>
 <span id="cb6-11"><a href="#cb6-11"></a><span class="fu">dmy</span>(<span class="st">"3rd of January in the year 2022"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<div class="try">
 <p>See if you can make a date format that one of the parsers <em>can’t</em> handle.</p>
 </div>
-</div>
 <p>There are similar functions for date/times, too.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">ymd_hms</span>(<span class="st">"2022 Jan 3, 6:05 and 20s pm"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="fu">mdy_h</span>(<span class="st">"January 3rd, 2022 at 6pm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -415,7 +465,7 @@ Note
 </div>
 </div>
 <p>The date/time functions can also take a timezone argument. If you don’t specify it, it defaults to “UTC”.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-03 18:05"</span>, <span class="at">tz =</span> <span class="st">"GMT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-01-03 18:05:00 GMT"</code></pre>
@@ -424,7 +474,7 @@ Note
 </section><section id="get-parts" class="level2" data-number="J.3"><h2 data-number="J.3" class="anchored" data-anchor-id="get-parts">
 <span class="header-section-number">J.3</span> Get Parts</h2>
 <p>You frequently need to extract parts of a date/time for plotting. The following functions extract specific parts of a date or datetime object. This is a godsend for those of us who never have a clue what week of the year it is today.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># get the date and time when this function is run</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>now <span class="ot">&lt;-</span> <span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"GMT"</span>)</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
@@ -447,22 +497,22 @@ Note
 <span id="cb11-20"><a href="#cb11-20"></a><span class="fu">str</span>(time_parts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 12
- $ second : num 47.2
- $ minute : int 24
- $ hour   : int 12
- $ day    : int 5
- $ wday   : num 5
- $ yday   : num 249
- $ week   : num 36
- $ isoweek: num 36
- $ epiweek: num 36
+ $ second : num 23.6
+ $ minute : int 40
+ $ hour   : int 13
+ $ day    : int 20
+ $ wday   : num 6
+ $ yday   : num 264
+ $ week   : num 38
+ $ isoweek: num 38
+ $ epiweek: num 38
  $ month  : num 9
  $ year   : num 2024
  $ tz     : chr "GMT"</code></pre>
 </div>
 </div>
 <p>The <code>month()</code> and <code>wday()</code> functions can return factor labels.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>jan1 <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="dv">20220101</span>)</span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">wday</span>(jan1, <span class="at">label =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="fu">wday</span>(jan1, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">TRUE</span>)</span>
@@ -479,22 +529,21 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat
 12 Levels: Jan &lt; Feb &lt; Mar &lt; Apr &lt; May &lt; Jun &lt; Jul &lt; Aug &lt; Sep &lt; ... &lt; Dec</code></pre>
 </div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="try">
+<p>What day of the week were you born?</p>
+<div class="cell" data-webex.hide="true">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What day of the week were you born?</p>
-<div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="webex-solution">
-<button>
 Solution
-</button>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>birthdate <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="dv">19761118</span>) <span class="co"># put your own birthdate here</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="fu">wday</span>(birthdate, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -505,37 +554,38 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 </div>
 </div>
 </div>
+</div>
 </section><section id="date-arithmetic" class="level2" data-number="J.4"><h2 data-number="J.4" class="anchored" data-anchor-id="date-arithmetic">
 <span class="header-section-number">J.4</span> Date Arithmetic</h2>
 <p>You can add and subtract dates. For example, you can get the dates two weeks from today by adding <code>weeks(2)</code> to <code>today()</code>. You can probably guess how to add and subtract seconds, minutes, days, months, and years.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">today</span>() <span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-12"</code></pre>
+<pre><code>[1] "2024-09-27"</code></pre>
 </div>
 </div>
-<div class="try callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="try">
+<p>What day of the week will your 100th birthday be?</p>
+<div class="cell" data-webex.hide="true">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What day of the week will your 100th birthday be?</p>
-<div class="cell" data-layout-align="center" data-webex.hide="true">
-<div class="webex-solution">
-<button>
 Solution
-</button>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>birthdate <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="dv">19761118</span>) <span class="co"># put your own birthdate here</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>centennial <span class="ot">&lt;-</span> birthdate <span class="sc">+</span> <span class="fu">years</span>(<span class="dv">100</span>)</span>
 <span id="cb19-3"><a href="#cb19-3"></a><span class="fu">wday</span>(centennial, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Wednesday
 7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -552,14 +602,14 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>What do you think will happen if you subtract one month from March 31st? You get NA, since February doesn’t have a 31st day.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">ymd</span>(<span class="dv">20220331</span>) <span class="sc">-</span> <span class="fu">months</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
 <p>Use the special date operators <code>%m+%</code> and <code>%m-%</code> to add and subtract months without risking an impossible date.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ymd</span>(<span class="dv">20220331</span>) <span class="sc">%m-%</span> <span class="fu">months</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-02-28"</code></pre>
@@ -570,7 +620,7 @@ Warning
 <section id="first-and-last-of-month" class="level3" data-number="J.4.1"><h3 data-number="J.4.1" class="anchored" data-anchor-id="first-and-last-of-month">
 <span class="header-section-number">J.4.1</span> First and last of month</h3>
 <p>For things like billing, you might need to find the first or last days of the current, previous, or next month. The <code>rollback()</code> and <code>rollforward()</code> functions are easier than trying to parse dates.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>d <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2022-01-24"</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">rollback</span>(d)                          <span class="co"># last day of the previous month</span></span>
 <span id="cb25-3"><a href="#cb25-3"></a><span class="fu">rollforward</span>(d)                       <span class="co"># last day of the current month</span></span>
@@ -586,7 +636,7 @@ Warning
 </section><section id="rounding" class="level3" data-number="J.4.2"><h3 data-number="J.4.2" class="anchored" data-anchor-id="rounding">
 <span class="header-section-number">J.4.2</span> Rounding</h3>
 <p>You can round dates and times to the nearest unit. This can be useful when you have, for example, time measured to the nearest second, but want to group data by the nearest hour, rather than extract the hour component.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:25"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:30"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
 <span id="cb27-3"><a href="#cb27-3"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:35"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -599,7 +649,7 @@ Warning
 </section></section><section id="internationalisation" class="level2" data-number="J.5"><h2 data-number="J.5" class="anchored" data-anchor-id="internationalisation">
 <span class="header-section-number">J.5</span> Internationalisation</h2>
 <p>You may need to work with dates from a different locale than your computer’s defaults, such as dates written in French or Russian. Or your computer may have a non-English locale. Set the <code>locale</code> argument to the relevant language code.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ymd</span>(<span class="st">"2022 January 24"</span>, <span class="at">locale =</span> <span class="st">"en_GB"</span>)</span>
 <span id="cb29-2"><a href="#cb29-2"></a><span class="fu">ymd</span>(<span class="st">"2022 Janvier 24"</span>, <span class="at">locale =</span> <span class="st">"fr_FR"</span>)</span>
 <span id="cb29-3"><a href="#cb29-3"></a><span class="fu">wday</span>(<span class="st">"2022-01-03"</span>, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">locale =</span> <span class="st">"ru_RU"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -611,7 +661,7 @@ Levels: вс &lt; пн &lt; вт &lt; ср &lt; чт &lt; пт &lt; сб</code><
 </div>
 </div>
 <p>Some of the locale functions only work on unix-based machines, like Macs or machines running linux.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="co"># check your own locale; doesn't work for Windows</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a><span class="fu">locale</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -629,7 +679,7 @@ Months: January (Jan), February (Feb), March (Mar), April (Apr), May (May),
 AM/PM:  AM/PM</code></pre>
 </div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># check which locales are available on your computer</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a><span class="co"># doesn't work for Windows</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a><span class="fu">system</span>(<span class="st">"locale -a"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -637,7 +687,7 @@ AM/PM:  AM/PM</code></pre>
 </section><section id="example" class="level2" data-number="J.6"><h2 data-number="J.6" class="anchored" data-anchor-id="example">
 <span class="header-section-number">J.6</span> Example</h2>
 <p>Let’s work through some examples with downloaded tweets from the <a href="data/data.zip">class data</a>.</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># read all metrics files in data/tweets/</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>tweets <span class="ot">&lt;-</span> <span class="fu">list.files</span>(</span>
 <span id="cb34-3"><a href="#cb34-3"></a>  <span class="at">path =</span> <span class="st">"data/tweets"</span>, </span>
@@ -648,7 +698,7 @@ AM/PM:  AM/PM</code></pre>
 <span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="fu">starts_with</span>(<span class="st">"promoted"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>time</code> column is already in date/time (POSIXct) format, but what if we wanted to plot tweets by hour for each day of the week?</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>tweets <span class="sc">%&gt;%</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> <span class="fu">wday</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb35-3"><a href="#cb35-3"></a>         <span class="at">hour =</span> <span class="fu">hour</span>(time)) <span class="sc">%&gt;%</span></span>
@@ -662,22 +712,22 @@ AM/PM:  AM/PM</code></pre>
 ℹ Please use `linewidth` instead.</code></pre>
 </div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-dates_files/figure-html/weekday-tweets-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<div>
+<figure class="figure"><p><img src="images/figures/weekday-tweets-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>A nice side-effect of using the lubridate function to get days of the week or months of the year is that the results are an ordered factor, so display correctly in a plot. Let’s display the months in Greek (if that’s available on your system).</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>tweets <span class="sc">%&gt;%</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>, <span class="at">locale =</span> <span class="st">"el_GR.UTF-8"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">fill =</span> month)) <span class="sc">+</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge=</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="app-dates_files/figure-html/month-tweets-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+<div>
+<figure class="figure"><p><img src="images/figures/month-tweets-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -859,20 +909,12 @@ window.onload = function() {
 
 </script><script>
 $( document ).ready(function() {
-  var cite = ' ';
-  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
-  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
-
-  $("footer div.row div:eq(1) p").html(
-    psyteachr + license + cite
-  );
-
   function move_sidebar() {
     var w = window.innerWidth;
-    if (w < 992) {
-      $("#toc").appendTo($("#main-nav"));
+    if (w < 768) {
+      $("#TOC").appendTo($("#quarto-sidebar .sidebar-menu-container"));
     } else {
-      $("#toc").appendTo($("div.sidebar-chapter"));
+      $("#TOC").appendTo($("#quarto-margin-sidebar"));
     }
   }
   move_sidebar();
@@ -1176,125 +1218,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         return "";
       }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;

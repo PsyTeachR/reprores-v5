@@ -1,14 +1,16 @@
-# Intro to R and RStudio {#sec-intro}
+# Introduction {#sec-intro}
 
-<div class="meme right"><img src="images/memes/rstudio.png" 
-     alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" /></div>
+::: {.meme .right}
+![](images/memes/rstudio.png){fig-alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'"}
+:::
+
 
 ## Intended Learning Outcomes {#sec-ilo-intro .unnumbered .ilo}
 
-- Install R and RStudio
-- Be able to install add-on packages
-- Be able to get help for packages and functions
-- Be able to create objects by writing and running code in the console
+- [ ] Install R and RStudio 
+- [ ] Install add-on packages
+- [ ] Get help for packages and functions
+- [ ] Create objects by writing and running code in the console
 
 ## Functions used {#sec-functions-intro .unnumbered}
 
@@ -21,6 +23,7 @@ library(devtools)
 * built-in (you can always use these without loading any packages)
     * base:: `.rs.restartR()`, `as.Date()`, `library()`, `paste()`, `sample()`, `Sys.Date()`
     * utils:: `help()`, `install.packages()`, `vignette()`
+    * stats:: `sample()`, `rnorm()`
 * other (you need to load each package to use these)
     * beepr:: `beepr::beep()`
     * devtools:: `devtools::install_github()`
@@ -33,26 +36,13 @@ Download the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/html
 
 R is a programming language that you will write code in and RStudio is a program that makes working in R easier. 
 
+::: {.try}
 @sec-installing-r has technical details on installing R and RStudio on your computer. Once you have installed R and RStudio, come back to this chapter. If you already had R and/or RStudio installed, we recommend updating to the latest version before you work through this course. @sec-updating-r has more details on how to do that. Here, we'll concentrate on introducing you to RStudio's interface and getting it configured.
-
-::: {.callout-note}
-## Book version
-
-```{r, echo=FALSE, eval=FALSE}
-# doesn't work while knitting, so copy and paste
-rstudioapi::versionInfo()$version
-rstudioapi::versionInfo()$release_name
-```
-
-
-This book was created using `r R.version.string` (`r R.version$nickname`) and RStudio version 2024.4.2.764 (Chocolate Cosmos). It was rendered with quarto version `r quarto::quarto_version()`.  Most of the content of this book will work fine in versions of R above 4.0 and earlier versions of RStudio, although there may be some small differences in the interface. 
 :::
-
-<!-- TODO: render the book in earlier versions to find out the limits here -->
 
 ### RStudio {#sec-rstudio_ide}
 
-When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use [RStudio](http://www.rstudio.com){target="_blank"}.  
+When you installed R, that gave your computer the ability to process the R programming language, and also installed an app called "R". We will never use that app. Instead, we will use [RStudio](http://www.rstudio.com).  
 
 ::: {.callout-warning}
 ## Launch R though the RStudio IDE
@@ -78,8 +68,10 @@ In the lower right pane, the most used tabs are the **Files** tab for directory 
 
 In this class, you will be learning how to do `r glossary("reproducible research")`.  This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the "trust but verify" motto. 
 
-<div class="meme right"><img src="images/memes/forgetting.jpg" 
-     alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory" /></div>
+
+::: {.meme .right}
+![](images/memes/forgetting.jpg){fig-alt = "Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory"}
+:::
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.
 
@@ -95,7 +87,11 @@ When you do things reproducibly, others can understand and check your work. This
 
 ### Themes and accessiblilty
 
-You can customise how R Studio looks to make it work for you. Click <if>Tools > Global Options > Appearance</if>. You can change the default font, font size, and general appearance of R Studio, including using dark mode. Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look nice!
+You can customise how R Studio looks to make it work for you. You can change the default font, font size, and general appearance of R Studio, including using dark mode. 
+
+::: {.try}
+Click <if>Tools > Global Options > Appearance</if>. Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look nice!
+:::
 
 
 ### Sessions {#sec-intro-sessions}
@@ -106,7 +102,9 @@ If you have the above settings configured correctly, when you open up RStudio an
 * <mac>Cmd-Shift-F10</mac> or <pc>Ctl-Shift-F10</pc>
 * type `.rs.restartR()` in the console
 
-Try doing each of these now. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item. 
+::: {.try}
+Try each method of restarting R. Additionally, now would be a good time to create a notebook where you can keep a record of useful hints and tips and things to try when your code isn't working. Add "restart R session" to this notebook as your first item. 
+:::
 
 ## Packages and functions {#sec-packages}
 
@@ -120,10 +118,13 @@ There is an important distinction between **installing** a package and **loading
 
 ### Installing a package {#sec-install-package}
 
-<div class="meme right"><img src="images/memes/pokemon.gif" alt="Pikachu and Eevee from Pokemon waving and high-five-ing" /></div>
+::: {.meme .right}
+![](images/memes/pokemon.gif){fig-alt="Pikachu and Eevee from Pokemon waving and high-five-ing"}
+:::
 
 This is done using `install.packages()`. This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not *loaded*) every time you open up R.
 
+::: {.try}
 Install the <pkg>tidyverse</pkg> package on your system. This is the main package we will use throughout this book for data wrangling, summaries, and visualisation. It is actually a bundle of packages, which we'll explain further in @sec-tidyverse.
 
 ```{r install-pckg, eval = FALSE, filename = "Run in the console"}
@@ -131,6 +132,7 @@ install.packages("tidyverse")
 ```
 
 If you get a message that says something like `package ‘tidyverse’ successfully unpacked and MD5 sums checked`, the installation was successful. If you get an error and the package wasn't installed, check the troubleshooting section of @sec-package-install-troubleshooting.
+:::
 
 ::: {.callout-caution}
 ## Install packages from the console only
@@ -138,11 +140,10 @@ If you get a message that says something like `package ‘tidyverse’ successfu
 Never install a package from inside a script. Only do this from the console pane or the packages tab of the lower right pane.
 :::
 
-Here are some other packages you'll want to install for the first two chapters.
+Here are some other packages you'll want to install for the first chapter.
 
 ```{r install-pckg-2, eval = FALSE, filename = "Run in the console"}
 install.packages("beepr")     # for beeps
-install.packages("quarto")    # for creating quarto files
 install.packages("devtools")  # for installing packages from github
 ```
 
@@ -157,11 +158,14 @@ devtools::install_github("debruine/compreprev")
 
 This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there where the app is launched and remains there until you close the app or restart. For example, when you run `library(devtools)` within a session, the functions in the package referred to by `devtools` will be made available for your R session. The next time you start R, you will need to run `library(devtools)` again if you want to access that package.
 
+
+::: {.try}
 After installing the <pkg>beepr</pkg> package, you can load it for your current R session as follows:
 
 ```{r library-pckg, filename="Run in the console"}
 library(beepr)
 ```
+:::
 
 You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you've already loaded.
 
@@ -177,13 +181,18 @@ Now you can run the function `beep()`.
 beep()
 ```
 
-A `r glossary("function")` is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more `r glossary("argument", "arguments")`. These are options that you can set. In the example above, the `sound` argument has a `r glossary("default value")` of `1`, which makes a "ping" sound. Try changing the argument to an integer between 1 and 11.
+A `r glossary("function")` is a name that refers to some code you can reuse. We'll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more `r glossary("argument", "arguments")`. These are options that you can set. In the example above, the `sound` argument has a `r glossary("default value")` of `1`, which makes a "ping" sound. 
+
+
+::: {.try}
+Try changing the argument to an integer between 1 and 11.
 
 ```{r beepr-demo-2, eval = FALSE, filename="Run in the console"}
 beep(sound = 8)
 ```
+:::
 
-If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a `r glossary("script")` or `r glossary("R Markdown")` or `r glossary("quarto")` document in the `r glossary("panes", "source pane")`, it won't run until you run the script, `r glossary("knit")` the R Markdown file, or run a code `r glossary("chunk")`. You'll learn more about this in @sec-reports.
+If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a `r glossary("script")` or `r glossary("quarto")` document in the `r glossary("panes", "source pane")`, it won't run until you run the script, `r glossary("render")` the file, or run a code `r glossary("chunk")`. You'll learn more about this in @sec-reports.
 
 ### Tidyverse {#sec-tidyverse}
 
@@ -212,7 +221,11 @@ When you load the <pkg>tidyverse</pkg> it automatically loads all of the above p
 
 If the package isn't loaded, use `?package_name::function_name` or specify the package in the `help()` function. When you aren't sure what package the function is in, use the shortcut `??function_name`.
 
-```{r help, eval = FALSE, filename = "Run in the console"}
+::: {.try}
+
+Use the methods above to get help for the `beepr::beep()` function.
+
+```{r help, eval = FALSE, filename = "Run in the console", webex.hide=TRUE}
 # if the package is loaded
 ?beepr
 help("beepr")
@@ -224,31 +237,33 @@ help("beep", package="beepr")
 # shows a list of potentially matching functions
 ??beep
 ```
+:::
 
-<div class="small_right" style="width: 50%; max-width: 400px;"><img src="images/intro/function_help.png" /></div>
 
 Function help is always organised in the same way. For example, look at the help for `?beepr::beep`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its `r glossary("argument", "arguments")`. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
 
 
-::: {.callout-note .try style="clear: both;"}
-## Function Help
+::: {.try}
+Use function help to answer the following questions.
 
 * What is the first argument to the `mean` function? `r mcq(c("trim", "na.rm", "mean", answer="x"))`
 * What package is `read_excel` in? `r mcq(c("readr", answer="readxl", "base", "stats"))`
 :::
 
 
-
+## Code Basics {#sec-code-basics}
 
 ### Arguments
 
 You can look up the arguments/options that a function has by using the help documentation. Some arguments are required, and some are optional. Optional arguments will often use a default (normally specified in the help documentation) if you do not enter any value.
 
+::: {.try}
 As an example, look at the help documentation for the function `sample()` which randomly samples items from a list. 
 
 ```{r help-doc, eval=FALSE, filename = "Run in the console"}
 ?sample
 ```
+:::
 
 The help documentation for `sample()` should appear in the bottom right help panel. In the usage section, we see that `sample()` takes the following form:
 
@@ -258,16 +273,18 @@ sample(x, size, replace = FALSE, prob = NULL)
 
 In the arguments section, there are explanations for each of the arguments. `x` is the list of items we want to choose from, `size` is the number of items we want to choose, `replace` is whether or not each item may be selected more than once, and `prob` gives the probability that each item is chosen. In the details section it notes that if no values are entered for `replace` or `prob` it will use defaults of `FALSE` (each item can only be chosen once) and `NULL` (all items will have equal probability of being chosen). Because there is no default value for `x` or `size`, they must be specified otherwise the code won't run.
 
-Let's try an example and just change the required arguments to `x` and `size` to ask R to choose 5 random letters (`letters` is a built-in `r glossary("vector")` of the 26 lower-case Latin letters). 
+::: {.try}
+Let's try an example and just change the required arguments `x` and `size` to ask R to choose from the set of `letters` (a built-in `r glossary("vector")` of the 26 lower-case Latin letters), 5 random values. 
 
 ```{r, echo = FALSE}
 # make sure values are the same
 set.seed(1242016)
 ```
 
-```{r rnorm-n}
+```{r}
 sample(x = letters, size = 5)
 ```
+:::
 
 :::{.callout-note  collapse="true"}
 ## Why are my letters different to your letters?
@@ -309,17 +326,26 @@ When you are first learning R, you may find it useful to write out the argument 
 
 In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.
 
-### Tab auto-complete
+### Tab auto-complete {#sec-tab-autocomplete}
 
 One very useful feature of R Studio is  tab auto-complete for functions. If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently. 
 
 ![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete}
 
+::: {.try}
+Use tab autocomplete to figure out the arguments to `rnorm()`. Create a vector of 20 numbers from a normal distribution with a mean of 100 and a standard deviation of 10.
 
-## Objects {#sec-objects}
+```{r, webex.hide=TRUE}
+rnorm(n = 20, mean = 100, sd = 10)
+```
+:::
 
-A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using `<-`.
 
+### Objects {#sec-objects}
+
+A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using `<-` or `=` (we will use `<-` in this book).
+
+::: {.try}
 Run the following code in the console, but change the values of `name` and `age` to your own details and change `halloween` to a holiday or date you care about.
 
 ```{r objects, filename = "Run in the console"}
@@ -328,6 +354,7 @@ age <- 47
 today <- Sys.Date()
 halloween <- as.Date("2024-10-31")
 ```
+:::
 
 You'll see that four objects now appear in the environment pane:
 
@@ -336,17 +363,21 @@ You'll see that four objects now appear in the environment pane:
 * `today` stores the result of the function `Sys.Date()`. This function returns your computer system's date. Unlike `name` and `age`, which are hard-coded (i.e., they will always return the values you enter), the contents of the object `today` will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.
 * `halloween` is also a date but it's hard-coded as a specific date. It's wrapped within the `as.Date()` function that tells R to interpret the character string you provide as a date rather than text.
 
-::: {.callout-note .try}
+::: {.try}
 To print the contents of an object, type the object's name in the console and press enter. Try printing all four objects now.
 :::
 
-Finally, a key concept to understand is that objects can interact and you can save the results of those interactions in new object. Edit and run the following code to create these new objects, and then print the contents of each new object. 
+Finally, a key concept to understand is that objects can interact and you can save the results of those interactions in new object. 
+
+::: {.try}
+Edit and run the following code to create these new objects, and then print the contents of each new object. 
 
 ```{r intro-objects, filename = "Run in the console"}
 decade <- age + 10
 full_name <- paste(name, "DeBruine")
 how_long <- halloween - today
 ```
+:::
 
 
 ## Getting help {#sec-help}
@@ -368,7 +399,7 @@ Generative AI platforms have exploded in popularity, particularly when it comes 
 
 ### Vignettes
 
-Many packages, especially [tidyverse](https://www.tidyverse.org/packages/){target="_blank"} ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. You can access them from a package's help page or with the `vignette()` function.
+Many packages, especially [tidyverse](https://www.tidyverse.org/packages/) ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. You can access them from a package's help page or with the `vignette()` function.
 
 ```{r, eval = FALSE, filename = "Run in the console"}
 # opens a list of available vignettes
@@ -379,7 +410,68 @@ vignette("ggplot2-specs", package = "ggplot2")
 ```
 
 
-## Glossary {#sec-glossary-intro}
+## Exercises {#sec-exercises-intro}
+
+### Restart R 
+
+Restart R, not RStudio. This should clear the environment tab, but not close your application window.
+
+```{block, webex.hide=TRUE}
+* Menu: <if>Session > Restart R</if>
+* <mac>Cmd-Shift-F10</mac> or <pc>Ctl-Shift-F10</pc>
+* type `.rs.restartR()` in the console
+```
+
+### Install a Package
+
+Install the <pkg>faux</pkg> package from CRAN.
+
+```{r, eval=FALSE, webex.hide=TRUE}
+install.packages("faux")   # for simulating data
+```
+
+### Load a Package
+
+Load the <pkg>faux</pkg> package.
+
+```{r, webex.hide=TRUE}
+library(faux)
+```
+
+### Use a Function
+
+Run the `make_id()` function.  Use tab autocomplete to figure out what the arguments are, and make it generate the following:
+
+```{r, echo = FALSE}
+make_id(5, prefix = "P", suffix = "_control", digits = 2)
+```
+
+```{r, eval=FALSE, webex.hide=TRUE}
+make_id(n = 5, prefix = "P", digits = 2, suffix = "_control")
+
+# this also works, if you keep the arguments in this order
+make_id(5, "P", 2, "_control")
+```
+
+### Get Help
+
+View the help files for `faux::rnorm_multi`.
+
+```{r, eval=FALSE, webex.hide=TRUE}
+?rnorm_multi
+```
+
+### Create an Object
+
+Use `faux::rnorm_multi()` to create an object called `sim_data`. Set the arguments so this is a table with 10 rows and 3 columns. Click on the object name in the Environment tab to view the table, or print it to the console. 
+
+```{r, webex.hide=TRUE}
+sim_data <- rnorm_multi(n = 10, vars = 3)
+
+sim_data # prints to the console
+```
+
+## Glossary {#sec-glossary-intro .unnumbered}
 
 The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our [PsyTeachR glossary](https://psyteachr.github.io/glossary/), which contains further information and examples.
 
@@ -387,10 +479,10 @@ The glossary at the end of each chapter defines common jargon you might encounte
 glossary_table()
 ```
 
-## Further Resources {#sec-resources-intro}
 
-* [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf){target="_blank"}
-* [RStudio Cloud](https://rstudio.cloud/){target="_blank"}
+## Further Resources {#sec-resources-intro .unnumbered}
 
+* [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
+* [RStudio Cloud](https://rstudio.cloud/)
 
 

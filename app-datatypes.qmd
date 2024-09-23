@@ -106,7 +106,7 @@ logi <- c("integer", "double", "character", answer = "logical", "factor")
 fac <- c("integer", "double", "character", "logical", answer = "factor")
 ```
 
-::: {.callout-note .try}
+::: {.try}
 What data types are these:
 
 * `100` `r mcq(dbl)`
@@ -139,7 +139,7 @@ c("this", "is", "cool")
 1:6 # shortcut to make a vector of all integers x:y
 ```
 
-::: {.callout-note .try}
+::: {.try}
 What happens when you mix types? What class is the variable `mixed`?
 ```{r}
 mixed <- c(2, "good", 2L, "b", TRUE)
@@ -171,7 +171,7 @@ word <- c(18, 19, 20, 21, 4, 9, 15)
 LETTERS[word]
 ```
 
-::: {.callout-note .try}
+::: {.try}
 
 Can you decode the secret message?
 ```{r}
@@ -268,7 +268,7 @@ You can refer to elements of a list using square brackets like a vector, but you
 data_types$logical
 ```
 
-::: {.callout-note .try}
+::: {.try}
 
 Explore the 5 ways shown below to extract a value from a list. What data type is each object? What is the difference between the single and double brackets? Which one is the same as the dollar sign?
 
@@ -364,10 +364,8 @@ bends_name <- avatar[, c("bends", "name")] # subset table (by name)
 toph       <- avatar[[2, 1]] # single cell (row, col)
 ```
 
-## Glossary {#sec-glossary-datatypes}
+## Glossary {#sec-glossary-datatypes .unnumbered}
 
-```{r, echo = FALSE, results='asis'}
-glossary_table(as_kable = FALSE) |> 
-  kableExtra::kable(row.names = FALSE, escape = FALSE) |>
-  unclass() |> cat()
+```{r, echo = FALSE}
+glossary_table()
 ```
