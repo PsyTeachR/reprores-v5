@@ -1,22 +1,18 @@
-# Data Summaries {#sec-summary}
+# Data Summaries {#sec-summary .incomplete-chapter}
 
 <div class="right meme"><img src="images/memes/read_csv.png"
      alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" /></div>
 
-:::{.callout-info .ilo}
-## Learning Objectives {#ilo-data}
+## Intended Learning Outcomes {#ilo-data - .ilo}
 
-1. Be able to [structure data](#data-structure) for scripting
-2. Load [built-in datasets](#builtin) [(video)](https://youtu.be/Z5fK5VGmzlY){class="video"}
-3. [Import data](#import_data) from CSV and Excel files [(video)](https://youtu.be/a7Ra-hnB8l8){class="video"}
-4. Create a [data table](#tables-data) [(video)](https://youtu.be/k-aqhurepb4){class="video"}
-5. Understand and use the [basic data types](#data_types) [(video)](https://youtu.be/jXQrF18Jaac){class="video"}
-6. Understand and use the [basic container types](#containers) (list, vector) [(video)](https://youtu.be/4xU7uKNdoig){class="video"}
-7. Use [vectorized operations](#vectorized_ops) [(video)](https://youtu.be/9I5MdS7UWmI){class="video"}
-8. Be able to [troubleshoot](#Troubleshooting) common data import problems [(video)](https://youtu.be/gcxn4LJ_vAI){class="video"}
-:::
+- [ ] Be able to structure data for scripting
+- [ ] Import data from CSV and Excel files
+- [ ] Be able to summarise data by groups
+- [ ] Be able to produce well-formatted tables
+- [ ] Use pipes to chain together functions
 
-## Functions used {#sec-func-summary .unnumbered}
+
+## Functions used {#sec-func-summary -}
 
 * built-in (you can always use these without loading any packages)
     * base:: `c()`, `dput()`, `library()`, `max()`, `mean()`, `min()`, `sum()`
@@ -28,7 +24,7 @@
 * other (you need to load each package to use these)
     * janitor:: `clean_names()`
 
-## Setup {#sec-setup-summary .unnumbered}
+## Setup {#sec-setup-summary -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `04-data.qmd`
@@ -490,13 +486,13 @@ Take a break and then try one (or more) of the following:
 
 Once you're done, share your knitted report and the Rmd file on Teams in the Week 04 channel.
 
-## Glossary {#sec-glossary-summary .unnumbered}
+## Glossary {#sec-glossary-summary -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-summary .unnumbered}
+## Further resources {#sec-resources-summary -}
 
 * [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 3: Data Transformation ](https://r4ds.hadley.nz/data-transform) in *R for Data Science*

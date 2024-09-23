@@ -1,24 +1,18 @@
-# Data Visualisation {#sec-viz}
+# Data Visualisation {#sec-viz .incomplete-chapter}
 
 :::{.meme .right}
 ![](images/memes/better_graphs.png){fig-alt="xkcd comic titled 'General quality of charts and graphs in scientific papers'; y-axis: BAD on the bottom to GOOD on the top; x-axis: 1950s to 2010s; Line graph increases with time except for a dip between 1990 and 2010 labelled POWERPOINT/MSPAINT ERA"}
 :::
 
-## Intended Learning Outcomes {#sec-ilo-viz .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-viz -}
 
-* Identify categorical versus continuous data
-* Create plots in layers using ggplot
-* Choose appropriate plots for data
+:::{.callout-note .ilo}
+- [ ] Identify categorical versus continuous data
+- [ ] Create plots in layers using ggplot
+- [ ] Choose appropriate plots for data
+:::
 
-## Functions used {#sec-functions-viz .unnumbered}
-
-```{r, include = FALSE}
-# load tidyverse packages separately so auto-links work in `func()` notation
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(lubridate)
-```
+## Functions used {#sec-functions-viz -}
 
 * built-in (you can always use these without loading any packages)
     * base:: , `as.numeric()`, `c()`, `factor()`, `mean()`, `seq()`, 
@@ -33,7 +27,7 @@ library(lubridate)
     * patchwork:: `patchwork::plot_layout()`
 
 
-## Set-up {#sec-setup-viz .unnumbered}
+## Set-up {#sec-setup-viz -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `03-dataviz.qmd`
@@ -669,9 +663,14 @@ ggplot(survey_data, aes(x = wait_time, y = call_time)) +
        caption = "Figure 1. As wait time increases, call time increases.")
 ```
 
-However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header, and some document types will even automatically number figures for you (you'll learn about this in @sec-linked-docs). You can also add alt-text descriptions for screen readers that describe the image.
+However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header. You can also add alt-text descriptions for screen readers that describe the image.
 
-```{r, eval = FALSE, verbatim='r fig-wait-vs-call, fig.cap="As wait time increases, call time increases.", fig.alt="A scatterplot showing wait time on the x-axis (range 0-360 seconds) and call time on the y-axis (range 0-180 seconds) with a trend line showing that as wait time increases, call time increases from about 60 wait/30 call to about 300 wait/65 call."'}
+```{r}
+#| echo: fenced
+#| label: fig-wait-vs-call
+#| fig-cap: "As wait time increases, call time increases."
+#| fig-alt: "A scatterplot showing wait time on the x-axis (range 0-360 seconds) and call time on the y-axis (range 0-180 seconds) with a trend line showing that as wait time increases, call time increases from about 60 wait/30 call to about 300 wait/65 call."
+
 # figure code here
 ```
 
@@ -952,7 +951,7 @@ ggplot(survey_data, aes(x = wait_time,
 ::: {.callout-tip collapse="true"}
 ## Frequency plot alternative
 
-Alternatively, you can use `geom_freqpoly()` to plot a line connecting the top of each bin (see @sec-freqpoly).
+Alternatively, you can use `geom_freqpoly()` to plot a line connecting the top of each bin.
 
 ```{r fig-groups-freqpoly, fig.cap = "A frequency plot with multiple groups."}
 # frequency plot
@@ -971,7 +970,12 @@ ggplot(survey_data, aes(x = wait_time,
 
 Another way to compare groups of continuous variables is the violin plot. This is like a density plot, but rotated 90 degrees and mirrored - the fatter the violin, the larger proportion of data points there are at that value.
 
-```{r fig-violin-plot, fig.width = 8, fig.height = 2.5, fig.cap = "The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations."}
+```{r}
+#| label: fig-violin-plot
+#| fig-width: 8
+#| fig-height: 2.5
+#| fig-cap: The default violin plot gives each shape the same area. Set scale='count' to make the size proportional to the number of observations."
+
 violin_area <- 
   ggplot(survey_data, aes(x = issue_category, y = wait_time)) +
   geom_violin() +
@@ -991,7 +995,11 @@ Boxplots serve a similar purpose to violin plots (without the giggles from the b
 
 Boxplots can be horizontal if you swap to x and y columns, and there are many other customisations you can apply.
 
-```{r fig-box-plot, fig.width = 8, fig.height = 2.5, fig.cap = "Boxplots."}
+```{r}
+#| label: fig-box-plot
+#| fig-width: 8
+#| fig-height: 2.5
+#| fig-cap: "Boxplots."
 boxplot <- ggplot(survey_data, aes(x = issue_category, y = wait_time)) +
  geom_boxplot() +
   ggtitle("Default vertical boxplot")
@@ -1253,62 +1261,82 @@ These are not, by any means, all the plot types that you can make in R. This cha
 
 ## Exercises
 
-For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to @sec-reports) to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you `r glossary("knit")` at every step so that you can see how your output changes.
+For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to @sec-reports) to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you `r glossary("render")` at every step so that you can see how your output changes.
 
-### New Markdown {#sec-exercises-new-rmd-3}
+### New Document
 
-Create and save a new R Markdown document named `plots_report.Rmd` and give it the title "Customer satisfaction report". Remove the default template text and then load the packages and code below in the set-up code chunk:
+* Create and save a new quarto document named `plots_report.qmd` 
+* Give it the title "Personality Data". 
+* Remove the default template text 
+* Add the code below in the set-up code chunk:
 
-```{r setup-report, message=FALSE}
+```{r}
+#| echo: fenced
+#| label: setup-report
+#| include: false
+
 library(tidyverse) 
 library(patchwork) 
 library(ggthemes)  
 library(lubridate) 
-library(knitr)
 
-survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+personality <- read_csv("https://psyteachr.github.io/reprores/data/personality_scores.csv")
 ```
 
-### Summary {#sec-exercises-summary}
+### Summary
 
-Create a level 1 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains and what each of the variables means (you can use the information from @sec-plots-loading-data if you like).
+Create a level 2 heading titled "Overview". Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means (you can use the information from the [personality_scores.json](https://psyteachr.github.io/reprores/data/personality_scores.json) codebook).
 
-### Presenting plots
+### Appropriate plots
 
-Pick your two favourites plots from all the examples we've made in this chapter. For each plot:
+Create a visualisation with an appropriate plot style for each question below:
 
-* Create a level 2 heading in your R Markdown document and give it an informative title.
-* Write a short summary that interprets the data shown in the plots - it's not enough just to present visualisations, effective reports will also help the reader understand the conclusions they should draw from the plots you've presented.
-* Look through the different themes available with [<pkg>ggtheme</pkg>](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) and  choose one to apply to your plots.
-* Make sure each plot has a figure caption (either by adding this to the `ggplot()` code or adding it to the code chunk options).
-* Organise your Markdown so that the plots are shown **after** the text summary.
+* What does the distribution of scores look like for Agreeableness (`Ag`)?
+* Are Extraversion (`Ex`) and Openness (`Op`) correlated?
+* How many people completed the questionnaire each year? (hint: `year(date)`)
 
 ### Combining plots
 
-Now, pick your two least favourite plots:
+Duplicate the code for your first plot and create the same for each of the five personality factors. Combine these 5 plots into a single figure.
+
+### Polishing plots
+
+For each plot:
+
+* Create a level 2 heading in your R Markdown document and give it an informative title.
+* Write a short summary that interprets the data shown in the plots - it's not enough just to present visualisations, effective reports will also help the reader understand the conclusions they should draw from the plots you've presented.
+* Make sure each plot has a figure caption.
+* Organise your report so that the plots are shown **after** the text summary in each section.
+
+
+### Inappropriate plots
+
+Pick one plot above and make a new version:
 
 * Adjust the visual aesthetics to make them look as bad and as difficult to read as possible.
-* Combine the plots with the original version using patchwork functions.
-* Write a short summary that explains why you think these plots are so bad.
-* Organise your Markdown so that the plots are shown **after** the text summary.
+* Combine the plot with the original version using patchwork functions.
+* Write a short summary that explains why you think this plot is so bad.
+* Organise your report so that this new plot is shown **after** the text summary.
 
-### Editing your Markdown display
+### Customising your report
 
-Adjust the set-up of your Markdown so that your knitted report does not show any code, messages, or warnings, and all figures are 8 x 5 (see @sec-rmd-setup).
-
+* Look through the different themes available with [<pkg>ggtheme</pkg>](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) and choose one to apply to all your plots.
+* Edit the YAML header of your quarto document so that your rendered report does not show any code, messages, or warnings.
+* Set the figure size for all figures to 8 x 5.
+* Add a table of contents
 
 ### Share your work
 
 Once you've completed this activity, post it in the Week 3 channel on Teams so that you can compare which plots you chose and visual style with other learners on the course.
 
-## Glossary {#sec-glossary-viz}
+## Glossary {#sec-glossary-viz -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
 
-## Further Resources {#sec-resources-viz}
+## Further Resources {#sec-resources-viz -}
 
 * [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 * [Data visualisation using R, for researchers who don't use R](https://psyteachr.github.io/introdataviz/) [@nordmann_2021]
@@ -1319,3 +1347,4 @@ glossary_table()
 * [Chapter 28: Graphics for communication](http://r4ds.had.co.nz/graphics-for-communication.html) of *R for Data Science*
 * [gganimate](https://gganimate.com/): A package for making animated plots
 
+## References {-}

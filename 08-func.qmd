@@ -1,41 +1,17 @@
-# Iteration & Functions {#sec-func}
+# Iteration & Functions {#sec-func .incomplete-chapter}
 
 ::: {.meme .right}
 ![](images/memes/functions.jpg){fig-alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions."}
 :::
 
 
-## Learning Objectives {#sec-ilo-func .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-func - .ilo}
 
-You will learn about functions and iteration by using simulation to calculate a power analysis for an independent samples t-test.
+- [ ] Work with basic iteration functions: `rep`, `seq`, `replicate`
+- [ ] Use `purrr::map()` and `apply()` functions
+- [ ] Write your own custom functions with `function()` 
 
-### Basic {-}
-
-1. Work with basic [iteration functions](#iteration-functions) `rep`, `seq`, `replicate` [(video)](https://youtu.be/X3zFA71JzgE){class="video"}
-2. Use [`map()` and `apply()` functions](#map-apply) [(video)](https://youtu.be/HcZxQZwJ8T4){class="video"}
-3. Write your own [custom functions](#custom-functions) with `function()` [(video)](https://youtu.be/Qqjva0xgYC4){class="video"}
-4. Set [default values](#defaults) for the arguments in your functions
-
-### Intermediate {-}
-
-5. Understand [scope](#scope)
-6. Use [error handling and warnings](#warnings-errors) in a function
-
-### Advanced {-}
-
-<div class="right meme"><img src="images/memes/purrr.gif"
-     alt="Jacobim Mugatu (Will Ferrell) and Katinka Ingabogovinanana (Mila Jojovich) from Zoolander, sitting in a theatre with a small dog; bottom text: purrr::map so hot right now" /></div>
-
-The topics below are not (yet) covered in these materials, but they are directions for independent learning.
-
-7. Repeat commands having multiple arguments using `purrr::map2_*()` and `purrr::pmap_*()`
-8. Create **nested data frames** using `dplyr::group_by()` and `tidyr::nest()`
-9. Work with **nested data frames** in `dplyr`
-10. Capture and deal with errors using 'adverb' functions `purrr::safely()` and `purrr::possibly()`
-
-In the next two lectures, we are going to learn more about `r glossary("iteration")` (doing the same commands over and over) and custom `r glossary("function", "functions")` through a data simulation exercise, which will also prepare us more traditional statistical topics.
-
-## Setup  {#sec-setup-func .unnumbered}
+## Setup  {#sec-setup-func -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `03-dataviz.qmd`
@@ -56,7 +32,7 @@ Download the [Apply functions with purrr cheat sheet](https://raw.githubusercont
 
 ## Iteration functions {#sec-iteration-functions}
 
-We first learned about the two basic iteration functions, `rep()` and `seq()` in the [Working with Data](#rep_seq) chapter.
+In the next two lectures, we are going to learn more about `r glossary("iteration")` (doing the same commands over and over) and custom `r glossary("function", "functions")` through a data simulation exercise, which will also prepare us more traditional statistical topics. We first learned about the two basic iteration functions, `rep()` and `seq()` in the [Working with Data](#rep_seq) chapter.
 
 ### rep()
 
@@ -528,13 +504,13 @@ Calculate power via simulation and `power.t.test` for the following tests:
 * 20 subjects/group, A: m = 10, SD = 1; B: m = 12, SD = 1.5
 :::
 
-## Glossary {#sec-glossary-func .unnumbered}
+## Glossary {#sec-glossary-func -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further Resources {#sec-resources-func .unnumbered}
+## Further Resources {#sec-resources-func -}
 
 * Chapters 19 and 21 of [R for Data Science](http://r4ds.had.co.nz)
 * [Apply functions with purrr cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf)

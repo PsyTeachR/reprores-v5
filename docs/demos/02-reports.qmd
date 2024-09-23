@@ -1,0 +1,91 @@
+---
+title: "Reports"
+author: "Lisa DeBruine"
+date: 2024-10-04
+format: 
+  html:
+    df-print: kable
+    theme: superhero
+    toc: true
+    toc-depth: 3
+    toc-expand: true
+execute:
+  echo: false     # whether to show code chunks
+  message: false  # whether to show messages from your code
+  warning: false  # whether to show warnings from your code
+  fig-width: 8    # figure width in inches (at 96 dpi)
+  fig-height: 5   # figure height in inches (at 96 dpi)
+---
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+```
+
+## Basic Markdown {-}
+
+Now I can make:
+
+* headers
+* paragraphs
+* lists
+* [links](https://psyteachr.github.io/reprores-v4/)
+
+1. **bold**
+2. *italic*
+3. ~~strikethrough~~
+4. _subscript_
+5. ^superscript^
+6. `code`
+7. [ ] task item
+
+## Code Chunks
+
+```{r}
+# this is a code chunk
+name <- "Lisa"
+age <- 47
+today <- Sys.Date()
+halloween <- as.Date("2024-10-31")
+```
+
+My name is `r name` and I am `r age` years old. 
+It is `r halloween - today` days until Halloween, 
+which is my favourite holiday.
+
+## Data Analysis
+
+```{r}
+smalldata <- read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv")
+```
+
+```{r}
+# count how many are in each group
+group_counts <- count(smalldata, group)
+```
+
+The total number of participants in the **control** condition was `r group_counts$n[1]`. The total number of participants in the **experimental** condition was `r group_counts$n[2]`.
+
+### Visualisation
+
+```{r}
+ggplot(data = smalldata, 
+       mapping = aes(x = pre, 
+                     y = post, 
+                     color = group)) +
+  geom_point() +
+  labs(x = "Pre-test Score",
+       y = "Post-test Score")
+```
+
+### Tables
+
+All data are shown in @tbl-raw-data.
+
+```{r}
+#| label: tbl-raw-data
+#| tbl-cap: The raw data from the study.
+smalldata
+```
+

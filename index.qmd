@@ -27,6 +27,8 @@ rstudioapi::versionInfo()$release_name
 
 
 This book was created using `r R.version.string` (`r R.version$nickname`) and RStudio version 2024.4.2.764 (Chocolate Cosmos). It was rendered with quarto version `r quarto::quarto_version()`.  Most of the content of this book will work fine in versions of R above 4.0 and earlier versions of RStudio, although there may be some small differences in the interface. 
+
+This is the 4th version of the book and is currently under revision. You can access previous versions at: [v1](https://psyteachr.github.io/msc-data-skills), [v2](https://psyteachr.github.io/reprores-v2), and [v3](https://psyteachr.github.io/reprores-v3).
 :::
 
 <!-- TODO: render the book in earlier versions to find out the limits here -->

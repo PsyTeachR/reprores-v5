@@ -233,12 +233,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">11-refs.html</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./12-license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Licence/Citation</span></a>
   </div>
@@ -284,44 +278,38 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -369,7 +357,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><section id="what-is-the-best-way-to-share-r-code-on-microsoft-teams" class="level2" data-number="D.1"><h2 data-number="D.1" class="anchored" data-anchor-id="what-is-the-best-way-to-share-r-code-on-microsoft-teams">
+</header><p>If you are in the UofG Data Skills for Reproducible Research class, we will be using Teams for class communication and getting help. This page gives you some tips on how to do this effectively.</p>
+<section id="what-is-the-best-way-to-share-r-code-on-microsoft-teams" class="level2" data-number="D.1"><h2 data-number="D.1" class="anchored" data-anchor-id="what-is-the-best-way-to-share-r-code-on-microsoft-teams">
 <span class="header-section-number">D.1</span> What is the best way to share R code on Microsoft Teams?</h2>
 <p>You have run into a problem and need to get help on MS Teams. What is the right way to share your code?</p>
 <p>Please do <em>not</em> share <strong>only</strong> a screenshot unless you are asked, or if it is not the code that is giving you problems, but something weird is happening with the RStudio IDE.</p>
@@ -381,7 +370,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>The particular error that our code threw was</p>
 <pre><code>Error in mtcars %&gt;% filter(mpg &gt; 20) : could not find function "%&gt;%"</code></pre>
 <p>And the code that threw it was</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>mtcars <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -427,12 +416,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>For example, you may have a question about how to figure out how to select rows that contain the value “test” in a certain column, but it isn’t working. It’s clearer if you can provide a concrete example, but you don’t want to have to type out the whole table you’re using or all the code that got you to this point in your script.</p>
 <p>You can include a very small table with just the basics or a smaller version of your problem. Make comments at each step about what you expect and what you actually got.</p>
 <p>Which version is easier for you to figure out the solution?</p>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># this doesn't work</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>no_test_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(type, <span class="st">"test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-layout-align="center">
+<div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># with a minimal example table</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
 <span id="cb4-3"><a href="#cb4-3"></a>  <span class="sc">~</span>id, <span class="sc">~</span>type, <span class="sc">~</span>x,</span>

@@ -52,7 +52,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -233,12 +253,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./11-refs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">11-refs.html</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./12-license.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Licence/Citation</span></a>
   </div>
@@ -284,44 +298,38 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Exercises</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./app-debugging.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Debugging</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -375,16 +383,19 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li>
 <a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">3.10</span> Exercises</a>
   <ul class="collapse">
-<li><a href="#sec-exercises-new-rmd-3" id="toc-sec-exercises-new-rmd-3" class="nav-link" data-scroll-target="#sec-exercises-new-rmd-3"><span class="header-section-number">3.10.1</span> New Markdown</a></li>
-  <li><a href="#sec-exercises-summary" id="toc-sec-exercises-summary" class="nav-link" data-scroll-target="#sec-exercises-summary"><span class="header-section-number">3.10.2</span> Summary</a></li>
-  <li><a href="#presenting-plots" id="toc-presenting-plots" class="nav-link" data-scroll-target="#presenting-plots"><span class="header-section-number">3.10.3</span> Presenting plots</a></li>
+<li><a href="#new-document" id="toc-new-document" class="nav-link" data-scroll-target="#new-document"><span class="header-section-number">3.10.1</span> New Document</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3.10.2</span> Summary</a></li>
+  <li><a href="#appropriate-plots-1" id="toc-appropriate-plots-1" class="nav-link" data-scroll-target="#appropriate-plots-1"><span class="header-section-number">3.10.3</span> Appropriate plots</a></li>
   <li><a href="#combining-plots-1" id="toc-combining-plots-1" class="nav-link" data-scroll-target="#combining-plots-1"><span class="header-section-number">3.10.4</span> Combining plots</a></li>
-  <li><a href="#editing-your-markdown-display" id="toc-editing-your-markdown-display" class="nav-link" data-scroll-target="#editing-your-markdown-display"><span class="header-section-number">3.10.5</span> Editing your Markdown display</a></li>
-  <li><a href="#share-your-work" id="toc-share-your-work" class="nav-link" data-scroll-target="#share-your-work"><span class="header-section-number">3.10.6</span> Share your work</a></li>
+  <li><a href="#polishing-plots" id="toc-polishing-plots" class="nav-link" data-scroll-target="#polishing-plots"><span class="header-section-number">3.10.5</span> Polishing plots</a></li>
+  <li><a href="#inappropriate-plots" id="toc-inappropriate-plots" class="nav-link" data-scroll-target="#inappropriate-plots"><span class="header-section-number">3.10.6</span> Inappropriate plots</a></li>
+  <li><a href="#customising-your-report" id="toc-customising-your-report" class="nav-link" data-scroll-target="#customising-your-report"><span class="header-section-number">3.10.7</span> Customising your report</a></li>
+  <li><a href="#share-your-work" id="toc-share-your-work" class="nav-link" data-scroll-target="#share-your-work"><span class="header-section-number">3.10.8</span> Share your work</a></li>
   </ul>
 </li>
-  <li><a href="#sec-glossary-viz" id="toc-sec-glossary-viz" class="nav-link" data-scroll-target="#sec-glossary-viz"><span class="header-section-number">3.11</span> Glossary</a></li>
-  <li><a href="#sec-resources-viz" id="toc-sec-resources-viz" class="nav-link" data-scroll-target="#sec-resources-viz"><span class="header-section-number">3.12</span> Further Resources</a></li>
+  <li><a href="#sec-glossary-viz" id="toc-sec-glossary-viz" class="nav-link" data-scroll-target="#sec-glossary-viz">Glossary</a></li>
+  <li><a href="#sec-resources-viz" id="toc-sec-resources-viz" class="nav-link" data-scroll-target="#sec-resources-viz">Further Resources</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/03-viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/03-viz.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -407,11 +418,24 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p><img src="images/memes/better_graphs.png" class="img-fluid" alt="xkcd comic titled 'General quality of charts and graphs in scientific papers'; y-axis: BAD on the bottom to GOOD on the top; x-axis: 1950s to 2010s; Line graph increases with time except for a dip between 1990 and 2010 labelled POWERPOINT/MSPAINT ERA"></p>
 </div>
 <section id="sec-ilo-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-ilo-viz">Intended Learning Outcomes</h2>
-<ul>
-<li>Identify categorical versus continuous data</li>
-<li>Create plots in layers using ggplot</li>
-<li>Choose appropriate plots for data</li>
-</ul></section><section id="sec-functions-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-functions-viz">Functions used</h2>
+<div class="ilo callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul class="task-list">
+<li><label><input type="checkbox">Identify categorical versus continuous data</label></li>
+<li><label><input type="checkbox">Create plots in layers using ggplot</label></li>
+<li><label><input type="checkbox">Choose appropriate plots for data</label></li>
+</ul>
+</div>
+</div>
+</section><section id="sec-functions-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-functions-viz">Functions used</h2>
 <ul>
 <li>built-in (you can always use these without loading any packages)
 <ul>
@@ -433,7 +457,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
 <li>other (you need to load each package to use these)
 <ul>
-<li>ggthemes:: <code><a href="http://jrnold.github.io/ggthemes/reference/theme_gdocs.html">ggthemes::theme_gdocs()</a></code>
+<li>ggthemes:: <code><a href="https://rdrr.io/pkg/ggthemes/man/theme_gdocs.html">ggthemes::theme_gdocs()</a></code>
 </li>
 <li>patchwork:: <code><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html">patchwork::plot_layout()</a></code>
 </li>
@@ -514,7 +538,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>Variables can be classified as <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a> (numbers) or <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> (labels). When you’re plotting data, it’s important to know what kind of variables you have, which can help you decide what types of plots are most appropriate. Each variable also has a <a href="https://psyteachr.github.io/glossary/d#data-type" target="_blank" class="glossary" title="The kind of data represented by an object.">data type</a>, such as <a href="https://psyteachr.github.io/glossary/n#numeric" target="_blank" class="glossary" title="A data type representing a real decimal number or integer.">numeric</a> (numbers), <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> (text), or <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> (TRUE/FALSE values). Some plots can only work on some data types. Make sure you have watched the mini-lecture on types of data from last week before you work through this chapter. Additionally, <a href="app-datatypes.html" class="quarto-xref"><span>Appendix I</span></a> has more details, as this concept will be relevant repeatedly.</p>
+<p>Variables can be classified as <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a> (numbers) or <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> (labels). When you’re plotting data, it’s important to know what kind of variables you have, which can help you decide what types of plots are most appropriate. Each variable also has a <a href="https://psyteachr.github.io/glossary/d#data-type" target="_blank" class="glossary" title="The kind of data represented by an object.">data type</a>, such as <a href="https://psyteachr.github.io/glossary/n#numeric" target="_blank" class="glossary" title="A data type representing a real decimal number or integer.">numeric</a> (numbers), <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> (text), or <a href="https://psyteachr.github.io/glossary/l#logical" target="_blank" class="glossary" title="A data type representing TRUE or FALSE values.">logical</a> (TRUE/FALSE values). Some plots can only work on some data types. Make sure you have watched the mini-lecture on types of data from last week before you work through this chapter. Additionally, <a href="app-datatypes.html" class="quarto-xref"><span>Appendix H</span></a> has more details, as this concept will be relevant repeatedly.</p>
 <div id="fig-excel-format-cells" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-excel-format-cells-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/appx/excel-format-cells.png" class="img-fluid figure-img">
@@ -577,14 +601,14 @@ Do not factor numbers
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># the current date</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>lubridate<span class="sc">::</span><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-20"</code></pre>
+<pre><code>[1] "2024-09-23"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># the current date and time in the GMT timezone</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"GMT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-20 15:47:55 GMT"</code></pre>
+<pre><code>[1] "2024-09-23 13:18:44 GMT"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -726,7 +750,7 @@ Figure&nbsp;3.3: Final plot with scatterplot layer removed.
 </div>
 <section id="sec-plots-loading-data" class="level3" data-number="3.2.1"><h3 data-number="3.2.1" class="anchored" data-anchor-id="sec-plots-loading-data">
 <span class="header-section-number">3.2.1</span> Loading data</h3>
-<p>Let’s build up the plot above, layer by layer. First we need to get the data. We’ll learn how to load data from different sources in <a href="app-import.html" class="quarto-xref"><span>Appendix H</span></a>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.6.2</span></a> and load it from an online source.</p>
+<p>Let’s build up the plot above, layer by layer. First we need to get the data. We’ll learn how to load data from different sources in <a href="app-import.html" class="quarto-xref"><span>Appendix G</span></a>, but this time we’ll use the same method as we did in <a href="02-reports.html#sec-loading-online" class="quarto-xref"><span>Section 2.6.2</span></a> and load it from an online source.</p>
 <div class="try">
 <p>Load the survey data by copying the following into a code block in your script, and running the code.</p>
 <div class="cell">
@@ -806,7 +830,7 @@ Define objects before you use them
 <span class="header-section-number">3.2.2</span> Plot setup</h3>
 <section id="default-theme" class="level4" data-number="3.2.2.1"><h4 data-number="3.2.2.1" class="anchored" data-anchor-id="default-theme">
 <span class="header-section-number">3.2.2.1</span> Default theme</h4>
-<p>Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you’ve loaded the tidyverse package, add the following code and run it. You’ll learn more ways to customise your theme in <a href="#sec-themes" class="quarto-xref"><span>Section 3.2.3.4</span></a> and <a href="app-styling.html#sec-themes-appendix" class="quarto-xref"><span>Section K.3</span></a>.</p>
+<p>Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you’ve loaded the tidyverse package, add the following code and run it. You’ll learn more ways to customise your theme in <a href="#sec-themes" class="quarto-xref"><span>Section 3.2.3.4</span></a> and <a href="app-styling.html#sec-themes-appendix" class="quarto-xref"><span>Section J.3</span></a>.</p>
 <div class="try">
 <p>Add this code to your setup chunk. It needs to run before you make any plot.</p>
 <div class="cell">
@@ -821,13 +845,9 @@ Define objects before you use them
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> survey_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-blank-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-blank-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-blank-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-blank-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.4: A blank plot.
-</figcaption></figure>
+<div>
+<figure class="figure"><p><img src="images/figures/img-build-plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -844,13 +864,9 @@ Figure&nbsp;3.4: A blank plot.
 <span id="cb18-4"><a href="#cb18-4"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time)</span>
 <span id="cb18-5"><a href="#cb18-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-mapping" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-mapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-build-plot-mapping-1.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-mapping-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.5: A blank plot with x- and y- axes mapped.
-</figcaption></figure>
+<div>
+<figure class="figure"><p><img src="images/figures/img-build-plot-mapping-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -868,13 +884,9 @@ Figure&nbsp;3.5: A blank plot with x- and y- axes mapped.
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time)) <span class="sc">+</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-build-plot-geoms" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-build-plot-geoms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-build-plot-geoms-1.png" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-geoms-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.6: Adding a scatterplot with geom_point().
-</figcaption></figure>
+<div>
+<figure class="figure"><p><img src="images/figures/img-build-plot-labels-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
 </div>
 </div>
@@ -901,7 +913,7 @@ Location of the +
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="sc">+</span> <span class="fu">geom_point</span>() <span class="co"># scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error:
-! Cannot use `+` with a single argument.
+! Cannot use `+` with a single argument
 ℹ Did you accidentally put `+` on a new line?</code></pre>
 </div>
 </div>
@@ -928,7 +940,7 @@ Location of the +
 <img src="images/figures/fig-build-plot-geom2-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-geom2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.7: Points first versus line first.
+Figure&nbsp;3.4: Points first versus line first.
 </figcaption></figure>
 </div>
 </div>
@@ -970,7 +982,7 @@ Figure&nbsp;3.7: Points first versus line first.
 <img src="images/figures/fig-build-plot-geom2b-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-geom2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.8: Combining plots with patchwork.
+Figure&nbsp;3.5: Combining plots with patchwork.
 </figcaption></figure>
 </div>
 </div>
@@ -983,9 +995,7 @@ Figure&nbsp;3.8: Combining plots with patchwork.
 <p>There are nearly endless ways to customise ggplots. We’ll cover a few of the basic customisations here.</p>
 <section id="styling-geoms" class="level4" data-number="3.2.3.1"><h4 data-number="3.2.3.1" class="anchored" data-anchor-id="styling-geoms">
 <span class="header-section-number">3.2.3.1</span> Styling geoms</h4>
-<p>We should definitely put the line in front of the points, but the points are still a bit dark. If you want to change the overall style of a geom, you can set the arguments <code>colour</code>, <code>alpha</code>, <code>shape</code>, <code>size</code> and <code>linetype</code> inside the geom function. There are many different values that you can set these to; <a href="app-styling.html" class="quarto-xref"><span>Appendix K</span></a> gives details of these.</p>
-<div class="try">
-<p>Play around with different values below and figure out what the <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default values</a> are for <code>shape</code> and <code>size</code>.</p>
+<p>We should definitely put the line in front of the points, but the points are still a bit dark. If you want to change the overall style of a geom, you can set the arguments <code>colour</code>, <code>alpha</code>, <code>shape</code>, <code>size</code> and <code>linetype</code> inside the geom function. There are many different values that you can set these to; <a href="app-styling.html" class="quarto-xref"><span>Appendix J</span></a> gives details of these.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time)) <span class="sc">+</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
@@ -1003,11 +1013,13 @@ Figure&nbsp;3.8: Combining plots with patchwork.
 <img src="images/figures/fig-build-plot-style-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-style-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.9: Changing geom styles.
+Figure&nbsp;3.6: Changing geom styles.
 </figcaption></figure>
 </div>
 </div>
 </div>
+<div class="try">
+<p>Play around with different values above and figure out what the <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default values</a> are for <code>shape</code> and <code>size</code>.</p>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1019,7 +1031,7 @@ Setting aesthetics overall versus by category
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This method is only for changing the style of <em>all</em> the shapes made with that geom. If you want, for example, points to have different colours depending on which issue category they are from, you set the argument <code>colour = issue_category</code> inside the <code>aes()</code> function for the mapping. You can customise the colours used with <code>scale_</code> functions, which you will learn about below and in <a href="app-styling.html" class="quarto-xref"><span>Appendix K</span></a>.</p>
+<p>This method is only for changing the style of <em>all</em> the shapes made with that geom. If you want, for example, points to have different colours depending on which issue category they are from, you set the argument <code>colour = issue_category</code> inside the <code>aes()</code> function for the mapping. You can customise the colours used with <code>scale_</code> functions, which you will learn about below and in <a href="app-styling.html" class="quarto-xref"><span>Appendix J</span></a>.</p>
 </div>
 </div>
 </section><section id="format-axes" class="level4" data-number="3.2.3.2"><h4 data-number="3.2.3.2" class="anchored" data-anchor-id="format-axes">
@@ -1041,7 +1053,7 @@ Setting aesthetics overall versus by category
 <img src="images/figures/fig-build-plot-axes-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-axes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.10: Formatting plot axes with scale_ functions.
+Figure&nbsp;3.7: Formatting plot axes with scale_ functions.
 </figcaption></figure>
 </div>
 </div>
@@ -1061,18 +1073,10 @@ Figure&nbsp;3.10: Formatting plot axes with scale_ functions.
 <div class="try">
 <p>Set the y-axis name to “Call Time (seconds) and the breaks to every 60 seconds with minor breaks every 15 seconds. Check the help for <code>?scale_y_continuous</code> to see how you would set the minor units.</p>
 <div class="cell" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time)) <span class="sc">+</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
 <span id="cb32-3"><a href="#cb32-3"></a>             <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span> </span>
@@ -1087,10 +1091,8 @@ Solution
 <span id="cb32-12"><a href="#cb32-12"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">600</span>, <span class="at">by =</span> <span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-23-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-24-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1120,7 +1122,7 @@ Solution
 <img src="images/figures/fig-build-plot-limits-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-limits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.11: Changing the axis limits.
+Figure&nbsp;3.8: Changing the axis limits.
 </figcaption></figure>
 </div>
 </div>
@@ -1163,7 +1165,7 @@ Setting limits with the scale_ function
 <img src="images/figures/fig-build-plot-theme-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.12: Changing the theme to the Google Docs style.
+Figure&nbsp;3.9: Changing the theme to the Google Docs style.
 </figcaption></figure>
 </div>
 </div>
@@ -1194,7 +1196,7 @@ Figure&nbsp;3.12: Changing the theme to the Google Docs style.
 <img src="images/figures/fig-build-plot-custom-theme-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-build-plot-custom-theme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.13: Customising the theme to remove the x-axis line and background outline.
+Figure&nbsp;3.10: Customising the theme to remove the x-axis line and background outline.
 </figcaption></figure>
 </div>
 </div>
@@ -1227,14 +1229,20 @@ Figure&nbsp;3.13: Customising the theme to remove the x-axis line and background
 <img src="images/figures/fig-caption-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-caption-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.14: Adding a title, subtitle, and caption.
+Figure&nbsp;3.11: Adding a title, subtitle, and caption.
 </figcaption></figure>
 </div>
 </div>
 </div>
-<p>However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header, and some document types will even automatically number figures for you (you’ll learn about this in <span class="quarto-unresolved-ref">?sec-linked-docs</span>). You can also add alt-text descriptions for screen readers that describe the image.</p>
-<div class="cell" data-verbatim="r fig-wait-vs-call, fig.cap=&quot;As wait time increases, call time increases.&quot;, fig.alt=&quot;A scatterplot showing wait time on the x-axis (range 0-360 seconds) and call time on the y-axis (range 0-180 seconds) with a trend line showing that as wait time increases, call time increases from about 60 wait/30 call to about 300 wait/65 call.&quot;">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># figure code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header. You can also add alt-text descriptions for screen readers that describe the image.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1"></a><span class="in">```{r}</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="in">#| label: fig-wait-vs-call</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a><span class="in">#| fig-cap: "As wait time increases, call time increases."</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a><span class="in">#| fig-alt: "A scatterplot showing wait time on the x-axis (range 0-360 seconds) and call time on the y-axis (range 0-180 seconds) with a trend line showing that as wait time increases, call time increases from about 60 wait/30 call to about 300 wait/65 call."</span></span>
+<span id="cb37-5"><a href="#cb37-5"></a></span>
+<span id="cb37-6"><a href="#cb37-6"></a><span class="in"># figure code here</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section><section id="appropriate-plots" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="appropriate-plots">
 <span class="header-section-number">3.3</span> Appropriate plots</h2>
@@ -1255,27 +1263,19 @@ Figure&nbsp;3.14: Adding a title, subtitle, and caption.
 <img src="images/figures/fig-bar-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.15: A basic bar plot.
+Figure&nbsp;3.12: A basic bar plot.
 </figcaption></figure>
 </div>
 </div>
 </div>
 </section></section></section><section id="customising-bar-plot-appearance" class="level2 try" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="customising-bar-plot-appearance">
 <span class="header-section-number">3.4</span> Customising bar plot appearance</h2>
-<p>You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions <code>scale_fill_manual()</code> and <code>scale_x_discrete()</code> are new, but work in the same way as the other <code>scale_</code> functions. You’ll learn more about this in <span class="quarto-unresolved-ref">?sec-custom-viz</span>.</p>
+<p>You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions <code>scale_fill_manual()</code> and <code>scale_x_discrete()</code> are new, but work in the same way as the other <code>scale_</code> functions. You’ll learn more about this in <a href="10-next.html#sec-custom-viz" class="quarto-xref"><span>Section 10.1</span></a>.</p>
 <div class="cell" data-webex.hide="Code">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Code
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> issue_category, </span>
 <span id="cb39-2"><a href="#cb39-2"></a>                        <span class="at">fill =</span> issue_category)) <span class="sc">+</span></span>
 <span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
@@ -1308,8 +1308,6 @@ Code
 <div>
 <figure class="figure"><p><img src="images/figures/custom-bar-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1356,14 +1354,14 @@ Code
 <img src="images/figures/fig-col-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-col-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.16: A basic column plot.
+Figure&nbsp;3.13: A basic column plot.
 </figcaption></figure>
 </div>
 </div>
 </div>
 </section><section id="pie-chart" class="level4" data-number="3.4.0.2"><h4 data-number="3.4.0.2" class="anchored" data-anchor-id="pie-chart">
 <span class="header-section-number">3.4.0.2</span> Pie chart</h4>
-<p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html">misleading form of data visualisation</a>, so we won’t cover them. We’ll cover options for visualising proportions, like waffle, lollipop and treemap plots, in <span class="quarto-unresolved-ref">?sec-other-plots</span>.</p>
+<p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html">misleading form of data visualisation</a>, so we won’t cover them. We’ll cover options for visualising proportions, like waffle, lollipop and treemap plots, in <a href="10-next.html#sec-other-plots" class="quarto-xref"><span>Section 10.1.4</span></a>.</p>
 </section><section id="test-your-understanding" class="level2 try" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="test-your-understanding">
 <span class="header-section-number">3.5</span> Test your understanding</h2>
 <p>Here is a small data table.</p>
@@ -1407,8 +1405,8 @@ Figure&nbsp;3.16: A basic column plot.
 <option value="answer">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_SDGGBDVCOF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SDGGBDVCOF" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_SDGGBDVCOF" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_SDGGBDVCOF" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_SDGGBDVCOF" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_SDGGBDVCOF" value="x"><span>aes(y = population)</span></label>
+<div id="radio_LKFFOONRJE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 <li><p>What geom would you use to plot the number of countries on each island? <select class="webex-select"><option value="blank"></option>
@@ -1416,8 +1414,8 @@ Figure&nbsp;3.16: A basic column plot.
 <option value="x">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_VKXLZFVVVE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VKXLZFVVVE" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_VKXLZFVVVE" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VKXLZFVVVE" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VKXLZFVVVE" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_VKXLZFVVVE" value="x"><span>aes(y = population)</span></label>
+<div id="radio_JWBJIPHAIX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul></section><section id="sec-histogram" class="level3" data-number="3.5.1"><h3 data-number="3.5.1" class="anchored" data-anchor-id="sec-histogram">
@@ -1433,7 +1431,7 @@ Figure&nbsp;3.16: A basic column plot.
 <img src="images/figures/fig-histogram-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.17: Histogram of wait times.
+Figure&nbsp;3.14: Histogram of wait times.
 </figcaption></figure>
 </div>
 </div>
@@ -1458,7 +1456,7 @@ Figure&nbsp;3.17: Histogram of wait times.
 <img src="images/figures/fig-histogram-boundary0-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-boundary0-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.18: A histogram with the boundary set to 0.
+Figure&nbsp;3.15: A histogram with the boundary set to 0.
 </figcaption></figure>
 </div>
 </div>
@@ -1478,7 +1476,7 @@ Figure&nbsp;3.18: A histogram with the boundary set to 0.
 <img src="images/figures/fig-histogram-custom-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-custom-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.19: Histogram with custom styles.
+Figure&nbsp;3.16: Histogram with custom styles.
 </figcaption></figure>
 </div>
 </div>
@@ -1496,8 +1494,8 @@ Figure&nbsp;3.19: Histogram with custom styles.
 </div>
 <ul>
 <li>How would you set the mapping for this plot?
-<div id="radio_XKXTDOPEIR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XKXTDOPEIR" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XKXTDOPEIR" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_XKXTDOPEIR" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XKXTDOPEIR" value="x"><span>aes(x = population, y = count)</span></label>
+<div id="radio_UDEYGHZGZP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = population, y = count)</span></label>
 </div>
 </li>
 <li>What is the <code>binwidth</code> of the histogram? <select class="webex-select"><option value="blank"></option>
@@ -1507,7 +1505,7 @@ Figure&nbsp;3.19: Histogram with custom styles.
 <option value="">1M</option></select>
 </li>
 </ul></section><div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1516,7 +1514,7 @@ Axis label customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you’re curious how we got the x-axis labels to read “100K” instead of “100000”, you just need to add a vector of <code>labels</code> the same length as <code>breaks</code>.</p>
 <div class="cell">
@@ -1540,7 +1538,7 @@ Axis label customisation
 <span id="cb47-4"><a href="#cb47-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-32-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-33-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Histogram with categories represented by fill.</figcaption></figure>
 </div>
 </div>
@@ -1563,13 +1561,13 @@ Arguments inside aes()
 <span id="cb48-4"><a href="#cb48-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>,</span>
 <span id="cb48-5"><a href="#cb48-5"></a>                 <span class="at">fill =</span> issue_category)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'issue_category' not found</code></pre>
+<pre><code>Error in list2(binwidth = binwidth, bins = bins, na.rm = na.rm, orientation = orientation, : object 'issue_category' not found</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1578,7 +1576,7 @@ Area plot alternative
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The function <code>geom_area()</code> gives a similar effect when <code>stat = "bin"</code>.</p>
 <div class="cell">
@@ -1590,7 +1588,7 @@ Area plot alternative
 <span id="cb50-6"><a href="#cb50-6"></a>            <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-34-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Stacked area plot.</figcaption></figure>
 </div>
 </div>
@@ -1617,13 +1615,13 @@ Area plot alternative
 <img src="images/figures/fig-histogram-dodge-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histogram-dodge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.20: A histogram with multiple groups.
+Figure&nbsp;3.17: A histogram with multiple groups.
 </figcaption></figure>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1632,9 +1630,9 @@ Frequency plot alternative
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Alternatively, you can use <code>geom_freqpoly()</code> to plot a line connecting the top of each bin (see <span class="quarto-unresolved-ref">?sec-freqpoly</span>).</p>
+<p>Alternatively, you can use <code>geom_freqpoly()</code> to plot a line connecting the top of each bin.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># frequency plot</span></span>
 <span id="cb52-2"><a href="#cb52-2"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time,</span>
@@ -1654,7 +1652,7 @@ Frequency plot alternative
 <img src="images/figures/fig-groups-freqpoly-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-groups-freqpoly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.21: A frequency plot with multiple groups.
+Figure&nbsp;3.18: A frequency plot with multiple groups.
 </figcaption></figure>
 </div>
 </div>
@@ -1683,7 +1681,7 @@ Figure&nbsp;3.21: A frequency plot with multiple groups.
 <img src="images/figures/fig-violin-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-violin-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.22: The default violin plot gives each shape the same area. Set scale=‘count’ to make the size proportional to the number of observations.
+Figure&nbsp;3.19: The default violin plot gives each shape the same area. Set scale=‘count’ to make the size proportional to the number of observations.”
 </figcaption></figure>
 </div>
 </div>
@@ -1713,7 +1711,7 @@ Figure&nbsp;3.22: The default violin plot gives each shape the same area. Set sc
 <img src="images/figures/fig-box-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-box-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.23: Boxplots.
+Figure&nbsp;3.20: Boxplots.
 </figcaption></figure>
 </div>
 </div>
@@ -1753,13 +1751,13 @@ Figure&nbsp;3.23: Boxplots.
 <img src="images/figures/fig-violin-combos-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-violin-combos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.24: Violin plots combined with different methods to represent means and medians.
+Figure&nbsp;3.21: Violin plots combined with different methods to represent means and medians.
 </figcaption></figure>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1768,7 +1766,7 @@ Misleading Bar Charts
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A very common type of plot is to produce a bar chart of means, however, the example below demonstrates just how misleading this is. It communicates the mean value for each category, but the bars hide the distribution of the actual data. You can’t tell if most wait times are close to 3 minutes, or spread from 0 to 6 minutes, or if the vast majority are less than 2 minutes, but the mean is pulled up by some very high outliers.</p>
 <p>Column plots can also be very misleading. The plot on the left starts the y-axis at 0, which makes the bar heights proportional, showing almost no difference in average wait times. Since the differences are hard to see, you may be tempted to start the y-axis higher, but that makes it look like the average wait time for returns is double that for tech.</p>
@@ -1779,7 +1777,7 @@ Misleading Bar Charts
 <img src="images/figures/fig-col-plot-bad-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-col-plot-bad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.25: Don’t plot continuous data with column plots. They are only appropriate for count data.
+Figure&nbsp;3.22: Don’t plot continuous data with column plots. They are only appropriate for count data.
 </figcaption></figure>
 </div>
 </div>
@@ -1811,8 +1809,8 @@ Figure&nbsp;3.25: Don’t plot continuous data with column plots. They are only 
 <option value="x">geom_violinplot()</option></select>
 </li>
 <li>What does the mapping look like for both plots?
-<div id="radio_GYACYFFOVH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GYACYFFOVH" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_GYACYFFOVH" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_GYACYFFOVH" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_GYACYFFOVH" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label>
+<div id="radio_OYUDEGRCAR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label>
 </div>
 </li>
 <li>Which employee has the longest median call time? <select class="webex-select"><option value="blank"></option>
@@ -1854,7 +1852,7 @@ Figure&nbsp;3.25: Don’t plot continuous data with column plots. They are only 
 <img src="images/figures/fig-demo-point-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-demo-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.26: Scatterplot with geom_point().
+Figure&nbsp;3.23: Scatterplot with geom_point().
 </figcaption></figure>
 </div>
 </div>
@@ -1882,7 +1880,7 @@ Figure&nbsp;3.26: Scatterplot with geom_point().
 <img src="images/figures/fig-2-continuous-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.27: Different ways to show the relationship between two continuous variables.
+Figure&nbsp;3.24: Different ways to show the relationship between two continuous variables.
 </figcaption></figure>
 </div>
 </div>
@@ -1913,7 +1911,7 @@ Error shading
 <img src="images/figures/fig-date-x-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-date-x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.28: Plotting dates.
+Figure&nbsp;3.25: Plotting dates.
 </figcaption></figure>
 </div>
 </div>
@@ -1934,7 +1932,7 @@ Figure&nbsp;3.28: Plotting dates.
 <img src="images/figures/fig-date-month-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-date-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.29: Plotting dates with breaks one month apart.
+Figure&nbsp;3.26: Plotting dates with breaks one month apart.
 </figcaption></figure>
 </div>
 </div>
@@ -1943,18 +1941,10 @@ Figure&nbsp;3.29: Plotting dates with breaks one month apart.
 <span class="header-section-number">3.8</span> Test yourself</h2>
 <p>It looks like customer satisfaction declined across the year, but is this change meaningful? See what the plot looks like when the y-axis spans the full range of possible satisfaction values from 1 to 5. You can also plot the individual data points to emphasise the range of values.</p>
 <div class="cell" data-webex.hide="true">
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> lubridate<span class="sc">::</span><span class="fu">date</span>(call_start), </span>
 <span id="cb61-2"><a href="#cb61-2"></a>                        <span class="at">y =</span> satisfaction)) <span class="sc">+</span></span>
 <span id="cb61-3"><a href="#cb61-3"></a>  <span class="co"># show individual data, jitter the height to avoid overlap</span></span>
@@ -1969,10 +1959,8 @@ Solution
 <span id="cb61-12"><a href="#cb61-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"2020 Caller Satisfaction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-38-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1990,7 +1978,7 @@ Solution
 <img src="images/figures/fig-over-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-over-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.30: Overlapping data makes plots hard to understand.
+Figure&nbsp;3.27: Overlapping data makes plots hard to understand.
 </figcaption></figure>
 </div>
 </div>
@@ -2009,7 +1997,7 @@ Figure&nbsp;3.30: Overlapping data makes plots hard to understand.
 <img src="images/figures/fig-jitter-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitter-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.31: Jitter plot.
+Figure&nbsp;3.28: Jitter plot.
 </figcaption></figure>
 </div>
 </div>
@@ -2034,7 +2022,7 @@ Figure&nbsp;3.31: Jitter plot.
 <img src="images/figures/fig-fact-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fact-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.32: A histogram with facets.
+Figure&nbsp;3.29: A histogram with facets.
 </figcaption></figure>
 </div>
 </div>
@@ -2049,52 +2037,60 @@ More plots styles
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in <span class="quarto-unresolved-ref">?sec-custom-viz</span>). The <a href="#resources-viz">further resources</a> section at the end of this chapter lists many resources, but the <a href="http://www.r-graph-gallery.com/">R Graph Gallery</a> is especially useful to get inspiration for the kinds of beautiful plots you can make in R.</p>
+<p>These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in <a href="10-next.html#sec-custom-viz" class="quarto-xref"><span>Section 10.1</span></a>). The <a href="#resources-viz">further resources</a> section at the end of this chapter lists many resources, but the <a href="http://www.r-graph-gallery.com/">R Graph Gallery</a> is especially useful to get inspiration for the kinds of beautiful plots you can make in R.</p>
 </div>
 </div>
 </section><section id="exercises" class="level2" data-number="3.10"><h2 data-number="3.10" class="anchored" data-anchor-id="exercises">
 <span class="header-section-number">3.10</span> Exercises</h2>
-<p>For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to <a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>) to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you <a href="https://psyteachr.github.io/glossary/k#knit" target="_blank" class="glossary" title="To create an HTML, PDF, or Word document from an R Markdown (Rmd) document">knit</a> at every step so that you can see how your output changes.</p>
-<section id="sec-exercises-new-rmd-3" class="level3" data-number="3.10.1"><h3 data-number="3.10.1" class="anchored" data-anchor-id="sec-exercises-new-rmd-3">
-<span class="header-section-number">3.10.1</span> New Markdown</h3>
-<p>Create and save a new R Markdown document named <code>plots_report.Rmd</code> and give it the title “Customer satisfaction report”. Remove the default template text and then load the packages and code below in the set-up code chunk:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb65-2"><a href="#cb65-2"></a><span class="fu">library</span>(patchwork) </span>
-<span id="cb65-3"><a href="#cb65-3"></a><span class="fu">library</span>(ggthemes)  </span>
-<span id="cb65-4"><a href="#cb65-4"></a><span class="fu">library</span>(lubridate) </span>
-<span id="cb65-5"><a href="#cb65-5"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb65-6"><a href="#cb65-6"></a></span>
-<span id="cb65-7"><a href="#cb65-7"></a>survey_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://psyteachr.github.io/ads-v2/data/survey_data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section><section id="sec-exercises-summary" class="level3" data-number="3.10.2"><h3 data-number="3.10.2" class="anchored" data-anchor-id="sec-exercises-summary">
+<p>For the final step in this chapter, we will create a report of data visualisations. You may need to refer back to <a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>) to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you <a href="https://psyteachr.github.io/glossary/r#render" target="_blank" class="glossary" title="To create a file (usually an image or PDF) or widget from source code">render</a> at every step so that you can see how your output changes.</p>
+<section id="new-document" class="level3" data-number="3.10.1"><h3 data-number="3.10.1" class="anchored" data-anchor-id="new-document">
+<span class="header-section-number">3.10.1</span> New Document</h3>
+<ul>
+<li>Create and save a new quarto document named <code>plots_report.qmd</code>
+</li>
+<li>Give it the title “Personality Data”.</li>
+<li>Remove the default template text</li>
+<li>Add the code below in the set-up code chunk:</li>
+</ul></section><section id="summary" class="level3" data-number="3.10.2"><h3 data-number="3.10.2" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">3.10.2</span> Summary</h3>
-<p>Create a level 1 heading titled “Overview”. Underneath this heading, write a short summary of what the data set contains and what each of the variables means (you can use the information from <a href="#sec-plots-loading-data" class="quarto-xref"><span>Section 3.2.1</span></a> if you like).</p>
-</section><section id="presenting-plots" class="level3" data-number="3.10.3"><h3 data-number="3.10.3" class="anchored" data-anchor-id="presenting-plots">
-<span class="header-section-number">3.10.3</span> Presenting plots</h3>
-<p>Pick your two favourites plots from all the examples we’ve made in this chapter. For each plot:</p>
+<p>Create a level 2 heading titled “Overview”. Underneath this heading, write a short summary of what the data set contains (scores on a 5-factor personality questionnaire) and what each of the variables means (you can use the information from the <a href="https://psyteachr.github.io/reprores/data/personality_scores.json">personality_scores.json</a> codebook).</p>
+</section><section id="appropriate-plots-1" class="level3" data-number="3.10.3"><h3 data-number="3.10.3" class="anchored" data-anchor-id="appropriate-plots-1">
+<span class="header-section-number">3.10.3</span> Appropriate plots</h3>
+<p>Create a visualisation with an appropriate plot style for each question below:</p>
+<ul>
+<li>What does the distribution of scores look like for Agreeableness (<code>Ag</code>)?</li>
+<li>Are Extraversion (<code>Ex</code>) and Openness (<code>Op</code>) correlated?</li>
+<li>How many people completed the questionnaire each year? (hint: <code>year(date)</code>)</li>
+</ul></section><section id="combining-plots-1" class="level3" data-number="3.10.4"><h3 data-number="3.10.4" class="anchored" data-anchor-id="combining-plots-1">
+<span class="header-section-number">3.10.4</span> Combining plots</h3>
+<p>Duplicate the code for your first plot and create the same for each of the five personality factors. Combine these 5 plots into a single figure.</p>
+</section><section id="polishing-plots" class="level3" data-number="3.10.5"><h3 data-number="3.10.5" class="anchored" data-anchor-id="polishing-plots">
+<span class="header-section-number">3.10.5</span> Polishing plots</h3>
+<p>For each plot:</p>
 <ul>
 <li>Create a level 2 heading in your R Markdown document and give it an informative title.</li>
 <li>Write a short summary that interprets the data shown in the plots - it’s not enough just to present visualisations, effective reports will also help the reader understand the conclusions they should draw from the plots you’ve presented.</li>
-<li>Look through the different themes available with <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"><pkg>ggtheme</pkg></a> and choose one to apply to your plots.</li>
-<li>Make sure each plot has a figure caption (either by adding this to the <code>ggplot()</code> code or adding it to the code chunk options).</li>
-<li>Organise your Markdown so that the plots are shown <strong>after</strong> the text summary.</li>
-</ul></section><section id="combining-plots-1" class="level3" data-number="3.10.4"><h3 data-number="3.10.4" class="anchored" data-anchor-id="combining-plots-1">
-<span class="header-section-number">3.10.4</span> Combining plots</h3>
-<p>Now, pick your two least favourite plots:</p>
+<li>Make sure each plot has a figure caption.</li>
+<li>Organise your report so that the plots are shown <strong>after</strong> the text summary in each section.</li>
+</ul></section><section id="inappropriate-plots" class="level3" data-number="3.10.6"><h3 data-number="3.10.6" class="anchored" data-anchor-id="inappropriate-plots">
+<span class="header-section-number">3.10.6</span> Inappropriate plots</h3>
+<p>Pick one plot above and make a new version:</p>
 <ul>
 <li>Adjust the visual aesthetics to make them look as bad and as difficult to read as possible.</li>
-<li>Combine the plots with the original version using patchwork functions.</li>
-<li>Write a short summary that explains why you think these plots are so bad.</li>
-<li>Organise your Markdown so that the plots are shown <strong>after</strong> the text summary.</li>
-</ul></section><section id="editing-your-markdown-display" class="level3" data-number="3.10.5"><h3 data-number="3.10.5" class="anchored" data-anchor-id="editing-your-markdown-display">
-<span class="header-section-number">3.10.5</span> Editing your Markdown display</h3>
-<p>Adjust the set-up of your Markdown so that your knitted report does not show any code, messages, or warnings, and all figures are 8 x 5 (see <span class="quarto-unresolved-ref">?sec-rmd-setup</span>).</p>
-</section><section id="share-your-work" class="level3" data-number="3.10.6"><h3 data-number="3.10.6" class="anchored" data-anchor-id="share-your-work">
-<span class="header-section-number">3.10.6</span> Share your work</h3>
+<li>Combine the plot with the original version using patchwork functions.</li>
+<li>Write a short summary that explains why you think this plot is so bad.</li>
+<li>Organise your report so that this new plot is shown <strong>after</strong> the text summary.</li>
+</ul></section><section id="customising-your-report" class="level3" data-number="3.10.7"><h3 data-number="3.10.7" class="anchored" data-anchor-id="customising-your-report">
+<span class="header-section-number">3.10.7</span> Customising your report</h3>
+<ul>
+<li>Look through the different themes available with <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"><pkg>ggtheme</pkg></a> and choose one to apply to all your plots.</li>
+<li>Edit the YAML header of your quarto document so that your rendered report does not show any code, messages, or warnings.</li>
+<li>Set the figure size for all figures to 8 x 5.</li>
+<li>Add a table of contents</li>
+</ul></section><section id="share-your-work" class="level3" data-number="3.10.8"><h3 data-number="3.10.8" class="anchored" data-anchor-id="share-your-work">
+<span class="header-section-number">3.10.8</span> Share your work</h3>
 <p>Once you’ve completed this activity, post it in the Week 3 channel on Teams so that you can compare which plots you chose and visual style with other learners on the course.</p>
-</section></section><section id="sec-glossary-viz" class="level2" data-number="3.11"><h2 data-number="3.11" class="anchored" data-anchor-id="sec-glossary-viz">
-<span class="header-section-number">3.11</span> Glossary</h2>
+</section></section><section id="sec-glossary-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-viz">Glossary</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -2152,40 +2148,40 @@ More plots styles
 <td style="text-align: left;">A data type representing whole numbers.</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/k#knit" class="glossary" target="_blank">knit</a></td>
-<td style="text-align: left;">To create an HTML, PDF, or Word document from an R Markdown (Rmd) document</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/l#likert" class="glossary" target="_blank">likert</a></td>
 <td style="text-align: left;">A rating scale with a small number of discrete points in order</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/l#logical" class="glossary" target="_blank">logical</a></td>
 <td style="text-align: left;">A data type representing TRUE or FALSE values.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/m#median" class="glossary" target="_blank">median</a></td>
 <td style="text-align: left;">The middle number in a distribution where half of the values are larger and half are smaller.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/n#nominal" class="glossary" target="_blank">nominal</a></td>
 <td style="text-align: left;">Categorical variables that don't have an inherent order, such as types of animal.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/n#numeric" class="glossary" target="_blank">numeric</a></td>
 <td style="text-align: left;">A data type representing a real decimal number or integer.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/o#observation" class="glossary" target="_blank">observation</a></td>
 <td style="text-align: left;">All of the data about a single trial or question.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/o#ordinal" class="glossary" target="_blank">ordinal</a></td>
 <td style="text-align: left;">Discrete variables that have an inherent order, such as level of education or dislike/like.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/o#outlier" class="glossary" target="_blank">outlier</a></td>
 <td style="text-align: left;">A data point that is extremely distant from most of the other data points</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/r#render" class="glossary" target="_blank">render</a></td>
+<td style="text-align: left;">To create a file (usually an image or PDF) or widget from source code</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/s#string" class="glossary" target="_blank">string</a></td>
@@ -2211,12 +2207,11 @@ More plots styles
 </table>
 </div>
 </div>
-</section><section id="sec-resources-viz" class="level2" data-number="3.12"><h2 data-number="3.12" class="anchored" data-anchor-id="sec-resources-viz">
-<span class="header-section-number">3.12</span> Further Resources</h2>
+</section><section id="sec-resources-viz" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-resources-viz">Further Resources</h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf">ggplot2 cheat sheet</a></li>
 <li>
-<a href="https://psyteachr.github.io/introdataviz/">Data visualisation using R, for researchers who don’t use R</a> <span class="citation" data-cites="nordmann_2021">(<a href="#ref-nordmann_2021" role="doc-biblioref"><strong>nordmann_2021?</strong></a>)</span>
+<a href="https://psyteachr.github.io/introdataviz/">Data visualisation using R, for researchers who don’t use R</a> <span class="citation" data-cites="nordmann_2021">(<a href="#ref-nordmann_2021" role="doc-biblioref">Nordmann et al., 2021</a>)</span>
 </li>
 <li>
 <a href="https://r4ds.hadley.nz/data-visualize">Chapter 1: Data Visualisation</a> of <em>R for Data Science</em>
@@ -2230,9 +2225,14 @@ More plots styles
 </li>
 <li>
 <a href="https://gganimate.com/">gganimate</a>: A package for making animated plots</li>
-</ul>
+</ul></section><section id="references" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-nordmann_2021" class="csl-entry" role="listitem">
+Nordmann, E., McAleer, P., Toivo, W., Paterson, H., &amp; DeBruine, L. M. (2021). <em>Data visualisation using <span>R</span>, for researchers who don’t use <span>R</span></em>. PsyArXiv. <a href="https://doi.org/10.31234/osf.io/4huvw">https://doi.org/10.31234/osf.io/4huvw</a>
+</div>
+</div>
 </section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>
 
 /* update total correct if #webex-total_correct exists */

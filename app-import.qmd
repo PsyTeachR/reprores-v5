@@ -1,22 +1,25 @@
 # Data Import {#sec-data}
 
-THIS APPENDIX IS BEING UPDATED...
+## Intended Learning Outcomes {#sec-ilo-data - .ilo}
 
-## Intended Learning Outcomes {#sec-ilo-data .unnumbered}
+- [ ] Be able to inspect data
+- [ ] Import data from a range of sources
+- [ ] Identify and handle common problems with data import
 
-* Be able to inspect data
-* Be able to import data from a range of sources
-* Be able to identify and handle common problems with data import
 
-## Walkthrough video {#sec-walkthrough-data .unnumbered}
+## Set-up {#sec-setup-data -}
 
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/52d2249e-a737-42b4-bf55-267e39fc05c5/public) Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+## Setup  {#sec-setup-func -}
 
-## Set-up {#sec-setup-data}
+1. Open your `reprores` project 
+1. Create a new quarto file called `app-data-import.qmd`
+1. Update the YAML header 
+1. Replace the setup chunk with the one below: 
 
-Create a new project for the work we'll do in this chapter named `r path("app-data-import")`. Then, create and save a new R Markdown document named `data.Rmd`, get rid of the default template text, and load the packages in the set-up code chunk. You should have all of these packages installed already, but if you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
-
-```{r setup-data, message=FALSE, verbatim="r setup, include=FALSE"}
+```{r}
+#| echo: fenced
+#‎| label: setup
+#‎| include: false
 library(tidyverse)     # includes readr & tibble
 library(rio)           # for almost any data import/export
 library(haven)         # for SPSS, Stata,and SAS files
@@ -24,7 +27,6 @@ library(readxl)        # for Excel files
 library(googlesheets4) # for Google Sheets
 ```
 
-We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
 
 Download the [Data import cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf).
 
@@ -620,13 +622,13 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/
 `r unhide()`
 
 
-## Glossary {#sec-glossary-data}
+## Glossary {#sec-glossary-data -}
 
 ```{r, echo = FALSE, results='asis'}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-data}
+## Further resources {#sec-resources-data -}
 
 * [Data import cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf)
 * [Chapter 11: Data Import](http://r4ds.had.co.nz/data-import.html) in *R for Data Science*

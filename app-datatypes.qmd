@@ -364,7 +364,7 @@ bends_name <- avatar[, c("bends", "name")] # subset table (by name)
 toph       <- avatar[[2, 1]] # single cell (row, col)
 ```
 
-## Glossary {#sec-glossary-datatypes .unnumbered}
+## Glossary {#sec-glossary-datatypes -}
 
 ```{r, echo = FALSE}
 glossary_table()

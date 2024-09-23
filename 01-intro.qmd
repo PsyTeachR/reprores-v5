@@ -5,14 +5,14 @@
 :::
 
 
-## Intended Learning Outcomes {#sec-ilo-intro .unnumbered .ilo}
+## Intended Learning Outcomes {#sec-ilo-intro - .ilo}
 
 - [ ] Install R and RStudio 
 - [ ] Install add-on packages
 - [ ] Get help for packages and functions
 - [ ] Create objects by writing and running code in the console
 
-## Functions used {#sec-functions-intro .unnumbered}
+## Functions used {#sec-functions-intro -}
 
 ```{r, include = FALSE}
 # load tidyverse packages separately so auto-links work in `func()` notation
@@ -28,7 +28,7 @@ library(devtools)
     * beepr:: `beepr::beep()`
     * devtools:: `devtools::install_github()`
 
-## Setup {#sec-setup-intro .unnumbered}
+## Setup {#sec-setup-intro -}
 
 Download the [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
 
@@ -471,7 +471,7 @@ sim_data <- rnorm_multi(n = 10, vars = 3)
 sim_data # prints to the console
 ```
 
-## Glossary {#sec-glossary-intro .unnumbered}
+## Glossary {#sec-glossary-intro -}
 
 The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our [PsyTeachR glossary](https://psyteachr.github.io/glossary/), which contains further information and examples.
 
@@ -480,7 +480,7 @@ glossary_table()
 ```
 
 
-## Further Resources {#sec-resources-intro .unnumbered}
+## Further Resources {#sec-resources-intro -}
 
 * [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
 * [RStudio Cloud](https://rstudio.cloud/)

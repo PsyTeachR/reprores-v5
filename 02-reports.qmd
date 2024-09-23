@@ -4,13 +4,15 @@
 ![](images/memes/repro_reports.jpg){fig-alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"}
 :::
 
-## Intended Learning Outcomes {#sec-ilo-reports .unnumbered}
+
+## Intended Learning Outcomes {#sec-ilo-reports - .ilo}
 
 - [ ] Structure a project
 - [ ] Render a simple reproducible report with quarto
 - [ ] Create code chunks, tables, images, and inline R
 
-## Functions used {#functions-reports .unnumbered}
+
+## Functions used {#functions-reports -}
 
 ```{r, include = FALSE}
 # load tidyverse packages separately so auto-links work in `func()` notation
@@ -36,7 +38,7 @@ library(quarto)
 
 Download the [Quarto Cheat Sheet](https://rstudio.github.io/cheatsheets/html/quarto.html) and [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/).
 
-## Setup {#sec-setup-reports .unnumbered}
+## Setup {#sec-setup-reports -}
 
 For reference, here are the packages we will use in this chapter. You may need to install them, as explained in @sec-install-package, if running the code below in the console pane gives you the error `Error in library(package_name) : there is no package called ‘package_name’`. 
 
@@ -196,7 +198,7 @@ This is the `r glossary("YAML")` header, which provides information to quarto ab
 
 You will learn in @sec-yaml how to further customise your document using information in the header.
 
-### Markdown
+### Markdown {#sec-markdown}
 
 Now replace all of the text beneath the header with the following text. Make sure to skip a line or two after the three dashes.
 
@@ -247,7 +249,7 @@ When you create a new code chunk you should notice that the grey box starts and 
 ::: {.try}
 Inside your code chunk, add the code you created in @sec-objects.
 
-```{r, filename="02-reports.qmd"}
+```{r}
 name <- "Lisa"
 age <- 47
 today <- Sys.Date()
@@ -332,28 +334,36 @@ We're going to write a basic report for this dataset using quarto to show you so
 
 ### Setup Chunk
 
-Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. Add the following just below the YAML header. 
+Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. 
+
+::: {.try}
+Add the following just below the YAML header. 
 
 ```{r}
 #| echo: fenced
 #| label: setup
-#| include: false
 
 library(tidyverse)
 ```
+:::
 
 The chunk option `label` designates this as the setup chunk, and the `include` option makes sure that this chunk and any output it produces don't end up in your rendered document.
 
-The function `library(tidyverse)` makes tidyverse functions available to your script.
+The function `library(tidyverse)` makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.
 
 
 ### Online sources {#sec-loading-online}
 
-Now, rather than using objects we have created from scratch, we will read in a data file. First, let's try loading data that is stored online. Create a new level 2 header called "Data Analysis", add a code chunk below it, and copy, paste, and run the below code. This code loads some simulated experiment data.
+Now, rather than using objects we have created from scratch, we will read in a data file. First, let's try loading data that is stored online. 
 
-```{r, eval=FALSE, filename="02-reports.qmd"}
+::: {.try}
+Create a new level 2 header called "Data Analysis", add a code chunk below it, and copy, paste, and run the below code. This code loads some simulated experiment data.
+
+```{r, eval=FALSE}
 smalldata <- read_csv("https://psyteachr.github.io/reprores/data/smalldata.csv")
 ```
+
+:::
 
 - The data is stored in a `.csv` file so we're going to use the `read_csv()` function to load it in.
 - Note that the url is contained within double quotation marks - it won't work without this.
@@ -391,11 +401,15 @@ You can organise files in subdirectories inside this main project directory, suc
 
 In your `r path("reprores")` directory, create a new folder named `r path("data")`, [download a copy of the data file](https://psyteachr.github.io/reprores/data/smalldata.csv){download=""}, and save it in this new subdirectory.
 
-To load in data from a local file, again we can use the `read_csv()` function, but this time rather than specifying a url, give it the subdirectory and file name. Change the code in your file to the following.
+To load in data from a local file, again we can use the `read_csv()` function, but this time rather than specifying a url, give it the subdirectory and file name. 
 
-```{r read-csv, message=FALSE, filename="02-reports.qmd"}
+::: {.try}
+Change the code in your file to the following.
+
+```{r read-csv, message=FALSE}
 smalldata <- read_csv("data/smalldata.csv")
 ```
+:::
 
 ::: {.callout-tip}
 ## Tab-autocomplete file names
@@ -410,8 +424,6 @@ Things to note:
 -   Precision is important, if you have a typo in the file name it won't be able to find your file; remember that R is case sensitive - `SmallData.csv` is a completely different file to `smalldata.csv` as far as R is concerned.
 
 ::: {.try}
-## View smalldata
-
 Run `head()`, `summary()`, `str()`, and `View()` on `smalldata` to confirm that the data is the same as before.
 :::
 
@@ -419,12 +431,14 @@ Run `head()`, `summary()`, `str()`, and `View()` on `smalldata` to confirm that 
 
 For this report we're just going to present some simple stats for two groups: "control" and "exp". We'll come back to how to write this kind of code yourself in @sec-summary. For now, see if you can follow the logic of what the code is doing via the code comments.
 
+::: {.try}
 Create a new code chunk, then copy, paste and run the following code and then view `group_counts` by clicking on the object in the environment pane.
 
-```{r smalldata_counts, filename="02-reports.qmd"}
+```{r smalldata_counts}
 # count how many are in each group
 group_counts <- count(smalldata, group)
 ```
+:::
 
 Because each row of the dataset is a participant, this code gives us a nice and easy way of seeing how many participants were in each group; it just counts the number of rows in each group.
 
@@ -432,12 +446,13 @@ Because each row of the dataset is a participant, this code gives us a nice and 
 group_counts
 ```
 
+::: {.try}
 Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.
 
 ``` md
 The total number of participants in the **control** condition was `r group_counts$n[1]`.
 ```
-
+:::
 
 Try and match up the inline code with what is in the `group_counts` table. Of note:
 
@@ -446,12 +461,10 @@ Try and match up the inline code with what is in the `group_counts` table. Of no
 * So `group_counts$n[1]` asks the inline code to display the first observation of the variable `n` in the dataset `group_counts`.
 
 ::: {.try}
-## Further Practice
-
 Add another line that reports the total numbers of participants in the **experimental** condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
 
 `r hide()`
-```{verbatim, lang="markdown", filename="02-reports.qmd"}
+```{verbatim, lang="markdown"}
 The total number of participants in the **experimental** condition was `r group_counts$n[2]`.
 ```
 `r unhide()`
@@ -480,9 +493,10 @@ As the saying goes, a picture paints a thousand words and sometimes you will wan
 
 Create a code chunk to display a graph of the data in your document after the text we've written so far. We'll use some code that you'll learn more about in @sec-viz to make a simple bar chart that represents the sales data -- focus on trying to follow how bits of the code map on to the plot that is created.
 
-Copy and paste the below code. Run the code in your script to see the plot it creates and then render the file to see how it is displayed in your document.
+::: {.try}
+Add a new level-3 header called "Visualisation". Copy and paste the code below into a new chunk. Run the code in your script to see the plot it creates and then render the file to see how it is displayed in your document.
 
-```{r, filename="02-reports.qmd"}
+```{r}
 ggplot(data = smalldata, 
        mapping = aes(x = pre, 
                      y = post, 
@@ -491,6 +505,8 @@ ggplot(data = smalldata,
   labs(x = "Pre-test Score",
        y = "Post-test Score")
 ```
+
+:::
 
 You can also include images that you did not create in R using the markdown syntax for images. This is very similar to loading data in that you can either use an image that is stored on your computer, or via a url.  
 
@@ -517,13 +533,17 @@ knitr::include_graphics("images/reports/google-images.png")
 
 Rather than a figure, we might want to display our data in a table. 
 
-* Add a new level 2 heading (two hashtags) to your document, name the heading "Tables" and then create a new code chunk below this. 
+::: {.try}
+Add a new level 3 heading to your document, name the heading "Tables" and then create a new code chunk below this. 
+
+```{r, eval = FALSE}
+smalldata
+```
+::: 
 
 First, let's see what the table looks like if we don't make any edits. Simply write the name of the table you want to display in the code chunk (in our case `smalldata`) and then render to see what it looks like.
 
-```{r, eval = FALSE, filename="02-reports.qmd"}
-smalldata
-```
+
 
 ```
 # A tibble: 10 × 4
@@ -541,7 +561,10 @@ smalldata
 10 S10   exp     102.  114. 
 ```
 
-This isn't very pretty, but we can change the dataframe print style. Change the line `format: html` in the YAML header to the following. Make sure to keep the spaces exactly the same (YAML is very picky about spaces).
+This isn't very pretty, but we can change the print style. 
+
+::: {.try}
+Change the line `format: html` in the YAML header to the following. Make sure to keep the spaces exactly the same (YAML is very picky about spaces).
 
 
 ``` md
@@ -552,21 +575,22 @@ format:
 ---
 ```
 
-Also, add the following text above the chunk containing the table, and add the two commented lines to the chunk. These set the figure label so you can reference it in the document, and the table caption. The label must start with "tbl-" to automatically add it to the numbered list of tables.
+Add the following text above the chunk containing the table:
 
 ```{verbatim, lang='markdown'}
 All data are shown in @tbl-raw-data.
 ```
 
+Also, add the two commented lines below to the code chunk:
+
 ```{r}
 #| echo: fenced
 #| label: tbl-raw-data
 #| tbl-cap: The raw data from the study.
-smalldata
 ```
+:::
 
-
-Now, when you render your document, tables will display in "kable" format, which looks much nicer. 
+These set the figure label so you can reference it in the document, and the table caption. The label must start with "tbl-" to automatically add it to the numbered list of tables. Now, when you render your document, tables will display in "kable" format, which looks much nicer. 
 
 All data are shown in @tbl-raw-data2.
 
@@ -602,7 +626,6 @@ execute:
   warning: false  # whether to show warnings from your code
   fig-width: 8    # figure width in inches (at 96 dpi)
   fig-height: 5   # figure height in inches (at 96 dpi)
-  out-width:"50%" # figures/images span 50% of the page width
 ---
 ```
 
@@ -671,9 +694,6 @@ ggplot(data = smalldata,
        title = "Relationship between pre- and post-test by group")
 ```
 
-### Loading packages
-
-You should add the packages you need in your setup chunk using `library()`. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.
 
 ### YAML options {#sec-yaml}
 
@@ -681,10 +701,13 @@ You should add the packages you need in your setup chunk using `library()`. Ofte
 
 Finally, the `r glossary("YAML")` header is the bit at the very top of your quarto document. You can set several options here as well. 
 
-```{verbatim}
+
+::: {.callout-note}
+
+Update the format section. Try changing the values from `false` to `true` to see what the options do.
+
+``` md
 ---
-title: "Reports"
-author: "Your name"
 format:
   html:
     df-print: paged
@@ -692,11 +715,6 @@ format:
     toc: true
 ---
 ```
-
-::: {.callout-note}
-## Try
-
-Try changing the values from `false` to `true` to see what the options do.
 :::
 
 The `df-print: paged` option prints data frames using `rmarkdown::paged_table()` automatically. You can use `df_print: kable` to default to the simple kable style, but you will need the code from @sec-md-tables for more complex tables with kableExtra.
@@ -722,25 +740,29 @@ The error message will tell you exactly where the problem is (the second charact
 
 ### Table of Contents {#sec-toc}
 
-The table of contents is created by setting `toc: true`. It will be displayed at the top of your document unless you set `toc_float: true` or include `toc_float:` with its options `collapsed` and `smooth_scroll` (options for a setting are indented under it). 
+The table of contents is created by setting `toc: true`. This will use the markdown header structure to create the table of contents. The option `toc-depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`), and `toc-expand` sets wether the sections are expanded or collapsed. 
+
+::: {.try}
+Try changing the values of the toc settings and re-render. 
 
 ```{verbatim, lang="yaml"}
 ---
-output:
-  html_document:
+format:
+  html:
     toc: true
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
-    toc_depth: 3
+    toc-depth: 3
+    toc-expand: true
 ---
 ```
 
-This will use the markdown header structure to create the table of contents. `toc_depth: 3` means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: `###`). Add `{-}` after the header title to remove it from the table of contents (e.g., `### Overview {-}`).
+Add `{-}` after a header title to remove it from the table of contents, e.g., 
+
+``` md
+## Basic Markdown {-}
+```
+::: 
 
 ::: {.callout-caution}
-## Malformated ToC
-
 If your table of contents isn't showing up correctly, this probably means that your headers are not set up right. Make sure that headers have no spaces before the hashes and at least one space after the hashes. For example, `##Analysis` won't display as a header and be added to the table of contents, but `## Analysis` will.
 :::
 
@@ -904,13 +926,13 @@ Render this document to html ([@sec-render]).
 
 Once you're done, share your knitted html file and the qmd file for the exercises on Teams in the Week 02 channel.
 
-## Glossary {#sec-glossary-reports .unnumbered}
+## Glossary {#sec-glossary-reports -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further Resources {#sec-resources-reports .unnumbered}
+## Further Resources {#sec-resources-reports -}
 
 -   [Quarto Guide](https://quarto.org/docs/guide/)
 -   [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
@@ -918,7 +940,7 @@ glossary_table()
 -   [How to name files](https://speakerdeck.com/jennybc/how-to-name-files) by Jenny Bryan
 -   [gt](https://gt.rstudio.com/) for customised tables
 
-## References {#sec-references-reports .unnumbered}
+## References {#sec-references-reports -}
 
 
 

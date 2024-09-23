@@ -1,12 +1,12 @@
-# Next Steps {#sec-next}
+# Next Steps {#sec-next .incomplete-chapter}
 
-## Learning Objectives {#sec-ilo-next .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-next - .ilo}
 
-* Create and customise advanced types of plots
-* Structure data in report, presentation, and dashboard formats
-* Be aware of the ways to continue developing computational reproducibility skills
+- [ ] Create and customise advanced types of plots
+- [ ] Structure data in report, presentation, and dashboard formats
+- [ ] Be aware of the ways to continue developing computational reproducibility skills
 
-## Visualisation {#custom-viz}
+## Visualisation {#sec-custom-viz}
 
 ### Set-up {#setup-custom-viz}
 
@@ -232,7 +232,7 @@ point +
 
 See the `r pkg("ggforce", "https://ggforce.data-imaginist.com/")` package for more sophisticated options, such as highlighting a group of points with an ellipse. 
 
-### Other Plots
+### Other Plots {#sec-other-plots}
 
 #### Interactive Plots
 
@@ -700,7 +700,7 @@ There are so many more options for data visualisation in R than we have time to 
 * [gganimate](https://gganimate.com/)
 
 
-## Reports {#custom-reports}
+## Reports {#sec-custom-reports}
 
 ### Set-up {#setup-custom-reports}
 
@@ -872,7 +872,7 @@ To get truly interactive, you can take your R coding to the next level and learn
 
 This is well outside the scope of this class, but the skills you've learned here provide a good start. The free book [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/) by one of the authors of this book can get you started creating shiny apps.
 
-### Resources {#sec-resources-report .unnumbered}
+### Resources {#sec-resources-report -}
 
 * [RStudio Formats](https://rmarkdown.rstudio.com/formats.html)
 * [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook)

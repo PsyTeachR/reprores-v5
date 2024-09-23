@@ -1,5 +1,7 @@
 # Using Teams {#sec-teams}
 
+If you are in the UofG Data Skills for Reproducible Research class, we will be using Teams for class communication and getting help. This page gives you some tips on how to do this effectively.
+
 ## What is the best way to share R code on Microsoft Teams?
 
 You have run into a problem and need to get help on MS Teams. What is the right way to share your code?

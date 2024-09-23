@@ -1,9 +1,9 @@
-# Data Relations {#sec-joins}
+# Data Relations {#sec-joins .incomplete-chapter}
 
-## Intended Learning Outcomes {#sec-ilo-joins .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-joins - .ilo}
 
--   Be able to match related data across multiple tables
--   Be able to combine data from multiple files
+- [ ] Be able to match related data across multiple tables
+- [ ] Be able to combine data from multiple files
 
 ## Functions used {#functions-joins}
 
@@ -429,7 +429,7 @@ base::setdiff(customers, new_customers)
 
 ## Conflicting variable types
 
-As we covered in @sec-data, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there's something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it's important that not only are the variable names identical, but the data type of those variables is identical.
+As covered in @sec-data, when you import or create data, R will do its best to set each column to an appropriate data type. However, sometimes it gets it wrong or sometimes there's something in the way the data has been encoded in the original spreadsheet that causes the data type to be different than expected. When joining datasets by common columns, it's important that not only are the variable names identical, but the data type of those variables is identical.
 
 Let's recreate our `new_customers` dataset but this time, we'll specify that `id` is a `r glossary("character")` variable.
 
@@ -456,7 +456,7 @@ bind_rows(customers, new_customers2)
 ```
 
 
-As alternative method to change variable types from what we showed you in @sec-data is to use the `as.***` functions. If you type `as.` into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
+One method to change variable types is to use the `as.***` functions. If you type `as.` into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
 
 * `as.numeric()` - convert a variable to `r glossary("numeric")`. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can't be turned into numbers (e.g., if you have the word "missing" in cells that you have no data for), will be returned as `NA`.
 * `as.factor()` - convert a variable to a `r glossary("factor")`. You can set the factor levels and labels manually, or use the default order (alphabetical).
@@ -609,13 +609,13 @@ no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 
 Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.
 
-## Glossary {#sec-glossary-joines .unnumbered}
+## Glossary {#sec-glossary-joines -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-joins .unnumbered}
+## Further resources {#sec-resources-joins -}
 
 * [Data transformation cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 19: Joins](https://r4ds.hadley.nz/joins) in *R for Data Science*

@@ -67,7 +67,6 @@ book:
   - 08-func.qmd
   - 09-sim.qmd
   - 10-next.qmd
-  - 11-refs.qmd
   - 12-license.qmd
   appendices:
   - app-installing-r.qmd
@@ -75,7 +74,7 @@ book:
   - app-conventions.qmd
   - app-teams.qmd
   - app-datasets.qmd
-  - app-exercises.qmd
+#  - app-exercises.qmd
   - app-debugging.qmd
   - app-import.qmd
   - app-datatypes.qmd

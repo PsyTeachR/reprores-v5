@@ -1,39 +1,18 @@
-# Probability & Simulation {#sim}
+# Probability & Simulation {#sim .incomplete-chapter}
 
 <div class="right meme"><img src="images/memes/sim.jpg"
      alt="Morpheus from The Matrix. Top text: What if I told you; Bottom text: Ur in a simulation, inside a simulation, inside another simulation, inside a taco, inside a taco cat, inside a Taco Bell, inside an Arby's. Inside another simulation" /></div>
 
-## Learning Objectives {#sec-ilo-sim .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-sim - .ilo}
 
-### Basic {-}
-
-1. Generate and plot data randomly sampled from common distributions [(video)](https://youtu.be/iuecrT3q1kg){class="video"}
-    + [uniform](#uniform)
-    + [binomial](#binomial)
-    + [normal](#normal)
-    + [poisson](#poisson)
-2. Generate related variables from a [multivariate](#mvdist) distribution [(video)](https://youtu.be/B14HfWQ1kIc){class="video"}
-2. Define the following [statistical terms](#stat-terms):
-    + [p-value](#p-value)
-    + [alpha](#alpha)
-    + [power](#power)
-    + smallest effect size of interest ([SESOI](#sesoi))
-    + [false positive](#false-pos) (type I error)
-    + [false negative](#false-neg) (type II error)
-    + confidence interval ([CI](#conf-inf))
-3. Test sampled distributions against a null hypothesis [(video)](https://youtu.be/Am3G6rA2S1s){class="video"} 
-    + [exact binomial test](#exact-binom)
-    + [t-test](#t-test) (1-sample, independent samples, paired samples)
-    + [correlation](#correlation) (pearson, kendall and spearman)
-4. [Calculate power](#calc-power-binom) using iteration and a sampling function
-
-### Intermediate {-}
-
-5. Calculate the minimum sample size for a specific power level and design
-6. Calculate power over a range of study parameters
+- [ ] Generate and plot data randomly sampled from common distributions 
+- [ ] Generate related variables from a multivariate distribution
+- [ ] Define the following statistical terms: [p-value](#p-value), [alpha](#alpha), [power](#power), smallest effect size of interest ([SESOI](#sesoi)), [false positive](#false-pos) (type I error), [false negative](#false-neg) (type II error), confidence interval ([CI](#conf-inf))
+- [ ] Test sampled distributions against a null hypothesis 
+- Calculate power using iteration and a sampling function
 
 
-## Setup {#sec-setup-sim .unnumbered}
+## Setup {#sec-setup-sim -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `09-sim.qmd`
@@ -850,13 +829,13 @@ ggplot(power_table, aes(n, power)) +
 
 ```
 
-## Glossary {#sec-glossary-sim .unnumbered}
+## Glossary {#sec-glossary-sim -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further Resources {#sec-resources-sim .unnumbered}
+## Further Resources {#sec-resources-sim -}
 
 * [Distribution Shiny App](http://shiny.psy.gla.ac.uk/debruine/simulate/) (or run `reprores::app("simulate")`
 * [Simulation tutorials](https://debruine.github.io/data-sim-workshops/) by Lisa DeBruine

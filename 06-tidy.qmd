@@ -1,4 +1,4 @@
-# Data Tidying {#sec-tidy}
+# Data Tidying {#sec-tidy .incomplete-chapter}
 
 ```{r, include=FALSE, eval = FALSE}
 # setup - doesn't need to run every time
@@ -29,11 +29,11 @@ write_csv(untidy_data, "data/untidy_data.csv")
 ```
 
 
-## Intended Learning Outcomes {#sec-ilo-tidy .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-tidy - .ilo}
 
--   Be able to reshape data between long and wide formats
--   Separate, change, reorder, and rename columns
--   Use pipes to chain together functions
+- [ ] Be able to reshape data between long and wide formats
+- [ ] Separate, change, reorder, and rename columns
+- [ ] Use pipes to chain together functions
 
 ## Functions used {#functions-tidy}
 
@@ -47,7 +47,7 @@ write_csv(untidy_data, "data/untidy_data.csv")
     * stringr:: `str_replace_all()`
     
 
-## Set-up {#sec-setup-tidy .unnumbered}
+## Set-up {#sec-setup-tidy -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `06-tidy.qmd`
@@ -845,13 +845,13 @@ If your head hurts a bit at this point, rest assured it's absolutely normal. As 
 
 Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 08 channel.
 
-## Glossary {#sec-glossary-tidy .unnumbered}
+## Glossary {#sec-glossary-tidy -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-tidy .unnumbered}
+## Further resources {#sec-resources-tidy -}
 
 -   [Data tidying cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf)
 -   [Tidy Data](http://vita.had.co.nz/papers/tidy-data.html)

@@ -1,12 +1,12 @@
-# Data Wrangling {#sec-wrangle}
+# Data Wrangling {#sec-wrangle .incomplete-chapter}
 
-## Intended Learning Outcomes {#sec-ilo-wrangle .unnumbered}
+## Intended Learning Outcomes {#sec-ilo-wrangle - .ilo}
 
-* Be able to select and filter data for relevance
-* Be able to create new columns and edit existing ones
-* Be able to handle missing data
+- [ ] Be able to select and filter data for relevance
+- [ ] Be able to create new columns and edit existing ones
+- [ ] Be able to handle missing data
 
-## Functions used {#sec-functions-wrangle .unnumbered}
+## Functions used {#sec-functions-wrangle -}
 
 * built-in (you can always use these without loading any packages)
     * base:: `round()`, `mean()`, `min()`, `max()`, ``sum()`, `as.character()`, `as.numeric()`
@@ -20,7 +20,7 @@
     * janitor:: `janitor::round_half_up()`
 
 
-## Set-up {#sec-setup-wrangle .unnumbered}
+## Set-up {#sec-setup-wrangle -}
 
 1. Open your `reprores` project 
 1. Create a new quarto file called `03-dataviz.qmd`
@@ -852,13 +852,13 @@ In preparation for the final summative assessment, explore the data to provide o
 Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 09 channel.
 
 
-## Glossary {#sec-glossary-wwrangle .unnumbered}
+## Glossary {#sec-glossary-wwrangle -}
 
 ```{r, echo = FALSE}
 glossary_table()
 ```
 
-## Further resources {#sec-resources-wrangle .unnumbered}
+## Further resources {#sec-resources-wrangle -}
 
 * [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 * [Chapter 18: Missing Data](https://r4ds.hadley.nz/missing-values) in *R for Data Science*
