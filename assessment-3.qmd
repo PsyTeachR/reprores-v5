@@ -1,0 +1,90 @@
+# Assessment 3
+
+```{r, include=FALSE}
+library(tidyverse)
+library(gt)
+```
+
+A project demonstrating data wrangling skills
+
+## Instructions
+
+TBA
+
+## Submission
+
+* Due: Wednesday, 2024-11-13 by noon
+* Covers: chapters 1-7, emphasising 5-7
+* Worth: 30%
+* Do not put your name in your report; use your student ID as the author.
+* Please submit a **zip file** containing: 
+  1. the .rproj file
+  2. your reproducible script, named `report3_studentID.qmd`
+  3. any additional files necessary to reproduce your report(e.g., images or bibliography files),
+  4. the rendered html report, named `report3_studentID.html`.
+
+## Marking Rubric
+
+
+```{r}
+rubric <- list(
+  "Research & Knowledge" = list(
+    "**Topic1**: Description" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    )
+  ),
+  "Evaluation" = list(
+    "**Topic2**: Description" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    )
+  ),
+  "Communication" = list(
+    "**Topic3**: Description" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    )
+  )
+)
+```
+
+```{r}
+colnames <- c("ILO", 
+              "A: Excellent", 
+              "B: Very Good", 
+              "C: Good", 
+              "D: Satisfactory", 
+              "E: Poor")
+cats <- rep(names(rubric), sapply(rubric, length))
+
+reduce(rubric, c) |>
+  as_tibble() |>
+  t() |>
+  as_tibble(rownames = "ILO", .name_repair = "minimal") |>
+  `names<-`(colnames) |>
+  mutate(Category = cats) |>
+  select(Category, everything()) |>
+  group_by(Category) |>
+  gt::gt() |>
+  gt::fmt_markdown(columns = "ILO") |>
+  gt::tab_style(style = list(gt::cell_text(align = "left", v_align= "top")),
+                locations = cells_body()) |>
+  gt::tab_style(style = list(gt::cell_fill("#4D9FCF66")),
+                locations = cells_row_groups()) |>
+  gt::tab_style(style = list(gt::cell_borders("bottom", "grey")),
+                locations = cells_body()) |>
+  gt::opt_stylize(style = 6, add_row_striping = FALSE)
+
+```
+
+

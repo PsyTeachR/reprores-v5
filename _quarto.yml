@@ -67,6 +67,12 @@ book:
   - 08-func.qmd
   - 09-sim.qmd
   - 10-next.qmd
+  - part: "Assessments"
+    chapters:
+    - assessment-1.qmd
+    - assessment-2.qmd
+    - assessment-3.qmd
+    - assessment-4.qmd
   - 12-license.qmd
   appendices:
   - app-installing-r.qmd

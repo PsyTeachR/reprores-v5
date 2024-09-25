@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
-<title>Appendix D — Using Teams – Data Skills for Reproducible Research</title>
+<title>13&nbsp; Assessment 3 – Data Skills for Reproducible Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,8 +61,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-datasets.html" rel="next">
-<link href="./app-conventions.html" rel="prev">
+<link href="./assessment-4.html" rel="next">
+<link href="./assessment-2.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-teams.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Using Teams</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assessment-1.html">Assessments</a></li><li class="breadcrumb-item"><a href="./assessment-3.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Assessment 3</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -254,7 +254,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./assessment-3.html" class="sidebar-item-text sidebar-link">
+  <a href="./assessment-3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Assessment 3</span></span></a>
   </div>
 </li>
@@ -301,7 +301,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app-teams.html" class="sidebar-item-text sidebar-link active">
+  <a href="./app-teams.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Using Teams</span></span></a>
   </div>
 </li>
@@ -359,26 +359,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#what-is-the-best-way-to-share-r-code-on-microsoft-teams" id="toc-what-is-the-best-way-to-share-r-code-on-microsoft-teams" class="nav-link active" data-scroll-target="#what-is-the-best-way-to-share-r-code-on-microsoft-teams"><span class="header-section-number">D.1</span> What is the best way to share R code on Microsoft Teams?</a>
-  <ul class="collapse">
-<li><a href="#quick-and-easy-method" id="toc-quick-and-easy-method" class="nav-link" data-scroll-target="#quick-and-easy-method"><span class="header-section-number">D.1.1</span> Quick and easy method</a></li>
-  <li><a href="#more-flexible-method" id="toc-more-flexible-method" class="nav-link" data-scroll-target="#more-flexible-method"><span class="header-section-number">D.1.2</span> More flexible method</a></li>
-  <li><a href="#reprex" id="toc-reprex" class="nav-link" data-scroll-target="#reprex"><span class="header-section-number">D.1.3</span> Reprex</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#screenshots" id="toc-screenshots" class="nav-link" data-scroll-target="#screenshots"><span class="header-section-number">D.2</span> Screenshots</a>
-  <ul class="collapse">
-<li><a href="#taking-a-screenshot-on-windows" id="toc-taking-a-screenshot-on-windows" class="nav-link" data-scroll-target="#taking-a-screenshot-on-windows"><span class="header-section-number">D.2.1</span> Taking a screenshot on Windows</a></li>
-  <li><a href="#taking-a-screenshot-on-mac" id="toc-taking-a-screenshot-on-mac" class="nav-link" data-scroll-target="#taking-a-screenshot-on-mac"><span class="header-section-number">D.2.2</span> Taking a screenshot on Mac</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/app-teams.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/app-teams.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+<li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">13.1</span> Instructions</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">13.2</span> Submission</a></li>
+  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">13.3</span> Marking Rubric</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/assessment-3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/assessment-3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-teams.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Using Teams</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-teams" class="quarto-section-identifier">Appendix D — Using Teams</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assessment-1.html">Assessments</a></li><li class="breadcrumb-item"><a href="./assessment-3.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Assessment 3</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title">
+<span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Assessment 3</span>
+</h1>
 </div>
 
 
@@ -392,106 +382,583 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><p>If you are in the UofG Data Skills for Reproducible Research class, we will be using Teams for class communication and getting help. This page gives you some tips on how to do this effectively.</p>
-<section id="what-is-the-best-way-to-share-r-code-on-microsoft-teams" class="level2" data-number="D.1"><h2 data-number="D.1" class="anchored" data-anchor-id="what-is-the-best-way-to-share-r-code-on-microsoft-teams">
-<span class="header-section-number">D.1</span> What is the best way to share R code on Microsoft Teams?</h2>
-<p>You have run into a problem and need to get help on MS Teams. What is the right way to share your code?</p>
-<p>Please do <em>not</em> share <strong>only</strong> a screenshot unless you are asked, or if it is not the code that is giving you problems, but something weird is happening with the RStudio IDE.</p>
-<p>If it’s your code that is not working, it is almost always better to copy and paste the code, because then people who are trying to help you can copy and paste the code <em>exactly</em> to try it out, rather than having to re-type everything from the image. Let’s look at an example. Below is a screenshot of how the RStudio IDE might look when your code throws an error. Here the code block labelled <code>cars</code> is causing the error.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/mtcars_error.jpg" class="img-fluid figure-img"></p>
-<figcaption><em>a screenshot of RStudio IDE showing an error indicated by the red arrow</em></figcaption></figure>
-</div>
-<p>The particular error that our code threw was</p>
-<pre><code>Error in mtcars %&gt;% filter(mpg &gt; 20) : could not find function "%&gt;%"</code></pre>
-<p>And the code that threw it was</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">filter</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Note that you can select and copy the code above if you wanted to run it yourself, but you could not do that if all you had to rely on was the screenshot.</p>
-<p>Copying the code and/or error in RStudio is easy; just highlight the code using the mouse and press Ctrl-C.</p>
-<p>If you just paste the code into a Teams channel, the formatting is not so nice; you lose the formatting that allows you to read the code easily.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_paste1.jpg" class="img-fluid figure-img"></p>
-<figcaption><em>A screenshot of MS Teams with the code pasted directly in. Not pretty!</em></figcaption></figure>
-</div>
-<p>You can share a screenshot <strong>and</strong> the code if you like, but please don’t just send the screenshot.</p>
-<p>Here are two ways to get your code into Teams, one that is quick and easy but not very flexible, and another that is far more flexible but requires more steps.</p>
-<section id="quick-and-easy-method" class="level3" data-number="D.1.1"><h3 data-number="D.1.1" class="anchored" data-anchor-id="quick-and-easy-method">
-<span class="header-section-number">D.1.1</span> Quick and easy method</h3>
-<p>First, if it is just a short function call, a single line, or an error, you can signal that text is meant to appear as code by surrounding it by single backticks—i.e., putting a backtick (`) right before and right after the text that you want to be formatted as code. Teams will automatically format it for you.</p>
-<p>For multi-line code, the easiest and fastest way is just to type three backticks inside your message at the beginning of a line. Any subsequent text you enter will be treated as code. To get to the beginning of a line without submitting your post, press Ctrl-Enter while typing your message. Then type the three backticks, and paste your code right into the gray box that automatically appears. Press Enter twice in a row to get back out of the code entry box. So your message might look like this. <img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_chunk.jpg" class="img-fluid" alt="A screenshot of MS Teams with code embedded in a chunk."></p>
-<p>Above, I surrounded the error message <code>Error in mtcars %&gt;% filter(mpg &gt; 20) : could not find function "%&gt;%"</code> with single backticks to indicate code, and we typed triple backticks at the start of the line to create a code chunk. (The next method might be easier for making multi-line posts.)</p>
-</section><section id="more-flexible-method" class="level3" data-number="D.1.2"><h3 data-number="D.1.2" class="anchored" data-anchor-id="more-flexible-method">
-<span class="header-section-number">D.1.2</span> More flexible method</h3>
-<p>There is a more flexible (and possibly easier) way. Before pasting any text, click on the icon that looks like the letter “A”, highlighted below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_paste2.jpg" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of Teams showing the icon that looks like an “A”</figcaption></figure>
-</div>
-<p>This will open up options for text formatting and will allow you to easily create a multi-line post. From those options, select the icon that looks like <code>&lt;/&gt;</code>, which stands for code.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_paste3.jpg" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of Teams formatting icons, with code icon highlighted</figcaption></figure>
-</div>
-<p>The code icon will open a window where you can paste your code. In the dropdown menu on the top right, select ‘R’ as the type of code. This will give you syntax highlighting.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_paste4.jpg" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of Teams formatting icons, with code icon highlighted</figcaption></figure>
-</div>
-<p>Here is how you might begin your post.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://raw.githubusercontent.com/PsyTeachR/FAQ/master/images/teams_paste5.jpg" class="img-fluid figure-img"></p>
-<figcaption>Screenshot of Teams with unsubmitted post</figcaption></figure>
-</div>
-</section><section id="reprex" class="level3" data-number="D.1.3"><h3 data-number="D.1.3" class="anchored" data-anchor-id="reprex">
-<span class="header-section-number">D.1.3</span> Reprex</h3>
-<p>You might see people in coding forums like StackOverflow asking for a “reprex”, or a reproducible example. This is the smallest, completely self-contained example of your problem or question.</p>
-<p>For example, you may have a question about how to figure out how to select rows that contain the value “test” in a certain column, but it isn’t working. It’s clearer if you can provide a concrete example, but you don’t want to have to type out the whole table you’re using or all the code that got you to this point in your script.</p>
-<p>You can include a very small table with just the basics or a smaller version of your problem. Make comments at each step about what you expect and what you actually got.</p>
-<p>Which version is easier for you to figure out the solution?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># this doesn't work</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>no_test_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(type, <span class="st">"test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># with a minimal example table</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a>data <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="sc">~</span>id, <span class="sc">~</span>type, <span class="sc">~</span>x,</span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="dv">1</span>, <span class="st">"test"</span>, <span class="dv">12</span>,</span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="dv">2</span>, <span class="st">"testosterone"</span>, <span class="dv">15</span>,</span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="dv">3</span>, <span class="st">"estrogen"</span>, <span class="dv">10</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>)</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="co"># this should keep IDs 2 and 3, but removes ID 2</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a>no_test_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">str_detect</span>(type, <span class="st">"test"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>One of the big benefits to creating a reprex is that you often solve your own problem while you’re trying to break it down to explain to someone else.</p>
-<p>If you really want to go down the rabbit hole, you can create a reproducible example using the <a href="https://www.tidyverse.org/help/#reprex">reprex</a> package from tidyverse.</p>
-</section></section><section id="screenshots" class="level2" data-number="D.2"><h2 data-number="D.2" class="anchored" data-anchor-id="screenshots">
-<span class="header-section-number">D.2</span> Screenshots</h2>
-<p>If you do need to take a screenshot, for example, if something goes wrong during installation, please use the screenshot functions built-in to your computer rather than taking a photo of your screen using your phone.</p>
-<section id="taking-a-screenshot-on-windows" class="level3" data-number="D.2.1"><h3 data-number="D.2.1" class="anchored" data-anchor-id="taking-a-screenshot-on-windows">
-<span class="header-section-number">D.2.1</span> Taking a screenshot on Windows</h3>
+</header><p>A project demonstrating data wrangling skills</p>
+<section id="instructions" class="level2" data-number="13.1"><h2 data-number="13.1" class="anchored" data-anchor-id="instructions">
+<span class="header-section-number">13.1</span> Instructions</h2>
+<p>TBA</p>
+</section><section id="submission" class="level2" data-number="13.2"><h2 data-number="13.2" class="anchored" data-anchor-id="submission">
+<span class="header-section-number">13.2</span> Submission</h2>
 <ul>
-<li><p>Use the Windows search function to search for “Snip &amp; Sketch”</p></li>
-<li><p>Click “New” then “Snip now”</p></li>
-<li><p>Use the tool to select the area on the screen you want to take a screenshot of. This photo will automatically be copied to your clipboard, so you can paste it into e.g., a Teams chat or a document using Ctrl + V but you can also click the Save icon in the top right to save the screenshot as an image file.</p></li>
-<li><p>The shortcut for the snipping tool is Win + Shift + S.</p></li>
-</ul></section><section id="taking-a-screenshot-on-mac" class="level3" data-number="D.2.2"><h3 data-number="D.2.2" class="anchored" data-anchor-id="taking-a-screenshot-on-mac">
-<span class="header-section-number">D.2.2</span> Taking a screenshot on Mac</h3>
-<ul>
-<li><p>Press Shift + Command (⌘) + 4 to bring up the Screenshot app.</p></li>
-<li><p>Use the tool to select the area on the screen you want to take a screenshot of.</p></li>
-<li><p>If you see a thumbnail in the corner of your screen, click it to edit the screenshot or drag it into e.g., a Teams chat.</p></li>
-<li><p>This photo will also automatically save to your desktop.</p></li>
-</ul>
+<li>Due: Wednesday, 2024-11-13 by noon</li>
+<li>Covers: chapters 1-7, emphasising 5-7</li>
+<li>Worth: 30%</li>
+<li>Do not put your name in your report; use your student ID as the author.</li>
+<li>Please submit a <strong>zip file</strong> containing:
+<ol type="1">
+<li>the .rproj file</li>
+<li>your reproducible script, named <code>report3_studentID.qmd</code>
+</li>
+<li>any additional files necessary to reproduce your report(e.g., images or bibliography files),</li>
+<li>the rendered html report, named <code>report3_studentID.html</code>.</li>
+</ol>
+</li>
+</ul></section><section id="marking-rubric" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="marking-rubric">
+<span class="header-section-number">13.3</span> Marking Rubric</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>rubric <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="st">"Research &amp; Knowledge"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">"**Topic1**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-4"><a href="#cb1-4"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-5"><a href="#cb1-5"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-6"><a href="#cb1-6"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-7"><a href="#cb1-7"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-8"><a href="#cb1-8"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    )</span>
+<span id="cb1-10"><a href="#cb1-10"></a>  ),</span>
+<span id="cb1-11"><a href="#cb1-11"></a>  <span class="st">"Evaluation"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-12"><a href="#cb1-12"></a>    <span class="st">"**Topic2**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-13"><a href="#cb1-13"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-14"><a href="#cb1-14"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-15"><a href="#cb1-15"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-16"><a href="#cb1-16"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-17"><a href="#cb1-17"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>    )</span>
+<span id="cb1-19"><a href="#cb1-19"></a>  ),</span>
+<span id="cb1-20"><a href="#cb1-20"></a>  <span class="st">"Communication"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-21"><a href="#cb1-21"></a>    <span class="st">"**Topic3**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb1-22"><a href="#cb1-22"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-23"><a href="#cb1-23"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-24"><a href="#cb1-24"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-25"><a href="#cb1-25"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
+<span id="cb1-26"><a href="#cb1-26"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a>    )</span>
+<span id="cb1-28"><a href="#cb1-28"></a>  )</span>
+<span id="cb1-29"><a href="#cb1-29"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>colnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ILO"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2"></a>              <span class="st">"A: Excellent"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3"></a>              <span class="st">"B: Very Good"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4"></a>              <span class="st">"C: Good"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5"></a>              <span class="st">"D: Satisfactory"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6"></a>              <span class="st">"E: Poor"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7"></a>cats <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">names</span>(rubric), <span class="fu">sapply</span>(rubric, length))</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">reduce</span>(rubric, c) <span class="sc">|&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"ILO"</span>, <span class="at">.name_repair =</span> <span class="st">"minimal"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>  <span class="st">`</span><span class="at">names&lt;-</span><span class="st">`</span>(colnames) <span class="sc">|&gt;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  <span class="fu">mutate</span>(<span class="at">Category =</span> cats) <span class="sc">|&gt;</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">select</span>(Category, <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">group_by</span>(Category) <span class="sc">|&gt;</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a>  gt<span class="sc">::</span><span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="st">"ILO"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">v_align=</span> <span class="st">"top"</span>)),</span>
+<span id="cb2-20"><a href="#cb2-20"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_fill</span>(<span class="st">"#4D9FCF66"</span>)),</span>
+<span id="cb2-22"><a href="#cb2-22"></a>                <span class="at">locations =</span> <span class="fu">cells_row_groups</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_borders</span>(<span class="st">"bottom"</span>, <span class="st">"grey"</span>)),</span>
+<span id="cb2-24"><a href="#cb2-24"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a>  gt<span class="sc">::</span><span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">add_row_striping =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="sqkszwwdeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sqkszwwdeg table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sqkszwwdeg thead, #sqkszwwdeg tbody, #sqkszwwdeg tfoot, #sqkszwwdeg tr, #sqkszwwdeg td, #sqkszwwdeg th {
+  border-style: none;
+}
+
+#sqkszwwdeg p {
+  margin: 0;
+  padding: 0;
+}
+
+#sqkszwwdeg .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sqkszwwdeg .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sqkszwwdeg .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sqkszwwdeg .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sqkszwwdeg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sqkszwwdeg .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sqkszwwdeg .gt_col_heading {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sqkszwwdeg .gt_column_spanner_outer {
+  color: #FFFFFF;
+  background-color: #0076BA;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sqkszwwdeg .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sqkszwwdeg .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sqkszwwdeg .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sqkszwwdeg .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sqkszwwdeg .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sqkszwwdeg .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+  vertical-align: middle;
+}
+
+#sqkszwwdeg .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sqkszwwdeg .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sqkszwwdeg .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: none;
+  border-top-width: 1px;
+  border-top-color: #D5D5D5;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D5D5D5;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D5D5D5;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sqkszwwdeg .gt_stub {
+  color: #333333;
+  background-color: #89D3FE;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D5D5D5;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sqkszwwdeg .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sqkszwwdeg .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sqkszwwdeg .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sqkszwwdeg .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sqkszwwdeg .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sqkszwwdeg .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_grand_summary_row {
+  color: #333333;
+  background-color: #D5D5D5;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sqkszwwdeg .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_striped {
+  background-color: #EDF7FC;
+}
+
+#sqkszwwdeg .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #5F5F5F;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #5F5F5F;
+}
+
+#sqkszwwdeg .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sqkszwwdeg .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sqkszwwdeg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sqkszwwdeg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sqkszwwdeg .gt_left {
+  text-align: left;
+}
+
+#sqkszwwdeg .gt_center {
+  text-align: center;
+}
+
+#sqkszwwdeg .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sqkszwwdeg .gt_font_normal {
+  font-weight: normal;
+}
+
+#sqkszwwdeg .gt_font_bold {
+  font-weight: bold;
+}
+
+#sqkszwwdeg .gt_font_italic {
+  font-style: italic;
+}
+
+#sqkszwwdeg .gt_super {
+  font-size: 65%;
+}
+
+#sqkszwwdeg .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sqkszwwdeg .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sqkszwwdeg .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sqkszwwdeg .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sqkszwwdeg .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sqkszwwdeg .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sqkszwwdeg .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="ILO">ILO</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="A: Excellent">A: Excellent</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="B: Very Good">B: Very Good</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="C: Good">C: Good</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="D: Satisfactory">D: Satisfactory</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="E: Poor">E: Poor</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row">
+<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Research &amp;amp; Knowledge">Research &amp; Knowledge</th>
+    </tr>
+<tr class="gt_row_group_first">
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic1**: Description"><div class="gt_from_md">
+<p><strong>Topic1</strong>: Description</p>
+</div></div></td>
+<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr class="gt_group_heading_row">
+<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Evaluation">Evaluation</th>
+    </tr>
+<tr class="gt_row_group_first">
+<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic2**: Description"><div class="gt_from_md">
+<p><strong>Topic2</strong>: Description</p>
+</div></div></td>
+<td headers="Evaluation  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Evaluation  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Evaluation  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Evaluation  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Evaluation  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr class="gt_group_heading_row">
+<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Communication">Communication</th>
+    </tr>
+<tr class="gt_row_group_first">
+<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic3**: Description"><div class="gt_from_md">
+<p><strong>Topic3</strong>: Description</p>
+</div></div></td>
+<td headers="Communication  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
-</section></section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>
+</section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>
 
 /* update total correct if #webex-total_correct exists */
 update_total_correct = function() {
@@ -1129,13 +1596,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./app-conventions.html" class="pagination-link" aria-label="Conventions">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Conventions</span></span>
+      <a href="./assessment-2.html" class="pagination-link" aria-label="Assessment 2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Assessment 2</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./app-datasets.html" class="pagination-link" aria-label="Datasets">
-        <span class="nav-page-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Datasets</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./assessment-4.html" class="pagination-link" aria-label="Assessment 4">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Assessment 4</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1146,7 +1613,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/app-teams.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/app-teams.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/assessment-3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/assessment-3.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item compact">

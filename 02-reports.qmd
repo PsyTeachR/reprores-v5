@@ -10,6 +10,7 @@
 - [ ] Structure a project
 - [ ] Render a simple reproducible report with quarto
 - [ ] Create code chunks, tables, images, and inline R
+- [ ] Add a bibliography and citations
 
 
 ## Functions used {#functions-reports -}
@@ -779,7 +780,7 @@ tinytex::install_tinytex()
 
 Once you've done this, update your YAML heading to add a `pdf_document` section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace `html` with `pdf`, you may need to remove some options if you get an error that looks like "Functions that produce HTML output found in document targeting PDF output."
 
-```{verbatim, lang='yaml'}
+```  md
 ---
 format:
   pdf:
@@ -789,6 +790,147 @@ format:
 ```
 
 There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation](https://quarto.org/docs/output-formats/all-formats.html) for more information. 
+
+## Bibliography
+
+There are several ways to do in-text references and automatically generate a [bibliography](https://quarto.org/docs/authoring/citations.html) in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
+
+``` md
+---
+format:
+  html:
+    toc: true
+bibliography: refs.bib
+csl: apa.csl
+---
+```
+
+### Converting from reference software
+
+Most reference software like EndNote or Zotero has exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.
+
+::: {.callout-warning}
+Please start using a reference manager consistently through your research career. It will make your life so much easier. Zotero is probably the best one.
+:::
+
+
+::: {.try}
+1. If you don't already have one, set up a [Zotero](https://www.zotero.org/) account  
+2. Add the [connector for your web browser](https://www.zotero.org/download/) (if you're on a computer you can add browser extensions to)  
+3. Navigate to [Easing Into Open Science](https://doi.org/10.1525/collabra.18684) and add this reference to your library with the browser connector  
+4. Go to your library and make a new collection called "Open Research" (click on the + icon after **`My Library`**)  
+5. Drag the reference to Easing Into Open Science into this collection  
+6. Export this collection as BibTex  
+:::
+
+```{r zotero, echo = FALSE}
+#| fig.cap: Export a bibliography file from Zotero
+knitr::include_graphics("images/repro/zotero.png")
+```
+
+The exported file should look like this:
+
+```{embed, file = "demos/export-data.bib"}
+
+```
+
+
+### Creating a BibTeX File
+
+You can also add references manually. 
+
+::: {.try}
+In RStudio, go to **`File`** > **`New File...`** > **`Text File`** and save the file as "refs.bib".
+
+Add the line `bibliography: refs.bib` to your YAML header.
+:::
+
+### Adding references {#references}
+
+You can add references to a journal article in the following format:
+
+```
+@article{shortname,
+  author = {Author One and Author Two and Author Three},
+  title = {Paper Title},
+  journal = {Journal Title},
+  volume = {vol},
+  number = {issue},
+  pages = {startpage--endpage},
+  year = {year},
+  doi = {doi}
+}
+```
+
+See [A complete guide to the BibTeX format](https://www.bibtex.com/g/bibtex-format/) for instructions on citing books, technical reports, and more.
+
+You can get the reference for an R package using the functions `citation()` and `toBibtex()`. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., "ggplot2") before the first comma to refer to the reference.
+
+```{r}
+citation(package="ggplot2") %>% toBibtex()
+```
+
+
+[Google Scholar](https://scholar.google.com/) entries have a BibTeX citation option. This is usually the easiest way to get the relevant values if you can't add a citation through the Zotero browser connector, although you have to add the DOI yourself. You can keep the suggested shortname or change it to something that makes more sense to you.
+
+```{r google-scholar, echo = FALSE, fig.cap = "Get BibTex citations from Google Scholar."}
+knitr::include_graphics("images/present/google-scholar.png")
+```
+
+
+### Citing references {#citations}
+
+You can cite references in text like this: 
+
+```
+This tutorial uses several R packages [@tidyverse;@rmarkdown].
+```
+
+This tutorial uses several R packages [@tidyverse;@rmarkdown].
+
+Put a minus in front of the @ if you just want the year:
+
+```
+Kathawalla and colleagues [-@kathawalla_easing_2021] explain how to introduce open research practices into your postgraduate studies.
+```
+
+Kathawalla and colleagues [-@kathawalla_easing_2021] explain how to introduce open research practices into your postgraduate studies.
+
+### Uncited references
+
+If you want to add an item to the reference section without citing, it, add it to the YAML header like this:
+
+```
+nocite: |
+  @kathawalla_easing_2021, @broman2018data, @nordmann2022data
+```
+
+Or add all of the items in the .bib file like this:
+
+```
+nocite: '@*'
+```
+
+### Citation Styles
+
+You can search a [list of style files](https://www.zotero.org/styles) for various journals and download a file that will format your bibliography for a specific journal's style. You'll need to add the line `csl: filename.csl` to your YAML header. 
+
+::: {.try}
+Add some citations to your refs.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.
+:::
+
+### Reference Section
+
+By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include the following where you want the references:
+
+``` md
+::: {#refs}
+:::
+```
+
+::: {.try}
+Add in-text citations and a reference list to your report.
+:::
 
 ## Summary {#sec-reports-summary}
 
