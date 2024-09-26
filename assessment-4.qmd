@@ -27,6 +27,7 @@ TBA
 
 
 ```{r}
+#| echo: false
 rubric <- list(
   "Research & Knowledge" = list(
     "**Topic1**: Description" = list(
@@ -59,6 +60,7 @@ rubric <- list(
 ```
 
 ```{r}
+#| echo: false
 colnames <- c("ILO", 
               "A: Excellent", 
               "B: Very Good", 

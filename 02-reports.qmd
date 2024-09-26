@@ -333,7 +333,7 @@ Edit your file to put the code chunk that defines the objects `name`, `age`, `to
 
 We're going to write a basic report for this dataset using quarto to show you some more of the features. We'll be expanding on almost every bit of what we're about to show you throughout this course; the most important outcome is that you start to get comfortable with how quarto works and what you can use it to do. 
 
-### Setup Chunk
+### Setup Chunk {#sec-setup-chunk}
 
 Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values. 
 
@@ -490,7 +490,7 @@ If you name your objects clearly, you often don't need to add clarifying comment
 
 ### Images {#sec-md-images}
 
-As the saying goes, a picture paints a thousand words and sometimes you will want to communicate your data using visualisations. 
+As the saying goes, a picture paints a thousand words, and sometimes you will want to communicate your data using visualisations. 
 
 Create a code chunk to display a graph of the data in your document after the text we've written so far. We'll use some code that you'll learn more about in @sec-viz to make a simple bar chart that represents the sales data -- focus on trying to follow how bits of the code map on to the plot that is created.
 
@@ -575,6 +575,10 @@ format:
     df-print: kable
 ---
 ```
+
+### Cross references {#sec-cross-references}
+
+You can automatically number your figures and tables by giving them labels that start with `fig-` or `tbl-`, and referring to them in the text like `@fig-name` or `@tbl-name` (see [quarto cross references](https://quarto.org/docs/authoring/cross-references.html) for more details).
 
 Add the following text above the chunk containing the table:
 
@@ -718,7 +722,7 @@ format:
 ```
 :::
 
-The `df-print: paged` option prints data frames using `rmarkdown::paged_table()` automatically. You can use `df_print: kable` to default to the simple kable style, but you will need the code from @sec-md-tables for more complex tables with kableExtra.
+The `df-print: paged` option prints data frames using `rmarkdown::paged_table()` automatically. You can use `df_print: kable` to default to the simple kable style.
 
 The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). Try changing the theme to see which one you like best.
 
@@ -791,7 +795,7 @@ format:
 
 There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation](https://quarto.org/docs/output-formats/all-formats.html) for more information. 
 
-## Bibliography
+## Bibliography {#sec-biliography}
 
 There are several ways to do in-text references and automatically generate a [bibliography](https://quarto.org/docs/authoring/citations.html) in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
 

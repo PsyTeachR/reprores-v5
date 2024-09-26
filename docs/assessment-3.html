@@ -18,40 +18,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -405,80 +371,24 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul></section><section id="marking-rubric" class="level2" data-number="13.3"><h2 data-number="13.3" class="anchored" data-anchor-id="marking-rubric">
 <span class="header-section-number">13.3</span> Marking Rubric</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>rubric <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="st">"Research &amp; Knowledge"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">"**Topic1**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-4"><a href="#cb1-4"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>    )</span>
-<span id="cb1-10"><a href="#cb1-10"></a>  ),</span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="st">"Evaluation"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    <span class="st">"**Topic2**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-13"><a href="#cb1-13"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-14"><a href="#cb1-14"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-15"><a href="#cb1-15"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-16"><a href="#cb1-16"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-17"><a href="#cb1-17"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>    )</span>
-<span id="cb1-19"><a href="#cb1-19"></a>  ),</span>
-<span id="cb1-20"><a href="#cb1-20"></a>  <span class="st">"Communication"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-21"><a href="#cb1-21"></a>    <span class="st">"**Topic3**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-22"><a href="#cb1-22"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-23"><a href="#cb1-23"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-24"><a href="#cb1-24"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-25"><a href="#cb1-25"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-26"><a href="#cb1-26"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a>    )</span>
-<span id="cb1-28"><a href="#cb1-28"></a>  )</span>
-<span id="cb1-29"><a href="#cb1-29"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>colnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ILO"</span>, </span>
-<span id="cb2-2"><a href="#cb2-2"></a>              <span class="st">"A: Excellent"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3"></a>              <span class="st">"B: Very Good"</span>, </span>
-<span id="cb2-4"><a href="#cb2-4"></a>              <span class="st">"C: Good"</span>, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>              <span class="st">"D: Satisfactory"</span>, </span>
-<span id="cb2-6"><a href="#cb2-6"></a>              <span class="st">"E: Poor"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>cats <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">names</span>(rubric), <span class="fu">sapply</span>(rubric, length))</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">reduce</span>(rubric, c) <span class="sc">|&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"ILO"</span>, <span class="at">.name_repair =</span> <span class="st">"minimal"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>  <span class="st">`</span><span class="at">names&lt;-</span><span class="st">`</span>(colnames) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a>  <span class="fu">mutate</span>(<span class="at">Category =</span> cats) <span class="sc">|&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">select</span>(Category, <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">group_by</span>(Category) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a>  gt<span class="sc">::</span><span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="st">"ILO"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">v_align=</span> <span class="st">"top"</span>)),</span>
-<span id="cb2-20"><a href="#cb2-20"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_fill</span>(<span class="st">"#4D9FCF66"</span>)),</span>
-<span id="cb2-22"><a href="#cb2-22"></a>                <span class="at">locations =</span> <span class="fu">cells_row_groups</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_borders</span>(<span class="st">"bottom"</span>, <span class="st">"grey"</span>)),</span>
-<span id="cb2-24"><a href="#cb2-24"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a>  gt<span class="sc">::</span><span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">add_row_striping =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="sqkszwwdeg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sqkszwwdeg table {
+<div id="ivchmdxtgs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ivchmdxtgs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#sqkszwwdeg thead, #sqkszwwdeg tbody, #sqkszwwdeg tfoot, #sqkszwwdeg tr, #sqkszwwdeg td, #sqkszwwdeg th {
+#ivchmdxtgs thead, #ivchmdxtgs tbody, #ivchmdxtgs tfoot, #ivchmdxtgs tr, #ivchmdxtgs td, #ivchmdxtgs th {
   border-style: none;
 }
 
-#sqkszwwdeg p {
+#ivchmdxtgs p {
   margin: 0;
   padding: 0;
 }
 
-#sqkszwwdeg .gt_table {
+#ivchmdxtgs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -504,12 +414,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#sqkszwwdeg .gt_caption {
+#ivchmdxtgs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#sqkszwwdeg .gt_title {
+#ivchmdxtgs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -521,7 +431,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#sqkszwwdeg .gt_subtitle {
+#ivchmdxtgs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -533,7 +443,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#sqkszwwdeg .gt_heading {
+#ivchmdxtgs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -545,13 +455,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#sqkszwwdeg .gt_bottom_border {
+#ivchmdxtgs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_col_headings {
+#ivchmdxtgs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -566,7 +476,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#sqkszwwdeg .gt_col_heading {
+#ivchmdxtgs .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -586,7 +496,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#sqkszwwdeg .gt_column_spanner_outer {
+#ivchmdxtgs .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -598,15 +508,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#sqkszwwdeg .gt_column_spanner_outer:first-child {
+#ivchmdxtgs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sqkszwwdeg .gt_column_spanner_outer:last-child {
+#ivchmdxtgs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sqkszwwdeg .gt_column_spanner {
+#ivchmdxtgs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -618,11 +528,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#sqkszwwdeg .gt_spanner_row {
+#ivchmdxtgs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#sqkszwwdeg .gt_group_heading {
+#ivchmdxtgs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -648,7 +558,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#sqkszwwdeg .gt_empty_group_heading {
+#ivchmdxtgs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -663,15 +573,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#sqkszwwdeg .gt_from_md > :first-child {
+#ivchmdxtgs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sqkszwwdeg .gt_from_md > :last-child {
+#ivchmdxtgs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sqkszwwdeg .gt_row {
+#ivchmdxtgs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -690,7 +600,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#sqkszwwdeg .gt_stub {
+#ivchmdxtgs .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -703,7 +613,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#sqkszwwdeg .gt_stub_row_group {
+#ivchmdxtgs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -717,15 +627,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#sqkszwwdeg .gt_row_group_first td {
+#ivchmdxtgs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#sqkszwwdeg .gt_row_group_first th {
+#ivchmdxtgs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#sqkszwwdeg .gt_summary_row {
+#ivchmdxtgs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -735,16 +645,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#sqkszwwdeg .gt_first_summary_row {
+#ivchmdxtgs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_first_summary_row.thick {
+#ivchmdxtgs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#sqkszwwdeg .gt_last_summary_row {
+#ivchmdxtgs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -754,7 +664,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_grand_summary_row {
+#ivchmdxtgs .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -764,7 +674,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#sqkszwwdeg .gt_first_grand_summary_row {
+#ivchmdxtgs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -774,7 +684,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_last_grand_summary_row_top {
+#ivchmdxtgs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -784,11 +694,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_striped {
+#ivchmdxtgs .gt_striped {
   background-color: #EDF7FC;
 }
 
-#sqkszwwdeg .gt_table_body {
+#ivchmdxtgs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -797,7 +707,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#sqkszwwdeg .gt_footnotes {
+#ivchmdxtgs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -811,7 +721,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#sqkszwwdeg .gt_footnote {
+#ivchmdxtgs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -820,7 +730,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#sqkszwwdeg .gt_sourcenotes {
+#ivchmdxtgs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -834,7 +744,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#sqkszwwdeg .gt_sourcenote {
+#ivchmdxtgs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -842,63 +752,63 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#sqkszwwdeg .gt_left {
+#ivchmdxtgs .gt_left {
   text-align: left;
 }
 
-#sqkszwwdeg .gt_center {
+#ivchmdxtgs .gt_center {
   text-align: center;
 }
 
-#sqkszwwdeg .gt_right {
+#ivchmdxtgs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sqkszwwdeg .gt_font_normal {
+#ivchmdxtgs .gt_font_normal {
   font-weight: normal;
 }
 
-#sqkszwwdeg .gt_font_bold {
+#ivchmdxtgs .gt_font_bold {
   font-weight: bold;
 }
 
-#sqkszwwdeg .gt_font_italic {
+#ivchmdxtgs .gt_font_italic {
   font-style: italic;
 }
 
-#sqkszwwdeg .gt_super {
+#ivchmdxtgs .gt_super {
   font-size: 65%;
 }
 
-#sqkszwwdeg .gt_footnote_marks {
+#ivchmdxtgs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#sqkszwwdeg .gt_asterisk {
+#ivchmdxtgs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#sqkszwwdeg .gt_indent_1 {
+#ivchmdxtgs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#sqkszwwdeg .gt_indent_2 {
+#ivchmdxtgs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#sqkszwwdeg .gt_indent_3 {
+#ivchmdxtgs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#sqkszwwdeg .gt_indent_4 {
+#ivchmdxtgs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#sqkszwwdeg .gt_indent_5 {
+#ivchmdxtgs .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -916,9 +826,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Research &amp;amp; Knowledge">Research &amp; Knowledge</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic1**: Description"><div class="gt_from_md">
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div class="gt_from_md">
 <p><strong>Topic1</strong>: Description</p>
-</div></div></td>
+</div></td>
 <td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
@@ -929,9 +839,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Evaluation">Evaluation</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic2**: Description"><div class="gt_from_md">
+<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div class="gt_from_md">
 <p><strong>Topic2</strong>: Description</p>
-</div></div></td>
+</div></td>
 <td headers="Evaluation  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Evaluation  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Evaluation  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
@@ -942,9 +852,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Communication">Communication</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic3**: Description"><div class="gt_from_md">
+<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div class="gt_from_md">
 <p><strong>Topic3</strong>: Description</p>
-</div></div></td>
+</div></td>
 <td headers="Communication  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Communication  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Communication  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>

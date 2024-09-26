@@ -12,12 +12,21 @@ A project with a qmd file showing basic reproducible report skills
 
 Your task is to write the outline structure of your thesis report in a reproducible quarto script. The report must contain the following:
 
-* [ ] The main section headers that you expect to use in your report (e.g., Abstract, Introduction, Methods, Results, Discussion, References) and any subheaders that might be relevant.
-* [ ]  A short *paragraph* about your research topic in the Introduction section 
-* [ ] One relevant *image* with a figure caption that is references in the text
-* [ ] A *table* in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R
-* [ ] At least two *bibliographic references* cited in the text, created and displayed in the reference section using reproducible techniques
-
+* [ ] A *project structure* with all needed files (@sec-project-start)
+* [ ] A *setup code chunk* that loads the tidyverse (@sec-setup-chunk)
+* [ ] The main *section headers* that you expect to use in your report (i.e., Abstract, Introduction, Methods, Results, Discussion, References) (@sec-markdown)
+* [ ] A short *paragraph* about your research topic in the Introduction section, using markdown syntax for any text formatting (@sec-markdown)
+* [ ] One relevant *image* (or your favourite stats/coding meme) with a figure caption (@sec-md-images)
+* [ ] *Cross reference* the image in the introduction text with automatic figure numbering (@sec-cross-references)
+* [ ] Use *inline R* to include the version of R you are using in the Methods section (@sec-inline-r)
+* [ ] A *table* in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R (@sec-md-tables)
+* [ ] At least two *bibliographic references* cited in the text, created and displayed in the reference section using reproducible techniques (@sec-biliography)
+* [ ] Customise the *YAML header* (@sec-yaml) to: 
+    - [ ] a table of contents (@sec-toc)
+    - [ ] display tables using kable 
+    - [ ] use a non-default theme of your choosing 
+    - [ ] hide all code chunks
+* [ ] The quarto file should be renderable by the marker (@sec-render)
 
 ## Submission
 
@@ -28,70 +37,60 @@ Your task is to write the outline structure of your thesis report in a reproduci
 * Please submit a **zip file** containing: 
   1. the .rproj file
   2. your reproducible script, named `report1_studentID.qmd`
-  3. any additional files necessary to reproduce your report(e.g., images or bibliography files),
+  3. any additional files necessary to reproduce your report (e.g., images or bibliography files),
   4. the rendered html report, named `report1_studentID.html`.
 
 ## Marking Rubric
 
+* Green: Perfect or nearly perfect
+* Amber: Needs some improvement
+* Red: Incorrect or absent
 
 ```{r}
-rubric <- list(
-  "Research & Knowledge" = list(
-    "**Topic1**: Description" = list(
-      "A-Excellent" = "",
-      "B-Very Good" = "",
-      "C-Good" = "",
-      "D-Satisfactory" = "",
-      "E-Poor" = ""
-    )
-  ),
-  "Evaluation" = list(
-    "**Topic2**: Description" = list(
-      "A-Excellent" = "",
-      "B-Very Good" = "",
-      "C-Good" = "",
-      "D-Satisfactory" = "",
-      "E-Poor" = ""
-    )
-  ),
-  "Communication" = list(
-    "**Topic3**: Description" = list(
-      "A-Excellent" = "",
-      "B-Very Good" = "",
-      "C-Good" = "",
-      "D-Satisfactory" = "",
-      "E-Poor" = ""
-    )
-  )
-)
+#| echo: false
+
+el <- c("project structure", "setup code chunk", "section headers", 
+        "paragraph", "image", "cross reference", "inline R", "table", 
+        "references", "YAML header", "renderable")
+n <- length(el)
+
+
+data.frame(
+  Elements = el,
+  Green = paste0("<input type='radio' value='2' name='b", 1:n, "' />"),
+  Amber = paste0("<input type='radio' value='1' name='b", 1:n, "' />"),
+  Red = paste0("<input type='radio' value='0' name='b", 1:n, "' />")
+) |>
+  knitr::kable(escape=FALSE)
 ```
 
-```{r}
-colnames <- c("ILO", 
-              "A: Excellent", 
-              "B: Very Good", 
-              "C: Good", 
-              "D: Satisfactory", 
-              "E: Poor")
-cats <- rep(names(rubric), sapply(rubric, length))
+Total: <span id="sum">0</span>/22
 
-reduce(rubric, c) |>
-  as_tibble() |>
-  t() |>
-  as_tibble(rownames = "ILO", .name_repair = "minimal") |>
-  `names<-`(colnames) |>
-  mutate(Category = cats) |>
-  select(Category, everything()) |>
-  group_by(Category) |>
-  gt::gt() |>
-  gt::fmt_markdown(columns = "ILO") |>
-  gt::tab_style(style = list(gt::cell_text(align = "left", v_align= "top")),
-                locations = cells_body()) |>
-  gt::tab_style(style = list(gt::cell_fill("#4D9FCF66")),
-                locations = cells_row_groups()) |>
-  gt::tab_style(style = list(gt::cell_borders("bottom", "grey")),
-                locations = cells_body()) |>
-  gt::opt_stylize(style = 6, add_row_striping = FALSE)
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-```
+<script>
+$(document).ready(function(){
+  // Function to calculate the sum
+  function calculateSum() {
+    let totalSum = 0;
 
+    // Loop through b1 to b11 to get the value of the selected radio button
+    for (let i = 1; i <= 11; i++) {
+      
+      let selectedValue = $(`input[name='b${i}']:checked`).val();
+      
+      // If a button is selected, add its value to the sum
+      if (selectedValue) {
+        totalSum += parseInt(selectedValue, 10);
+      }
+    }
+
+    // Update the total sum in the HTML
+    $('#sum').text(totalSum);
+  }
+  
+  $('input[type=radio]').on('change', function(){
+    calculateSum();
+  });
+});
+</script>

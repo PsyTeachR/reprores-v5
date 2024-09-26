@@ -18,40 +18,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -387,11 +353,25 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">11.1</span> Instructions</h2>
 <p>Your task is to write the outline structure of your thesis report in a reproducible quarto script. The report must contain the following:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">The main section headers that you expect to use in your report (e.g., Abstract, Introduction, Methods, Results, Discussion, References) and any subheaders that might be relevant.</label></li>
-<li><label><input type="checkbox">A short <em>paragraph</em> about your research topic in the Introduction section</label></li>
-<li><label><input type="checkbox">One relevant <em>image</em> with a figure caption that is references in the text</label></li>
-<li><label><input type="checkbox">A <em>table</em> in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R</label></li>
-<li><label><input type="checkbox">At least two <em>bibliographic references</em> cited in the text, created and displayed in the reference section using reproducible techniques</label></li>
+<li><label><input type="checkbox">A <em>project structure</em> with all needed files (<a href="02-reports.html#sec-project-start" class="quarto-xref"><span>Section 2.2.2</span></a>)</label></li>
+<li><label><input type="checkbox">A <em>setup code chunk</em> that loads the tidyverse (<a href="02-reports.html#sec-setup-chunk" class="quarto-xref"><span>Section 2.6.1</span></a>)</label></li>
+<li><label><input type="checkbox">The main <em>section headers</em> that you expect to use in your report (i.e., Abstract, Introduction, Methods, Results, Discussion, References) (<a href="02-reports.html#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>)</label></li>
+<li><label><input type="checkbox">A short <em>paragraph</em> about your research topic in the Introduction section, using markdown syntax for any text formatting (<a href="02-reports.html#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>)</label></li>
+<li><label><input type="checkbox">One relevant <em>image</em> (or your favourite stats/coding meme) with a figure caption (<a href="02-reports.html#sec-md-images" class="quarto-xref"><span>Section 2.6.6</span></a>)</label></li>
+<li><label><input type="checkbox"><em>Cross reference</em> the image in the introduction text with automatic figure numbering (<a href="02-reports.html#sec-cross-references" class="quarto-xref"><span>Section 2.6.8</span></a>)</label></li>
+<li><label><input type="checkbox">Use <em>inline R</em> to include the version of R you are using in the Methods section (<a href="02-reports.html#sec-inline-r" class="quarto-xref"><span>Section 2.5.3</span></a>)</label></li>
+<li><label><input type="checkbox">A <em>table</em> in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R (<a href="02-reports.html#sec-md-tables" class="quarto-xref"><span>Section 2.6.7</span></a>)</label></li>
+<li><label><input type="checkbox">At least two <em>bibliographic references</em> cited in the text, created and displayed in the reference section using reproducible techniques (<a href="02-reports.html#sec-biliography" class="quarto-xref"><span>Section 2.8</span></a>)</label></li>
+<li>
+<label><input type="checkbox">Customise the <em>YAML header</em> (<a href="02-reports.html#sec-yaml" class="quarto-xref"><span>Section 2.7.3</span></a>) to:</label>
+<ul class="task-list">
+<li><label><input type="checkbox">a table of contents (<a href="02-reports.html#sec-toc" class="quarto-xref"><span>Section 2.7.4</span></a>)</label></li>
+<li><label><input type="checkbox">display tables using kable</label></li>
+<li><label><input type="checkbox">use a non-default theme of your choosing</label></li>
+<li><label><input type="checkbox">hide all code chunks</label></li>
+</ul>
+</li>
+<li><label><input type="checkbox">The quarto file should be renderable by the marker (<a href="02-reports.html#sec-render" class="quarto-xref"><span>Section 2.5.4</span></a>)</label></li>
 </ul></section><section id="submission" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="submission">
 <span class="header-section-number">11.2</span> Submission</h2>
 <ul>
@@ -404,565 +384,130 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>the .rproj file</li>
 <li>your reproducible script, named <code>report1_studentID.qmd</code>
 </li>
-<li>any additional files necessary to reproduce your report(e.g., images or bibliography files),</li>
+<li>any additional files necessary to reproduce your report (e.g., images or bibliography files),</li>
 <li>the rendered html report, named <code>report1_studentID.html</code>.</li>
 </ol>
 </li>
 </ul></section><section id="marking-rubric" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="marking-rubric">
 <span class="header-section-number">11.3</span> Marking Rubric</h2>
+<ul>
+<li>Green: Perfect or nearly perfect</li>
+<li>Amber: Needs some improvement</li>
+<li>Red: Incorrect or absent</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>rubric <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="st">"Research &amp; Knowledge"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    <span class="st">"**Topic1**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-4"><a href="#cb1-4"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-5"><a href="#cb1-5"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-6"><a href="#cb1-6"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-7"><a href="#cb1-7"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-8"><a href="#cb1-8"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-9"><a href="#cb1-9"></a>    )</span>
-<span id="cb1-10"><a href="#cb1-10"></a>  ),</span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="st">"Evaluation"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    <span class="st">"**Topic2**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-13"><a href="#cb1-13"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-14"><a href="#cb1-14"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-15"><a href="#cb1-15"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-16"><a href="#cb1-16"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-17"><a href="#cb1-17"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a>    )</span>
-<span id="cb1-19"><a href="#cb1-19"></a>  ),</span>
-<span id="cb1-20"><a href="#cb1-20"></a>  <span class="st">"Communication"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-21"><a href="#cb1-21"></a>    <span class="st">"**Topic3**: Description"</span> <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb1-22"><a href="#cb1-22"></a>      <span class="st">"A-Excellent"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-23"><a href="#cb1-23"></a>      <span class="st">"B-Very Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-24"><a href="#cb1-24"></a>      <span class="st">"C-Good"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-25"><a href="#cb1-25"></a>      <span class="st">"D-Satisfactory"</span> <span class="ot">=</span> <span class="st">""</span>,</span>
-<span id="cb1-26"><a href="#cb1-26"></a>      <span class="st">"E-Poor"</span> <span class="ot">=</span> <span class="st">""</span></span>
-<span id="cb1-27"><a href="#cb1-27"></a>    )</span>
-<span id="cb1-28"><a href="#cb1-28"></a>  )</span>
-<span id="cb1-29"><a href="#cb1-29"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>colnames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ILO"</span>, </span>
-<span id="cb2-2"><a href="#cb2-2"></a>              <span class="st">"A: Excellent"</span>, </span>
-<span id="cb2-3"><a href="#cb2-3"></a>              <span class="st">"B: Very Good"</span>, </span>
-<span id="cb2-4"><a href="#cb2-4"></a>              <span class="st">"C: Good"</span>, </span>
-<span id="cb2-5"><a href="#cb2-5"></a>              <span class="st">"D: Satisfactory"</span>, </span>
-<span id="cb2-6"><a href="#cb2-6"></a>              <span class="st">"E: Poor"</span>)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>cats <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">names</span>(rubric), <span class="fu">sapply</span>(rubric, length))</span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">reduce</span>(rubric, c) <span class="sc">|&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="fu">t</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a>  <span class="fu">as_tibble</span>(<span class="at">rownames =</span> <span class="st">"ILO"</span>, <span class="at">.name_repair =</span> <span class="st">"minimal"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>  <span class="st">`</span><span class="at">names&lt;-</span><span class="st">`</span>(colnames) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a>  <span class="fu">mutate</span>(<span class="at">Category =</span> cats) <span class="sc">|&gt;</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a>  <span class="fu">select</span>(Category, <span class="fu">everything</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a>  <span class="fu">group_by</span>(Category) <span class="sc">|&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a>  gt<span class="sc">::</span><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a>  gt<span class="sc">::</span><span class="fu">fmt_markdown</span>(<span class="at">columns =</span> <span class="st">"ILO"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"left"</span>, <span class="at">v_align=</span> <span class="st">"top"</span>)),</span>
-<span id="cb2-20"><a href="#cb2-20"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-21"><a href="#cb2-21"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_fill</span>(<span class="st">"#4D9FCF66"</span>)),</span>
-<span id="cb2-22"><a href="#cb2-22"></a>                <span class="at">locations =</span> <span class="fu">cells_row_groups</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a>  gt<span class="sc">::</span><span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(gt<span class="sc">::</span><span class="fu">cell_borders</span>(<span class="st">"bottom"</span>, <span class="st">"grey"</span>)),</span>
-<span id="cb2-24"><a href="#cb2-24"></a>                <span class="at">locations =</span> <span class="fu">cells_body</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb2-25"><a href="#cb2-25"></a>  gt<span class="sc">::</span><span class="fu">opt_stylize</span>(<span class="at">style =</span> <span class="dv">6</span>, <span class="at">add_row_striping =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="qggjxthnkc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qggjxthnkc table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#qggjxthnkc thead, #qggjxthnkc tbody, #qggjxthnkc tfoot, #qggjxthnkc tr, #qggjxthnkc td, #qggjxthnkc th {
-  border-style: none;
-}
-
-#qggjxthnkc p {
-  margin: 0;
-  padding: 0;
-}
-
-#qggjxthnkc .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#qggjxthnkc .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#qggjxthnkc .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#qggjxthnkc .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#qggjxthnkc .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qggjxthnkc .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qggjxthnkc .gt_col_heading {
-  color: #FFFFFF;
-  background-color: #0076BA;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#qggjxthnkc .gt_column_spanner_outer {
-  color: #FFFFFF;
-  background-color: #0076BA;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#qggjxthnkc .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#qggjxthnkc .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#qggjxthnkc .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#qggjxthnkc .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#qggjxthnkc .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#qggjxthnkc .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-  vertical-align: middle;
-}
-
-#qggjxthnkc .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#qggjxthnkc .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#qggjxthnkc .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: none;
-  border-top-width: 1px;
-  border-top-color: #D5D5D5;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D5D5D5;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D5D5D5;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#qggjxthnkc .gt_stub {
-  color: #333333;
-  background-color: #89D3FE;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D5D5D5;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qggjxthnkc .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#qggjxthnkc .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#qggjxthnkc .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#qggjxthnkc .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qggjxthnkc .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#qggjxthnkc .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_grand_summary_row {
-  color: #333333;
-  background-color: #D5D5D5;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qggjxthnkc .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_striped {
-  background-color: #EDF7FC;
-}
-
-#qggjxthnkc .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #5F5F5F;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #5F5F5F;
-}
-
-#qggjxthnkc .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qggjxthnkc .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qggjxthnkc .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qggjxthnkc .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qggjxthnkc .gt_left {
-  text-align: left;
-}
-
-#qggjxthnkc .gt_center {
-  text-align: center;
-}
-
-#qggjxthnkc .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#qggjxthnkc .gt_font_normal {
-  font-weight: normal;
-}
-
-#qggjxthnkc .gt_font_bold {
-  font-weight: bold;
-}
-
-#qggjxthnkc .gt_font_italic {
-  font-style: italic;
-}
-
-#qggjxthnkc .gt_super {
-  font-size: 65%;
-}
-
-#qggjxthnkc .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#qggjxthnkc .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#qggjxthnkc .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#qggjxthnkc .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#qggjxthnkc .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#qggjxthnkc .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#qggjxthnkc .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead><tr class="gt_col_headings">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="ILO">ILO</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="A: Excellent">A: Excellent</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="B: Very Good">B: Very Good</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="C: Good">C: Good</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="D: Satisfactory">D: Satisfactory</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="E: Poor">E: Poor</th>
-    </tr></thead>
-<tbody class="gt_table_body">
-<tr class="gt_group_heading_row">
-<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Research &amp;amp; Knowledge">Research &amp; Knowledge</th>
-    </tr>
-<tr class="gt_row_group_first">
-<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic1**: Description"><div class="gt_from_md">
-<p><strong>Topic1</strong>: Description</p>
-</div></div></td>
-<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 29%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">Elements</th>
+<th style="text-align: left;">Green</th>
+<th style="text-align: left;">Amber</th>
+<th style="text-align: left;">Red</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">project structure</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b1"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b1"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b1"></td>
 </tr>
-<tr class="gt_group_heading_row">
-<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Evaluation">Evaluation</th>
-    </tr>
-<tr class="gt_row_group_first">
-<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic2**: Description"><div class="gt_from_md">
-<p><strong>Topic2</strong>: Description</p>
-</div></div></td>
-<td headers="Evaluation  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Evaluation  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Evaluation  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Evaluation  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Evaluation  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<tr class="even">
+<td style="text-align: left;">setup code chunk</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b2"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b2"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b2"></td>
 </tr>
-<tr class="gt_group_heading_row">
-<th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Communication">Communication</th>
-    </tr>
-<tr class="gt_row_group_first">
-<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><div data-qmd="**Topic3**: Description"><div class="gt_from_md">
-<p><strong>Topic3</strong>: Description</p>
-</div></div></td>
-<td headers="Communication  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Communication  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Communication  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Communication  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
-<td headers="Communication  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<tr class="odd">
+<td style="text-align: left;">section headers</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b3"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b3"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b3"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">paragraph</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b4"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b4"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b4"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">image</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b5"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b5"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b5"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">cross reference</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b6"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b6"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b6"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">inline R</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b7"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b7"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b7"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">table</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b8"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b8"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b8"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">references</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b9"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b9"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b9"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">YAML header</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b10"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b10"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b10"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">renderable</td>
+<td style="text-align: left;"><input type="radio" value="2" name="b11"></td>
+<td style="text-align: left;"><input type="radio" value="1" name="b11"></td>
+<td style="text-align: left;"><input type="radio" value="0" name="b11"></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</div>
+<p>Total: <span id="sum">0</span>/22</p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script>
+$(document).ready(function(){
+  // Function to calculate the sum
+  function calculateSum() {
+    let totalSum = 0;
 
+    // Loop through b1 to b11 to get the value of the selected radio button
+    for (let i = 1; i <= 11; i++) {
+      
+      let selectedValue = $(`input[name='b${i}']:checked`).val();
+      
+      // If a button is selected, add its value to the sum
+      if (selectedValue) {
+        totalSum += parseInt(selectedValue, 10);
+      }
+    }
+
+    // Update the total sum in the HTML
+    $('#sum').text(totalSum);
+  }
+  
+  $('input[type=radio]').on('change', function(){
+    calculateSum();
+  });
+});
+</script>
 
 </section></main><!-- /main --><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script>
 

@@ -492,7 +492,7 @@ Note
 </li>
 <li>other (you need to load each package to use these)
 <ul>
-<li>ggthemes:: <code><a href="http://jrnold.github.io/ggthemes/reference/theme_gdocs.html">ggthemes::theme_gdocs()</a></code>
+<li>ggthemes:: <code><a href="https://rdrr.io/pkg/ggthemes/man/theme_gdocs.html">ggthemes::theme_gdocs()</a></code>
 </li>
 <li>patchwork:: <code><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html">patchwork::plot_layout()</a></code>
 </li>
@@ -636,14 +636,14 @@ Do not factor numbers
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># the current date</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>lubridate<span class="sc">::</span><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-23"</code></pre>
+<pre><code>[1] "2024-09-26"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># the current date and time in the GMT timezone</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"GMT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-09-23 13:18:44 GMT"</code></pre>
+<pre><code>[1] "2024-09-26 11:28:04 GMT"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -1440,8 +1440,8 @@ Figure&nbsp;3.13: A basic column plot.
 <option value="answer">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_LKFFOONRJE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_LKFFOONRJE" value="x"><span>aes(y = population)</span></label>
+<div id="radio_SUVPFFEZMK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SUVPFFEZMK" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_SUVPFFEZMK" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_SUVPFFEZMK" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_SUVPFFEZMK" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_SUVPFFEZMK" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 <li><p>What geom would you use to plot the number of countries on each island? <select class="webex-select"><option value="blank"></option>
@@ -1449,8 +1449,8 @@ Figure&nbsp;3.13: A basic column plot.
 <option value="x">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_JWBJIPHAIX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_JWBJIPHAIX" value="x"><span>aes(y = population)</span></label>
+<div id="radio_ZLXXTTGPGB" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZLXXTTGPGB" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLXXTTGPGB" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLXXTTGPGB" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLXXTTGPGB" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_ZLXXTTGPGB" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul></section><section id="sec-histogram" class="level3" data-number="3.5.1"><h3 data-number="3.5.1" class="anchored" data-anchor-id="sec-histogram">
@@ -1529,8 +1529,8 @@ Figure&nbsp;3.16: Histogram with custom styles.
 </div>
 <ul>
 <li>How would you set the mapping for this plot?
-<div id="radio_UDEYGHZGZP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_UDEYGHZGZP" value="x"><span>aes(x = population, y = count)</span></label>
+<div id="radio_PXSHELYMJE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PXSHELYMJE" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_PXSHELYMJE" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_PXSHELYMJE" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_PXSHELYMJE" value="x"><span>aes(x = population, y = count)</span></label>
 </div>
 </li>
 <li>What is the <code>binwidth</code> of the histogram? <select class="webex-select"><option value="blank"></option>
@@ -1844,8 +1844,8 @@ Figure&nbsp;3.22: Don’t plot continuous data with column plots. They are only 
 <option value="x">geom_violinplot()</option></select>
 </li>
 <li>What does the mapping look like for both plots?
-<div id="radio_OYUDEGRCAR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_OYUDEGRCAR" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label>
+<div id="radio_ODIXUUKGFU" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ODIXUUKGFU" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_ODIXUUKGFU" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_ODIXUUKGFU" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_ODIXUUKGFU" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label>
 </div>
 </li>
 <li>Which employee has the longest median call time? <select class="webex-select"><option value="blank"></option>
