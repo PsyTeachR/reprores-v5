@@ -219,11 +219,12 @@ If you start a line with hashes, it creates a header. One hash makes a document 
 
 Put a blank line between paragraphs of text. Bullet-point list items start with "* " or "- " and numbered list items start with "1. ". Indent list items to make nested lists.
 
-:::{.try}
-## Text Styles
+
+### Text Styles
 
 See [Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html) for a quick reference.
 
+:::{.try}
 Add an ordered list of different text styles to your document, like bold, italic, strikethrough, subscript, superscript, code, and a task item.
 :::
 
@@ -575,21 +576,21 @@ format:
     df-print: kable
 ---
 ```
-
+:::
 ### Cross references {#sec-cross-references}
 
 You can automatically number your figures and tables by giving them labels that start with `fig-` or `tbl-`, and referring to them in the text like `@fig-name` or `@tbl-name` (see [quarto cross references](https://quarto.org/docs/authoring/cross-references.html) for more details).
 
+::: {.try}
 Add the following text above the chunk containing the table:
 
 ```{verbatim, lang='markdown'}
 All data are shown in @tbl-raw-data.
 ```
 
-Also, add the two commented lines below to the code chunk:
+Also, add the two commented lines below to the top of the code chunk:
 
-```{r}
-#| echo: fenced
+``` yaml
 #| label: tbl-raw-data
 #| tbl-cap: The raw data from the study.
 ```
@@ -795,7 +796,7 @@ format:
 
 There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the [quarto documentation](https://quarto.org/docs/output-formats/all-formats.html) for more information. 
 
-## Bibliography {#sec-biliography}
+## Bibliography {#sec-bibliography}
 
 There are several ways to do in-text references and automatically generate a [bibliography](https://quarto.org/docs/authoring/citations.html) in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like `bibliography: refs.bib` and cite references in text using an at symbol and a shortname, like `[@tidyverse]`. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.
 

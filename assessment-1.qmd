@@ -16,17 +16,19 @@ Your task is to write the outline structure of your thesis report in a reproduci
 * [ ] A *setup code chunk* that loads the tidyverse (@sec-setup-chunk)
 * [ ] The main *section headers* that you expect to use in your report (i.e., Abstract, Introduction, Methods, Results, Discussion, References) (@sec-markdown)
 * [ ] A short *paragraph* about your research topic in the Introduction section, using markdown syntax for any text formatting (@sec-markdown)
-* [ ] One relevant *image* (or your favourite stats/coding meme) with a figure caption (@sec-md-images)
-* [ ] *Cross reference* the image in the introduction text with automatic figure numbering (@sec-cross-references)
 * [ ] Use *inline R* to include the version of R you are using in the Methods section (@sec-inline-r)
 * [ ] A *table* in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R (@sec-md-tables)
-* [ ] At least two *bibliographic references* cited in the text, created and displayed in the reference section using reproducible techniques (@sec-biliography)
+* [ ] One relevant *image* (or your favourite stats/coding meme) with a figure caption (@sec-md-images) in the Results section
+* [ ] *Cross reference* the image in the text with automatic figure numbering (@sec-cross-references)
+* [ ] At least two *bibliographic references* cited in the text, created and displayed in the reference section using reproducible techniques (@sec-bibliography)
 * [ ] Customise the *YAML header* (@sec-yaml) to: 
     - [ ] a table of contents (@sec-toc)
     - [ ] display tables using kable 
     - [ ] use a non-default theme of your choosing 
     - [ ] hide all code chunks
 * [ ] The quarto file should be renderable by the marker (@sec-render)
+
+See [this report](demos/report1.html) for an example.
 
 ## Submission
 
