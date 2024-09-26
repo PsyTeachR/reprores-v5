@@ -42,6 +42,8 @@ Your task is to write the outline structure of your thesis report in a reproduci
 
 ## Marking Rubric
 
+You will receive green/amber/red lights for each of 11 elements, and a generic feedback document explaining common issues.
+
 * Green: Perfect or nearly perfect
 * Amber: Needs some improvement
 * Red: Incorrect or absent
