@@ -344,15 +344,23 @@ Add the following just below the YAML header.
 ```{r}
 #| echo: fenced
 #| label: setup
+#‎| include: false
 
 library(tidyverse)
 ```
 :::
 
-The chunk option `label` designates this as the setup chunk, and the `include` option makes sure that this chunk and any output it produces don't end up in your rendered document.
-
 The function `library(tidyverse)` makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don't bury the call to `library(package_I_need)` way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.
 
+### Chunk Options
+
+The chunk execution option `label` above designates this as the setup chunk, and the `include` option makes sure that this chunk and any output it produces don't end up in your rendered document. 
+
+Chunk options are structured like `#| option: value`, and go at the very top of a code chunk. You can also set default values in the YAML header under `execute:` (see @sec-execute below).  
+
+::: {.callout-warning}
+Make sure there are no blank lines, code, or comments before any chunk options, otherwise the options will not be applied.
+:::
 
 ### Online sources {#sec-loading-online}
 

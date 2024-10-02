@@ -409,13 +409,14 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <a href="#writing-a-report" id="toc-writing-a-report" class="nav-link" data-scroll-target="#writing-a-report"><span class="header-section-number">2.5</span> Writing a report</a>
   <ul class="collapse">
 <li><a href="#sec-setup-chunk" id="toc-sec-setup-chunk" class="nav-link" data-scroll-target="#sec-setup-chunk"><span class="header-section-number">2.5.1</span> Setup Chunk</a></li>
-  <li><a href="#sec-loading-online" id="toc-sec-loading-online" class="nav-link" data-scroll-target="#sec-loading-online"><span class="header-section-number">2.5.2</span> Online sources</a></li>
-  <li><a href="#local-data-files" id="toc-local-data-files" class="nav-link" data-scroll-target="#local-data-files"><span class="header-section-number">2.5.3</span> Local data files</a></li>
-  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="header-section-number">2.5.4</span> Data analysis</a></li>
-  <li><a href="#sec-comments" id="toc-sec-comments" class="nav-link" data-scroll-target="#sec-comments"><span class="header-section-number">2.5.5</span> Code comments</a></li>
-  <li><a href="#sec-md-images" id="toc-sec-md-images" class="nav-link" data-scroll-target="#sec-md-images"><span class="header-section-number">2.5.6</span> Images</a></li>
-  <li><a href="#sec-md-tables" id="toc-sec-md-tables" class="nav-link" data-scroll-target="#sec-md-tables"><span class="header-section-number">2.5.7</span> Tables</a></li>
-  <li><a href="#sec-cross-references" id="toc-sec-cross-references" class="nav-link" data-scroll-target="#sec-cross-references"><span class="header-section-number">2.5.8</span> Cross references</a></li>
+  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options"><span class="header-section-number">2.5.2</span> Chunk Options</a></li>
+  <li><a href="#sec-loading-online" id="toc-sec-loading-online" class="nav-link" data-scroll-target="#sec-loading-online"><span class="header-section-number">2.5.3</span> Online sources</a></li>
+  <li><a href="#local-data-files" id="toc-local-data-files" class="nav-link" data-scroll-target="#local-data-files"><span class="header-section-number">2.5.4</span> Local data files</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis"><span class="header-section-number">2.5.5</span> Data analysis</a></li>
+  <li><a href="#sec-comments" id="toc-sec-comments" class="nav-link" data-scroll-target="#sec-comments"><span class="header-section-number">2.5.6</span> Code comments</a></li>
+  <li><a href="#sec-md-images" id="toc-sec-md-images" class="nav-link" data-scroll-target="#sec-md-images"><span class="header-section-number">2.5.7</span> Images</a></li>
+  <li><a href="#sec-md-tables" id="toc-sec-md-tables" class="nav-link" data-scroll-target="#sec-md-tables"><span class="header-section-number">2.5.8</span> Tables</a></li>
+  <li><a href="#sec-cross-references" id="toc-sec-cross-references" class="nav-link" data-scroll-target="#sec-cross-references"><span class="header-section-number">2.5.9</span> Cross references</a></li>
   </ul>
 </li>
   <li>
@@ -830,7 +831,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 47 years old. It is 35 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 47 years old. It is 30 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -870,15 +871,32 @@ Rendering with Code
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="in">#| label: setup</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="in">#‎| include: false</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<p>The chunk option <code>label</code> designates this as the setup chunk, and the <code>include</code> option makes sure that this chunk and any output it produces don’t end up in your rendered document.</p>
 <p>The function <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don’t bury the call to <code><a href="https://rdrr.io/r/base/library.html">library(package_I_need)</a></code> way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.</p>
-</section><section id="sec-loading-online" class="level3" data-number="2.5.2"><h3 data-number="2.5.2" class="anchored" data-anchor-id="sec-loading-online">
-<span class="header-section-number">2.5.2</span> Online sources</h3>
+</section><section id="chunk-options" class="level3" data-number="2.5.2"><h3 data-number="2.5.2" class="anchored" data-anchor-id="chunk-options">
+<span class="header-section-number">2.5.2</span> Chunk Options</h3>
+<p>The chunk execution option <code>label</code> above designates this as the setup chunk, and the <code>include</code> option makes sure that this chunk and any output it produces don’t end up in your rendered document.</p>
+<p>Chunk options are structured like <code>#| option: value</code>, and go at the very top of a code chunk. You can also set default values in the YAML header under <code>execute:</code> (see <a href="#sec-execute" class="quarto-xref"><span>Section 2.6.1</span></a> below).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure there are no blank lines, code, or comments before any chunk options, otherwise the options will not be applied.</p>
+</div>
+</div>
+</section><section id="sec-loading-online" class="level3" data-number="2.5.3"><h3 data-number="2.5.3" class="anchored" data-anchor-id="sec-loading-online">
+<span class="header-section-number">2.5.3</span> Online sources</h3>
 <p>Now, rather than using objects we have created from scratch, we will read in a data file. First, let’s try loading data that is stored online.</p>
 <div class="try">
 <p>Create a new level 2 header called “Data Analysis”, add a code chunk below it, and copy, paste, and run the below code. This code loads some simulated experiment data.</p>
@@ -923,8 +941,8 @@ could not find function “read_csv”</p>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="fu">View</span>(smalldata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="local-data-files" class="level3" data-number="2.5.3"><h3 data-number="2.5.3" class="anchored" data-anchor-id="local-data-files">
-<span class="header-section-number">2.5.3</span> Local data files</h3>
+</section><section id="local-data-files" class="level3" data-number="2.5.4"><h3 data-number="2.5.4" class="anchored" data-anchor-id="local-data-files">
+<span class="header-section-number">2.5.4</span> Local data files</h3>
 <p>More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project’s <a href="https://psyteachr.github.io/glossary/w#working-directory" target="_blank" class="glossary" title="The filepath where R is currently reading and writing files.">working directory</a>, and we have already set up the main directory <code class="path">reprores</code>for this course.</p>
 <p>You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called <code class="path">data</code> and saving any image files to a subdirectory called <code class="path">images</code>. Using subdirectories helps avoid one single folder becoming too cluttered, which is important if you’re working on big projects.</p>
 <p>In your <code class="path">reprores</code> directory, create a new folder named <code class="path">data</code>, <a href="https://psyteachr.github.io/reprores/data/smalldata.csv" download="">download a copy of the data file</a>, and save it in this new subdirectory.</p>
@@ -958,8 +976,8 @@ Tab-autocomplete file names
 <div class="try">
 <p>Run <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>, and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> on <code>smalldata</code> to confirm that the data is the same as before.</p>
 </div>
-</section><section id="data-analysis" class="level3" data-number="2.5.4"><h3 data-number="2.5.4" class="anchored" data-anchor-id="data-analysis">
-<span class="header-section-number">2.5.4</span> Data analysis</h3>
+</section><section id="data-analysis" class="level3" data-number="2.5.5"><h3 data-number="2.5.5" class="anchored" data-anchor-id="data-analysis">
+<span class="header-section-number">2.5.5</span> Data analysis</h3>
 <p>For this report we’re just going to present some simple stats for two groups: “control” and “exp”. We’ll come back to how to write this kind of code yourself in <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>. For now, see if you can follow the logic of what the code is doing via the code comments.</p>
 <div class="try">
 <p>Create a new code chunk, then copy, paste and run the following code and then view <code>group_counts</code> by clicking on the object in the environment pane.</p>
@@ -1004,7 +1022,7 @@ Tab-autocomplete file names
 <div class="try">
 <p>Add another line that reports the total numbers of participants in the <strong>experimental</strong> condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1013,15 +1031,15 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **experimental** condition was <span class="in">`r group_counts$n[2]`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section><section id="sec-comments" class="level3" data-number="2.5.5"><h3 data-number="2.5.5" class="anchored" data-anchor-id="sec-comments">
-<span class="header-section-number">2.5.5</span> Code comments</h3>
+</section><section id="sec-comments" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-comments">
+<span class="header-section-number">2.5.6</span> Code comments</h3>
 <p>In the above code we’ve used code <a href="https://psyteachr.github.io/glossary/c#comment" target="_blank" class="glossary" title="Comments are text that R will not run as code. You can annotate .R files or chunks in R Markdown files with comments by prefacing each line of the comment with one or more hash symbols (#).">comments</a> and it’s important to highlight how useful these are. You can add comments inside R chunks with the hash symbol (<code>#</code>). R will ignore characters from the hash to the end of the line.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># important numbers</span></span>
@@ -1032,8 +1050,8 @@ Solution
 </div>
 <p>It’s usually good practice to start a code chunk with a comment that explains what you’re doing there, especially if the code is not explained in the text of the report.</p>
 <p>If you name your objects clearly, you often don’t need to add clarifying comments. For example, if I’d named the three objects above <code>total_participants</code>, <code>mean_pre</code> and <code>mean_post</code>, I would omit the comments. It’s a bit of an art to comment your code well, but try to add comments as you’re working through this book - it will help consolidate your learning and when future you comes to review your code, you’ll thank past you for being so clear.</p>
-</section><section id="sec-md-images" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-md-images">
-<span class="header-section-number">2.5.6</span> Images</h3>
+</section><section id="sec-md-images" class="level3" data-number="2.5.7"><h3 data-number="2.5.7" class="anchored" data-anchor-id="sec-md-images">
+<span class="header-section-number">2.5.7</span> Images</h3>
 <p>As the saying goes, a picture paints a thousand words, and sometimes you will want to communicate your data using visualisations.</p>
 <p>Create a code chunk to display a graph of the data in your document after the text we’ve written so far. We’ll use some code that you’ll learn more about in <a href="03-viz.html" class="quarto-xref"><span>Chapter 3</span></a> to make a simple bar chart that represents the sales data – focus on trying to follow how bits of the code map on to the plot that is created.</p>
 <div class="try">
@@ -1066,7 +1084,7 @@ Figure&nbsp;2.5: The ReproRes logo
 </figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1075,7 +1093,7 @@ Image Licenses
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Most images on Wikipedia are public domain or have an open license. You can search for images by license on Google Images by clicking on the <if>Tools</if> button and choosing “Creative Commons licenses” from the “Usage Rights” menu.</p>
 <div class="cell">
@@ -1089,8 +1107,8 @@ Image Licenses
 </div>
 </div>
 </div>
-</section><section id="sec-md-tables" class="level3" data-number="2.5.7"><h3 data-number="2.5.7" class="anchored" data-anchor-id="sec-md-tables">
-<span class="header-section-number">2.5.7</span> Tables</h3>
+</section><section id="sec-md-tables" class="level3" data-number="2.5.8"><h3 data-number="2.5.8" class="anchored" data-anchor-id="sec-md-tables">
+<span class="header-section-number">2.5.8</span> Tables</h3>
 <p>Rather than a figure, we might want to display our data in a table.</p>
 <div class="try">
 <p>Add a new level 3 heading to your document, name the heading “Tables” and then create a new code chunk below this.</p>
@@ -1121,13 +1139,13 @@ Image Licenses
 <span id="cb20-4"><a href="#cb20-4"></a><span class="co">    df-print: kable</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="sec-cross-references" class="level3" data-number="2.5.8"><h3 data-number="2.5.8" class="anchored" data-anchor-id="sec-cross-references">
-<span class="header-section-number">2.5.8</span> Cross references</h3>
+</section><section id="sec-cross-references" class="level3" data-number="2.5.9"><h3 data-number="2.5.9" class="anchored" data-anchor-id="sec-cross-references">
+<span class="header-section-number">2.5.9</span> Cross references</h3>
 <p>You can automatically number your figures and tables by giving them labels that start with <code>fig-</code> or <code>tbl-</code>, and referring to them in the text like <code>@fig-name</code> or <code>@tbl-name</code> (see <a href="https://quarto.org/docs/authoring/cross-references.html">quarto cross references</a> for more details).</p>
 <div class="try">
 <p>Add the following text above the chunk containing the table:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1"></a>All data are shown in @tbl-raw-data.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Also, add the two commented lines below to the code chunk:</p>
+<p>Also, add the two commented lines below to the top of the code chunk:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#| label: tbl-raw-data</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="co">#| tbl-cap: The raw data from the study.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1217,7 +1235,7 @@ Table&nbsp;2.1: The raw data from the study.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1226,7 +1244,7 @@ Advanced table customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you’re feeling confident with what we have covered so far, you can also explore the <a href="https://gt.rstudio.com/">gt</a> package, which is complex, but allows you to create beautiful customised tables. <a href="https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/">Riding tables with {gt} and {gtExtras}</a> is an outstanding tutorial.</p>
 </div>
@@ -1249,7 +1267,7 @@ Advanced table customisation
 <span id="cb23-8"><a href="#cb23-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also override defaults in a code cell. See <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto code cells help</a> for a full list of options.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1258,7 +1276,7 @@ Figure versus output dimensions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell">
@@ -1609,7 +1627,7 @@ Warning
 <span class="header-section-number">2.9.2</span> Create a New Script</h3>
 <p>In the “cv” project, create a new quarto document called “cv.qmd” (<a href="#sec-quarto-newdoc" class="quarto-xref"><span>Section 2.4.1</span></a>). Edit the YAML header to print data frames using kable and set a custom theme (<a href="#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1618,7 +1636,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb44"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb44-1"><a href="#cb44-1"></a>---</span>
 <span id="cb44-2"><a href="#cb44-2"></a>title: "CV"</span>
@@ -1635,7 +1653,7 @@ Solution
 <span class="header-section-number">2.9.3</span> Markdown Practice</h3>
 <p>Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites (<a href="#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1644,7 +1662,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>I am a research psychologist who is interested in open science 
 and teaching computational skills.
@@ -1710,7 +1728,7 @@ and teaching computational skills.
 <span class="header-section-number">2.9.5</span> Code Execution</h3>
 <p>Figure out how to make it so that code chunks don’t show in your rendered document (<a href="#sec-execute" class="quarto-xref"><span>Section 2.6.1</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1719,7 +1737,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can set the execution default to <code>echo: false</code> in the YAML header at the top of the script.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb47-1"><a href="#cb47-1"></a>---</span>
@@ -1732,30 +1750,7 @@ Solution
 </div>
 </section><section id="add-an-image" class="level3" data-number="2.9.6"><h3 data-number="2.9.6" class="anchored" data-anchor-id="add-an-image">
 <span class="header-section-number">2.9.6</span> Add an Image</h3>
-<p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.6</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You can add an image from the web using its URL:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
-<span class="header-section-number">2.9.7</span> Use Inline R</h3>
-<p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2024-09-26.</p>
+<p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1768,13 +1763,17 @@ Solution
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can add an image from the web using its URL:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
-<span class="header-section-number">2.9.8</span> Render</h3>
-<p>Render this document to html (<a href="#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>).</p>
+</section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
+<span class="header-section-number">2.9.7</span> Use Inline R</h3>
+<p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
+<p>This CV was created on 2024-10-01.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1786,6 +1785,25 @@ Solution
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
+<span class="header-section-number">2.9.8</span> Render</h3>
+<p>Render this document to html (<a href="#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>Click on the render button or run the following code in the console. (Do not put it the script!)
 
