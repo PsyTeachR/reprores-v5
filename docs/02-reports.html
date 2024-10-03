@@ -386,9 +386,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li>
 <a href="#sec-projects" id="toc-sec-projects" class="nav-link" data-scroll-target="#sec-projects"><span class="header-section-number">2.2</span> Projects</a>
   <ul class="collapse">
-<li><a href="#default-working-directory" id="toc-default-working-directory" class="nav-link" data-scroll-target="#default-working-directory"><span class="header-section-number">2.2.1</span> Default working directory</a></li>
-  <li><a href="#sec-project-start" id="toc-sec-project-start" class="nav-link" data-scroll-target="#sec-project-start"><span class="header-section-number">2.2.2</span> Start a Project</a></li>
-  <li><a href="#sec-naming" id="toc-sec-naming" class="nav-link" data-scroll-target="#sec-naming"><span class="header-section-number">2.2.3</span> Naming things</a></li>
+<li><a href="#file-system" id="toc-file-system" class="nav-link" data-scroll-target="#file-system"><span class="header-section-number">2.2.1</span> File System</a></li>
+  <li><a href="#default-working-directory" id="toc-default-working-directory" class="nav-link" data-scroll-target="#default-working-directory"><span class="header-section-number">2.2.2</span> Default working directory</a></li>
+  <li><a href="#sec-project-start" id="toc-sec-project-start" class="nav-link" data-scroll-target="#sec-project-start"><span class="header-section-number">2.2.3</span> Start a Project</a></li>
+  <li><a href="#sec-naming" id="toc-sec-naming" class="nav-link" data-scroll-target="#sec-naming"><span class="header-section-number">2.2.4</span> Naming things</a></li>
   </ul>
 </li>
   <li><a href="#naming-practice" id="toc-naming-practice" class="nav-link" data-scroll-target="#naming-practice"><span class="header-section-number">2.3</span> Naming practice</a></li>
@@ -534,8 +535,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="sec-projects" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="sec-projects">
 <span class="header-section-number">2.2</span> Projects</h2>
 <p>Before we write any code, first, we need to get organised. <a href="https://psyteachr.github.io/glossary/p#project" target="_blank" class="glossary" title="A way to organise related files in RStudio">Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include <a href="https://psyteachr.github.io/glossary/s#script" target="_blank" class="glossary" title="A plain-text file that contains commands in a coding language, such as R.">scripts</a>, data files, and output files like the PDF report created by the script or images.</p>
-<section id="default-working-directory" class="level3" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="default-working-directory">
-<span class="header-section-number">2.2.1</span> Default working directory</h3>
+<section id="file-system" class="level3" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="file-system">
+<span class="header-section-number">2.2.1</span> File System</h3>
+<p>Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer’s file system is like a big box (or <a href="https://psyteachr.github.io/glossary/d#directory" target="_blank" class="glossary" title="A collection or “folder” of files on a computer.">directory</a>) that contains both files and smaller boxes, or “subdirectories”. You can specify the location of a file with its name and the names of all the directories it is inside.</p>
+<p>For example, if Lisa is looking for a file called <code>report.qmd</code>on their Desktop, they can specify the full file <a href="https://psyteachr.github.io/glossary/p#path" target="_blank" class="glossary" title="A string representing the location of a file or directory.">path</a> like this: <code>/Users/lisad/Desktop/report.qmd</code>, because the <code>Desktop</code> directory is inside the <code>lisad</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>lisad</code>. You can also use the <code>~</code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.qmd</code>.</p>
+</section><section id="default-working-directory" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="default-working-directory">
+<span class="header-section-number">2.2.2</span> Default working directory</h3>
 <p>First, make a new <a href="https://psyteachr.github.io/glossary/d#directory" target="_blank" class="glossary" title="A collection or “folder” of files on a computer.">directory</a> (i.e., folder) on your computer where you will keep all of your R projects. Name it something like “R-projects” (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer’s Finder or Explorer.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -571,8 +576,8 @@ Avoid long path names
 </div>
 </div>
 <p>You can set the working directory to another location manually with menu commands: <if>Session &gt; Set Working Directory &gt; Choose Directory…</if> However, there’s a better way of organising your files by using Projects in RStudio.</p>
-</section><section id="sec-project-start" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-project-start">
-<span class="header-section-number">2.2.2</span> Start a Project</h3>
+</section><section id="sec-project-start" class="level3" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-project-start">
+<span class="header-section-number">2.2.3</span> Start a Project</h3>
 <p>To create a new project for the work we’ll do in this book:</p>
 <ul>
 <li><if>File &gt; New Project…</if></li>
@@ -632,8 +637,8 @@ Don’t nest projects
 <p>Don’t ever save a new project <strong>inside</strong> another project directory. This can cause some hard-to-resolve problems.</p>
 </div>
 </div>
-</section><section id="sec-naming" class="level3" data-number="2.2.3"><h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-naming">
-<span class="header-section-number">2.2.3</span> Naming things</h3>
+</section><section id="sec-naming" class="level3" data-number="2.2.4"><h3 data-number="2.2.4" class="anchored" data-anchor-id="sec-naming">
+<span class="header-section-number">2.2.4</span> Naming things</h3>
 <p>Before we start creating new files, it’s important to review how to name your files. This might seem a bit pedantic, but following clear naming rules so that both people and computers can easily find things will make your life much easier in the long run. Here are some important principles:</p>
 <ul>
 <li>file and directory names should only contain letters, numbers, dashes, and underscores, with a full stop (<code>.</code>) between the file name and <a href="https://psyteachr.github.io/glossary/e#extension" target="_blank" class="glossary" title="The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).">extension</a> (that means no spaces!)</li>
@@ -831,7 +836,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 47 years old. It is 30 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 47 years old. It is 28 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1132,12 +1137,25 @@ Image Licenses
 10 S10   exp     102.  114. </code></pre>
 <p>This isn’t very pretty, but we can change the print style.</p>
 <div class="try">
-<p>Change the line <code>format: html</code> in the YAML header to the following. Make sure to keep the spaces exactly the same (YAML is very picky about spaces).</p>
+<p>Change the line <code>format: html</code> in the YAML header to the following.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">---</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="an">format:</span><span class="co"> </span></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="co">  html:</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a><span class="co">    df-print: kable</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure to keep the spaces exactly the same (YAML is very picky about spaces). In YAML, if a <code>key: value</code> pair doesn’t have any sub-options, you can write it on one line, like <code>format: html</code>. But if you want to set any html options, you have to indent it like above.</p>
+</div>
 </div>
 </section><section id="sec-cross-references" class="level3" data-number="2.5.9"><h3 data-number="2.5.9" class="anchored" data-anchor-id="sec-cross-references">
 <span class="header-section-number">2.5.9</span> Cross references</h3>
@@ -1235,7 +1253,7 @@ Table&nbsp;2.1: The raw data from the study.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1244,7 +1262,7 @@ Advanced table customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you’re feeling confident with what we have covered so far, you can also explore the <a href="https://gt.rstudio.com/">gt</a> package, which is complex, but allows you to create beautiful customised tables. <a href="https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/">Riding tables with {gt} and {gtExtras}</a> is an outstanding tutorial.</p>
 </div>
@@ -1267,7 +1285,7 @@ Advanced table customisation
 <span id="cb23-8"><a href="#cb23-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also override defaults in a code cell. See <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto code cells help</a> for a full list of options.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1276,7 +1294,7 @@ Figure versus output dimensions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell">
@@ -1627,7 +1645,7 @@ Warning
 <span class="header-section-number">2.9.2</span> Create a New Script</h3>
 <p>In the “cv” project, create a new quarto document called “cv.qmd” (<a href="#sec-quarto-newdoc" class="quarto-xref"><span>Section 2.4.1</span></a>). Edit the YAML header to print data frames using kable and set a custom theme (<a href="#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1636,7 +1654,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb44"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb44-1"><a href="#cb44-1"></a>---</span>
 <span id="cb44-2"><a href="#cb44-2"></a>title: "CV"</span>
@@ -1653,7 +1671,7 @@ Solution
 <span class="header-section-number">2.9.3</span> Markdown Practice</h3>
 <p>Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites (<a href="#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1662,7 +1680,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>I am a research psychologist who is interested in open science 
 and teaching computational skills.
@@ -1728,7 +1746,7 @@ and teaching computational skills.
 <span class="header-section-number">2.9.5</span> Code Execution</h3>
 <p>Figure out how to make it so that code chunks don’t show in your rendered document (<a href="#sec-execute" class="quarto-xref"><span>Section 2.6.1</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1737,7 +1755,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can set the execution default to <code>echo: false</code> in the YAML header at the top of the script.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb47-1"><a href="#cb47-1"></a>---</span>
@@ -1752,29 +1770,6 @@ Solution
 <span class="header-section-number">2.9.6</span> Add an Image</h3>
 <p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You can add an image from the web using its URL:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
-<span class="header-section-number">2.9.7</span> Use Inline R</h3>
-<p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2024-10-01.</p>
-<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1786,13 +1781,17 @@ Solution
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can add an image from the web using its URL:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-</section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
-<span class="header-section-number">2.9.8</span> Render</h3>
-<p>Render this document to html (<a href="#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>).</p>
+</section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
+<span class="header-section-number">2.9.7</span> Use Inline R</h3>
+<p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
+<p>This CV was created on 2024-10-03.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1804,6 +1803,25 @@ Solution
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
+<span class="header-section-number">2.9.8</span> Render</h3>
+<p>Render this document to html (<a href="#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>Click on the render button or run the following code in the console. (Do not put it the script!)
 
@@ -1821,7 +1839,20 @@ quarto::quarto_render("cv.qmd")
 </div>
 </section><section id="share" class="level3" data-number="2.9.9"><h3 data-number="2.9.9" class="anchored" data-anchor-id="share">
 <span class="header-section-number">2.9.9</span> Share</h3>
-<p>Once you’re done, share your knitted html file and the qmd file for the exercises on Teams in the Week 02 channel.</p>
+<p>Once you’re done, zip up your entire project folder and share it on Teams under the week 2 exercise post. Try downloading someone else’s project and rendering their qmd file.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure any files you reference are inside your project folder, and <strong>always</strong> use <a href="https://psyteachr.github.io/glossary/r#relative-path" target="_blank" class="glossary" title="The location of a file in relation to the working directory.">relative paths</a> and not <a href="https://psyteachr.github.io/glossary/a#absolute-path" target="_blank" class="glossary" title="A file path that starts with / and is not appended to the working directory">absolute paths</a> when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check that your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.</p>
+</div>
+</div>
 </section></section><section id="sec-glossary-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-reports">Glossary</h2>
 <div class="cell">
 <div class="cell-output-display">
@@ -1832,24 +1863,32 @@ quarto::quarto_render("cv.qmd")
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/a#absolute-path" class="glossary" target="_blank">absolute-path</a></td>
+<td style="text-align: left;">A file path that starts with / and is not appended to the working directory</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/c#chunk" class="glossary" target="_blank">chunk</a></td>
 <td style="text-align: left;">A section of code in an R Markdown file</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/c#comment" class="glossary" target="_blank">comment</a></td>
 <td style="text-align: left;">Comments are text that R will not run as code. You can annotate .R files or chunks in R Markdown files with comments by prefacing each line of the comment with one or more hash symbols (#).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/d#directory" class="glossary" target="_blank">directory</a></td>
 <td style="text-align: left;">A collection or “folder” of files on a computer.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/e#extension" class="glossary" target="_blank">extension</a></td>
 <td style="text-align: left;">The end part of a file name that tells you what type of file it is (e.g., .R or .Rmd).</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/m#markdown" class="glossary" target="_blank">markdown</a></td>
 <td style="text-align: left;">A way to specify formatting, such as headers, paragraphs, lists, bolding, and links.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/p#path" class="glossary" target="_blank">path</a></td>
+<td style="text-align: left;">A string representing the location of a file or directory.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/p#project" class="glossary" target="_blank">project</a></td>
@@ -1864,22 +1903,26 @@ quarto::quarto_render("cv.qmd")
 <td style="text-align: left;">The R-specific version of markdown: a way to specify formatting, such as headers, paragraphs, lists, bolding, and links, as well as code blocks and inline code.</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/r#relative-path" class="glossary" target="_blank">relative-path</a></td>
+<td style="text-align: left;">The location of a file in relation to the working directory.</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/r#render" class="glossary" target="_blank">render</a></td>
 <td style="text-align: left;">To create a file (usually an image or PDF) or widget from source code</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/r#reproducibility" class="glossary" target="_blank">reproducibility</a></td>
 <td style="text-align: left;">The extent to which the findings of a study can be repeated in some other context</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/s#script" class="glossary" target="_blank">script</a></td>
 <td style="text-align: left;">A plain-text file that contains commands in a coding language, such as R.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/w#working-directory" class="glossary" target="_blank">working-directory</a></td>
 <td style="text-align: left;">The filepath where R is currently reading and writing files.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/y#yaml" class="glossary" target="_blank">yaml</a></td>
 <td style="text-align: left;">A structured format for information</td>
 </tr>

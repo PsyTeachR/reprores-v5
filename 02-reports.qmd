@@ -62,6 +62,12 @@ We will make reproducible reports following the principles of [literate programm
 
 Before we write any code, first, we need to get organised. `r glossary("project", "Projects")` in RStudio are a way to group all the files you need for one project. Most projects include `r glossary("script", "scripts")`, data files, and output files like the PDF report created by the script or images.
 
+### File System
+
+Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer's file system is like a big box (or `r glossary("directory")`) that contains both files and smaller boxes, or "subdirectories". You can specify the location of a file with its name and the names of all the directories it is inside.
+
+For example, if Lisa is looking for a file called `report.qmd`on their Desktop, they can specify the full file `r glossary("path")` like this: `/Users/lisad/Desktop/report.qmd`, because the `Desktop` directory is inside the `lisad` directory, which is inside the `Users` directory, which is located at the base of the whole file system. If that file was on *your* desktop, you would probably have a different path unless your user directory is also called `lisad`. You can also use the `~` shortcut to represent the user directory of the person who is currently logged in, like this: `~/Desktop/report.qmd`.
+
 ### Default working directory
 
 First, make a new `r glossary("directory")` (i.e., folder) on your computer where you will keep all of your R projects. Name it something like "R-projects" (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer's Finder or Explorer. 
@@ -528,6 +534,7 @@ The general syntax for adding an image in markdown is `![caption](url){#fig-name
 
 ![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%"}
 
+
 ::: {.callout-note collapse="true"}
 ## Image Licenses
 
@@ -574,7 +581,7 @@ First, let's see what the table looks like if we don't make any edits. Simply wr
 This isn't very pretty, but we can change the print style. 
 
 ::: {.try}
-Change the line `format: html` in the YAML header to the following. Make sure to keep the spaces exactly the same (YAML is very picky about spaces).
+Change the line `format: html` in the YAML header to the following. 
 
 
 ``` md
@@ -585,6 +592,13 @@ format:
 ---
 ```
 :::
+
+::: {.callout-warning}
+Make sure to keep the spaces exactly the same (YAML is very picky about spaces). In YAML, if a `key: value` pair doesn't have any sub-options, you can write it on one line, like `format: html`. But if you want to set any html options, you have to indent it like above.
+:::
+
+
+
 ### Cross references {#sec-cross-references}
 
 You can automatically number your figures and tables by giving them labels that start with `fig-` or `tbl-`, and referring to them in the text like `@fig-name` or `@tbl-name` (see [quarto cross references](https://quarto.org/docs/authoring/cross-references.html) for more details).
@@ -1079,7 +1093,11 @@ Render this document to html ([@sec-render]).
 
 ### Share
 
-Once you're done, share your knitted html file and the qmd file for the exercises on Teams in the Week 02 channel.
+Once you're done, zip up your entire project folder and share it on Teams under the week 2 exercise post. Try downloading someone else's project and rendering their qmd file.
+
+::: {.callout-important}
+Make sure any files you reference are inside your project folder, and **always** use `r glossary("relative path", "relative paths")` and not `r glossary("absolute path", "absolute paths")` when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check that your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.
+:::
 
 ## Glossary {#sec-glossary-reports -}
 
