@@ -6,11 +6,9 @@
 
 ## Intended Learning Outcomes {#sec-ilo-viz -}
 
-:::{.callout-note .ilo}
 - [ ] Identify categorical versus continuous data
 - [ ] Create plots in layers using ggplot
 - [ ] Choose appropriate plots for data
-:::
 
 ## Functions used {#sec-functions-viz -}
 
@@ -21,7 +19,7 @@
     * readr:: `readr::col_character()`, `readr::col_datetime()`, `readr::col_double()`, `readr::col_factor()`, `readr::col_integer()`, `readr::cols()`, `readr::read_csv()`
     * lubridate:: `lubridate::now()`, `lubridate::today()`
     * dplyr:: `dplyr::count()`, `dplyr::glimpse()`, 
-    * ggplot2:: `aes()`, `coord_cartesian()`, `element_blank()`, `facet_wrap()`, `geom_bar()`, `geom_boxplot()`, `geom_col()`, `geom_histogram()`, `geom_jitter()`, `geom_point()`, `geom_smooth()`, `ggplot()`, `ggtitle()`, `guides()`, `scale_fill_manual()`, `scale_x_continuous()`, `scale_x_date()`, `scale_x_discrete()`, `scale_y_continuous()`, `spec()`, `stat_summary()`, `theme()`, `theme_bw()`, `theme_minimal()`, `theme_set()`
+    * ggplot2:: `aes()`, `coord_cartesian()`, `element_blank()`, `facet_wrap()`, `geom_bar()`, `geom_boxplot()`, `geom_col()`, `geom_histogram()`, `geom_jitter()`, `geom_point()`, `geom_smooth()`, `ggplot()`, `ggsave()`, `ggtitle()`, `guides()`, `scale_fill_manual()`, `scale_x_continuous()`, `scale_x_date()`, `scale_x_discrete()`, `scale_y_continuous()`, `spec()`, `stat_summary()`, `theme()`, `theme_bw()`, `theme_minimal()`, `theme_set()`
 * other (you need to load each package to use these)
     * ggthemes:: `ggthemes::theme_gdocs()`
     * patchwork:: `patchwork::plot_layout()`
@@ -75,7 +73,7 @@ pets <- tribble(
 pets
 ```
 
-Variables can be classified as `r glossary("continuous")` (numbers) or `r glossary("categorical")` (labels). When you're plotting data, it's important to know what kind of variables you have, which can help you decide what types of plots are most appropriate. Each variable also has a `r glossary("data type")`, such as `r glossary("numeric")` (numbers), `r glossary("character")` (text), or `r glossary("logical")` (TRUE/FALSE values). Some plots can only work on some data types. Make sure you have watched the mini-lecture on types of data from last week before you work through this chapter. Additionally, @sec-data-types has more details, as this concept will be relevant repeatedly.
+Variables can be classified as `r glossary("continuous")` (numbers) or `r glossary("categorical")` (labels). When you're plotting data, it's important to know what kind of variables you have, which can help you decide what types of plots are most appropriate. Each variable also has a `r glossary("data type")`, such as `r glossary("numeric")` (numbers), `r glossary("character")` (text), or `r glossary("logical")` (TRUE/FALSE values). Some plots can only work on some data types. Additionally, @sec-data-types has more details, as this concept will be relevant repeatedly.
 
 
 ![Data types are like the categories when you format cells in Excel.](images/appx/excel-format-cells.png){#fig-excel-format-cells}
@@ -266,7 +264,7 @@ Let's build up the plot above, layer by layer. First we need to get the data. We
 Load the survey data by copying the following into a code block in your script, and running the code.
 
 ```{r}
-survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+survey_data <- read_csv("https://psyteachr.github.io/reprores-v4/data/survey_data.csv")
 ```
 :::
 
@@ -675,6 +673,33 @@ However, it is more accessible to include this sort of information in plain text
 ```
 
 
+### Saving Plots {#sec-ggsave}
+
+You can save a ggplot using `ggsave()`. It saves the last ggplot you made, by default, but you can specify which plot you want to save if you assigned that plot to a variable.
+
+You can set the `width` and `height` of your plot. The default units are inches, but you can change the `units` argument to "in", "cm", or "mm".
+
+
+```{r ggsave-example, eval = FALSE}
+
+box <- ggplot(pets, aes(pet, score, fill=pet)) +
+  geom_boxplot(alpha = 0.5)
+
+violin <- ggplot(pets, aes(pet, score, fill=pet)) +
+  geom_violin(alpha = 0.5)
+
+ggsave("demog_violin_plot.png", width = 5, height = 7)
+
+ggsave("demog_box_plot.jpg", plot = box, width = 5, height = 7)
+
+```
+
+::: {.callout-note}
+The file type is set from the filename suffix, or by 
+specifying the argument `device`, which can take the following values: 
+"eps", "ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf".
+:::
+
 ## Appropriate plots
 
 Now that you know how to build up a plot by layers and customise its appearance, you're ready to learn about some more plot types. Different types of data require different types of plots, so this section is organised by data type. 
@@ -695,8 +720,6 @@ ggplot(survey_data, aes(x = issue_category)) +
 ```
 
 ::: {.try}
-## Customising bar plot appearance
-
 You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions `scale_fill_manual()` and `scale_x_discrete()` are new, but work in the same way as the other `scale_` functions. You'll learn more about this in @sec-custom-viz.
 
 ```{r custom-bar, webex.hide = "Code"}
@@ -755,7 +778,6 @@ ggplot(count_data, aes(x = issue_category, y = n)) +
 Pie charts are a [misleading form of data visualisation](https://www.data-to-viz.com/caveat/pie.html), so we won't cover them. We'll cover options for visualising proportions, like waffle, lollipop and treemap plots, in @sec-other-plots.
 
 ::: {.try}
-## Test your understanding
 
 ```{r, include = FALSE}
 bar <- c(answer = "geom_bar", x = "geom_col")
@@ -763,7 +785,7 @@ col <- c(x = "geom_bar", answer = "geom_col")
 ```
 
 
-Here is a small data table.
+Test your understanding; here is a small data table.
 
 country             | population      | island
 :-------------------|----------------:|:--------------
@@ -839,7 +861,7 @@ ggplot(survey_data, aes(x = wait_time)) +
 ```
 
 ::: {.try}
-## Test your understanding
+Test your understanding
 
 Imagine you have a table of the [population for each country in the world](https://population.un.org/wpp/Download/Standard/Population/) with the columns `country` and `population`. We'll just look at the 76 countries with populations of less than a million.
 
@@ -1079,7 +1101,7 @@ tall_col + short_col
 :::
 
 ::: {.try}
-## Test your understanding
+Test your understanding
 
 ```{r test-grouped-continuous, echo=FALSE, fig.height = 2.5}
 box <- c(x = "geom_box()",
@@ -1190,8 +1212,6 @@ ggplot(survey_data, aes(x = lubridate::date(call_start),
 ```
 
 ::: {.try}
-## Test yourself
-
 It looks like customer satisfaction declined across the year, but is this change meaningful? See what the plot looks like when the y-axis spans the full range of possible satisfaction values from 1 to 5. You can also plot the individual data points to emphasise the range of values. 
 
 ```{r, webex.hide = TRUE}
@@ -1228,7 +1248,7 @@ ggplot(survey_data, aes(x = call_time, y = satisfaction)) +
 You can use `geom_jitter()` to move the points around a bit to make them easier to see. You can also set alpha transparency. Here, the x-axis is continuous, so there is no need to jitter the `width`, but the y-axis is ordinal categories, so the `height` is jittered between -0.2 and +0.2 away from the true y-value. 
 
 ::: {.try}
-## Change these values to understand what jitter is doing
+Change these values to understand what jitter is doing
 :::
 
 ```{r fig-jitter-plot, fig.cap = "Jitter plot."}
@@ -1272,8 +1292,8 @@ For the final step in this chapter, we will create a report of data visualisatio
 
 ```{r}
 #| echo: fenced
-#| label: setup-report
-#| include: false
+#‎| label: setup
+#‎| include: false
 
 library(tidyverse) 
 library(patchwork) 
@@ -1303,31 +1323,28 @@ Duplicate the code for your first plot and create the same for each of the five 
 
 For each plot:
 
-* Create a level 2 heading in your R Markdown document and give it an informative title.
+* Create a level 2 heading in your quarto document and give it an informative title.
 * Write a short summary that interprets the data shown in the plots - it's not enough just to present visualisations, effective reports will also help the reader understand the conclusions they should draw from the plots you've presented.
 * Make sure each plot has a figure caption.
 * Organise your report so that the plots are shown **after** the text summary in each section.
 
 
-### Inappropriate plots
-
-Pick one plot above and make a new version:
-
-* Adjust the visual aesthetics to make them look as bad and as difficult to read as possible.
-* Combine the plot with the original version using patchwork functions.
-* Write a short summary that explains why you think this plot is so bad.
-* Organise your report so that this new plot is shown **after** the text summary.
-
 ### Customising your report
 
 * Look through the different themes available with [<pkg>ggtheme</pkg>](https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/) and choose one to apply to all your plots.
 * Edit the YAML header of your quarto document so that your rendered report does not show any code, messages, or warnings.
-* Set the figure size for all figures to 8 x 5.
+* Set the default figure size to 8 x 5.
+* Customise the figure size for your combined plot so it is readable
 * Add a table of contents
 
-### Share your work
+### Inappropriate plots
 
-Once you've completed this activity, post it in the Week 3 channel on Teams so that you can compare which plots you chose and visual style with other learners on the course.
+Pick one plot above and make a new version:
+
+* Adjust the visual aesthetics to make it look as bad and as difficult to read as possible.
+* Save the plot as a PNG image
+* Post this plot to the week 3 thread on Teams and explain why it is so bad. Include the code in your post (see @sec-teams for advice on posting code on Teams)
+
 
 ## Glossary {#sec-glossary-viz -}
 
