@@ -568,7 +568,7 @@ $ population &lt;dbl&gt; 19987071, 20595360, 172006362, 174504898, 1272915272, 1
 <p>Download this <a href="data/data.zip">directory of data files</a>, unzip the folder, and save the <code>data</code> directory in the <code>04-data</code> project directory.</p>
 <section id="rioimport" class="level3" data-number="G.3.1"><h3 data-number="G.3.1" class="anchored" data-anchor-id="rioimport">
 <span class="header-section-number">G.3.1</span> rio::import()</h3>
-<p>The type of data files you have to work with will likely depend on the software that you typically use in your workflow. The <pkg>rio</pkg> package has very straightforward functions for reading and saving data in most common formats: <code><a href="https://rdrr.io/pkg/rio/man/import.html">rio::import()</a></code> and <code><a href="https://rdrr.io/pkg/rio/man/export.html">rio::export()</a></code>.</p>
+<p>The type of data files you have to work with will likely depend on the software that you typically use in your workflow. The <pkg>rio</pkg> package has very straightforward functions for reading and saving data in most common formats: <code><a href="http://gesistsa.github.io/rio/reference/import.html">rio::import()</a></code> and <code><a href="http://gesistsa.github.io/rio/reference/export.html">rio::export()</a></code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>demo_tsv  <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"data/demo.tsv"</span>)  <span class="co"># tab-separated values</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>demo_csv  <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"data/demo.csv"</span>)  <span class="co"># comma-separated values</span></span>
@@ -716,7 +716,7 @@ Note
 </div>
 </div>
 <p>The functions from <pkg>readxl</pkg> for loading <code>.xlsx</code> sheets have a different, more limited way to specify the column types. You will have to convert factor columns and dates using <code>mutate()</code>, which you’ll learn about in <a href="07-wrangle.html" class="quarto-xref"><span>Chapter 7</span></a>, so most people let <code>read_excel()</code> guess data types and don’t set the <code>col_types</code> argument.</p>
-<p>For SPSS data, whilst <code><a href="https://rdrr.io/pkg/rio/man/import.html">rio::import()</a></code> will just read the numeric values of factors and not their labels, the function <code>read_sav()</code> from <pkg>haven</pkg> reads both. However, you have to convert factors from a haven-specific “labelled double” to a factor (we have no idea why haven doesn’t do this for you).</p>
+<p>For SPSS data, whilst <code><a href="http://gesistsa.github.io/rio/reference/import.html">rio::import()</a></code> will just read the numeric values of factors and not their labels, the function <code>read_sav()</code> from <pkg>haven</pkg> reads both. However, you have to convert factors from a haven-specific “labelled double” to a factor (we have no idea why haven doesn’t do this for you).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>demo_sav<span class="sc">$</span>factor <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">as_factor</span>(demo_sav<span class="sc">$</span>factor)</span>
 <span id="cb26-2"><a href="#cb26-2"></a></span>
@@ -813,7 +813,7 @@ Note
 <p>You may not need to do this very often if you are primarily working with data that you import from spreadsheets, but it is useful to know how to do it anyway.</p>
 </section><section id="writing-data" class="level2" data-number="G.5"><h2 data-number="G.5" class="anchored" data-anchor-id="writing-data">
 <span class="header-section-number">G.5</span> Writing data</h2>
-<p>If you have data that you want to save, use <code><a href="https://rdrr.io/pkg/rio/man/export.html">rio::export()</a></code>, as follows.</p>
+<p>If you have data that you want to save, use <code><a href="http://gesistsa.github.io/rio/reference/export.html">rio::export()</a></code>, as follows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">export</span>(avatar, <span class="st">"data/avatar.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -901,7 +901,7 @@ comment.char=. First discarded non-empty line: &lt;&lt;junk,missing,0.72,b,1,2 -
 3,2020-01-2&gt;&gt;</code></pre>
 </div>
 </div>
-<p>When importing goes wrong, it’s often easier to fix it using the specific importing function for that file type (e.g., use <code>read_csv()</code> rather than <code><a href="https://rdrr.io/pkg/rio/man/import.html">rio::import()</a></code>. This is because the problems tend to be specific to the file format and you can look up the help for these functions more easily. For CSV files, the import function is <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv</a></code>.</p>
+<p>When importing goes wrong, it’s often easier to fix it using the specific importing function for that file type (e.g., use <code>read_csv()</code> rather than <code><a href="http://gesistsa.github.io/rio/reference/import.html">rio::import()</a></code>. This is because the problems tend to be specific to the file format and you can look up the help for these functions more easily. For CSV files, the import function is <code><a href="https://readr.tidyverse.org/reference/read_delim.html">readr::read_csv</a></code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># lazy = FALSE loads the data right away so you can see error messages</span></span>
 <span id="cb35-2"><a href="#cb35-2"></a><span class="co"># this default changed in late 2021 and might change back soon</span></span>

@@ -158,7 +158,7 @@ date <- c(x = "continuous", x = "nominal", x = "ordinal", answer = "date")
 
 
 
-## Building plots
+## Building plots {#sec-plots}
 
 ```{r sim-survey, include = FALSE, eval = FALSE}
 # code for simulating the data used in this chapter
@@ -700,7 +700,7 @@ specifying the argument `device`, which can take the following values:
 "eps", "ps", "tex", "pdf", "jpeg", "tiff", "png", "bmp", "svg" or "wmf".
 :::
 
-## Appropriate plots
+## Appropriate plots {#sec-appropriate-plots}
 
 Now that you know how to build up a plot by layers and customise its appearance, you're ready to learn about some more plot types. Different types of data require different types of plots, so this section is organised by data type. 
 
