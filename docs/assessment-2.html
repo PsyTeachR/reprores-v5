@@ -334,12 +334,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><a href="#reproducible-project" id="toc-reproducible-project" class="nav-link" data-scroll-target="#reproducible-project"><span class="header-section-number">12.4.1</span> Reproducible project</a></li>
   <li><a href="#document-replicated" id="toc-document-replicated" class="nav-link" data-scroll-target="#document-replicated"><span class="header-section-number">12.4.2</span> Document replicated</a></li>
   <li><a href="#captionsreferences" id="toc-captionsreferences" class="nav-link" data-scroll-target="#captionsreferences"><span class="header-section-number">12.4.3</span> Captions/references</a></li>
-  <li><a href="#figure-1-replicated" id="toc-figure-1-replicated" class="nav-link" data-scroll-target="#figure-1-replicated"><span class="header-section-number">12.4.4</span> Figure 1 replicated</a></li>
-  <li><a href="#figure-2-replicated" id="toc-figure-2-replicated" class="nav-link" data-scroll-target="#figure-2-replicated"><span class="header-section-number">12.4.5</span> Figure 2 replicated</a></li>
-  <li><a href="#table-2-replicated" id="toc-table-2-replicated" class="nav-link" data-scroll-target="#table-2-replicated"><span class="header-section-number">12.4.6</span> Table 2 replicated</a></li>
-  <li><a href="#figure-3-appropriate" id="toc-figure-3-appropriate" class="nav-link" data-scroll-target="#figure-3-appropriate"><span class="header-section-number">12.4.7</span> Figure 3 appropriate</a></li>
-  <li><a href="#consistent-visualisations" id="toc-consistent-visualisations" class="nav-link" data-scroll-target="#consistent-visualisations"><span class="header-section-number">12.4.8</span> Consistent visualisations</a></li>
-  <li><a href="#clean-code-organisation" id="toc-clean-code-organisation" class="nav-link" data-scroll-target="#clean-code-organisation"><span class="header-section-number">12.4.9</span> Clean code organisation</a></li>
+  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import"><span class="header-section-number">12.4.4</span> Data import</a></li>
+  <li><a href="#figure-1-replicated" id="toc-figure-1-replicated" class="nav-link" data-scroll-target="#figure-1-replicated"><span class="header-section-number">12.4.5</span> Figure 1 replicated</a></li>
+  <li><a href="#figure-2-replicated" id="toc-figure-2-replicated" class="nav-link" data-scroll-target="#figure-2-replicated"><span class="header-section-number">12.4.6</span> Figure 2 replicated</a></li>
+  <li><a href="#table-2-replicated" id="toc-table-2-replicated" class="nav-link" data-scroll-target="#table-2-replicated"><span class="header-section-number">12.4.7</span> Table 2 replicated</a></li>
+  <li><a href="#figure-3-appropriate" id="toc-figure-3-appropriate" class="nav-link" data-scroll-target="#figure-3-appropriate"><span class="header-section-number">12.4.8</span> Figure 3 appropriate</a></li>
+  <li><a href="#consistent-visualisations" id="toc-consistent-visualisations" class="nav-link" data-scroll-target="#consistent-visualisations"><span class="header-section-number">12.4.9</span> Consistent visualisations</a></li>
   <li><a href="#clear-code" id="toc-clear-code" class="nav-link" data-scroll-target="#clear-code"><span class="header-section-number">12.4.10</span> Clear code</a></li>
   <li><a href="#efficient-code" id="toc-efficient-code" class="nav-link" data-scroll-target="#efficient-code"><span class="header-section-number">12.4.11</span> Efficient code</a></li>
   </ul>
@@ -367,10 +367,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </header><p>A project demonstrating data visualisation and summary skills</p>
 <section id="instructions" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="instructions">
 <span class="header-section-number">12.1</span> Instructions</h2>
-<p>Your task is to replicate <a href="demos/report2_demo.html">this html report</a> using code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:</p>
+<p>Your task is to replicate <a href="demos/report2_demo.html">this html report</a> using <a href="demos/msleep.csv">this dataset</a> and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">A reproducible <em>project structure</em> with all needed files (<a href="02-reports.html#sec-project-start" class="quarto-xref"><span>Section 2.2.3</span></a>)</label></li>
 <li><label><input type="checkbox">Document structure and text that replicate the report (<a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>)</label></li>
+<li><label><input type="checkbox">Import the data with correct data types (<a href="04-summary.html#sec-import-data" class="quarto-xref"><span>Section 4.1</span></a>)</label></li>
 <li><label><input type="checkbox">Plots that replicate Figures 1 and 2 (<a href="03-viz.html#sec-plots" class="quarto-xref"><span>Section 3.2</span></a>)</label></li>
 <li><label><input type="checkbox">A table that replicates Table 2 (<a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>)</label></li>
 <li><label><input type="checkbox">A plot that is appropriate to the description of Figure 3 (<a href="03-viz.html#sec-appropriate-plots" class="quarto-xref"><span>Section 3.3</span></a>)</label></li>
@@ -390,7 +391,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Display Table 2 using <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable()</a></code>
 </li>
 <li>You shouldn’t need any packages apart from tidyverse and knitr</li>
-<li>The colours for Figure 2 are “firebrick”, “darkgreen”, “darkorange”, and “dodgerblue3”</li>
+<li>The colours for Figure 2 are “firebrick”, “darkgreen”, and “dodgerblue3”</li>
 </ul></section><section id="submission" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="submission">
 <span class="header-section-number">12.3</span> Submission</h2>
 <ul>
@@ -403,13 +404,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>the .rproj file</li>
 <li>your reproducible script, named <code>report2_studentID.qmd</code>
 </li>
-<li>any additional files necessary to reproduce your report(e.g., images or bibliography files),</li>
+<li>any additional files necessary to reproduce your report (e.g., images or bibliography files),</li>
 <li>the rendered html report, named <code>report2_studentID.html</code>.</li>
 </ol>
 </li>
 </ul></section><section id="marking-rubric" class="level2" data-number="12.4"><h2 data-number="12.4" class="anchored" data-anchor-id="marking-rubric">
 <span class="header-section-number">12.4</span> Marking Rubric</h2>
-<p>You will receive green/amber/red lights for each of the elements below, and a generic feedback document explaining common issues.</p>
+<p>You will receive green/amber/red lights for each of the elements below, and a generic feedback document explaining common issues. Each rubric element is weighted equally.</p>
 <ul>
 <li>Green: Perfect or nearly perfect</li>
 <li>Amber: Needs some improvement</li>
@@ -450,37 +451,37 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <td style="text-align: left;"><input type="radio" value="0" name="b3"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Figure 1 replicated</td>
+<td style="text-align: left;">Data import</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b4"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b4"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b4"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Figure 2 replicated</td>
+<td style="text-align: left;">Figure 1 replicated</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b5"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b5"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b5"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Table 2 replicated</td>
+<td style="text-align: left;">Figure 2 replicated</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b6"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b6"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b6"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Figure 3 appropriate</td>
+<td style="text-align: left;">Table 2 replicated</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b7"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b7"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b7"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Consistent visualisations</td>
+<td style="text-align: left;">Figure 3 appropriate</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b8"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b8"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b8"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Clean code organisation</td>
+<td style="text-align: left;">Consistent visualisations</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b9"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b9"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b9"></td>
@@ -511,27 +512,27 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="captionsreferences" class="level3" data-number="12.4.3"><h3 data-number="12.4.3" class="anchored" data-anchor-id="captionsreferences">
 <span class="header-section-number">12.4.3</span> Captions/references</h3>
 <p>The figure and table captions are created correctly and quarto cross referencing is used for figures, tables, and bibliographic references.</p>
-</section><section id="figure-1-replicated" class="level3" data-number="12.4.4"><h3 data-number="12.4.4" class="anchored" data-anchor-id="figure-1-replicated">
-<span class="header-section-number">12.4.4</span> Figure 1 replicated</h3>
+</section><section id="data-import" class="level3" data-number="12.4.4"><h3 data-number="12.4.4" class="anchored" data-anchor-id="data-import">
+<span class="header-section-number">12.4.4</span> Data import</h3>
+<p>You imported the data with correct data types, including putting factors in sensible order for later plots or tables.</p>
+</section><section id="figure-1-replicated" class="level3" data-number="12.4.5"><h3 data-number="12.4.5" class="anchored" data-anchor-id="figure-1-replicated">
+<span class="header-section-number">12.4.5</span> Figure 1 replicated</h3>
 <p>Figure 1 is created using code, and has all of the features of the example plot, such as label, axis or colour customisation.</p>
-</section><section id="figure-2-replicated" class="level3" data-number="12.4.5"><h3 data-number="12.4.5" class="anchored" data-anchor-id="figure-2-replicated">
-<span class="header-section-number">12.4.5</span> Figure 2 replicated</h3>
+</section><section id="figure-2-replicated" class="level3" data-number="12.4.6"><h3 data-number="12.4.6" class="anchored" data-anchor-id="figure-2-replicated">
+<span class="header-section-number">12.4.6</span> Figure 2 replicated</h3>
 <p>Figure 2 is created using code, and has all of the features of the example plot, such as label, axis or colour customisation.</p>
-</section><section id="table-2-replicated" class="level3" data-number="12.4.6"><h3 data-number="12.4.6" class="anchored" data-anchor-id="table-2-replicated">
-<span class="header-section-number">12.4.6</span> Table 2 replicated</h3>
+</section><section id="table-2-replicated" class="level3" data-number="12.4.7"><h3 data-number="12.4.7" class="anchored" data-anchor-id="table-2-replicated">
+<span class="header-section-number">12.4.7</span> Table 2 replicated</h3>
 <p>Table 2 is created by summarising the data using code, and has all of the features of the example table, such as the same rounding.</p>
-</section><section id="figure-3-appropriate" class="level3" data-number="12.4.7"><h3 data-number="12.4.7" class="anchored" data-anchor-id="figure-3-appropriate">
-<span class="header-section-number">12.4.7</span> Figure 3 appropriate</h3>
+</section><section id="figure-3-appropriate" class="level3" data-number="12.4.8"><h3 data-number="12.4.8" class="anchored" data-anchor-id="figure-3-appropriate">
+<span class="header-section-number">12.4.8</span> Figure 3 appropriate</h3>
 <p>You chose an appropriate geom (or set of geoms) for the relationship being demonstrated.</p>
-</section><section id="consistent-visualisations" class="level3" data-number="12.4.8"><h3 data-number="12.4.8" class="anchored" data-anchor-id="consistent-visualisations">
-<span class="header-section-number">12.4.8</span> Consistent visualisations</h3>
+</section><section id="consistent-visualisations" class="level3" data-number="12.4.9"><h3 data-number="12.4.9" class="anchored" data-anchor-id="consistent-visualisations">
+<span class="header-section-number">12.4.9</span> Consistent visualisations</h3>
 <p>Figure 3 has consistent features with Figures 1 and 2, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).</p>
-</section><section id="clean-code-organisation" class="level3" data-number="12.4.9"><h3 data-number="12.4.9" class="anchored" data-anchor-id="clean-code-organisation">
-<span class="header-section-number">12.4.9</span> Clean code organisation</h3>
-<p>Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code.</p>
 </section><section id="clear-code" class="level3" data-number="12.4.10"><h3 data-number="12.4.10" class="anchored" data-anchor-id="clear-code">
 <span class="header-section-number">12.4.10</span> Clear code</h3>
-<p>Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise.</p>
+<p>Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise.</p>
 <p>For example, if the marker wants to assess the code that creates Table 2, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.</p>
 </section><section id="efficient-code" class="level3" data-number="12.4.11"><h3 data-number="12.4.11" class="anchored" data-anchor-id="efficient-code">
 <span class="header-section-number">12.4.11</span> Efficient code</h3>

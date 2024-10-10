@@ -648,7 +648,7 @@ $ Livebirths     &lt;dbl&gt; 9, 5, 8, 1, 6, 21, 60, 4, 4, 3, 1, 1, 1, 14, 2, 6, 
 </div>
 </div>
 </div>
-<p>We’ll now add on extra code to <code>birth_cols</code> to set the order of our factors. What order you choose will depend on what makes most sense for the data. For <code>AgeGroup</code> we’ll list them in chronological order, whilst for <code>Delivery</code> and <code>Induced</code>, we’ll sort them according to the highest value - it can be helpful to think of what order you’ll like the bars to be in if you were making a graph.</p>
+<p>We’ll now add an extra code to <code>birth_cols</code> to set the order of our factors. What order you choose will depend on what makes most sense for the data. For <code>AgeGroup</code> we’ll list them in chronological order, whilst for <code>Delivery</code> and <code>Induced</code>, we’ll sort them according to the highest value - it can be helpful to think of what order you’ll like the bars to be in if you were making a graph.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1106,8 +1106,8 @@ Note
 </div>
 </div>
 </div>
-<div id="radio_CDSONGOXIT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_CDSONGOXIT" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_CDSONGOXIT" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_CDSONGOXIT" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_CDSONGOXIT" value="x"><span><code>count(induced, births)</code></span></label>
+<div id="radio_SQQCEAKJPD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SQQCEAKJPD" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SQQCEAKJPD" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SQQCEAKJPD" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SQQCEAKJPD" value="x"><span><code>count(induced, births)</code></span></label>
 </div>
 </div>
 <p>However, the numbers above are not the number of births, but rather the number of rows in the data set. The column <code>live_births</code> contains the number per each category, so we will need to add those numbers together to see the total number of births.</p>

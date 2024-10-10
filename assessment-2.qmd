@@ -8,10 +8,11 @@ A project demonstrating data visualisation and summary skills
 
 ## Instructions
 
-Your task is to replicate [this html report](demos/report2_demo.html) using code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
+Your task is to replicate [this html report](demos/report2_demo.html) using [this dataset](demos/msleep.csv) and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
 
 * [ ] A reproducible *project structure* with all needed files (@sec-project-start)
 * [ ] Document structure and text that replicate the report (@sec-reports)
+* [ ] Import the data with correct data types (@sec-import-data)
 * [ ] Plots that replicate Figures 1 and 2 (@sec-plots)
 * [ ] A table that replicates Table 2 (@sec-summary-summarise) 
 * [ ] A plot that is appropriate to the description of Figure 3 (@sec-appropriate-plots)
@@ -28,7 +29,7 @@ Your task is to replicate [this html report](demos/report2_demo.html) using code
 * You will need to use `summarise()` to create the data for Table 2; do not just type the numbers from the demo table
 * Display Table 2 using `knitr::kable()`
 * You shouldn't need any packages apart from tidyverse and knitr
-* The colours for Figure 2 are "firebrick", "darkgreen", "darkorange", and "dodgerblue3"
+* The colours for Figure 2 are "firebrick", "darkgreen", and "dodgerblue3"
 
 ## Submission
 
@@ -39,12 +40,12 @@ Your task is to replicate [this html report](demos/report2_demo.html) using code
 * Please submit a **zip file** containing: 
   1. the .rproj file
   2. your reproducible script, named `report2_studentID.qmd`
-  3. any additional files necessary to reproduce your report(e.g., images or bibliography files),
+  3. any additional files necessary to reproduce your report (e.g., images or bibliography files),
   4. the rendered html report, named `report2_studentID.html`.
 
 ## Marking Rubric
 
-You will receive green/amber/red lights for each of the elements below, and a generic feedback document explaining common issues.
+You will receive green/amber/red lights for each of the elements below, and a generic feedback document explaining common issues. Each rubric element is weighted equally. 
 
 * Green: Perfect or nearly perfect
 * Amber: Needs some improvement
@@ -56,12 +57,12 @@ You will receive green/amber/red lights for each of the elements below, and a ge
 el <- c("Reproducible project", 
         "Document replicated",
         "Captions/references",
+        "Data import",
         "Figure 1 replicated", 
         "Figure 2 replicated", 
         "Table 2 replicated",
         "Figure 3 appropriate",
         "Consistent visualisations",
-        "Clean code organisation",
         "Clear code",
         "Efficient code"
         )
@@ -91,6 +92,10 @@ The non-code elements of the document are replicated, such as table of contents,
 
 The figure and table captions are created correctly and quarto cross referencing is used for figures, tables, and bibliographic references.
 
+### Data import
+
+You imported the data with correct data types, including putting factors in sensible order for later plots or tables. 
+
 ### Figure 1 replicated
 
 Figure 1 is created using code, and has all of the features of the example plot, such as label, axis or colour customisation.
@@ -111,13 +116,9 @@ You chose an appropriate geom (or set of geoms) for the relationship being demon
 
 Figure 3 has consistent features with Figures 1 and 2, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).
 
-### Clean code organisation
-
-Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. 
-
 ### Clear code
 
-Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise. 
+Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise. 
 
 For example, if the marker wants to assess the code that creates Table 2, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.
 

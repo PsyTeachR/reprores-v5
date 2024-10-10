@@ -1,11 +1,5 @@
 # Assessment 1
 
-```{r, include=FALSE}
-library(tidyverse)
-library(gt)
-```
-
-
 A project with a qmd file showing basic reproducible report skills
 
 ## Instructions
@@ -44,7 +38,7 @@ See [this report](demos/report1.html) for an example.
 
 ## Marking Rubric
 
-You will receive green/amber/red lights for each of 11 elements, and a generic feedback document explaining common issues.
+You will receive green/amber/red lights for each of 11 elements, and a generic feedback document explaining common issues. Each rubric element is weighted equally. 
 
 * Green: Perfect or nearly perfect
 * Amber: Needs some improvement

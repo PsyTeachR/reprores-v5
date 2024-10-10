@@ -634,7 +634,7 @@ Do not factor numbers
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># the current date and time in the GMT timezone</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"GMT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-10-10 13:45:45 GMT"</code></pre>
+<pre><code>[1] "2024-10-10 19:14:17 GMT"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -922,7 +922,7 @@ Location of the +
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-17-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-19-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1095,7 +1095,7 @@ Solution
 <span id="cb41-12"><a href="#cb41-12"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">600</span>, <span class="at">by =</span> <span class="dv">15</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-24-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1415,8 +1415,8 @@ Figure&nbsp;3.6: A basic column plot.
 <option value="answer">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_EFHHVWBVCX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EFHHVWBVCX" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_EFHHVWBVCX" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_EFHHVWBVCX" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_EFHHVWBVCX" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_EFHHVWBVCX" value="x"><span>aes(y = population)</span></label>
+<div id="radio_GWRHKKPIAW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GWRHKKPIAW" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_GWRHKKPIAW" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_GWRHKKPIAW" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_GWRHKKPIAW" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_GWRHKKPIAW" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 <li><p>What geom would you use to plot the number of countries on each island? <select class="webex-select"><option value="blank"></option>
@@ -1424,8 +1424,8 @@ Figure&nbsp;3.6: A basic column plot.
 <option value="x">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_FXERHNTEKM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_FXERHNTEKM" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_FXERHNTEKM" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_FXERHNTEKM" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_FXERHNTEKM" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_FXERHNTEKM" value="x"><span>aes(y = population)</span></label>
+<div id="radio_DRBVKLGJXD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DRBVKLGJXD" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_DRBVKLGJXD" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_DRBVKLGJXD" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_DRBVKLGJXD" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_DRBVKLGJXD" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul>
@@ -1506,8 +1506,8 @@ Figure&nbsp;3.9: Histogram with custom styles.
 </div>
 <ul>
 <li>How would you set the mapping for this plot?
-<div id="radio_XOLYIIIIAX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_XOLYIIIIAX" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XOLYIIIIAX" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_XOLYIIIIAX" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XOLYIIIIAX" value="x"><span>aes(x = population, y = count)</span></label>
+<div id="radio_XUGGLSHJOV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_XUGGLSHJOV" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XUGGLSHJOV" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_XUGGLSHJOV" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_XUGGLSHJOV" value="x"><span>aes(x = population, y = count)</span></label>
 </div>
 </li>
 <li>What is the <code>binwidth</code> of the histogram? <select class="webex-select"><option value="blank"></option>
@@ -1552,7 +1552,7 @@ Axis label customisation
 <span id="cb60-4"><a href="#cb60-4"></a>                 <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-33-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Histogram with categories represented by fill.</figcaption></figure>
 </div>
 </div>
@@ -1602,7 +1602,7 @@ Area plot alternative
 <span id="cb63-6"><a href="#cb63-6"></a>            <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-35-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-37-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Stacked area plot.</figcaption></figure>
 </div>
 </div>
@@ -1803,8 +1803,8 @@ Misleading Bar Charts
 <option value="x">geom_violinplot()</option></select>
 </li>
 <li>What does the mapping look like for both plots?
-<div id="radio_IIMNYKKLDP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_IIMNYKKLDP" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_IIMNYKKLDP" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_IIMNYKKLDP" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_IIMNYKKLDP" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label>
+<div id="radio_PMJORTEXXS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PMJORTEXXS" value="answer"><span>aes(x = employee_id, y = call_time, fill = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_PMJORTEXXS" value="x"><span>aes(x = employee_id, y = call_time, colour = employee_id)</span></label><label><input type="radio" autocomplete="off" name="radio_PMJORTEXXS" value="x"><span>aes(x = employee_id, y = call_time, fill = call_time)</span></label><label><input type="radio" autocomplete="off" name="radio_PMJORTEXXS" value="x"><span>aes(x = employee_id, y = call_time, colour = call_time)</span></label>
 </div>
 </li>
 <li>Which employee has the longest median call time? <select class="webex-select"><option value="blank"></option>
@@ -1948,7 +1948,7 @@ Solution
 <span id="cb79-12"><a href="#cb79-12"></a>  <span class="fu">ggtitle</span>(<span class="st">"2020 Caller Satisfaction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-38-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-40-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
