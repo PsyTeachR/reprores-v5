@@ -387,7 +387,6 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#filter-by-calculated-score" id="toc-filter-by-calculated-score" class="nav-link" data-scroll-target="#filter-by-calculated-score"><span class="header-section-number">7.3.2</span> Filter by calculated score</a></li>
   <li><a href="#multiple-critera" id="toc-multiple-critera" class="nav-link" data-scroll-target="#multiple-critera"><span class="header-section-number">7.3.3</span> Multiple critera</a></li>
   <li><a href="#original-insight" id="toc-original-insight" class="nav-link" data-scroll-target="#original-insight"><span class="header-section-number">7.3.4</span> Original insight</a></li>
-  <li><a href="#share-on-teams" id="toc-share-on-teams" class="nav-link" data-scroll-target="#share-on-teams"><span class="header-section-number">7.3.5</span> Share on Teams</a></li>
   </ul>
 </li>
   <li><a href="#sec-glossary-wwrangle" id="toc-sec-glossary-wwrangle" class="nav-link" data-scroll-target="#sec-glossary-wwrangle">Glossary</a></li>
@@ -696,26 +695,26 @@ Warning
 <ul>
 <li>
 <code>budget %&gt;% select(contains("_"))</code>
-<div id="radio_PRUBSAGDFN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PRUBSAGDFN" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PRUBSAGDFN" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PRUBSAGDFN" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_PRUBSAGDFN" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_EHBRKUQBQT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(num_range("expenses_", 2019:2020))</code>
-<div id="radio_GUXDRRSWZE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GUXDRRSWZE" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GUXDRRSWZE" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GUXDRRSWZE" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GUXDRRSWZE" value="answer"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_GNFJVAVFMJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="answer"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(starts_with("sales"))</code>
-<div id="radio_NVWXXVDNUO" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NVWXXVDNUO" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NVWXXVDNUO" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NVWXXVDNUO" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NVWXXVDNUO" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_SDEARBOGIT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(ends_with("2020"))</code>
-<div id="radio_SVLUONJKBI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SVLUONJKBI" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SVLUONJKBI" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SVLUONJKBI" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SVLUONJKBI" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_KCRSEMSWZR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 </ul>
@@ -1425,22 +1424,22 @@ Tip
 </div>
 <div class="try">
 <p>How would you find out the maximum sales for each region?</p>
-<div id="radio_NBXYJAVIIH" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NBXYJAVIIH" value="x"><span>
+<div id="radio_TGTCZSZVZP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="answer"><span>
 <pre>budget3 %&gt;%
-  group_by(sales) %&gt;%
+  group_by(region) %&gt;%
   summarise(max_sales = max(sales)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_NBXYJAVIIH" value="x"><span>
+</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
+<pre>budget3 %&gt;%
+  group_by(region) %&gt;%
+  summarise(max_sales = max(region)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
 <pre>budget3 %&gt;%
   group_by(sales) %&gt;%
   summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_NBXYJAVIIH" value="x"><span>
+</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
 <pre>budget3 %&gt;%
-  group_by(region) %&gt;%
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_NBXYJAVIIH" value="answer"><span>
-<pre>budget3 %&gt;%
-  group_by(region) %&gt;%
+  group_by(sales) %&gt;%
   summarise(max_sales = max(sales)</pre>
 </span></label>
 </div>
@@ -2173,9 +2172,6 @@ Solution
 </section><section id="original-insight" class="level3" data-number="7.3.4"><h3 data-number="7.3.4" class="anchored" data-anchor-id="original-insight">
 <span class="header-section-number">7.3.4</span> Original insight</h3>
 <p>In preparation for the final summative assessment, explore the data to provide one original insight of your own.</p>
-</section><section id="share-on-teams" class="level3" data-number="7.3.5"><h3 data-number="7.3.5" class="anchored" data-anchor-id="share-on-teams">
-<span class="header-section-number">7.3.5</span> Share on Teams</h3>
-<p>Once you’re done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 09 channel.</p>
 </section></section><section id="sec-glossary-wwrangle" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-wwrangle">Glossary</h2>
 <div class="cell">
 <div class="cell-output-display">

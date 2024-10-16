@@ -841,9 +841,6 @@ ggplot(tidy2a, aes(x = response)) +
 
 If your head hurts a bit at this point, rest assured it's absolutely normal. As we said at the start, reshaping and tidying data is a conceptual leap and there's no shortcut to the fact it just takes a bit of time and practice with different datasets - you will get there eventually!
 
-### Share on Teams
-
-Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 08 channel.
 
 ## Glossary {#sec-glossary-tidy -}
 

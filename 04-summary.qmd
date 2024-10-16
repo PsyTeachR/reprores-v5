@@ -477,14 +477,11 @@ births_per_year_type_age  %>%
 
 Take a break and then try one (or more) of the following:
 
-* Create an Rmd report that presents the above code with nice formatting. For example, hide the code from the output and format the tables.
-* Explore the data and add at least one unique insights of your own to the report
+* Create a quarto report that presents the above code with nice formatting. For example, hide the code from the output and format the tables.
+* Explore the data and add at least one unique insights of your own to the report.
 * Download a different data set from [Scottish Health and Social Care Open Data](https://www.opendata.nhs.scot/) and create summary tables and plots.
 * If you have data of your own, practice summarising this in R.
 
-### Share on Teams
-
-Once you're done, share your knitted report and the Rmd file on Teams in the Week 04 channel.
 
 ## Glossary {#sec-glossary-summary -}
 

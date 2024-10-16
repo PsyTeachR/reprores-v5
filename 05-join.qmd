@@ -483,7 +483,7 @@ There's lots of different use cases for the `****_join()` functions. These exerc
 
 ### Grade data
 
-The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumeric scale (there's more information in your summative report [assessment information sheet](https://sway.office.com/k0CnXGd6RjbVokkR)). Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16). 
+The University of Glasgow's Schedule A grading scheme uses a 22-point alphanumeric scale. Each alphanumeric grade (e.g., B2) has an underlying numeric Grade Point (e.g., 16). 
 
 Often when we're working with student grades they are provided to us in only one of these forms, but we need to be able to go between the two. For example, we need the numeric form in order to be able to calculate descriptive statistics about the mean grade, but we need the alphanumeric form to release to student records.
 
@@ -605,9 +605,6 @@ no_exam <- anti_join(essay_grades, exam_grades, by = "id")
 
 -   How many students have a grade for the exam but not the essay? `r fitb(nrow(no_exam))`
 
-### Share on Teams
-
-Once you're done, share your knitted html file and the Rmd file for the exercises on Teams in the Week 07 channel.
 
 ## Glossary {#sec-glossary-joines -}
 
