@@ -833,16 +833,16 @@ Tip
 </div>
 </div>
 </div>
-<p>Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter… the <a href="https://psyteachr.github.io/glossary/p#pipe" target="_blank" class="glossary" title="A way to order your code in a more readable format using the symbol %>%">pipe</a>, that weird <code>%&gt;%</code> you may have seen.</p>
-<p>Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>%&gt;%</code> to be an argument in the function after <code>%&gt;%</code>. By default, this is the first argument, but we’ll show you ways to change that later.</p>
+<p>Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter… the <a href="https://psyteachr.github.io/glossary/p#pipe" target="_blank" class="glossary" title="A way to order your code in a more readable format using the symbol %>%">pipe</a>, that weird <code>|&gt;</code> you may have seen.</p>
+<p>Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before <code>|&gt;</code> to be an argument in the function after <code>|&gt;</code>. By default, this is the first argument, but we’ll show you ways to change that later.</p>
 <p>It can be useful to translate the pipe as “<strong>and then</strong>”. It’s easier to show than tell, so let’s look at an example.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>c_per_year <span class="ot">&lt;-</span> births <span class="sc">%&gt;%</span> <span class="co"># and then</span></span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>c_per_year <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span> <span class="co"># and then</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a>  </span>
-<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">filter</span>(delivery <span class="sc">==</span> <span class="st">"Caesarean - Emergency"</span>) <span class="sc">%&gt;%</span> <span class="co"># and then</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">filter</span>(delivery <span class="sc">==</span> <span class="st">"Caesarean - Emergency"</span>) <span class="sc">|&gt;</span> <span class="co"># and then</span></span>
 <span id="cb20-4"><a href="#cb20-4"></a>  </span>
 <span id="cb20-5"><a href="#cb20-5"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(livebirths), </span>
-<span id="cb20-6"><a href="#cb20-6"></a>            <span class="at">.by =</span> financial_year) <span class="sc">%&gt;%</span> <span class="co"># and then</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>            <span class="at">.by =</span> financial_year) <span class="sc">|&gt;</span> <span class="co"># and then</span></span>
 <span id="cb20-7"><a href="#cb20-7"></a>  </span>
 <span id="cb20-8"><a href="#cb20-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
 <span id="cb20-9"><a href="#cb20-9"></a></span>
@@ -895,7 +895,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Base R recently added a “native pipe” that looks like this: <code>|&gt;</code>, while the tidyverse has traditionally used the “magrittr pipe” that looks like this <code>%&gt;%</code>. They have a few small differences that you don’t need to learn about yet. We’ll be using the magrittr pipe, but you might see the base R pipe in other sources.</p>
+<p>Base R recently added a “native pipe” that looks like this: <code>|&gt;</code>, while the tidyverse has traditionally used the “magrittr pipe” that looks like this <code>%&gt;%</code>. They have a few small differences that you don’t need to learn about yet. We’ll be using the base R pipe, but you might see the magrittr pipe in other sources.</p>
 </div>
 </div>
 </section><section id="counting" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="counting">
@@ -949,7 +949,7 @@ Note
 <p>You can add on a column with the numbers expressed in percent using the function <code>mutate()</code>. We’ll go into more detail on how to use <code>mutate()</code> in <a href="07-wrangle.html" class="quarto-xref"><span>Chapter 7</span></a>, but for now, it can be used to add new columns or overwrite existing columns.</p>
 <p>The code below divides the value in the <code>n</code> column by the total sum of the numbers in that column, and adds it to a new column called <code>percent</code>. The next step modifies the percent column by multiplying it by 100 and rounding the value. You could do this all in one step, like <code>round(100 * n / sum(n))</code>, but often it’s clearer to break it into a few steps to avoid too many nested parentheses.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
 <span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n),</span>
 <span id="cb22-3"><a href="#cb22-3"></a>         <span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> percent))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1101,8 +1101,8 @@ Note
 </div>
 </div>
 </div>
-<div id="radio_BOMAGZZOJN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BOMAGZZOJN" value="x"><span><code>count(induced, births)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BOMAGZZOJN" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BOMAGZZOJN" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BOMAGZZOJN" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label>
+<div id="radio_BKYLPYKOSX" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BKYLPYKOSX" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BKYLPYKOSX" value="x"><span><code>count(induced, births)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BKYLPYKOSX" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_BKYLPYKOSX" value="x"><span><code>count(births, induced)</code></span></label>
 </div>
 </div>
 <p>However, the numbers above are not the number of births, but rather the number of rows in the data set. The column <code>live_births</code> contains the number per each category, so we will need to add those numbers together to see the total number of births.</p>
@@ -1329,9 +1329,9 @@ Warning
 <p>You can also create summary values by group using a combination of <code>group_by()</code> and <code>summarise()</code>. The function <code>group_by()</code> takes an existing data table and converts it into a grouped table, where any operations that are subsequently performed on it are done “by group”.</p>
 <p>It differs from the <code>.by</code> argument to <code>summarise()</code> in that it is persistent, so the table stays grouped until you explicitly remove the groups using the <code>ungroup()</code> functions, while the <code>.by</code> argument only applies to the function it is inside. Most of the code examples you’ll see use this style, since the <code>.by</code> argument is fairly new.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>births <span class="sc">%&gt;%</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">%&gt;%</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>births <span class="sc">|&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
 <span id="cb29-4"><a href="#cb29-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1389,10 +1389,10 @@ Warning
 </div>
 <p>You might have noticed that the order of the table above is different from the order when using the <code>.by</code> argument of <code>summarise()</code>. This is because <code>group_by()</code> always sorts the values in the grouping columns in ascending order, while <code>.by</code> leaves them in the order they are first encountered in your data frame. Use the function <code>arrange()</code> to manually change order (see <a href="07-wrangle.html#sec-arrange" class="quarto-xref"><span>Section 7.1.3</span></a>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>births <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>births <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">group_by</span>(delivery) <span class="sc">|&gt;</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">summarise</span>(<span class="at">births =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
 <span id="cb30-5"><a href="#cb30-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(births)) <span class="co"># sort by number of births in descending order</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1442,9 +1442,9 @@ Warning
 <li>Reverse the order of <code>delivery</code> and financial_year<code>in</code>group_by()` to see how it changes the output.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>births <span class="sc">%&gt;%</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">group_by</span>(delivery, financial_year) <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>births <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">group_by</span>(delivery, financial_year) <span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(livebirths)) <span class="sc">|&gt;</span></span>
 <span id="cb31-4"><a href="#cb31-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1469,7 +1469,7 @@ Warning
 <p>Calculating percent by groups is a great example of the flexibility of <code>group_by()</code> but also why you have to be very careful and always check the output of your code.</p>
 <p>When we just had one variable to count, adding percent was nice and easy:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">count</span>(births, delivery) <span class="sc">|&gt;</span></span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1522,7 +1522,7 @@ Warning
 </div>
 <p>With multiple variables, problems can arise if we use the exact same approach because by default, it will calculate the percent that each row contributes to the dataset as a whole. This might be what you want:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">count</span>(births, age_group, induced, <span class="at">sort =</span> <span class="cn">TRUE</span>)<span class="sc">|&gt;</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1608,13 +1608,13 @@ Warning
 <p>However, it’s more likely that you would want to calculate percent by groups. For example, what percent of people in the Induced category were in which age group? Or what percent of 25-34 year olds were induced? To calculate these numbers, we add in a call to <code>group_by()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">%&gt;%</span> <span class="co">#age then induced</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">group_by</span>(age_group) <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">|&gt;</span> <span class="co">#age then induced</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">group_by</span>(age_group) <span class="sc">|&gt;</span></span>
 <span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span>
 <span id="cb34-5"><a href="#cb34-5"></a></span>
 <span id="cb34-6"><a href="#cb34-6"></a><span class="co"># group by induced, percentages within each induction group will sum to 100</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">%&gt;%</span> <span class="co">#induced then age</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">group_by</span>(induced) <span class="sc">%&gt;%</span></span>
+<span id="cb34-7"><a href="#cb34-7"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">|&gt;</span> <span class="co">#induced then age</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">group_by</span>(induced) <span class="sc">|&gt;</span></span>
 <span id="cb34-9"><a href="#cb34-9"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1778,12 +1778,12 @@ Warning
 <p>If you have updated <code class="package">dyplr</code> then you can also use the <code>.by</code> argument in <code>mutate()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># group by age, percentages within each age group will sum to 100</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">%&gt;%</span> <span class="co">#age then induced</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">count</span>(births, age_group, induced)<span class="sc">|&gt;</span> <span class="co">#age then induced</span></span>
 <span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>,</span>
 <span id="cb35-4"><a href="#cb35-4"></a>         <span class="at">.by =</span> age_group)</span>
 <span id="cb35-5"><a href="#cb35-5"></a></span>
 <span id="cb35-6"><a href="#cb35-6"></a><span class="co"># group by induced, percentages within each induction group will sum to 100</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">%&gt;%</span> <span class="co">#induced then age</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a><span class="fu">count</span>(births, induced, age_group)<span class="sc">|&gt;</span> <span class="co">#induced then age</span></span>
 <span id="cb35-8"><a href="#cb35-8"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>,</span>
 <span id="cb35-9"><a href="#cb35-9"></a>         <span class="at">.by =</span> induced)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1960,13 +1960,13 @@ Warning
 <li>filter your data to remove unknown ages and delivery types</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>births_per_year_type_age <span class="ot">&lt;-</span> births <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>births_per_year_type_age <span class="ot">&lt;-</span> births <span class="sc">|&gt;</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">str_extract</span>(financial_year, <span class="st">".{4}"</span>), <span class="co"># takes first four digits</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>         <span class="at">year =</span> <span class="fu">as.integer</span>(year)) <span class="sc">%&gt;%</span> <span class="co"># transform to numeric</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>         <span class="at">year =</span> <span class="fu">as.integer</span>(year)) <span class="sc">|&gt;</span> <span class="co"># transform to numeric</span></span>
 <span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">filter</span>(age_group <span class="sc">!=</span> <span class="st">"Unknown"</span>, <span class="co"># remove unknown</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>         delivery <span class="sc">!=</span> <span class="st">"Not Known"</span>) <span class="sc">%&gt;%</span> <span class="co"># remove not known</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>         delivery <span class="sc">!=</span> <span class="st">"Not Known"</span>) <span class="sc">|&gt;</span> <span class="co"># remove not known</span></span>
 <span id="cb36-6"><a href="#cb36-6"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">sum</span>(livebirths),</span>
-<span id="cb36-7"><a href="#cb36-7"></a>            <span class="at">.by =</span> <span class="fu">c</span>(year, delivery, age_group)) <span class="sc">%&gt;%</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a>            <span class="at">.by =</span> <span class="fu">c</span>(year, delivery, age_group)) <span class="sc">|&gt;</span></span>
 <span id="cb36-8"><a href="#cb36-8"></a>  <span class="fu">mutate</span>(<span class="at">pcnt =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>, </span>
 <span id="cb36-9"><a href="#cb36-9"></a>         <span class="at">.by =</span> <span class="fu">c</span>(year, age_group))</span>
 <span id="cb36-10"><a href="#cb36-10"></a>  </span>
@@ -2036,7 +2036,7 @@ Warning
 </div>
 <p>Now you can use your skills from <a href="03-viz.html" class="quarto-xref"><span>Chapter 3</span></a> to plot the data! The code below has a few elements you haven’t seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>births_per_year_type_age  <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>births_per_year_type_age  <span class="sc">|&gt;</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> pcnt, <span class="at">color =</span> age_group)) <span class="sc">+</span></span>
 <span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>delivery, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>

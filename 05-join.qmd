@@ -37,7 +37,22 @@ Download the [Data transformation cheatsheet](https://raw.githubusercontent.com/
 
 The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of customer information with a table of orders, or combine the monthly social media reports across several months.
 
-For this demo, rather than loading in data, we'll create two small data tables from scratch using the `tibble()` function.
+::: {.try}
+For this demo, rather than loading in data, create two small data tables from scratch using the `tibble()` function.
+
+```{r}
+customers <- tibble(
+  id = 1:5,
+  city = c("Port Ellen", "Dufftown", NA, "Aberlour", "Tobermory"),
+  postcode = c("PA42 7DU", "AB55 4DH", NA, "AB38 7RY", "PA75 6NR")
+)
+
+orders <- tibble(
+  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
+  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)
+)
+```
+:::
 
 `customers` has id, city and postcode for five customers 1-5.
 
@@ -45,13 +60,7 @@ For this demo, rather than loading in data, we'll create two small data tables f
 -   `city` and `code` both use the `c()` function to enter multiple strings. Note that each entry is contained within its own quotation marks, apart from missing data, which is recorded as `NA`.
 -   When entering data like this, it's important that the order of each variable matches up. So number 1 will correspond to "Port Ellen" and "PA42 7DU".
 
-```{r subject}
-customers <- tibble(
-  id = 1:5,
-  city = c("Port Ellen", "Dufftown", NA, "Aberlour", "Tobermory"),
-  postcode = c("PA42 7DU", "AB55 4DH", NA, "AB38 7RY", "PA75 6NR")
-)
-```
+
 
 ```{r}
 #| echo: false
@@ -60,13 +69,6 @@ customers
 ```
 
 `orders` has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.
-
-```{r orders}
-orders <- tibble(
-  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
-  items = c(10, 18, 21, 23, 9, 11, 11, 12, 3)
-)
-```
 
 
 ```{r}
@@ -101,10 +103,14 @@ You can leave out the `by` argument if you're matching on all of the columns wit
 
 A `left_join` keeps all the data from the first (left) table and adds anything that matches from the second (right) table. If the right table has more than one match for a row in the left table, there will be more than one row in the joined table (see ids 4 and 5).
 
+::: {.try}
+Left join the order data to the customer data, matching by the `id` column. 
+
 ```{r left_join}
 left_data <- left_join(customers, orders, by = "id")
 left_data
 ```
+:::
 
 ::: join
 <img src="images/joins/left_join_rev.png"/>
@@ -125,10 +131,14 @@ left2_data
 
 A `right_join` keeps all the data from the second (right) table and joins anything that matches from the first (left) table.
 
+::: {.try}
+Right join the order data to the customer data, matching by the `id` column.
+
 ```{r right_join}
 right_data <- right_join(customers, orders, by = "id")
 right_data
 ```
+:::
 
 ::: {.callout-note}
 This table has the same information as `left_join(orders, customers, by = "id")`, but the columns are in a different order (left table, then right table).
@@ -142,10 +152,14 @@ This table has the same information as `left_join(orders, customers, by = "id")`
 
 An `inner_join` returns all the rows that have a match in both tables. Changing the order of the tables will change the order of the columns, but not which rows are kept.
 
+::: {.try}
+Inner join the order data to the customer data, matching by the `id` column.
+
 ```{r inner_join}
 inner_data <- inner_join(customers, orders, by = "id")
 inner_data
 ```
+:::
 
 ### full_join() {#sec-full_join}
 
@@ -155,10 +169,14 @@ inner_data
 
 A `full_join` lets you join up rows in two tables while keeping all of the information from both tables. If a row doesn't have a match in the other table, the other table's column values are set to `NA`.
 
+::: {.try}
+Full join the order data to the customer data, matching by the `id` column.
+
 ```{r full_join}
 full_data <- full_join(customers, orders, by = "id")
 full_data
 ```
+:::
 
 ## Filtering Joins
 
@@ -172,10 +190,14 @@ full_data
 
 A `semi_join` returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.
 
+::: {.try}
+Semi join the order data to the customer data, matching by the `id` column.
+
 ```{r semi_join}
 semi_data <- semi_join(customers, orders, by = "id")
 semi_data
 ```
+:::
 
 ::: {.callout-note}
 Unlike an inner join, a semi join will never duplicate the rows in the left table if there is more than one matching row in the right table.
@@ -200,10 +222,14 @@ semi2_data
 
 An `anti_join` return all rows from the left table where there are *not* matching values in the right table, keeping just columns from the left table.
 
+::: {.try}
+Anti join the order data to the customer data, matching by the `id` column.
+
 ```{r anti_join}
 anti_data <- anti_join(customers, orders, by = "id")
 anti_data
 ```
+:::
 
 ::: join
 <img src="images/joins/anti_join_rev.png"/>
@@ -238,8 +264,8 @@ join_2 <- left_join(join_1, satisfaction,
 
 ```{r}
 # more efficient method using the pipe
-pipe_join <- customers %>%
-  left_join(orders, by = "id") %>%
+pipe_join <- customers |>
+  left_join(orders, by = "id") |>
   left_join(satisfaction, by = "id")
 
 ```
@@ -379,7 +405,7 @@ intersect_data
 ```
 
 ::: {.callout-warning}
-If you've forgotten to load dplyr or the tidyverse, `r glossary("base R")` also has a `base::intersect()` function that doesn't work like `dplyr::intersect()`. The error message can be confusing and looks something like this:
+If you've forgotten to load dplyr or the tidyverse, `r glossary("base R")` also has a `base::intersect()` function that doesn't work like `dplyr::intersect()` and will give you unexpected output or an error message.
 
 ```{r base-intersect, error = TRUE}
 base::intersect(customers, new_customers)
@@ -456,17 +482,17 @@ bind_rows(customers, new_customers2)
 ```
 
 
-One method to change variable types is to use the `as.***` functions. If you type `as.` into a code chunk, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
+One method to change variable types is to use the `as.***` functions. If you type `as.` into a code chunk and hit tab, you will see that there are a huge number of these functions for transforming variables and datasets to different types. Exactly which one you need will depend on the data you have, but a few commonly used ones are:
 
 * `as.numeric()` - convert a variable to `r glossary("numeric")`. Useful for when you have a variable of real numbers that have been encoded as character. Any values that can't be turned into numbers (e.g., if you have the word "missing" in cells that you have no data for), will be returned as `NA`.
 * `as.factor()` - convert a variable to a `r glossary("factor")`. You can set the factor levels and labels manually, or use the default order (alphabetical).
 * `as.character()` - convert a variable to `r glossary("character")` data.
 * `as_tibble()` and `as.data.frame()` - convert a list object (not a variable) to a tibble or a data frame (two different table formats). This isn't actually relevant to what we're discussing here, but it's a useful one to be aware of because sometimes you'll run into issues where you get an error that specifically requests your data is a tibble or data frame type and you can use this function to overwrite your object. 
 
-To use these functions on a variable we can use `mutate()` to overwrite the variable with that variable as the new data type:
+To use these functions on a variable we can use `dplyr::mutate()` to overwrite the variable with that variable as the new data type:
 
 ```{r}
-new_customers2 <- new_customers2 %>%
+new_customers2 <- new_customers2 |>
   mutate(id = as.numeric(id))
 ```
 
@@ -479,7 +505,7 @@ inner_join(orders, new_customers2)
 
 ## Exercises
 
-There's lots of different use cases for the `****_join()` functions. These exercises will allow you to practice different joins. If you have any examples of where joins might be helpful in your own work, please post them on Teams in the week 6 channel, as having many concrete examples can help distinguish between the different joins.
+There's lots of different use cases for the `****_join()` functions. These exercises will allow you to practice different joins. If you have any examples of where joins might be helpful in your own work, please post them on Teams, as having many concrete examples can help distinguish between the different joins.
 
 ### Grade data
 
@@ -508,7 +534,7 @@ At UofG, all students are given a GUID, a numeric ID number. However, that ID nu
 First, remove the letter character from `id` using the function `stringr::str_replace_all()`, which replaces text that matches a pattern. Here, we're using the pattern `"[a-z]"`, which matches all lowercase letters a through z, and replacing them with `""`. See the help for `?about_search_regex` for more info about how to set patterns (these can get really complex).
 
 ```{r}
-grades1 <- grades1 %>%
+grades1 <- grades1 |>
   mutate(id = str_replace_all(
     id, # the variable you want to search
     pattern = "[a-z]", # find all letters a-z
@@ -524,7 +550,7 @@ Now, transform the data type of `id` so that it matches the data type in `grades
 glimpse(grades1)
 glimpse(grades2) 
 
-grades1 <- grades1 %>%
+grades1 <- grades1 |>
   mutate(id = as.numeric(id))
 ```
 
@@ -570,7 +596,7 @@ essay_grades <- inner_join(grades2, schedule, by = "Points")
 
 `r hide("Alternative solution")`
 
-It's worth noting that in reality you wouldn't actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding `%>% drop_na()` to `exam_all` and `essay_all`. However, for the purposes of teaching joins, we'll do it this slightly artificial way.
+It's worth noting that in reality you wouldn't actually go back to the raw data and do another join to get this dataset, you could just remove all the missing response by adding `|> drop_na()` to `exam_all` and `essay_all`. However, for the purposes of teaching joins, we'll do it this slightly artificial way.
 
 `r unhide()`
 
@@ -582,7 +608,7 @@ Now, create a dataset `completes` that joins the grades for students who have a 
 ```{r, webex.hide = TRUE}
 completes <- inner_join(exam_grades, essay_grades, 
                         by = "id", 
-                        suffix = c("_exam", "_essay")) %>%
+                        suffix = c("_exam", "_essay")) |>
   select(id, Grade_exam, Grade_essay)
 ```
 
@@ -624,6 +650,6 @@ glossary_table()
 files <- c("data/avatar_na.csv", "data/family.csv")
 
 file.exists(files) %>%
-  `[`(files, .) %>%
+  `[`(files, .) |>
   file.remove()
 ```

@@ -205,20 +205,20 @@ c_sorted <- arrange(c_per_year, desc(n))
 head(c_sorted)
 ```
 
-Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter... the `r glossary("pipe")`, that weird `%>%` you may have seen. 
+Whilst the above code is functional, it adds three unnecessary objects to the environment, increasing cognitive load and the risk of mistakes. Enter... the `r glossary("pipe")`, that weird `|>` you may have seen. 
 
-Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `%>%` to be an argument in the function after `%>%`. By default, this is the first argument, but we'll show you ways to change that later.
+Pipes allow you to send the output from one function straight into another function. Specifically, they send the result of the function before `|>` to be an argument in the function after `|>`. By default, this is the first argument, but we'll show you ways to change that later.
 
 It can be useful to translate the pipe as "**and then**". It's easier to show than tell, so let's look at an example.
 
 ```{r}
         
-c_per_year <- births %>% # and then
+c_per_year <- births |> # and then
   
-  filter(delivery == "Caesarean - Emergency") %>% # and then
+  filter(delivery == "Caesarean - Emergency") |> # and then
   
   summarise(n = sum(livebirths), 
-            .by = financial_year) %>% # and then
+            .by = financial_year) |> # and then
   
   arrange(desc(n))
 
@@ -228,7 +228,7 @@ head(c_per_year)
 Notice that  `filter()`, `summarise()` and `arrange()` no longer need the first argument to be the data table; it is pulled in from the pipe above. The power of the pipe may not be obvious now, but it will soon prove its worth. 
 
 :::{.callout-note}
-Base R recently added a "native pipe" that looks like this: `|>`, while the tidyverse has traditionally used the "magrittr pipe" that looks like this `%>%`. They have a few small differences that you don't need to learn about yet. We'll be using the magrittr pipe, but you might see the base R pipe in other sources.
+Base R recently added a "native pipe" that looks like this: `|>`, while the tidyverse has traditionally used the "magrittr pipe" that looks like this `%>%`. They have a few small differences that you don't need to learn about yet. We'll be using the base R pipe, but you might see the magrittr pipe in other sources.
 :::
 
 ## Counting
@@ -248,7 +248,7 @@ You can add on a column with the numbers expressed in percent using the function
 The code below divides the value in the `n` column by the total sum of the numbers in that column, and adds it to a new column called `percent`. The next step modifies the percent column by multiplying it by 100 and rounding the value. You could do this all in one step, like `round(100 * n / sum(n))`, but often it's clearer to break it into a few steps to avoid too many nested parentheses.
 
 ```{r}
-count(births, delivery) %>%
+count(births, delivery) |>
   mutate(percent = n / sum(n),
          percent = round(100 * percent))
 ```
@@ -265,8 +265,8 @@ count(births, age_group, induced, sort = TRUE)
 mcq1 <- c(answer = "`count(births, induced, sort = TRUE)`", 
           x = "`count(induced, births, sort = TRUE)`", 
           x = "`count(births, induced)`", 
-          x = "`count(induced, births)`") %>%
-  sample() %>%
+          x = "`count(induced, births)`") |>
+  sample() |>
   longmcq()
 ```
 
@@ -334,9 +334,9 @@ You can also create summary values by group using a combination of `group_by()` 
 It differs from the `.by` argument to `summarise()` in that it is persistent, so the table stays grouped until you explicitly remove the groups using the `ungroup()` functions, while the `.by` argument only applies to the function it is inside. Most of the code examples you'll see use this style, since the `.by` argument is fairly new.
 
 ```{r}
-births %>%
-  group_by(delivery) %>%
-  summarise(births = sum(livebirths)) %>%
+births |>
+  group_by(delivery) |>
+  summarise(births = sum(livebirths)) |>
   ungroup()
 ```
 
@@ -348,10 +348,10 @@ Make sure you call the `ungroup()` function when you are done with grouped funct
 You might have noticed that the order of the table above is different from the order when using the `.by` argument of `summarise()`. This is because `group_by()` always sorts the values in the grouping columns in ascending order, while `.by` leaves them in the order they are first encountered in your data frame. Use the function `arrange()` to manually change order (see @sec-arrange).
 
 ```{r}
-births %>%
-  group_by(delivery) %>%
-  summarise(births = sum(livebirths)) %>%
-  ungroup() %>%
+births |>
+  group_by(delivery) |>
+  summarise(births = sum(livebirths)) |>
+  ungroup() |>
   arrange(desc(births)) # sort by number of births in descending order
 ```
 
@@ -364,9 +364,9 @@ You can add multiple variables to `group_by()` to further break down your data. 
 * Reverse the order of `delivery` and financial_year` in `group_by()` to see how it changes the output.
 
 ```{r eval = FALSE}
-births %>%
-  group_by(delivery, financial_year) %>%
-  summarise(n = sum(livebirths)) %>%
+births |>
+  group_by(delivery, financial_year) |>
+  summarise(n = sum(livebirths)) |>
   ungroup()
 ```
 
@@ -385,14 +385,14 @@ Calculating percent by groups is a great example of the flexibility of `group_by
 When we just had one variable to count, adding percent was nice and easy:
 
 ```{r}
-count(births, delivery) %>%
+count(births, delivery) |>
   mutate(percent = n/sum(n)*100)
 ```
 
 With multiple variables, problems can arise if we use the exact same approach because by default, it will calculate the percent that each row contributes to the dataset as a whole. This might be what you want:
 
 ```{r}
-count(births, age_group, induced, sort = TRUE)%>%
+count(births, age_group, induced, sort = TRUE)|>
   mutate(percent = n/sum(n)*100)
 ```
 
@@ -400,13 +400,13 @@ However, it's more likely that you would want to calculate percent by groups. Fo
 
 ```{r}
 # group by age, percentages within each age group will sum to 100
-count(births, age_group, induced)%>% #age then induced
-  group_by(age_group) %>%
+count(births, age_group, induced)|> #age then induced
+  group_by(age_group) |>
   mutate(percent = n/sum(n)*100)
 
 # group by induced, percentages within each induction group will sum to 100
-count(births, induced, age_group)%>% #induced then age
-  group_by(induced) %>%
+count(births, induced, age_group)|> #induced then age
+  group_by(induced) |>
   mutate(percent = n/sum(n)*100)
 ```
 
@@ -414,12 +414,12 @@ If you have updated `r pkg("dyplr")` then you can also use the `.by` argument in
 
 ```{r}
 # group by age, percentages within each age group will sum to 100
-count(births, age_group, induced)%>% #age then induced
+count(births, age_group, induced)|> #age then induced
   mutate(percent = n/sum(n)*100,
          .by = age_group)
 
 # group by induced, percentages within each induction group will sum to 100
-count(births, induced, age_group)%>% #induced then age
+count(births, induced, age_group)|> #induced then age
   mutate(percent = n/sum(n)*100,
          .by = induced)
 ```
@@ -439,13 +439,13 @@ You can combine functions like this to get detailed insights into your data. For
 
 
 ```{r}
-births_per_year_type_age <- births %>%
+births_per_year_type_age <- births |>
   mutate(year = str_extract(financial_year, ".{4}"), # takes first four digits
-         year = as.integer(year)) %>% # transform to numeric
+         year = as.integer(year)) |> # transform to numeric
   filter(age_group != "Unknown", # remove unknown
-         delivery != "Not Known") %>% # remove not known
+         delivery != "Not Known") |> # remove not known
   summarise(n = sum(livebirths),
-            .by = c(year, delivery, age_group)) %>%
+            .by = c(year, delivery, age_group)) |>
   mutate(pcnt = n / sum(n) * 100, 
          .by = c(year, age_group))
   
@@ -461,7 +461,7 @@ Re-write the code above using `group_by()` instead of the `.by` argument?
 Now you can use your skills from @sec-viz to plot the data! The code below has a few elements you haven't seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis. 
 
 ```{r fig-birth-year-type-age, fig.cap = ""}
-births_per_year_type_age  %>%
+births_per_year_type_age  |>
   ggplot(aes(x = year, y = pcnt, color = age_group)) +
   geom_line() +
   facet_wrap(~delivery, scales = "free_y") +
