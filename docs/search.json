@@ -1211,7 +1211,7 @@
     "href": "assessment-2.html#submission",
     "title": "\n12  Assessment 2\n",
     "section": "\n12.3 Submission",
-    "text": "12.3 Submission\n\nDue: Wednesday, 2024-11-02 by noon\nCovers: chapters 1-4, emphasising 3 and 4\nWorth: 20%\nDo not put your name in your report; use your student ID as the author.\nPlease submit a zip file containing:\n\nthe .rproj file\nyour reproducible script, named report2_studentID.qmd\n\nany additional files necessary to reproduce your report (e.g., images or bibliography files),\nthe rendered html report, named report2_studentID.html.",
+    "text": "12.3 Submission\n\nDue: Wednesday, 2024-10-23 by noon\nCovers: chapters 1-4, emphasising 3 and 4\nWorth: 20%\nDo not put your name in your report; use your student ID as the author.\nPlease submit a zip file containing:\n\nthe .rproj file\nyour reproducible script, named report2_studentID.qmd\n\nany additional files necessary to reproduce your report (e.g., images or bibliography files),\nthe rendered html report, named report2_studentID.html.",
     "crumbs": [
       "Assessments",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Assessment 2</span>"
