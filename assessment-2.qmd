@@ -33,7 +33,6 @@ Your task is to replicate [this html report](demos/report2_demo.html) using [thi
 
 ## Submission
 
-* Due: Wednesday, 2024-10-23 by noon
 * Covers: chapters 1-4, emphasising 3 and 4
 * Worth: 20%
 * Do not put your name in your report; use your student ID as the author.

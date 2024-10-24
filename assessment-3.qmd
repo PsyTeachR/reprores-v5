@@ -13,7 +13,6 @@ TBA
 
 ## Submission
 
-* Due: Wednesday, 2024-11-13 by noon
 * Covers: chapters 1-7, emphasising 5-7
 * Worth: 30%
 * Do not put your name in your report; use your student ID as the author.

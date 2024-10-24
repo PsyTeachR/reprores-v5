@@ -26,7 +26,6 @@ See [this report](demos/report1.html) for an example.
 
 ## Submission
 
-* Due: Wednesday, 2024-10-09 by noon
 * Covers: chapters 1 and 2
 * Worth: 10%
 * Do not put your name in your report; use your student ID as the author.
