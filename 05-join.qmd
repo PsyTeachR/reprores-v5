@@ -78,7 +78,7 @@ customers
 orders
 ```
 
-## Mutating Joins
+## Mutating Joins {#sec-mutating-joins}
 
 `r glossary("Mutating joins")` act like the `dplyr::mutate()` function in that they add new columns to one table based on values in another table. (We'll learn more about the `mutate()` function in @sec-tidy).)
 
@@ -331,7 +331,7 @@ bindc_data
 The only advantage of `bind_cols()` over a mutating join is when the tables don't have any IDs to join by and you have to rely solely on their order. Otherwise, you should use a mutating join (all four mutating joins result in the same output when all rows in each table have exactly one match in the other table).
 :::
 
-### Importing multiple files
+### Importing multiple files {#sec-multi-file-import}
 
 If you need to import and bind a whole folder full of files that have the same structure, get a list of all the files you want to combine. It's easiest if they're all in the same directory, although you can use a pattern to select the files you want if they have a systematic naming structure.
 

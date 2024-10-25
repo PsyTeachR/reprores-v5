@@ -363,12 +363,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#sec-functions-wrangle" id="toc-sec-functions-wrangle" class="nav-link" data-scroll-target="#sec-functions-wrangle">Functions used</a></li>
   <li><a href="#sec-setup-wrangle" id="toc-sec-setup-wrangle" class="nav-link" data-scroll-target="#sec-setup-wrangle">Set-up</a></li>
   <li>
-<a href="#wrangling-functions" id="toc-wrangling-functions" class="nav-link" data-scroll-target="#wrangling-functions"><span class="header-section-number">7.1</span> Wrangling functions</a>
+<a href="#sec-wrangling-functions" id="toc-sec-wrangling-functions" class="nav-link" data-scroll-target="#sec-wrangling-functions"><span class="header-section-number">7.1</span> Wrangling functions</a>
   <ul class="collapse">
 <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">7.1.1</span> Select</a></li>
   <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">7.1.2</span> Filter</a></li>
   <li><a href="#sec-arrange" id="toc-sec-arrange" class="nav-link" data-scroll-target="#sec-arrange"><span class="header-section-number">7.1.3</span> Arrange</a></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">7.1.4</span> Mutate</a></li>
+  <li><a href="#sec-mutate" id="toc-sec-mutate" class="nav-link" data-scroll-target="#sec-mutate"><span class="header-section-number">7.1.4</span> Mutate</a></li>
   <li><a href="#sec-dplyr-summarise" id="toc-sec-dplyr-summarise" class="nav-link" data-scroll-target="#sec-dplyr-summarise"><span class="header-section-number">7.1.5</span> Summarise</a></li>
   <li><a href="#sec-dplyr-groupby" id="toc-sec-dplyr-groupby" class="nav-link" data-scroll-target="#sec-dplyr-groupby"><span class="header-section-number">7.1.6</span> Group By</a></li>
   </ul>
@@ -473,7 +473,7 @@ Warning
 </div>
 <p>You’ll need to make a folder called “data” and download a data file into it: <a href="https://psyteachr.github.io/ads-v2/data/budget.csv" download="">budget.csv</a>.</p>
 <p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheat sheet</a>.</p>
-</section><section id="wrangling-functions" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="wrangling-functions">
+</section><section id="sec-wrangling-functions" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="sec-wrangling-functions">
 <span class="header-section-number">7.1</span> Wrangling functions</h2>
 <p>Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it’s something you will spend an awful lot of time doing. Most <a href="https://psyteachr.github.io/glossary/d#data-wrangling" target="_blank" class="glossary" title="The process of preparing data for visualisation and statistical analysis.">data wrangling</a> involves the reshaping functions you learned in <a href="06-tidy.html" class="quarto-xref"><span>Chapter 6</span></a> and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code>summarise</code>, and <code>group_by</code>. You’ll remember the last two from <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>, so we’ll only cover them briefly.</p>
 <p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
@@ -695,26 +695,26 @@ Warning
 <ul>
 <li>
 <code>budget %&gt;% select(contains("_"))</code>
-<div id="radio_EHBRKUQBQT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_EHBRKUQBQT" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_VWEVFBVNBW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VWEVFBVNBW" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_VWEVFBVNBW" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_VWEVFBVNBW" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_VWEVFBVNBW" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(num_range("expenses_", 2019:2020))</code>
-<div id="radio_GNFJVAVFMJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_GNFJVAVFMJ" value="answer"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_HWCSBFJIFV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HWCSBFJIFV" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_HWCSBFJIFV" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_HWCSBFJIFV" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_HWCSBFJIFV" value="answer"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(starts_with("sales"))</code>
-<div id="radio_SDEARBOGIT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_SDEARBOGIT" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_YECORMNOWO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YECORMNOWO" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YECORMNOWO" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YECORMNOWO" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YECORMNOWO" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget %&gt;% select(ends_with("2020"))</code>
-<div id="radio_KCRSEMSWZR" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_KCRSEMSWZR" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_JWRUJLPRUP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JWRUJLPRUP" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JWRUJLPRUP" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JWRUJLPRUP" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JWRUJLPRUP" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 </ul>
@@ -1177,7 +1177,7 @@ Warning
 </div>
 </div>
 </div>
-</section><section id="mutate" class="level3" data-number="7.1.4"><h3 data-number="7.1.4" class="anchored" data-anchor-id="mutate">
+</section><section id="sec-mutate" class="level3" data-number="7.1.4"><h3 data-number="7.1.4" class="anchored" data-anchor-id="sec-mutate">
 <span class="header-section-number">7.1.4</span> Mutate</h3>
 <p>The function <code>mutate()</code> allows you to add new columns or change existing ones by overwriting them by using the syntax <code>new_column = operation</code>. You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the creation of <code>profit</code> below uses the column <code>expenses</code>, which is created above it.</p>
 <div class="cell">
@@ -1424,23 +1424,23 @@ Tip
 </div>
 <div class="try">
 <p>How would you find out the maximum sales for each region?</p>
-<div id="radio_TGTCZSZVZP" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="answer"><span>
-<pre>budget3 %&gt;%
-  group_by(region) %&gt;%
-  summarise(max_sales = max(sales)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
-<pre>budget3 %&gt;%
-  group_by(region) %&gt;%
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
+<div id="radio_LKYWHRBLWW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LKYWHRBLWW" value="x"><span>
 <pre>budget3 %&gt;%
   group_by(sales) %&gt;%
   summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_TGTCZSZVZP" value="x"><span>
+</span></label><label><input type="radio" autocomplete="off" name="radio_LKYWHRBLWW" value="answer"><span>
+<pre>budget3 %&gt;%
+  group_by(region) %&gt;%
+  summarise(max_sales = max(sales)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_LKYWHRBLWW" value="x"><span>
 <pre>budget3 %&gt;%
   group_by(sales) %&gt;%
   summarise(max_sales = max(sales)</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_LKYWHRBLWW" value="x"><span>
+<pre>budget3 %&gt;%
+  group_by(region) %&gt;%
+  summarise(max_sales = max(region)</pre>
 </span></label>
 </div>
 </div>

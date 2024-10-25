@@ -44,7 +44,7 @@ You'll need to make a folder called "data" and download a data file into it:
 
 Download the [Data transformation cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf).
 
-## Wrangling functions
+## Wrangling functions {#sec-wrangling-functions}
 
 Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it's something you will spend an awful lot of time doing. Most `r glossary("data wrangling")` involves the reshaping functions you learned in @sec-tidy and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: `select`, `filter`, `arrange`, `mutate`, `summarise`, and `group_by`. You'll remember the last two from @sec-summary, so we'll only cover them briefly.
 
@@ -330,7 +330,7 @@ budget %>%
 
 :::
 
-### Mutate
+### Mutate {#sec-mutate}
 
 The function `mutate()` allows you to add new columns or change existing ones by overwriting them by using the syntax `new_column = operation`.  You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the creation of `profit` below uses the column `expenses`, which is created above it.
 

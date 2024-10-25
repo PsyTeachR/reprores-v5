@@ -189,7 +189,7 @@ If there were 10 years in the table, or a different number of years each time yo
 
 If you have control over how the data are recorded, it will make your life easier to record it in a tidy format from the start. However, we don't always have control, so this class will also teach you how to convert untidy tables into tidy tables.
 
-## Reshaping Data
+## Reshaping Data {#sec-reshaping-data}
 
 Data tables can be in `r glossary("wide")` format or `r glossary("long")` format (or a mix of the two). Wide data are where all of the observations about one thing are in the same row, while long data are where each observation is on a separate row. You often need to convert between these formats to do different types of summaries or visualisation. You may have done something similar using pivot tables in Excel.
 

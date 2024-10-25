@@ -9,11 +9,40 @@ A project demonstrating data wrangling skills
 
 ## Instructions
 
-TBA
+Your task is to replicate [this html report](demos/report3_demo.html) using [these datasets](demos/report3_data.zip) and code, and to generate an appropriate visualisation for the final plot. Nearly identical to assessment 2, the submission must contain the following:
+
+* [ ] A reproducible *project structure* with all needed files (@sec-project-start)
+* [ ] Document structure and text that replicate the report (@sec-reports)
+* [ ] Import the data with correct data types (@sec-import-data)
+* [ ] Plots that replicate Figures 1 (@sec-plots)
+* [ ] A table that replicates Table 1 and 2 (@sec-summary-summarise) 
+* [ ] A plot that is appropriate to the description of Figure 2 (@sec-appropriate-plots)
+* [ ] Consistent plot themes, colours and labels (@sec-themes)
+* [ ] Cross-references in the text to the figures and tables (@sec-cross-references)
+* [ ] References created using bibtex (@sec-bibliography)
+
+In addition, your code should demonstrate the following skills:
+
+* [ ] Be able to match related data across multiple tables (@sec-mutating-joins)
+* [ ] Be able to combine data from multiple files (@sec-multi-file-import)
+* [ ] Be able to reshape data between long and wide formats (@sec-reshaping-data)
+* [ ] Separate, change, reorder, and rename columns (@sec-multistep)
+* [ ] Use pipes to chain together functions (@sec-pipes)
+* [ ] Be able to select and filter data for relevance (@sec-wrangling-functions)
+* [ ] Be able to create new columns and edit existing ones (@sec-mutate)
+
+## Hints and Tips
+
+* The html theme used by the demo report is flatly
+* The ggplot theme is `theme_bw()`
+* You will not be asked to do anything 'tricky' in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives.
+* You will definitely need to join data, and convert between wide and long. Make sure you do this efficiently, creating the minimum number of extra data tables needed, and not re-creating the same table for different tasks.
+* If you find yourself doing the same thing to many columns, you could probably do it more efficiently by reshaping the data longer first
+* Use pipes to avoid creating many single-use tables.
+* The figure width and height of Figure 1 are 10 and 7 (it is fine if your fonts are a slightly different size)
 
 ## Submission
 
-* Due: Wednesday, 2024-11-13 by noon
 * Covers: chapters 1-7, emphasising 5-7
 * Worth: 30%
 * Do not put your name in your report; use your student ID as the author.
@@ -30,7 +59,28 @@ TBA
 #| echo: false
 rubric <- list(
   "Research & Knowledge" = list(
-    "**Topic1**: Description" = list(
+    "**Skills from Chapters 1-3**: You demonstrate skills to create reproducible reports and visualise data" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Data Import and Joining**: You import and join together data clearly and correctly" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Data Reshaping**: You can reshape data between long and wide formats where approriate" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Data Wrangling**: You demonstrate the ability to select and filter data, create new data columns, and edit existing data columns" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",
@@ -39,7 +89,7 @@ rubric <- list(
     )
   ),
   "Evaluation" = list(
-    "**Topic2**: Description" = list(
+    "**Original Plot**: The original plot is appropriate to the question asked" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",
@@ -48,7 +98,14 @@ rubric <- list(
     )
   ),
   "Communication" = list(
-    "**Topic3**: Description" = list(
+    "**Code Clarity**: Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise." = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Code Efficiency**: While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places)." = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",

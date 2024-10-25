@@ -364,7 +364,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#sec-setup-joins" id="toc-sec-setup-joins" class="nav-link" data-scroll-target="#sec-setup-joins"><span class="header-section-number">5.2</span> Set-up</a></li>
   <li><a href="#sec-joins-data" id="toc-sec-joins-data" class="nav-link" data-scroll-target="#sec-joins-data"><span class="header-section-number">5.3</span> Loading data</a></li>
   <li>
-<a href="#mutating-joins" id="toc-mutating-joins" class="nav-link" data-scroll-target="#mutating-joins"><span class="header-section-number">5.4</span> Mutating Joins</a>
+<a href="#sec-mutating-joins" id="toc-sec-mutating-joins" class="nav-link" data-scroll-target="#sec-mutating-joins"><span class="header-section-number">5.4</span> Mutating Joins</a>
   <ul class="collapse">
 <li><a href="#sec-left_join" id="toc-sec-left_join" class="nav-link" data-scroll-target="#sec-left_join"><span class="header-section-number">5.4.1</span> left_join()</a></li>
   <li><a href="#sec-right_join" id="toc-sec-right_join" class="nav-link" data-scroll-target="#sec-right_join"><span class="header-section-number">5.4.2</span> right_join()</a></li>
@@ -385,7 +385,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <ul class="collapse">
 <li><a href="#sec-bind_rows" id="toc-sec-bind_rows" class="nav-link" data-scroll-target="#sec-bind_rows"><span class="header-section-number">5.7.1</span> bind_rows()</a></li>
   <li><a href="#sec-bind_cols" id="toc-sec-bind_cols" class="nav-link" data-scroll-target="#sec-bind_cols"><span class="header-section-number">5.7.2</span> bind_cols()</a></li>
-  <li><a href="#importing-multiple-files" id="toc-importing-multiple-files" class="nav-link" data-scroll-target="#importing-multiple-files"><span class="header-section-number">5.7.3</span> Importing multiple files</a></li>
+  <li><a href="#sec-multi-file-import" id="toc-sec-multi-file-import" class="nav-link" data-scroll-target="#sec-multi-file-import"><span class="header-section-number">5.7.3</span> Importing multiple files</a></li>
   </ul>
 </li>
   <li>
@@ -589,7 +589,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>Demo orders table.</p>
 </div>
 </div>
-</section><section id="mutating-joins" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="mutating-joins">
+</section><section id="sec-mutating-joins" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="sec-mutating-joins">
 <span class="header-section-number">5.4</span> Mutating Joins</h2>
 <p><a href="https://psyteachr.github.io/glossary/m#mutating-joins" target="_blank" class="glossary" title="Joins that act like the dplyr::mutate() function in that they add new columns to one table based on values in another table.">Mutating joins</a> act like the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">dplyr::mutate()</a></code> function in that they add new columns to one table based on values in another table. (We’ll learn more about the <code>mutate()</code> function in <a href="06-tidy.html" class="quarto-xref"><span>Chapter 6</span></a>).)</p>
 <p>All the mutating joins have this basic syntax:</p>
@@ -1440,7 +1440,7 @@ Note
 <p>The only advantage of <code>bind_cols()</code> over a mutating join is when the tables don’t have any IDs to join by and you have to rely solely on their order. Otherwise, you should use a mutating join (all four mutating joins result in the same output when all rows in each table have exactly one match in the other table).</p>
 </div>
 </div>
-</section><section id="importing-multiple-files" class="level3" data-number="5.7.3"><h3 data-number="5.7.3" class="anchored" data-anchor-id="importing-multiple-files">
+</section><section id="sec-multi-file-import" class="level3" data-number="5.7.3"><h3 data-number="5.7.3" class="anchored" data-anchor-id="sec-multi-file-import">
 <span class="header-section-number">5.7.3</span> Importing multiple files</h3>
 <p>If you need to import and bind a whole folder full of files that have the same structure, get a list of all the files you want to combine. It’s easiest if they’re all in the same directory, although you can use a pattern to select the files you want if they have a systematic naming structure.</p>
 <p>First, save the two customer tables to CSV files. The <code><a href="https://rdrr.io/r/base/files2.html">dir.create()</a></code> function makes a folder called “data”. The <code>showWarnings = FALSE</code> argument means that you won’t get a warning if the folder already exists, it just won’t do anything.</p>

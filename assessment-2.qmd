@@ -24,7 +24,6 @@ Your task is to replicate [this html report](demos/report2_demo.html) using [thi
 
 * The html theme used by the demo report is flatly
 * The ggplot theme is `theme_bw()`
-* `msleep` is a built-in dataset from ggplot2
 * Make Table 1 using markdown
 * You will need to use `summarise()` to create the data for Table 2; do not just type the numbers from the demo table
 * Display Table 2 using `knitr::kable()`
@@ -33,7 +32,6 @@ Your task is to replicate [this html report](demos/report2_demo.html) using [thi
 
 ## Submission
 
-* Due: Wednesday, 2024-10-23 by noon
 * Covers: chapters 1-4, emphasising 3 and 4
 * Worth: 20%
 * Do not put your name in your report; use your student ID as the author.
