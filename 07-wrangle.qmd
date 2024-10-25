@@ -65,9 +65,9 @@ budget <- faux::sim_design(
   mu = rep(c(100, 50), each = 4, times = 4),
   sd = 1000,
   plot = FALSE
-) %>%
-  mutate_if(is.numeric, round) %>%
-  select(-id) %>%
+) |>
+  mutate_if(is.numeric, round) |>
+  select(-id) |>
   mutate(satisfaction_2019 = c("high", "very high", "high", "low", "very low", "neutral", "neutral", "low"),
          satisfaction_2020 = c("very high", "very high", "neutral", "low", "very low", "high", "neutral", "low"))
 
@@ -95,10 +95,10 @@ You can select columns by name or number (which is sometimes referred to as the 
 
 ```{r}
 # select single column by name
-product_dat <- budget %>% select(product) 
+product_dat <- budget |> select(product) 
 
 # select single column by number
-product_dat <- budget %>% select(2) 
+product_dat <- budget |> select(2) 
 ```
 
 You can select each column individually, separated by commas (e.g., `region, sales_2019`) but you can also select all columns from one to another by separating them with a colon (e.g., `sales_2019:expenses_2020`).
@@ -107,16 +107,16 @@ The colon notation can be much faster because you don't need to type out each in
 
 ```{r select-name}
 # select columns individually
-sales2019 <- budget %>% select(region, product, sales_2019)
+sales2019 <- budget |> select(region, product, sales_2019)
 
 # select columns with colon
-sales2019 <- budget %>% select(region:sales_2019)
+sales2019 <- budget |> select(region:sales_2019)
 ```
 
 You can rename columns at the same time as selecting them by setting `new_name = old_col`. 
 
 ```{r select-number}
-regions <- budget %>% select(`Sales Region` = 1, 3:6)
+regions <- budget |> select(`Sales Region` = 1, 3:6)
 
 head(regions, 2)
 ```
@@ -127,10 +127,10 @@ You can select columns either by telling R which ones you want to keep as in the
 
 ```{r select-unselect}
 # de-select individual columns
-sales <- budget %>% select(-expenses_2019, -expenses_2020)
+sales <- budget |> select(-expenses_2019, -expenses_2020)
 
 # de-select a range of columns
-sales <- budget %>% select(-(expenses_2019:expenses_2020))
+sales <- budget |> select(-(expenses_2019:expenses_2020))
 ```
 
 #### Select helpers
@@ -145,31 +145,31 @@ Finally, you can select columns based on criteria about the column names.
 | `num_range()` | select columns with a name that matches the pattern `prefix` |
 
 ```{r select-helpers, echo = FALSE}
-x1 <- budget %>% select(starts_with("sales"))
-x2 <- budget %>% select(ends_with("2020"))
-x3 <- budget %>% select(contains("_"))
-x4 <- budget %>% select(num_range("expenses_", 2019:2020))
+x1 <- budget |> select(starts_with("sales"))
+x2 <- budget |> select(ends_with("2020"))
+x3 <- budget |> select(contains("_"))
+x4 <- budget |> select(num_range("expenses_", 2019:2020))
 
-a <- list(names(x1), names(x2), names(x3), names(x4)) %>%
+a <- list(names(x1), names(x2), names(x3), names(x4)) |>
   sapply(paste, collapse = ", ")
 
-a1 <- setNames(a, c("answer", "x", "x", "x")) %>% longmcq()
-a2 <- setNames(a, c("x", "answer", "x", "x")) %>% longmcq()
-a3 <- setNames(a, c("x", "x", "answer", "x")) %>% longmcq()
-a4 <- setNames(a, c("x", "x", "x", "answer")) %>% longmcq()
+a1 <- setNames(a, c("answer", "x", "x", "x")) |> longmcq()
+a2 <- setNames(a, c("x", "answer", "x", "x")) |> longmcq()
+a3 <- setNames(a, c("x", "x", "answer", "x")) |> longmcq()
+a4 <- setNames(a, c("x", "x", "x", "answer")) |> longmcq()
 ```
 
 
 ::: {.try}
 What are the resulting columns for these four examples?
 
-* `budget %>% select(contains("_"))`
+* `budget |> select(contains("_"))`
     `r a3`
-* `budget %>% select(num_range("expenses_", 2019:2020))`
+* `budget |> select(num_range("expenses_", 2019:2020))`
     `r a4`
-* `budget %>% select(starts_with("sales"))`
+* `budget |> select(starts_with("sales"))`
     `r a1` 
-* `budget %>% select(ends_with("2020"))`
+* `budget |> select(ends_with("2020"))`
     `r a2`
 :::
 
@@ -182,16 +182,16 @@ You can filter by a single criterion. This criterion can be rows where a certain
 
 ```{r filter, eval = FALSE}
 # select all rows where region equals North
-budget %>% filter(region == "North")
+budget |> filter(region == "North")
 
 # select all rows where expenses_2020 were exactly equal to 200
-budget %>% filter(expenses_2020 == 200)
+budget |> filter(expenses_2020 == 200)
 
 # select all rows where sales_2019 was more than 100
-budget %>% filter(sales_2019 > 100)
+budget |> filter(sales_2019 > 100)
 
 # everything but the North
-budget %>% filter(region != "North")
+budget |> filter(region != "North")
 ```
 
 ::: {.callout-warning}
@@ -209,13 +209,13 @@ x2 <- which(class$score == 91)
 x3 <- which(class$score < 80)
 x4 <- which(class$grade != "A")
 
-a <- list(x1, x2, x3, x4) %>%
+a <- list(x1, x2, x3, x4) |>
   sapply(paste, collapse = ", ")
 
-a1 <- setNames(a, c("answer", "x", "x", "x")) %>% mcq()
-a2 <- setNames(a, c("x", "answer", "x", "x")) %>% mcq()
-a3 <- setNames(a, c("x", "x", "answer", "x")) %>% mcq()
-a4 <- setNames(a, c("x", "x", "x", "answer")) %>% mcq()
+a1 <- setNames(a, c("answer", "x", "x", "x")) |> mcq()
+a2 <- setNames(a, c("x", "answer", "x", "x")) |> mcq()
+a3 <- setNames(a, c("x", "x", "answer", "x")) |> mcq()
+a4 <- setNames(a, c("x", "x", "x", "answer")) |> mcq()
 ```
 
 
@@ -226,13 +226,13 @@ Which IDs are kept from the table below?
 class
 ```
 
-* `demo %>% filter(score < 80)`
+* `demo |> filter(score < 80)`
     `r a3`
-* `demo %>% filter(grade == "A")`
+* `demo |> filter(grade == "A")`
     `r a1`
-* `demo %>% filter(grade != "A")`
+* `demo |> filter(grade != "A")`
     `r a4`
-* `demo %>% filter(score == 91)`
+* `demo |> filter(score == 91)`
     `r a2`
     
 
@@ -242,28 +242,28 @@ You can also select on multiple criteria by separating them by commas (rows will
 
 ```{r filter-symbols}
 # regions and products with profit in both 2019 and 2020
-profit_both <- budget %>% 
+profit_both <- budget |> 
   filter(
     sales_2019 > expenses_2019,
     sales_2020 > expenses_2020
   )
 
 # the same as above, using & instead of a comma
-profit_both <- budget %>% 
+profit_both <- budget |> 
   filter(
     sales_2019 > expenses_2019 &
     sales_2020 > expenses_2020
   )
 
 # regions and products with profit in 2019 or 2020
-profit_either <- budget %>% 
+profit_either <- budget |> 
   filter(
     sales_2019 > expenses_2019 |
     sales_2020 > expenses_2020
   )
 
 # 2020 profit greater than 1000
-profit_1000 <- budget %>%
+profit_1000 <- budget |>
   filter(sales_2020 - expenses_2020 > 1000)
 
 ```
@@ -272,12 +272,12 @@ If you want the filter to retain multiple specific values in the same variable, 
 
 ```{r match-operator, eval = FALSE}
 # retain any rows where region is north or south, and where product equals widget
-budget %>%
+budget |>
   filter(region %in% c("North", "South"),
          product == "widgets")
 
 # retain any rows where the region is not east or west, and where the product does not equal gadgets
-budget %>%
+budget |>
   filter(!region %in% c("East", "West"),
          product != "gadgets")
 ```
@@ -295,7 +295,7 @@ budget %>%
 Finally, you can also pass many other functions to filter. For example, the package <pkg>stringr</pkg> that is loaded as part of the <pkg>tidyverse</pkg> contains many different functions for working with `r glossary("string", "strings")` (character data). For example, you you use `str_detect()` to only retain rows where the customer satisfaction rating includes the word "high"
 
 ```{r eval = TRUE}
-budget %>%
+budget |>
   filter(str_detect(satisfaction_2019, "high"))
 ```
 
@@ -313,7 +313,7 @@ You can sort your dataset using `arrange()`. You will find yourself needing to s
 # arranging the table 
 # first by product in alphabetical order
 # then by "region" in reverse alphabetical order
-budget %>%
+budget |>
   arrange(product, desc(region))
 ```
 
@@ -322,9 +322,9 @@ budget %>%
 If you want to sort character data/categories in a specific order, turn the column into a `r glossary("factor")` and set the `levels` in the desired order.
 
 ```{r}
-budget %>%
-  mutate(region = factor(region, levels = c("North", "South", "East", "West"))) %>%
-  filter(product == "gadgets") %>%
+budget |>
+  mutate(region = factor(region, levels = c("North", "South", "East", "West"))) |>
+  filter(product == "gadgets") |>
   arrange(region)
 ```
 
@@ -335,7 +335,7 @@ budget %>%
 The function `mutate()` allows you to add new columns or change existing ones by overwriting them by using the syntax `new_column = operation`.  You can add more than one column in the same mutate function by separating the columns with a comma. Once you make a new column, you can use it in further column definitions. For example, the creation of `profit` below uses the column `expenses`, which is created above it.
 
 ```{r mutate}
-budget2 <- budget %>%
+budget2 <- budget |>
   mutate(
     sales = sales_2019 + sales_2020,
     expenses = expenses_2019 + expenses_2020,
@@ -347,7 +347,7 @@ budget2 <- budget %>%
 `mutate()` can also be used in conjunction with other functions and Boolean operators. For example, we can add another column to `budget2` that states whether a profit was returned that year or overwrite our `product` variable as a factor. Just like when we used `r glossary("boolean expression", "Boolean expressions")` with filter, it will evaluate the equation and return TRUE or FALSE depending on whether the observation meets the criteria.
 
 ```{r}
-budget2 <- budget2 %>%
+budget2 <- budget2 |>
   mutate(profit_category = profit > 0,
          product = as.factor(product))
 ```
@@ -359,7 +359,7 @@ You can overwrite a column by giving a new column the same name as the old colum
 You can also use `case_when()` to specify what values to return, rather than defaulting to TRUE or FALSE:
 
 ```{r}
-budget3 <- budget2 %>%
+budget3 <- budget2 |>
   mutate(profit_category = case_when(profit > 0 ~ "PROFIT",
                                      profit < 0 ~ "NO PROFIT"))
 ```
@@ -369,7 +369,7 @@ Use it to recode values:
 ```{r}
 # create a column where people get a bonus if customer satisfaction was overall high or very high
 
-bonus <- budget3 %>%
+bonus <- budget3 |>
   mutate(bonus_2019 = case_when(satisfaction_2019 %in% c("very low", "low", "neutral") ~ "no bonus",
                                 satisfaction_2019 %in% c("high", "very high") ~ "bonus"))
 ```
@@ -380,7 +380,7 @@ And combine different criteria:
 
 # new management takes over - people only get a bonus if customer satisfaction was overall high or very high AND if a profit was returned
 
-bonus2 <- budget3 %>%
+bonus2 <- budget3 |>
   mutate(bonus_2020 = case_when(satisfaction_2020 == "high" & 
                                   profit_category == "PROFIT" ~ "bonus",
                                 satisfaction_2020 == "very high" & 
@@ -401,12 +401,12 @@ You were introduced to the `summarise()` function in @sec-summary-summarise. Thi
 Let's say we want to determine the mean sales and expenses, plus the minimum and maximum profit, for any region, product and year. First, we need to reshape the data like we learned in @sec-tidy, so that there is a column for year and one column each for sales and expenses, instead of separate columns for each year. We'll also drop the satisfaction data as we don't need it for this analysis. 
 
 ```{r}
-budget4 <- budget %>%
-  select(-satisfaction_2019, -satisfaction_2020) %>%
+budget4 <- budget |>
+  select(-satisfaction_2019, -satisfaction_2020) |>
   pivot_longer(cols = sales_2019:expenses_2020,
                names_to = c("type", "year"),
                names_sep = "_",
-               values_to = "value") %>%
+               values_to = "value") |>
   pivot_wider(names_from = type,
               values_from = value)
 
@@ -416,7 +416,7 @@ head(budget4) # check the format
 Now we can create summary statistics for the table.
 
 ```{r}
-budget4 %>%
+budget4 |>
   summarise(
     mean_sales = mean(sales),
     mean_expenses = mean(expenses),
@@ -430,14 +430,14 @@ budget4 %>%
 You were introduced to the `group_by()` function in @sec-grouping. For example, you can break down the summary statistics above by year and product.
 
 ```{r}
-year_prod <- budget4 %>%
-  group_by(year, product) %>%
+year_prod <- budget4 |>
+  group_by(year, product) |>
   summarise(
     mean_sales = mean(sales),
     mean_expenses = mean(expenses),
     min_profit = min(expenses - sales),
     max_profit = max(expenses - sales)
-  ) %>%
+  ) |>
   ungroup()
 
 year_prod
@@ -448,11 +448,11 @@ Note that you can use the other wrangling functions on the summary table, for ex
 
 ```{r eval = FALSE}
 # arrange by maximum profit
-year_prod %>%
+year_prod |>
   arrange(desc(max_profit))
 
 # filter out gadgets
-year_prod %>%
+year_prod |>
   filter(product != "gadgets")
 
 ```
@@ -462,11 +462,11 @@ year_prod %>%
 How would you find out the maximum sales for each region?
 
 ```{r, results='asis', echo = FALSE}
-c(answer = "<pre>budget3 %>%\n  group_by(region) %>%\n  summarise(max_sales = max(sales)</pre>",
-  x = "<pre>budget3 %>%\n  group_by(region) %>%\n  summarise(max_sales = max(region)</pre>",
-  x = "<pre>budget3 %>%\n  group_by(sales) %>%\n  summarise(max_sales = max(sales)</pre>",
-  x = "<pre>budget3 %>%\n  group_by(sales) %>%\n  summarise(max_sales = max(region)</pre>") %>%
-  sample() %>% webexercises::longmcq() %>% cat()
+c(answer = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(sales)</pre>",
+  x = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(region)</pre>",
+  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(sales)</pre>",
+  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(region)</pre>") |>
+  sample() |> webexercises::longmcq() |> cat()
 ```
 
 :::
@@ -475,7 +475,7 @@ You can also use `group_by()` in combination with other functions. For example, 
 
 ```{r}
 # return top 3 sales
-budget4 %>%
+budget4 |>
   slice_max(n = 3, order_by = sales)
 ```
 
@@ -483,8 +483,8 @@ But this can be combined with `group_by()` to return the top sales for each regi
 
 ```{r}
 # return top sale for each region
-budget4 %>%
-  group_by(region) %>%
+budget4 |>
+  group_by(region) |>
   slice_max(n = 1, order_by = sales)
 ```
 
@@ -495,7 +495,7 @@ budget4 %>%
 Let's say we want to round all the values to the nearest pound. The pattern below uses the `across()` function to apply the `round()` function to the columns from `mean_sales` to `max_profit`.
 
 ```{r}
-year_prod %>%
+year_prod |>
   mutate(across(.cols = mean_sales:max_profit, 
                 .fns = round))
 ```
@@ -535,7 +535,7 @@ First, we're going to recode the data to add in the missing values
 For the South data, we can use `case_when()` to set the value of expenses to 0 if the year is 2020 and region is "South", otherwise use the value from the expenses column (i.e., don't change).
 
 ```{r}
-missing_bad <- budget4 %>%
+missing_bad <- budget4 |>
   mutate(expenses = case_when(
     # set to 0 when year is 2020 and region is North
     year == 2020 & region == "South" ~ 0, 
@@ -556,7 +556,7 @@ data <- tibble(
   y = 1:5
 )
 
-data %>%
+data |>
   mutate(label = case_when(
     x < 2           ~ "x < 2",
     y < 4           ~ "y < 4",
@@ -572,7 +572,7 @@ For the North, we will recode these values as "missing". Since this is character
 
 ```{r}
 # set sales values to "missing" for North 2020 rows
-missing_bad <- missing_bad %>%
+missing_bad <- missing_bad |>
   mutate(sales = as.character(sales),  # Convert all sales to character
          sales = case_when(year == 2020 & region == "North" ~ "missing", 
                           TRUE ~ sales))  # Set specific condition to "missing"
@@ -586,7 +586,7 @@ Now, if you try to compute the mean sales, you will get an error message and the
 
 ```{r eval = TRUE, error=TRUE}
 # try to compute mean sales
-missing_bad %>%
+missing_bad |>
   summarise(mean_sales = mean(sales))
 ```
 
@@ -595,7 +595,7 @@ missing_bad %>%
 To set the missing values to NA, we can use the handy function `na_if()`. We'll also need to transform `sales` back to numeric.
 
 ```{r}
-missing_data <- missing_bad %>%
+missing_data <- missing_bad |>
   mutate(
     # if expenses = 0, set as NA
     expenses = na_if(expenses,0),
@@ -609,8 +609,8 @@ missing_data <- missing_bad %>%
 Now, if we try to calculate the mean sales and profits, we get missing values for any summary value that used one of the North 2020 sales values or the South 2020 expenses.
 
 ```{r error=TRUE}
-missing_data %>%
-  group_by(region) %>%
+missing_data |>
+  group_by(region) |>
   summarise(
     mean_sales = mean(sales),
     mean_expenses = mean(expenses),
@@ -624,8 +624,8 @@ missing_data %>%
 This is because `NA` basically means "I don't know", and the sum of 100 and "I don't know" is "I don't know", not 100. However, when you're calculating means, you often want to just ignore missing values. Set `na.rm = TRUE` in the summary function to remove missing values before calculating.
 
 ```{r}
-missing_data %>%
-  group_by(region) %>%
+missing_data |>
+  group_by(region) |>
   summarise(
     mean_sales = mean(sales, na.rm = TRUE),
     mean_expenses = mean(expenses, na.rm = TRUE),
@@ -640,8 +640,8 @@ missing_data %>%
 If you want to find out how many missing or non-missing values there are in a column, use the `is.na()` function to get a `r glossary("logical")` vector of whether or not each value is missing, and use `sum()` to count how many values are TRUE or `mean()` to calculate the proportion of TRUE values.
 
 ```{r}
-missing_data %>%
-  group_by(year, product) %>%
+missing_data |>
+  group_by(year, product) |>
   summarise(
     n_valid = sum(!is.na(sales)),
     n_missing = sum(is.na(sales)),
@@ -656,11 +656,11 @@ You may also want to remove rows that have missing values and only work from com
 
 ```{r}
 # remove any rows with any missing values
-complete_data <- missing_data %>%
+complete_data <- missing_data |>
   drop_na()
 
 # remove any rows that are missing a value for sales
-complete_sales <- missing_data %>%
+complete_sales <- missing_data |>
   drop_na(sales)
 
 ```
@@ -671,14 +671,14 @@ Missing data can be quite difficult to deal with depending on how it is represen
 
 Let's try some exercises using a dataset you already encountered in @sec-viz so that you can see how much more you're able to do with the data now.
 
-* Save your current Markdown, close it, and open a new Rmd named "survey_data_mad_skillz".
+* Save your current script, close it, and open a new script named "survey-data-mad-skillz.qmd".
 * In the set-up code chunk, load the tidyverse, then load the dataset from https://psyteachr.github.io/ads-v2/data/survey_data.csv into an object named `survey_data`.
 * Use your method of choice to review the dataset and familiarise yourself with its structure.
 
 ```{r webex.hide = TRUE}
 # from https://www.kaggle.com/kyanyoga/sample-sales-data
 library(tidyverse)
-survey_data <- read_csv("https://psyteachr.github.io/ads-v2/data/survey_data.csv")
+survey_data <- read_csv("https://psyteachr.github.io/reprores-v4/data/survey_data.csv")
 
 ```
 
@@ -695,18 +695,17 @@ To add the trainer column you can use `case_when()` and specify multiple criteri
 
 ```{r webex.hide = TRUE}
 # case_when() method
-survey_data <- survey_data %>%
+survey_data <- survey_data |>
   mutate(trainer = case_when(employee_id %in% c("E01", "E02", "E03", "E04", "E05") ~ "Michael",
                              employee_id %in% c("E06", "E07", "E08", "E09", "E10") ~ "Dwight"))
 
 
 # mean satisfaction scores
-survey_data %>%
-  group_by(trainer) %>%
+survey_data |>
+  group_by(trainer) |>
   summarise(mean_satisfaction = mean(satisfaction))
 
 # possible visualisation 
-
 ggplot(survey_data, aes(x = satisfaction, fill = trainer)) +
   geom_histogram(binwidth = 1, show.legend = FALSE, colour = "black") +
   facet_wrap(~trainer) +
@@ -724,8 +723,8 @@ There are multiple ways to achieve this. You could create the table and then pul
 ```{r webex.hide = TRUE}
 
 # method 1 - tidyverse
-mean_wait <- survey_data %>%
-  summarise(mean_wait = mean(wait_time)) %>%
+mean_wait <- survey_data |>
+  summarise(mean_wait = mean(wait_time)) |>
   pull(mean_wait)
 
 # method 2 - base R
@@ -736,14 +735,14 @@ mean_wait <- mean(survey_data$wait_time)
 Now create a dataset named `long_wait` that just contains data from customers who waited more than the average wait time.
 
 ```{r webex.hide = TRUE}
-long_wait <- survey_data %>%
+long_wait <- survey_data |>
   filter(wait_time > mean_wait)
 ```
 
 Create a visualisation that shows how many customers waited more than the average wait time for each employee.
 
 ```{r webex.hide = TRUE}
-long_wait %>%
+long_wait |>
   ggplot(aes(x = employee_id)) +
   geom_bar()
 ```
@@ -768,16 +767,16 @@ Call the final object `follow_data` and keep only the customer ID, employee ID, 
 mean_wait <- mean(survey_data$wait_time)
 
 # calculate mean call time for each category
-follow_data <- survey_data %>%
-  group_by(issue_category) %>%
-  summarise(mean_call = mean(call_time)) %>%
+follow_data <- survey_data |>
+  group_by(issue_category) |>
+  summarise(mean_call = mean(call_time)) |>
 #then join it to the survey data  
-  left_join(survey_data, by = "issue_category") %>%
+  left_join(survey_data, by = "issue_category") |>
 # then add on the column
   mutate(follow_up = case_when(wait_time > mean_wait & 
                                call_time > mean_call & 
                                satisfaction < 3 ~ "yes",
-                               .default = "no")) %>%
+                               .default = "no")) |>
   select(caller_id, employee_id, trainer, follow_up)
 ```
 
@@ -791,7 +790,7 @@ How many customers need to be followed up:
 * From calls by employees trained by Dwight `r fitb("55")`
 
 `r hide("Hint")`
-`group_by %>% count() %>% filter() %>% pull()
+`group_by() |> count() |> filter() |> pull()`
 `r unhide()`
 
 Which employee needs to make the largest number of follow-up courtesy calls? `r fitb("E02")`
@@ -802,50 +801,50 @@ As above but add in an `ungroup()` and `slice_max()` along the way.
 
 ```{r webex.hide = TRUE}
 # in total
-follow_data %>%
-  group_by(follow_up) %>%
-  count()%>%
-  filter(follow_up == "yes") %>%
+follow_data |>
+  group_by(follow_up) |>
+  count()|>
+  filter(follow_up == "yes") |>
   pull(n)
 
 # by employee 6
-follow_data %>%
-  group_by(follow_up, employee_id) %>%
-  count() %>%
+follow_data |>
+  group_by(follow_up, employee_id) |>
+  count() |>
   filter(employee_id == "E06",
-         follow_up == "yes") %>%
+         follow_up == "yes") |>
   pull(n)
 
 # by michael
-follow_data %>%
-  group_by(follow_up, trainer) %>%
-  count() %>%
+follow_data |>
+  group_by(follow_up, trainer) |>
+  count() |>
   filter(trainer == "Michael",
-         follow_up == "yes") %>%
+         follow_up == "yes") |>
   pull(n)
 
 # by dwight
-follow_data %>%
-  group_by(follow_up, trainer) %>%
-  count() %>%
+follow_data |>
+  group_by(follow_up, trainer) |>
+  count() |>
   filter(trainer == "Dwight",
-         follow_up == "yes") %>%
+         follow_up == "yes") |>
   pull(n)
 
 # most follow-ups needed
-follow_data %>%
-  group_by(follow_up, employee_id) %>%
-  count() %>%
-  ungroup() %>%
-  filter(follow_up == "yes") %>%
-  slice_max(n = 1, order_by = n) %>%
+follow_data |>
+  group_by(follow_up, employee_id) |>
+  count() |>
+  ungroup() |>
+  filter(follow_up == "yes") |>
+  slice_max(n = 1, order_by = n) |>
   pull(employee_id)
 
 ```
 
 ### Original insight
 
-In preparation for the final summative assessment, explore the data to provide one original insight of your own.
+In preparation for the summative assessment, explore the data to provide one original insight of your own.
 
 
 

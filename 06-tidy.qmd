@@ -8,16 +8,16 @@ set.seed(90210)
 tidy_data <- crossing(
   customer_id = 1:5,
   year = 2018:2020
-) %>%
-  mutate(items = sample(0:10, nrow(.), T)) %>%
-  group_by(year) %>%
-  mutate(price_per_item = round(rnorm(1, 5, 2), 2)) %>%
-  ungroup() %>%
+) |>
+  mutate(items = sample(0:10, nrow(.), T)) |>
+  group_by(year) |>
+  mutate(price_per_item = round(rnorm(1, 5, 2), 2)) |>
+  ungroup() |>
   mutate(totalprice = items * price_per_item)
 
-untidy_data <- tidy_data %>%
-  mutate(itemsprice = glue::glue("{items} ({price_per_item})")) %>%
-  select(-items, -price_per_item) %>%
+untidy_data <- tidy_data |>
+  mutate(itemsprice = glue::glue("{items} ({price_per_item})")) |>
+  select(-items, -price_per_item) |>
   pivot_wider(id_cols = customer_id,
               names_from = year,
               values_from = c(itemsprice, totalprice)
@@ -90,9 +90,9 @@ The following table is data that shows the number of items each customer bought 
 ```{r, echo = FALSE}
 tidy_data <- read_csv("data/tidy_data.csv", show_col_types = FALSE)
 
-tidy_data %>%
-  filter(customer_id < 3) %>%
-  group_by(customer_id, year) %>%
+tidy_data |>
+  filter(customer_id < 3) |>
+  group_by(customer_id, year) |>
   summarise(
     items = sum(items),
     .groups = "drop"
@@ -174,8 +174,8 @@ To calculate the total price per customer over the three years and the total num
 3.  sum the `totalprice` column to get the total price per customer
 
 ```{r, message=FALSE}
-tidy_data %>%
-  group_by(customer_id) %>%
+tidy_data |>
+  group_by(customer_id) |>
   summarise(
     total_items = sum(items),
     total_price = sum(totalprice)
@@ -535,7 +535,7 @@ For longer series of steps like the one above, using pipes can eliminate many in
 
 ```{r, message = FALSE}
 tidy_data <- read_csv(file = "data/untidy_data.csv",
-                      show_col_types = FALSE) %>%
+                      show_col_types = FALSE) |>
   pivot_longer(
     cols = itemsprice_2018:totalprice_2020,
     names_to = c("category", "year"),
@@ -543,26 +543,26 @@ tidy_data <- read_csv(file = "data/untidy_data.csv",
     values_to = "value", 
     names_transform = list(year = as.integer),
     values_transform = list(value = as.character) 
-  ) %>%
+  ) |>
   pivot_wider(
     id_cols = c(customer_id, year),
     names_from = category,
     values_from = value
-  ) %>%
+  ) |>
   separate(
     col = itemsprice,
     into = c("items", "price_per_item"),
     sep = " ", 
     remove = TRUE, 
     convert = TRUE
-  ) %>%
+  ) |>
   mutate(
     price_per_item = stringr::str_replace_all(
       string = price_per_item, 
       pattern = "[()]", 
       replacement = ""
     )
-  ) %>%
+  ) |>
   type_convert(
     trim_ws = TRUE
   )
@@ -620,8 +620,8 @@ You can debug a pipe by highlighting from the beginning to just before the pipe 
 
 Let's try a couple of examples. 
 
-* Save your current Markdown, close it, and open a new Rmd named "Patient_survey".
-* Download a copy of [wide_exercise-1.csv](https://psyteachr.github.io/ads-v2/data/wide_exercise-1.csv) and [wide_exercise-2.csv](https://psyteachr.github.io/ads-v2/data/wide_exercise-2.csv) into your data folder.
+* Save your current script, close it, and open a new quarto script named "patient-survey.qmd".
+* Download a copy of [wide_exercise-1.csv](data/wide_exercise-1.csv) and [wide_exercise-2.csv](data/wide_exercise-2.csv) into your data folder.
 * In the set-up code chunk, load the <pkg>tidyverse</pkg> then load the two data files in using `read_csv()` and name the objects `wide1` and `wide2`
 
 ```{r, message = FALSE,  webex.hide = TRUE}
@@ -655,7 +655,7 @@ As noted, it's important to think through what your tidied data should look like
 Transform `wide1` to long-form using `pivot_longer()` and store it in an object named `tidy1`
 
 ```{r webex.hide = TRUE}
-tidy1 <- wide1 %>%
+tidy1 <- wide1 |>
   pivot_longer(cols = q1:q5,
                names_to = "question", 
                values_to = "response")
@@ -688,7 +688,7 @@ This exercise requires multiple steps and you may need to look at the help docum
 
 `r hide("Hint 1")`
 
-`data %>% pivot_longer() %>% separate()`
+`data |> pivot_longer() |> separate()`
 
 `r unhide()`
 
@@ -699,10 +699,10 @@ This exercise requires multiple steps and you may need to look at the help docum
 `r unhide()`
 
 ```{r webex.hide = TRUE}
-tidy2a <- wide2 %>%
+tidy2a <- wide2 |>
   pivot_longer(cols = q1_sat:q5_rec,
                names_to = "question", 
-               values_to = "response") %>%
+               values_to = "response") |>
   separate(col = "question", into = c("question", "category"))
 
 ```
@@ -711,7 +711,7 @@ tidy2a <- wide2 %>%
 ```{r webex.hide = "Alternative solution"}
 # combine pivot_longer and separate by setting two values for names_to
 # must include names_sep to determine how to separate the column names
-tidy2a <- wide2 %>%
+tidy2a <- wide2 |>
   pivot_longer(cols = q1_sat:q5_rec,
                names_to = c("question", "category"), 
                names_sep = "_",
@@ -743,16 +743,16 @@ You can reuse the code from `tidy2a`, you just need to add on an extra line that
 
 `r hide("Hint 2")`
 
-`data %>% pivot_longer() %>% separate() %>% pivot_wider()`
+`data |> pivot_longer() |> separate() |> pivot_wider()`
 
 `r unhide()`
 
 ```{r webex.hide = TRUE}
-tidy2b <- wide2 %>%
+tidy2b <- wide2 |>
   pivot_longer(cols = q1_sat:q5_rec,
                names_to = "question", 
-               values_to = "response") %>%
-  separate(col = "question", into = c("question", "category")) %>%
+               values_to = "response") |>
+  separate(col = "question", into = c("question", "category")) |>
   pivot_wider(names_from = "category", values_from = "response")
 ```
 
@@ -761,13 +761,13 @@ tidy2b <- wide2 %>%
 Using `group_by()` and `summarise()`, calculate the mean score for each participant for both satisfaction and recommendation. Do this for both versions of the dataset so that you can see how the structure of the dataset changes the approach you need to take.
 
 ```{r eval = FALSE, webex.hide = TRUE}
-tidy2a %>%
-  group_by(id, category) %>%
+tidy2a |>
+  group_by(id, category) |>
   summarise(mean = mean(response),
             .groups = "drop")
 
-tidy2b %>%
-  group_by(id) %>%
+tidy2b |>
+  group_by(id) |>
   summarise(mean_satisfaction = mean(sat),
             mean_rec = mean(rec))
 ```
