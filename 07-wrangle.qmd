@@ -48,7 +48,7 @@ Download the [Data transformation cheat sheet](https://raw.githubusercontent.com
 
 Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it's something you will spend an awful lot of time doing. Most `r glossary("data wrangling")` involves the reshaping functions you learned in @sec-tidy and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: `select`, `filter`, `arrange`, `mutate`, `summarise`, and `group_by`. You'll remember the last two from @sec-summary, so we'll only cover them briefly.
 
-It's worth highlighting that in this chapter we're going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven't explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how. 
+It's worth highlighting that in this chapter we're going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven't explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how. 
 
 ```{r, echo = FALSE, eval = FALSE}
 set.seed(8675309)
@@ -103,7 +103,7 @@ product_dat <- budget |> select(2)
 
 You can select each column individually, separated by commas (e.g., `region, sales_2019`) but you can also select all columns from one to another by separating them with a colon (e.g., `sales_2019:expenses_2020`).
 
-The colon notation can be much faster because you don't need to type out each individual variable name, but make sure that you know what order your columns are in and always check the output to make sure you have selected what you intended.
+The colon notation can be much faster because you don't need to type out each individual variable name, but requires you know what order your columns are in and don't expect them to change. Always check the output to make sure you have selected what you intended.
 
 ```{r select-name}
 # select columns individually
@@ -406,12 +406,17 @@ budget4 <- budget |>
   pivot_longer(cols = sales_2019:expenses_2020,
                names_to = c("type", "year"),
                names_sep = "_",
+               names_transform = list(year = as.integer),
                values_to = "value") |>
   pivot_wider(names_from = type,
               values_from = value)
 
 head(budget4) # check the format
 ```
+
+::: {.callout-note}
+The argument `names_transform` lets you change the `r glossary("data type")` of a new column, since the names always default to `r glossary("character")` types.
+:::
 
 Now we can create summary statistics for the table.
 
@@ -443,29 +448,29 @@ year_prod <- budget4 |>
 year_prod
 ```
 
+Alternatively, if you have a newer version of tidyverse, you can use the `.by` argument to summarise by groups.
 
-Note that you can use the other wrangling functions on the summary table, for example: 
-
-```{r eval = FALSE}
-# arrange by maximum profit
-year_prod |>
-  arrange(desc(max_profit))
-
-# filter out gadgets
-year_prod |>
-  filter(product != "gadgets")
-
+```{r}
+budget4 |>
+  summarise(
+    .by = c(year, product),
+    mean_sales = mean(sales),
+    mean_expenses = mean(expenses),
+    min_profit = min(expenses - sales),
+    max_profit = max(expenses - sales)
+  )
 ```
+
 
 
 ::: {.try}
 How would you find out the maximum sales for each region?
 
 ```{r, results='asis', echo = FALSE}
-c(answer = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(sales)</pre>",
-  x = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(region)</pre>",
-  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(sales)</pre>",
-  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(region)</pre>") |>
+c(answer = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(sales))</pre>",
+  x = "<pre>budget3 |>\n  group_by(region) |>\n  summarise(max_sales = max(region))</pre>",
+  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(sales))</pre>",
+  x = "<pre>budget3 |>\n  group_by(sales) |>\n  summarise(max_sales = max(region))</pre>") |>
   sample() |> webexercises::longmcq() |> cat()
 ```
 
@@ -522,7 +527,7 @@ round_half_up(1.5)
 
 ### Missing values {#sec-missing-values}
 
-If you have control over your data, it is always best to keep missing values as empty cells rather than denoting missingness with a word or implausible number. If you used "missing" rather than leaving the cell empty, the entire variable would be read as character data, which means you wouldn't be able to perform mathematical operations like calculating the mean. If you use an implausible number (0 or 999 are common), then you risk these values being included in any calculations as real numbers.
+If you have control over your data, it is always best to keep missing values as empty cells rather than denoting missingness with a word or implausible number. If you used "missing" rather than leaving the cell empty, the entire variable would be read as character data (unless you note this on import), which means you wouldn't be able to perform mathematical operations like calculating the mean. If you use an implausible number (0 or 999 are common), then you risk these values being included in any calculations as real numbers.
 
 However, we often don't have control over how the data come to us, so let's run through how to fix this.
 

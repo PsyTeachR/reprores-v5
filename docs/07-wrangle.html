@@ -476,7 +476,7 @@ Warning
 </section><section id="sec-wrangling-functions" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="sec-wrangling-functions">
 <span class="header-section-number">7.1</span> Wrangling functions</h2>
 <p>Data wrangling refers to the process of cleaning, transforming, and restructuring your data to get it into the format you need for analysis and it’s something you will spend an awful lot of time doing. Most <a href="https://psyteachr.github.io/glossary/d#data-wrangling" target="_blank" class="glossary" title="The process of preparing data for visualisation and statistical analysis.">data wrangling</a> involves the reshaping functions you learned in <a href="06-tidy.html" class="quarto-xref"><span>Chapter 6</span></a> and six functions from the <pkg>dplyr</pkg> package that is loaded as part of the <pkg>tidyverse</pkg>: <code>select</code>, <code>filter</code>, <code>arrange</code>, <code>mutate</code>, <code>summarise</code>, and <code>group_by</code>. You’ll remember the last two from <a href="04-summary.html" class="quarto-xref"><span>Chapter 4</span></a>, so we’ll only cover them briefly.</p>
-<p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> (and packages beyond it) has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
+<p>It’s worth highlighting that in this chapter we’re going to cover these common functions and common uses of said functions. However, <pkg>dplyr</pkg> has a huge number of additional wrangling functions and each function has many different arguments. Essentially, if you think you should be able to wrangle your data in a particular way that we haven’t explicitly shown you, you almost certainly can, it might just take a bit of Googling to find out how.</p>
 <p>We’ll use a small example table with the sales, expenses, and satisfaction for two years from four regions over two products. After you load the data, use <code>glimpse(budget)</code> or <code>View(budget)</code> to get familiar with the data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>budget <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/budget.csv"</span>, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -605,7 +605,7 @@ Warning
 <span id="cb3-5"><a href="#cb3-5"></a>product_dat <span class="ot">&lt;-</span> budget <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can select each column individually, separated by commas (e.g., <code>region, sales_2019</code>) but you can also select all columns from one to another by separating them with a colon (e.g., <code>sales_2019:expenses_2020</code>).</p>
-<p>The colon notation can be much faster because you don’t need to type out each individual variable name, but make sure that you know what order your columns are in and always check the output to make sure you have selected what you intended.</p>
+<p>The colon notation can be much faster because you don’t need to type out each individual variable name, but requires you know what order your columns are in and don’t expect them to change. Always check the output to make sure you have selected what you intended.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># select columns individually</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a>sales2019 <span class="ot">&lt;-</span> budget <span class="sc">|&gt;</span> <span class="fu">select</span>(region, product, sales_2019)</span>
@@ -695,26 +695,26 @@ Warning
 <ul>
 <li>
 <code>budget |&gt; select(contains("_"))</code>
-<div id="radio_WJAPHDNMQE" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_WJAPHDNMQE" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_WJAPHDNMQE" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_WJAPHDNMQE" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_WJAPHDNMQE" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_YPAUOFAKJF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YPAUOFAKJF" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YPAUOFAKJF" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YPAUOFAKJF" value="answer"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_YPAUOFAKJF" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget |&gt; select(num_range("expenses_", 2019:2020))</code>
-<div id="radio_JOQAOMXZKT" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_JOQAOMXZKT" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JOQAOMXZKT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JOQAOMXZKT" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_JOQAOMXZKT" value="answer"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_RIUJIBEPBT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RIUJIBEPBT" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_RIUJIBEPBT" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_RIUJIBEPBT" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_RIUJIBEPBT" value="answer"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget |&gt; select(starts_with("sales"))</code>
-<div id="radio_NJQXDWWFLI" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_NJQXDWWFLI" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NJQXDWWFLI" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NJQXDWWFLI" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_NJQXDWWFLI" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_BOIBTACKQZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BOIBTACKQZ" value="answer"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_BOIBTACKQZ" value="x"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_BOIBTACKQZ" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_BOIBTACKQZ" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 <li>
 <code>budget |&gt; select(ends_with("2020"))</code>
-<div id="radio_ZXTKUKBOYO" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_ZXTKUKBOYO" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_ZXTKUKBOYO" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_ZXTKUKBOYO" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_ZXTKUKBOYO" value="x"><span>expenses_2019, expenses_2020</span></label>
+<div id="radio_IRLTHTEXRT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IRLTHTEXRT" value="x"><span>sales_2019, sales_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IRLTHTEXRT" value="answer"><span>sales_2020, expenses_2020, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IRLTHTEXRT" value="x"><span>sales_2019, sales_2020, expenses_2019, expenses_2020, satisfaction_2019, satisfaction_2020</span></label><label><input type="radio" autocomplete="off" name="radio_IRLTHTEXRT" value="x"><span>expenses_2019, expenses_2020</span></label>
 </div>
 </li>
 </ul>
@@ -1257,18 +1257,19 @@ Tip
 <span id="cb18-3"><a href="#cb18-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> sales_2019<span class="sc">:</span>expenses_2020,</span>
 <span id="cb18-4"><a href="#cb18-4"></a>               <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"type"</span>, <span class="st">"year"</span>),</span>
 <span id="cb18-5"><a href="#cb18-5"></a>               <span class="at">names_sep =</span> <span class="st">"_"</span>,</span>
-<span id="cb18-6"><a href="#cb18-6"></a>               <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type,</span>
-<span id="cb18-8"><a href="#cb18-8"></a>              <span class="at">values_from =</span> value)</span>
-<span id="cb18-9"><a href="#cb18-9"></a></span>
-<span id="cb18-10"><a href="#cb18-10"></a><span class="fu">head</span>(budget4) <span class="co"># check the format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-6"><a href="#cb18-6"></a>               <span class="at">names_transform =</span> <span class="fu">list</span>(<span class="at">year =</span> as.integer),</span>
+<span id="cb18-7"><a href="#cb18-7"></a>               <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> type,</span>
+<span id="cb18-9"><a href="#cb18-9"></a>              <span class="at">values_from =</span> value)</span>
+<span id="cb18-10"><a href="#cb18-10"></a></span>
+<span id="cb18-11"><a href="#cb18-11"></a><span class="fu">head</span>(budget4) <span class="co"># check the format</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">region</th>
 <th style="text-align: left;">product</th>
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: right;">sales</th>
 <th style="text-align: right;">expenses</th>
 </tr></thead>
@@ -1276,48 +1277,61 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">2129</td>
 <td style="text-align: right;">822</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: right;">-517</td>
 <td style="text-align: right;">-897</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">723</td>
 <td style="text-align: right;">1037</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: right;">77</td>
 <td style="text-align: right;">1115</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">South</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">1123</td>
 <td style="text-align: right;">1004</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">South</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: right;">-1450</td>
 <td style="text-align: right;">672</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The argument <code>names_transform</code> lets you change the <a href="https://psyteachr.github.io/glossary/d#data-type" target="_blank" class="glossary" title="The kind of data represented by an object.">data type</a> of a new column, since the names always default to <a href="https://psyteachr.github.io/glossary/c#character" target="_blank" class="glossary" title="A data type representing strings of text.">character</a> types.</p>
 </div>
 </div>
 <p>Now we can create summary statistics for the table.</p>
@@ -1367,7 +1381,7 @@ Tip
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: left;">product</th>
 <th style="text-align: right;">mean_sales</th>
 <th style="text-align: right;">mean_expenses</th>
@@ -1376,7 +1390,7 @@ Tip
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">881.50</td>
 <td style="text-align: right;">238.50</td>
@@ -1384,7 +1398,7 @@ Tip
 <td style="text-align: right;">517</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">789.25</td>
 <td style="text-align: right;">452.00</td>
@@ -1392,7 +1406,7 @@ Tip
 <td style="text-align: right;">150</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">-199.00</td>
 <td style="text-align: right;">803.75</td>
@@ -1400,7 +1414,7 @@ Tip
 <td style="text-align: right;">2390</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">-307.00</td>
 <td style="text-align: right;">-220.50</td>
@@ -1412,35 +1426,84 @@ Tip
 </div>
 </div>
 </div>
-<p>Note that you can use the other wrangling functions on the summary table, for example:</p>
+<p>Alternatively, if you have a newer version of tidyverse, you can use the <code>.by</code> argument to summarise by groups.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># arrange by maximum profit</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>year_prod <span class="sc">|&gt;</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(max_profit))</span>
-<span id="cb21-4"><a href="#cb21-4"></a></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="co"># filter out gadgets</span></span>
-<span id="cb21-6"><a href="#cb21-6"></a>year_prod <span class="sc">|&gt;</span></span>
-<span id="cb21-7"><a href="#cb21-7"></a>  <span class="fu">filter</span>(product <span class="sc">!=</span> <span class="st">"gadgets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>budget4 <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-3"><a href="#cb21-3"></a>    <span class="at">.by =</span> <span class="fu">c</span>(year, product),</span>
+<span id="cb21-4"><a href="#cb21-4"></a>    <span class="at">mean_sales =</span> <span class="fu">mean</span>(sales),</span>
+<span id="cb21-5"><a href="#cb21-5"></a>    <span class="at">mean_expenses =</span> <span class="fu">mean</span>(expenses),</span>
+<span id="cb21-6"><a href="#cb21-6"></a>    <span class="at">min_profit =</span> <span class="fu">min</span>(expenses <span class="sc">-</span> sales),</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    <span class="at">max_profit =</span> <span class="fu">max</span>(expenses <span class="sc">-</span> sales)</span>
+<span id="cb21-8"><a href="#cb21-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">product</th>
+<th style="text-align: right;">mean_sales</th>
+<th style="text-align: right;">mean_expenses</th>
+<th style="text-align: right;">min_profit</th>
+<th style="text-align: right;">max_profit</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">widgets</td>
+<td style="text-align: right;">789.25</td>
+<td style="text-align: right;">452.00</td>
+<td style="text-align: right;">-1307</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: left;">widgets</td>
+<td style="text-align: right;">-307.00</td>
+<td style="text-align: right;">-220.50</td>
+<td style="text-align: right;">-1105</td>
+<td style="text-align: right;">2122</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">gadgets</td>
+<td style="text-align: right;">881.50</td>
+<td style="text-align: right;">238.50</td>
+<td style="text-align: right;">-2632</td>
+<td style="text-align: right;">517</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2020</td>
+<td style="text-align: left;">gadgets</td>
+<td style="text-align: right;">-199.00</td>
+<td style="text-align: right;">803.75</td>
+<td style="text-align: right;">-562</td>
+<td style="text-align: right;">2390</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="try">
 <p>How would you find out the maximum sales for each region?</p>
-<div id="radio_QXPUGQDJGK" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QXPUGQDJGK" value="x"><span>
+<div id="radio_GJCEBVJAMD" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GJCEBVJAMD" value="x"><span>
 <pre>budget3 |&gt;
   group_by(sales) |&gt;
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_QXPUGQDJGK" value="x"><span>
+  summarise(max_sales = max(region))</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_GJCEBVJAMD" value="answer"><span>
+<pre>budget3 |&gt;
+  group_by(region) |&gt;
+  summarise(max_sales = max(sales))</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_GJCEBVJAMD" value="x"><span>
 <pre>budget3 |&gt;
   group_by(sales) |&gt;
-  summarise(max_sales = max(sales)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_QXPUGQDJGK" value="x"><span>
+  summarise(max_sales = max(sales))</pre>
+</span></label><label><input type="radio" autocomplete="off" name="radio_GJCEBVJAMD" value="x"><span>
 <pre>budget3 |&gt;
   group_by(region) |&gt;
-  summarise(max_sales = max(region)</pre>
-</span></label><label><input type="radio" autocomplete="off" name="radio_QXPUGQDJGK" value="answer"><span>
-<pre>budget3 |&gt;
-  group_by(region) |&gt;
-  summarise(max_sales = max(sales)</pre>
+  summarise(max_sales = max(region))</pre>
 </span></label>
 </div>
 </div>
@@ -1455,7 +1518,7 @@ Tip
 <thead><tr class="header">
 <th style="text-align: left;">region</th>
 <th style="text-align: left;">product</th>
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: right;">sales</th>
 <th style="text-align: right;">expenses</th>
 </tr></thead>
@@ -1463,21 +1526,21 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">2129</td>
 <td style="text-align: right;">822</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">South</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">2022</td>
 <td style="text-align: right;">-610</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">West</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">1204</td>
 <td style="text-align: right;">433</td>
 </tr>
@@ -1498,7 +1561,7 @@ Tip
 <thead><tr class="header">
 <th style="text-align: left;">region</th>
 <th style="text-align: left;">product</th>
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: right;">sales</th>
 <th style="text-align: right;">expenses</th>
 </tr></thead>
@@ -1506,28 +1569,28 @@ Tip
 <tr class="odd">
 <td style="text-align: left;">East</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: right;">-51</td>
 <td style="text-align: right;">-342</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">North</td>
 <td style="text-align: left;">widgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">2129</td>
 <td style="text-align: right;">822</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">South</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">2022</td>
 <td style="text-align: right;">-610</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">West</td>
 <td style="text-align: left;">gadgets</td>
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: right;">1204</td>
 <td style="text-align: right;">433</td>
 </tr>
@@ -1549,7 +1612,7 @@ Tip
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: left;">product</th>
 <th style="text-align: right;">mean_sales</th>
 <th style="text-align: right;">mean_expenses</th>
@@ -1558,7 +1621,7 @@ Tip
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">882</td>
 <td style="text-align: right;">238</td>
@@ -1566,7 +1629,7 @@ Tip
 <td style="text-align: right;">517</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">789</td>
 <td style="text-align: right;">452</td>
@@ -1574,7 +1637,7 @@ Tip
 <td style="text-align: right;">150</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">-199</td>
 <td style="text-align: right;">804</td>
@@ -1582,7 +1645,7 @@ Tip
 <td style="text-align: right;">2390</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">-307</td>
 <td style="text-align: right;">-220</td>
@@ -1617,7 +1680,7 @@ Tip
 </div>
 </section><section id="sec-missing-values" class="level3" data-number="7.2.2"><h3 data-number="7.2.2" class="anchored" data-anchor-id="sec-missing-values">
 <span class="header-section-number">7.2.2</span> Missing values</h3>
-<p>If you have control over your data, it is always best to keep missing values as empty cells rather than denoting missingness with a word or implausible number. If you used “missing” rather than leaving the cell empty, the entire variable would be read as character data, which means you wouldn’t be able to perform mathematical operations like calculating the mean. If you use an implausible number (0 or 999 are common), then you risk these values being included in any calculations as real numbers.</p>
+<p>If you have control over your data, it is always best to keep missing values as empty cells rather than denoting missingness with a word or implausible number. If you used “missing” rather than leaving the cell empty, the entire variable would be read as character data (unless you note this on import), which means you wouldn’t be able to perform mathematical operations like calculating the mean. If you use an implausible number (0 or 999 are common), then you risk these values being included in any calculations as real numbers.</p>
 <p>However, we often don’t have control over how the data come to us, so let’s run through how to fix this.</p>
 <section id="bad-missing-values" class="level4" data-number="7.2.2.1"><h4 data-number="7.2.2.1" class="anchored" data-anchor-id="bad-missing-values">
 <span class="header-section-number">7.2.2.1</span> Bad missing values</h4>
@@ -1706,7 +1769,7 @@ Using case_when() for multiple criteria
 <pre><code>tibble [16 × 5] (S3: tbl_df/tbl/data.frame)
  $ region  : chr [1:16] "North" "North" "North" "North" ...
  $ product : chr [1:16] "widgets" "widgets" "gadgets" "gadgets" ...
- $ year    : chr [1:16] "2019" "2020" "2019" "2020" ...
+ $ year    : int [1:16] 2019 2020 2019 2020 2019 2020 2019 2020 2019 2020 ...
  $ sales   : chr [1:16] "2129" "missing" "723" "missing" ...
  $ expenses: num [1:16] 822 -897 1037 1115 1004 ...</code></pre>
 </div>
@@ -1876,7 +1939,7 @@ Caused by warning in `mean.default()`:
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
-<th style="text-align: left;">year</th>
+<th style="text-align: right;">year</th>
 <th style="text-align: left;">product</th>
 <th style="text-align: right;">n_valid</th>
 <th style="text-align: right;">n_missing</th>
@@ -1884,28 +1947,28 @@ Caused by warning in `mean.default()`:
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.00</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2019</td>
+<td style="text-align: right;">2019</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0.00</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">gadgets</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">0.25</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2020</td>
+<td style="text-align: right;">2020</td>
 <td style="text-align: left;">widgets</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">1</td>
@@ -2183,6 +2246,14 @@ Solution
 <tr class="odd">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/b#boolean-expression" class="glossary" target="_blank">boolean-expression</a></td>
 <td style="text-align: left;">An expression that evaluates to TRUE or FALSE.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/c#character" class="glossary" target="_blank">character</a></td>
+<td style="text-align: left;">A data type representing strings of text.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/d#data-type" class="glossary" target="_blank">data-type</a></td>
+<td style="text-align: left;">The kind of data represented by an object.</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><a href="https://psyteachr.github.io/glossary/d#data-wrangling" class="glossary" target="_blank">data-wrangling</a></td>
