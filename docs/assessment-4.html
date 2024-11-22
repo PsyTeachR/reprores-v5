@@ -325,9 +325,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">14.1</span> Instructions</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">14.2</span> Submission</a></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">14.3</span> Marking Rubric</a></li>
+<li><a href="#general-instructions" id="toc-general-instructions" class="nav-link active" data-scroll-target="#general-instructions"><span class="header-section-number">14.1</span> General Instructions</a></li>
+  <li>
+<a href="#specific-instructions" id="toc-specific-instructions" class="nav-link" data-scroll-target="#specific-instructions"><span class="header-section-number">14.2</span> Specific Instructions</a>
+  <ul class="collapse">
+<li><a href="#table-2" id="toc-table-2" class="nav-link" data-scroll-target="#table-2"><span class="header-section-number">14.2.1</span> Table 2</a></li>
+  <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation"><span class="header-section-number">14.2.2</span> Simulation</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">14.2.3</span> Analysis</a></li>
+  <li><a href="#iteration-and-power" id="toc-iteration-and-power" class="nav-link" data-scroll-target="#iteration-and-power"><span class="header-section-number">14.2.4</span> Iteration and Power</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">14.2.5</span> Reflection</a></li>
+  </ul>
+</li>
+  <li><a href="#hints-and-tips" id="toc-hints-and-tips" class="nav-link" data-scroll-target="#hints-and-tips"><span class="header-section-number">14.3</span> Hints and Tips</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">14.4</span> Submission</a></li>
+  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">14.5</span> Marking Rubric</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/assessment-4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/assessment-4.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -349,13 +360,71 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 
 </header><p>A project showing power simulation</p>
-<section id="instructions" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="instructions">
-<span class="header-section-number">14.1</span> Instructions</h2>
-<p>TBA</p>
-</section><section id="submission" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="submission">
-<span class="header-section-number">14.2</span> Submission</h2>
+<section id="general-instructions" class="level2" data-number="14.1"><h2 data-number="14.1" class="anchored" data-anchor-id="general-instructions">
+<span class="header-section-number">14.1</span> General Instructions</h2>
+<p>Your task is to replicate <a href="demos/report4_demo.html">this html report</a> using <a href="demos/report3_data.zip">the same datasets from assessment 3</a> and code. The start of the assessment is identical to assessment 3, with additional custom function creation, iteration, analysis, and power simulation.</p>
+<p>As for assessments 2 and 3, the submission must contain the following:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">A reproducible <em>project structure</em> with all needed files (<a href="02-reports.html#sec-project-start" class="quarto-xref"><span>Section 2.2.3</span></a>)</label></li>
+<li><label><input type="checkbox">Document structure and text that replicate the report (<a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>)</label></li>
+<li><label><input type="checkbox">Import the data with correct data types (<a href="04-summary.html#sec-import-data" class="quarto-xref"><span>Section 4.1</span></a>)</label></li>
+<li><label><input type="checkbox">Plots (<a href="03-viz.html#sec-plots" class="quarto-xref"><span>Section 3.2</span></a>)</label></li>
+<li><label><input type="checkbox">Tables (<a href="04-summary.html#sec-summary-summarise" class="quarto-xref"><span>Section 4.4</span></a>)</label></li>
+<li><label><input type="checkbox">Consistent plot themes, colours and labels (<a href="03-viz.html#sec-themes" class="quarto-xref"><span>Section 3.2.3.4</span></a>)</label></li>
+<li><label><input type="checkbox">Cross-references in the text to the figures and tables (<a href="02-reports.html#sec-cross-references" class="quarto-xref"><span>Section 2.5.9</span></a>)</label></li>
+<li><label><input type="checkbox">References created using bibtex (<a href="02-reports.html#sec-bibliography" class="quarto-xref"><span>Section 2.7</span></a>)</label></li>
+</ul>
+<p>As for assessment 3, your code should demonstrate the following skills:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Be able to match related data across multiple tables (<a href="05-join.html#sec-mutating-joins" class="quarto-xref"><span>Section 5.4</span></a>)</label></li>
+<li><label><input type="checkbox">Be able to combine data from multiple files (<a href="05-join.html#sec-multi-file-import" class="quarto-xref"><span>Section 5.7.3</span></a>)</label></li>
+<li><label><input type="checkbox">Be able to reshape data between long and wide formats (<a href="06-tidy.html#sec-reshaping-data" class="quarto-xref"><span>Section 6.3</span></a>)</label></li>
+<li><label><input type="checkbox">Separate, change, reorder, and rename columns (<a href="06-tidy.html#sec-multistep" class="quarto-xref"><span>Section 6.4</span></a>)</label></li>
+<li><label><input type="checkbox">Use pipes to chain together functions (<a href="06-tidy.html#sec-pipes" class="quarto-xref"><span>Section 6.5</span></a>)</label></li>
+<li><label><input type="checkbox">Be able to select and filter data for relevance (<a href="07-wrangle.html#sec-wrangling-functions" class="quarto-xref"><span>Section 7.1</span></a>)</label></li>
+<li><label><input type="checkbox">Be able to create new columns and edit existing ones (<a href="07-wrangle.html#sec-mutate" class="quarto-xref"><span>Section 7.1.4</span></a>)</label></li>
+</ul>
+<p>Specific to assessment 4, you must demonstrate the following skills:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Create custom functions (<a href="08-func.html#sec-custom-functions" class="quarto-xref"><span>Section 8.2</span></a>)</label></li>
+<li><label><input type="checkbox">Demonstrate the ability to implement iteration where the same function is being applied to multiple items in a data structure (<a href="08-func.html#sec-iteration-functions" class="quarto-xref"><span>Section 8.1</span></a>)</label></li>
+<li><label><input type="checkbox">Simulate a new dataset based on the descriptive statistics from another dataset (<a href="09-sim.html#sec-faux" class="quarto-xref"><span>Section 9.2.3</span></a>)</label></li>
+<li><label><input type="checkbox">Implement and report the results of a t-test in a reproducible manner (<a href="09-sim.html#sec-t-test" class="quarto-xref"><span>Section 9.4.2</span></a>)</label></li>
+<li><label><input type="checkbox">Reflect on areas where you used techniques that increase reproducibility (<a href="02-reports.html#sec-reproducibility" class="quarto-xref"><span>Section 2.1</span></a>)</label></li>
+</ul></section><section id="specific-instructions" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="specific-instructions">
+<span class="header-section-number">14.2</span> Specific Instructions</h2>
+<section id="table-2" class="level3" data-number="14.2.1"><h3 data-number="14.2.1" class="anchored" data-anchor-id="table-2">
+<span class="header-section-number">14.2.1</span> Table 2</h3>
+<p>Add standard deviations to Table 2.</p>
+</section><section id="simulation" class="level3" data-number="14.2.2"><h3 data-number="14.2.2" class="anchored" data-anchor-id="simulation">
+<span class="header-section-number">14.2.2</span> Simulation</h3>
+<p>Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 60 male and 60 female faces with simulated average ratings with those distributions.</p>
+</section><section id="analysis" class="level3" data-number="14.2.3"><h3 data-number="14.2.3" class="anchored" data-anchor-id="analysis">
+<span class="header-section-number">14.2.3</span> Analysis</h3>
+<p>Run a t-test on the simulated data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.</p>
+</section><section id="iteration-and-power" class="level3" data-number="14.2.4"><h3 data-number="14.2.4" class="anchored" data-anchor-id="iteration-and-power">
+<span class="header-section-number">14.2.4</span> Iteration and Power</h3>
+<p>Create a new custom function that simulates the new dataset using your previous function. Add the t-test to this new custom function and return only the p-value.</p>
+<p>Run this custom function 100 times for each region and report what percent of the runs give a significant p-value with a critical alpha of 0.05/11 (i.e., the Bonferroni-corrected p-value for running all 11 regions).</p>
+</section><section id="reflection" class="level3" data-number="14.2.5"><h3 data-number="14.2.5" class="anchored" data-anchor-id="reflection">
+<span class="header-section-number">14.2.5</span> Reflection</h3>
+<p>Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of <strong>5</strong> things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Each explanation should be about 100-200 words.</p>
+</section></section><section id="hints-and-tips" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="hints-and-tips">
+<span class="header-section-number">14.3</span> Hints and Tips</h2>
 <ul>
-<li>Covers: chapters 1-10, emphasising 8 and 9</li>
+<li>The html theme used by the demo report is flatly</li>
+<li>The ggplot theme is <code>theme_bw()</code>
+</li>
+<li>You will not be asked to do anything ‘tricky’ in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives.</li>
+<li>You will definitely need to join data, and convert between wide and long. Make sure you do this efficiently, creating the minimum number of extra data tables needed, and not re-creating the same table for different tasks.</li>
+<li>If you find yourself doing the same thing to many columns, you could probably do it more efficiently by reshaping the data longer first</li>
+<li>Use pipes to avoid creating many single-use tables.</li>
+<li>It is fine if your plot fonts are a slightly different size or there are small differences in visual presentation</li>
+<li>Set argument defaults in custom functions if there is a sensible default value, and leave them without defaults if a user will always have to set that value to use to function.</li>
+</ul></section><section id="submission" class="level2" data-number="14.4"><h2 data-number="14.4" class="anchored" data-anchor-id="submission">
+<span class="header-section-number">14.4</span> Submission</h2>
+<ul>
+<li>Covers: chapters 1-10, emphasising 8-9</li>
 <li>Worth: 40%</li>
 <li>Do not put your name in your report; use your student ID as the author.</li>
 <li>Please submit a <strong>zip file</strong> containing:
@@ -367,27 +436,27 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>the rendered html report, named <code>report4_studentID.html</code>.</li>
 </ol>
 </li>
-</ul></section><section id="marking-rubric" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="marking-rubric">
-<span class="header-section-number">14.3</span> Marking Rubric</h2>
+</ul></section><section id="marking-rubric" class="level2" data-number="14.5"><h2 data-number="14.5" class="anchored" data-anchor-id="marking-rubric">
+<span class="header-section-number">14.5</span> Marking Rubric</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="slearwwywa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#slearwwywa table {
+<div id="wxmbmltdxk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wxmbmltdxk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#slearwwywa thead, #slearwwywa tbody, #slearwwywa tfoot, #slearwwywa tr, #slearwwywa td, #slearwwywa th {
+#wxmbmltdxk thead, #wxmbmltdxk tbody, #wxmbmltdxk tfoot, #wxmbmltdxk tr, #wxmbmltdxk td, #wxmbmltdxk th {
   border-style: none;
 }
 
-#slearwwywa p {
+#wxmbmltdxk p {
   margin: 0;
   padding: 0;
 }
 
-#slearwwywa .gt_table {
+#wxmbmltdxk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -413,12 +482,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#slearwwywa .gt_caption {
+#wxmbmltdxk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#slearwwywa .gt_title {
+#wxmbmltdxk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -430,7 +499,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#slearwwywa .gt_subtitle {
+#wxmbmltdxk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -442,7 +511,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#slearwwywa .gt_heading {
+#wxmbmltdxk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -454,13 +523,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#slearwwywa .gt_bottom_border {
+#wxmbmltdxk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#slearwwywa .gt_col_headings {
+#wxmbmltdxk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -475,7 +544,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#slearwwywa .gt_col_heading {
+#wxmbmltdxk .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -495,7 +564,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#slearwwywa .gt_column_spanner_outer {
+#wxmbmltdxk .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -507,15 +576,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#slearwwywa .gt_column_spanner_outer:first-child {
+#wxmbmltdxk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#slearwwywa .gt_column_spanner_outer:last-child {
+#wxmbmltdxk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#slearwwywa .gt_column_spanner {
+#wxmbmltdxk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -527,11 +596,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#slearwwywa .gt_spanner_row {
+#wxmbmltdxk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#slearwwywa .gt_group_heading {
+#wxmbmltdxk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -557,7 +626,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#slearwwywa .gt_empty_group_heading {
+#wxmbmltdxk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -572,15 +641,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#slearwwywa .gt_from_md > :first-child {
+#wxmbmltdxk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#slearwwywa .gt_from_md > :last-child {
+#wxmbmltdxk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#slearwwywa .gt_row {
+#wxmbmltdxk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -599,7 +668,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#slearwwywa .gt_stub {
+#wxmbmltdxk .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -612,7 +681,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#slearwwywa .gt_stub_row_group {
+#wxmbmltdxk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -626,15 +695,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#slearwwywa .gt_row_group_first td {
+#wxmbmltdxk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#slearwwywa .gt_row_group_first th {
+#wxmbmltdxk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#slearwwywa .gt_summary_row {
+#wxmbmltdxk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -644,16 +713,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#slearwwywa .gt_first_summary_row {
+#wxmbmltdxk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#slearwwywa .gt_first_summary_row.thick {
+#wxmbmltdxk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#slearwwywa .gt_last_summary_row {
+#wxmbmltdxk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -663,7 +732,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#slearwwywa .gt_grand_summary_row {
+#wxmbmltdxk .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -673,7 +742,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#slearwwywa .gt_first_grand_summary_row {
+#wxmbmltdxk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -683,7 +752,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#slearwwywa .gt_last_grand_summary_row_top {
+#wxmbmltdxk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -693,11 +762,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#slearwwywa .gt_striped {
+#wxmbmltdxk .gt_striped {
   background-color: #EDF7FC;
 }
 
-#slearwwywa .gt_table_body {
+#wxmbmltdxk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -706,7 +775,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#slearwwywa .gt_footnotes {
+#wxmbmltdxk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -720,7 +789,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#slearwwywa .gt_footnote {
+#wxmbmltdxk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -729,7 +798,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#slearwwywa .gt_sourcenotes {
+#wxmbmltdxk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -743,7 +812,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#slearwwywa .gt_sourcenote {
+#wxmbmltdxk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -751,72 +820,72 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#slearwwywa .gt_left {
+#wxmbmltdxk .gt_left {
   text-align: left;
 }
 
-#slearwwywa .gt_center {
+#wxmbmltdxk .gt_center {
   text-align: center;
 }
 
-#slearwwywa .gt_right {
+#wxmbmltdxk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#slearwwywa .gt_font_normal {
+#wxmbmltdxk .gt_font_normal {
   font-weight: normal;
 }
 
-#slearwwywa .gt_font_bold {
+#wxmbmltdxk .gt_font_bold {
   font-weight: bold;
 }
 
-#slearwwywa .gt_font_italic {
+#wxmbmltdxk .gt_font_italic {
   font-style: italic;
 }
 
-#slearwwywa .gt_super {
+#wxmbmltdxk .gt_super {
   font-size: 65%;
 }
 
-#slearwwywa .gt_footnote_marks {
+#wxmbmltdxk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#slearwwywa .gt_asterisk {
+#wxmbmltdxk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#slearwwywa .gt_indent_1 {
+#wxmbmltdxk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#slearwwywa .gt_indent_2 {
+#wxmbmltdxk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#slearwwywa .gt_indent_3 {
+#wxmbmltdxk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#slearwwywa .gt_indent_4 {
+#wxmbmltdxk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#slearwwywa .gt_indent_5 {
+#wxmbmltdxk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#slearwwywa .katex-display {
+#wxmbmltdxk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#slearwwywa div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wxmbmltdxk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -834,7 +903,39 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Research &amp;amp; Knowledge">Research &amp; Knowledge</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Ub3BpYzE8L3N0cm9uZz46IERlc2NyaXB0aW9u"><span class="gt_from_md"><strong>Topic1</strong>: Description</span></span></td>
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Ta2lsbHMgZnJvbSBDaGFwdGVycyAxLTM8L3N0cm9uZz46IFlvdSBkZW1vbnN0cmF0ZSBza2lsbHMgdG8gY3JlYXRlIHJlcHJvZHVjaWJsZSByZXBvcnRzIGFuZCB2aXN1YWxpc2UgZGF0YQ=="><span class="gt_from_md"><strong>Skills from Chapters 1-3</strong>: You demonstrate skills to create reproducible reports and visualise data</span></span></td>
+<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr>
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Ta2lsbHMgZnJvbSBDaGFwdGVycyA0LTc8L3N0cm9uZz46IFlvdSBkZW1vbnN0cmF0ZSBza2lsbHMgdG8gd3JhbmdsZSBkYXRh"><span class="gt_from_md"><strong>Skills from Chapters 4-7</strong>: You demonstrate skills to wrangle data</span></span></td>
+<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr>
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5DdXN0b20gRnVuY3Rpb25zPC9zdHJvbmc+OiBZb3UgY3JlYXRlIGN1c3RvbSBmdW5jdGlvbnMgdGhhdCBjb3JyZWN0bHkgaW1wbGVtZW50IHNpbWlsYXIgY29kZSB3aXRoIHNtYWxsIGRpZmZlcmVuY2VzLg=="><span class="gt_from_md"><strong>Custom Functions</strong>: You create custom functions that correctly implement similar code with small differences.</span></span></td>
+<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr>
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5JdGVyYXRpb248L3N0cm9uZz46IFlvdSBjYW4gcmVwZWF0IHRoZSBzYW1lIGNvZGUgZWZmaWNpZW50bHkgb3ZlciBhIGRhdGEgc3RydWN0dXJl"><span class="gt_from_md"><strong>Iteration</strong>: You can repeat the same code efficiently over a data structure</span></span></td>
+<td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Research &amp; Knowledge  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr>
+<td headers="Research &amp; Knowledge  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5EYXRhIFNpbXVsYXRpb248L3N0cm9uZz46IFlvdSBjYW4gc2ltdWxhdGUgYSBzaW1wbGUgZGF0YXNldCBmcm9tIGRlc2NyaXB0aXZlIHN0YXRpc3RpY3M="><span class="gt_from_md"><strong>Data Simulation</strong>: You can simulate a simple dataset from descriptive statistics</span></span></td>
 <td headers="Research &amp; Knowledge  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Research &amp; Knowledge  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Research &amp; Knowledge  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
@@ -845,7 +946,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Evaluation">Evaluation</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Ub3BpYzI8L3N0cm9uZz46IERlc2NyaXB0aW9u"><span class="gt_from_md"><strong>Topic2</strong>: Description</span></span></td>
+<td headers="Evaluation  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5SZWZsZWN0aW9uPC9zdHJvbmc+OiBZb3VyIHJlZmxlY3Rpb25zIG5vdGUgdmFsaWQgYXJlYXMgd2hlcmUgcmVwcm9kdWNpYmlsaXR5IGlzIGltcG9ydGFudCwgYW5kIGNvcnJlY3RseSBpZGVudGlmeSBhbmQgZXhwbGFpbiB0ZWNobmlxdWVzIHlvdSB1c2VkIHRvIGVuc3VyZSByZXByb2R1Y2libGl0eQ=="><span class="gt_from_md"><strong>Reflection</strong>: Your reflections note valid areas where reproducibility is important, and correctly identify and explain techniques you used to ensure reproduciblity</span></span></td>
 <td headers="Evaluation  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Evaluation  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Evaluation  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
@@ -856,7 +957,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <th colspan="6" class="gt_group_heading" style="background-color: rgba(77,159,207,0.4);" scope="colgroup" id="Communication">Communication</th>
     </tr>
 <tr class="gt_row_group_first">
-<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Ub3BpYzM8L3N0cm9uZz46IERlc2NyaXB0aW9u"><span class="gt_from_md"><strong>Topic3</strong>: Description</span></span></td>
+<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Db2RlIENsYXJpdHk8L3N0cm9uZz46IFlvdXIgY29kZSBpcyBvcmdhbmlzZWQgaW4gdGhlIHF1YXJ0byBzY3JpcHQgY2xlYW5seSBhbmQgY2xlYXJseSwgdXNpbmcgc2VwYXJhdGUgY29kZSBjaHVua3MgdG8gaW50ZXJzcGVyc2UgdGV4dCBhbmQgcmVsZXZhbnQgY29kZS4gWW91ciBjb2RlIGNodW5rcyBjb250YWluIGNvbW1lbnRzIHRoYXQgY2xhcmlmeSB0aGUgcHVycG9zZSBvZiB0aGUgY29kZSwgYnV0IG5vdCBvdmVybHktZXhwbGFpbmluZyBlYWNoIHN0ZXAuIFRoZSBuYW1lcyB5b3UgdXNlIGZvciBvYmplY3RzIGFyZSBjbGVhciwgY29uc2lzdGVudCwgYW5kIGNvbmNpc2Uu"><span class="gt_from_md"><strong>Code Clarity</strong>: Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise.</span></span></td>
+<td headers="Communication  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  D: Satisfactory" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+<td headers="Communication  E: Poor" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
+</tr>
+<tr>
+<td headers="Communication  ILO" class="gt_row gt_left" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"><span data-qmd-base64="PHN0cm9uZz5Db2RlIEVmZmljaWVuY3k8L3N0cm9uZz46IFdoaWxlIHRoZXJlIGFyZSBtYW55IHdheXMgdG8gZG8gdGhlIHNhbWUgdGhpbmdzIGluIFIsIHNvbWUgd2F5cyBhcmUgbW9yZSBlZmZpY2llbnQgdGhhbiBvdGhlcnMuIFRoZXNlIGF2b2lkIHVubmVjZXNzYXJ5IGNvZGUgKGUuZy4sIGRvIG5vdCBsb2FkIHBhY2thZ2VzIHlvdSBkbyBub3QgdXNlKSBhbmQgcmVkdW5kYW5jeSAoZS5nLiwgZG8gbm90IGxvYWQgb3IgcHJvY2VzcyB0aGUgZGF0YSB0aGUgc2FtZSB3YXkgaW4gc2V2ZXJhbCBwbGFjZXMpLg=="><span class="gt_from_md"><strong>Code Efficiency</strong>: While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places).</span></span></td>
 <td headers="Communication  A: Excellent" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Communication  B: Very Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>
 <td headers="Communication  C: Good" class="gt_row gt_center" style="text-align: left; vertical-align: top; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: grey;"></td>

@@ -2,18 +2,86 @@
 
 ```{r, include=FALSE}
 library(tidyverse)
+library(faux)
 library(gt)
 ```
 
 A project showing power simulation
 
-## Instructions
+## General Instructions
 
-TBA
+Your task is to replicate [this html report](demos/report4_demo.html) using [the same datasets from assessment 3](demos/report3_data.zip) and code. The start of the assessment is identical to assessment 3, with additional custom function creation, iteration, analysis, and power simulation. 
+
+As for assessments 2 and 3, the submission must contain the following:
+
+* [ ] A reproducible *project structure* with all needed files (@sec-project-start)
+* [ ] Document structure and text that replicate the report (@sec-reports)
+* [ ] Import the data with correct data types (@sec-import-data)
+* [ ] Plots (@sec-plots)
+* [ ] Tables (@sec-summary-summarise) 
+* [ ] Consistent plot themes, colours and labels (@sec-themes)
+* [ ] Cross-references in the text to the figures and tables (@sec-cross-references)
+* [ ] References created using bibtex (@sec-bibliography)
+
+As for assessment 3, your code should demonstrate the following skills:
+
+* [ ] Be able to match related data across multiple tables (@sec-mutating-joins)
+* [ ] Be able to combine data from multiple files (@sec-multi-file-import)
+* [ ] Be able to reshape data between long and wide formats (@sec-reshaping-data)
+* [ ] Separate, change, reorder, and rename columns (@sec-multistep)
+* [ ] Use pipes to chain together functions (@sec-pipes)
+* [ ] Be able to select and filter data for relevance (@sec-wrangling-functions)
+* [ ] Be able to create new columns and edit existing ones (@sec-mutate)
+
+Specific to assessment 4, you must demonstrate the following skills:
+
+* [ ] Create custom functions (@sec-custom-functions)
+* [ ] Demonstrate the ability to implement iteration where the same function is being applied to multiple items in a data structure (@sec-iteration-functions)
+* [ ] Simulate a new dataset based on the descriptive statistics from another dataset (@sec-faux)
+* [ ] Implement and report the results of a t-test in a reproducible manner (@sec-t-test)
+* [ ] Reflect on areas where you used techniques that increase reproducibility (@sec-reproducibility)
+
+## Specific Instructions
+
+### Table 2
+
+Add standard deviations to Table 2.
+
+### Simulation
+
+Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 60 male and 60 female faces with simulated average ratings with those distributions.
+
+
+### Analysis
+
+Run a t-test on the simulated data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.
+
+
+### Iteration and Power
+
+Create a new custom function that simulates the new dataset using your previous function. Add the t-test to this new custom function and return only the p-value.
+
+Run this custom function 100 times for each region and report what percent of the runs give a significant p-value with a critical alpha of 0.05/11 (i.e., the Bonferroni-corrected p-value for running all 11 regions). 
+
+### Reflection 
+
+Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of **5** things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Each explanation should be about 100-200 words. 
+
+## Hints and Tips
+
+* The html theme used by the demo report is flatly
+* The ggplot theme is `theme_bw()`
+* You will not be asked to do anything 'tricky' in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives.
+* You will definitely need to join data, and convert between wide and long. Make sure you do this efficiently, creating the minimum number of extra data tables needed, and not re-creating the same table for different tasks.
+* If you find yourself doing the same thing to many columns, you could probably do it more efficiently by reshaping the data longer first
+* Use pipes to avoid creating many single-use tables.
+* It is fine if your plot fonts are a slightly different size or there are small differences in visual presentation
+* Set argument defaults in custom functions if there is a sensible default value, and leave them without defaults if a user will always have to set that value to use to function.
+
 
 ## Submission
 
-* Covers: chapters 1-10, emphasising 8 and 9
+* Covers: chapters 1-10, emphasising 8-9
 * Worth: 40%
 * Do not put your name in your report; use your student ID as the author.
 * Please submit a **zip file** containing: 
@@ -29,7 +97,35 @@ TBA
 #| echo: false
 rubric <- list(
   "Research & Knowledge" = list(
-    "**Topic1**: Description" = list(
+    "**Skills from Chapters 1-3**: You demonstrate skills to create reproducible reports and visualise data" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Skills from Chapters 4-7**: You demonstrate skills to wrangle data" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Custom Functions**: You create custom functions that correctly implement similar code with small differences." = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Iteration**: You can repeat the same code efficiently over a data structure" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Data Simulation**: You can simulate a simple dataset from descriptive statistics" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",
@@ -38,7 +134,7 @@ rubric <- list(
     )
   ),
   "Evaluation" = list(
-    "**Topic2**: Description" = list(
+    "**Reflection**: Your reflections note valid areas where reproducibility is important, and correctly identify and explain techniques you used to ensure reproduciblity" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",
@@ -47,7 +143,14 @@ rubric <- list(
     )
   ),
   "Communication" = list(
-    "**Topic3**: Description" = list(
+    "**Code Clarity**: Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise." = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Code Efficiency**: While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places)." = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",
@@ -87,3 +190,5 @@ reduce(rubric, c) |>
   gt::opt_stylize(style = 6, add_row_striping = FALSE)
 
 ```
+
+

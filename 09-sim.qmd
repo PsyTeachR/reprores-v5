@@ -9,7 +9,7 @@
 - [ ] Generate related variables from a multivariate distribution
 - [ ] Define the following statistical terms: [p-value](#p-value), [alpha](#alpha), [power](#power), smallest effect size of interest ([SESOI](#sesoi)), [false positive](#false-pos) (type I error), [false negative](#false-neg) (type II error), confidence interval ([CI](#conf-inf))
 - [ ] Test sampled distributions against a null hypothesis 
-- Calculate power using iteration and a sampling function
+- [ ] Calculate power using iteration and a sampling function
 
 
 ## Setup {#sec-setup-sim -}
@@ -25,6 +25,7 @@
 #‎| label: setup
 #‎| include: false
 library(tidyverse) # for data wrangling
+# devtools::install_github("debruine/faux") 
 library(faux)      # data simulation
 library(plotly)    # create a 3D plot to visualise correlations
 # MASS::mvrnorm() is used without loading MASS
@@ -305,7 +306,7 @@ bvn3 |>
   add_markers()
 ```
 
-### Faux
+### Faux {#sec-faux}
 
 Alternatively, you can use the package [faux](https://debruine.github.io/faux/) to generate any number of correlated variables. It also has a function for checking the parameters of your new simulated data (`check_sim_stats()`).
 
@@ -501,7 +502,7 @@ ggplot() +
 ```
 
 
-### T-test {#t-test}
+### T-test {#sec-t-test}
 
 `t.test(x, y, alternative, mu, paired)`
 

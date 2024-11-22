@@ -382,7 +382,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><a href="#sec-ilo-reports" id="toc-sec-ilo-reports" class="nav-link active" data-scroll-target="#sec-ilo-reports">Intended Learning Outcomes</a></li>
   <li><a href="#functions-reports" id="toc-functions-reports" class="nav-link" data-scroll-target="#functions-reports">Functions used</a></li>
   <li><a href="#sec-setup-reports" id="toc-sec-setup-reports" class="nav-link" data-scroll-target="#sec-setup-reports">Setup</a></li>
-  <li><a href="#why-use-reproducible-reports" id="toc-why-use-reproducible-reports" class="nav-link" data-scroll-target="#why-use-reproducible-reports"><span class="header-section-number">2.1</span> Why use reproducible reports?</a></li>
+  <li><a href="#sec-reproducibility" id="toc-sec-reproducibility" class="nav-link" data-scroll-target="#sec-reproducibility"><span class="header-section-number">2.1</span> Why use reproducible reports?</a></li>
   <li>
 <a href="#sec-projects" id="toc-sec-projects" class="nav-link" data-scroll-target="#sec-projects"><span class="header-section-number">2.2</span> Projects</a>
   <ul class="collapse">
@@ -526,7 +526,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(quarto)    <span class="co"># for rendering a report from a script</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="why-use-reproducible-reports" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="why-use-reproducible-reports">
+</section><section id="sec-reproducibility" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="sec-reproducibility">
 <span class="header-section-number">2.1</span> Why use reproducible reports?</h2>
 <p>Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?</p>
 <p>A <a href="https://psyteachr.github.io/glossary/r#reproducibility" target="_blank" class="glossary" title="The extent to which the findings of a study can be repeated in some other context">reproducible</a> report fixes this problem. Although this requires a bit of extra effort at the start, it will more than pay you back by allowing you to update your entire report with the push of a button whenever anything changes.</p>
@@ -836,7 +836,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 47 years old. It is 28 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 47 years old. It is -22 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1026,21 +1026,11 @@ Tab-autocomplete file names
 </ul>
 <div class="try">
 <p>Add another line that reports the total numbers of participants in the <strong>experimental</strong> condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **experimental** condition was <span class="in">`r group_counts$n[2]`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </div>
 </section><section id="sec-comments" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-comments">
@@ -1089,7 +1079,7 @@ Figure&nbsp;2.5: The ReproRes logo
 </figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1098,7 +1088,7 @@ Image Licenses
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Most images on Wikipedia are public domain or have an open license. You can search for images by license on Google Images by clicking on the <if>Tools</if> button and choosing “Creative Commons licenses” from the “Usage Rights” menu.</p>
 <div class="cell">
@@ -1253,7 +1243,7 @@ Table&nbsp;2.1: The raw data from the study.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1262,7 +1252,7 @@ Advanced table customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If you’re feeling confident with what we have covered so far, you can also explore the <a href="https://gt.rstudio.com/">gt</a> package, which is complex, but allows you to create beautiful customised tables. <a href="https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/">Riding tables with {gt} and {gtExtras}</a> is an outstanding tutorial.</p>
 </div>
@@ -1285,7 +1275,7 @@ Advanced table customisation
 <span id="cb23-8"><a href="#cb23-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also override defaults in a code cell. See <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto code cells help</a> for a full list of options.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1294,7 +1284,7 @@ Figure versus output dimensions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell">
@@ -1644,18 +1634,10 @@ Warning
 </section><section id="create-a-new-script" class="level3" data-number="2.9.2"><h3 data-number="2.9.2" class="anchored" data-anchor-id="create-a-new-script">
 <span class="header-section-number">2.9.2</span> Create a New Script</h3>
 <p>In the “cv” project, create a new quarto document called “cv.qmd” (<a href="#sec-quarto-newdoc" class="quarto-xref"><span>Section 2.4.1</span></a>). Edit the YAML header to print data frames using kable and set a custom theme (<a href="#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode" id="cb44"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb44-1"><a href="#cb44-1"></a>---</span>
 <span id="cb44-2"><a href="#cb44-2"></a>title: "CV"</span>
 <span id="cb44-3"><a href="#cb44-3"></a>author: "Me"</span>
@@ -1665,30 +1647,18 @@ Solution
 <span id="cb44-7"><a href="#cb44-7"></a>    theme: cosmo</span>
 <span id="cb44-8"><a href="#cb44-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
 </section><section id="markdown-practice" class="level3" data-number="2.9.3"><h3 data-number="2.9.3" class="anchored" data-anchor-id="markdown-practice">
 <span class="header-section-number">2.9.3</span> Markdown Practice</h3>
 <p>Write a short paragraph describing you and your work or academic aspirations. Include a bullet-point list of links to related websites (<a href="#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <pre><code>I am a research psychologist who is interested in open science 
 and teaching computational skills.
 
 * [psyTeachR books](https://psyteachr.github.io/)
 * [Google Scholar](https://scholar.google.com/)</code></pre>
-</div>
-</div>
 </div>
 </section><section id="add-a-table" class="level3" data-number="2.9.4"><h3 data-number="2.9.4" class="anchored" data-anchor-id="add-a-table">
 <span class="header-section-number">2.9.4</span> Add a Table</h3>
@@ -1745,18 +1715,10 @@ and teaching computational skills.
 </section><section id="code-execution" class="level3" data-number="2.9.5"><h3 data-number="2.9.5" class="anchored" data-anchor-id="code-execution">
 <span class="header-section-number">2.9.5</span> Code Execution</h3>
 <p>Figure out how to make it so that code chunks don’t show in your rendered document (<a href="#sec-execute" class="quarto-xref"><span>Section 2.6.1</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-24" class="callout-24-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <p>You can set the execution default to <code>echo: false</code> in the YAML header at the top of the script.</p>
 <div class="sourceCode" id="cb47"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb47-1"><a href="#cb47-1"></a>---</span>
 <span id="cb47-2"><a href="#cb47-2"></a>execute:</span>
@@ -1764,65 +1726,35 @@ Solution
 <span id="cb47-4"><a href="#cb47-4"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To set visibility for a specific code chunk, put <code>#| echo: false</code> at the top of the code chunk.</p>
 </div>
-</div>
-</div>
 </section><section id="add-an-image" class="level3" data-number="2.9.6"><h3 data-number="2.9.6" class="anchored" data-anchor-id="add-an-image">
 <span class="header-section-number">2.9.6</span> Add an Image</h3>
 <p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <p>You can add an image from the web using its URL:</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</div>
 </section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
 <span class="header-section-number">2.9.7</span> Use Inline R</h3>
 <p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2024-10-03.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<p>This CV was created on 2024-11-22.</p>
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-26" class="callout-26-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
 </div>
 </section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
 <span class="header-section-number">2.9.8</span> Render</h3>
 <p>Render this document to html (<a href="#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
+<div class="webex-solution">
+<button>
 Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+</button>
 <pre><code>Click on the render button or run the following code in the console. (Do not put it the script!)
 
 
@@ -1834,8 +1766,6 @@ Solution
 quarto::quarto_render("cv.qmd")
 ```
 :::</code></pre>
-</div>
-</div>
 </div>
 </section><section id="share" class="level3" data-number="2.9.9"><h3 data-number="2.9.9" class="anchored" data-anchor-id="share">
 <span class="header-section-number">2.9.9</span> Share</h3>

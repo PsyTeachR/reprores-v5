@@ -191,7 +191,7 @@ ggplot(mypower, aes(n, power)) +
 
 
 
-## Custom functions {#custom-functions}
+## Custom functions {#sec-custom-functions}
 
 In addition to the built-in functions and functions you can access from packages, you can also write your own functions (and eventually even packages!).
 

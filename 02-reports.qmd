@@ -48,7 +48,7 @@ library(tidyverse) # various data manipulation functions
 library(quarto)    # for rendering a report from a script
 ```
 
-## Why use reproducible reports?
+## Why use reproducible reports? {#sec-reproducibility}
 
 Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?
 
