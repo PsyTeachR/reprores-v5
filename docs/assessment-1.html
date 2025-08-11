@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
 <title>11&nbsp; Assessment 1 – Data Skills for Reproducible Research</title>
@@ -35,12 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-c99093b127bbf7463951177fc80c9973.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-77ea140236b98739b7f0b0e161db6ea0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -95,31 +95,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Skills for Reproducible Research</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/reprores-v4/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
-            LinkedIn
-            </a>
-          </li>
-      </ul>
-</div>
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/psyteachr/reprores-v5/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -328,7 +305,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">11.1</span> Instructions</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">11.2</span> Submission</a></li>
   <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">11.3</span> Marking Rubric</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/assessment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/assessment-1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/assessment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/assessment-1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./assessment-1.html">Assessments</a></li><li class="breadcrumb-item"><a href="./assessment-1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Assessment 1</span></a></li></ol></nav><div class="quarto-title">
@@ -351,29 +328,28 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </header><p>A project with a qmd file showing basic reproducible report skills</p>
 <section id="instructions" class="level2" data-number="11.1"><h2 data-number="11.1" class="anchored" data-anchor-id="instructions">
 <span class="header-section-number">11.1</span> Instructions</h2>
-<p>Your task is to write the outline structure of your thesis report in a reproducible quarto script. The report must contain the following:</p>
+<p>Your task is to write the outline structure of a published paper in your field in a reproducible quarto script. The paper should contain at least one image and one table (ideally small). The report must contain the following:</p>
 <ul class="task-list">
-<li><label><input type="checkbox">A <em>project structure</em> with all needed files (<a href="02-reports.html#sec-project-start" class="quarto-xref"><span>Section 2.2.3</span></a>)</label></li>
-<li><label><input type="checkbox">A <em>setup code chunk</em> that loads the tidyverse (<a href="02-reports.html#sec-setup-chunk" class="quarto-xref"><span>Section 2.5.1</span></a>)</label></li>
-<li><label><input type="checkbox">The main <em>section headers</em> that you expect to use in your report (i.e., Abstract, Introduction, Methods, Results, Discussion, References) (<a href="02-reports.html#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>)</label></li>
-<li><label><input type="checkbox">A short <em>paragraph</em> about your research topic in the Introduction section, using markdown syntax for any text formatting (<a href="02-reports.html#sec-markdown" class="quarto-xref"><span>Section 2.4.3</span></a>)</label></li>
-<li><label><input type="checkbox">Use <em>inline R</em> to include the version of R you are using in the Methods section (<a href="02-reports.html#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>)</label></li>
-<li><label><input type="checkbox">A <em>table</em> in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R (<a href="02-reports.html#sec-md-tables" class="quarto-xref"><span>Section 2.5.8</span></a>)</label></li>
-<li><label><input type="checkbox">One relevant <em>image</em> (or your favourite stats/coding meme) with a figure caption (<a href="02-reports.html#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>) in the Results section</label></li>
-<li><label><input type="checkbox"><em>Cross reference</em> the image in the text with automatic figure numbering (<a href="02-reports.html#sec-cross-references" class="quarto-xref"><span>Section 2.5.9</span></a>)</label></li>
-<li><label><input type="checkbox">At least two <em>bibliographic references</em> cited in the text, created and displayed in the reference section using reproducible techniques (<a href="02-reports.html#sec-bibliography" class="quarto-xref"><span>Section 2.7</span></a>)</label></li>
+<li><label><input type="checkbox">A <em>project structure</em> with all needed files</label></li>
+<li><label><input type="checkbox">A <em>setup code chunk</em> that loads the tidyverse</label></li>
+<li><label><input type="checkbox">Before the abstract, use <em>inline R</em> to include the version of R you are using, as well as a <em>bibliographic reference</em> to the original paper</label></li>
+<li><label><input type="checkbox">All <em>section headers and subheaders</em> that are present in the paper (i.e., Abstract, Introduction, Methods, Results, Discussion, Author Notes, References)</label></li>
+<li><label><input type="checkbox">Copy the abstract as a <em>paragraph</em>, using markdown syntax for any text formatting</label></li>
+<li><label><input type="checkbox">Include one relevant <em>image</em> from the paper (you can screenshot it from the PDF) with the figure caption in the appropriate section</label></li>
+<li><label><input type="checkbox"><em>Cross reference</em> the image in the text with automatic figure numbering . You can copy a sentence from the original text that references the figure, or make up a sentence of your own to reference them.</label></li>
+<li><label><input type="checkbox">Copy sentences with least two <em>bibliographic citations</em> from the paper, including the citations via reproducible techniques</label></li>
+<li><label><input type="checkbox">Automatically display these citations in the <em>reference section</em> using reproducible techniques</label></li>
 <li>
-<label><input type="checkbox">Customise the <em>YAML header</em> (<a href="02-reports.html#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a>) to:</label>
+<label><input type="checkbox">Customise the <em>YAML header</em> to:</label>
 <ul class="task-list">
-<li><label><input type="checkbox">a table of contents (<a href="02-reports.html#sec-toc" class="quarto-xref"><span>Section 2.6.4</span></a>)</label></li>
-<li><label><input type="checkbox">display tables using kable</label></li>
+<li><label><input type="checkbox">a table of contents</label></li>
 <li><label><input type="checkbox">use a non-default theme of your choosing</label></li>
 <li><label><input type="checkbox">hide all code chunks</label></li>
 </ul>
 </li>
-<li><label><input type="checkbox">The quarto file should be renderable by the marker (<a href="02-reports.html#sec-render" class="quarto-xref"><span>Section 2.4.8</span></a>)</label></li>
+<li><label><input type="checkbox">The quarto file should be renderable by the marker</label></li>
 </ul>
-<p>See <a href="demos/report1.html">this report</a> for an example.</p>
+<p>See <a href="demos/report1_demo.html">this report</a> for an example.</p>
 </section><section id="submission" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="submission">
 <span class="header-section-number">11.2</span> Submission</h2>
 <ul>
@@ -456,7 +432,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <td style="text-align: left;"><input type="radio" value="0" name="b7"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">table</td>
+<td style="text-align: left;">citations</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b8"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b8"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b8"></td>
@@ -923,8 +899,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -933,7 +907,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v4");
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v5");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1090,25 +1064,66 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
           }
-        });
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          trigger: 'click',
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          positionFixed: true,
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -1162,15 +1177,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>CC-BY 2024, psyTeachR</p>
+<p>CC-BY 2025, psyTeachR</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/assessment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/assessment-1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/assessment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/assessment-1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/reprores-v4">
+    <a class="nav-link" href="https://github.com/psyteachr/reprores-v5">
       <i class="bi bi-github" role="img">
 </i> 
     </a>

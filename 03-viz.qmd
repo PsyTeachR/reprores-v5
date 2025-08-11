@@ -271,7 +271,7 @@ Let's build up the plot above, layer by layer. First we need to get the data. We
 Load the survey data by copying the following into a code block in your script, and running the code.
 
 ```{r}
-survey_data <- read_csv("https://psyteachr.github.io/reprores-v4/data/survey_data.csv")
+survey_data <- read_csv("https://psyteachr.github.io/reprores-v5/data/survey_data.csv")
 ```
 :::
 

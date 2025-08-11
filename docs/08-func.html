@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
 <title>8&nbsp; Iteration &amp; Functions – Data Skills for Reproducible Research</title>
@@ -69,12 +69,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-c99093b127bbf7463951177fc80c9973.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-77ea140236b98739b7f0b0e161db6ea0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -129,31 +129,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Data Skills for Reproducible Research</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/psyteachr/reprores-v4/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <div class="dropdown">
-      <a href="" title="Share" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Share"><i class="bi bi-share"></i></a>
-      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
-<li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=%7Curl%7C">
-              <i class="bi bi-twitter pe-1"></i>
-            Twitter
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.facebook.com/sharer/sharer.php?u=%7Curl%7C">
-              <i class="bi bi-facebook pe-1"></i>
-            Facebook
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item sidebar-tools-main-item" href="https://www.linkedin.com/sharing/share-offsite/?url=%7Curl%7C">
-              <i class="bi bi-linkedin pe-1"></i>
-            LinkedIn
-            </a>
-          </li>
-      </ul>
-</div>
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/psyteachr/reprores-v5/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -390,7 +367,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
   <li><a href="#sec-glossary-func" id="toc-sec-glossary-func" class="nav-link" data-scroll-target="#sec-glossary-func">Glossary</a></li>
   <li><a href="#sec-resources-func" id="toc-sec-resources-func" class="nav-link" data-scroll-target="#sec-resources-func">Further Resources</a></li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/08-func.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/08-func.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/08-func.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/08-func.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
@@ -513,11 +490,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           [,1]       [,2]       [,3]
-[1,] 1.06541605  0.9036777 -0.9945890
-[2,] 0.98721974 -1.5495524  1.9724587
-[3,] 0.02745393  1.0226378 -0.4418016
-[4,] 0.67287232  0.1500832 -0.9006372
-[5,] 0.57206650 -0.6599640 -0.1505882</code></pre>
+[1,]  1.0240772  1.0030439  1.5912356
+[2,] -0.4327152  0.2342534  1.0063919
+[3,]  0.4384483 -0.1217803 -1.7631158
+[4,] -1.4106443 -0.3635024 -1.0988308
+[5,]  0.9016948  0.5873456  0.7136377</code></pre>
 </div>
 </div>
 <p>By default, <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> simplifies your result into a <a href="https://psyteachr.github.io/glossary/m#matrix" target="_blank" class="glossary" title="A container data type consisting of numbers arranged into a fixed number of rows and columns">matrix</a> that is easy to convert into a table if your function returns vectors that are the same length. If you’d rather have a list of vectors, set <code>simplify = FALSE</code>.</p>
@@ -525,13 +502,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">replicate</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">expr =</span> <span class="fu">rnorm</span>(<span class="dv">5</span>), <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1]  1.98582582  0.04400503 -0.40428231 -0.47299855 -0.41482324
+[1] -0.5988848  0.8261559  0.7951251  1.1043681 -2.9012889
 
 [[2]]
-[1]  0.6832342  0.6902011  0.5334919 -0.1861048  0.3829458
+[1]  0.6554194  1.0975918  0.9308105 -0.3094711 -0.1582473
 
 [[3]]
-[1]  0.3761842  1.1535300  1.5749028  0.5885273 -0.6150452</code></pre>
+[1] -0.1497308  1.0791335 -1.1998364 -0.9865283 -0.9067866</code></pre>
 </div>
 </div>
 </section><section id="map-apply" class="level3" data-number="8.1.4"><h3 data-number="8.1.4" class="anchored" data-anchor-id="map-apply">
@@ -818,13 +795,13 @@ What happens when you omit the argument for <code>p</code>? Or if you set <code>
     Welch Two Sample t-test
 
 data:  dat$A and dat$B
-t = -2.9374, df = 37.589, p-value = 0.005625
+t = 0.6844, df = 34.978, p-value = 0.4982
 alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -1.5520051 -0.2853175
+ -0.3888602  0.7843838
 sample estimates:
 mean of x mean of y 
- 4.989421  5.908082 </code></pre>
+ 5.408082  5.210320 </code></pre>
 </div>
 </div>
 <p>You can also convert the table to long format using the <code>gather</code> function and specify the t-test using the format <code>dv_column~grouping_column</code>.</p>
@@ -837,13 +814,13 @@ mean of x mean of y
     Welch Two Sample t-test
 
 data:  score by group
-t = -2.9374, df = 37.589, p-value = 0.005625
+t = 0.6844, df = 34.978, p-value = 0.4982
 alternative hypothesis: true difference in means between group A and group B is not equal to 0
 95 percent confidence interval:
- -1.5520051 -0.2853175
+ -0.3888602  0.7843838
 sample estimates:
 mean in group A mean in group B 
-       4.989421        5.908082 </code></pre>
+       5.408082        5.210320 </code></pre>
 </div>
 </div>
 </section><section id="tidy-output" class="level4" data-number="8.3.1.3"><h4 data-number="8.3.1.3" class="anchored" data-anchor-id="tidy-output">
@@ -885,14 +862,14 @@ mean in group A mean in group B
 <th style="text-align: left;">alternative</th>
 </tr></thead>
 <tbody><tr class="odd">
-<td style="text-align: right;">-0.5035898</td>
-<td style="text-align: right;">5.093854</td>
-<td style="text-align: right;">5.597443</td>
-<td style="text-align: right;">-1.600133</td>
-<td style="text-align: right;">0.1180851</td>
-<td style="text-align: right;">36.95278</td>
-<td style="text-align: right;">-1.141295</td>
-<td style="text-align: right;">0.1341157</td>
+<td style="text-align: right;">-0.4807365</td>
+<td style="text-align: right;">5.097443</td>
+<td style="text-align: right;">5.57818</td>
+<td style="text-align: right;">-1.455418</td>
+<td style="text-align: right;">0.1537959</td>
+<td style="text-align: right;">37.86072</td>
+<td style="text-align: right;">-1.149491</td>
+<td style="text-align: right;">0.1880185</td>
 <td style="text-align: left;">Welch Two Sample t-test</td>
 <td style="text-align: left;">two.sided</td>
 </tr></tbody>
@@ -916,7 +893,7 @@ mean in group A mean in group B
 <span id="cb62-7"><a href="#cb62-7"></a>  broom<span class="sc">::</span><span class="fu">tidy</span>() <span class="sc">|&gt;</span></span>
 <span id="cb62-8"><a href="#cb62-8"></a>  <span class="fu">pull</span>(p.value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.002630565</code></pre>
+<pre><code>[1] 0.849082</code></pre>
 </div>
 </div>
 </section></section><section id="custom-function" class="level3" data-number="8.3.2"><h3 data-number="8.3.2" class="anchored" data-anchor-id="custom-function">
@@ -939,7 +916,7 @@ mean in group A mean in group B
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">t_sim</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2160769</code></pre>
+<pre><code>[1] 0.2142142</code></pre>
 </div>
 </div>
 <section id="iterate" class="level4" data-number="8.3.2.1"><h4 data-number="8.3.2.1" class="anchored" data-anchor-id="iterate">
@@ -951,7 +928,7 @@ mean in group A mean in group B
 <span id="cb67-3"><a href="#cb67-3"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(reps <span class="sc">&lt;</span> alpha)</span>
 <span id="cb67-4"><a href="#cb67-4"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.349</code></pre>
+<pre><code>[1] 0.329</code></pre>
 </div>
 </div>
 </section><section id="seed" class="level4" data-number="8.3.2.2"><h4 data-number="8.3.2.2" class="anchored" data-anchor-id="seed">
@@ -1488,8 +1465,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1498,7 +1473,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v4");
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v5");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1655,25 +1630,66 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
           }
-        });
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          trigger: 'click',
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          positionFixed: true,
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -1727,15 +1743,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
-<p>CC-BY 2024, psyTeachR</p>
+<p>CC-BY 2025, psyTeachR</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v4/edit/master/08-func.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v4/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v4/blob/master/08-func.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/08-func.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/08-func.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/psyteachr/reprores-v4">
+    <a class="nav-link" href="https://github.com/psyteachr/reprores-v5">
       <i class="bi bi-github" role="img">
 </i> 
     </a>

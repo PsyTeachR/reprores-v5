@@ -4,25 +4,24 @@ A project with a qmd file showing basic reproducible report skills
 
 ## Instructions
 
-Your task is to write the outline structure of your thesis report in a reproducible quarto script. The report must contain the following:
+Your task is to write the outline structure of a published paper in your field in a reproducible quarto script. The paper should contain at least one image and one table (ideally small). The report must contain the following:
 
-* [ ] A *project structure* with all needed files (@sec-project-start)
-* [ ] A *setup code chunk* that loads the tidyverse (@sec-setup-chunk)
-* [ ] The main *section headers* that you expect to use in your report (i.e., Abstract, Introduction, Methods, Results, Discussion, References) (@sec-markdown)
-* [ ] A short *paragraph* about your research topic in the Introduction section, using markdown syntax for any text formatting (@sec-markdown)
-* [ ] Use *inline R* to include the version of R you are using in the Methods section (@sec-inline-r)
-* [ ] A *table* in the Methods section that gives a rough timetable for your thesis, created using markdown or data frames in R (@sec-md-tables)
-* [ ] One relevant *image* (or your favourite stats/coding meme) with a figure caption (@sec-md-images) in the Results section
-* [ ] *Cross reference* the image in the text with automatic figure numbering (@sec-cross-references)
-* [ ] At least two *bibliographic references* cited in the text, created and displayed in the reference section using reproducible techniques (@sec-bibliography)
-* [ ] Customise the *YAML header* (@sec-yaml) to: 
-    - [ ] a table of contents (@sec-toc)
-    - [ ] display tables using kable 
+* [ ] A *project structure* with all needed files 
+* [ ] A *setup code chunk* that loads the tidyverse 
+* [ ] Before the abstract, use *inline R* to include the version of R you are using, as well as a *bibliographic reference* to the original paper 
+* [ ] All *section headers and subheaders* that are present in the paper (i.e., Abstract, Introduction, Methods, Results, Discussion, Author Notes, References) 
+* [ ] Copy the abstract as a *paragraph*, using markdown syntax for any text formatting 
+* [ ] Include one relevant *image* from the paper (you can screenshot it from the PDF) with the figure caption  in the appropriate section
+* [ ] *Cross reference* the image in the text with automatic figure numbering . You can copy a sentence from the original text that references the figure, or make up a sentence of your own to reference them.
+* [ ] Copy sentences with least two *bibliographic citations* from the paper, including the citations via reproducible techniques 
+* [ ] Automatically display these citations in the *reference section* using reproducible techniques 
+* [ ] Customise the *YAML header*  to: 
+    - [ ] a table of contents 
     - [ ] use a non-default theme of your choosing 
     - [ ] hide all code chunks
-* [ ] The quarto file should be renderable by the marker (@sec-render)
+* [ ] The quarto file should be renderable by the marker 
 
-See [this report](demos/report1.html) for an example.
+See [this report](demos/report1_demo.html) for an example.
 
 ## Submission
 
@@ -47,8 +46,8 @@ You will receive green/amber/red lights for each of 11 elements, and a generic f
 #| echo: false
 
 el <- c("project structure", "setup code chunk", "section headers", 
-        "paragraph", "image", "cross reference", "inline R", "table", 
-        "references", "YAML header", "renderable")
+        "paragraph", "image", "cross reference", "inline R", 
+        "citations", "references", "YAML header", "renderable")
 n <- length(el)
 
 

@@ -10,36 +10,36 @@ A project showing power simulation
 
 ## General Instructions
 
-Your task is to replicate [this html report](demos/report4_demo.html) using [the same datasets from assessment 3](demos/report3_data.zip) and code. The start of the assessment is identical to assessment 3, with additional custom function creation, iteration, analysis, and power simulation. 
+Your task is to replicate [this html report](demos/report4_demo.html) using [the same datasets from report 3](demos/report3_data.zip) and code. The start of the assessment is identical to report 3, with additional custom function creation, iteration, analysis, and power simulation. 
 
 As for assessments 2 and 3, the submission must contain the following:
 
-* [ ] A reproducible *project structure* with all needed files (@sec-project-start)
-* [ ] Document structure and text that replicate the report (@sec-reports)
-* [ ] Import the data with correct data types (@sec-import-data)
-* [ ] Plots (@sec-plots)
-* [ ] Tables (@sec-summary-summarise) 
-* [ ] Consistent plot themes, colours and labels (@sec-themes)
-* [ ] Cross-references in the text to the figures and tables (@sec-cross-references)
-* [ ] References created using bibtex (@sec-bibliography)
+* [ ] A reproducible *project structure* with all needed files 
+* [ ] Document structure and text that replicate the report 
+* [ ] Import the data with correct data types 
+* [ ] Plots 
+* [ ] Tables  
+* [ ] Consistent plot themes, colours and labels 
+* [ ] Cross-references in the text to the figures and tables 
+* [ ] References created using bibtex 
 
 As for assessment 3, your code should demonstrate the following skills:
 
-* [ ] Be able to match related data across multiple tables (@sec-mutating-joins)
-* [ ] Be able to combine data from multiple files (@sec-multi-file-import)
-* [ ] Be able to reshape data between long and wide formats (@sec-reshaping-data)
-* [ ] Separate, change, reorder, and rename columns (@sec-multistep)
-* [ ] Use pipes to chain together functions (@sec-pipes)
-* [ ] Be able to select and filter data for relevance (@sec-wrangling-functions)
-* [ ] Be able to create new columns and edit existing ones (@sec-mutate)
+* [ ] Be able to match related data across multiple tables 
+* [ ] Be able to combine data from multiple files 
+* [ ] Be able to reshape data between long and wide formats 
+* [ ] Separate, change, reorder, and rename columns 
+* [ ] Use pipes to chain together functions 
+* [ ] Be able to select and filter data for relevance 
+* [ ] Be able to create new columns and edit existing ones 
 
 Specific to assessment 4, you must demonstrate the following skills:
 
-* [ ] Create custom functions (@sec-custom-functions)
-* [ ] Demonstrate the ability to implement iteration where the same function is being applied to multiple items in a data structure (@sec-iteration-functions)
-* [ ] Simulate a new dataset based on the descriptive statistics from another dataset (@sec-faux)
-* [ ] Implement and report the results of a t-test in a reproducible manner (@sec-t-test)
-* [ ] Reflect on areas where you used techniques that increase reproducibility (@sec-reproducibility)
+* [ ] Create custom functions 
+* [ ] Demonstrate the ability to implement iteration where the same function is being applied to multiple items in a data structure 
+* [ ] Simulate a new dataset based on the descriptive statistics from another dataset 
+* [ ] Implement and report the results of a t-test in a reproducible manner 
+* [ ] Reflect on areas where you used techniques that increase reproducibility 
 
 ## Specific Instructions
 
@@ -65,7 +65,7 @@ Run this custom function 100 times for each region and report what percent of th
 
 ### Reflection 
 
-Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of **5** things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Each explanation should be about 100-200 words. 
+Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of **3** things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Do not simply list good coding practices such as consistent indentation. Each explanation should be about 100-200 words. 
 
 ## Hints and Tips
 
@@ -134,6 +134,13 @@ rubric <- list(
     )
   ),
   "Evaluation" = list(
+    "**Original Plot**: The original plot is appropriate to the question asked" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
     "**Reflection**: Your reflections note valid areas where reproducibility is important, and correctly identify and explain techniques you used to ensure reproduciblity" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",

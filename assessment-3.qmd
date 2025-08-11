@@ -11,25 +11,26 @@ A project demonstrating data wrangling skills
 
 Your task is to replicate [this html report](demos/report3_demo.html) using [these datasets](demos/report3_data.zip) and code, and to generate an appropriate visualisation for the final plot. Nearly identical to assessment 2, the submission must contain the following:
 
-* [ ] A reproducible *project structure* with all needed files (@sec-project-start)
-* [ ] Document structure and text that replicate the report (@sec-reports)
-* [ ] Import the data with correct data types (@sec-import-data)
-* [ ] Plots that replicate Figures 1 (@sec-plots)
-* [ ] A table that replicates Table 1 and 2 (@sec-summary-summarise) 
-* [ ] A plot that is appropriate to the description of Figure 2 (@sec-appropriate-plots)
-* [ ] Consistent plot themes, colours and labels (@sec-themes)
-* [ ] Cross-references in the text to the figures and tables (@sec-cross-references)
-* [ ] References created using bibtex (@sec-bibliography)
+* [ ] A reproducible *project structure* with all needed files 
+* [ ] Document structure and text that replicate the report 
+* [ ] Import the data with correct data types 
+* [ ] Plots that replicate Figure 1 
+* [ ] A table that replicates Table 1 
+* [ ] A plot that is appropriate to the description of Figure 2 
+* [ ] Consistent plot themes, colours and labels 
+* [ ] Cross-references in the text to the figures and table 
+* [ ] References created using bibtex 
 
 In addition, your code should demonstrate the following skills:
 
-* [ ] Be able to match related data across multiple tables (@sec-mutating-joins)
-* [ ] Be able to combine data from multiple files (@sec-multi-file-import)
-* [ ] Be able to reshape data between long and wide formats (@sec-reshaping-data)
-* [ ] Separate, change, reorder, and rename columns (@sec-multistep)
-* [ ] Use pipes to chain together functions (@sec-pipes)
-* [ ] Be able to select and filter data for relevance (@sec-wrangling-functions)
-* [ ] Be able to create new columns and edit existing ones (@sec-mutate)
+* [ ] Be able to match related data across multiple tables 
+* [ ] Be able to reshape data between long and wide formats 
+* [ ] Separate, change, reorder, and rename columns 
+* [ ] Use pipes to chain together functions 
+* [ ] Be able to select and filter data for relevance 
+* [ ] Be able to create new columns and edit existing ones 
+
+You should include two short reflections on two things you did to improve your code clarity and efficiency and why they are important.
 
 ## Hints and Tips
 
@@ -39,7 +40,7 @@ In addition, your code should demonstrate the following skills:
 * You will definitely need to join data, and convert between wide and long. Make sure you do this efficiently, creating the minimum number of extra data tables needed, and not re-creating the same table for different tasks.
 * If you find yourself doing the same thing to many columns, you could probably do it more efficiently by reshaping the data longer first
 * Use pipes to avoid creating many single-use tables.
-* The figure width and height of Figure 1 are 10 and 7 (it is fine if your fonts are a slightly different size)
+* The figure width and height of Figure 1 are 10 and 5 (it is fine to change this if your fonts are a slightly different size)
 
 ## Submission
 
@@ -90,6 +91,13 @@ rubric <- list(
   ),
   "Evaluation" = list(
     "**Original Plot**: The original plot is appropriate to the question asked" = list(
+      "A-Excellent" = "",
+      "B-Very Good" = "",
+      "C-Good" = "",
+      "D-Satisfactory" = "",
+      "E-Poor" = ""
+    ),
+    "**Reflection**: Your reflections note valid areas where code clarity and efficiency are important, and correctly identify and explain techniques you used to ensure them" = list(
       "A-Excellent" = "",
       "B-Very Good" = "",
       "C-Good" = "",

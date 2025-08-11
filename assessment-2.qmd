@@ -8,17 +8,18 @@ A project demonstrating data visualisation and summary skills
 
 ## Instructions
 
-Your task is to replicate [this html report](demos/report2_demo.html) using [this dataset](demos/msleep.csv) and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
+Your task is to replicate [this html report](demos/report2_demo.html) using [this dataset](demos/sw.csv) and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
 
-* [ ] A reproducible *project structure* with all needed files (@sec-project-start)
-* [ ] Document structure and text that replicate the report (@sec-reports)
-* [ ] Import the data with correct data types (@sec-import-data)
-* [ ] Plots that replicate Figures 1 and 2 (@sec-plots)
-* [ ] A table that replicates Table 2 (@sec-summary-summarise) 
-* [ ] A plot that is appropriate to the description of Figure 3 (@sec-appropriate-plots)
-* [ ] Consistent plot themes, colours and labels (@sec-themes)
-* [ ] Cross-references in the text to the figures and tables (@sec-cross-references)
-* [ ] References created using bibtex (@sec-bibliography)
+* [ ] A reproducible *project structure* with all needed files 
+* [ ] Document structure and text that replicate the report 
+* [ ] Import the data with correct data types 
+* [ ] Plots that replicate Figures 1 and 2 
+* [ ] A table that replicates Table 2  
+* [ ] A plot that is appropriate to the description of Figure 3 
+* [ ] Consistent plot themes, colours and labels 
+* [ ] Cross-references in the text to the figures and tables 
+* [ ] References created using bibtex 
+* [ ] A reflection on independent learning you did for this assessment
 
 ## Hints and Tips
 
@@ -28,7 +29,7 @@ Your task is to replicate [this html report](demos/report2_demo.html) using [thi
 * You will need to use `summarise()` to create the data for Table 2; do not just type the numbers from the demo table
 * Display Table 2 using `knitr::kable()`
 * You shouldn't need any packages apart from tidyverse and knitr
-* The colours for Figure 2 are "firebrick", "darkgreen", and "dodgerblue3"
+* The colours for Figure 2 are "dodgerblue3", "firebrick", and "darkorchid" 
 
 ## Submission
 
@@ -56,13 +57,13 @@ el <- c("Reproducible project",
         "Document replicated",
         "Captions/references",
         "Data import",
-        "Figure 1 replicated", 
-        "Figure 2 replicated", 
-        "Table 2 replicated",
+        "Figures replicated",
+        "Table replicated",
         "Figure 3 appropriate",
         "Consistent visualisations",
         "Clear code",
-        "Efficient code"
+        "Efficient code",
+        "Reflection"
         )
 n <- length(el)
 
@@ -96,11 +97,7 @@ You imported the data with correct data types, including putting factors in sens
 
 ### Figure 1 replicated
 
-Figure 1 is created using code, and has all of the features of the example plot, such as label, axis or colour customisation.
-
-### Figure 2 replicated
-
-Figure 2 is created using code, and has all of the features of the example plot, such as label, axis or colour customisation.
+Figures 1 and 2 are created using code, and has all of the features of the example plot, such as label, axis or colour customisation.
 
 ### Table 2 replicated
 
@@ -126,10 +123,9 @@ While there are many ways to do the same things in R, some ways are more efficie
 
 You will not be asked to do anything "tricky" in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives. 
 
+### Reflection
 
-
-
-
+You summarise what you learned in the course of doing this assessment. 
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

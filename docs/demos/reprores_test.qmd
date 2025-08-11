@@ -1,0 +1,13 @@
+---
+title: "Test"
+format: html
+date: "`r Sys.Date()`"
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(tidyverse)
+```
+
+Click the render button above, and install any packages if you are prompted. Once you have created an HTML document, you have succeeded!
