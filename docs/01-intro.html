@@ -460,7 +460,7 @@ Launch R though the RStudio IDE
 <p>Launch <img src="images/intro/rstudio_icon.png" style="height: 2em; vertical-align: middle;" alt="RStudio.app"> (RStudio.app), not <img src="images/intro/new_R_logo.png" style="height: 2em; vertical-align: middle;" alt="R.app"> (R.app).</p>
 </div>
 </div>
-<p>RStudio is an Integrated Development Environment (<a href="https://psyteachr.github.io/glossary/i#ide" target="_blank" class="glossary" title="Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.">IDE</a>). Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn’t be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn’t recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software, which means that from time to time, both of them may have separate updates.</p>
+<p>RStudio is an Integrated Development Environment (<a href="https://psyteachr.github.io/glossary/i#ide" target="_blank" class="glossary" title="Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.">IDE</a>). Think of it as using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn’t be able to use some of the advanced features that Word has developed. In a similar way, you can use R without an IDE, but we wouldn’t recommend it. (You can use your favourite IDE, but the examples in this book will all be shown in RStudio.) RStudio serves as a text editor, file manager, spreadsheet viewer, and more. The key thing to remember is that although you will do all of your work using RStudio for this course, you are actually using two pieces of software, which means that from time to time, both of them may have separate updates.</p>
 <p>RStudio is arranged with four window <a href="https://psyteachr.github.io/glossary/p#panes" target="_blank" class="glossary" title="RStudio is arranged with four window “panes”.">panes</a>.</p>
 <div id="fig-rstudio" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-rstudio-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -472,8 +472,9 @@ Figure&nbsp;1.1: The RStudio IDE
 </div>
 <p>By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won’t display until we open a document or load in some data – don’t worry, we’ll get to that soon.</p>
 <p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won’t be saved. You need to write your code into a script in the source pane to save it, which we’ll cover in <a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
-<p>The right panes have several different tabs that show you information about your code. The most used tabs in the upper right pane are the <strong>Environment</strong> tab and the <strong>Help</strong> tab. The Environment tab lists some information about the <a href="https://psyteachr.github.io/glossary/o#object" target="_blank" class="glossary" title="A word that identifies and stores the value of some data for later use.">objects</a> that you have defined in your code. We’ll learn more about the Help tab in <a href="#sec-function-help" class="quarto-xref"><span>Section 1.2.5</span></a>.</p>
-<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see <a href="#sec-packages" class="quarto-xref"><span>Section 1.2</span></a>), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <if>Tools &gt; Global Options… &gt; Pane Layout</if>.</p>
+<p>The right panes have several different tabs that show you information about your code. The most used tab in the upper right pane is the <strong>Environment</strong> tab, which lists some information about the <a href="https://psyteachr.github.io/glossary/o#object" target="_blank" class="glossary" title="A word that identifies and stores the value of some data for later use.">objects</a> that you have defined in your code.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots made in a script, the <strong>Packages</strong> tab for managing add-on packages (see <a href="#sec-packages" class="quarto-xref"><span>Section 1.2</span></a>), the <strong>Viewer</strong> tab to display reports created by your scripts, and the <strong>Help</strong> tab to see function help. We’ll learn more about the Help tab in <a href="#sec-function-help" class="quarto-xref"><span>Section 1.2.5</span></a>.</p>
+<p>You can change the location of panes and what tabs are shown in each pane under <if>Tools &gt; Global Options… &gt; Pane Layout</if>.</p>
 </section><section id="sec-intro-reproducibility" class="level3" data-number="1.1.2"><h3 data-number="1.1.2" class="anchored" data-anchor-id="sec-intro-reproducibility">
 <span class="header-section-number">1.1.2</span> Reproducibility</h3>
 <p>In this class, you will be learning how to do <a href="https://psyteachr.github.io/glossary/r#reproducible-research" target="_blank" class="glossary" title="Research that documents all of the steps between raw data and results in a way that can be verified.">reproducible research</a>. This involves writing scripts that completely and transparently perform some analysis from start to finish in a way that yields the same result for different people using the same software on different computers. Transparency is a key value of science, as embodied in the “trust but verify” motto.</p>
@@ -503,13 +504,14 @@ Settings for Reproducibility
 <option value="">Ask</option></select>
 </li>
 </ul>
+<p>You will need to change these settings each time you update RStudio.</p>
 </div>
 </div>
 </section><section id="themes-and-accessiblilty" class="level3" data-number="1.1.3"><h3 data-number="1.1.3" class="anchored" data-anchor-id="themes-and-accessiblilty">
 <span class="header-section-number">1.1.3</span> Themes and accessiblilty</h3>
-<p>You can customise how R Studio looks to make it work for you. You can change the default font, font size, and general appearance of R Studio, including using dark mode.</p>
+<p>You can customise how RStudio looks to make it work for you. You can change the default font, font size, and general appearance of RStudio, including using dark mode.</p>
 <div class="try">
-<p>Click <if>Tools &gt; Global Options &gt; Appearance</if>. Play around with the settings and see what you prefer - you’re going to spend a lot of time with R, it might as well look nice!</p>
+<p>Click <if>Tools &gt; Global Options &gt; Appearance</if>. Play around with the settings and see what you prefer – you’re going to spend a lot of time with R, it might as well look nice!</p>
 </div>
 </section><section id="sec-intro-sessions" class="level3" data-number="1.1.4"><h3 data-number="1.1.4" class="anchored" data-anchor-id="sec-intro-sessions">
 <span class="header-section-number">1.1.4</span> Sessions</h3>
@@ -529,7 +531,7 @@ Settings for Reproducibility
 <span class="header-section-number">1.2</span> Packages and functions</h2>
 <p>When you install R you will have access to a range of <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">functions</a> including options for <a href="https://psyteachr.github.io/glossary/d#data-wrangling" target="_blank" class="glossary" title="The process of preparing data for visualisation and statistical analysis.">data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
 <p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a href="https://psyteachr.github.io/glossary/p#package" target="_blank" class="glossary" title="A group of R functions.">packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
-<p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a href="https://psyteachr.github.io/glossary/c#cran" target="_blank" class="glossary" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.">CRAN</a>, the Comprehensive R Archive Network.</p>
+<p>Add-on packages are not distributed with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your phone. The main repository where packages reside is called <a href="https://psyteachr.github.io/glossary/c#cran" target="_blank" class="glossary" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.">CRAN</a>, the Comprehensive R Archive Network.</p>
 <p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
 <section id="sec-install-package" class="level3" data-number="1.2.1"><h3 data-number="1.2.1" class="anchored" data-anchor-id="sec-install-package">
 <span class="header-section-number">1.2.1</span> Installing a package</h3>
@@ -540,12 +542,7 @@ Settings for Reproducibility
 <div class="try">
 <p>Install the <pkg>tidyverse</pkg> package on your system. This is the main package we will use throughout this book for data wrangling, summaries, and visualisation. It is actually a bundle of packages, which we’ll explain further in <a href="#sec-tidyverse" class="quarto-xref"><span>Section 1.2.4</span></a>.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <p>If you get a message that says something like <code>package ‘tidyverse’ successfully unpacked and MD5 sums checked</code>, the installation was successful. If you get an error and the package wasn’t installed, check the troubleshooting section of <a href="app-installing-r.html#sec-package-install-troubleshooting" class="quarto-xref"><span>Section A.2.4</span></a>.</p>
 </div>
@@ -564,23 +561,13 @@ Install packages from the console only
 </div>
 <p>Here are some other packages you’ll want to install for the first chapter.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">install.packages</span>(<span class="st">"beepr"</span>)     <span class="co"># for beeps</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)  <span class="co"># for installing packages from github</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
 <p>Once you’ve installed the <pkg>devtools</pkg> package, you can also install packages from repositories other than CRAN, such as github. The following code installs the development version of a package for guiding computational reproducibility reviews.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># install compreprev package </span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"debruine/compreprev"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </section><section id="loading-a-package" class="level3" data-number="1.2.2"><h3 data-number="1.2.2" class="anchored" data-anchor-id="loading-a-package">
 <span class="header-section-number">1.2.2</span> Loading a package</h3>
@@ -588,12 +575,7 @@ Install packages from the console only
 <div class="try">
 <p>After installing the <pkg>beepr</pkg> package, you can load it for your current R session as follows:</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(beepr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </div>
 <p>You might get some red text when you load a package, this is normal. It is usually warning you that this package has functions that have the same name as other packages you’ve already loaded.</p>
@@ -614,23 +596,13 @@ Note
 <span class="header-section-number">1.2.3</span> Using a function</h3>
 <p>Now you can run the function <code>beep()</code>.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">beep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>A <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is a name that refers to some code you can reuse. We’ll start by using functions that are provided for you in packages, but you can also write your own functions. After the function name, there is a pair of parentheses, which contain zero or more <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. These are options that you can set. In the example above, the <code>sound</code> argument has a <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default value</a> of <code>1</code>, which makes a “ping” sound.</p>
+<p>A <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is a name that refers to some code you can reuse. We’ll start by using functions that are provided for you in packages, but you can also write your own functions (<a href="08-func.html#sec-custom-functions" class="quarto-xref"><span>Section 8.2</span></a>). After the function name, there is a pair of parentheses, which contain zero or more <a href="https://psyteachr.github.io/glossary/a#argument" target="_blank" class="glossary" title="A variable that provides input to a function.">arguments</a>. These are options that you can set. In the example above, the <code>sound</code> argument has a <a href="https://psyteachr.github.io/glossary/d#default-value" target="_blank" class="glossary" title="A value that a function uses for an argument if it is skipped.">default value</a> of <code>1</code>, which makes a “ping” sound.</p>
 <div class="try">
 <p>Try changing the argument to an integer between 1 and 11.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">beep</span>(<span class="at">sound =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </div>
 <p>If you type a function into the console pane, it will run as soon as you hit enter. If you put the function in a <a href="https://psyteachr.github.io/glossary/s#script" target="_blank" class="glossary" title="A plain-text file that contains commands in a coding language, such as R.">script</a> or <a href="https://psyteachr.github.io/glossary/q#quarto" target="_blank" class="glossary" title="An open-source scientific and technical publishing system.">quarto</a> document in the <a href="https://psyteachr.github.io/glossary/p#panes" target="_blank" class="glossary" title="RStudio is arranged with four window “panes”.">source pane</a>, it won’t run until you run the script, <a href="https://psyteachr.github.io/glossary/r#render" target="_blank" class="glossary" title="To create a file (usually an image or PDF) or widget from source code">render</a> the file, or run a code <a href="https://psyteachr.github.io/glossary/c#chunk" target="_blank" class="glossary" title="A section of code in an R Markdown file">chunk</a>. You’ll learn more about this in <a href="02-reports.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
@@ -653,6 +625,8 @@ Note
 <li>
 <pkg>forcats</pkg>, for <a href="https://psyteachr.github.io/glossary/f#factor" target="_blank" class="glossary" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter">factors</a> (<a href="03-viz.html#sec-categorical" class="quarto-xref"><span>Section 3.1.2</span></a>)</li>
 <li>
+<pkg>lubridate</pkg>, for working with dates (<a href="app-dates.html" class="quarto-xref"><span>Appendix I</span></a>)</li>
+<li>
 <pkg>purrr</pkg>, for repeating things (<a href="08-func.html#sec-iteration-functions" class="quarto-xref"><span>Section 8.1</span></a>)</li>
 </ul>
 <p>When you install <pkg>tidyverse</pkg>, it also installs some other useful packages that you can load individually. You can get the full list using <code>tidyverse_packages()</code>, but the packages we’ll be using in this book are:</p>
@@ -662,18 +636,18 @@ Note
 <li>
 <pkg>readxl</pkg>, for Excel files</li>
 <li>
-<pkg>lubridate</pkg>, for working with dates</li>
-<li>
 <pkg>hms</pkg>, for working with times</li>
 <li>
 <pkg>rvest</pkg>, for web scraping</li>
+<li>
+<pkg>broom</pkg>, for tidy model outputs</li>
 </ul></section><section id="sec-function-help" class="level3" data-number="1.2.5"><h3 data-number="1.2.5" class="anchored" data-anchor-id="sec-function-help">
 <span class="header-section-number">1.2.5</span> Function Help</h3>
 <p>When you load the <pkg>tidyverse</pkg> it automatically loads all of the above packages, however, it can be helpful to know which package a function comes from if you need to Google it. If a <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">function</a> is in <a href="https://psyteachr.github.io/glossary/b#base-r" target="_blank" class="glossary" title="The set of R functions that come with a basic installation of R, before you add external packages.">base R</a> or a loaded package, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
 <p>If the package isn’t loaded, use <code>?package_name::function_name</code> or specify the package in the <code><a href="https://rdrr.io/r/utils/help.html">help()</a></code> function. When you aren’t sure what package the function is in, use the shortcut <code>??function_name</code>.</p>
 <div class="try">
 <p>Use the methods above to get help for the <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beepr::beep()</a></code> function.</p>
-<div class="cell" data-filename="Run in the console" data-webex.hide="true">
+<div class="cell" data-webex.hide="true">
 <div class="webex-solution">
 <button>
 Solution
@@ -717,25 +691,31 @@ Solution
 <div class="try">
 <p>As an example, look at the help documentation for the function <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> which randomly samples items from a list.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>?sample</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </div>
 <p>The help documentation for <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> should appear in the bottom right help panel. In the usage section, we see that <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> takes the following form:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">sample</span>(x, size, <span class="at">replace =</span> <span class="cn">FALSE</span>, <span class="at">prob =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the arguments section, there are explanations for each of the arguments. <code>x</code> is the list of items we want to choose from, <code>size</code> is the number of items we want to choose, <code>replace</code> is whether or not each item may be selected more than once, and <code>prob</code> gives the probability that each item is chosen. In the details section it notes that if no values are entered for <code>replace</code> or <code>prob</code> it will use defaults of <code>FALSE</code> (each item can only be chosen once) and <code>NULL</code> (all items will have equal probability of being chosen). Because there is no default value for <code>x</code> or <code>size</code>, they must be specified otherwise the code won’t run.</p>
+<p>In the arguments section, there are explanations for each of the arguments:</p>
+<ul>
+<li>
+<code>x</code> is the list of items we want to choose from,</li>
+<li>
+<code>size</code> is the number of items we want to choose,</li>
+<li>
+<code>replace</code> is whether or not each item may be selected more than once,</li>
+<li>
+<code>prob</code> gives the probability that each item is chosen.</li>
+</ul>
+<p>In the details section it notes that if no values are entered for <code>replace</code> or <code>prob</code> it will use defaults of <code>FALSE</code> (each item can only be chosen once) and <code>NULL</code> (all items will have equal probability of being chosen). Because there is no default value for <code>x</code> or <code>size</code>, they must be specified otherwise the code won’t run.</p>
 <div class="try">
 <p>Let’s try an example and just change the required arguments <code>x</code> and <code>size</code> to ask R to choose from the set of <code>letters</code> (a built-in <a href="https://psyteachr.github.io/glossary/v#vector" target="_blank" class="glossary" title="A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.">vector</a> of the 26 lower-case Latin letters), 5 random values.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">sample</span>(<span class="at">x =</span> letters, <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "z" "v" "y" "w" "j"</code></pre>
+<pre><code>[1] "t" "k" "j" "y" "m"</code></pre>
 </div>
 </div>
 </div>
@@ -751,7 +731,7 @@ Why are my letters different to your letters?
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> generates a random sample. Each time you run the code, you’ll generate a different set of random letters (try it). The function <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> controls the random number generator - if you’re using any functions that use randomness (such as <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>), running <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run <code>set.seed(1242016)</code> in the console, and then run <code>sample(x = letters, size = 5)</code> again.</p>
+<p><code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> generates a random sample. Each time you run the code, you’ll generate a different set of random letters (try it). The function <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> controls the random number generator - if you’re using any functions that use randomness (such as <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code>), running <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> will ensure that you get the same result (in many cases this may not be what you want to do). To get the same numbers we do, run <code>set.seed(8675309)</code> in the console, and then run <code>sample(x = letters, size = 5)</code> again.</p>
 </div>
 </div>
 </div>
@@ -780,7 +760,7 @@ Why are my letters different to your letters?
 <p>In this course, we will always write out the argument names the first time we use each function. However, in subsequent uses they may be omitted.</p>
 </section><section id="sec-tab-autocomplete" class="level3" data-number="1.3.3"><h3 data-number="1.3.3" class="anchored" data-anchor-id="sec-tab-autocomplete">
 <span class="header-section-number">1.3.3</span> Tab auto-complete</h3>
-<p>One very useful feature of R Studio is tab auto-complete for functions. If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
+<p>One very useful feature of RStudio is tab auto-complete for functions. If you write the name of the function and then press the tab key, RStudio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
 <div id="fig-autocomplete" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-autocomplete-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/intro/autocomplete.png" class="img-fluid figure-img">
@@ -811,15 +791,10 @@ Solution
 <div class="try">
 <p>Run the following code in the console, but change the values of <code>name</code> and <code>age</code> to your own details and change <code>halloween</code> to a holiday or date you care about.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Lisa"</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a>age <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>age <span class="ot">&lt;-</span> <span class="dv">48</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb18-4"><a href="#cb18-4"></a>halloween <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-10-31"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<span id="cb18-4"><a href="#cb18-4"></a>halloween <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2025-10-31"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>You’ll see that four objects now appear in the environment pane:</p>
@@ -840,14 +815,9 @@ Solution
 <div class="try">
 <p>Edit and run the following code to create these new objects, and then print the contents of each new object.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>decade <span class="ot">&lt;-</span> age <span class="sc">+</span> <span class="dv">10</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>full_name <span class="ot">&lt;-</span> <span class="fu">paste</span>(name, <span class="st">"DeBruine"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3"></a>how_long <span class="ot">&lt;-</span> halloween <span class="sc">-</span> today</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </div>
 </section></section><section id="sec-help" class="level2" data-number="1.4"><h2 data-number="1.4" class="anchored" data-anchor-id="sec-help">
@@ -862,20 +832,20 @@ Solution
 </section><section id="ai" class="level3" data-number="1.4.3"><h3 data-number="1.4.3" class="anchored" data-anchor-id="ai">
 <span class="header-section-number">1.4.3</span> AI</h3>
 <p>Generative AI platforms have exploded in popularity, particularly when it comes to coding. Because of this, we have created a companion book <a href="https://psyteachr.github.io/AITutoR/">AITutoR</a> to show you how to use AI responsibly to support your coding journey.</p>
+<div class="meme right">
+<p><img src="images/memes/translate-server-error.jpg" class="img-fluid" alt="A sign with English and Chinese. The top line of text reads 'Translate Server Error', the bottom line reads '急救英文'"></p>
+</div>
+<p>While generative AI can be a very helpful tool to support coding, we ask you not to rely on it too heavily while you are building the essential skills for coding. The exercises are meant to build your mental models for understanding data. If you don’t have a good understanding of how data is structured, you cannot evaluate if AI suggestions are correct, contain subtle errors, or are wildly off base.</p>
+<p>Coming back to the exercise analogy, while a forklift can lift heavy weights easier and faster than you can, it doesn’t help your sporting performance if you get a forklift to lift weights at the gym for you. The same is true for AI and coding. The exercises we ask you to do are relatively simple for AI to solve, but it’s important for you to be able to fluently solve them so that you have the necessary “fitness” to do more complex tasks.</p>
 </section><section id="vignettes" class="level3" data-number="1.4.4"><h3 data-number="1.4.4" class="anchored" data-anchor-id="vignettes">
 <span class="header-section-number">1.4.4</span> Vignettes</h3>
 <p>Many packages, especially <a href="https://www.tidyverse.org/packages/">tidyverse</a> ones, have helpful websites with vignettes explaining how to use their functions. Some of the vignettes are also available inside R. You can access them from a package’s help page or with the <code><a href="https://rdrr.io/r/utils/vignette.html">vignette()</a></code> function.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># opens a list of available vignettes</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="fu">vignette</span>(<span class="at">package =</span> <span class="st">"ggplot2"</span>)</span>
 <span id="cb20-3"><a href="#cb20-3"></a></span>
 <span id="cb20-4"><a href="#cb20-4"></a><span class="co"># opens a specific vignette in the Help pane</span></span>
 <span id="cb20-5"><a href="#cb20-5"></a><span class="fu">vignette</span>(<span class="st">"ggplot2-specs"</span>, <span class="at">package =</span> <span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </section></section><section id="sec-exercises-intro" class="level2" data-number="1.5"><h2 data-number="1.5" class="anchored" data-anchor-id="sec-exercises-intro">
 <span class="header-section-number">1.5</span> Exercises</h2>
@@ -940,7 +910,7 @@ Solution
 </div>
 </section><section id="get-help" class="level3" data-number="1.5.5"><h3 data-number="1.5.5" class="anchored" data-anchor-id="get-help">
 <span class="header-section-number">1.5.5</span> Get Help</h3>
-<p>View the help files for <code><a href="https://debruine.github.io/faux/reference/rnorm_multi.html">faux::rnorm_multi</a></code>.</p>
+<p>View the help files for <code><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">faux::rnorm_multi</a></code>.</p>
 <div class="cell" data-webex.hide="true">
 <div class="webex-solution">
 <button>
@@ -951,7 +921,7 @@ Solution
 </div>
 </section><section id="create-an-object" class="level3" data-number="1.5.6"><h3 data-number="1.5.6" class="anchored" data-anchor-id="create-an-object">
 <span class="header-section-number">1.5.6</span> Create an Object</h3>
-<p>Use <code><a href="https://debruine.github.io/faux/reference/rnorm_multi.html">faux::rnorm_multi()</a></code> to create an object called <code>sim_data</code>. Set the arguments so this is a table with 10 rows and 3 columns. Click on the object name in the Environment tab to view the table, or print it to the console.</p>
+<p>Use <code><a href="https://rdrr.io/pkg/faux/man/rnorm_multi.html">faux::rnorm_multi()</a></code> to create an object called <code>sim_data</code>. Set the arguments so this is a table with 10 rows and 3 columns. Click on the object name in the Environment tab to view the table, or print it to the console.</p>
 <div class="cell" data-webex.hide="true">
 <div class="webex-solution">
 <button>
