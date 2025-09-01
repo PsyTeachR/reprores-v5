@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-styling.html" rel="next">
+<link href="./app-tables.html" rel="next">
 <link href="./app-datatypes.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -314,14 +314,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -366,23 +372,17 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><p>Working with dates and times can be a little tricky, but the <pkg>lubridate”, “https://lubridate.tidyverse.org/”)<code>package is there to help. Their website has a helpful [cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf) and you can view a tutorial by typing</code>vignette(“lubridate”)` in the console pane. The <a href="https://r4ds.had.co.nz/dates-and-times.html">Dates and Times</a> in R for Data Science also gives a helpful overview.</pkg></p>
+</header><p>Working with dates and times can be a little tricky, but the <a href="https://lubridate.tidyverse.org/"><pkg>lubridate</pkg></a> package is there to help. Their website has a helpful <a href="https://rstudio.github.io/cheatsheets/html/lubridate.html">cheatsheet</a> and you can view a tutorial by typing <code>vignette("lubridate")</code> in the console pane. The <a href="https://r4ds.had.co.nz/dates-and-times.html">Dates and Times</a> in R for Data Science also gives a helpful overview.</p>
 <p>This appendix is a quick intro to some of the most useful functions for making reproducible reports.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># packages needed for this appendix</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="formats" class="level2" data-number="I.1"><h2 data-number="I.1" class="anchored" data-anchor-id="formats">
 <span class="header-section-number">I.1</span> Formats</h2>
-<p>While there is only one correct way to write date (The ISO 8601 format of “YYYY-MM-DD”), dates can be found in many formats. When you are reading a data file, you might need to specify the date format so it can be read properly. Date format specification uses abbreviations to represent the different ways people can write. the year, month, and day (as well as hours, minutes, and seconds). For example, the date <code>2023-01-03</code> is represented by the formatting string <code>"%Y-%m-%d</code>. The fastest way to find the list of formatting abbreviations is to look in the help for the function <code>col_date()</code>.</p>
+<p>While there is only one correct way to write dates (The ISO 8601 format of “YYYY-MM-DD”), they can be found in many formats. When you are reading a data file, you might need to specify the date format so it can be read properly. Date format specification uses abbreviations to represent the different ways people can write the year, month, and day (as well as hours, minutes, and seconds). For example, the date <code>2025-01-03</code> is represented by the formatting string <code>"%Y-%m-%d"</code>, while <code>January 1, 2025</code> is represented by the formatting string <code>"%B %e, %Y"</code>. The fastest way to find the list of formatting abbreviations is to look in the help for the function <code>col_date()</code>.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>?col_date</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># create a table with some different date formats</span></span>
@@ -487,16 +487,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb10-20"><a href="#cb10-20"></a><span class="fu">str</span>(time_parts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 12
- $ second : num 42.2
- $ minute : int 50
- $ hour   : int 13
- $ day    : int 11
+ $ second : num 10.9
+ $ minute : int 44
+ $ hour   : int 12
+ $ day    : int 1
  $ wday   : num 2
- $ yday   : num 223
- $ week   : num 32
- $ isoweek: num 33
- $ epiweek: num 33
- $ month  : num 8
+ $ yday   : num 244
+ $ week   : num 35
+ $ isoweek: num 36
+ $ epiweek: num 36
+ $ month  : num 9
  $ year   : num 2025
  $ tz     : chr "GMT"</code></pre>
 </div>
@@ -541,7 +541,7 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">today</span>() <span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-08-18"</code></pre>
+<pre><code>[1] "2025-09-08"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -607,9 +607,9 @@ Warning
 <span class="header-section-number">I.4.2</span> Rounding</h3>
 <p>You can round dates and times to the nearest unit. This can be useful when you have, for example, time measured to the nearest second, but want to group data by the nearest hour, rather than extract the hour component.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:25"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:30"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:35"</span>) <span class="sc">%&gt;%</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:25"</span>) <span class="sc">|&gt;</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:30"</span>) <span class="sc">|&gt;</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="fu">ymd_hm</span>(<span class="st">"2022-01-24 10:35"</span>) <span class="sc">|&gt;</span> <span class="fu">round_date</span>(<span class="at">unit =</span> <span class="st">"hour"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-01-24 10:00:00 UTC"
 [1] "2022-01-24 11:00:00 UTC"
@@ -663,15 +663,15 @@ AM/PM:  AM/PM</code></pre>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="at">path =</span> <span class="st">"data/tweets"</span>, </span>
 <span id="cb33-4"><a href="#cb33-4"></a>  <span class="at">pattern =</span> <span class="st">"^tweet_activity_metrics"</span>,</span>
 <span id="cb33-5"><a href="#cb33-5"></a>  <span class="at">full.names =</span> <span class="cn">TRUE</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">map_df</span>(read_csv) <span class="sc">%&gt;%</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">map_df</span>(read_csv) <span class="sc">|&gt;</span></span>
 <span id="cb33-8"><a href="#cb33-8"></a>  <span class="fu">select</span>(<span class="sc">!</span><span class="fu">starts_with</span>(<span class="st">"promoted"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>time</code> column is already in date/time (POSIXct) format, but what if we wanted to plot tweets by hour for each day of the week?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>tweets <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>tweets <span class="sc">|&gt;</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> <span class="fu">wday</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb34-3"><a href="#cb34-3"></a>         <span class="at">hour =</span> <span class="fu">hour</span>(time)) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>         <span class="at">hour =</span> <span class="fu">hour</span>(time)) <span class="sc">|&gt;</span></span>
 <span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">fill =</span> weekday)) <span class="sc">+</span></span>
 <span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">geom_bar</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>weekday) <span class="sc">+</span></span>
@@ -690,8 +690,8 @@ AM/PM:  AM/PM</code></pre>
 </div>
 <p>A nice side-effect of using the lubridate function to get days of the week or months of the year is that the results are an ordered factor, so display correctly in a plot. Let’s display the months in Greek (if that’s available on your system).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>tweets <span class="sc">%&gt;%</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>, <span class="at">locale =</span> <span class="st">"el_GR.UTF-8"</span>)) <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>tweets <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>, <span class="at">locale =</span> <span class="st">"el_GR.UTF-8"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">fill =</span> month)) <span class="sc">+</span></span>
 <span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge=</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1386,8 +1386,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./app-styling.html" class="pagination-link" aria-label="Styling Plots">
-        <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./app-tables.html" class="pagination-link" aria-label="Table Formatting">
+        <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

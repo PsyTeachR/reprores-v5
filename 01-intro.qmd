@@ -553,7 +553,6 @@ glossary_table()
 
 ## Further Resources {#sec-resources-intro -}
 
-* [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf)
+* [RStudio IDE Cheatsheet](https://rstudio.github.io/cheatsheets/html/rstudio-ide.html)
 * [RStudio Cloud](https://rstudio.cloud/)
-
 

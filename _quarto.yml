@@ -81,6 +81,7 @@ book:
   - app-import.qmd
   - app-datatypes.qmd
   - app-dates.qmd
+  - app-tables.qmd
   - app-styling.qmd
   - app-webpage.qmd
 

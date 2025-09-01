@@ -334,14 +334,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -412,7 +418,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <ul class="collapse">
 <li><a href="#converting-from-reference-software" id="toc-converting-from-reference-software" class="nav-link" data-scroll-target="#converting-from-reference-software"><span class="header-section-number">2.7.1</span> Converting from reference software</a></li>
   <li><a href="#creating-a-bibtex-file" id="toc-creating-a-bibtex-file" class="nav-link" data-scroll-target="#creating-a-bibtex-file"><span class="header-section-number">2.7.2</span> Creating a BibTeX File</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.7.3</span> Adding references</a></li>
+  <li><a href="#sec-add-refs" id="toc-sec-add-refs" class="nav-link" data-scroll-target="#sec-add-refs"><span class="header-section-number">2.7.3</span> Adding references</a></li>
   <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">2.7.4</span> Citing references</a></li>
   <li><a href="#uncited-references" id="toc-uncited-references" class="nav-link" data-scroll-target="#uncited-references"><span class="header-section-number">2.7.5</span> Uncited references</a></li>
   <li><a href="#citation-styles" id="toc-citation-styles" class="nav-link" data-scroll-target="#citation-styles"><span class="header-section-number">2.7.6</span> Citation Styles</a></li>
@@ -493,7 +499,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 <p>Download the <a href="https://rstudio.github.io/cheatsheets/html/quarto.html">Quarto Cheat Sheet</a> and <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheat Sheet</a>.</p>
 </section><section id="sec-setup-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-setup-reports">Setup</h2>
-<p>For reference, here are the packages we will use in this chapter. You may need to install them, as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.2.1</span></a>, if running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘package_name’</code>.</p>
+<p>For reference, here are the packages we will use in this chapter. If running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘package_name’</code>, you may need to install them as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.2.1</span></a>.</p>
 <div class="cell">
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -507,15 +513,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">2.1</span> Why use reproducible reports?</h2>
 <p>Have you ever worked on a report, creating a summary table for the demographics, making beautiful plots, getting the analysis just right, and copying all the relevant numbers into your manuscript, only to find out that you forgot to exclude a test run and have to redo everything?</p>
 <p>A <a href="https://psyteachr.github.io/glossary/r#reproducibility" target="_blank" class="glossary" title="The extent to which the findings of a study can be repeated in some other context">reproducible</a> report fixes this problem. Although this requires a bit of extra effort at the start, it will more than pay you back by allowing you to update your entire report with the push of a button whenever anything changes.</p>
-<p>Additionally, studies show that many, if not most, papers in the scientific literature have reporting errors. For example, more than half of over 250,000 psychology papers published between 1985 and 2013 have at least one value that is statistically incompatible, such as a p-value that is not possible given a t-value and degrees of freedom <span class="citation" data-cites="nuijten2016prevalence">(<a href="02-reports.html#ref-nuijten2016prevalence" role="doc-biblioref">Nuijten et al., 2016</a>)</span>. Reproducible reports help avoid transcription and rounding errors.</p>
+<p>Additionally, studies show that many, if not most, papers in the scientific literature have reporting errors. For example, more than half of over 250,000 psychology papers published between 1985 and 2013 have at least one value that is statistically incompatible, such as a p-value that is not possible given the reported t-value and degrees of freedom <span class="citation" data-cites="nuijten2016prevalence">(<a href="02-reports.html#ref-nuijten2016prevalence" role="doc-biblioref">Nuijten et al., 2016</a>)</span>. Reproducible reports help avoid transcription and rounding errors.</p>
 <p>We will make reproducible reports following the principles of <a href="https://en.wikipedia.org/wiki/Literate_programming">literate programming</a>. The basic idea is to have the text of the report together in a single document along with the code needed to perform all analyses and generate the tables. The report is then “compiled” from the original format into some other, more portable format, such as HTML or PDF. This is different from traditional cutting and pasting approaches where, for instance, you create a graph in Microsoft Excel or a statistics program like SPSS and then paste it into Microsoft Word.</p>
 </section><section id="sec-projects" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="sec-projects">
 <span class="header-section-number">2.2</span> Projects</h2>
-<p>Before we write any code, first, we need to get organised. <a href="https://psyteachr.github.io/glossary/p#project" target="_blank" class="glossary" title="A way to organise related files in RStudio">Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include <a href="https://psyteachr.github.io/glossary/s#script" target="_blank" class="glossary" title="A plain-text file that contains commands in a coding language, such as R.">scripts</a>, data files, and output files like the PDF report created by the script or images.</p>
+<p>Before we write any code, first, we need to get organised. <a href="https://psyteachr.github.io/glossary/p#project" target="_blank" class="glossary" title="A way to organise related files in RStudio">Projects</a> in RStudio are a way to group all the files you need for one project. Most projects include <a href="https://psyteachr.github.io/glossary/s#script" target="_blank" class="glossary" title="A plain-text file that contains commands in a coding language, such as R.">scripts</a>, data files, and output files like images or the PDF report created by the script.</p>
 <section id="file-system" class="level3" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="file-system">
 <span class="header-section-number">2.2.1</span> File System</h3>
 <p>Modern computers tend to hide the file system from users, but we need to understand a little bit about how files are stored on your computer in order to get a script to find your data. Your computer’s file system is like a big box (or <a href="https://psyteachr.github.io/glossary/d#directory" target="_blank" class="glossary" title="A collection or “folder” of files on a computer.">directory</a>) that contains both files and smaller boxes, or “subdirectories”. You can specify the location of a file with its name and the names of all the directories it is inside.</p>
-<p>For example, if Lisa is looking for a file called <code>report.qmd</code>on their Desktop, they can specify the full file <a href="https://psyteachr.github.io/glossary/p#path" target="_blank" class="glossary" title="A string representing the location of a file or directory.">path</a> like this: <code>/Users/lisad/Desktop/report.qmd</code>, because the <code>Desktop</code> directory is inside the <code>lisad</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>lisad</code>. You can also use the <code>~</code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.qmd</code>.</p>
+<p>For example, if Lisa is looking for a file called <code>report.qmd</code>on their Desktop, they can specify the full file <a href="https://psyteachr.github.io/glossary/p#path" target="_blank" class="glossary" title="A string representing the location of a file or directory.">path</a> like this: <code>/Users/debruine/Desktop/report.qmd</code>, because the <code>Desktop</code> directory is inside the <code>debruine</code> directory, which is inside the <code>Users</code> directory, which is located at the base of the whole file system. If that file was on <em>your</em> desktop, you would probably have a different path unless your user directory is also called <code>debruine</code>. You can also use the <code>~</code> shortcut to represent the user directory of the person who is currently logged in, like this: <code>~/Desktop/report.qmd</code>.</p>
 </section><section id="default-working-directory" class="level3" data-number="2.2.2"><h3 data-number="2.2.2" class="anchored" data-anchor-id="default-working-directory">
 <span class="header-section-number">2.2.2</span> Default working directory</h3>
 <p>First, make a new <a href="https://psyteachr.github.io/glossary/d#directory" target="_blank" class="glossary" title="A collection or “folder” of files on a computer.">directory</a> (i.e., folder) on your computer where you will keep all of your R projects. Name it something like “R-projects” (avoid spaces and other special characters). Make sure you know how to get to this directory using your computer’s Finder or Explorer.</p>
@@ -548,7 +554,7 @@ Avoid long path names
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>On some versions of Windows 10 and 11, it can cause problems if path names are longer than 260 characters. Set your default working directory to a path with a length well below that to avoid problems when R creates temporary files while rendering a report. If you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem as this will likely have a much short path name than most other folders on your computer.</p>
+<p>On some versions of Windows 10 and 11, it can cause problems if path names are longer than 260 characters. Set your default working directory to a path with a length well below that to avoid problems when R creates temporary files while rendering a report. If you are having issues, a helpful test is to try moving your project folder to the desktop to see if that solves the problem as this will likely have a much shorter path name than most other folders on your computer.</p>
 </div>
 </div>
 </div>
@@ -611,7 +617,7 @@ Don’t nest projects
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Don’t ever save a new project <strong>inside</strong> another project directory. This can cause some hard-to-resolve problems.</p>
+<p>Don’t ever save a new project <strong>inside</strong> another project directory. This can cause some hard-to-identify problems.</p>
 </div>
 </div>
 </section><section id="sec-naming" class="level3" data-number="2.2.4"><h3 data-number="2.2.4" class="anchored" data-anchor-id="sec-naming">
@@ -703,7 +709,7 @@ Figure&nbsp;2.2: The example code above shown in the visual editor.
 <span id="cb2-3"><a href="#cb2-3"></a><span class="an">author:</span><span class="co"> "Lisa DeBruine"</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a><span class="an">format:</span><span class="co"> html</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., <code>date: 2024-10-04</code>.</p>
+<p>This is the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., <code>date: 2025-10-03</code>.</p>
 <p>You will learn in <a href="#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a> how to further customise your document using information in the header.</p>
 </section><section id="sec-markdown" class="level3" data-number="2.4.3"><h3 data-number="2.4.3" class="anchored" data-anchor-id="sec-markdown">
 <span class="header-section-number">2.4.3</span> Markdown</h3>
@@ -716,8 +722,7 @@ Figure&nbsp;2.2: The example code above shown in the visual editor.
 <span id="cb3-6"><a href="#cb3-6"></a><span class="ss">* </span>paragraphs</span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="ss">* </span>lists</span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="ss">* </span><span class="co">[</span><span class="ot">links</span><span class="co">](https://psyteachr.github.io/reprores-v5/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you start a line with hashes, it creates a header. One hash makes a document title, two hashes make a document header, three a subheader, and so on. Make sure you leave a blank line before and after a header, and don’t put any spaces or other characters before the first hash.</p>
-<p>Put a blank line between paragraphs of text. Bullet-point list items start with “*” or “-” and numbered list items start with “1.”. Indent list items to make nested lists.</p>
+<p>If you start a line with hashes, it creates a header. One hash makes a document title, two hashes make a document header, three a subheader, and so on. Make sure you leave a blank line before and after a header, and don’t put any spaces or other characters before the first hash. Put a blank line between paragraphs of text. Bullet-point list items start with “*” or “-” and numbered list items start with “1.”. Indent list items to make nested lists.</p>
 </section><section id="text-styles" class="level3" data-number="2.4.4"><h3 data-number="2.4.4" class="anchored" data-anchor-id="text-styles">
 <span class="header-section-number">2.4.4</span> Text Styles</h3>
 <p>See <a href="https://quarto.org/docs/authoring/markdown-basics.html">Markdown Basics</a> for a quick reference.</p>
@@ -745,16 +750,16 @@ Code chunk errors
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When you create a new code chunk you should notice that the grey box starts and ends with three backticks ```. One common mistake is to accidentally delete these backticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your Markdown doesn’t look right, check that you haven’t deleted the backticks.</p>
+<p>When you create a new code chunk you should notice that the grey box starts and ends with three backticks ```. One common mistake is to accidentally delete these backticks. Remember, code chunks and text entry are different colours - if the colour of certain parts of your script doesn’t look right, check that you haven’t deleted the backticks.</p>
 </div>
 </div>
 <div class="try">
 <p>Inside your code chunk, add the code you created in <a href="01-intro.html#sec-objects" class="quarto-xref"><span>Section 1.3.4</span></a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Lisa"</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>age <span class="ot">&lt;-</span> <span class="dv">47</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>age <span class="ot">&lt;-</span> <span class="dv">48</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb5-4"><a href="#cb5-4"></a>halloween <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2024-10-31"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4"></a>halloween <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2025-10-31"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -784,7 +789,7 @@ Console vs scripts
 Figure&nbsp;2.3: Click the green arrow to run all the code in the current chunk.
 </figcaption></figure>
 </div>
-<p>Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!</p>
+<p>Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere, just not selecting any characters) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!</p>
 <div id="fig-run-line" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-run-line-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <video src="images/reports/run-line.mov" class="img-fluid" controls=""><a href="images/reports/run-line.mov">Video</a></video>
@@ -796,7 +801,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <div class="try">
 <p>Run your code using each of the methods above. You should see the variables <code>name</code>, <code>age</code>, <code>today</code>, and <code>halloween</code> appear in the environment pane.</p>
 <p>Restart R to clear the objects. They should disappear from the environment (see <a href="app-installing-r.html#sec-rstudio-settings" class="quarto-xref"><span>Section A.1.2.2</span></a> if they don’t disappear).</p>
-<p>Run you code again, and then change the value of <code>name</code> in the script. When/how does it change in the Environment tab?</p>
+<p>Run your code again, and then change the value of <code>name</code> in the script. When/how does it change in the Environment tab?</p>
 </div>
 </section><section id="sec-inline-r" class="level3" data-number="2.4.7"><h3 data-number="2.4.7" class="anchored" data-anchor-id="sec-inline-r">
 <span class="header-section-number">2.4.7</span> Inline code</h3>
@@ -813,7 +818,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 47 years old. It is -284 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 48 years old. It is 60 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -829,12 +834,7 @@ Rendering with Code
 <div class="callout-body-container callout-body">
 <p>You can also render by typing the following code into the console. Never put this in a qmd script itself, or it will try to render itself in an infinite loop.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="st">"02-reports.qmd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -850,14 +850,12 @@ Rendering with Code
 <p>Most of your quarto documents should have a setup chunk at the top that loads any necessary libraries and sets default values.</p>
 <div class="try">
 <p>Add the following just below the YAML header.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="in">#| label: setup</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="in">#‎| include: false</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="in">#| include: false</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a></span>
 <span id="cb8-5"><a href="#cb8-5"></a><span class="in">library(tidyverse)</span></span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <p>The function <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don’t bury the call to <code><a href="https://rdrr.io/r/base/library.html">library(package_I_need)</a></code> way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.</p>
 </section><section id="chunk-options" class="level3" data-number="2.5.2"><h3 data-number="2.5.2" class="anchored" data-anchor-id="chunk-options">
@@ -909,30 +907,30 @@ could not find function “read_csv”</p>
 <p>This means that you have not loaded tidyverse. Check that <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> is in the setup chunk and that you have run the setup chunk.</p>
 </div>
 </div>
-<p>This dataset is a few lines of simulated data for an experiment with 10 participants, 2 groups (experimental and control) and two dependent measures (pre and post). There are multiple ways to view and check a dataset in R. Do each of the following and make a note of what information each approach seems to give you. If you’d like more information about each of these functions, you can look up the help documentation with <code>?function</code>:</p>
-<p>Click on the <code>smalldata</code> object in the environment pane, or run each of the following lines of code in the console:</p>
+<p>This dataset is a few lines of simulated data for an experiment with 10 participants, 2 groups (experimental and control) and two dependent measures (pre and post). There are multiple ways to view and check a dataset in R. Do each of the following and make a note of what information each approach gives you. If you’d like more information about each of these functions, you can look up the help documentation with <code>?function</code>:</p>
+<p>Click on the <code>smalldata</code> object in the environment pane and run each of the following lines of code in the console:</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># different ways to view a data frame</span></span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="fu">head</span>(smalldata)</span>
 <span id="cb10-3"><a href="#cb10-3"></a><span class="fu">summary</span>(smalldata)</span>
 <span id="cb10-4"><a href="#cb10-4"></a><span class="fu">str</span>(smalldata)</span>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="fu">View</span>(smalldata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
 </section><section id="local-data-files" class="level3" data-number="2.5.4"><h3 data-number="2.5.4" class="anchored" data-anchor-id="local-data-files">
 <span class="header-section-number">2.5.4</span> Local data files</h3>
-<p>More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project’s <a href="https://psyteachr.github.io/glossary/w#working-directory" target="_blank" class="glossary" title="The filepath where R is currently reading and writing files.">working directory</a>, and we have already set up the main directory <code class="path">reprores</code>for this course.</p>
-<p>You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called <code class="path">data</code> and saving any image files to a subdirectory called <code class="path">images</code>. Using subdirectories helps avoid one single folder becoming too cluttered, which is important if you’re working on big projects.</p>
-<p>In your <code class="path">reprores</code> directory, create a new folder named <code class="path">data</code>, <a href="https://psyteachr.github.io/reprores/data/smalldata.csv" download="">download a copy of the data file</a>, and save it in this new subdirectory.</p>
+<p>More commonly, you will be working from data files that are stored locally on your computer. But where should you put all of your files? You usually want to have all your scripts and data files for a single project inside one folder on your computer, that project’s <a href="https://psyteachr.github.io/glossary/w#working-directory" target="_blank" class="glossary" title="The filepath where R is currently reading and writing files.">working directory</a>, and we have already set up the main directory <code class="path">reprores</code> for this course.</p>
+<p>You can organise files in subdirectories inside this main project directory, such as putting all raw data files in a subdirectory called <code class="path">data</code> and saving any image files to a subdirectory called <code class="path">images</code>. Using subdirectories helps avoid one single folder becoming too cluttered, which is important when you’re working on big projects.</p>
+<p>In your <code class="path">reprores</code> directory, create a new folder named <code class="path">data</code>, <a href="https://psyteachr.github.io/reprores/data/smalldata.csv" download="">download a copy of the data file</a>, and save it in this new subdirectory. Or you can run the following code in the console (do not add it to the script or you will unnecessarily download data every time you run it).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"data"</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>url <span class="ot">&lt;-</span> <span class="st">"https://psyteachr.github.io/reprores/data/smalldata.csv"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="fu">download.file</span>(<span class="at">url =</span> url, <span class="at">destfile =</span> <span class="st">"data/smalldata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>To load in data from a local file, again we can use the <code>read_csv()</code> function, but this time rather than specifying a url, give it the subdirectory and file name.</p>
 <div class="try">
 <p>Change the code in your file to the following.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>smalldata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/smalldata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>smalldata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/smalldata.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -951,9 +949,8 @@ Tab-autocomplete file names
 <p>Things to note:</p>
 <ul>
 <li>You must include the file extension (in this case <code>.csv</code>)</li>
-<li>The subdirectory folder name (<code>data</code>) and the file name are separated by a forward slash <code>/</code>
-</li>
-<li>Precision is important, if you have a typo in the file name it won’t be able to find your file; remember that R is case sensitive - <code>SmallData.csv</code> is a completely different file to <code>smalldata.csv</code> as far as R is concerned.</li>
+<li>The subdirectory folder name (<code>data</code>) and the file name are separated by a forward slash <code>/</code> (even on Windows!)</li>
+<li>Precision is important, if you have a typo in the file name it won’t be able to find your file; remember that R is case sensitive – <code>SmallData.csv</code> is a completely different file to <code>smalldata.csv</code> as far as R is concerned.</li>
 </ul>
 <div class="try">
 <p>Run <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code>, <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>, <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code>, and <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> on <code>smalldata</code> to confirm that the data is the same as before.</p>
@@ -964,8 +961,8 @@ Tab-autocomplete file names
 <div class="try">
 <p>Create a new code chunk, then copy, paste and run the following code and then view <code>group_counts</code> by clicking on the object in the environment pane.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># count how many are in each group</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>group_counts <span class="ot">&lt;-</span> <span class="fu">count</span>(smalldata, group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># count how many are in each group</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>group_counts <span class="ot">&lt;-</span> <span class="fu">count</span>(smalldata, group)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>Because each row of the dataset is a participant, this code gives us a nice and easy way of seeing how many participants were in each group; it just counts the number of rows in each group.</p>
@@ -993,7 +990,7 @@ Tab-autocomplete file names
 </div>
 <div class="try">
 <p>Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a>The total number of participants in the **control** condition was 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **control** condition was 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Try and match up the inline code with what is in the <code>group_counts</code> table. Of note:</p>
 <ul>
@@ -1007,53 +1004,76 @@ Tab-autocomplete file names
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **experimental** condition was <span class="in">`r group_counts$n[2]`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a>The total number of participants in the **experimental** condition was <span class="in">`r group_counts$n[2]`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section><section id="sec-comments" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-comments">
 <span class="header-section-number">2.5.6</span> Code comments</h3>
 <p>In the above code we’ve used code <a href="https://psyteachr.github.io/glossary/c#comment" target="_blank" class="glossary" title="Comments are text that R will not run as code. You can annotate .R files or chunks in R Markdown files with comments by prefacing each line of the comment with one or more hash symbols (#).">comments</a> and it’s important to highlight how useful these are. You can add comments inside R chunks with the hash symbol (<code>#</code>). R will ignore characters from the hash to the end of the line.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># important numbers</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(smalldata) <span class="co"># the total number of participants (number of rows)</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>pre <span class="ot">&lt;-</span> <span class="fu">mean</span>(smalldata<span class="sc">$</span>pre) <span class="co"># the mean of the pre column</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>post <span class="ot">&lt;-</span> <span class="fu">mean</span>(smalldata<span class="sc">$</span>post) <span class="co"># the mean of the post column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># important numbers</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(smalldata) <span class="co"># the total number of participants (number of rows)</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>pre <span class="ot">&lt;-</span> <span class="fu">mean</span>(smalldata<span class="sc">$</span>pre) <span class="co"># the mean of the pre column</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a>post <span class="ot">&lt;-</span> <span class="fu">mean</span>(smalldata<span class="sc">$</span>post) <span class="co"># the mean of the post column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It’s usually good practice to start a code chunk with a comment that explains what you’re doing there, especially if the code is not explained in the text of the report.</p>
-<p>If you name your objects clearly, you often don’t need to add clarifying comments. For example, if I’d named the three objects above <code>total_participants</code>, <code>mean_pre</code> and <code>mean_post</code>, I would omit the comments. It’s a bit of an art to comment your code well, but try to add comments as you’re working through this book - it will help consolidate your learning and when future you comes to review your code, you’ll thank past you for being so clear.</p>
+<p>If you name your objects clearly, you often don’t need to add clarifying comments. For example, if I’d named the three objects above <code>total_participants</code>, <code>mean_pre</code> and <code>mean_post</code>, I would omit the comments. It’s a bit of an art to comment your code well, but try to add comments as you’re working through this book – it will help consolidate your learning and when future you comes to review your code, you’ll thank past you for being so clear.</p>
 </section><section id="sec-md-images" class="level3" data-number="2.5.7"><h3 data-number="2.5.7" class="anchored" data-anchor-id="sec-md-images">
 <span class="header-section-number">2.5.7</span> Images</h3>
 <p>As the saying goes, a picture paints a thousand words, and sometimes you will want to communicate your data using visualisations.</p>
-<p>Create a code chunk to display a graph of the data in your document after the text we’ve written so far. We’ll use some code that you’ll learn more about in <a href="03-viz.html" class="quarto-xref"><span>Chapter 3</span></a> to make a simple bar chart that represents the sales data – focus on trying to follow how bits of the code map on to the plot that is created.</p>
+<p>Create a code chunk to display a graph of the data in your document after the text we’ve written so far. We’ll use some code that you’ll learn more about in <a href="03-viz.html" class="quarto-xref"><span>Chapter 3</span></a> to make a simple bar chart that represents the data – focus on trying to follow how bits of the code map on to the plot that is created.</p>
 <div class="try">
 <p>Add a new level-3 header called “Visualisation”. Copy and paste the code below into a new chunk. Run the code in your script to see the plot it creates and then render the file to see how it is displayed in your document.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> smalldata, </span>
-<span id="cb16-2"><a href="#cb16-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> pre, </span>
-<span id="cb16-3"><a href="#cb16-3"></a>                     <span class="at">y =</span> post, </span>
-<span id="cb16-4"><a href="#cb16-4"></a>                     <span class="at">color =</span> group)) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pre-test Score"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7"></a>       <span class="at">y =</span> <span class="st">"Post-test Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> smalldata, </span>
+<span id="cb17-2"><a href="#cb17-2"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> pre, </span>
+<span id="cb17-3"><a href="#cb17-3"></a>                     <span class="at">y =</span> post, </span>
+<span id="cb17-4"><a href="#cb17-4"></a>                     <span class="at">color =</span> group)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pre-test Score"</span>,</span>
+<span id="cb17-7"><a href="#cb17-7"></a>       <span class="at">y =</span> <span class="st">"Post-test Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/smalldata-fig-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship."></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 <p>You can also include images that you did not create in R using the markdown syntax for images. This is very similar to loading data in that you can either use an image that is stored on your computer, or via a url.</p>
-<p>The general syntax for adding an image in markdown is <code>![caption](url){#fig-name}</code>. You can leave the caption blank, but must include the square brackets. The curly brackets are optional, and allow you to reference the figure as <code>@fig-name</code> (change the “name” part for each new figure). You can also add other formatting options in the curly brackets, like an image width or CSS styles.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1"></a><span class="al">![The ReproRes logo](images/logos/logo.png)</span>{#fig-logo width="33%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored">
+<p>The general syntax for adding an image in markdown is <code>![caption](url){#fig-name}</code>. You can leave the caption blank, but must include the square brackets. The curly brackets are optional, and allow you to reference the figure as <code>@fig-name</code> (change the “name” part for each new figure). You can also add other formatting options in the curly brackets, like an image width or CSS styles. Alt-text for screen readers is an important thing to add to any image for accessibility.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1"></a><span class="al">![The ReproRes logo](images/logos/logo.png)</span>{#fig-logo width="33%" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-logo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A blue hexagon with the words 'Repro' and 'RES'">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/logos/logo.png" class="img-fluid figure-img" style="width:33.0%">
+<img src="images/logos/logo.png" class="img-fluid figure-img" style="width:33.0%" alt="A blue hexagon with the words 'Repro' and 'RES'">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.5: The ReproRes logo
 </figcaption></figure>
+</div>
+<p>If you have a lot of customisations, you may prefer to show images from a code block like this. Note that here, <code>width</code> and <code>height</code> are called <code>out-width</code> and <code>out-height</code> to distinguish them from a generated image’s rendered dimensions (controlled by <code>fig-width</code> and <code>fig-height</code>).</p>
+<div class="cell fig-cap-location-top" data-layout-align="right">
+<div class="sourceCode cell-code" id="cb19" data-cap-location="top"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="in">#| label: fig-psyteachr-logo</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="in">#| fig-alt: "The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="in">#| fig-align: right</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="in">#| out-width: "50%"</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="in">#| fig-link: https://psyteachr.github.io</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="in">#| fig-cap: "PsyTeachR is a group of psychologists at the University of Glasgow who create open source teaching materials."</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="in">#| fig-cap-location: top</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="in">knitr::include_graphics("images/logos/psyTeachR_logo.png", )</span></span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right" width="50%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: PsyTeachR is a group of psychologists at the University of Glasgow who create open source teaching materials.
+</figcaption></figure>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
@@ -1085,7 +1105,7 @@ Image Licenses
 <div class="try">
 <p>Add a new level 3 heading to your document, name the heading “Tables” and then create a new code chunk below this.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>smalldata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>smalldata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>First, let’s see what the table looks like if we don’t make any edits. Simply write the name of the table you want to display in the code chunk (in our case <code>smalldata</code>) and then render to see what it looks like.</p>
@@ -1105,11 +1125,87 @@ Image Licenses
 <p>This isn’t very pretty, but we can change the print style.</p>
 <div class="try">
 <p>Change the line <code>format: html</code> in the YAML header to the following.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1"></a><span class="co">---</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="co">  html:</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="co">    df-print: kable</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">---</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="co">  html:</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="co">    df-print: kable</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead><tr class="header">
+<th style="text-align: left;">id</th>
+<th style="text-align: left;">group</th>
+<th style="text-align: right;">pre</th>
+<th style="text-align: right;">post</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">S01</td>
+<td style="text-align: left;">control</td>
+<td style="text-align: right;">98.46606</td>
+<td style="text-align: right;">106.70508</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S02</td>
+<td style="text-align: left;">control</td>
+<td style="text-align: right;">104.39774</td>
+<td style="text-align: right;">89.09030</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S03</td>
+<td style="text-align: left;">control</td>
+<td style="text-align: right;">105.13377</td>
+<td style="text-align: right;">123.67230</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S04</td>
+<td style="text-align: left;">control</td>
+<td style="text-align: right;">92.42574</td>
+<td style="text-align: right;">70.70178</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S05</td>
+<td style="text-align: left;">control</td>
+<td style="text-align: right;">123.53268</td>
+<td style="text-align: right;">124.95526</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S06</td>
+<td style="text-align: left;">exp</td>
+<td style="text-align: right;">97.48676</td>
+<td style="text-align: right;">101.61697</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S07</td>
+<td style="text-align: left;">exp</td>
+<td style="text-align: right;">87.75594</td>
+<td style="text-align: right;">126.30077</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S08</td>
+<td style="text-align: left;">exp</td>
+<td style="text-align: right;">77.15375</td>
+<td style="text-align: right;">72.31229</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">S09</td>
+<td style="text-align: left;">exp</td>
+<td style="text-align: right;">97.00283</td>
+<td style="text-align: right;">108.80713</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">S10</td>
+<td style="text-align: left;">exp</td>
+<td style="text-align: right;">102.32338</td>
+<td style="text-align: right;">113.74732</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1129,10 +1225,10 @@ Warning
 <p>You can automatically number your figures and tables by giving them labels that start with <code>fig-</code> or <code>tbl-</code>, and referring to them in the text like <code>@fig-name</code> or <code>@tbl-name</code> (see <a href="https://quarto.org/docs/authoring/cross-references.html">quarto cross references</a> for more details).</p>
 <div class="try">
 <p>Add the following text above the chunk containing the table:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1"></a>All data are shown in @tbl-raw-data.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a>All data are shown in @tbl-raw-data.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Also, add the two commented lines below to the top of the code chunk:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb22-1"><a href="#cb22-1"></a><span class="co">#| label: tbl-raw-data</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="co">#| tbl-cap: The raw data from the study.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">#| label: tbl-raw-data</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">#| tbl-cap: The raw data from the study.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>These set the figure label so you can reference it in the document, and the table caption. The label must start with “tbl-” to automatically add it to the numbered list of tables. Now, when you render your document, tables will display in “kable” format, which looks much nicer.</p>
 <p>All data are shown in <a href="#tbl-raw-data2" class="quarto-xref">Table&nbsp;<span>2.1</span></a>.</p>
@@ -1231,7 +1327,7 @@ Advanced table customisation
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you’re feeling confident with what we have covered so far, you can also explore the <a href="https://gt.rstudio.com/">gt</a> package, which is complex, but allows you to create beautiful customised tables. <a href="https://bjnnowak.netlify.app/2021/10/04/r-beautiful-tables-with-gt-and-gtextras/">Riding tables with {gt} and {gtExtras}</a> is an outstanding tutorial.</p>
+<p>If you’re feeling confident with what we have covered so far, you can do even fancier formatting with the <pkg>flextable</pkg> package (see <a href="app-tables.html" class="quarto-xref"><span>Appendix J</span></a>).</p>
 </div>
 </div>
 </div>
@@ -1242,14 +1338,14 @@ Advanced table customisation
 <p>Let’s finish by tidying up the report and organising our code a bit better.</p>
 <p>You can set more default options for your document in the YAML header. The help pages for <a href="https://quarto.org/docs/computations/execution-options.html">quarto execution options</a> has a full list of options. However, the most useful and common options to change for the purposes of writing reports revolve around whether you want to show your code and the size of your images.</p>
 <p>Add the code below to your YAML header and then try changing each option from <code>false</code> to <code>true</code> and changing the numeric values then render the file again to see the difference it makes.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a href="#cb23-1"></a><span class="pp">---</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">     # whether to show code chunks</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # whether to show messages from your code</span></span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # whether to show warnings from your code</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="at">  </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">8</span><span class="co">    # figure width in inches (at 96 dpi)</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="at">  </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span><span class="co">   # figure height in inches (at 96 dpi)</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="#cb25-1"></a><span class="pp">---</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">     # whether to show code chunks</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="at">  </span><span class="fu">message</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # whether to show messages from your code</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co">  # whether to show warnings from your code</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a><span class="at">  </span><span class="fu">fig-width</span><span class="kw">:</span><span class="at"> </span><span class="dv">8</span><span class="co">    # figure width in inches (at 96 dpi)</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a><span class="at">  </span><span class="fu">fig-height</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span><span class="co">   # figure height in inches (at 96 dpi)</span></span>
+<span id="cb25-8"><a href="#cb25-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also override defaults in a code cell. See <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto code cells help</a> for a full list of options.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
@@ -1265,62 +1361,62 @@ Figure versus output dimensions
 <div class="callout-body-container callout-body">
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1"></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="in">#| label: fig-full-100</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="in">#| fig-width: 8</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a><span class="in">#| out-width: '100%'</span></span>
-<span id="cb24-6"><a href="#cb24-6"></a><span class="in">#| fig-cap: A plot with the default values</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a><span class="in">ggplot2::last_plot()</span></span>
-<span id="cb24-8"><a href="#cb24-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r}</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="in">#| label: fig-full-100</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="in">#| fig-cap: A plot with the default values</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-full-100" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figures/fig-full-100-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.6: A plot with the default values
+Figure&nbsp;2.7: A plot with the default values
 </figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1"></a><span class="in">```{r}</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="in">#| label: fig-half-100</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a><span class="in">#| fig-width: 4</span></span>
-<span id="cb25-4"><a href="#cb25-4"></a><span class="in">#| fig-height: 2.5</span></span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="in">#| out-width: '100%'</span></span>
-<span id="cb25-6"><a href="#cb25-6"></a><span class="in">#| fig-cap: The same plot with half the default width and height</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a></span>
-<span id="cb25-8"><a href="#cb25-8"></a><span class="in">ggplot2::last_plot()</span></span>
-<span id="cb25-9"><a href="#cb25-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="in">#| label: fig-half-100</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="in">#| fig-cap: The same plot with half the default width and height</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a></span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-half-100" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figures/fig-half-100-1.png" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.7: The same plot with half the default width and height
+Figure&nbsp;2.8: The same plot with half the default width and height
 </figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="in">#| label: fig-half-50</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="in">#| fig-width: 4</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="in">#| fig-height: 2.5</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="in">#| out-width: '50%'</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="in">#| fig-cap: The same plot as above at half the output width</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="in">ggplot2::last_plot()</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="in">#| label: fig-half-50</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="in">#| out-width: '50%'</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="in">#| fig-cap: The same plot as above at half the output width</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-half-50" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figures/fig-half-50-1.png" class="img-fluid figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.8: The same plot as above at half the output width
+Figure&nbsp;2.9: The same plot as above at half the output width
 </figcaption></figure>
 </div>
 </div>
@@ -1334,34 +1430,33 @@ Figure&nbsp;2.8: The same plot as above at half the output width
 <p>For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set <code>echo = FALSE</code> in your setup chunk to make hiding code the default but in the individual code chunk for your plot set <code>echo = TRUE</code>. Try this now and knit the file to see the results.</p>
 <p>Additionally, you can also override the default image display size or dimensions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="in">#| label: fig-change-height</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="in">#| fig-width: 10</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a><span class="in">ggplot(data = smalldata, </span></span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="in">       mapping = aes(x = pre, </span></span>
-<span id="cb27-7"><a href="#cb27-7"></a><span class="in">                     y = post, </span></span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="in">                     color = group)) +</span></span>
-<span id="cb27-9"><a href="#cb27-9"></a><span class="in">  geom_point() +</span></span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="in">  labs(x = "Pre-test Score",</span></span>
-<span id="cb27-11"><a href="#cb27-11"></a><span class="in">       y = "Post-test Score",</span></span>
-<span id="cb27-12"><a href="#cb27-12"></a><span class="in">       title = "Relationship between pre- and post-test by group")</span></span>
-<span id="cb27-13"><a href="#cb27-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1"></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="in">#| label: fig-change-height</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="in">ggplot(data = smalldata, </span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="in">       mapping = aes(x = pre, </span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="in">                     y = post, </span></span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="in">                     color = group)) +</span></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="in">  geom_point() +</span></span>
+<span id="cb29-10"><a href="#cb29-10"></a><span class="in">  labs(x = "Pre-test Score",</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="in">       y = "Post-test Score",</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="in">       title = "Relationship between pre- and post-test by group")</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-change-height" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="images/figures/fig-change-height-1.png" id="fig-change-height" class="img-fluid figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.9
+Figure&nbsp;2.10
 </figcaption></figure>
 </div>
 </div>
 </div>
 </section><section id="sec-yaml" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="sec-yaml">
 <span class="header-section-number">2.6.3</span> YAML options</h3>
-<p><a href="https://quarto.org/docs/reference/formats/html.html">Quarto HTML reference</a></p>
-<p>Finally, the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header is the bit at the very top of your quarto document. You can set several options here as well.</p>
+<p>Finally, the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header is the bit at the very top of your quarto document. You can set several options here as well. See the <a href="https://quarto.org/docs/reference/formats/html.html">quarto HTML reference</a> for more options.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1373,13 +1468,13 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Update the format section. Try changing the values from <code>false</code> to <code>true</code> to see what the options do.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1"></a><span class="co">---</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="an">format:</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="co">  html:</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="co">    df-print: paged</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="co">    theme: superhero</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="co">    toc: true</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">---</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="an">format:</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a><span class="co">  html:</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co">    df-print: paged</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="co">    theme: superhero</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="co">    toc: true</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <p>The <code>df-print: paged</code> option prints data frames using <code><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">rmarkdown::paged_table()</a></code> automatically. You can use <code>df_print: kable</code> to default to the simple kable style.</p>
@@ -1389,7 +1484,7 @@ Note
 <img src="images/reports/bootswatch.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootswatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10: Light themes in versions 3 and 4.
+Figure&nbsp;2.11: Light themes in versions 3 and 4.
 </figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1411,18 +1506,18 @@ YAML formatting
 </div>
 </section><section id="sec-toc" class="level3" data-number="2.6.4"><h3 data-number="2.6.4" class="anchored" data-anchor-id="sec-toc">
 <span class="header-section-number">2.6.4</span> Table of Contents</h3>
-<p>The table of contents is created by setting <code>toc: true</code>. This will use the markdown header structure to create the table of contents. The option <code>toc-depth: 3</code> means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: <code>###</code>), and <code>toc-expand</code> sets wether the sections are expanded or collapsed.</p>
+<p>The table of contents is created by setting <code>toc: true</code>. This will use the markdown header structure to create the table of contents. The option <code>toc-depth: 3</code> means that the table of contents will only display headers up to level 3 (i.e., those that start with three hashes: <code>###</code>), and <code>toc-expand</code> sets whether the sections are expanded or collapsed.</p>
 <div class="try">
 <p>Try changing the values of the toc settings and re-render.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="#cb30-1"></a><span class="pp">---</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="at">    </span><span class="fu">toc-expand</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb30-7"><a href="#cb30-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="#cb32-1"></a><span class="pp">---</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="at">    </span><span class="fu">toc-expand</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add <code>{-}</code> after a header title to remove it from the table of contents, e.g.,</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">## Basic Markdown {-}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">## Basic Markdown {-}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1441,32 +1536,27 @@ Caution
 <span class="header-section-number">2.6.5</span> Formats</h3>
 <p>So far we’ve just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg><span class="citation" data-cites="R-tinytex">(<a href="02-reports.html#ref-R-tinytex" role="doc-biblioref">Xie, 2022</a>)</span> and run the following code in the console (do <strong>not</strong> add this to your Rmd file):</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Run in the console</strong></pre>
-</div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
-<span id="cb32-2"><a href="#cb32-2"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once you’ve done this, update your YAML heading to add a <code>pdf_document</code> section and knit a PDF document. The options for PDFs are more limited than for HTML documents, so if you just replace <code>html</code> with <code>pdf</code>, you may need to remove some options if you get an error that looks like “Functions that produce HTML output found in document targeting PDF output.”</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">---</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a><span class="an">format:</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="co">  pdf:</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a><span class="co">    df-print: kable</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a><span class="co">    toc: TRUE</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1"></a><span class="co">---</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="an">format:</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a><span class="co">  pdf:</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a><span class="co">    df-print: kable</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a><span class="co">    toc: TRUE</span></span>
+<span id="cb35-6"><a href="#cb35-6"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>There are many different formats you can render your document to, from HTML and PDF, to Word, Open Office, and ePub. You can also create websites, books, and presentations with a few small changes. See the <a href="https://quarto.org/docs/output-formats/all-formats.html">quarto documentation</a> for more information.</p>
 </section></section><section id="sec-bibliography" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="sec-bibliography">
 <span class="header-section-number">2.7</span> Bibliography</h2>
 <p>There are several ways to do in-text references and automatically generate a <a href="https://quarto.org/docs/authoring/citations.html">bibliography</a> in quarto. Quarto files need to link to a BibTex or JSON file (a plain text file with references in a specific format) that contains the references you need to cite. You specify the name of this file in the YAML header, like <code>bibliography: refs.bib</code> and cite references in text using an at symbol and a shortname, like <code>[@tidyverse]</code>. You can also include a Citation Style Language (.csl) file to format your references in, for example, APA style.</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">---</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="an">format:</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="co">  html:</span></span>
-<span id="cb34-4"><a href="#cb34-4"></a><span class="co">    toc: true</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a><span class="an">bibliography:</span><span class="co"> refs.bib</span></span>
-<span id="cb34-6"><a href="#cb34-6"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
-<span id="cb34-7"><a href="#cb34-7"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1"></a><span class="co">---</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="an">format:</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="co">  html:</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a><span class="co">    toc: true</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a><span class="an">bibliography:</span><span class="co"> refs.bib</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="an">csl:</span><span class="co"> apa.csl</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="converting-from-reference-software" class="level3" data-number="2.7.1"><h3 data-number="2.7.1" class="anchored" data-anchor-id="converting-from-reference-software">
 <span class="header-section-number">2.7.1</span> Converting from reference software</h3>
 <p>Most reference software like EndNote or Zotero has exporting options that can export to BibTeX format. You just need to check the shortnames in the resulting file.</p>
@@ -1508,23 +1598,23 @@ Warning
 </div>
 </div>
 <p>The exported file should look like this:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb35-1"><a href="#cb35-1"></a></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
-<span id="cb35-3"><a href="#cb35-3"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
-<span id="cb35-4"><a href="#cb35-4"></a>    <span class="dt">volume</span> = {7},</span>
-<span id="cb35-5"><a href="#cb35-5"></a>    <span class="dt">issn</span> = {2474-7394},</span>
-<span id="cb35-6"><a href="#cb35-6"></a>    <span class="dt">shorttitle</span> = {Easing {Into} {Open} {Science}},</span>
-<span id="cb35-7"><a href="#cb35-7"></a>    <span class="dt">url</span> = {https://doi.org/10.1525/collabra.18684},</span>
-<span id="cb35-8"><a href="#cb35-8"></a>    <span class="dt">doi</span> = {10.1525/collabra.18684},</span>
-<span id="cb35-9"><a href="#cb35-9"></a>    <span class="dt">abstract</span> = {This article provides a roadmap to assist graduate students and their advisors to engage in open science practices. We suggest eight open science practices that novice graduate students could begin adopting today. The topics we cover include journal clubs, project workflow, preprints, reproducible code, data sharing, transparent writing, preregistration, and registered reports. To address concerns about not knowing how to engage in open science practices, we provide a difficulty rating of each behavior (easy, medium, difficult), present them in order of suggested adoption, and follow the format of what, why, how, and worries. We give graduate students ideas on how to approach conversations with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. We emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined.},</span>
-<span id="cb35-10"><a href="#cb35-10"></a>    <span class="dt">number</span> = {1},</span>
-<span id="cb35-11"><a href="#cb35-11"></a>    <span class="dt">urldate</span> = {2022-09-07},</span>
-<span id="cb35-12"><a href="#cb35-12"></a>    <span class="dt">journal</span> = {Collabra: Psychology},</span>
-<span id="cb35-13"><a href="#cb35-13"></a>    <span class="dt">author</span> = {Kathawalla, Ummul-Kiram and Silverstein, Priya and Syed, Moin},</span>
-<span id="cb35-14"><a href="#cb35-14"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
-<span id="cb35-15"><a href="#cb35-15"></a>    <span class="dt">year</span> = {2021},</span>
-<span id="cb35-16"><a href="#cb35-16"></a>    <span class="dt">pages</span> = {18684},</span>
-<span id="cb35-17"><a href="#cb35-17"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bib number-lines code-with-copy"><code class="sourceCode bibtex"><span id="cb37-1"><a href="#cb37-1"></a></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="va">@article</span>{<span class="ot">kathawalla_easing_2021</span>,</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    <span class="dt">title</span> = {Easing {Into} {Open} {Science}: {A} {Guide} for {Graduate} {Students} and {Their} {Advisors}},</span>
+<span id="cb37-4"><a href="#cb37-4"></a>    <span class="dt">volume</span> = {7},</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="dt">issn</span> = {2474-7394},</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    <span class="dt">shorttitle</span> = {Easing {Into} {Open} {Science}},</span>
+<span id="cb37-7"><a href="#cb37-7"></a>    <span class="dt">url</span> = {https://doi.org/10.1525/collabra.18684},</span>
+<span id="cb37-8"><a href="#cb37-8"></a>    <span class="dt">doi</span> = {10.1525/collabra.18684},</span>
+<span id="cb37-9"><a href="#cb37-9"></a>    <span class="dt">abstract</span> = {This article provides a roadmap to assist graduate students and their advisors to engage in open science practices. We suggest eight open science practices that novice graduate students could begin adopting today. The topics we cover include journal clubs, project workflow, preprints, reproducible code, data sharing, transparent writing, preregistration, and registered reports. To address concerns about not knowing how to engage in open science practices, we provide a difficulty rating of each behavior (easy, medium, difficult), present them in order of suggested adoption, and follow the format of what, why, how, and worries. We give graduate students ideas on how to approach conversations with their advisors/collaborators, ideas on how to integrate open science practices within the graduate school framework, and specific resources on how to engage with each behavior. We emphasize that engaging in open science behaviors need not be an all or nothing approach, but rather graduate students can engage with any number of the behaviors outlined.},</span>
+<span id="cb37-10"><a href="#cb37-10"></a>    <span class="dt">number</span> = {1},</span>
+<span id="cb37-11"><a href="#cb37-11"></a>    <span class="dt">urldate</span> = {2022-09-07},</span>
+<span id="cb37-12"><a href="#cb37-12"></a>    <span class="dt">journal</span> = {Collabra: Psychology},</span>
+<span id="cb37-13"><a href="#cb37-13"></a>    <span class="dt">author</span> = {Kathawalla, Ummul-Kiram and Silverstein, Priya and Syed, Moin},</span>
+<span id="cb37-14"><a href="#cb37-14"></a>    <span class="dt">month</span> = <span class="st">jan</span>,</span>
+<span id="cb37-15"><a href="#cb37-15"></a>    <span class="dt">year</span> = {2021},</span>
+<span id="cb37-16"><a href="#cb37-16"></a>    <span class="dt">pages</span> = {18684},</span>
+<span id="cb37-17"><a href="#cb37-17"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="creating-a-bibtex-file" class="level3" data-number="2.7.2"><h3 data-number="2.7.2" class="anchored" data-anchor-id="creating-a-bibtex-file">
 <span class="header-section-number">2.7.2</span> Creating a BibTeX File</h3>
 <p>You can also add references manually.</p>
@@ -1532,7 +1622,7 @@ Warning
 <p>In RStudio, go to <strong><code>File</code></strong> &gt; <strong><code>New File...</code></strong> &gt; <strong><code>Text File</code></strong> and save the file as “refs.bib”.</p>
 <p>Add the line <code>bibliography: refs.bib</code> to your YAML header.</p>
 </div>
-</section><section id="references" class="level3" data-number="2.7.3"><h3 data-number="2.7.3" class="anchored" data-anchor-id="references">
+</section><section id="sec-add-refs" class="level3" data-number="2.7.3"><h3 data-number="2.7.3" class="anchored" data-anchor-id="sec-add-refs">
 <span class="header-section-number">2.7.3</span> Adding references</h3>
 <p>You can add references to a journal article in the following format:</p>
 <pre><code>@article{shortname,
@@ -1548,7 +1638,7 @@ Warning
 <p>See <a href="https://www.bibtex.com/g/bibtex-format/">A complete guide to the BibTeX format</a> for instructions on citing books, technical reports, and more.</p>
 <p>You can get the reference for an R package using the functions <code><a href="https://rdrr.io/r/utils/citation.html">citation()</a></code> and <code><a href="https://rdrr.io/r/utils/toLatex.html">toBibtex()</a></code>. You can paste the bibtex entry into your bibliography.bib file. Make sure to add a short name (e.g., “ggplot2”) before the first comma to refer to the reference.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>) <span class="sc">%&gt;%</span> <span class="fu">toBibtex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">citation</span>(<span class="at">package=</span><span class="st">"ggplot2"</span>) <span class="sc">|&gt;</span> <span class="fu">toBibtex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>@Book{,
   author = {Hadley Wickham},
@@ -1572,10 +1662,10 @@ Warning
 </section><section id="citations" class="level3" data-number="2.7.4"><h3 data-number="2.7.4" class="anchored" data-anchor-id="citations">
 <span class="header-section-number">2.7.4</span> Citing references</h3>
 <p>You can cite references in text like this:</p>
-<pre><code>This tutorial uses several R packages [@tidyverse;@rmarkdown].</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1"></a>This tutorial uses several R packages <span class="co">[</span><span class="ot">@tidyverse;@rmarkdown</span><span class="co">]</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This tutorial uses several R packages <span class="citation" data-cites="tidyverse rmarkdown">(<a href="02-reports.html#ref-rmarkdown" role="doc-biblioref">Allaire et al., 2018</a>; <a href="02-reports.html#ref-tidyverse" role="doc-biblioref">Wickham, 2017</a>)</span>.</p>
 <p>Put a minus in front of the @ if you just want the year:</p>
-<pre><code>Kathawalla and colleagues [-@kathawalla_easing_2021] explain how to introduce open research practices into your postgraduate studies.</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1"></a>Kathawalla and colleagues <span class="co">[</span><span class="ot">-@kathawalla_easing_2021</span><span class="co">]</span> explain how to introduce open research practices into your postgraduate studies.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Kathawalla and colleagues <span class="citation" data-cites="kathawalla_easing_2021">(<a href="02-reports.html#ref-kathawalla_easing_2021" role="doc-biblioref">2021</a>)</span> explain how to introduce open research practices into your postgraduate studies.</p>
 </section><section id="uncited-references" class="level3" data-number="2.7.5"><h3 data-number="2.7.5" class="anchored" data-anchor-id="uncited-references">
 <span class="header-section-number">2.7.5</span> Uncited references</h3>
@@ -1587,20 +1677,21 @@ Warning
 </section><section id="citation-styles" class="level3" data-number="2.7.6"><h3 data-number="2.7.6" class="anchored" data-anchor-id="citation-styles">
 <span class="header-section-number">2.7.6</span> Citation Styles</h3>
 <p>You can search a <a href="https://www.zotero.org/styles">list of style files</a> for various journals and download a file that will format your bibliography for a specific journal’s style. You’ll need to add the line <code>csl: filename.csl</code> to your YAML header.</p>
+<p>Download the <a href="include/apa.csl" download="apa.csl">apa.csl</a> file for APA style citations.</p>
 <div class="try">
 <p>Add some citations to your refs.bib file, reference them in your text, and render your manuscript to see the automatically generated reference section. Try a few different citation style files.</p>
 </div>
 </section><section id="reference-section" class="level3" data-number="2.7.7"><h3 data-number="2.7.7" class="anchored" data-anchor-id="reference-section">
 <span class="header-section-number">2.7.7</span> Reference Section</h3>
 <p>By default, the reference section is added to the end of the document. If you want to change the position (e.g., to add figures and tables after the references), include the following where you want the references:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1"></a>::: {#refs}</span>
-<span id="cb43-2"><a href="#cb43-2"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1"></a>::: {#refs}</span>
+<span id="cb45-2"><a href="#cb45-2"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="try">
 <p>Add in-text citations and a reference list to your report.</p>
 </div>
 </section></section><section id="sec-reports-summary" class="level2" data-number="2.8"><h2 data-number="2.8" class="anchored" data-anchor-id="sec-reports-summary">
 <span class="header-section-number">2.8</span> Summary</h2>
-<p>This chapter has covered a lot but hopefully now you have a much better idea of what quarto is able to do. Whilst working in quarto and markdown takes longer in the initial set-up stage, once you have a fully reproducible report you can plug in new data each week or month and simply render, reducing duplication of effort, and the human error that comes with it.</p>
+<p>This chapter has covered a lot, but hopefully now you have a much better idea of what quarto is able to do. Whilst working in quarto and markdown takes longer in the initial set-up stage, once you have a fully reproducible report you can plug in new data each week or month and simply render, reducing duplication of effort, and the human error that comes with it.</p>
 <p>You can access a <a href="demos/02-reports.qmd" download="02-reports.qmd">working quarto file</a> with the code from the example above to compare to your own code.</p>
 <p>As you continue to work through the book you will learn how to wrangle and analyse your data and how to use quarto to present it. We’ll slowly build on the available customisation options so over the course of next few weeks, you’ll find your quarto reports start to look more polished and professional.</p>
 </section><section id="sec-exercises-reports" class="level2" data-number="2.9"><h2 data-number="2.9" class="anchored" data-anchor-id="sec-exercises-reports">
@@ -1615,14 +1706,14 @@ Warning
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb44-1"><a href="#cb44-1"></a>---</span>
-<span id="cb44-2"><a href="#cb44-2"></a>title: "CV"</span>
-<span id="cb44-3"><a href="#cb44-3"></a>author: "Me"</span>
-<span id="cb44-4"><a href="#cb44-4"></a>format:</span>
-<span id="cb44-5"><a href="#cb44-5"></a>  html:</span>
-<span id="cb44-6"><a href="#cb44-6"></a>    df-print: kable</span>
-<span id="cb44-7"><a href="#cb44-7"></a>    theme: cosmo</span>
-<span id="cb44-8"><a href="#cb44-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb46-1"><a href="#cb46-1"></a>---</span>
+<span id="cb46-2"><a href="#cb46-2"></a>title: "CV"</span>
+<span id="cb46-3"><a href="#cb46-3"></a>author: "Me"</span>
+<span id="cb46-4"><a href="#cb46-4"></a>format:</span>
+<span id="cb46-5"><a href="#cb46-5"></a>  html:</span>
+<span id="cb46-6"><a href="#cb46-6"></a>    df-print: kable</span>
+<span id="cb46-7"><a href="#cb46-7"></a>    theme: cosmo</span>
+<span id="cb46-8"><a href="#cb46-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="markdown-practice" class="level3" data-number="2.9.3"><h3 data-number="2.9.3" class="anchored" data-anchor-id="markdown-practice">
 <span class="header-section-number">2.9.3</span> Markdown Practice</h3>
@@ -1641,15 +1732,15 @@ and teaching computational skills.
 <span class="header-section-number">2.9.4</span> Add a Table</h3>
 <p>Make a subheading titled “Education” and use the following code to load a small table of your education (<a href="#sec-code-chunks" class="quarto-xref"><span>Section 2.4.5</span></a>). Edit it to be relevant to you (you can change the categories entirely if you want).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href="#cb46-1"></a><span class="in">```{r}</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a><span class="in">tibble::tribble(</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a><span class="in">  ~degree, ~topic, ~school, ~year,</span></span>
-<span id="cb46-4"><a href="#cb46-4"></a><span class="in">  "BSc", "BioPsych/AnthroZoo", "University of Michigan", "1998",</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="in">  "MSc", "Biology", "University of Michigan", "2000",</span></span>
-<span id="cb46-6"><a href="#cb46-6"></a><span class="in">  "GradCert", "Women's Studies", "University of Michigan", "2000",</span></span>
-<span id="cb46-7"><a href="#cb46-7"></a><span class="in">  "PhD", "Psychology", "McMaster University", "2004"</span></span>
-<span id="cb46-8"><a href="#cb46-8"></a><span class="in">)</span></span>
-<span id="cb46-9"><a href="#cb46-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb48-1"><a href="#cb48-1"></a><span class="in">```{r}</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="in">tibble::tribble(</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="in">  ~degree, ~topic, ~school, ~year,</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="in">  "BSc", "BioPsych/AnthroZoo", "University of Michigan", "1998",</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a><span class="in">  "MSc", "Biology", "University of Michigan", "2000",</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="in">  "GradCert", "Women's Studies", "University of Michigan", "2000",</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="in">  "PhD", "Psychology", "McMaster University", "2004"</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="in">)</span></span>
+<span id="cb48-9"><a href="#cb48-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1697,33 +1788,33 @@ and teaching computational skills.
 Solution
 </button>
 <p>You can set the execution default to <code>echo: false</code> in the YAML header at the top of the script.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb47-1"><a href="#cb47-1"></a>---</span>
-<span id="cb47-2"><a href="#cb47-2"></a>execute:</span>
-<span id="cb47-3"><a href="#cb47-3"></a>  echo: false</span>
-<span id="cb47-4"><a href="#cb47-4"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>---</span>
+<span id="cb49-2"><a href="#cb49-2"></a>execute:</span>
+<span id="cb49-3"><a href="#cb49-3"></a>  echo: false</span>
+<span id="cb49-4"><a href="#cb49-4"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To set visibility for a specific code chunk, put <code>#| echo: false</code> at the top of the code chunk.</p>
 </div>
 </section><section id="add-an-image" class="level3" data-number="2.9.6"><h3 data-number="2.9.6" class="anchored" data-anchor-id="add-an-image">
 <span class="header-section-number">2.9.6</span> Add an Image</h3>
-<p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>).</p>
+<p>Add an image of anything relevant (<a href="#sec-md-images" class="quarto-xref"><span>Section 2.5.7</span></a>). Make sure to add alt-text.</p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
 <p>You can add an image from the web using its URL:</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb48-1"><a href="#cb48-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb50-1"><a href="#cb50-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>![ReproRes](images/logos/logo.png){width='200px'}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb51-1"><a href="#cb51-1"></a>![ReproRes](images/logos/logo.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
 <span class="header-section-number">2.9.7</span> Use Inline R</h3>
 <p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2025-08-11.</p>
+<p>This CV was created on 2025-09-01.</p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
 <span class="header-section-number">2.9.8</span> Render</h3>
@@ -1733,6 +1824,7 @@ Solution
 Solution
 </button>
 <pre><code>Click on the render button or run the following code in the console. (Do not put it the script!)
+
 
 
 
@@ -1757,7 +1849,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make sure any files you reference are inside your project folder, and <strong>always</strong> use <a href="https://psyteachr.github.io/glossary/r#relative-path" target="_blank" class="glossary" title="The location of a file in relation to the working directory.">relative paths</a> and not <a href="https://psyteachr.github.io/glossary/a#absolute-path" target="_blank" class="glossary" title="A file path that starts with / and is not appended to the working directory">absolute paths</a> when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check that your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.</p>
+<p>Make sure any files you reference are inside your project folder, and <strong>always</strong> use <a href="https://psyteachr.github.io/glossary/r#relative-path" target="_blank" class="glossary" title="The location of a file in relation to the working directory.">relative paths</a> and not <a href="https://psyteachr.github.io/glossary/a#absolute-path" target="_blank" class="glossary" title="A file path that starts with / and is not appended to the working directory">absolute paths</a> when you refer to images or other files in your code. The use of absolute paths is a major source of irreproducibility in published code. The best way to double-check your code for reproducibility problems is to share your entire project directory with a friend and see if they can render your file.</p>
 </div>
 </div>
 </section></section><section id="sec-glossary-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-reports">Glossary</h2>
@@ -1846,7 +1938,7 @@ Important
 <li>
 <a href="https://speakerdeck.com/jennybc/how-to-name-files">How to name files</a> by Jenny Bryan</li>
 <li>
-<a href="https://gt.rstudio.com/">gt</a> for customised tables</li>
+<a href="https://ardata-fr.github.io/flextable-book/">flextable</a> for customised tables</li>
 </ul></section><section id="sec-references-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-references-reports">References</h2>
 
 
@@ -1876,11 +1968,11 @@ open science: A guide for graduate students and their advisors.
 <em>Collabra: Psychology</em>, <em>7</em>(1). <a href="https://doi.org/10.1525/collabra.18684">https://doi.org/10.1525/collabra.18684</a>
 </div>
 <div id="ref-lakens_caldwell_2019" class="csl-entry" role="listitem">
-Lakens, Daniel, &amp; Caldwell, A. R. (2019). <em>Simulation-based
+Lakens, D., &amp; Caldwell, A. R. (2019). <em>Simulation-based
 power-analysis for factorial ANOVA designs</em>. <a href="https://doi.org/10.31234/osf.io/baxsf">https://doi.org/10.31234/osf.io/baxsf</a>
 </div>
 <div id="ref-TOSTtutorial" class="csl-entry" role="listitem">
-Lakens, Daniël, Scheel, A. M., &amp; Isager, P. M. (2018). Equivalence
+Lakens, D., Scheel, A. M., &amp; Isager, P. M. (2018). Equivalence
 testing for psychological research: A tutorial. <em>Advances in Methods
 and Practices in Psychological Science</em>, <em>1</em>(2), 259–269. <a href="https://doi.org/10.1177/2515245918770963">https://doi.org/10.1177/2515245918770963</a>
 </div>

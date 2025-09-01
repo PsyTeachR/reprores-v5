@@ -334,14 +334,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -450,7 +456,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
 <li>other (you need to load each package to use these)
 <ul>
-<li>ggthemes:: <code>ggthemes::theme_gdocs()</code>
+<li>ggthemes:: <code><a href="http://jrnold.github.io/ggthemes/reference/theme_gdocs.html">ggthemes::theme_gdocs()</a></code>
 </li>
 <li>patchwork:: <code><a href="https://patchwork.data-imaginist.com/reference/plot_layout.html">patchwork::plot_layout()</a></code>
 </li>
@@ -828,7 +834,7 @@ Define objects before you use them
 <span class="header-section-number">3.2.2</span> Plot setup</h3>
 <section id="default-theme" class="level4" data-number="3.2.2.1"><h4 data-number="3.2.2.1" class="anchored" data-anchor-id="default-theme">
 <span class="header-section-number">3.2.2.1</span> Default theme</h4>
-<p>Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you’ve loaded the tidyverse package, add the following code and run it. You’ll learn more ways to customise your theme in <a href="#sec-themes" class="quarto-xref"><span>Section 3.2.3.4</span></a> and <a href="app-styling.html#sec-themes-appendix" class="quarto-xref"><span>Section J.3</span></a>.</p>
+<p>Plots in this book use the black-and-white theme, not the default grey theme, so set your default theme to the same so your plots will look like the examples below. At the top of your script, in the setup chunk after you’ve loaded the tidyverse package, add the following code and run it. You’ll learn more ways to customise your theme in <a href="#sec-themes" class="quarto-xref"><span>Section 3.2.3.4</span></a> and <a href="app-styling.html#sec-themes-appendix" class="quarto-xref"><span>Section K.3</span></a>.</p>
 <div class="try">
 <p>Add this code to your setup chunk. It needs to run before you make any plot.</p>
 <div class="cell">
@@ -993,7 +999,7 @@ Figure&nbsp;3.3: Combining plots with patchwork.
 <p>There are nearly endless ways to customise ggplots. We’ll cover a few of the basic customisations here.</p>
 <section id="styling-geoms" class="level4" data-number="3.2.3.1"><h4 data-number="3.2.3.1" class="anchored" data-anchor-id="styling-geoms">
 <span class="header-section-number">3.2.3.1</span> Styling geoms</h4>
-<p>We should definitely put the line in front of the points, but the points are still a bit dark. If you want to change the overall style of a geom, you can set the arguments <code>colour</code>, <code>alpha</code>, <code>shape</code>, <code>size</code> and <code>linetype</code> inside the geom function. There are many different values that you can set these to; <a href="app-styling.html" class="quarto-xref"><span>Appendix J</span></a> gives details of these.</p>
+<p>We should definitely put the line in front of the points, but the points are still a bit dark. If you want to change the overall style of a geom, you can set the arguments <code>colour</code>, <code>alpha</code>, <code>shape</code>, <code>size</code> and <code>linetype</code> inside the geom function. There are many different values that you can set these to; <a href="app-styling.html" class="quarto-xref"><span>Appendix K</span></a> gives details of these.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">ggplot</span>(survey_data, <span class="fu">aes</span>(<span class="at">x =</span> wait_time, <span class="at">y =</span> call_time)) <span class="sc">+</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"dodgerblue"</span>, </span>
@@ -1029,7 +1035,7 @@ Setting aesthetics overall versus by category
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This method is only for changing the style of <em>all</em> the shapes made with that geom. If you want, for example, points to have different colours depending on which issue category they are from, you set the argument <code>colour = issue_category</code> inside the <code>aes()</code> function for the mapping. You can customise the colours used with <code>scale_</code> functions, which you will learn about below and in <a href="app-styling.html" class="quarto-xref"><span>Appendix J</span></a>.</p>
+<p>This method is only for changing the style of <em>all</em> the shapes made with that geom. If you want, for example, points to have different colours depending on which issue category they are from, you set the argument <code>colour = issue_category</code> inside the <code>aes()</code> function for the mapping. You can customise the colours used with <code>scale_</code> functions, which you will learn about below and in <a href="app-styling.html" class="quarto-xref"><span>Appendix K</span></a>.</p>
 </div>
 </div>
 </section><section id="format-axes" class="level4" data-number="3.2.3.2"><h4 data-number="3.2.3.2" class="anchored" data-anchor-id="format-axes">

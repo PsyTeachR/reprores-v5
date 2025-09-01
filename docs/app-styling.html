@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
-<title>Appendix J — Styling Plots – Data Skills for Reproducible Research</title>
+<title>Appendix K — Styling Plots – Data Skills for Reproducible Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -62,7 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./app-webpage.html" rel="next">
-<link href="./app-dates.html" rel="prev">
+<link href="./app-tables.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -117,7 +117,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-styling.html"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-styling.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -314,14 +314,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -337,33 +343,33 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
    
   <ul>
 <li>
-<a href="#aesthetics" id="toc-aesthetics" class="nav-link active" data-scroll-target="#aesthetics"><span class="header-section-number">J.1</span> Aesthetics</a>
+<a href="#aesthetics" id="toc-aesthetics" class="nav-link active" data-scroll-target="#aesthetics"><span class="header-section-number">K.1</span> Aesthetics</a>
   <ul class="collapse">
-<li><a href="#colourfill" id="toc-colourfill" class="nav-link" data-scroll-target="#colourfill"><span class="header-section-number">J.1.1</span> Colour/Fill</a></li>
-  <li><a href="#alpha" id="toc-alpha" class="nav-link" data-scroll-target="#alpha"><span class="header-section-number">J.1.2</span> Alpha</a></li>
-  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape"><span class="header-section-number">J.1.3</span> Shape</a></li>
-  <li><a href="#linetype" id="toc-linetype" class="nav-link" data-scroll-target="#linetype"><span class="header-section-number">J.1.4</span> Linetype</a></li>
+<li><a href="#colourfill" id="toc-colourfill" class="nav-link" data-scroll-target="#colourfill"><span class="header-section-number">K.1.1</span> Colour/Fill</a></li>
+  <li><a href="#alpha" id="toc-alpha" class="nav-link" data-scroll-target="#alpha"><span class="header-section-number">K.1.2</span> Alpha</a></li>
+  <li><a href="#shape" id="toc-shape" class="nav-link" data-scroll-target="#shape"><span class="header-section-number">K.1.3</span> Shape</a></li>
+  <li><a href="#linetype" id="toc-linetype" class="nav-link" data-scroll-target="#linetype"><span class="header-section-number">K.1.4</span> Linetype</a></li>
   </ul>
 </li>
   <li>
-<a href="#palettes" id="toc-palettes" class="nav-link" data-scroll-target="#palettes"><span class="header-section-number">J.2</span> Palettes</a>
+<a href="#palettes" id="toc-palettes" class="nav-link" data-scroll-target="#palettes"><span class="header-section-number">K.2</span> Palettes</a>
   <ul class="collapse">
-<li><a href="#viridis-palettes" id="toc-viridis-palettes" class="nav-link" data-scroll-target="#viridis-palettes"><span class="header-section-number">J.2.1</span> Viridis Palettes</a></li>
-  <li><a href="#brewer-palettes" id="toc-brewer-palettes" class="nav-link" data-scroll-target="#brewer-palettes"><span class="header-section-number">J.2.2</span> Brewer Palettes</a></li>
+<li><a href="#viridis-palettes" id="toc-viridis-palettes" class="nav-link" data-scroll-target="#viridis-palettes"><span class="header-section-number">K.2.1</span> Viridis Palettes</a></li>
+  <li><a href="#brewer-palettes" id="toc-brewer-palettes" class="nav-link" data-scroll-target="#brewer-palettes"><span class="header-section-number">K.2.2</span> Brewer Palettes</a></li>
   </ul>
 </li>
   <li>
-<a href="#sec-themes-appendix" id="toc-sec-themes-appendix" class="nav-link" data-scroll-target="#sec-themes-appendix"><span class="header-section-number">J.3</span> Themes</a>
+<a href="#sec-themes-appendix" id="toc-sec-themes-appendix" class="nav-link" data-scroll-target="#sec-themes-appendix"><span class="header-section-number">K.3</span> Themes</a>
   <ul class="collapse">
-<li><a href="#ggthemes" id="toc-ggthemes" class="nav-link" data-scroll-target="#ggthemes"><span class="header-section-number">J.3.1</span> ggthemes</a></li>
-  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">J.3.2</span> Fonts</a></li>
+<li><a href="#ggthemes" id="toc-ggthemes" class="nav-link" data-scroll-target="#ggthemes"><span class="header-section-number">K.3.1</span> ggthemes</a></li>
+  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">K.3.2</span> Fonts</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/app-styling.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/app-styling.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-styling.html"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Styling Plots</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-plotstyle" class="quarto-section-identifier">Appendix J — Styling Plots</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-styling.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-plotstyle" class="quarto-section-identifier">Appendix K — Styling Plots</span></h1>
 </div>
 
 
@@ -382,10 +388,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <pre><code>Error in library(ggthemes): there is no package called 'ggthemes'</code></pre>
 </div>
 </div>
-<section id="aesthetics" class="level2" data-number="J.1"><h2 data-number="J.1" class="anchored" data-anchor-id="aesthetics">
-<span class="header-section-number">J.1</span> Aesthetics</h2>
-<section id="colourfill" class="level3" data-number="J.1.1"><h3 data-number="J.1.1" class="anchored" data-anchor-id="colourfill">
-<span class="header-section-number">J.1.1</span> Colour/Fill</h3>
+<section id="aesthetics" class="level2" data-number="K.1"><h2 data-number="K.1" class="anchored" data-anchor-id="aesthetics">
+<span class="header-section-number">K.1</span> Aesthetics</h2>
+<section id="colourfill" class="level3" data-number="K.1.1"><h3 data-number="K.1.1" class="anchored" data-anchor-id="colourfill">
+<span class="header-section-number">K.1.1</span> Colour/Fill</h3>
 <p>The <code>colour</code> argument changes the point and line colour, while the <code>fill</code> argument changes the interior colour of shapes. Type <code><a href="https://rdrr.io/r/grDevices/colors.html">colours()</a></code> into the console to see a list of all the named colours in R. Alternatively, you can use hexadecimal colours like <code>"#FF8000"</code> or the <code><a href="https://rdrr.io/r/grDevices/rgb.html">rgb()</a></code> function to set red, green, and blue values on a scale from 0 to 1.</p>
 <p>Hover over a colour to see its R name.</p>
 <style>
@@ -1917,8 +1923,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li style="background-color: #ffaeb9;">
 <span>lightpink1</span>
 </li>
-</ul></section><section id="alpha" class="level3" data-number="J.1.2"><h3 data-number="J.1.2" class="anchored" data-anchor-id="alpha">
-<span class="header-section-number">J.1.2</span> Alpha</h3>
+</ul></section><section id="alpha" class="level3" data-number="K.1.2"><h3 data-number="K.1.2" class="anchored" data-anchor-id="alpha">
+<span class="header-section-number">K.1.2</span> Alpha</h3>
 <p>The <code>alpha</code> argument changes transparency (0 = totally transparent, 1 = totally opaque).</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1928,8 +1934,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="shape" class="level3" data-number="J.1.3"><h3 data-number="J.1.3" class="anchored" data-anchor-id="shape">
-<span class="header-section-number">J.1.3</span> Shape</h3>
+</section><section id="shape" class="level3" data-number="K.1.3"><h3 data-number="K.1.3" class="anchored" data-anchor-id="shape">
+<span class="header-section-number">K.1.3</span> Shape</h3>
 <p>The <code>shape</code> argument changes the shape of points.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1939,8 +1945,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="linetype" class="level3" data-number="J.1.4"><h3 data-number="J.1.4" class="anchored" data-anchor-id="linetype">
-<span class="header-section-number">J.1.4</span> Linetype</h3>
+</section><section id="linetype" class="level3" data-number="K.1.4"><h3 data-number="K.1.4" class="anchored" data-anchor-id="linetype">
+<span class="header-section-number">K.1.4</span> Linetype</h3>
 <p>You can probably guess what the <code>linetype</code> argument does.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1950,8 +1956,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section></section><section id="palettes" class="level2" data-number="J.2"><h2 data-number="J.2" class="anchored" data-anchor-id="palettes">
-<span class="header-section-number">J.2</span> Palettes</h2>
+</section></section><section id="palettes" class="level2" data-number="K.2"><h2 data-number="K.2" class="anchored" data-anchor-id="palettes">
+<span class="header-section-number">K.2</span> Palettes</h2>
 <p>Discrete palettes change depending on the number of categories.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1961,11 +1967,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<section id="viridis-palettes" class="level3" data-number="J.2.1"><h3 data-number="J.2.1" class="anchored" data-anchor-id="viridis-palettes">
-<span class="header-section-number">J.2.1</span> Viridis Palettes</h3>
+<section id="viridis-palettes" class="level3" data-number="K.2.1"><h3 data-number="K.2.1" class="anchored" data-anchor-id="viridis-palettes">
+<span class="header-section-number">K.2.1</span> Viridis Palettes</h3>
 <p>Viridis palettes are very good for colourblind-safe and greyscale-safe plots. The work with any number of categories, but are best for larger numbers of categories or continuous colours.</p>
-<section id="discrete-viridis-palettes" class="level4" data-number="J.2.1.1"><h4 data-number="J.2.1.1" class="anchored" data-anchor-id="discrete-viridis-palettes">
-<span class="header-section-number">J.2.1.1</span> Discrete Viridis Palettes</h4>
+<section id="discrete-viridis-palettes" class="level4" data-number="K.2.1.1"><h4 data-number="K.2.1.1" class="anchored" data-anchor-id="discrete-viridis-palettes">
+<span class="header-section-number">K.2.1.1</span> Discrete Viridis Palettes</h4>
 <p>Set <a href="https://psyteachr.github.io/glossary/d#discrete" target="_blank" class="glossary" title="Data that can only take certain values, such as integers.">discrete</a> viridis colours with <code>scale_colour_viridis_d()</code> or <code>scale_fill_viridis_d()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1988,8 +1994,8 @@ Note
 <p>If the end colour is too light for your plot or the start colour too dark, you can set the <code>begin</code> and <code>end</code> arguments to values between 0 and 1, such as <code>scale_colour_viridis_c(begin = .1, end = .9)</code>.</p>
 </div>
 </div>
-</section><section id="continuous-viridis-palettes" class="level4" data-number="J.2.1.2"><h4 data-number="J.2.1.2" class="anchored" data-anchor-id="continuous-viridis-palettes">
-<span class="header-section-number">J.2.1.2</span> Continuous Viridis Palettes</h4>
+</section><section id="continuous-viridis-palettes" class="level4" data-number="K.2.1.2"><h4 data-number="K.2.1.2" class="anchored" data-anchor-id="continuous-viridis-palettes">
+<span class="header-section-number">K.2.1.2</span> Continuous Viridis Palettes</h4>
 <p>Set <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a> viridis colours with <code>scale_colour_viridis_c()</code> or <code>scale_fill_viridis_c()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -1999,11 +2005,11 @@ Note
 </div>
 </div>
 </div>
-</section></section><section id="brewer-palettes" class="level3" data-number="J.2.2"><h3 data-number="J.2.2" class="anchored" data-anchor-id="brewer-palettes">
-<span class="header-section-number">J.2.2</span> Brewer Palettes</h3>
+</section></section><section id="brewer-palettes" class="level3" data-number="K.2.2"><h3 data-number="K.2.2" class="anchored" data-anchor-id="brewer-palettes">
+<span class="header-section-number">K.2.2</span> Brewer Palettes</h3>
 <p>Brewer palettes give you a lot of control over plot colour and fill. You set them with <code>scale_color_brewer()</code> or <code>scale_fill_brewer()</code> and set the <code>palette</code> argument to one of the palettes below. Set <code>direction = -1</code> to reverse the order of colours.</p>
-<section id="qualitative-brewer-palettes" class="level4" data-number="J.2.2.1"><h4 data-number="J.2.2.1" class="anchored" data-anchor-id="qualitative-brewer-palettes">
-<span class="header-section-number">J.2.2.1</span> Qualitative Brewer Palettes</h4>
+<section id="qualitative-brewer-palettes" class="level4" data-number="K.2.2.1"><h4 data-number="K.2.2.1" class="anchored" data-anchor-id="qualitative-brewer-palettes">
+<span class="header-section-number">K.2.2.1</span> Qualitative Brewer Palettes</h4>
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> data with up to 8 categories (some palettes can handle up to 12). The “Paired” palette is useful if your categories are arranged in pairs.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2013,8 +2019,8 @@ Note
 </div>
 </div>
 </div>
-</section><section id="sequential-brewer-palettes" class="level4" data-number="J.2.2.2"><h4 data-number="J.2.2.2" class="anchored" data-anchor-id="sequential-brewer-palettes">
-<span class="header-section-number">J.2.2.2</span> Sequential Brewer Palettes</h4>
+</section><section id="sequential-brewer-palettes" class="level4" data-number="K.2.2.2"><h4 data-number="K.2.2.2" class="anchored" data-anchor-id="sequential-brewer-palettes">
+<span class="header-section-number">K.2.2.2</span> Sequential Brewer Palettes</h4>
 <p>These palettes are good for up to 9 <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with a lot of categories.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2024,8 +2030,8 @@ Note
 </div>
 </div>
 </div>
-</section><section id="diverging-brewer-palettes" class="level4" data-number="J.2.2.3"><h4 data-number="J.2.2.3" class="anchored" data-anchor-id="diverging-brewer-palettes">
-<span class="header-section-number">J.2.2.3</span> Diverging Brewer Palettes</h4>
+</section><section id="diverging-brewer-palettes" class="level4" data-number="K.2.2.3"><h4 data-number="K.2.2.3" class="anchored" data-anchor-id="diverging-brewer-palettes">
+<span class="header-section-number">K.2.2.3</span> Diverging Brewer Palettes</h4>
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2035,8 +2041,8 @@ Note
 </div>
 </div>
 </div>
-</section></section></section><section id="sec-themes-appendix" class="level2" data-number="J.3"><h2 data-number="J.3" class="anchored" data-anchor-id="sec-themes-appendix">
-<span class="header-section-number">J.3</span> Themes</h2>
+</section></section></section><section id="sec-themes-appendix" class="level2" data-number="K.3"><h2 data-number="K.3" class="anchored" data-anchor-id="sec-themes-appendix">
+<span class="header-section-number">K.3</span> Themes</h2>
 <p><pkg>ggplot2</pkg> has 8 built-in themes that you can add to a plot like <code>plot + theme_bw()</code> or set as the default theme at the top of your script like <code>theme_set(theme_bw())</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -2046,8 +2052,8 @@ Note
 </div>
 </div>
 </div>
-<section id="ggthemes" class="level3" data-number="J.3.1"><h3 data-number="J.3.1" class="anchored" data-anchor-id="ggthemes">
-<span class="header-section-number">J.3.1</span> ggthemes</h3>
+<section id="ggthemes" class="level3" data-number="K.3.1"><h3 data-number="K.3.1" class="anchored" data-anchor-id="ggthemes">
+<span class="header-section-number">K.3.1</span> ggthemes</h3>
 <p>You can get more themes from add-on packages, like <pkg>ggthemes”, “https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/”)<code>. Most of the themes also have custom</code>scale_<code>functions like</code>scale_colour_economist()`. Their website has extensive examples and instructions for alternate or dark versions of these themes.</pkg></p>
 <div class="cell">
 <div class="cell-output cell-output-error">
@@ -2060,8 +2066,8 @@ Note
 </div>
 </div>
 </div>
-</section><section id="fonts" class="level3" data-number="J.3.2"><h3 data-number="J.3.2" class="anchored" data-anchor-id="fonts">
-<span class="header-section-number">J.3.2</span> Fonts</h3>
+</section><section id="fonts" class="level3" data-number="K.3.2"><h3 data-number="K.3.2" class="anchored" data-anchor-id="fonts">
+<span class="header-section-number">K.3.2</span> Fonts</h3>
 <p>You can customise the fonts used in themes. All computers should be able to recognise the families “sans”, “serif”, and “mono”, and some computers will be able to access other installed fonts by name.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>sans <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"sans"</span>) <span class="sc">+</span> </span>
@@ -2844,13 +2850,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./app-dates.html" class="pagination-link" aria-label="Dates and Times">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></span>
+      <a href="./app-tables.html" class="pagination-link" aria-label="Table Formatting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./app-webpage.html" class="pagination-link" aria-label="Webpages">
-        <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Webpages</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

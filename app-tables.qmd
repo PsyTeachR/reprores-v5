@@ -1,0 +1,215 @@
+# Table Formatting {#sec-tables}
+
+Flextable is a great package for formatting tables.
+
+```{r}
+#| message: false
+library(flextable)
+```
+
+## Data
+
+First, let's get some data. I've included a subset of data for the first nine pokemon from Dave Parr's pokedex package. We have some character and numeric columns, plus some missing data (not all pokemon have a secondary type).
+
+```{r}
+# devtools::install_github("DaveParr/pokedex")
+# data from pokedex::pokemon
+
+pokemon <- data.frame(
+  id = 1:9, 
+  name = c("Bulbasaur", "Ivysaur", "Venusaur",
+           "Charmander", "Charmeleon", "Charizard",
+           "Squirtle", "Wartortle", "Blastoise"),
+  height = c(0.7, 1, 2, 0.6, 1.1, 1.7, 0.5, 1, 1.6),
+  weight = c(6.9, 13, 100, 8.5, 19, 90.5, 9, 22.5, 85.5), 
+  type_1 = c("grass", "grass", "grass", 
+             "fire", "fire", "fire", 
+             "water", "water", "water"), 
+  type_2 = c("poison", "poison", "poison", 
+             NA, NA, "flying", 
+             NA, NA, NA)
+)
+```
+
+## Basic table
+
+Look at how the table displays by default. This will display in one way in RStudio, but a different way when you render the document, so also render it and look at the HTML version. 
+
+```{r}
+#| label: tbl-basic
+#| tbl-cap: A default table display
+pokemon
+```
+
+Now see how it looks if you use `flextable()`.
+
+```{r}
+#| label: tbl-flextable
+#| tbl-cap: A basic flextable
+flextable(pokemon)
+```
+
+## Cusomising tables
+
+### Subset/reorder columns
+
+You can use the `col_keys` argument to select a subset of columns, or change their order. You can also do this with data wrangling before you send a data frame to flextable, but this can be easier in some instances.
+
+```{r}
+#| label: tbl-col_keys
+#| tbl-cap: Subsetting columns with `col_keys`
+flextable(pokemon, 
+          col_keys = c("name", "weight", "height"))
+```
+
+### Header
+
+Use `set_header_labels()` to customise the header. You can change the name of one or more column. 
+
+```{r}
+#| label: tbl-set_header_labels
+#| tbl-cap: Customising the header with `set_header_labels()`
+flextable(pokemon) |>
+  set_header_labels(id = "ID", 
+                    name = "Name", 
+                    height = "Height (m)", 
+                    weight = "Weight (kg)",
+                    type_1 = "Type 1", 
+                    type_2 = "Type 2")
+```
+
+If you have headers that have a nested structure, and their names reflect this (like "category_instance1" and "category_instance2"), you can use `separate_header()` to separate them.
+
+```{r}
+#| label: tbl-separate_header
+#| tbl-cap: Nesting the header with `separate_header()`
+flextable(pokemon) |>
+  separate_header() |>
+  set_header_labels(type_1 = "primary", 
+                    type_2 = "secondary")
+```
+
+Alternatively, you can manually add extra header rows.
+
+```{r}
+#| label: tbl-add_header_row
+#| tbl-cap: Manually add a header row with `add_header_row()`
+flextable(pokemon) |>
+  add_header_row(values = c("", "Measurements", "Types"),
+                colwidths = c(2, 2, 2)) |>
+  set_header_labels(type_1 = "primary", 
+                    type_2 = "secondary")
+```
+
+### Alignment
+
+The defaults are usually correct, left-aligning text and right-aligning numbers, but you can also customise this using the `align()` function.
+
+The code below centre aligns the first row of the header to "center", and then right aligns the body cells in the "name" column. 
+
+```{r}
+flextable(pokemon) |>
+  add_header_row(values = c("", "Measurements", "Types"),
+                colwidths = c(2, 2, 2)) |>
+  set_header_labels(type_1 = "primary", 
+                    type_2 = "secondary") |>
+  align(align = "center", i = 1, part = "header") |>
+  align(align = "right", j = "name", part = "body")
+```
+
+:::{.callout-note}
+See if you can figure out what `i` and `j` mean, using trial-and-error first, and the help function if you get stuck. 
+:::
+
+
+## Themes
+
+There are some built-in themes you can use.
+
+### Alafoli
+
+```{r}
+#| label: tbl-alafoli
+#| tbl-cap: The alafoli theme
+flextable(pokemon) |> theme_alafoli()
+```
+
+### APA
+
+```{r}
+#| label: tbl-apa
+#| tbl-cap: The apa theme
+flextable(pokemon) |> theme_apa()
+```
+
+### Booktabs
+
+```{r}
+#| label: tbl-booktabs
+#| tbl-cap: The booktabs theme
+flextable(pokemon) |> theme_booktabs()
+```
+
+### Box
+
+```{r}
+#| label: tbl-box
+#| tbl-cap: The box theme
+flextable(pokemon) |> theme_box()
+```
+
+### Tron
+
+```{r}
+#| label: tbl-tron
+#| tbl-cap: The tron theme
+flextable(pokemon) |> theme_tron()
+```
+
+### Tron Legacy
+
+```{r}
+#| label: tbl-tron_legacy
+#| tbl-cap: The tron_legacy theme
+flextable(pokemon) |> theme_tron_legacy()
+```
+
+### Vader
+
+```{r}
+#| label: tbl-vader
+#| tbl-cap: The vader theme
+flextable(pokemon) |> theme_vader()
+```
+
+### Vanilla
+
+```{r}
+#| label: tbl-vanilla
+#| tbl-cap: The vanilla theme
+flextable(pokemon) |> theme_vanilla()
+```
+
+## Defaults
+
+You can set a ton of defaults using `set_flextable_defaults()`. Do this at the top of your script and all of the tables in your document will have consistent styles.
+
+```{r}
+set_flextable_defaults(digits = 2, 
+                       font.size = 16, 
+                       theme_fun = theme_apa,
+                       na_str = "(none)")
+```
+
+
+```{r}
+flextable(pokemon)
+```
+
+## Next Steps
+
+You can learn a lot more about how to customisie tables from the [flextable book](https://ardata-fr.github.io/flextable-book/).
+
+1. As a group, make a list of things you might want to do to tables, like highlight a row, add footnotes, include images, or set border styles.
+2. Divide up the list and each create a short tutorial for how to accomplish the thing, using just the `pokemon` table.
+3. Share your tutorial with the group!
