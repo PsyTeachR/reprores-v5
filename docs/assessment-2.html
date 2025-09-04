@@ -318,9 +318,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#document-replicated" id="toc-document-replicated" class="nav-link" data-scroll-target="#document-replicated"><span class="header-section-number">12.4.2</span> Document replicated</a></li>
   <li><a href="#captionsreferences" id="toc-captionsreferences" class="nav-link" data-scroll-target="#captionsreferences"><span class="header-section-number">12.4.3</span> Captions/references</a></li>
   <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import"><span class="header-section-number">12.4.4</span> Data import</a></li>
-  <li><a href="#figure-1-replicated" id="toc-figure-1-replicated" class="nav-link" data-scroll-target="#figure-1-replicated"><span class="header-section-number">12.4.5</span> Figure 1 replicated</a></li>
-  <li><a href="#table-2-replicated" id="toc-table-2-replicated" class="nav-link" data-scroll-target="#table-2-replicated"><span class="header-section-number">12.4.6</span> Table 2 replicated</a></li>
-  <li><a href="#figure-3-appropriate" id="toc-figure-3-appropriate" class="nav-link" data-scroll-target="#figure-3-appropriate"><span class="header-section-number">12.4.7</span> Figure 3 appropriate</a></li>
+  <li><a href="#tables-replicated" id="toc-tables-replicated" class="nav-link" data-scroll-target="#tables-replicated"><span class="header-section-number">12.4.5</span> Tables replicated</a></li>
+  <li><a href="#figures-replicated" id="toc-figures-replicated" class="nav-link" data-scroll-target="#figures-replicated"><span class="header-section-number">12.4.6</span> Figures replicated</a></li>
+  <li><a href="#figure-4-appropriate" id="toc-figure-4-appropriate" class="nav-link" data-scroll-target="#figure-4-appropriate"><span class="header-section-number">12.4.7</span> Figure 4 appropriate</a></li>
   <li><a href="#consistent-visualisations" id="toc-consistent-visualisations" class="nav-link" data-scroll-target="#consistent-visualisations"><span class="header-section-number">12.4.8</span> Consistent visualisations</a></li>
   <li><a href="#clear-code" id="toc-clear-code" class="nav-link" data-scroll-target="#clear-code"><span class="header-section-number">12.4.9</span> Clear code</a></li>
   <li><a href="#efficient-code" id="toc-efficient-code" class="nav-link" data-scroll-target="#efficient-code"><span class="header-section-number">12.4.10</span> Efficient code</a></li>
@@ -350,16 +350,17 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </header><p>A project demonstrating data visualisation and summary skills</p>
 <section id="instructions" class="level2" data-number="12.1"><h2 data-number="12.1" class="anchored" data-anchor-id="instructions">
 <span class="header-section-number">12.1</span> Instructions</h2>
-<p>Your task is to replicate <a href="demos/report2_demo.html">this html report</a> using <a href="demos/sw.csv">this dataset</a> and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:</p>
+<p>Your task is to replicate <a href="demos/report2_demo.html">this html report</a> using <a href="demos/report2_data.zip">this dataset</a> and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:</p>
 <ul class="task-list">
 <li><label><input type="checkbox">A reproducible <em>project structure</em> with all needed files</label></li>
 <li><label><input type="checkbox">Document structure and text that replicate the report</label></li>
 <li><label><input type="checkbox">Import the data with correct data types</label></li>
-<li><label><input type="checkbox">Plots that replicate Figures 1 and 2</label></li>
-<li><label><input type="checkbox">A table that replicates Table 2<br></label></li>
-<li><label><input type="checkbox">A plot that is appropriate to the description of Figure 3</label></li>
+<li><label><input type="checkbox">Tables that replicate Tables 1-4</label></li>
+<li><label><input type="checkbox">Plots that replicate Figures 1-3</label></li>
+<li><label><input type="checkbox">A plot that is appropriate to the description of Figure 4</label></li>
 <li><label><input type="checkbox">Consistent plot themes, colours and labels</label></li>
 <li><label><input type="checkbox">Cross-references in the text to the figures and tables</label></li>
+<li><label><input type="checkbox">Appropriate alt-text for the figures for accessibility</label></li>
 <li><label><input type="checkbox">References created using bibtex</label></li>
 <li><label><input type="checkbox">A reflection on independent learning you did for this assessment</label></li>
 </ul></section><section id="hints-and-tips" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="hints-and-tips">
@@ -368,13 +369,24 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>The html theme used by the demo report is flatly</li>
 <li>The ggplot theme is <code>theme_bw()</code>
 </li>
-<li>Make Table 1 using markdown</li>
-<li>You will need to use <code>summarise()</code> to create the data for Table 2; do not just type the numbers from the demo table</li>
-<li>Display Table 2 using <code><a href="https://rdrr.io/pkg/knitr/man/kable.html">knitr::kable()</a></code>
+<li>Make Tables 1-2 using markdown</li>
+<li>You will need to use <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> to create the data for Tables 3-4; do not just type the numbers from the demo table</li>
+<li>Display Tables 3-4 using <code>flextable()</code>
 </li>
-<li>You shouldn’t need any packages apart from tidyverse and knitr</li>
-<li>The colours for Figure 2 are “dodgerblue3”, “firebrick”, and “darkorchid”</li>
-</ul></section><section id="submission" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="submission">
+<li>You shouldn’t need any packages apart from tidyverse and flextable</li>
+<li>The colours are “dodgerblue3”, “darkgreen”, “goldenrod”, “darkorange2”, and “firebrick”</li>
+<li>The bibtex for the WHO reference is:</li>
+</ul>
+<pre><code>@techreport{who_unicef_2024,
+  author      = {{WHO/UNICEF Joint Monitoring Programme for Water Supply,
+                  Sanitation and Hygiene}},
+  title       = {Progress on Drinking Water, 
+                 Sanitation and Hygiene in Schools 2015--2023},
+  institution = {UNICEF and World Health Organization},
+  address     = {New York},
+  year        = {2024}
+}</code></pre>
+</section><section id="submission" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="submission">
 <span class="header-section-number">12.3</span> Submission</h2>
 <ul>
 <li>Covers: chapters 1-4, emphasising 3 and 4</li>
@@ -444,13 +456,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <td style="text-align: left;"><input type="radio" value="0" name="b5"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Table replicated</td>
+<td style="text-align: left;">Tables replicated</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b6"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b6"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b6"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Figure 3 appropriate</td>
+<td style="text-align: left;">Figure 4 appropriate</td>
 <td style="text-align: left;"><input type="radio" value="2" name="b7"></td>
 <td style="text-align: left;"><input type="radio" value="1" name="b7"></td>
 <td style="text-align: left;"><input type="radio" value="0" name="b7"></td>
@@ -489,32 +501,33 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>The project contains all of the necessary files and can be rendered by the marker.</p>
 </section><section id="document-replicated" class="level3" data-number="12.4.2"><h3 data-number="12.4.2" class="anchored" data-anchor-id="document-replicated">
 <span class="header-section-number">12.4.2</span> Document replicated</h3>
-<p>The non-code elements of the document are replicated, such as table of contents, text paragraphs, and Table 1.</p>
+<p>The non-code elements of the document are replicated, such as table of contents, text paragraphs, and Tables 1-2.</p>
 </section><section id="captionsreferences" class="level3" data-number="12.4.3"><h3 data-number="12.4.3" class="anchored" data-anchor-id="captionsreferences">
 <span class="header-section-number">12.4.3</span> Captions/references</h3>
-<p>The figure and table captions are created correctly and quarto cross referencing is used for figures, tables, and bibliographic references.</p>
+<p>The figure and table captions are created correctly and quarto cross referencing (not manual linking) is used for figures, tables, and bibliographic references. The figures have descriptive alt-text for accessibility.</p>
 </section><section id="data-import" class="level3" data-number="12.4.4"><h3 data-number="12.4.4" class="anchored" data-anchor-id="data-import">
 <span class="header-section-number">12.4.4</span> Data import</h3>
 <p>You imported the data with correct data types, including putting factors in sensible order for later plots or tables.</p>
-</section><section id="figure-1-replicated" class="level3" data-number="12.4.5"><h3 data-number="12.4.5" class="anchored" data-anchor-id="figure-1-replicated">
-<span class="header-section-number">12.4.5</span> Figure 1 replicated</h3>
-<p>Figures 1 and 2 are created using code, and has all of the features of the example plot, such as label, axis or colour customisation.</p>
-</section><section id="table-2-replicated" class="level3" data-number="12.4.6"><h3 data-number="12.4.6" class="anchored" data-anchor-id="table-2-replicated">
-<span class="header-section-number">12.4.6</span> Table 2 replicated</h3>
-<p>Table 2 is created by summarising the data using code, and has all of the features of the example table, such as the same rounding.</p>
-</section><section id="figure-3-appropriate" class="level3" data-number="12.4.7"><h3 data-number="12.4.7" class="anchored" data-anchor-id="figure-3-appropriate">
-<span class="header-section-number">12.4.7</span> Figure 3 appropriate</h3>
+</section><section id="tables-replicated" class="level3" data-number="12.4.5"><h3 data-number="12.4.5" class="anchored" data-anchor-id="tables-replicated">
+<span class="header-section-number">12.4.5</span> Tables replicated</h3>
+<p>Tables 3-4 are created by filtering the data using code, and have all of the features of the example table, such as the same rounding and coloured labels.</p>
+</section><section id="figures-replicated" class="level3" data-number="12.4.6"><h3 data-number="12.4.6" class="anchored" data-anchor-id="figures-replicated">
+<span class="header-section-number">12.4.6</span> Figures replicated</h3>
+<p>Figures 1-3 are created using code, and have all of the features of the example plots, such as label, axis or colour customisation.</p>
+</section><section id="figure-4-appropriate" class="level3" data-number="12.4.7"><h3 data-number="12.4.7" class="anchored" data-anchor-id="figure-4-appropriate">
+<span class="header-section-number">12.4.7</span> Figure 4 appropriate</h3>
 <p>You chose an appropriate geom (or set of geoms) for the relationship being demonstrated.</p>
 </section><section id="consistent-visualisations" class="level3" data-number="12.4.8"><h3 data-number="12.4.8" class="anchored" data-anchor-id="consistent-visualisations">
 <span class="header-section-number">12.4.8</span> Consistent visualisations</h3>
-<p>Figure 3 has consistent features with Figures 1 and 2, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).</p>
+<p>Figure 4 has consistent features with Figures 1-3, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).</p>
 </section><section id="clear-code" class="level3" data-number="12.4.9"><h3 data-number="12.4.9" class="anchored" data-anchor-id="clear-code">
 <span class="header-section-number">12.4.9</span> Clear code</h3>
 <p>Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise.</p>
-<p>For example, if the marker wants to assess the code that creates Table 2, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.</p>
+<p>For example, if the marker wants to assess the code that creates a specific table, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.</p>
 </section><section id="efficient-code" class="level3" data-number="12.4.10"><h3 data-number="12.4.10" class="anchored" data-anchor-id="efficient-code">
 <span class="header-section-number">12.4.10</span> Efficient code</h3>
 <p>While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places).</p>
+<p>If you find yourself re-typing something repeatedly, see if you can define an object early in the script and use that instead.</p>
 <p>You will not be asked to do anything “tricky” in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives.</p>
 </section><section id="reflection" class="level3" data-number="12.4.11"><h3 data-number="12.4.11" class="anchored" data-anchor-id="reflection">
 <span class="header-section-number">12.4.11</span> Reflection</h3>

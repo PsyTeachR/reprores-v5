@@ -8,16 +8,17 @@ A project demonstrating data visualisation and summary skills
 
 ## Instructions
 
-Your task is to replicate [this html report](demos/report2_demo.html) using [this dataset](demos/sw.csv) and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
+Your task is to replicate [this html report](demos/report2_demo.html) using [this dataset](demos/report2_data.zip) and code, and to generate an appropriate visualisation for the final plot. The submission must contain the following:
 
 * [ ] A reproducible *project structure* with all needed files 
 * [ ] Document structure and text that replicate the report 
 * [ ] Import the data with correct data types 
-* [ ] Plots that replicate Figures 1 and 2 
-* [ ] A table that replicates Table 2  
-* [ ] A plot that is appropriate to the description of Figure 3 
+* [ ] Tables that replicate Tables 1-4 
+* [ ] Plots that replicate Figures 1-3 
+* [ ] A plot that is appropriate to the description of Figure 4 
 * [ ] Consistent plot themes, colours and labels 
 * [ ] Cross-references in the text to the figures and tables 
+* [ ] Appropriate alt-text for the figures for accessibility
 * [ ] References created using bibtex 
 * [ ] A reflection on independent learning you did for this assessment
 
@@ -25,11 +26,25 @@ Your task is to replicate [this html report](demos/report2_demo.html) using [thi
 
 * The html theme used by the demo report is flatly
 * The ggplot theme is `theme_bw()`
-* Make Table 1 using markdown
-* You will need to use `summarise()` to create the data for Table 2; do not just type the numbers from the demo table
-* Display Table 2 using `knitr::kable()`
-* You shouldn't need any packages apart from tidyverse and knitr
-* The colours for Figure 2 are "dodgerblue3", "firebrick", and "darkorchid" 
+* Make Tables 1-2 using markdown
+* You will need to use `filter()` to create the data for Tables 3-4; do not just type the numbers from the demo table
+* Display Tables 3-4 using `flextable()`
+* You shouldn't need any packages apart from tidyverse and flextable
+* The colours are "dodgerblue3", "darkgreen", "goldenrod", "darkorange2", and "firebrick"
+* The bibtex for the WHO reference is:
+
+
+```
+@techreport{who_unicef_2024,
+  author      = {{WHO/UNICEF Joint Monitoring Programme for Water Supply,
+                  Sanitation and Hygiene}},
+  title       = {Progress on Drinking Water, 
+                 Sanitation and Hygiene in Schools 2015--2023},
+  institution = {UNICEF and World Health Organization},
+  address     = {New York},
+  year        = {2024}
+}
+```
 
 ## Submission
 
@@ -58,8 +73,8 @@ el <- c("Reproducible project",
         "Captions/references",
         "Data import",
         "Figures replicated",
-        "Table replicated",
-        "Figure 3 appropriate",
+        "Tables replicated",
+        "Figure 4 appropriate",
         "Consistent visualisations",
         "Clear code",
         "Efficient code",
@@ -85,41 +100,43 @@ The project contains all of the necessary files and can be rendered by the marke
 
 ### Document replicated
 
-The non-code elements of the document are replicated, such as table of contents, text paragraphs, and Table 1.
+The non-code elements of the document are replicated, such as table of contents, text paragraphs, and Tables 1-2.
 
 ### Captions/references
 
-The figure and table captions are created correctly and quarto cross referencing is used for figures, tables, and bibliographic references.
+The figure and table captions are created correctly and quarto cross referencing (not manual linking) is used for figures, tables, and bibliographic references. The figures have descriptive alt-text for accessibility.
 
 ### Data import
 
 You imported the data with correct data types, including putting factors in sensible order for later plots or tables. 
 
-### Figure 1 replicated
+### Tables replicated
 
-Figures 1 and 2 are created using code, and has all of the features of the example plot, such as label, axis or colour customisation.
+Tables 3-4 are created by filtering the data using code, and have all of the features of the example table, such as the same rounding and coloured labels.
 
-### Table 2 replicated
+### Figures replicated
 
-Table 2 is created by summarising the data using code, and has all of the features of the example table, such as the same rounding.
+Figures 1-3 are created using code, and have all of the features of the example plots, such as label, axis or colour customisation.
 
-### Figure 3 appropriate
+### Figure 4 appropriate
 
 You chose an appropriate geom (or set of geoms) for the relationship being demonstrated.
 
 ### Consistent visualisations
 
-Figure 3 has consistent features with Figures 1 and 2, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).
+Figure 4 has consistent features with Figures 1-3, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).
 
 ### Clear code
 
 Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise. 
 
-For example, if the marker wants to assess the code that creates Table 2, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.
+For example, if the marker wants to assess the code that creates a specific table, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.
 
 ### Efficient code
 
-While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places). 
+While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places).
+
+If you find yourself re-typing something repeatedly, see if you can define an object early in the script and use that instead.
 
 You will not be asked to do anything "tricky" in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives. 
 

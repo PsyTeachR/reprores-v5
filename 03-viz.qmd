@@ -160,55 +160,6 @@ date <- c(x = "continuous", x = "nominal", x = "ordinal", answer = "date")
 
 ## Building plots {#sec-plots}
 
-```{r sim-survey, include = FALSE, eval = FALSE}
-# code for simulating the data used in this chapter
-# hidden from students and not run on every knit, just here for reference
-library(faux)
-set.seed(8765309)
-
-issues <- c(
-  tech = 0, 
-  sales = 2, 
-  returns = 1,
-  other = 1
-)
-
-survey_data <- add_random(employee_id = 10) %>%
-  add_random(caller_id = sample(50:100, 10), 
-             .nested_in = "employee_id") %>%
-  add_between("caller_id", issue_category = names(issues), 
-              .prob = c(.4, .1, .3, .1)) %>%
-  add_ranef("caller_id", 
-            wait_time = 1, 
-            call_time = 1, 
-            .cors = 0.5) %>%
-  add_ranef("employee_id", 
-            employee_quality = 1, 
-            employee_time = 1, 
-            .cors = -.5) %>%
-  mutate(caller_id = gsub("caller_id", "C", caller_id),
-         employee_id = gsub("employee_id", "E", employee_id)) %>%
-  add_ranef(error = 1) %>%
-  mutate(call_start = runif(nrow(.), 2020, 2021) %>% date_decimal()) %>%
-  mutate(wait_time = norm2beta(wait_time, 2, 4, ncp=10) * 5,
-         call_time = norm2beta(call_time + employee_time, 2, 4, ncp=0) * 2 + 0.1,
-         # round and add outliers
-         wait_time = round(wait_time * 60) + 
-           sample(c(0, 100), nrow(.), T, c(99, 1)),
-         call_time = round(call_time * 60) + 
-           sample(c(0, 100), nrow(.), T, c(99, 1))
-  ) %>%
-  mutate(satisfaction = (employee_quality + 
-           recode(issue_category, !!!issues) -
-           (wait_time * .1) +
-           (month(call_start) * -.05) +
-           error) %>% norm2likert(prob = c(1,3,4,5,2))) %>%
-  select(caller_id, employee_id, call_start, wait_time, call_time,
-         issue_category, satisfaction)
-
-write_csv(survey_data, "data/survey_data.csv")
-```
-
 There are multiple approaches to data visualisation in R; in this course we will use the popular package <pkg>ggplot2</pkg>, which is part of the larger <pkg>tidyverse</pkg> collection of packages. A grammar of graphics (the "gg" in "ggplot") is a standardised way to describe the components of a graphic. <pkg>ggplot2</pkg> uses a layered grammar of graphics, in which plots are built up in a series of layers. It may be helpful to think about any plot as having multiple elements that sit semi-transparently over each other. A good analogy is old Disney movies where artists would create a background and then add moveable elements on top of the background via transparencies.
 
 @fig-layers displays the evolution of a simple scatterplot using this layered approach. First, the plot space is built (layer 1); the variables are specified (layer 2); the type of visualisation (known as a `geom`) that is desired for these variables is specified (layer 3) - in this case `geom_point()` is called to visualise individual data points; a second geom is added to include a line of best fit (layer 4), the axis labels are edited for readability (layer 5), and finally, a theme is applied to change the overall appearance of the plot (layer 6).
@@ -218,30 +169,35 @@ There are multiple approaches to data visualisation in R; in this course we will
 #| fig-cap: Evolution of a layered plot
 #| echo: false
 #| message: false
-survey_data <- read_csv(file = "data/survey_data.csv",
+#| fig-height: 8
+#| fig-width: 8
+pip <- read_csv(file = "data/pip_gini_welfare_2010.csv",
                         show_col_types = FALSE)
 
-x_breaks <- seq(from = 0, to = 600, by = 60)
-y_breaks <- seq(from = 0, to = 600, by = 30)
+x_breaks <- seq(from = 0, to = 1, by = .1)
+y_breaks <- c(1, 2, 5, 10, 20, 50, 100)
+y_breaks_minor <- c(1:5, seq(10, 50, 10), 50, 100)
 
 a <- ggplot() + labs(subtitle = "Layer 1")
-b <- ggplot(survey_data, aes(x = wait_time, y = call_time)) + 
+b <- ggplot(pip, aes(x = gini, y = welfare_mean)) + 
   labs(subtitle = "Layer 2")
 c <- b + geom_point(alpha = 0.2, color = "dodgerblue") + 
   labs(subtitle = "Layer 3")
 d <- c + geom_smooth(method = "lm", color = rgb(0, .5, .8)) + 
   labs(subtitle = "Layer 4")
-e <- d + scale_x_continuous(name = "Wait Time (seconds)", breaks = x_breaks) +
-  scale_y_continuous(name = "Call time (seconds)", breaks = y_breaks) + 
-  coord_cartesian(xlim = c(0, 360), ylim = c(0, 180)) +
+e <- d + scale_x_continuous(name = "Gini Index", breaks = x_breaks) +
+  scale_y_log10(name = "Mean Welfare (log10)", 
+                breaks = y_breaks,
+                minor_breaks = y_breaks_minor) + 
   labs(subtitle = "Layer 5")
-f <- e + ggthemes::theme_gdocs(base_size = 10) + 
+f <- e + theme_light(base_size = 11) +
+  coord_cartesian(xlim = c(0, .7), ylim = c(1, 100)) +
   theme(axis.line.x = element_blank(),
         plot.background = element_blank()) +
   labs(subtitle = "Layer 6") +
   theme(plot.subtitle =  element_text(color = "black"))
 
-a + b + c + d + e + f + plot_layout(nrow = 2)
+a + b + c + d + e + f + plot_layout(nrow = 3)
 ```
 
 Importantly, each layer is independent and independently customisable. For example, the size, colour and position of each component can be adjusted, or one could, for example, remove the first geom (the data points) to only visualise the line of best fit, simply by removing the layer that draws the data points (@fig-remove-layer). The use of layers makes it easy to build up complex plots step-by-step, and to adapt or extend plots from existing code.
@@ -252,13 +208,13 @@ Importantly, each layer is independent and independently customisable. For examp
 #| fig-cap: Final plot with scatterplot layer removed.
 #| echo: false
 
-ggplot(survey_data, aes(x = wait_time, y = call_time)) + 
+ggplot(pip, aes(x = gini, y = welfare_mean)) + 
   #geom_point(alpha = 0.15, color = "dodgerblue") +
   geom_smooth(method = "lm", formula = y~x, color = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Wait Time (seconds)", breaks = seq(from = 0, to = 600, by = 60)) +
-  scale_y_continuous(name = "Call time (seconds)", breaks = seq(from = 0, to = 600, by = 30)) + 
-  coord_cartesian(xlim = c(0, 360), ylim = c(0, 180)) +
-  ggthemes::theme_gdocs(base_size = 11) +
+  scale_x_continuous(name = "Gini Index", breaks = x_breaks) +
+  scale_y_log10(name = "Mean Welfare (log10)", breaks = y_breaks) + 
+  coord_cartesian(xlim = c(.2, .7), ylim = c(1, 100)) +
+  theme_light(base_size = 11) +
   theme(axis.line.x = element_blank(),
         plot.background = element_blank())
 ```
