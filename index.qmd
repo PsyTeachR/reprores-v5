@@ -3,6 +3,8 @@ number-offset: 0
 ---
 # Overview {-}
 
+<!-- checked for alt-text -->
+
 This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.
 
 While this book mainly focuses on technical data skills, reproducible and open research is the reason for learning these skills. The following papers provide a great overview of these concepts if you are not already familiar with them.

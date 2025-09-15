@@ -1,5 +1,7 @@
 # Introduction {#sec-intro}
 
+<!-- checked for alt-text -->
+
 ::: {.meme .right}
 ![](images/memes/rstudio.png){fig-alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'"}
 :::
@@ -55,7 +57,7 @@ RStudio is an Integrated Development Environment (`r glossary("IDE")`). Think of
 
 RStudio is arranged with four window `r glossary("panes")`.
 
-![The RStudio IDE](images/intro/rstudio.png){#fig-rstudio}
+![The RStudio IDE](images/intro/rstudio.png){#fig-rstudio fig-alt="An interface with 4 panes: code in the upper left and lower right, object info in the upper right, and a plot in the lower right"}
 
 By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. When you first open RStudio, this pane won't display until we open a document or load in some data -- don't worry, we'll get to that soon.
 
@@ -374,7 +376,7 @@ In this course, we will always write out the argument names the first time we us
 
 One very useful feature of RStudio is tab auto-complete for functions. If you write the name of the function and then press the tab key, RStudio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently. 
 
-![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete}
+![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete fig-alt = "The code reads `sample()` and there is a drop-down menu with the options `x =`, `size =`, replace =` and prob =`. The third option is highlighted blue and there is a yellow text box reading 'replace: should sampling be with replacements? Press F1 for additional help'"}
 
 ::: {.try}
 Use tab autocomplete to figure out the arguments to `rnorm()`. Create a vector of 20 numbers from a normal distribution with a mean of 100 and a standard deviation of 10.

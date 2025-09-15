@@ -1,5 +1,7 @@
 # Reports {#sec-reports}
 
+<!-- checked for alt-text -->
+
 ::: {.meme .right}
 ![](images/memes/repro_reports.jpg){fig-alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"}
 :::
@@ -103,11 +105,11 @@ RStudio will restart itself and open with this new project directory as the work
 
 ::: {#fig-new-proj layout-ncol=3}
 
-![](images/reports/new_proj_1.png)
+![](images/reports/new_proj_1.png){fig-alt="Interface box titled New Project Wizard. The heading is Create Project and there are three options: New Directory: start a project in a brand new working directory, Existing Directory: Associate a project with an existing directory, and Version Control: Checkout a project from a version control repository"}
 
-![](images/reports/new_proj_2.png)
+![](images/reports/new_proj_2.png){fig-alt="Next page of the New Project Wizard interface. There is a back button and the heading Project Type. There are 7 optins: New Project, R Package, Shiny Application, Quarto Project, Quarto Website, Quarto Blog, and Quarto Book. The first option is highlighted with the help text `Create a new project in an empty directory.'"}
 
-![](images/reports/new_proj_3.png)
+![](images/reports/new_proj_3.png){fig-alt="Next page of the New Project Wizard interface. There is a back button and the heading Create New Project. There is a text box labelled 'Directory name' with the contents 'reprores' and another with the label 'Create project as a subdirectory of:` and the contents '/Users/debruine/R-projects' next to a Browse... button. There are two tickboxes (both unselected) labelled 'Create a git repository' and 'Use renv with this project'."}
 
 Starting a new project.
 :::
@@ -183,7 +185,7 @@ You can use the visual editor if you have RStudio version 1.4 or higher. This wi
 
 In the visual editor, you won't see the hashes that create headers, or the asterisks that create bold and italic text. You also won't see the backticks that demarcate inline code.
 
-![The example code above shown in the visual editor.](images/reports/visual-editor-example.png){#fig-visual-editor-example}
+![The example code above shown in the visual editor.](images/reports/visual-editor-example.png){#fig-visual-editor-example fig-alt="The visual editor shows the code in a grey box starting with {r} and then the main text is styles so 'Inline Code' is larger and bold."}
 
 If you try to add the hashes, asterisks and backticks to the visual editor, you will get frustrated as they disappear. If you succeed, your text in the regular editor will be full of backslashes and the code will not run.
 :::
@@ -279,11 +281,11 @@ First, you can highlight the code you want to run and then click <if>Run > Run S
 
 Alternatively, you can press the green "play" button at the top-right of the code chunk and this will run **all** lines of code in that chunk.
 
-![Click the green arrow to run all the code in the current chunk.](images/reports/run-current.png){#fig-run-current}
+![Click the green arrow to run all the code in the current chunk.](images/reports/run-current.png){#fig-run-current fig-alt="A sreenshot of the code above in the RStudio interface, highlighting the green arrow on the right and helper text reading 'Run Current Chunk'."}
 
 Even better is to learn some of the keyboard shortcuts for RStudio. To run a single line of code, make sure that the cursor is in the line of code you want to run (it can be anywhere, just not selecting any characters) and press <pc>Ctrl+Enter</pc> or <mac>Cmd+Enter</mac>. If you want to run all of the code in the code chunk, press <pc>Ctrl+Shift+Enter</pc> or <mac>Cmd+Shift+Enter</mac>. Learn these short cuts; they will make your life easier!
 
-![Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything.](images/reports/run-line.mov){#fig-run-line}
+![Use the keyboard shortcut to run only highlighted code, or run one line at a time by placing the cursor on a line without highlighting anything.](images/reports/run-line.mov){#fig-run-line fig-alt="A movie showing how to place the cursor without selecting to run one line."}
 
 ::: {.try}
 Run your code using each of the methods above. You should see the variables `name`, `age`, `today`, and `halloween` appear in the environment pane. 
@@ -788,7 +790,7 @@ The `df-print: paged` option prints data frames using `rmarkdown::paged_table()`
 The built-in bootswatch themes are: default, cerulean, cosmo, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, spacelab, united, and yeti. You can [view and download more themes](https://bootswatch.com/4/). Try changing the theme to see which one you like best.
 
 
-![Light themes in versions 3 and 4.](images/reports/bootswatch.png){#fig-bootswatch}
+![Light themes in versions 3 and 4.](images/reports/bootswatch.png){#fig-bootswatch fig-alt="A 6x4 grid showing the same text with headers and bullet points in 24 different themes."}
 
 ::: {.callout-warning}
 ## YAML formatting
