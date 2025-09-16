@@ -551,7 +551,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><div class="right meme">
+</header><!-- checked for alt-text --><div class="right meme">
 <img src="images/memes/read_csv.png" alt="Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font">
 </div>
 <section id="ilo-data" class="level2 unnumbered ilo"><h2 class="unnumbered ilo anchored" data-anchor-id="ilo-data">Intended Learning Outcomes</h2>
@@ -595,10 +595,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#‎| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#‎| include: false</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="co"># packages needed for this chapter</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(tidyverse)     <span class="co"># loads readr for importing data</span></span>
@@ -609,8 +608,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb1-11"><a href="#cb1-11"></a><span class="fu">library</span>(skimr)         <span class="co"># summarising datasets</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a><span class="fu">library</span>(janitor)       <span class="co"># clean up data</span></span>
 <span id="cb1-13"><a href="#cb1-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf">Data import cheatsheet</a>.</p>
+<p>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-import.html">Data import cheatsheet</a>.</p>
 </section><section id="sec-import-data" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-import-data">
 <span class="header-section-number">4.1</span> Import Data</h2>
 <p>The data we’ll be working with is on method of delivery for singleton births from Public Health Scotland. You can see the most recent version at <a href="https://www.opendata.nhs.scot/dataset/births-in-scottish-hospitals/resource/8654b6d8-9765-4ced-8e9b-4611aa4596eb">Method of Delivery</a>, but we’ll be working from a saved version.</p>
@@ -1250,8 +1248,8 @@ Note
 </div>
 </div>
 </div>
-<div id="radio_SICVAHHRXJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_SICVAHHRXJ" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SICVAHHRXJ" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SICVAHHRXJ" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_SICVAHHRXJ" value="x"><span><code>count(induced, births)</code></span></label>
+<div id="radio_YFZUOSMMUN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YFZUOSMMUN" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_YFZUOSMMUN" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_YFZUOSMMUN" value="x"><span><code>count(induced, births)</code></span></label><label><input type="radio" autocomplete="off" name="radio_YFZUOSMMUN" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label>
 </div>
 </div>
 <p>However, the numbers above are not the number of births, but rather the number of rows in the data set. The column <code>live_births</code> contains the number per each category, so we will need to add those numbers together to see the total number of births.</p>
@@ -2195,12 +2193,12 @@ Warning
 <span id="cb37-8"><a href="#cb37-8"></a>       <span class="at">color =</span> <span class="st">"Age Group"</span>) <span class="sc">+</span></span>
 <span id="cb37-9"><a href="#cb37-9"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-birth-year-type-age" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-birth-year-type-age" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-birth-year-type-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-birth-year-type-age-1.png" id="fig-birth-year-type-age" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-birth-year-type-age-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020.">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-birth-year-type-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-birth-year-type-age-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Percent of live births per year by age group and delivery type.
 </figcaption></figure>
 </div>
 </div>

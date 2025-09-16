@@ -1,19 +1,10 @@
-# Data Visualisation {#sec-viz .incomplete-chapter}
+# Data Visualisation {#sec-viz}
 
-```{r}
-#| label: setup-viz
-#| include: false
+<!-- checked for alt-text -->
 
-library(tidyverse) # includes readr, ggplot2, dplyr, and lubridate
-library(patchwork) # for multi-part plots
-library(ggthemes)  # for plot themes
-```
+<div class="right meme"><img src="images/memes/better_graphs.png" alt="xkcd comic titled 'General quality of charts and graphs in scientific papers'; y-axis: BAD on the bottom to GOOD on the top; x-axis: 1950s to 2010s; Line graph increases with time except for a dip between 1990 and 2010 labelled POWERPOINT/MSPAINT ERA" /></div>
 
-:::{.meme .right}
-![](images/memes/better_graphs.png){fig-alt="xkcd comic titled 'General quality of charts and graphs in scientific papers'; y-axis: BAD on the bottom to GOOD on the top; x-axis: 1950s to 2010s; Line graph increases with time except for a dip between 1990 and 2010 labelled POWERPOINT/MSPAINT ERA"}
-:::
-
-## Intended Learning Outcomes {#sec-ilo-viz -}
+## Intended Learning Outcomes {#sec-ilo-viz - .ilo}
 
 - [ ] Identify categorical versus continuous data
 - [ ] Create plots in layers using ggplot
@@ -52,11 +43,20 @@ library(ggthemes)  # for plot themes
 ```
 ````
 
+```{r}
+#| label: setup-viz
+#| include: false
+
+library(tidyverse) # includes readr, ggplot2, dplyr, and lubridate
+library(patchwork) # for multi-part plots
+library(ggthemes)  # for plot themes
+```
+
 If you get the message `Error in library(x) : there is no package called ‘x’`, please refer to @sec-install-package.
 
 We'd recommend making a new code chunk for each different activity, and using the white space to make notes on any errors you make, things you find interesting, or questions you'd like to ask the course team.
 
-Download the [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
+Download the [ggplot2 cheat sheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html).
 
 ## Variable types
 
@@ -306,10 +306,8 @@ dput(region_name_levels)
 dput(region_code_levels)
 ```
 
-After you update the column types, you have to re-import the data by adjusting the `read_csv()` code to set the `col_types` argument to the new column types. This is why you have to "hard code" the levels, since you won't have read in the data yet when you need to use them.
-
 ::: {.try}
-Update your data import code block to look like the one below.
+Update your data import code block to look like the one below. Since the reporting_level is "national" for all data in this set, and we're not going to use that column, we can skip it with `col_skip()`. 
 
 ```{r}
 # updated column types
@@ -328,7 +326,7 @@ pip_col_types <- cols(
   country_name = col_character(),
   country_code = col_character(),
   reporting_year = col_double(),
-  reporting_level = col_character(),
+  reporting_level = col_skip(),
   gini = col_double(),
   welfare_mean = col_double(),
   welfare_median = col_double()
@@ -344,7 +342,7 @@ pip <- read_csv("data/pip_gini_welfare_2010.csv",
 ::: {.callout-caution}
 ## Define objects before you use them
 
-Because `read_csv()` is going to use the object `pip_col_types`, you must create `pip_col_types` before you run the adjusted `read_csv()` code. If you ever need to adjust your code, try to think about the order that the code will run in if you start from scratch and make sure it's organised appropriately.
+Because `read_csv()` is going to use the object `pip_col_types`, you must create `pip_col_types` before you run the adjusted `read_csv()` code. This is why you also have to "hard code" the levels, since you won't have read in the data yet when you need to use them. If you ever need to adjust your code, think about the order that the code will run in if you start from scratch and make sure it's organised appropriately.
 :::
 
 
@@ -401,12 +399,34 @@ In the example above, we wrote out the names of the `r glossary("argument", "arg
 ggplot(pip,  aes(x = gini, y = welfare_mean))
 ```
 
+#### Label Attributes {#sec-ggplot-labels}
+
+You probably don't want the axis labels to read "gini" and "welfare_mean". These are great column labels that fit our rules for naming objects in R (@sec-naming), but are not plot-friendly. 
+
+Before ggplot2 version 4.0.0, you had to always manually change the aesthetic labels with `labs()` or a scale_* function. But now you can add plot-friendly labels directly to the data table so they are always used. 
+
+```{r}
+# set label attributes
+attr(pip$region_name, "label") <- "Region"
+attr(pip$region_code, "label") <- "Region"
+attr(pip$country_name, "label") <- "Country"
+attr(pip$country_code, "label") <- "Country"
+attr(pip$reporting_year, "label") <- "Year"
+attr(pip$gini, "label") <- "Gini Index"
+attr(pip$welfare_mean, "label") <- "Mean Welfare per Capita"
+```
+
+::: {.callout-caution}
+If this doesn't work, check what version of ggplot2 you're using with `packageVersion("ggplot2")`.
+:::
+
+
 #### Geoms
 
 Now we can add our plot elements in layers. These are referred to as `r glossary("geom", "geoms")` and their functions start with `geom_`. You **add** layers onto the base plot created by `ggplot()` with a plus (`+`). 
 
 ::: {.try}
-Add a scatterplot to your plot using `geom_point()`.
+Add a scatterplot to your plot using `geom_point()`. Notice how the axis labels have updated themselves from the label attributes we set above!
 
 ```{r}
 #| label: img-build-plot-labels
@@ -571,8 +591,7 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
   # customise axis labels and breaks
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1))
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1))
 ```
 
 The `name` argument changes the axis label. The `breaks` argument sets the major units and needs a `r glossary("vector")` of possible values, which can extend beyond the range of the data (e.g., `gini` values in this set are only between 0.2 and 0.7, but we can specify breaks 0-1 to make the maths easier or anticipate updates to the data). The `seq()` function creates a sequence of numbers `from` one `to` another `by` specified steps.
@@ -597,10 +616,8 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
   # customise axis labels and breaks
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
-  scale_y_continuous(name = "Mean Welfare per Capita",
-                     breaks = seq(from = 0, to = 100, by = 20),    
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 100, by = 20),    
                      minor_breaks = seq(from = 0, to = 100, by = 5))
 ```
 :::
@@ -620,10 +637,8 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   geom_smooth(method = lm, 
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
-  scale_y_continuous(name = "Mean Welfare",
-                     breaks = seq(from = 0, to = 100, by = 20),    
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_y_continuous(breaks = seq(from = 0, to = 100, by = 20),    
                      minor_breaks = seq(from = 0, to = 100, by = 5)) +
   # set axis limits
   coord_cartesian(ylim = c(0, 100))
@@ -642,7 +657,7 @@ The y-axis values are concentrated at the lower range. This plot might be easier
 ```{r}
 #| label: fig-build-plot-log10
 #| fig-cap: Transforming the y-axis to log10
-#| fag-alt: "The plot above with the y-axis set as a log10 scale, with breaks at 1, 2, 5, 10, 20, 50 and 100."
+#| fag-alt: "The plot above with the y-axis set as a log10 scale, with breaks at 1, 2, 5, 10, 20, 50 and 100. The x-axis label is 'Mean Welfare (log10)'."
 
 y_breaks <- c(1, 2, 5, 10, 20, 50, 100)
 y_breaks_minor <- c(1:5, seq(10, 50, 10), 50, 100)
@@ -653,8 +668,7 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   geom_smooth(method = lm, 
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
   scale_y_log10(name = "Mean Welfare (log10)",
                 breaks = y_breaks,
                 minor_breaks = y_breaks_minor) +
@@ -678,8 +692,7 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   geom_smooth(method = lm, 
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
   scale_y_log10(name = "Mean Welfare (log10)",
                 breaks = y_breaks,
                 minor_breaks = y_breaks_minor) +
@@ -703,8 +716,7 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   geom_smooth(method = lm, 
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
   scale_y_log10(name = "Mean Welfare (log10)",
                 breaks = y_breaks,
                 minor_breaks = y_breaks_minor) +
@@ -728,8 +740,7 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
   geom_smooth(method = lm, 
               formula = y~x, 
               colour = rgb(0, .5, .8)) +
-  scale_x_continuous(name = "Gini Index", 
-                     breaks = seq(from = 0, to = 1, by = .1)) +
+  scale_x_continuous(breaks = seq(from = 0, to = 1, by = .1)) +
   scale_y_log10(name = "Mean Welfare (log10)",
                 breaks = y_breaks,
                 minor_breaks = y_breaks_minor) +
@@ -742,13 +753,13 @@ ggplot(pip,  aes(x = gini, y = welfare_mean)) +
        caption = "Figure 1. Inequality and welfare have a negative relationship.")
 ```
 
-However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header. You can also add alt-text descriptions for screen readers that describe the image.
+However, it is more accessible to include this sort of information in plain text for screen readers. You can add a text caption in the chunk header. You should also add alt-text descriptions for screen readers that describe the image.
 
 ```{r}
 #| echo: fenced
 #| label: fig-gini-welfare
 #| fig-cap: "Inequality and welfare have a negative relationship."
-#| fig-alt: "A scatterplot showing Gini index on the x-axis (range ~0.2-0.65) and mean welfare per capita on the y-axis (range 0-100) with a trend line showing that as gini increases from about 0.2 to 0.65, welfare decreases from about 30 to about 5."
+#| fig-alt: "A scatterplot showing Gini index on the x-axis (range ~0.2 to 0.65) and mean welfare per capita on the y-axis (range 0 to 100) with a trend line showing that as gini increases from about 0.2 to 0.65, welfare decreases from about 30 to 5."
 
 # figure code here
 ```
@@ -817,8 +828,6 @@ ggplot(pip, aes(x = region_code,
                 fill = region_code)) +
   geom_bar() +
   scale_x_discrete(
-    # change axis title
-    name = "Region", 
     # change order
     limits = c("ECA", "SAS", "EAP", "MNA", "SSA", "LAC", "OHI"),
     # change labels (\n creates a line break)
@@ -868,7 +877,7 @@ The mapping for `geom_col()` requires you to set both the `x` and `y` aesthetics
 ```{r}
 #| label: fig-col
 #| fig-cap: "A basic column plot."
-#| fig-alt: "A column plot identical to the bar plot above, except the y-axis label is n and not count. It has region_code on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27."
+#| fig-alt: "A column plot identical to the bar plot above, except the y-axis label is n and not count. It has Region on the x-axis with 7 categories and n on the y-axis, ranging from 0 to 30. The x-axis labels are: SAS, MNA, EAP, SSA, LAC, ECA, OHI. Bars increase from about 3 to 27."
 ggplot(count_data, aes(x = region_code, y = n)) +
   geom_col()
 ```
@@ -935,7 +944,7 @@ A histogram splits the data into "bins" along the x-axis and shows the count of 
 ```{r}
 #| label: fig-histogram
 #| fig-cap: "Histogram of mean welfare per capita."
-#| fig-alt: "A plot with welfare_mean on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90."
+#| fig-alt: "A plot with Mean Welfare per Capita on the x-axis, ranging from 0 to 90, and count on the y-axis, ranging from 0 to 11. The histogram shows most values between 0 and 25, with fewer spread out between 30 and 90."
 ggplot(pip, aes(x = welfare_mean)) +
   geom_histogram()
 ```
@@ -1442,7 +1451,7 @@ In this section, we'll explore a few options for dealing with this.
 ```{r}
 #| label: fig-over-plot
 #| fig-cap: "Overlapping data makes plots hard to understand."
-#| fig-alt: "A poiont plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read."
+#| fig-alt: "A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read."
 ggplot(simdat, aes(x = score, y = rating)) + 
   geom_point()
 ```
@@ -1451,8 +1460,6 @@ ggplot(simdat, aes(x = score, y = rating)) +
 
 You can use `geom_jitter()` to move the points around a bit to make them easier to see. You can also set alpha transparency. Here, the x-axis is continuous, so there is no need to jitter the `width`, but the y-axis is ordinal, so the `height` is jittered between -0.2 and +0.2 days away from the true y-value. 
 
-<!-- alt-text checked up to here -->
-
 ::: {.try}
 Change these values to understand what jitter is doing
 :::
@@ -1460,6 +1467,7 @@ Change these values to understand what jitter is doing
 ```{r}
 #| label: fig-jitter-plot
 #| fig-cap: "Jitter plot."
+#| fig-alt: "The same plot as above, but with the 5 horizontal lines of points spread out from +/- 0.25 around the integer y axis."
 ggplot(simdat, aes(x = score, y = rating)) + 
   geom_jitter(height = 0.2, width = 0, alpha = 0.1)
 ```
@@ -1473,6 +1481,7 @@ Alternatively, you can use `facet_wrap()` to create a separate plot for each rat
 #| fig-height: 8
 #| fig-width: 8
 #| fig-cap: "A histogram with facets."
+#| fig-alt: "Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5."
 ggplot(simdat, aes(x = score)) +
   geom_histogram(binwidth = 5, 
                  boundary = 0, 
@@ -1497,7 +1506,7 @@ For the final step in this chapter, we will create a report of data visualisatio
 
 ### New Document
 
-* Create and save a new quarto document named `plots_report.qmd` 
+* Create and save a new quarto document named `03-dataviz-exercises.qmd` 
 * Give it the title "Personality Data". 
 * Remove the default template text 
 * Add the code below in the set-up code chunk:
@@ -1510,11 +1519,20 @@ For the final step in this chapter, we will create a report of data visualisatio
 library(tidyverse) 
 library(patchwork) 
 library(ggthemes)  
-library(lubridate) 
 
 personality <- read_csv("https://psyteachr.github.io/reprores/data/personality_scores.csv")
 ```
 ````
+
+### Data import
+
+Give human-readable labels to the columns you'll be plotting:
+
+* `Co`: Conscientiousness
+* `Ag`: Agreeableness
+* `Ne`: Neuroticism
+* `Op`: Openness
+* `Ex`: Extroversion
 
 ### Summary
 
@@ -1573,6 +1591,7 @@ glossary_table()
 * [Chapter 1: Data Visualisation](https://r4ds.hadley.nz/data-visualize) of *R for Data Science*
 * [ggplot2 FAQs](https://ggplot2.tidyverse.org/articles/)
 * [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/)
+* [ggplot2 version 4.0.0 changes](https://www.tidyverse.org/blog/2025/09/ggplot2-4-0-0)
 * [Hack Your Data Beautiful](https://psyteachr.github.io/hack-your-data/) workshop by University of Glasgow postgraduate students
 * [Chapter 28: Graphics for communication](http://r4ds.had.co.nz/graphics-for-communication.html) of *R for Data Science*
 * [gganimate](https://gganimate.com/): A package for making animated plots

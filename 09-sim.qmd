@@ -1,4 +1,4 @@
-# Probability & Simulation {#sim .incomplete-chapter}
+# Probability & Simulation {#sim}
 
 <div class="right meme"><img src="images/memes/sim.jpg"
      alt="Morpheus from The Matrix. Top text: What if I told you; Bottom text: Ur in a simulation, inside a simulation, inside another simulation, inside a taco, inside a taco cat, inside a Taco Bell, inside an Arby's. Inside another simulation" /></div>
@@ -19,11 +19,10 @@
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-
-```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+````
+```{{r}}
+#| label: setup
+#| include: false
 library(tidyverse) # for data wrangling
 # devtools::install_github("debruine/faux") 
 library(faux)      # data simulation
@@ -31,6 +30,17 @@ library(plotly)    # create a 3D plot to visualise correlations
 # MASS::mvrnorm() is used without loading MASS
 
 set.seed(8675309) # makes sure random numbers are reproducible
+```
+````
+
+```{r}
+#| label: setup-sim
+#| include: false
+library(tidyverse)
+library(faux)      # data simulation
+library(plotly)    # create a 3D plot to visualise correlations
+
+set.seed(8675309)
 ```
 
 Simulating data is a very powerful way to test your understanding of statistical concepts. We are going to use `r glossary("simulation", "simulations")` to learn the basics of `r glossary("probability")`.
@@ -43,7 +53,7 @@ First, we need to understand some different ways data might be distributed and h
 
 The `r glossary("uniform distribution")` is the simplest distribution. All numbers in the range have an equal probability of being sampled.
 
-::: {.try data-latex=""}
+::: {.try}
 Take a minute to think of things in your own research that are uniformly distributed.
 :::
 
@@ -70,7 +80,10 @@ Use `sample()` to sample from a `r glossary("discrete")` distribution.
 
 You can use `sample()` to simulate events like rolling dice or choosing from a deck of cards. The code below simulates rolling a 6-sided die 10000 times. We set `replace` to `TRUE` so that each event is independent. See what happens if you set `replace` to `FALSE`.
 
-```{r sample-replace, fig.cap = "Distribution of dice rolls."}
+```{r}
+#| label: fig-sample-replace
+#| fig-cap: "Distribution of dice rolls."
+#| fig-alt: ""
 rolls <- sample(1:6, 10000, replace = TRUE)
 
 # plot the results
@@ -147,7 +160,7 @@ ggplot() +
   )
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Run the simulation above several times, noting how the histogram changes. Try changing the values of `n`, `size`, and `prob`.
 :::
 
@@ -182,7 +195,7 @@ ggplot() +
   )
 ```
 
-::: {.info data-latex=""}
+::: {.callout-note}
 Run the simulation above several times, noting how the density plot changes. What do the vertical lines represent? Try changing the values of `n`, `mean`, and `sd`.
 :::
 
@@ -222,7 +235,7 @@ A `r glossary("bivariate normal")` distribution is two normally distributed vect
 
 What if we want to sample from a population with specific relationships between variables? We can sample from a bivariate normal distribution using `mvrnorm()` from the `MASS` package. 
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 Don't load MASS with the `library()` function because it will create a conflict with the `select()` function from dplyr and you will always need to preface it with `dplyr::`. Just use `MASS::mvrnorm()`.
 :::
 
@@ -380,7 +393,7 @@ If you are using null hypothesis significance testing (`r glossary("NHST")`), th
 
 The probability that a test concludes there is an effect when there is really no effect (e.g., concludes a fair coin is biased) is called the `r glossary("false positive")` rate (or `r glossary("Type I Error")` Rate). The `r glossary("alpha")` is the false positive rate we accept for a test. The probability that a test concludes there is no effect when there really is one (e.g., concludes a biased coin is fair) is called the `r glossary("false negative")` rate (or `r glossary("Type II Error")` Rate). The `r glossary("beta")` is the false negative rate we accept for a test.
 
-::: {.info data-latex=""}
+::: {.callout-note}
 The false positive rate is not the overall probability of getting a false positive, but the probability of a false positive *under the null hypothesis*. Similarly, the false negative rate is the probability of a false negative *under the alternative hypothesis*. Unless we know the probability that we are testing a null effect, we can't say anything about the overall probability of false positives or negatives. If 100% of the hypotheses we test are false, then all significant effects are false positives, but if all of the hypotheses we test are true, then all of the positives are true positives and the overall false positive rate is 0.
 :::
 
@@ -388,7 +401,7 @@ The false positive rate is not the overall probability of getting a false positi
 
 `r glossary("Power")` is equal to 1 minus beta (i.e., the `r glossary("true positive")` rate), and depends on the effect size, how many samples we take (n), and what we set alpha to. For any test, if you specify all but one of these values, you can calculate the last. The effect size you use in power calculations should be the smallest effect size of interest (`r glossary("SESOI")`). See [@TOSTtutorial](https://doi.org/10.1177/2515245918770963) for a tutorial on methods for choosing an SESOI. 
 
-::: {.try data-latex=""}
+::: {.try}
 Let's say you want to be able to detect at least a 15% difference from chance (50%) in a coin's fairness, and you want your test to have a 5% chance of false positives and a 10% chance of false negatives. What are the following values?
 
 * alpha = `r fitb(c("0.05", ".05", "5%"))`
@@ -403,7 +416,7 @@ Let's say you want to be able to detect at least a 15% difference from chance (5
 
 The `r glossary("confidence interval")` is a range around some value (such as a mean) that has some probability of containing the parameter, if you repeated the process many times. Traditionally in psychology, we use 95% confidence intervals, but you can calculate CIs for any percentage.
 
-::: {.info data-latex=""}
+::: {.callout-note}
 A 95% CI does *not* mean that there is a 95% probability that the true mean lies within this range, but that, if you repeated the study many times and calculated the CI this same way every time, you'd expect the true mean to be inside the CI in 95% of the studies. This seems like a subtle distinction, but can lead to some misunderstandings. See [@Morey2016](https://link.springer.com/article/10.3758/s13423-015-0947-8) for more detailed discussion.
 :::
 
@@ -432,7 +445,7 @@ binom.test(biased_coin, n, p = 0.5)
 
 ```
 
-::: {.info data-latex=""}
+::: {.callout-note}
 Run the code above several times, noting the p-values for the fair and biased coins. Alternatively, you can [simulate coin flips](http://shiny.psy.gla.ac.uk/debruine/coinsim/) online and build up a graph of results and p-values. 
 
 * How does the p-value vary for the fair and biased coins?
@@ -484,7 +497,7 @@ mean(my_reps < alpha)
 
 ```
 
-::: {.info data-latex=""}
+::: {.callout-note}
 `1e4` is just scientific notation for a 1 followed by 4 zeros (`10000`). When you're running simulations, you usually want to run a lot of them. It's a pain to keep track of whether you've typed 5 or 6 zeros (100000 vs 1000000) and this will change your running time by an order of magnitude.
 :::
 
@@ -524,7 +537,7 @@ t_ind <- t.test(a, b, paired = FALSE)
 t_ind
 ```
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 The `paired` argument defaults to `FALSE`, but it's good practice to always explicitly set it so you are never confused about what type of test you are performing.
 :::
 
@@ -573,7 +586,7 @@ power <- mean(my_reps < alpha)
 power
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Run the code above several times. How much does the power value fluctuate? How many replications do you need to run to get a reliable estimate of power?
 :::
 
@@ -600,12 +613,12 @@ ggplot() +
   )
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 What do you think the distribution of p-values is 
 when there is no effect (i.e., the means are identical)? Check this yourself.
 :::
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 Make sure the `boundary` argument is set to `0` for p-value histograms. See what happens with a null effect if `boundary` is not set.
 :::
 
@@ -625,7 +638,7 @@ dat <- rnorm_multi(
 cor(dat$x, dat$y)
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Set `n` to a large number like 1e6 so that the correlations are less affected by chance. Change the value of the **mean** for `a`, `x`, or `y`. Does it change the correlation between `x` and `y`? What happens when you increase or decrease the **sd**? Can you work out any rules here?
 :::
 
@@ -732,7 +745,7 @@ ggplot(sim_height) +
 
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Run the simulation above several times, noting how the density plot changes. Try changing the age you're simulating.
 :::
 
@@ -786,7 +799,7 @@ mean(my_reps < alpha)
 
 What if we want to find out what sample size will give us 80% power? We can try trial and error. We know the number should be slightly larger than 50. But you can search more systematically by repeating your power calculation for a range of sample sizes. 
 
-::: {.info data-latex=""}
+::: {.callout-note}
 This might seem like overkill for a t-test, where you can easily look up sample size calculators online, but it is a valuable skill to learn for when your analyses become more complicated.
 :::
 

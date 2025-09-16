@@ -627,8 +627,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><!-- checked for alt-text --><div class="meme right">
-<p><img src="images/memes/repro_reports.jpg" class="img-fluid" alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"></p>
+</header><!-- checked for alt-text --><div class="right meme">
+<img src="images/memes/repro_reports.jpg" alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)">
 </div>
 <section id="sec-ilo-reports" class="level2 unnumbered ilo"><h2 class="unnumbered ilo anchored" data-anchor-id="sec-ilo-reports">Intended Learning Outcomes</h2>
 <ul class="task-list">
@@ -667,13 +667,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </section><section id="sec-setup-reports" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-setup-reports">Setup</h2>
 <p>For reference, here are the packages we will use in this chapter. If running the code below in the console pane gives you the error <code>Error in library(package_name) : there is no package called ‘package_name’</code>, you may need to install them as explained in <a href="01-intro.html#sec-install-package" class="quarto-xref"><span>Section 1.2.1</span></a>.</p>
 <div class="cell">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>Chapter packages</strong></pre>
-</div>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># various data manipulation functions</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(quarto)    <span class="co"># for rendering a report from a script</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 </section><section id="sec-reproducibility" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="sec-reproducibility">
 <span class="header-section-number">2.1</span> Why use reproducible reports?</h2>
@@ -870,17 +865,17 @@ Figure&nbsp;2.2: The example code above shown in the visual editor.
 </section><section id="header" class="level3" data-number="2.4.2"><h3 data-number="2.4.2" class="anchored" data-anchor-id="header">
 <span class="header-section-number">2.4.2</span> Header</h3>
 <p>At the top of the file, you will see some text between a pair of three dashes:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Reports"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="an">author:</span><span class="co"> "Lisa DeBruine"</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Reports"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Lisa DeBruine"</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This is the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header, which provides information to quarto about how you want to render a document. Here, it sets the title, author, and format. Add a new line with the date, e.g., <code>date: 2025-10-03</code>.</p>
 <p>You will learn in <a href="#sec-yaml" class="quarto-xref"><span>Section 2.6.3</span></a> how to further customise your document using information in the header.</p>
 </section><section id="sec-markdown" class="level3" data-number="2.4.3"><h3 data-number="2.4.3" class="anchored" data-anchor-id="sec-markdown">
 <span class="header-section-number">2.4.3</span> Markdown</h3>
 <p>Now replace all of the text beneath the header with the following text. Make sure to skip a line or two after the three dashes.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">## Basic Markdown</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">## Basic Markdown</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a>Now I can make:</span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
@@ -974,8 +969,8 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>One important feature of quarto for reproducible reports is that you can combine text and code to insert values into your writing using <strong>inline coding</strong>. If you’ve ever had to copy and paste a value or text from one file to another, you’ll know how easy it can be to make mistakes. Inline code avoids this.</p>
 <div class="try">
 <p>Add a new level-2 header called “Inline Code”, then copy and paste the text below. If you used a different variable name than <code>halloween</code>, you should update this with the name of the object you created, but otherwise don’t change anything else.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>My name is <span class="in">`r name`</span> and I am <span class="in">`r age`</span> years old. </span>
-<span id="cb6-2"><a href="#cb6-2"></a>It is <span class="in">`r halloween - today`</span> days until Halloween, </span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>My name is Lisa and I am 48 years old. </span>
+<span id="cb6-2"><a href="#cb6-2"></a>It is 45 days until Halloween, </span>
 <span id="cb6-3"><a href="#cb6-3"></a>which is my favourite holiday.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sec-render" class="level3" data-number="2.4.8"><h3 data-number="2.4.8" class="anchored" data-anchor-id="sec-render">
@@ -984,7 +979,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 48 years old. It is 46 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 48 years old. It is 45 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1170,7 +1165,7 @@ Tab-autocomplete file names
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a>The total number of participants in the **experimental** condition was <span class="in">`r group_counts$n[2]`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1"></a>The total number of participants in the **experimental** condition was 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section><section id="sec-comments" class="level3" data-number="2.5.6"><h3 data-number="2.5.6" class="anchored" data-anchor-id="sec-comments">
@@ -1231,7 +1226,7 @@ Figure&nbsp;2.5: The ReproRes logo
 <span id="cb19-9"><a href="#cb19-9"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/logos/psyTeachR_logo.png"</span>, )</span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" width="50%" data-fig-align="right" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
+<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research" width="50%" data-fig-align="right">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
 </div>
@@ -1872,14 +1867,14 @@ Warning
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb46-1"><a href="#cb46-1"></a>---</span>
-<span id="cb46-2"><a href="#cb46-2"></a>title: "CV"</span>
-<span id="cb46-3"><a href="#cb46-3"></a>author: "Me"</span>
-<span id="cb46-4"><a href="#cb46-4"></a>format:</span>
-<span id="cb46-5"><a href="#cb46-5"></a>  html:</span>
-<span id="cb46-6"><a href="#cb46-6"></a>    df-print: kable</span>
-<span id="cb46-7"><a href="#cb46-7"></a>    theme: cosmo</span>
-<span id="cb46-8"><a href="#cb46-8"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb46-1"><a href="#cb46-1"></a><span class="pp">---</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"CV"</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Me"</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a><span class="at">    </span><span class="fu">df-print</span><span class="kw">:</span><span class="at"> kable</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb46-8"><a href="#cb46-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="markdown-practice" class="level3" data-number="2.9.3"><h3 data-number="2.9.3" class="anchored" data-anchor-id="markdown-practice">
 <span class="header-section-number">2.9.3</span> Markdown Practice</h3>
@@ -1954,10 +1949,10 @@ and teaching computational skills.
 Solution
 </button>
 <p>You can set the execution default to <code>echo: false</code> in the YAML header at the top of the script.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb49-1"><a href="#cb49-1"></a>---</span>
-<span id="cb49-2"><a href="#cb49-2"></a>execute:</span>
-<span id="cb49-3"><a href="#cb49-3"></a>  echo: false</span>
-<span id="cb49-4"><a href="#cb49-4"></a>---</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb49-1"><a href="#cb49-1"></a><span class="pp">---</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To set visibility for a specific code chunk, put <code>#| echo: false</code> at the top of the code chunk.</p>
 </div>
 </section><section id="add-an-image" class="level3" data-number="2.9.6"><h3 data-number="2.9.6" class="anchored" data-anchor-id="add-an-image">
@@ -1968,19 +1963,19 @@ Solution
 Solution
 </button>
 <p>You can add an image from the web using its URL:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb50-1"><a href="#cb50-1"></a>![ReproRes](https://psyteachr.github.io/images/reprores.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href="#cb50-1"></a><span class="al">![ReproRes](https://psyteachr.github.io/images/reprores.png)</span>{width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb51-1"><a href="#cb51-1"></a>![ReproRes](images/logos/logo.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href="#cb51-1"></a><span class="al">![ReproRes](images/logos/logo.png)</span>{width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
 <span class="header-section-number">2.9.7</span> Use Inline R</h3>
 <p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2025-09-15.</p>
+<p>This CV was created on 2025-09-16.</p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on <span class="in">`r Sys.Date()`</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on 2025-09-16.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
 <span class="header-section-number">2.9.8</span> Render</h3>

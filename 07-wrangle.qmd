@@ -1,4 +1,7 @@
-# Data Wrangling {#sec-wrangle .incomplete-chapter}
+# Data Wrangling {#sec-wrangle}
+
+<div class="right meme"><img src="images/memes/real_world_data.jpg"
+     alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'" /></div>
 
 ## Intended Learning Outcomes {#sec-ilo-wrangle - .ilo}
 
@@ -23,14 +26,22 @@
 ## Set-up {#sec-setup-wrangle -}
 
 1. Open your `reprores` project 
-1. Create a new quarto file called `03-dataviz.qmd`
+1. Create a new quarto file called `07-wrangle.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
+````
+```{{r}}
+#| label: setup
+#| include: false
+library(tidyverse)   # data wrangling functions
+library(janitor)     # clean data table names
+```
+````
+
 ```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+#| label: setup-wrangle
+#| include: false
 library(tidyverse)   # data wrangling functions
 library(janitor)     # clean data table names
 ```

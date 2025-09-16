@@ -575,7 +575,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><section id="sec-ilo-joins" class="level2 unnumbered ilo"><h2 class="unnumbered ilo anchored" data-anchor-id="sec-ilo-joins">Intended Learning Outcomes</h2>
+</header><!-- checked for alt-text --><div class="right meme">
+<img src="images/memes/joins.png" alt="3-panel meme. 1: dog looks at a baby in a chair, text reads 'An SQL query goes into a bar, walks up to two tables and asks...'; 2: baby looks at dog, text reads 'Can I join you?'; 3: dog and baby look at camera, no text">
+</div>
+<section id="sec-ilo-joins" class="level2 unnumbered ilo"><h2 class="unnumbered ilo anchored" data-anchor-id="sec-ilo-joins">Intended Learning Outcomes</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Be able to match related data across multiple tables</label></li>
 <li><label><input type="checkbox">Be able to combine data from multiple files</label></li>
@@ -611,14 +614,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#‎| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#‎| include: false</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)     <span class="co"># includes readr &amp; tibble</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse) <span class="co"># for data wrangling</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf">Data transformation cheatsheet</a>.</p>
+<p>Download the <a href="https://rstudio.github.io/cheatsheets/html/data-transformation.html">Data transformation cheatsheet</a>.</p>
 </section><section id="sec-joins-data" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="sec-joins-data">
 <span class="header-section-number">5.3</span> Loading data</h2>
 <p>The data you want to report on or visualise are often in more than one file (or more than one tab of an excel file or googlesheet). You might need to join up a table of customer information with a table of orders, or combine the monthly social media reports across several months.</p>
@@ -646,9 +647,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>When entering data like this, it’s important that the order of each variable matches up. So number 1 will correspond to “Port Ellen” and “PA42 7DU”.</li>
 </ul>
 <div class="cell">
+<div id="tbl-demo-customers" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-demo-customers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.1: Demo customers table
+</figcaption><div aria-describedby="tbl-demo-customers-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
 <th style="text-align: left;">city</th>
@@ -683,14 +688,20 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </tbody>
 </table>
 </div>
-<p>Demo customers table</p>
+</div>
+</div>
+</figure>
 </div>
 </div>
 <p><code>orders</code> has customer id and the number of items ordered. Some customers from the previous table have no orders, some have more than one order, and some are not in the customer table.</p>
 <div class="cell">
+<div id="tbl-demo-orders" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-demo-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5.2: Demo orders table.
+</figcaption><div aria-describedby="tbl-demo-orders-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
 <th style="text-align: right;">items</th>
@@ -735,7 +746,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </tbody>
 </table>
 </div>
-<p>Demo orders table.</p>
+</div>
+</div>
+</figure>
 </div>
 </div>
 </section><section id="sec-mutating-joins" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="sec-mutating-joins">
@@ -769,7 +782,7 @@ Note
 <section id="sec-left_join" class="level3" data-number="5.4.1"><h3 data-number="5.4.1" class="anchored" data-anchor-id="sec-left_join">
 <span class="header-section-number">5.4.1</span> left_join()</h3>
 <div class="join">
-<p><img src="images/joins/left_join.png"></p>
+<p><img src="images/joins/left_join.png" alt="title: left_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; the entire left circle is shaded pink."></p>
 </div>
 <p>A <code>left_join</code> keeps all the data from the first (left) table and adds anything that matches from the second (right) table. If the right table has more than one match for a row in the left table, there will be more than one row in the joined table (see ids 4 and 5).</p>
 <div class="try">
@@ -836,7 +849,7 @@ Note
 </div>
 </div>
 <div class="join">
-<p><img src="images/joins/left_join_rev.png"></p>
+<p><img src="images/joins/left_join_rev.png" alt="title: left_join(y, x), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; the entire right circle is shaded pink."></p>
 </div>
 <p>The order you specify the tables matters, in the below code we have reversed the order and so the result is all rows from the <code>orders</code> table joined to any matching rows from the <code>customers</code> table.</p>
 <div class="cell">
@@ -914,7 +927,7 @@ Note
 </section><section id="sec-right_join" class="level3" data-number="5.4.2"><h3 data-number="5.4.2" class="anchored" data-anchor-id="sec-right_join">
 <span class="header-section-number">5.4.2</span> right_join()</h3>
 <div class="join">
-<p><img src="images/joins/right_join.png"></p>
+<p><img src="images/joins/right_join.png" alt="title: right_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; the entire right circle is shaded orange"></p>
 </div>
 <p>A <code>right_join</code> keeps all the data from the second (right) table and joins anything that matches from the first (left) table.</p>
 <div class="try">
@@ -1008,7 +1021,7 @@ Note
 </section><section id="sec-inner_join" class="level3" data-number="5.4.3"><h3 data-number="5.4.3" class="anchored" data-anchor-id="sec-inner_join">
 <span class="header-section-number">5.4.3</span> inner_join()</h3>
 <div class="join">
-<p><img src="images/joins/inner_join.png"></p>
+<p><img src="images/joins/inner_join.png" alt="title: inner_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; only the overlapping part is shaded yellow"></p>
 </div>
 <p>An <code>inner_join</code> returns all the rows that have a match in both tables. Changing the order of the tables will change the order of the columns, but not which rows are kept.</p>
 <div class="try">
@@ -1071,7 +1084,7 @@ Note
 </section><section id="sec-full_join" class="level3" data-number="5.4.4"><h3 data-number="5.4.4" class="anchored" data-anchor-id="sec-full_join">
 <span class="header-section-number">5.4.4</span> full_join()</h3>
 <div class="join">
-<p><img src="images/joins/full_join.png"></p>
+<p><img src="images/joins/full_join.png" alt="title: full_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; both circles are shaded green."></p>
 </div>
 <p>A <code>full_join</code> lets you join up rows in two tables while keeping all of the information from both tables. If a row doesn’t have a match in the other table, the other table’s column values are set to <code>NA</code>.</p>
 <div class="try">
@@ -1161,10 +1174,10 @@ Note
 <section id="sec-semi_join" class="level3" data-number="5.5.1"><h3 data-number="5.5.1" class="anchored" data-anchor-id="sec-semi_join">
 <span class="header-section-number">5.5.1</span> semi_join()</h3>
 <div class="join">
-<p><img src="images/joins/semi_join.png"></p>
+<p><img src="images/joins/semi_join.png" alt="title: semi_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; only the overlapping part is shaded blue and the label for y is greyed out. A caption below reads '* only columns from x, no duplicate rows, even if >1 match in y’“/></p>
 </div>
 <p>A <code>semi_join</code> returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.</p>
-<div class="try">
+<div class=" try=""></p>
 <p>Semi join the order data to the customer data, matching by the <code>id</code> column.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>semi_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(customers, orders, <span class="at">by =</span> <span class="st">"id"</span>)</span>
@@ -1218,15 +1231,15 @@ Note
 </div>
 </div>
 <div class="join">
-<p><img src="images/joins/semi_join_rev.png"></p>
+<p><img src="images/joins/semi_join_rev.png" alt="title: semi_join(y, x), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; only the overlapping part is shaded blue and the label for x is greyed out. A caption below reads '* only columns from y, no duplicate rows, even if >1 match in x’“/></p>
 </div>
 <p>Order matters in a semi join.</p>
-<div class="cell">
+<div class=" cell=""></p>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>semi2_data <span class="ot">&lt;-</span> <span class="fu">semi_join</span>(orders, customers, <span class="at">by =</span> <span class="st">"id"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>semi2_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table table-sm table-striped small">
+<table class="caption-top table">
 <thead><tr class="header">
 <th style="text-align: right;">id</th>
 <th style="text-align: right;">items</th>
@@ -1264,7 +1277,7 @@ Note
 </section><section id="sec-anti_join" class="level3" data-number="5.5.2"><h3 data-number="5.5.2" class="anchored" data-anchor-id="sec-anti_join">
 <span class="header-section-number">5.5.2</span> anti_join()</h3>
 <div class="join">
-<p><img src="images/joins/anti_join.png"></p>
+<p><img src="images/joins/anti_join.png" alt="title: anti_join(x, y), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; only the non-overlapping part of x is shaded purple"></p>
 </div>
 <p>An <code>anti_join</code> return all rows from the left table where there are <em>not</em> matching values in the right table, keeping just columns from the left table.</p>
 <div class="try">
@@ -1291,7 +1304,7 @@ Note
 </div>
 </div>
 <div class="join">
-<p><img src="images/joins/anti_join_rev.png"></p>
+<p><img src="images/joins/anti_join_rev.png" alt="title: anti_join(y, x), image: two circles in a venn diagram, with the left circle labelled x and the right circle labelled y; only the non-overlapping part of y is shaded purple"></p>
 </div>
 <p>Order matters in an anti join.</p>
 <div class="cell">

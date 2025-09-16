@@ -537,6 +537,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li><a href="#test-your-function" id="toc-test-your-function" class="nav-link" data-scroll-target="#test-your-function"><span class="header-section-number">8.3.3</span> Test your function</a></li>
   </ul>
 </li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">8.4</span> Exercises</a></li>
   <li><a href="#sec-glossary-func" id="toc-sec-glossary-func" class="nav-link" data-scroll-target="#sec-glossary-func">Glossary</a></li>
   <li><a href="#sec-resources-func" id="toc-sec-resources-func" class="nav-link" data-scroll-target="#sec-resources-func">Further Resources</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/08-func.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/08-func.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -557,8 +558,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   
 
 
-</header><div class="meme right">
-<p><img src="images/memes/functions.jpg" class="img-fluid" alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions."></p>
+</header><div class="right meme">
+<img src="images/memes/functions.jpg" alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions.">
 </div>
 <section id="sec-ilo-func" class="level2 unnumbered ilo"><h2 class="unnumbered ilo anchored" data-anchor-id="sec-ilo-func">Intended Learning Outcomes</h2>
 <ul class="task-list">
@@ -573,17 +574,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#‎| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#‎| include: false</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)  <span class="co"># loads purrr for iteration</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(broom)      <span class="co"># converts test output to tidy tables</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf">Apply functions with purrr cheat sheet</a>.</p>
+<p>Download the <a href="https://rstudio.github.io/cheatsheets/html/purrr.html">Apply functions with purrr cheat sheet</a>.</p>
 </section><section id="sec-iteration-functions" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="sec-iteration-functions">
 <span class="header-section-number">8.1</span> Iteration functions</h2>
 <p>In the next two lectures, we are going to learn more about <a href="https://psyteachr.github.io/glossary/i#iteration" target="_blank" class="glossary" title="Repeating a process or function">iteration</a> (doing the same commands over and over) and custom <a href="https://psyteachr.github.io/glossary/f#function" target="_blank" class="glossary" title="A named section of code that can be reused.">functions</a> through a data simulation exercise, which will also prepare us more traditional statistical topics. We first learned about the two basic iteration functions, <code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> and <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> in the <a href="#rep_seq">Working with Data</a> chapter.</p>
@@ -793,9 +792,13 @@ NOTE: n is number in *each* group</code></pre>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/purrr-plot-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Power for a two-sample t-test with d = 0.2</figcaption></figure>
+<div id="fig-purrr-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-purrr-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-purrr-plot-1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-purrr-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Power for a two-sample t-test with d = 0.2
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1049,8 +1052,18 @@ mean in group A mean in group B
 </div>
 </div>
 </div>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>In the pipeline above, <code>t.test(score~group, data = _)</code> uses the <code>_</code> notation to change the location of the piped-in data table from it’s default position as the first argument to a different position.</p>
+</div>
 </div>
 </section><section id="extract-important-values" class="level4" data-number="8.3.1.4"><h4 data-number="8.3.1.4" class="anchored" data-anchor-id="extract-important-values">
 <span class="header-section-number">8.3.1.4</span> Extract important values</h4>
@@ -1109,14 +1122,28 @@ mean in group A mean in group B
 <div class="cell">
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">set.seed</span>(<span class="dv">90201</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="warning">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Make sure you don’t ever use <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> <strong>inside</strong> of a simulation function, or you will just simulate the exact same data over and over again.</p>
+</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/memes/seed_alignment.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>@KellyBodwin</figcaption></figure>
+<div id="fig-seed-alignment" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An alignment chart meme: Lawful Good = set.seed(1234), Neutral Good = *picks random number, sets it as seed*, Chaotic Good = *pop culture reference*, Lawful Neutral = set.seed(420), True Neutral = set.seed(1), Chaotic Neutral = str <-'I am awesome.'; set.seed(str_length(str)), Lawful Evil =set.seed(666), Neutral Evil: *does not set a seed*, Chaotic Evil = set.seed(.Random.seed[1])">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-seed-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/memes/seed_alignment.png" class="img-fluid figure-img" style="width:100.0%" alt="An alignment chart meme: Lawful Good = set.seed(1234), Neutral Good = *picks random number, sets it as seed*, Chaotic Good = *pop culture reference*, Lawful Neutral = set.seed(420), True Neutral = set.seed(1), Chaotic Neutral = str <-'I am awesome.'; set.seed(str_length(str)), Lawful Evil =set.seed(666), Neutral Evil: *does not set a seed*, Chaotic Evil = set.seed(.Random.seed[1])">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seed-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.2: Meme from @KellyBodwin: if you can explain why this is funny, you understand seeds
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1180,7 +1207,33 @@ NOTE: n is number in *each* group</code></pre>
 <li>20 subjects/group, A: m = 10, SD = 1; B: m = 12, SD = 1.5</li>
 </ul>
 </div>
-</section></section><section id="sec-glossary-func" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-func">Glossary</h2>
+</section></section><section id="exercises" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="exercises">
+<span class="header-section-number">8.4</span> Exercises</h2>
+<p>Explain why <a href="https://www.reddit.com/r/rstatsmemes/comments/wjt9l2/i_made_an_alignment_system_of_loops_in_r_subject/">this meme</a> is funny.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/memes/loops-alignment.png" class="img-fluid figure-img" alt="See the text below for an accessible version"></p>
+<figcaption>By arthurwelle on r/rstatsmemes</figcaption></figure>
+</div>
+<ul>
+<li>Lawful good <code>r     library(purrr)     walk(rep("R!", 5), print)</code>
+</li>
+<li>Neutral good <code>r     for (i in 1:5) print("R!")</code>
+</li>
+<li>Chaotic good <code>r     for (i in 1:5)       print("R!")</code>
+</li>
+<li>Lawful neutral <code>r     print("R!")     print("R!")     print("R!")     print("R!")     print("R!")</code>
+</li>
+<li>True neutral <code>r     for (i in 1:5) {        print("R!")     }</code>
+</li>
+<li>Chaotic neutral <code>r     mapply(\(x) print(x), rep("R!", 5)) |&gt;        invisible()</code>
+</li>
+<li>Lawful evil <code>r     i &lt;&lt;- 1     while (i &lt; 6) {        print("R!")       i + 1 -&gt;&gt; i     }</code>
+</li>
+<li>Neutral evil <code>r     f &lt;- function(...) {       do.call(print, list("R!"))     }     lapply(LETTERS[1:5], f) |&gt;        invisible()</code>
+</li>
+<li>Chaotic evil <code>r     apply(data.frame(rep("R!", 5)),       1,       \(x){cat(x);         cat("\n")}) |&gt;     invisible()</code>
+</li>
+</ul></section><section id="sec-glossary-func" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-func">Glossary</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">

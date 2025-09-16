@@ -16,10 +16,21 @@
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
+````
+```{{r}}
+#| label: setup
+#| include: false
+library(tidyverse)     # includes readr & tibble
+library(rio)           # for almost any data import/export
+library(haven)         # for SPSS, Stata,and SAS files
+library(readxl)        # for Excel files
+library(googlesheets4) # for Google Sheets
+```
+````
+
 ```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+#| label: setup-import
+#| include: false
 library(tidyverse)     # includes readr & tibble
 library(rio)           # for almost any data import/export
 library(haven)         # for SPSS, Stata,and SAS files
@@ -546,7 +557,10 @@ starwars <- read_csv("data/starwars.csv", col_types = corrected_cols)
 
 Produce the following plots and one plot of your own choosing. Write a brief summary of what each plot shows and any conclusions you might reach from the data. 
 
-```{r echo  = FALSE, warning = FALSE}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-alt: ""
 ggplot(starwars, aes(height)) +
   geom_histogram(binwidth = 25, colour = "black", alpha = .3) +
   labs(title = "Height (cm) distribution of Star Wars Characters") +
@@ -554,7 +568,10 @@ ggplot(starwars, aes(height)) +
   scale_x_continuous(breaks = seq(from = 50, to = 300, by = 25))
 ```
 
-```{r echo = FALSE, warning = FALSE}
+```{r}
+#| echo: false
+#| warning: false
+#| fig-alt: ""
 ggplot(starwars, aes(height, mass)) +
   geom_point() +
   labs(title = "Mass (kg) by height (cm) distribution of Star Wars Characters") +
@@ -564,7 +581,9 @@ ggplot(starwars, aes(height, mass)) +
   coord_cartesian(xlim = c(0, 300))
 ```
 
-```{r echo  = FALSE}
+```{r}
+#| echo: false
+#| fig-alt: ""
 ggplot(starwars, aes(x = gender, fill = gender)) +
   geom_bar(show.legend = FALSE, colour = "black") +
   scale_x_discrete(name = "Gender of character", labels = (c("Masculine", "Feminine", "Missing"))) +
@@ -574,7 +593,8 @@ ggplot(starwars, aes(x = gender, fill = gender)) +
 ```
 
 `r hide()`
-```{r eval  = FALSE}
+```{r}
+#| eval: false
 ggplot(starwars, aes(height)) +
   geom_histogram(binwidth = 25, colour = "black", alpha = .3) +
   scale_x_continuous(breaks = seq(from = 50, to = 300, by = 25)) +
@@ -582,7 +602,8 @@ ggplot(starwars, aes(height)) +
   theme_classic()
 ```
 
-```{r eval = FALSE}
+```{r}
+#| eval: false
 ggplot(starwars, aes(height, mass)) +
   geom_point() +
   labs(title = "Mass (kg) by height (cm) distribution of Star Wars Characters") +
@@ -592,7 +613,8 @@ ggplot(starwars, aes(height, mass)) +
   coord_cartesian(xlim = c(0, 300))
 ```
 
-```{r eval  = FALSE}
+```{r}
+#| eval: false
 ggplot(starwars, aes(x = gender, fill = gender)) +
   geom_bar(show.legend = FALSE, colour = "black") +
   scale_x_discrete(name = "Gender of character", labels = (c("Masculine", "Feminine", "Missing"))) +
@@ -611,11 +633,21 @@ ggplot(starwars, aes(x = gender, fill = gender)) +
 
 `r hide()`
 
-```{r, eval = FALSE, verbatim='r, echo = FALSE, out.width = "50%", fig.cap="Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"'}
+````
+```{{r}}
+#| echo: false
+#| out-width: "50%"
+#| fig-cap: "Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"
+#| fig-alt: "The Star Wars logo, with the word STAR on top and WARS on the bottom."
 knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png")
 ```
+````
 
-```{r, out.width = "50%", echo = FALSE, fig.cap="Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"}
+```{r}
+#| echo: false
+#| out-width: "50%"
+#| fig-cap: "Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"
+#| fig-alt: "The Star Wars logo, with the word STAR on top and WARS on the bottom."
 knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png")
 ```
 
@@ -624,7 +656,8 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/
 
 ## Glossary {#sec-glossary-data -}
 
-```{r, echo = FALSE, results='asis'}
+```{r}
+#| echo: false
 glossary_table()
 ```
 

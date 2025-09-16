@@ -1,4 +1,6 @@
-# Data Summaries {#sec-summary .incomplete-chapter}
+# Data Summaries {#sec-summary}
+
+<!-- checked for alt-text -->
 
 <div class="right meme"><img src="images/memes/read_csv.png"
      alt = "Top left: Pooh Bear in a red shirt looking sad; Top right: read.csv() in outline font; Bottom left: Pooh Bear in a tuxedo looking smug; Bottom right: read_csv() in handwritten font" /></div>
@@ -32,10 +34,25 @@
 1. Replace the setup chunk with the one below: 
 
 
+````
+```{{r}}
+#| label: setup
+#| include: false
+
+# packages needed for this chapter
+library(tidyverse)     # loads readr for importing data
+                       #   and tibble for creating tables
+library(readxl)        # importing excel files
+library(jsonlite)      # importing JSON files
+library(rio)           # importing and exporting many types of files
+library(skimr)         # summarising datasets
+library(janitor)       # clean up data
+```
+````
+
 ```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+#| label: setup-summary
+#| include: false
 
 # packages needed for this chapter
 library(tidyverse)     # loads readr for importing data
@@ -47,7 +64,7 @@ library(skimr)         # summarising datasets
 library(janitor)       # clean up data
 ```
 
-Download the [Data import cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf).
+Download the [Data import cheatsheet](https://rstudio.github.io/cheatsheets/html/data-import.html).
 
 ## Import Data {#sec-import-data}
 
@@ -460,7 +477,10 @@ Re-write the code above using `group_by()` instead of the `.by` argument?
 
 Now you can use your skills from @sec-viz to plot the data! The code below has a few elements you haven't seen before. For example, it adds a transparent horizontal line at 0, which is a trick to force all the y-axes to start at 0, but allows different scales per facet. It also angles the text in the x-axis. 
 
-```{r fig-birth-year-type-age, fig.cap = ""}
+```{r}
+#| label: fig-birth-year-type-age
+#| fig-cap: "Percent of live births per year by age group and delivery type."
+#| fig-alt: "Six plots with year on the x-axis (2000 to 2020) and Percent of live births per year on the y-axis (0 to max for that plot). Three age groups are plotted, Under 25 = red, 25-34 = green, 35 and over = blue. Each plot shows one delivery type: Spontaneous, Caesarean - Emergency, Caesarean - Emergency Forceps, Vacuum, Caesarean - Elective, and Breech. For spontaneous, values start over 60% in 2000 and decline about 20% to 2020, with younger age group having the highest values. Caesarean - Emergency increases from 10-15% (depending on age group) in 2000 to 20% in all age groups in 2020. Caesarean - Emergency Forceps starts around 7.5%, increases to 10% in 2010, and decreases back towrds 7.5%. Vacuum starts at 4% in 2020, increases to 6% around 2005, and decreases to 2-4% depending on age. Caesarean - Elective starts at 5-10% (more common in the older group) in 2020 and increases steadily to 10% for the younger group, 20% for the middle group, and nearly 30% for the older group. Breech births decline from about 0.4% to 0.2% from 2000 to 2020."
 births_per_year_type_age  |>
   ggplot(aes(x = year, y = pcnt, color = age_group)) +
   geom_line() +

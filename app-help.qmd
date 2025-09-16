@@ -11,8 +11,11 @@ Please do *not* share a screenshot unless you are asked, or if it is not the cod
 
 If it's your code that is not working, it is almost always better to copy and paste the code, because then people who are trying to help you can copy and paste the code *exactly* to try it out, rather than having to re-type everything from the image. Let's look at an example. Below is a screenshot of how the RStudio IDE might look when your code throws an error. Here the code block labelled `cars` is causing the error.
 
-```{r, echo = FALSE}
-#| fig.cap: A screenshot of the RStudio IDE showing an error in red.
+```{r}
+#| label: fig-help-screenshot
+#| echo: false
+#| fig-cap: A screenshot of the RStudio IDE showing an error in red.
+#| fig-alt: "A screenshot of the RStudio IDE showing an error in red, which is further explained in the text below"
 knitr::include_graphics("images/appendices/help-screenshot.png")
 ```
 
@@ -43,7 +46,7 @@ First, if it is just a short function call, a single line, or an error, you can 
 For multi-line code, the easiest and fastest way is just to type three backticks inside your message at the beginning of a line. Any subsequent text you enter will be treated as code. To get to the beginning of a line without submitting your post, press Ctrl-Enter while typing your message. Then type the three backticks, and paste your code right into the grey box that automatically appears. Press Enter twice in a row to get back out of the code entry box. So your message might look like this.
 
 ```{r, echo = FALSE}
-#| fig.cap: An animation of the instructions to make code blocks in Teams
+#| fig-cap: An animation of the instructions to make code blocks in Teams
 knitr::include_graphics("images/appendices/teams-ticks.gif")
 ```
 
@@ -52,7 +55,7 @@ knitr::include_graphics("images/appendices/teams-ticks.gif")
 Before pasting any text, click on the icon that looks like the letter "A" with a pencil. This will open up options for text formatting and will allow you to easily create a multi-line post. From those options, select the icon that looks like `</>`, which stands for code. 
 
 ```{r, echo = FALSE}
-#| fig.cap: A screenshot of the Teams editing interface.
+#| fig-cap: A screenshot of the Teams editing interface.
 knitr::include_graphics("images/appendices/teams-code-snippet.png")
 ```
 

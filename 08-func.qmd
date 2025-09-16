@@ -1,9 +1,6 @@
-# Iteration & Functions {#sec-func .incomplete-chapter}
+# Iteration & Functions {#sec-func}
 
-::: {.meme .right}
-![](images/memes/functions.jpg){fig-alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions."}
-:::
-
+<div class="right meme"><img src="images/memes/functions.jpg" alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions." /></div>
 
 ## Intended Learning Outcomes {#sec-ilo-func - .ilo}
 
@@ -18,17 +15,27 @@
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
+````
+```{{r}}
+#| label: setup
+#| include: false
+library(tidyverse)  # loads purrr for iteration
+library(broom)      # converts test output to tidy tables
+
+set.seed(8675309) # makes sure random numbers are reproducible
+```
+````
+
 ```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+#| label: setup-func
+#| include: false
 library(tidyverse)  # loads purrr for iteration
 library(broom)      # converts test output to tidy tables
 
 set.seed(8675309) # makes sure random numbers are reproducible
 ```
 
-Download the [Apply functions with purrr cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/purrr.pdf).
+Download the [Apply functions with purrr cheat sheet](https://rstudio.github.io/cheatsheets/html/purrr.html).
 
 ## Iteration functions {#sec-iteration-functions}
 
@@ -179,7 +186,11 @@ mypower <- tibble(
 ```
 
 
-```{r purrr-plot, echo = FALSE, fig.cap="Power for a two-sample t-test with d = 0.2"}
+```{r}
+#| label: fig-purrr-plot
+#| echo: false
+#| fig-cap: "Power for a two-sample t-test with d = 0.2"
+#| fig-alt: ""
 
 ggplot(mypower, aes(n, power)) +
   geom_hline(yintercept = 0.8, color = "red") + 
@@ -188,7 +199,6 @@ ggplot(mypower, aes(n, power)) +
   ylim(0, 1) + xlim(0, 1000)
 
 ```
-
 
 
 ## Custom functions {#sec-custom-functions}
@@ -296,7 +306,7 @@ reported # still "not changed"
 
 ### Warnings and errors {#warnings-errors}
 
-::: {.try data-latex=""}
+::: {.try}
 What happens when you omit the argument for `p`? Or if you set `p` to 1.5 or "a"?</p>
 :::
 
@@ -383,7 +393,7 @@ tibble(
   broom::tidy()
 ```
 
-::: {.info data-latex=""}
+::: {.callout-note}
 In the pipeline above, `t.test(score~group, data = _)` uses the `_` notation to change the location of the piped-in data table from it's default position as the first argument to a different position. 
 :::
 
@@ -446,11 +456,15 @@ You can use the `set.seed` function before you run a function that uses random n
 set.seed(90201)
 ```
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 Make sure you don't ever use `set.seed()` **inside** of a simulation function, or you will just simulate the exact same data over and over again.
 :::
 
-```{r img-seed-alignment, echo=FALSE, fig.cap="&commat;KellyBodwin"}
+```{r}
+#| label: fig-seed-alignment
+#| echo: false
+#| fig-cap: "Meme from &commat;KellyBodwin: if you can explain why this is funny, you understand seeds"
+#| fig-alt: "An alignment chart meme: Lawful Good = set.seed(1234), Neutral Good = *picks random number, sets it as seed*, Chaotic Good = *pop culture reference*, Lawful Neutral = set.seed(420), True Neutral = set.seed(1), Chaotic Neutral = str <-'I am awesome.'; set.seed(str_length(str)), Lawful Evil =set.seed(666), Neutral Evil: *does not set a seed*, Chaotic Evil = set.seed(.Random.seed[1])"
 knitr::include_graphics("images/memes/seed_alignment.png")
 ```
 
@@ -496,13 +510,78 @@ power.t.test(n = 100, delta = 0.2, sd = 1, type="two.sample")
 ```
 
 
-::: {.try data-latex=""}
+::: {.try}
 Calculate power via simulation and `power.t.test` for the following tests:
 
 * 20 subjects/group, A: m = 0, SD = 1; B: m = 0.2, SD = 1
 * 40 subjects/group, A: m = 0, SD = 1; B: m = 0.2, SD = 1
 * 20 subjects/group, A: m = 10, SD = 1; B: m = 12, SD = 1.5
 :::
+
+## Exercises
+
+Explain why [this meme](https://www.reddit.com/r/rstatsmemes/comments/wjt9l2/i_made_an_alignment_system_of_loops_in_r_subject/) is funny.
+
+![By arthurwelle on r/rstatsmemes](images/memes/loops-alignment.png){fig-alt="See the text below for an accessible version"}
+
+* Lawful good
+    ``` r
+    library(purrr)
+    walk(rep("R!", 5), print)
+    ```
+* Neutral good
+    ``` r
+    for (i in 1:5) print("R!")
+    ```
+* Chaotic good
+    ``` r
+    for (i in 1:5)
+      print("R!")
+    ```
+* Lawful neutral
+    ``` r
+    print("R!")
+    print("R!")
+    print("R!")
+    print("R!")
+    print("R!")
+    ```
+* True neutral
+    ``` r
+    for (i in 1:5) { 
+      print("R!")
+    }
+    ```
+* Chaotic neutral
+    ``` r
+    mapply(\(x) print(x), rep("R!", 5)) |> 
+      invisible()
+    ```
+* Lawful evil
+    ``` r
+    i <<- 1
+    while (i < 6) { 
+      print("R!")
+      i + 1 ->> i
+    }
+    ```
+* Neutral evil
+    ``` r
+    f <- function(...) {
+      do.call(print, list("R!"))
+    }
+    lapply(LETTERS[1:5], f) |> 
+      invisible()
+    ```
+* Chaotic evil
+    ``` r
+    apply(data.frame(rep("R!", 5)),
+      1,
+      \(x){cat(x);
+        cat("\n")}) |>
+    invisible()
+    ```
+
 
 ## Glossary {#sec-glossary-func -}
 

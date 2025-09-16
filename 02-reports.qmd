@@ -2,10 +2,7 @@
 
 <!-- checked for alt-text -->
 
-::: {.meme .right}
-![](images/memes/repro_reports.jpg){fig-alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)"}
-:::
-
+<div class="right meme"><img src="images/memes/repro_reports.jpg" alt="Top left: young spongebob; top right: Using Base R for your analysis and copy pasting your results into tables in Word; middle left: older angry spongebob in workout clothes; middle right: learning how to use dplyr visualize data with ggplot2 and report your analysis in rmarkdown documents; bottom left: muscular spongebob shirtless in a boxing ring; bottom right: wielding the entire might of the tidyverse (with 50 hex stickers)" /></div>
 
 ## Intended Learning Outcomes {#sec-ilo-reports - .ilo}
 
@@ -16,16 +13,6 @@
 
 
 ## Functions used {#functions-reports -}
-
-```{r}
-#| include: false
-
-library(readr)
-library(dplyr)
-library(ggplot2)
-library(tinytex)
-library(quarto)
-```
 
 * built-in (you can always use these without loading any packages)
     * base:: `max()`, `min()`, `nrow()`, `str()`, `summary()`
@@ -44,7 +31,10 @@ Download the [Quarto Cheat Sheet](https://rstudio.github.io/cheatsheets/html/qua
 
 For reference, here are the packages we will use in this chapter. If running the code below in the console pane gives you the error `Error in library(package_name) : there is no package called ‘package_name’`, you may need to install them as explained in @sec-install-package.
 
-```{r setup-reports, message=FALSE, filename="Chapter packages"}
+```{r}
+#| label: setup-reports
+#| message: false
+#| code-summary: Chapter packages
 library(tidyverse) # various data manipulation functions
 library(quarto)    # for rendering a report from a script
 ```
@@ -194,7 +184,7 @@ If you try to add the hashes, asterisks and backticks to the visual editor, you 
 
 At the top of the file, you will see some text between a pair of three dashes:
 
-```{verbatim, lang="markdown"}
+``` yaml
 ---
 title: "Reports"
 author: "Lisa DeBruine"
@@ -210,7 +200,7 @@ You will learn in @sec-yaml how to further customise your document using informa
 
 Now replace all of the text beneath the header with the following text. Make sure to skip a line or two after the three dashes.
 
-``` md
+``` markdown
 ## Basic Markdown
 
 Now I can make:
@@ -303,7 +293,7 @@ One important feature of quarto for reproducible reports is that you can combine
 
 Add a new level-2 header called "Inline Code", then copy and paste the text below. If you used a different variable name than `halloween`, you should update this with the name of the object you created, but otherwise don't change anything else.
 
-```{verbatim, lang="markdown"}
+``` markdown
 My name is `r name` and I am `r age` years old. 
 It is `r halloween - today` days until Halloween, 
 which is my favourite holiday.
@@ -499,7 +489,7 @@ Try and match up the inline code with what is in the `group_counts` table. Of no
 Add another line that reports the total numbers of participants in the **experimental** condition using inline code. Using either the visual editor or text markups, add in bold and italics so that it matches the others.
 
 `r hide()`
-```{verbatim, lang="markdown"}
+``` markdown
 The total number of participants in the **experimental** condition was `r group_counts$n[2]`.
 ```
 `r unhide()`
@@ -647,7 +637,7 @@ You can automatically number your figures and tables by giving them labels that 
 ::: {.try}
 Add the following text above the chunk containing the table:
 
-```{verbatim, lang='markdown'}
+``` markdown
 All data are shown in @tbl-raw-data.
 ```
 
@@ -689,7 +679,7 @@ You can set more default options for your document in the YAML header. The help 
 
 Add the code below to your YAML header and then try changing each option from `false` to `true` and changing the numeric values then render the file again to see the difference it makes.
 
-```{verbatim, lang='yaml'}
+``` yaml
 ---
 execute:
   echo: false     # whether to show code chunks
@@ -813,7 +803,7 @@ The table of contents is created by setting `toc: true`. This will use the markd
 ::: {.try}
 Try changing the values of the toc settings and re-render. 
 
-```{verbatim, lang="yaml"}
+``` yaml
 ---
 format:
   html:
@@ -891,7 +881,7 @@ Please start using a reference manager consistently through your research career
 :::
 
 ```{r zotero, echo = FALSE}
-#| fig.cap: Export a bibliography file from Zotero
+#| fig-cap: Export a bibliography file from Zotero
 knitr::include_graphics("images/repro/zotero.png")
 ```
 
@@ -1025,7 +1015,7 @@ Create a new project called "cv" ([@sec-projects]).
 In the "cv" project, create a new quarto document called "cv.qmd" ([@sec-quarto-newdoc]). Edit the YAML header to print data frames using kable and set a custom theme ([@sec-yaml]).
 
 `r hide()`
-```{verbatim}
+``` yaml
 ---
 title: "CV"
 author: "Me"
@@ -1077,7 +1067,7 @@ Figure out how to make it so that code chunks don't show in your rendered docume
 
 You can set the execution default to `echo: false` in the YAML header at the top of the script.
 
-```{verbatim}
+``` yaml
 ---
 execute:
   echo: false
@@ -1096,13 +1086,13 @@ Add an image of anything relevant ([@sec-md-images]). Make sure to add alt-text.
 
 You can add an image from the web using its URL:
 
-```{verbatim}
+``` markdown
 ![ReproRes](https://psyteachr.github.io/images/reprores.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}
 ```
     
 Or save an image into your project directory (e.g., in the images folder) and add it using the relative path:
 
-```{verbatim}
+``` markdown
 ![ReproRes](images/logos/logo.png){width="200px" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}
 ```
     
@@ -1117,7 +1107,7 @@ This CV was created on `r Sys.Date()`.
 
 `r hide()`
 
-```{verbatim lang="markdown"}
+``` markdown
 This CV was created on `r Sys.Date()`.
 ```
 

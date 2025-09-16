@@ -577,17 +577,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#‎| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#‎| include: false</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse)     <span class="co"># includes readr &amp; tibble</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="fu">library</span>(rio)           <span class="co"># for almost any data import/export</span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(haven)         <span class="co"># for SPSS, Stata,and SAS files</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(readxl)        <span class="co"># for Excel files</span></span>
 <span id="cb1-8"><a href="#cb1-8"></a><span class="fu">library</span>(googlesheets4) <span class="co"># for Google Sheets</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>Download the <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf">Data import cheatsheet</a>.</p>
 </section><section id="sec-builtin" class="level2" data-number="G.1"><h2 data-number="G.1" class="anchored" data-anchor-id="sec-builtin">
 <span class="header-section-number">G.1</span> Built-in data</h2>
@@ -757,7 +755,7 @@ $ factor    &lt;chr&gt; "high", "low", "med", "high", "low", "med"
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;lgl&gt; TRUE, TRUE, FALSE, FALSE, NA, TRUE
-$ date      &lt;date&gt; 2025-08-11, 2025-08-10, 2025-08-09, 2025-08-08, 2025-08-07, …</code></pre>
+$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -770,7 +768,7 @@ $ factor    &lt;chr&gt; "high", "low", "med", "high", "low", "med"
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;lgl&gt; TRUE, TRUE, FALSE, FALSE, NA, TRUE
-$ date      &lt;dttm&gt; 2025-08-11, 2025-08-10, 2025-08-09, 2025-08-08, 2025-08-07, …</code></pre>
+$ date      &lt;dttm&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -783,7 +781,7 @@ $ factor    &lt;dbl+lbl&gt; 3, 1, 2, 3, 1, 2
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;dbl&gt; 1, 1, 0, 0, NA, 1
-$ date      &lt;date&gt; 2025-08-11, 2025-08-10, 2025-08-09, 2025-08-08, 2025-08-07, …</code></pre>
+$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -878,7 +876,7 @@ $ factor    &lt;fct&gt; high, low, med, high, low, med
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;dbl&gt; 1, 1, 0, 0, NA, 1
-$ date      &lt;date&gt; 2025-08-11, 2025-08-10, 2025-08-09, 2025-08-08, 2025-08-07, …</code></pre>
+$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1396,6 +1394,14 @@ Solution
 <div class="cell">
 <div class="cell-output-display">
 <div>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div>
 <figure class="figure"><p><img src="images/figures/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
@@ -1405,14 +1411,6 @@ Solution
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1457,20 +1455,26 @@ Solution
 <button>
 Solution
 </button>
-<div class="cell" data-verbatim="r, echo = FALSE, out.width = &quot;50%&quot;, fig.cap=&quot;Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0&quot;">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1"></a><span class="in">```{r}</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a><span class="co">#| echo: false</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="co">#| out-width: "50%"</span></span>
+<span id="cb49-4"><a href="#cb49-4"></a><span class="co">#| fig-cap: "Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"</span></span>
+<span id="cb49-5"><a href="#cb49-5"></a><span class="co">#| fig-alt: "The Star Wars logo, with the word STAR on top and WARS on the bottom."</span></span>
+<span id="cb49-6"><a href="#cb49-6"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png"</span>)</span>
+<span id="cb49-7"><a href="#cb49-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png" class="img-fluid figure-img" style="width:50.0%" alt="The Star Wars logo, with the word STAR on top and WARS on the bottom."></p>
 <figcaption>Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0</figcaption></figure>
 </div>
 </div>
 </div>
 </div>
 </section></section><section id="sec-glossary-data" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-data">Glossary</h2>
-<table class="caption-top table">
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">term</th>
 <th style="text-align: left;">definition</th>
@@ -1545,7 +1549,10 @@ Solution
 <td style="text-align: left;">A type of data structure that collects values with the same data type, like T/F values, numbers, or strings.</td>
 </tr>
 </tbody>
-</table></section><section id="sec-resources-data" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-resources-data">Further resources</h2>
+</table>
+</div>
+</div>
+</section><section id="sec-resources-data" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-resources-data">Further resources</h2>
 <ul>
 <li><a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-import.pdf">Data import cheatsheet</a></li>
 <li>

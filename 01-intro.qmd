@@ -2,9 +2,7 @@
 
 <!-- checked for alt-text -->
 
-::: {.meme .right}
-![](images/memes/rstudio.png){fig-alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'"}
-:::
+<div class="right meme"><img src="images/memes/rstudio.png" alt="A line drawing of a person looking at a computer with a magnifying glass. The text reads 'I just installed RStudio. I'm a data scientist now.'" /></div>
 
 
 ## Intended Learning Outcomes {#sec-ilo-intro - .ilo}

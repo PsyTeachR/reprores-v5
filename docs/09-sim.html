@@ -130,7 +130,10 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
-</script><link rel="stylesheet" href="include/psyteachr.css">
+</script><link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="site_libs/plotly-binding-4.11.0/plotly.js"></script><script src="site_libs/typedarray-0.1/typedarray.min.js"></script><script src="site_libs/jquery-3.5.1/jquery.min.js"></script><link href="site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script><link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
@@ -616,24 +619,17 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>Update the YAML header</li>
 <li>Replace the setup chunk with the one below:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#‎| label: setup</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#‎| include: false</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#| label: setup</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co">#| include: false</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="fu">library</span>(tidyverse) <span class="co"># for data wrangling</span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="co"># devtools::install_github("debruine/faux") </span></span>
 <span id="cb1-6"><a href="#cb1-6"></a><span class="fu">library</span>(faux)      <span class="co"># data simulation</span></span>
 <span id="cb1-7"><a href="#cb1-7"></a><span class="fu">library</span>(plotly)    <span class="co"># create a 3D plot to visualise correlations</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in library(plotly): there is no package called 'plotly'</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="co"># MASS::mvrnorm() is used without loading MASS</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="co"># MASS::mvrnorm() is used without loading MASS</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes sure random numbers are reproducible</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Simulating data is a very powerful way to test your understanding of statistical concepts. We are going to use <a href="https://psyteachr.github.io/glossary/s#simulation" target="_blank" class="glossary" title="Generating data from summary parameters">simulations</a> to learn the basics of <a href="https://psyteachr.github.io/glossary/p#probability" target="_blank" class="glossary" title="A number between 0 and 1 where 0 indicates impossibility of the event and 1 indicates certainty">probability</a>.</p>
 </section><section id="univariate-distributions" class="level2" data-number="9.1"><h2 data-number="9.1" class="anchored" data-anchor-id="univariate-distributions">
 <span class="header-section-number">9.1</span> Univariate Distributions</h2>
@@ -649,12 +645,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p><code>runif(n, min=0, max=1)</code></p>
 <p>Use <code><a href="https://rdrr.io/r/stats/Uniform.html">runif()</a></code> to sample from a continuous uniform distribution.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">100000</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># plot to visualise</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(u), <span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb4-6"><a href="#cb4-6"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>u <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">100000</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># plot to visualise</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(u), <span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">colour =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/runif-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -668,23 +664,27 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>Use <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> to sample from a <a href="https://psyteachr.github.io/glossary/d#discrete" target="_blank" class="glossary" title="Data that can only take certain values, such as integers.">discrete</a> distribution.</p>
 <p>You can use <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> to simulate events like rolling dice or choosing from a deck of cards. The code below simulates rolling a 6-sided die 10000 times. We set <code>replace</code> to <code>TRUE</code> so that each event is independent. See what happens if you set <code>replace</code> to <code>FALSE</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">10000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># plot the results</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(rolls), <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
-<span id="cb5-6"><a href="#cb5-6"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>rolls <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="dv">10000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># plot the results</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(rolls), <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb3-6"><a href="#cb3-6"></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, <span class="at">color =</span> <span class="st">"black"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/sample-replace-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Distribution of dice rolls.</figcaption></figure>
+<div id="fig-sample-replace" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-sample-replace-1.png" class="img-fluid figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sample-replace-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: Distribution of dice rolls.
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>You can also use sample to sample from a list of named outcomes.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>pet_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">sample</span>(pet_types, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>pet_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">sample</span>(pet_types, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "ferret" "cat"    "dog"    "fish"   "dog"    "bird"   "fish"   "cat"   
  [9] "bird"   "ferret"</code></pre>
@@ -692,9 +692,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 <p>Ferrets are a much less common pet than cats and dogs, so our sample isn’t very realistic. You can set the probabilities of each item in the list with the <code>prob</code> argument.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>pet_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2"></a>pet_prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>)</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="fu">sample</span>(pet_types, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> pet_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>pet_types <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"cat"</span>, <span class="st">"dog"</span>, <span class="st">"ferret"</span>, <span class="st">"bird"</span>, <span class="st">"fish"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>pet_prob <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">sample</span>(pet_types, <span class="dv">10</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> pet_prob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "cat"    "dog"    "dog"    "cat"    "cat"    "bird"   "bird"   "ferret"
  [9] "cat"    "dog"   </code></pre>
@@ -715,44 +715,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 <p>Coin flips are a typical example of a binomial distribution, where we can assign heads to 1 and tails to 0.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># 20 individual coin flips of a fair coin</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">rbinom</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># 20 individual coin flips of a fair coin</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">rbinom</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 0 0 0 0 0 0 1 1 1 1 1 0 1 1 1 0 0 0 1 1</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># 20 individual coin flips of a baised (0.75) coin</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">rbinom</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># 20 individual coin flips of a baised (0.75) coin</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">rbinom</span>(<span class="dv">20</span>, <span class="dv">1</span>, <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1 1 0 1 1 1 0 0 1 1 0 1 1 1 0 0 1 1 1 0</code></pre>
 </div>
 </div>
 <p>You can generate the total number of heads in 1 set of 20 coin flips by setting <code>size</code> to 20 and <code>n</code> to 1.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">20</span>, <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">rbinom</span>(<span class="dv">1</span>, <span class="dv">20</span>, <span class="fl">0.75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 16</code></pre>
 </div>
 </div>
 <p>You can generate more sets of 20 coin flips by increasing the <code>n</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 12  6  7  7  9 14 10 13  7  6</code></pre>
 </div>
 </div>
 <p>You should always check your randomly generated data to check that it makes sense. For large samples, it’s easiest to do that graphically. A histogram is usually the best choice for plotting binomial data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">20</span>, <span class="fl">0.5</span>)</span>
-<span id="cb18-2"><a href="#cb18-2"></a></span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb18-5"><a href="#cb18-5"></a>    <span class="fu">aes</span>(flips), </span>
-<span id="cb18-6"><a href="#cb18-6"></a>    <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
-<span id="cb18-7"><a href="#cb18-7"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
-<span id="cb18-8"><a href="#cb18-8"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
-<span id="cb18-9"><a href="#cb18-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>flips <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000</span>, <span class="dv">20</span>, <span class="fl">0.5</span>)</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb16-5"><a href="#cb16-5"></a>    <span class="fu">aes</span>(flips), </span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb16-7"><a href="#cb16-7"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb16-8"><a href="#cb16-8"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb16-9"><a href="#cb16-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/sim_flips-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -768,27 +768,27 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p><code>rnorm(n, mean, sd)</code></p>
 <p>We can simulate a <a href="https://psyteachr.github.io/glossary/n#normal-distribution" target="_blank" class="glossary" title="A symmetric distribution of data where values near the centre are most probable.">normal distribution</a> of size <code>n</code> if we know the <code>mean</code> and standard deviation (<code>sd</code>). A density plot is usually the best way to visualise this type of data if your <code>n</code> is large.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>dv <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e5</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># proportions of normally-distributed data </span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># within 1, 2, or 3 SD of the mean</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a>sd1 <span class="ot">&lt;-</span> .<span class="dv">6827</span> </span>
-<span id="cb19-6"><a href="#cb19-6"></a>sd2 <span class="ot">&lt;-</span> .<span class="dv">9545</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a>sd3 <span class="ot">&lt;-</span> .<span class="dv">9973</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a></span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb19-10"><a href="#cb19-10"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(dv), <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb19-11"><a href="#cb19-11"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(dv), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd1<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb19-13"><a href="#cb19-13"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd1<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
-<span id="cb19-14"><a href="#cb19-14"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd2<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb19-15"><a href="#cb19-15"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd2<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb19-16"><a href="#cb19-16"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd3<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd3<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
-<span id="cb19-18"><a href="#cb19-18"></a>  <span class="fu">scale_x_continuous</span>(</span>
-<span id="cb19-19"><a href="#cb19-19"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>), </span>
-<span id="cb19-20"><a href="#cb19-20"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
-<span id="cb19-21"><a href="#cb19-21"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>dv <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e5</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># proportions of normally-distributed data </span></span>
+<span id="cb17-4"><a href="#cb17-4"></a><span class="co"># within 1, 2, or 3 SD of the mean</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>sd1 <span class="ot">&lt;-</span> .<span class="dv">6827</span> </span>
+<span id="cb17-6"><a href="#cb17-6"></a>sd2 <span class="ot">&lt;-</span> .<span class="dv">9545</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>sd3 <span class="ot">&lt;-</span> .<span class="dv">9973</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a></span>
+<span id="cb17-9"><a href="#cb17-9"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(dv), <span class="at">fill =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(dv), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd1<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd1<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd2<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb17-15"><a href="#cb17-15"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd2<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb17-16"><a href="#cb17-16"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">-</span> sd3<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb17-17"><a href="#cb17-17"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">quantile</span>(dv, .<span class="dv">5</span> <span class="sc">+</span> sd3<span class="sc">/</span><span class="dv">2</span>), <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb17-19"><a href="#cb17-19"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">20</span>), </span>
+<span id="cb17-20"><a href="#cb17-20"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>)</span>
+<span id="cb17-21"><a href="#cb17-21"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/rnorm-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -796,8 +796,18 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Run the simulation above several times, noting how the density plot changes. What do the vertical lines represent? Try changing the values of <code>n</code>, <code>mean</code>, and <code>sd</code>.</p>
+</div>
 </div>
 </section><section id="poisson" class="level3" data-number="9.1.4"><h3 data-number="9.1.4" class="anchored" data-anchor-id="poisson">
 <span class="header-section-number">9.1.4</span> Poisson Distribution</h3>
@@ -812,15 +822,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </ul>
 <p>Let’s say we want to model how many texts you get each day for a whole. You know that you get an average of 20 texts per day. So we set <code>n = 365</code> and <code>lambda = 20</code>. Lambda is a <a href="https://psyteachr.github.io/glossary/p#parameter" target="_blank" class="glossary" title="A quantity characterizing a population.">parameter</a> that describes the Poisson distribution, just like mean and standard deviation are parameters that describe the normal distribution.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>texts <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">365</span>, <span class="at">lambda =</span> <span class="dv">20</span>)</span>
-<span id="cb20-2"><a href="#cb20-2"></a></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">aes</span>(texts), </span>
-<span id="cb20-6"><a href="#cb20-6"></a>    <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
-<span id="cb20-7"><a href="#cb20-7"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
-<span id="cb20-8"><a href="#cb20-8"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>texts <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">365</span>, <span class="at">lambda =</span> <span class="dv">20</span>)</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="fu">aes</span>(texts), </span>
+<span id="cb18-6"><a href="#cb18-6"></a>    <span class="at">binwidth =</span> <span class="dv">1</span>, </span>
+<span id="cb18-7"><a href="#cb18-7"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb18-8"><a href="#cb18-8"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/rpois-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -835,36 +845,46 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">9.2.1</span> Bivariate Normal</h3>
 <p>A <a href="https://psyteachr.github.io/glossary/b#bivariate-normal" target="_blank" class="glossary" title="Two normally distributed vectors that have a specified correlation with each other.">bivariate normal</a> distribution is two normally distributed vectors that have a specified relationship, or <a href="https://psyteachr.github.io/glossary/c#correlation" target="_blank" class="glossary" title="The relationship two vectors have to each other.">correlation</a> to each other.</p>
 <p>What if we want to sample from a population with specific relationships between variables? We can sample from a bivariate normal distribution using <code>mvrnorm()</code> from the <code>MASS</code> package.</p>
-<div class="warning">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Don’t load MASS with the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function because it will create a conflict with the <code>select()</code> function from dplyr and you will always need to preface it with <code>dplyr::</code>. Just use <code><a href="https://rdrr.io/pkg/MASS/man/mvrnorm.html">MASS::mvrnorm()</a></code>.</p>
+</div>
 </div>
 <p>You need to know how many observations you want to simulate (<code>n</code>) the means of the two variables (<code>mu</code>) and you need to calculate a <a href="https://psyteachr.github.io/glossary/c#covariance-matrix" target="_blank" class="glossary" title="Parameters showing how a set of vectors vary and covary.">covariance matrix</a> (<code>sigma</code>) from the correlation between the variables (<code>rho</code>) and their standard deviations (<code>sd</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>n   <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># number of random samples</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="co"># name the mu values to give the resulting columns names</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">20</span>) <span class="co"># the means of the samples</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>)   <span class="co"># the SDs of the samples</span></span>
-<span id="cb21-5"><a href="#cb21-5"></a></span>
-<span id="cb21-6"><a href="#cb21-6"></a>rho <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># population correlation between the two variables</span></span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># correlation matrix</span></span>
-<span id="cb21-9"><a href="#cb21-9"></a>cor_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(  <span class="dv">1</span>, rho, </span>
-<span id="cb21-10"><a href="#cb21-10"></a>                    rho,   <span class="dv">1</span>), <span class="dv">2</span>) </span>
-<span id="cb21-11"><a href="#cb21-11"></a></span>
-<span id="cb21-12"><a href="#cb21-12"></a><span class="co"># create the covariance matrix</span></span>
-<span id="cb21-13"><a href="#cb21-13"></a>sigma <span class="ot">&lt;-</span> (sd <span class="sc">%*%</span> <span class="fu">t</span>(sd)) <span class="sc">*</span> cor_mat</span>
-<span id="cb21-14"><a href="#cb21-14"></a></span>
-<span id="cb21-15"><a href="#cb21-15"></a><span class="co"># sample from bivariate normal distribution</span></span>
-<span id="cb21-16"><a href="#cb21-16"></a>bvn <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(n, mu, sigma) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>n   <span class="ot">&lt;-</span> <span class="dv">1000</span> <span class="co"># number of random samples</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># name the mu values to give the resulting columns names</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">20</span>) <span class="co"># the means of the samples</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>)   <span class="co"># the SDs of the samples</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a></span>
+<span id="cb19-6"><a href="#cb19-6"></a>rho <span class="ot">&lt;-</span> <span class="fl">0.5</span>  <span class="co"># population correlation between the two variables</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="co"># correlation matrix</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a>cor_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(  <span class="dv">1</span>, rho, </span>
+<span id="cb19-10"><a href="#cb19-10"></a>                    rho,   <span class="dv">1</span>), <span class="dv">2</span>) </span>
+<span id="cb19-11"><a href="#cb19-11"></a></span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># create the covariance matrix</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a>sigma <span class="ot">&lt;-</span> (sd <span class="sc">%*%</span> <span class="fu">t</span>(sd)) <span class="sc">*</span> cor_mat</span>
+<span id="cb19-14"><a href="#cb19-14"></a></span>
+<span id="cb19-15"><a href="#cb19-15"></a><span class="co"># sample from bivariate normal distribution</span></span>
+<span id="cb19-16"><a href="#cb19-16"></a>bvn <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(n, mu, sigma) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plot your sampled variables to check everything worked like you expect. It’s easiest to convert the output of <code>mvnorm</code> into a tibble in order to use it in ggplot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>bvn <span class="sc">|&gt;</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
-<span id="cb22-4"><a href="#cb22-4"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
-<span id="cb22-5"><a href="#cb22-5"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
-<span id="cb22-6"><a href="#cb22-6"></a>    <span class="fu">geom_density2d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>bvn <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y)) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>    <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb20-5"><a href="#cb20-5"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a>    <span class="fu">geom_density2d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/graph-bvn-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -876,23 +896,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">9.2.2</span> Multivariate Normal</h3>
 <p>You can generate more than 2 correlated variables, but it gets a little trickier to create the correlation matrix.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="co"># number of random samples</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">z =</span> <span class="dv">30</span>) <span class="co"># the means of the samples</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)   <span class="co"># the SDs of the samples</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a></span>
-<span id="cb23-5"><a href="#cb23-5"></a>rho1_2 <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># correlation between x and y</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>rho1_3 <span class="ot">&lt;-</span> <span class="dv">0</span>   <span class="co"># correlation between x and z</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a>rho2_3 <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="co"># correlation between y and z</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="co"># correlation matrix</span></span>
-<span id="cb23-10"><a href="#cb23-10"></a>cor_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(     <span class="dv">1</span>, rho1_2, rho1_3, </span>
-<span id="cb23-11"><a href="#cb23-11"></a>                    rho1_2,      <span class="dv">1</span>, rho2_3,</span>
-<span id="cb23-12"><a href="#cb23-12"></a>                    rho1_3, rho2_3,      <span class="dv">1</span>), <span class="dv">3</span>) </span>
-<span id="cb23-13"><a href="#cb23-13"></a></span>
-<span id="cb23-14"><a href="#cb23-14"></a>sigma <span class="ot">&lt;-</span> (sd <span class="sc">%*%</span> <span class="fu">t</span>(sd)) <span class="sc">*</span> cor_mat</span>
-<span id="cb23-15"><a href="#cb23-15"></a>bvn3 <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(n, mu, sigma)</span>
-<span id="cb23-16"><a href="#cb23-16"></a></span>
-<span id="cb23-17"><a href="#cb23-17"></a><span class="fu">cor</span>(bvn3) <span class="co"># check correlation matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>n      <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="co"># number of random samples</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>mu     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">x =</span> <span class="dv">10</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">z =</span> <span class="dv">30</span>) <span class="co"># the means of the samples</span></span>
+<span id="cb21-3"><a href="#cb21-3"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)   <span class="co"># the SDs of the samples</span></span>
+<span id="cb21-4"><a href="#cb21-4"></a></span>
+<span id="cb21-5"><a href="#cb21-5"></a>rho1_2 <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="co"># correlation between x and y</span></span>
+<span id="cb21-6"><a href="#cb21-6"></a>rho1_3 <span class="ot">&lt;-</span> <span class="dv">0</span>   <span class="co"># correlation between x and z</span></span>
+<span id="cb21-7"><a href="#cb21-7"></a>rho2_3 <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="co"># correlation between y and z</span></span>
+<span id="cb21-8"><a href="#cb21-8"></a></span>
+<span id="cb21-9"><a href="#cb21-9"></a><span class="co"># correlation matrix</span></span>
+<span id="cb21-10"><a href="#cb21-10"></a>cor_mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(     <span class="dv">1</span>, rho1_2, rho1_3, </span>
+<span id="cb21-11"><a href="#cb21-11"></a>                    rho1_2,      <span class="dv">1</span>, rho2_3,</span>
+<span id="cb21-12"><a href="#cb21-12"></a>                    rho1_3, rho2_3,      <span class="dv">1</span>), <span class="dv">3</span>) </span>
+<span id="cb21-13"><a href="#cb21-13"></a></span>
+<span id="cb21-14"><a href="#cb21-14"></a>sigma <span class="ot">&lt;-</span> (sd <span class="sc">%*%</span> <span class="fu">t</span>(sd)) <span class="sc">*</span> cor_mat</span>
+<span id="cb21-15"><a href="#cb21-15"></a>bvn3 <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">mvrnorm</span>(n, mu, sigma)</span>
+<span id="cb21-16"><a href="#cb21-16"></a></span>
+<span id="cb21-17"><a href="#cb21-17"></a><span class="fu">cor</span>(bvn3) <span class="co"># check correlation matrix</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          x         y         z
 x 1.0000000 0.5850764 0.1108543
@@ -902,40 +922,41 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </div>
 <p>You can use the <code>plotly</code> library to make a 3D graph.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">#set up the marker style</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a>marker_style <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb25-3"><a href="#cb25-3"></a>    <span class="at">color =</span> <span class="st">"#ff0000"</span>, </span>
-<span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">line =</span> <span class="fu">list</span>(</span>
-<span id="cb25-5"><a href="#cb25-5"></a>      <span class="at">color =</span> <span class="st">"#444"</span>, </span>
-<span id="cb25-6"><a href="#cb25-6"></a>      <span class="at">width =</span> <span class="dv">1</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>    ), </span>
-<span id="cb25-8"><a href="#cb25-8"></a>    <span class="at">opacity =</span> <span class="fl">0.5</span>,</span>
-<span id="cb25-9"><a href="#cb25-9"></a>    <span class="at">size =</span> <span class="dv">5</span></span>
-<span id="cb25-10"><a href="#cb25-10"></a>  )</span>
-<span id="cb25-11"><a href="#cb25-11"></a></span>
-<span id="cb25-12"><a href="#cb25-12"></a><span class="co"># convert bvn3 to a tibble, plot and add markers</span></span>
-<span id="cb25-13"><a href="#cb25-13"></a>bvn3 <span class="sc">|&gt;</span></span>
-<span id="cb25-14"><a href="#cb25-14"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
-<span id="cb25-15"><a href="#cb25-15"></a>  <span class="fu">plot_ly</span>(<span class="at">x =</span> <span class="sc">~</span>x, <span class="at">y =</span> <span class="sc">~</span>y, <span class="at">z =</span> <span class="sc">~</span>z, <span class="at">marker =</span> marker_style) <span class="sc">|&gt;</span></span>
-<span id="cb25-16"><a href="#cb25-16"></a>  <span class="fu">add_markers</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in add_markers(plot_ly(as_tibble(bvn3), x = ~x, y = ~y, z = ~z, : could not find function "add_markers"</code></pre>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">#set up the marker style</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>marker_style <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb23-3"><a href="#cb23-3"></a>    <span class="at">color =</span> <span class="st">"#ff0000"</span>, </span>
+<span id="cb23-4"><a href="#cb23-4"></a>    <span class="at">line =</span> <span class="fu">list</span>(</span>
+<span id="cb23-5"><a href="#cb23-5"></a>      <span class="at">color =</span> <span class="st">"#444"</span>, </span>
+<span id="cb23-6"><a href="#cb23-6"></a>      <span class="at">width =</span> <span class="dv">1</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>    ), </span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="at">opacity =</span> <span class="fl">0.5</span>,</span>
+<span id="cb23-9"><a href="#cb23-9"></a>    <span class="at">size =</span> <span class="dv">5</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>  )</span>
+<span id="cb23-11"><a href="#cb23-11"></a></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="co"># convert bvn3 to a tibble, plot and add markers</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a>bvn3 <span class="sc">|&gt;</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a>  <span class="fu">as_tibble</span>() <span class="sc">|&gt;</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a>  <span class="fu">plot_ly</span>(<span class="at">x =</span> <span class="sc">~</span>x, <span class="at">y =</span> <span class="sc">~</span>y, <span class="at">z =</span> <span class="sc">~</span>z, <span class="at">marker =</span> marker_style) <span class="sc">|&gt;</span></span>
+<span id="cb23-16"><a href="#cb23-16"></a>  <span class="fu">add_markers</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-e5aefcf8e5f49d2f388a" style="width:100%;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-e5aefcf8e5f49d2f388a">{"x":{"visdat":{"531a12568759":["function () ","plotlyVisDat"]},"cur_data":"531a12568759","attrs":{"531a12568759":{"x":{},"y":{},"z":{},"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter3d","mode":"markers","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"scene":{"xaxis":{"title":"x"},"yaxis":{"title":"y"},"zaxis":{"title":"z"}},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[27.007198580839024,-0.96888046101337189,12.357113212895992,26.550958431146974,-1.4343125406943731,-0.65952030560525721,3.2662252883726151,-2.8686443554794447,5.5272345181854527,-1.5455191012861249,17.536980867952643,2.0287404052298541,12.179315632306,19.470028195872576,0.45903350496001494,11.075390658413143,13.241720464887813,2.7303580386555595,11.349762578032806,11.97529317733551,7.0738390666248154,21.462590818073849,12.202661074626324,6.8181686520481861,-4.6269405542728776,-11.380686633026027,18.195619814301011,14.62074930536491,12.294017215446232,15.542116033909474,-0.67277452610878008,1.8697261932249258,2.7222917571334611,-2.0069114602670339,4.9519178350053936,18.499784178115945,12.545415811155429,-1.8404297726578029,12.190213455120507,-2.2995061799580245,19.673384310891961,19.216875362566356,7.5540687889267684,10.877362286371692,10.897027461134041,8.0372981370176664,15.841662580424266,-2.2590587715673145,13.606935487579324,15.982469976704536,12.310607803544215,8.8320886040444027,-2.9758552380829482,15.292850163915357,6.1195342354478406,9.0261166073608337,8.0985627432282001,10.667674773789269,3.9811630792349124,18.398439440567927,1.3749706192547837,16.927021088906393,13.336021838756155,21.567295063226709,19.918741763468795,16.386813634846082,11.202218546538182,4.885730507636576,26.668197730761143,6.7991589297359347,4.5052118455404582,17.365916451083091,15.773034133589707,5.9952626475079542,11.081789748797316,13.194418410000109,6.3706901341583464,-2.297530383925686,21.286588170846297,8.374647228021006,6.0309191612468833,9.4287152042626108,23.069974968579718,17.241355013361602,16.07161911920479,16.205919982779932,12.711243879281014,11.451142501222277,-3.1441391408238761,0.36854884538758093,11.16206408186842,5.4160871813746727,24.671441819041966,6.2183728151130033,-4.7988648923277708,8.6347040388807024,19.560744637623387,-2.7065253054261174,12.315530952420502,17.256743849089769,21.316771454880147,8.4699968853825087,12.963254446378732,11.460209309675502,13.675343592708014,21.980904350872116,12.255378855773722,27.863301820969554,8.7708407089500806,22.1274407589319,3.5904845898889031,10.734066132487191,8.1455140887418462,5.1468778640079496,14.857205112184001,15.664783391482866,12.368826716218056,21.121518414348913,1.8626278421105589,4.8104043889031818,0.023176320419461049,2.6295950489983895,24.317062481959155,9.5338256839101572,-5.0727843109246056,13.41961990940124,5.7047926966676821,11.616530321187815,7.3364018091865315,8.6737993657095505,4.5752656596664707,1.7853566884049439,-2.7366122205822343,14.814421042250785,1.2655301012984879,14.02681181396953,23.058203188562896,6.8110053606729011,10.506156129309741,16.897792843247927,12.741639417527525,8.2203110657910248,21.413279874346742,11.772712821735846,-3.0506165858283882,4.6852235119848853,8.7529497507778675,0.65513922107529154,7.1210421773322672,19.342585887333687,8.7821751191681763,8.2824587622702008,16.995579386072105,8.3563210954630875,16.587740888032997,10.059662299792556,10.317429376629399,18.244192288436317,5.0891342493148475,16.258344286195992,11.264940844701405,1.464060870031842,5.7554977750153054,6.0206833011577725,-6.956252584321021,0.86530767436978273,27.065737543706263,6.3846186917521903,13.539175693327813,20.201575605072399,8.7417017146225007,19.123285118861066,1.3342033184737492,9.0918903855154554,3.287832795023804,17.168183268856197,-0.27901853142519784,-0.35968200599604216,11.482466831447226,17.098533192179353,-3.0659266295845722,15.333722302344697,13.446132000269476,5.3197770762323424,10.298498470961192,19.611078280744699,13.951568677886064,11.378339811207569,17.605884682193572,6.9956175745927256,6.6813925429241472,11.10764474082788,8.1550319055656946,-1.4011365279974974,13.181204336915982,27.086453128896398,17.283450387918279,17.569984752504197,17.942719711456409,16.268741086727644],"y":[24.071246673760143,16.002915583674632,11.753244235580407,25.545117699046699,12.87218600767515,3.2513846339382653,5.8562881620196929,4.8737740781679584,18.060156576659928,13.285341950861341,17.948128035295394,16.891477437753974,28.890660711867078,33.342617907331565,14.874884133525592,20.156585790266764,14.127585273994008,6.2697989870816855,24.402974317688013,14.065050461579141,15.25529997072023,28.024291872597132,20.552448428773822,17.629248131741804,13.158110442176927,-9.6889932668615018,39.787052775635374,16.388248591343618,12.812864751533471,17.725961605623276,8.6726322454278701,14.49735507143075,2.9645879774205994,12.64635876581335,16.695563899435481,28.11501817285621,39.156835933332438,27.167981839956489,23.452031147225792,21.905235784941073,27.666992191936053,19.496851500701997,22.359076552224039,21.840614259198944,30.538706998223098,27.612732277404255,25.704614267125216,11.485638530879839,21.087575187858633,23.316531202534236,15.461082239693159,21.083325865690586,23.555951369608909,27.916318267811764,7.4037776687554082,13.645051390344875,19.236860420892004,25.925380857144923,12.864062961516602,39.745140258685666,5.1715295980791502,29.110111657827989,23.526605497377538,24.056527314545541,25.057908157575255,25.036615914290895,27.358709646980792,22.482647163929695,23.972398678471379,10.293004135183574,10.682449184492931,35.132070533589555,7.9395618703359894,18.769668733515466,12.914624100307606,20.580945016006751,10.31714859622106,9.0748001441284014,25.483917968913264,26.327277530212541,11.599359503269012,18.115597234860612,24.823037012413145,22.891641401959546,40.203985819602295,23.277358575682058,14.901476997192074,31.291919943188461,15.326943070758526,31.97235977015983,20.361699142627977,15.587338945479585,27.500964690029594,28.309406549579563,3.8912971774668179,23.20446828371216,43.49592797461527,11.033696579660463,14.032250600949691,14.19396758721207,31.467222921386604,28.890873240764734,32.318490072845385,9.3956550822787293,26.411524691689614,23.759541797125241,25.844995479111354,36.140682048932788,23.895765826672108,20.108118182294515,10.648692159668933,27.328360667025386,20.370415738800247,29.620811169490715,16.390785260341815,24.164360433949291,15.888397339979901,9.1211799610222393,21.09350256531285,17.526844577309092,22.709558929019636,17.122485705240315,39.38750411706846,26.157973101736381,9.0467418991238358,21.911624068136447,19.48595889292806,37.907140119901214,24.032857241199153,20.395918891287533,15.969929091136567,-3.4609359836979117,11.466963687068649,21.053742977925559,10.546524467257273,29.031969899305359,30.015371050056178,8.007974098025489,23.60894628487382,27.528204498938319,20.348801220995526,13.446453330512838,24.051392467590812,21.86549591957418,6.9070086452561483,21.222184715422838,19.398382122013242,18.767494602064705,23.750004601660002,36.398978378870652,8.219537666175853,17.015475804176887,18.926574604890448,18.496128753264006,16.319054154914511,17.564021540312527,21.50668744148885,26.086805374637024,8.9175631532694251,28.887038806265465,12.665301789076889,10.992820040719256,25.398351416899466,22.231499599644387,18.629714303614477,16.11475454758223,29.265477161844501,20.446747132831895,13.064985568173542,25.271889937364627,12.203983478912393,26.234676011674271,8.6136884682263197,5.7562258283050305,9.5742466567722921,25.589284930648581,14.823942152421505,15.652009399908627,18.3007632610964,30.688664675322304,14.929506954548261,16.831605598479328,19.376287910624274,14.456323279351992,22.552525536919699,26.781030443985482,28.384845138158774,31.620416987310605,14.168512200819723,17.739089440028565,22.456209979847728,26.642462388800521,16.448957228396971,6.1900632362831249,24.69897996090668,27.308984880764797,25.531211884486183,33.069596986761759,10.609199770667136,25.326569928923092],"z":[35.065983935187532,39.365483217988427,25.51860478316188,29.869296237866774,19.441666170433326,15.563482574436479,23.782938544551598,22.660292201257629,38.536427099432949,40.485296509921234,20.864407893198624,29.027537810526212,43.611251153692528,53.950559615570441,31.311840394016105,29.845341081328026,27.279356307714654,28.689943113728685,38.251221352398801,18.559396189984859,28.898344276693759,37.79191846212187,23.475718055254298,32.723113700730288,39.840955144913998,4.6114406542545296,45.493567512927171,27.210912417346581,21.919765012950791,24.962506118250605,35.03712022631327,25.965959134281498,11.836364814731844,24.401574266132855,40.082619325999048,35.164960718541195,40.749107146274802,47.609618548303914,28.788311481114008,45.536664410206342,28.49151280123743,17.588793322266312,37.110547271328002,31.648528966447817,38.114904684981809,34.283040413936028,41.577503135988557,20.76600607232772,27.110427356751799,27.73429424502941,24.544255312802324,37.971568092147855,35.636453940785685,35.721542750204613,17.959344393415527,20.412347791035728,24.314948324536999,39.883203322021146,18.246056143426152,44.870940137683725,24.880393586457298,28.752312862651277,39.358848918381867,27.06181584710135,29.027820622874341,31.373819789744296,36.89005974210589,39.921267600959439,23.427133530329748,19.673450107398079,21.238807782754499,43.281206385901726,21.190011698276727,19.799992761611755,19.362204917697152,18.281390439658857,20.729985590921338,31.619565718390721,40.404993573059059,29.0908942831343,25.592682153746438,35.181987723892846,27.2714394775107,25.684337604191619,53.760077932665837,28.356495820949789,27.460571192290587,48.338099570824141,31.369296106587218,41.37210811165609,25.975102485737075,23.61105920394003,32.513363933414233,48.297621153780625,25.144334954973623,38.935328077025282,53.802919052299742,18.400300932310628,17.597457327582259,20.851871646152006,35.163018565628413,41.119464594863871,39.927181512426017,21.095908613384175,44.876727553653105,22.77970388139687,41.33166990240305,36.777414628789387,27.332702068133404,21.864299896001022,19.93648764327785,45.270422419573961,36.732681851917356,49.014067841022893,24.23001781413204,30.513716976308363,15.537631126858518,13.248829940418677,42.939703924946642,30.06409450020772,38.362614144050596,42.244639281055875,45.648763693818758,32.294372315142617,24.222644148818581,31.198007266599983,39.085300735022287,48.34206811983853,36.693037913074235,30.886500293096482,23.521972249358221,7.9382704844995615,23.690701948352086,27.311756733496654,21.91067529810627,33.89714525220225,23.731482320773786,26.889581622999543,27.225029760914197,36.233439450327538,31.625709222252027,17.76436190278093,26.167319800471166,23.817747021847971,21.379822876799317,36.144357974750747,37.01187492866628,34.564404852542118,32.469792971495274,34.640347033224657,30.799400812864913,26.603149590722001,21.577226507606952,32.836004538647359,21.425307618074754,24.66390430591111,26.09426327781263,42.650310158361194,30.557829150284139,36.775799852535975,19.197672177579722,29.38721488165244,34.145298914918541,42.557923671657704,41.909393361989878,33.787072556766368,31.079230964674537,36.857454831322727,22.368185656370358,26.401401171655142,26.992720050430837,34.513606785687337,15.184822575285056,12.37575965422721,18.095838647839209,31.545747295406965,17.076881256922931,34.801258754812515,32.139318016511581,39.924187708386405,39.487346003468389,19.923444849751569,35.314456158828506,25.08173058277983,35.195015241317222,28.733730600561067,36.349748457973007,44.913392598445249,18.288044144494606,28.649239346991401,40.29733097887754,31.030313955697949,24.775140987867111,12.399025353859709,38.147799235297811,31.713165972947294,33.125401286613723,35.262110657169927,15.477354299254461,27.177673437114905],"marker":{"color":"#ff0000","line":{"color":"#444","width":1},"opacity":0.5,"size":5},"type":"scatter3d","mode":"markers","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section><section id="sec-faux" class="level3" data-number="9.2.3"><h3 data-number="9.2.3" class="anchored" data-anchor-id="sec-faux">
 <span class="header-section-number">9.2.3</span> Faux</h3>
 <p>Alternatively, you can use the package <a href="https://debruine.github.io/faux/">faux</a> to generate any number of correlated variables. It also has a function for checking the parameters of your new simulated data (<code>check_sim_stats()</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>bvn3 <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="at">n =</span> n, </span>
-<span id="cb27-3"><a href="#cb27-3"></a>  <span class="at">vars =</span> <span class="dv">3</span>,</span>
-<span id="cb27-4"><a href="#cb27-4"></a>  <span class="at">mu =</span> mu, </span>
-<span id="cb27-5"><a href="#cb27-5"></a>  <span class="at">sd =</span> sd,</span>
-<span id="cb27-6"><a href="#cb27-6"></a>  <span class="at">r =</span> <span class="fu">c</span>(rho1_2, rho1_3, rho2_3),</span>
-<span id="cb27-7"><a href="#cb27-7"></a>  <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>)</span>
-<span id="cb27-8"><a href="#cb27-8"></a>)</span>
-<span id="cb27-9"><a href="#cb27-9"></a></span>
-<span id="cb27-10"><a href="#cb27-10"></a><span class="fu">check_sim_stats</span>(bvn3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>bvn3 <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  <span class="at">n =</span> n, </span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="at">vars =</span> <span class="dv">3</span>,</span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="at">mu =</span> mu, </span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="at">sd =</span> sd,</span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="at">r =</span> <span class="fu">c</span>(rho1_2, rho1_3, rho2_3),</span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>)</span>
+<span id="cb24-8"><a href="#cb24-8"></a>)</span>
+<span id="cb24-9"><a href="#cb24-9"></a></span>
+<span id="cb24-10"><a href="#cb24-10"></a><span class="fu">check_sim_stats</span>(bvn3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -983,25 +1004,25 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </div>
 <p>You can also use faux to simulate data for factorial designs. Set up the between-subject and within-subject factors as lists with the levels as (named) vectors. Means and standard deviations can be included as vectors or data frames. The function calculates sigma for you, structures your dataset, and outputs a plot of the design.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">pet =</span> <span class="fu">c</span>(<span class="at">cat =</span> <span class="st">"Cat Owners"</span>,</span>
-<span id="cb28-2"><a href="#cb28-2"></a>                  <span class="at">dog =</span> <span class="st">"Dog Owners"</span>))</span>
-<span id="cb28-3"><a href="#cb28-3"></a>w <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="st">"morning"</span>,</span>
-<span id="cb28-4"><a href="#cb28-4"></a>                   <span class="st">"noon"</span>,</span>
-<span id="cb28-5"><a href="#cb28-5"></a>                   <span class="st">"night"</span>))</span>
-<span id="cb28-6"><a href="#cb28-6"></a>mu <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb28-7"><a href="#cb28-7"></a>  <span class="at">cat    =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>),</span>
-<span id="cb28-8"><a href="#cb28-8"></a>  <span class="at">dog    =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>),</span>
-<span id="cb28-9"><a href="#cb28-9"></a>  <span class="at">row.names =</span> w<span class="sc">$</span>time</span>
-<span id="cb28-10"><a href="#cb28-10"></a>)</span>
-<span id="cb28-11"><a href="#cb28-11"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb28-12"><a href="#cb28-12"></a></span>
-<span id="cb28-13"><a href="#cb28-13"></a>pet_data <span class="ot">&lt;-</span> <span class="fu">sim_design</span>(</span>
-<span id="cb28-14"><a href="#cb28-14"></a>  <span class="at">within =</span> w, </span>
-<span id="cb28-15"><a href="#cb28-15"></a>  <span class="at">between =</span> b,</span>
-<span id="cb28-16"><a href="#cb28-16"></a>  <span class="at">n =</span> <span class="dv">100</span>, </span>
-<span id="cb28-17"><a href="#cb28-17"></a>  <span class="at">mu =</span> mu,</span>
-<span id="cb28-18"><a href="#cb28-18"></a>  <span class="at">sd =</span> sd, </span>
-<span id="cb28-19"><a href="#cb28-19"></a>  <span class="at">r =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>b <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">pet =</span> <span class="fu">c</span>(<span class="at">cat =</span> <span class="st">"Cat Owners"</span>,</span>
+<span id="cb25-2"><a href="#cb25-2"></a>                  <span class="at">dog =</span> <span class="st">"Dog Owners"</span>))</span>
+<span id="cb25-3"><a href="#cb25-3"></a>w <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">time =</span> <span class="fu">c</span>(<span class="st">"morning"</span>,</span>
+<span id="cb25-4"><a href="#cb25-4"></a>                   <span class="st">"noon"</span>,</span>
+<span id="cb25-5"><a href="#cb25-5"></a>                   <span class="st">"night"</span>))</span>
+<span id="cb25-6"><a href="#cb25-6"></a>mu <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="at">cat    =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">14</span>),</span>
+<span id="cb25-8"><a href="#cb25-8"></a>  <span class="at">dog    =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>),</span>
+<span id="cb25-9"><a href="#cb25-9"></a>  <span class="at">row.names =</span> w<span class="sc">$</span>time</span>
+<span id="cb25-10"><a href="#cb25-10"></a>)</span>
+<span id="cb25-11"><a href="#cb25-11"></a>sd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb25-12"><a href="#cb25-12"></a></span>
+<span id="cb25-13"><a href="#cb25-13"></a>pet_data <span class="ot">&lt;-</span> <span class="fu">sim_design</span>(</span>
+<span id="cb25-14"><a href="#cb25-14"></a>  <span class="at">within =</span> w, </span>
+<span id="cb25-15"><a href="#cb25-15"></a>  <span class="at">between =</span> b,</span>
+<span id="cb25-16"><a href="#cb25-16"></a>  <span class="at">n =</span> <span class="dv">100</span>, </span>
+<span id="cb25-17"><a href="#cb25-17"></a>  <span class="at">mu =</span> mu,</span>
+<span id="cb25-18"><a href="#cb25-18"></a>  <span class="at">sd =</span> sd, </span>
+<span id="cb25-19"><a href="#cb25-19"></a>  <span class="at">r =</span> .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/faux-sim-design-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -1011,7 +1032,7 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </div>
 <p>You can use the <code>check_sim_stats()</code> function, but you need to set the argument <code>between</code> to a vector of all the between-subject factor columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">check_sim_stats</span>(pet_data, <span class="at">between =</span> <span class="st">"pet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">check_sim_stats</span>(pet_data, <span class="at">between =</span> <span class="st">"pet"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
@@ -1110,8 +1131,18 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </section><section id="false-pos" class="level3" data-number="9.3.4"><h3 data-number="9.3.4" class="anchored" data-anchor-id="false-pos">
 <span class="header-section-number">9.3.4</span> False Positive/Negative</h3>
 <p>The probability that a test concludes there is an effect when there is really no effect (e.g., concludes a fair coin is biased) is called the <a href="https://psyteachr.github.io/glossary/f#false-positive" target="_blank" class="glossary" title="When a test concludes there is an effect when there really is no effect">false positive</a> rate (or <a href="https://psyteachr.github.io/glossary/t#type-i-error" target="_blank" class="glossary" title="A false positive; When a test concludes there is an effect when there really is no effect">Type I Error</a> Rate). The <a href="https://psyteachr.github.io/glossary/a#alpha" target="_blank" class="glossary" title="(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot">alpha</a> is the false positive rate we accept for a test. The probability that a test concludes there is no effect when there really is one (e.g., concludes a biased coin is fair) is called the <a href="https://psyteachr.github.io/glossary/f#false-negative" target="_blank" class="glossary" title="When a test concludes there is no effect when there really is an effect">false negative</a> rate (or <a href="https://psyteachr.github.io/glossary/t#type-ii-error" target="_blank" class="glossary" title="A false negative; When a test concludes there is no effect when there really is an effect">Type II Error</a> Rate). The <a href="https://psyteachr.github.io/glossary/b#beta" target="_blank" class="glossary" title="The false negative rate we accept for a statistical test.">beta</a> is the false negative rate we accept for a test.</p>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The false positive rate is not the overall probability of getting a false positive, but the probability of a false positive <em>under the null hypothesis</em>. Similarly, the false negative rate is the probability of a false negative <em>under the alternative hypothesis</em>. Unless we know the probability that we are testing a null effect, we can’t say anything about the overall probability of false positives or negatives. If 100% of the hypotheses we test are false, then all significant effects are false positives, but if all of the hypotheses we test are true, then all of the positives are true positives and the overall false positive rate is 0.</p>
+</div>
 </div>
 </section><section id="power" class="level3" data-number="9.3.5"><h3 data-number="9.3.5" class="anchored" data-anchor-id="power">
 <span class="header-section-number">9.3.5</span> Power and SESOI</h3>
@@ -1136,8 +1167,18 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </section><section id="conf-int" class="level3" data-number="9.3.6"><h3 data-number="9.3.6" class="anchored" data-anchor-id="conf-int">
 <span class="header-section-number">9.3.6</span> Confidence Intervals</h3>
 <p>The <a href="https://psyteachr.github.io/glossary/c#confidence-interval" target="_blank" class="glossary" title="A type of interval estimate used to summarise a given statistic or measurement where a proportion of intervals calculated from the sample(s) will contain the true value of the statistic.">confidence interval</a> is a range around some value (such as a mean) that has some probability of containing the parameter, if you repeated the process many times. Traditionally in psychology, we use 95% confidence intervals, but you can calculate CIs for any percentage.</p>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A 95% CI does <em>not</em> mean that there is a 95% probability that the true mean lies within this range, but that, if you repeated the study many times and calculated the CI this same way every time, you’d expect the true mean to be inside the CI in 95% of the studies. This seems like a subtle distinction, but can lead to some misunderstandings. See <a href="https://link.springer.com/article/10.3758/s13423-015-0947-8"><span class="citation" data-cites="Morey2016">Morey et al. (<span>2016</span>)</span></a> for more detailed discussion.</p>
+</div>
 </div>
 </section></section><section id="tests" class="level2" data-number="9.4"><h2 data-number="9.4" class="anchored" data-anchor-id="tests">
 <span class="header-section-number">9.4</span> Tests</h2>
@@ -1155,12 +1196,12 @@ z 0.1108543 0.7234038 1.0000000</code></pre>
 </ul>
 <p>Here we can test a series of 10 coin flips from a fair coin and a biased coin against the hypothesised probability of 0.5 (even odds).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>fair_coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, <span class="fl">0.5</span>)</span>
-<span id="cb30-3"><a href="#cb30-3"></a>biased_coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, <span class="fl">0.6</span>)</span>
-<span id="cb30-4"><a href="#cb30-4"></a></span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="fu">binom.test</span>(fair_coin, n, <span class="at">p =</span> <span class="fl">0.5</span>)</span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="fu">binom.test</span>(biased_coin, n, <span class="at">p =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>fair_coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, <span class="fl">0.5</span>)</span>
+<span id="cb27-3"><a href="#cb27-3"></a>biased_coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, <span class="fl">0.6</span>)</span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="fu">binom.test</span>(fair_coin, n, <span class="at">p =</span> <span class="fl">0.5</span>)</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="fu">binom.test</span>(biased_coin, n, <span class="at">p =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Exact binomial test
@@ -1187,7 +1228,16 @@ probability of success
                    0.5 </code></pre>
 </div>
 </div>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Run the code above several times, noting the p-values for the fair and biased coins. Alternatively, you can <a href="http://shiny.psy.gla.ac.uk/debruine/coinsim/">simulate coin flips</a> online and build up a graph of results and p-values.</p>
 <ul>
 <li>How does the p-value vary for the fair and biased coins?</li>
@@ -1196,6 +1246,7 @@ probability of success
 <li>How often do you conclude the fair coin is biased (false positives)?</li>
 <li>How often do you conclude the biased coin is fair (false negatives)?</li>
 </ul>
+</div>
 </div>
 <section id="sampling-binom" class="level4" data-number="9.4.1.1"><h4 data-number="9.4.1.1" class="anchored" data-anchor-id="sampling-binom">
 <span class="header-section-number">9.4.1.1</span> Sampling function</h4>
@@ -1206,18 +1257,18 @@ probability of success
 <li>different hypothesised probabilities (<code>p</code>, defaults to 0.5)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>sim_binom_test <span class="ot">&lt;-</span> <span class="cf">function</span>(n, bias, <span class="at">p =</span> <span class="fl">0.5</span>) {</span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="co"># simulate 1 coin flip n times with the specified bias</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, bias)</span>
-<span id="cb32-4"><a href="#cb32-4"></a>  <span class="co"># run a binomial test on the simulated data for the specified p</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a>  btest <span class="ot">&lt;-</span> <span class="fu">binom.test</span>(coin, n, p)</span>
-<span id="cb32-6"><a href="#cb32-6"></a>  <span class="co"># return the p-value of this test</span></span>
-<span id="cb32-7"><a href="#cb32-7"></a>  btest<span class="sc">$</span>p.value</span>
-<span id="cb32-8"><a href="#cb32-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>sim_binom_test <span class="ot">&lt;-</span> <span class="cf">function</span>(n, bias, <span class="at">p =</span> <span class="fl">0.5</span>) {</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="co"># simulate 1 coin flip n times with the specified bias</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a>  coin <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1</span>, n, bias)</span>
+<span id="cb29-4"><a href="#cb29-4"></a>  <span class="co"># run a binomial test on the simulated data for the specified p</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a>  btest <span class="ot">&lt;-</span> <span class="fu">binom.test</span>(coin, n, p)</span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="co"># return the p-value of this test</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  btest<span class="sc">$</span>p.value</span>
+<span id="cb29-8"><a href="#cb29-8"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once you’ve created your function, test it a few times, changing the values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">sim_binom_test</span>(<span class="dv">100</span>, <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">sim_binom_test</span>(<span class="dv">100</span>, <span class="fl">0.6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3682016</code></pre>
 </div>
@@ -1226,28 +1277,38 @@ probability of success
 <span class="header-section-number">9.4.1.2</span> Calculate power</h4>
 <p>Then you can use the <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> function to run it many times and save all the output values. You can calculate the <a href="https://psyteachr.github.io/glossary/p#power" target="_blank" class="glossary" title="The probability of rejecting the null hypothesis when it is false.">power</a> of your analysis by checking the proportion of your simulated analyses that have a p-value less than your <a href="https://psyteachr.github.io/glossary/a#alpha" target="_blank" class="glossary" title="(stats) The cutoff value for making a decision to reject the null hypothesis; (graphics) A value between 0 and 1 used to control the levels of transparency in a plot">alpha</a> (the probability of rejecting the null hypothesis when the null hypothesis is true).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_binom_test</span>(<span class="dv">100</span>, <span class="fl">0.6</span>))</span>
-<span id="cb35-2"><a href="#cb35-2"></a></span>
-<span id="cb35-3"><a href="#cb35-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span> <span class="co"># this does not always have to be 0.05</span></span>
-<span id="cb35-4"><a href="#cb35-4"></a></span>
-<span id="cb35-5"><a href="#cb35-5"></a><span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_binom_test</span>(<span class="dv">100</span>, <span class="fl">0.6</span>))</span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span> <span class="co"># this does not always have to be 0.05</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a></span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.459</code></pre>
 </div>
 </div>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><code>1e4</code> is just scientific notation for a 1 followed by 4 zeros (<code>10000</code>). When you’re running simulations, you usually want to run a lot of them. It’s a pain to keep track of whether you’ve typed 5 or 6 zeros (100000 vs 1000000) and this will change your running time by an order of magnitude.</p>
+</div>
 </div>
 <p>You can plot the distribution of p-values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb37-3"><a href="#cb37-3"></a>    <span class="fu">aes</span>(my_reps), </span>
-<span id="cb37-4"><a href="#cb37-4"></a>    <span class="at">binwidth =</span> <span class="fl">0.05</span>, </span>
-<span id="cb37-5"><a href="#cb37-5"></a>    <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb37-6"><a href="#cb37-6"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
-<span id="cb37-7"><a href="#cb37-7"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
-<span id="cb37-8"><a href="#cb37-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb34-3"><a href="#cb34-3"></a>    <span class="fu">aes</span>(my_reps), </span>
+<span id="cb34-4"><a href="#cb34-4"></a>    <span class="at">binwidth =</span> <span class="fl">0.05</span>, </span>
+<span id="cb34-5"><a href="#cb34-5"></a>    <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb34-6"><a href="#cb34-6"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb34-7"><a href="#cb34-7"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/plot-reps-binom-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -1261,8 +1322,8 @@ probability of success
 <p>Use a t-test to compare the mean of one distribution to a null hypothesis (one-sample t-test), compare the means of two samples (independent-samples t-test), or compare pairs of values (paired-samples t-test).</p>
 <p>You can run a one-sample t-test comparing the mean of your data to <code>mu</code>. Here is a simulated distribution with a mean of 0.5 and an SD of 1, creating an effect size of 0.5 SD when tested against a <code>mu</code> of 0. Run the simulation a few times to see how often the t-test returns a significant p-value (or run it in the <a href="http://shiny.psy.gla.ac.uk/debruine/normsim/">shiny app</a>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>sim_norm <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
-<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">t.test</span>(sim_norm, <span class="at">mu =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>sim_norm <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">t.test</span>(sim_norm, <span class="at">mu =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     One Sample t-test
@@ -1279,10 +1340,10 @@ mean of x
 </div>
 <p>Run an independent-samples t-test by comparing two lists of values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
-<span id="cb40-2"><a href="#cb40-2"></a>b <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>)</span>
-<span id="cb40-3"><a href="#cb40-3"></a>t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(a, b, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb40-4"><a href="#cb40-4"></a>t_ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span>
+<span id="cb37-2"><a href="#cb37-2"></a>b <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>)</span>
+<span id="cb37-3"><a href="#cb37-3"></a>t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(a, b, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb37-4"><a href="#cb37-4"></a>t_ind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -1297,15 +1358,25 @@ mean of x mean of y
 0.5337330 0.8016237 </code></pre>
 </div>
 </div>
-<div class="warning">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The <code>paired</code> argument defaults to <code>FALSE</code>, but it’s good practice to always explicitly set it so you are never confused about what type of test you are performing.</p>
+</div>
 </div>
 <section id="sampling-t" class="level4" data-number="9.4.2.1"><h4 data-number="9.4.2.1" class="anchored" data-anchor-id="sampling-t">
 <span class="header-section-number">9.4.2.1</span> Sampling function</h4>
 <p>We can use the <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> function to find out the names of all the t.test parameters and use this to just get one type of data, like the test statistic (e.g., t-value).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">names</span>(t_ind)</span>
-<span id="cb42-2"><a href="#cb42-2"></a>t_ind<span class="sc">$</span>statistic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">names</span>(t_ind)</span>
+<span id="cb39-2"><a href="#cb39-2"></a>t_ind<span class="sc">$</span>statistic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "statistic"   "parameter"   "p.value"     "conf.int"    "estimate"   
  [6] "null.value"  "stderr"      "alternative" "method"      "data.name"  
@@ -1315,23 +1386,23 @@ mean of x mean of y
 </div>
 <p>If you want to run the simulation many times and record information each time, first you need to turn your simulation into a function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>sim_t_ind <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m1, sd1, m2, sd2) {</span>
-<span id="cb44-2"><a href="#cb44-2"></a>  <span class="co"># simulate v1</span></span>
-<span id="cb44-3"><a href="#cb44-3"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m1, sd1)</span>
-<span id="cb44-4"><a href="#cb44-4"></a>  </span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="co">#simulate v2</span></span>
-<span id="cb44-6"><a href="#cb44-6"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
-<span id="cb44-7"><a href="#cb44-7"></a>    </span>
-<span id="cb44-8"><a href="#cb44-8"></a>  <span class="co"># compare using an independent samples t-test</span></span>
-<span id="cb44-9"><a href="#cb44-9"></a>  t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(v1, v2, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb44-10"><a href="#cb44-10"></a>  </span>
-<span id="cb44-11"><a href="#cb44-11"></a>  <span class="co"># return the p-value</span></span>
-<span id="cb44-12"><a href="#cb44-12"></a>  <span class="fu">return</span>(t_ind<span class="sc">$</span>p.value)</span>
-<span id="cb44-13"><a href="#cb44-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>sim_t_ind <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m1, sd1, m2, sd2) {</span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="co"># simulate v1</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m1, sd1)</span>
+<span id="cb41-4"><a href="#cb41-4"></a>  </span>
+<span id="cb41-5"><a href="#cb41-5"></a>  <span class="co">#simulate v2</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
+<span id="cb41-7"><a href="#cb41-7"></a>    </span>
+<span id="cb41-8"><a href="#cb41-8"></a>  <span class="co"># compare using an independent samples t-test</span></span>
+<span id="cb41-9"><a href="#cb41-9"></a>  t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(v1, v2, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb41-10"><a href="#cb41-10"></a>  </span>
+<span id="cb41-11"><a href="#cb41-11"></a>  <span class="co"># return the p-value</span></span>
+<span id="cb41-12"><a href="#cb41-12"></a>  <span class="fu">return</span>(t_ind<span class="sc">$</span>p.value)</span>
+<span id="cb41-13"><a href="#cb41-13"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Run it a few times to check that it gives you sensible values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">sim_t_ind</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">sim_t_ind</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.4781169</code></pre>
 </div>
@@ -1340,11 +1411,11 @@ mean of x mean of y
 <span class="header-section-number">9.4.2.2</span> Calculate power</h4>
 <p>Now replicate the simulation 1000 times.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>))</span>
-<span id="cb47-2"><a href="#cb47-2"></a></span>
-<span id="cb47-3"><a href="#cb47-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
-<span id="cb47-5"><a href="#cb47-5"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">100</span>, <span class="fl">0.7</span>, <span class="dv">1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>))</span>
+<span id="cb44-2"><a href="#cb44-2"></a></span>
+<span id="cb44-3"><a href="#cb44-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
+<span id="cb44-5"><a href="#cb44-5"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2853</code></pre>
 </div>
@@ -1354,11 +1425,11 @@ mean of x mean of y
 </div>
 <p>Compare your power estimate from simluation to a power calculation using <code><a href="https://rdrr.io/r/stats/power.t.test.html">power.t.test()</a></code>. Here, <code>delta</code> is the difference between <code>m1</code> and <code>m2</code> above.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, </span>
-<span id="cb49-2"><a href="#cb49-2"></a>             <span class="at">delta =</span> <span class="fl">0.2</span>, </span>
-<span id="cb49-3"><a href="#cb49-3"></a>             <span class="at">sd =</span> <span class="dv">1</span>, </span>
-<span id="cb49-4"><a href="#cb49-4"></a>             <span class="at">sig.level =</span> alpha, </span>
-<span id="cb49-5"><a href="#cb49-5"></a>             <span class="at">type =</span> <span class="st">"two.sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">power.t.test</span>(<span class="at">n =</span> <span class="dv">100</span>, </span>
+<span id="cb46-2"><a href="#cb46-2"></a>             <span class="at">delta =</span> <span class="fl">0.2</span>, </span>
+<span id="cb46-3"><a href="#cb46-3"></a>             <span class="at">sd =</span> <span class="dv">1</span>, </span>
+<span id="cb46-4"><a href="#cb46-4"></a>             <span class="at">sig.level =</span> alpha, </span>
+<span id="cb46-5"><a href="#cb46-5"></a>             <span class="at">type =</span> <span class="st">"two.sample"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
      Two-sample t test power calculation 
@@ -1375,14 +1446,14 @@ NOTE: n is number in *each* group</code></pre>
 </div>
 <p>You can plot the distribution of p-values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">geom_histogram</span>(</span>
-<span id="cb51-3"><a href="#cb51-3"></a>    <span class="fu">aes</span>(my_reps), </span>
-<span id="cb51-4"><a href="#cb51-4"></a>    <span class="at">binwidth =</span> <span class="fl">0.05</span>, </span>
-<span id="cb51-5"><a href="#cb51-5"></a>    <span class="at">boundary =</span> <span class="dv">0</span>,</span>
-<span id="cb51-6"><a href="#cb51-6"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
-<span id="cb51-7"><a href="#cb51-7"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
-<span id="cb51-8"><a href="#cb51-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb48-3"><a href="#cb48-3"></a>    <span class="fu">aes</span>(my_reps), </span>
+<span id="cb48-4"><a href="#cb48-4"></a>    <span class="at">binwidth =</span> <span class="fl">0.05</span>, </span>
+<span id="cb48-5"><a href="#cb48-5"></a>    <span class="at">boundary =</span> <span class="dv">0</span>,</span>
+<span id="cb48-6"><a href="#cb48-6"></a>    <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb48-7"><a href="#cb48-7"></a>    <span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="images/figures/plot-reps-t-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
@@ -1393,21 +1464,31 @@ NOTE: n is number in *each* group</code></pre>
 <div class="try">
 <p>What do you think the distribution of p-values is when there is no effect (i.e., the means are identical)? Check this yourself.</p>
 </div>
-<div class="warning">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Make sure the <code>boundary</code> argument is set to <code>0</code> for p-value histograms. See what happens with a null effect if <code>boundary</code> is not set.</p>
+</div>
 </div>
 </section></section><section id="correlation" class="level3" data-number="9.4.3"><h3 data-number="9.4.3" class="anchored" data-anchor-id="correlation">
 <span class="header-section-number">9.4.3</span> Correlation</h3>
 <p>You can test if continuous variables are related to each other using the <code><a href="https://rdrr.io/r/stats/cor.html">cor()</a></code> function. Let’s use <code>rnorm_multi()</code> to make a quick table of correlated values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
-<span id="cb52-2"><a href="#cb52-2"></a>  <span class="at">n =</span> <span class="dv">100</span>, </span>
-<span id="cb52-3"><a href="#cb52-3"></a>  <span class="at">vars =</span> <span class="dv">2</span>, </span>
-<span id="cb52-4"><a href="#cb52-4"></a>  <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
-<span id="cb52-5"><a href="#cb52-5"></a>  <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)</span>
-<span id="cb52-6"><a href="#cb52-6"></a>)</span>
-<span id="cb52-7"><a href="#cb52-7"></a></span>
-<span id="cb52-8"><a href="#cb52-8"></a><span class="fu">cor</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="at">n =</span> <span class="dv">100</span>, </span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="at">vars =</span> <span class="dv">2</span>, </span>
+<span id="cb49-4"><a href="#cb49-4"></a>  <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.5</span>,</span>
+<span id="cb49-5"><a href="#cb49-5"></a>  <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)</span>
+<span id="cb49-6"><a href="#cb49-6"></a>)</span>
+<span id="cb49-7"><a href="#cb49-7"></a></span>
+<span id="cb49-8"><a href="#cb49-8"></a><span class="fu">cor</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.4405768</code></pre>
 </div>
@@ -1417,7 +1498,7 @@ NOTE: n is number in *each* group</code></pre>
 </div>
 <p><code><a href="https://rdrr.io/r/stats/cor.html">cor()</a></code> defaults to Pearson’s correlations. Set the <code>method</code> argument to use Kendall or Spearman correlations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">cor</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">cor</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.400072</code></pre>
 </div>
@@ -1426,21 +1507,21 @@ NOTE: n is number in *each* group</code></pre>
 <span class="header-section-number">9.4.3.1</span> Sampling function</h4>
 <p>Create a function that creates two variables with <code>n</code> observations and <code>r</code> correlation. Use the function <code><a href="https://rdrr.io/r/stats/cor.test.html">cor.test()</a></code> to give you p-values for the correlation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>sim_cor_test <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">r =</span> <span class="dv">0</span>) {</span>
-<span id="cb56-2"><a href="#cb56-2"></a>  dat <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
-<span id="cb56-3"><a href="#cb56-3"></a>    <span class="at">n =</span> n, </span>
-<span id="cb56-4"><a href="#cb56-4"></a>    <span class="at">vars =</span> <span class="dv">2</span>, </span>
-<span id="cb56-5"><a href="#cb56-5"></a>    <span class="at">r =</span> r,</span>
-<span id="cb56-6"><a href="#cb56-6"></a>    <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)</span>
-<span id="cb56-7"><a href="#cb56-7"></a>  )</span>
-<span id="cb56-8"><a href="#cb56-8"></a></span>
-<span id="cb56-9"><a href="#cb56-9"></a>  ctest <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y)</span>
-<span id="cb56-10"><a href="#cb56-10"></a>  ctest<span class="sc">$</span>p.value</span>
-<span id="cb56-11"><a href="#cb56-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>sim_cor_test <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">r =</span> <span class="dv">0</span>) {</span>
+<span id="cb53-2"><a href="#cb53-2"></a>  dat <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
+<span id="cb53-3"><a href="#cb53-3"></a>    <span class="at">n =</span> n, </span>
+<span id="cb53-4"><a href="#cb53-4"></a>    <span class="at">vars =</span> <span class="dv">2</span>, </span>
+<span id="cb53-5"><a href="#cb53-5"></a>    <span class="at">r =</span> r,</span>
+<span id="cb53-6"><a href="#cb53-6"></a>    <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>)</span>
+<span id="cb53-7"><a href="#cb53-7"></a>  )</span>
+<span id="cb53-8"><a href="#cb53-8"></a></span>
+<span id="cb53-9"><a href="#cb53-9"></a>  ctest <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(dat<span class="sc">$</span>x, dat<span class="sc">$</span>y)</span>
+<span id="cb53-10"><a href="#cb53-10"></a>  ctest<span class="sc">$</span>p.value</span>
+<span id="cb53-11"><a href="#cb53-11"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Once you’ve created your function, test it a few times, changing the values.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">sim_cor_test</span>(<span class="dv">50</span>, .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">sim_cor_test</span>(<span class="dv">50</span>, .<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.653965e-09</code></pre>
 </div>
@@ -1449,20 +1530,27 @@ NOTE: n is number in *each* group</code></pre>
 <span class="header-section-number">9.4.3.2</span> Calculate power</h4>
 <p>Now replicate the simulation 1000 times.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_cor_test</span>(<span class="dv">50</span>, <span class="fl">0.5</span>))</span>
-<span id="cb59-2"><a href="#cb59-2"></a></span>
-<span id="cb59-3"><a href="#cb59-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb59-4"><a href="#cb59-4"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
-<span id="cb59-5"><a href="#cb59-5"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_cor_test</span>(<span class="dv">50</span>, <span class="fl">0.5</span>))</span>
+<span id="cb56-2"><a href="#cb56-2"></a></span>
+<span id="cb56-3"><a href="#cb56-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb56-4"><a href="#cb56-4"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
+<span id="cb56-5"><a href="#cb56-5"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.966</code></pre>
 </div>
 </div>
 <p>Compare to the value calcuated by the pwr package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">r =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in loadNamespace(x): there is no package called 'pwr'</code></pre>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(<span class="at">n =</span> <span class="dv">50</span>, <span class="at">r =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     approximate correlation power calculation (arctangh transformation) 
+
+              n = 50
+              r = 0.5
+      sig.level = 0.05
+          power = 0.9669813
+    alternative = two.sided</code></pre>
 </div>
 </div>
 </section></section></section><section id="example" class="level2" data-number="9.5"><h2 data-number="9.5" class="anchored" data-anchor-id="example">
@@ -1472,67 +1560,54 @@ NOTE: n is number in *each* group</code></pre>
 <span class="header-section-number">9.5.1</span> Load &amp; wrangle</h3>
 <p>We have to do a little data wrangling first. Have a look at the data after you import it and relabel <code>Sex</code> to <code>male</code> and <code>female</code> instead of <code>1</code> and <code>2</code>. Also convert <code>Agemos</code> (age in months) to years. Relabel the column <code>0</code> as <code>mean</code> and calculate a new column named <code>sd</code> as the difference between columns <code>1</code> and <code>0</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>orig_height_age <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://www.cdc.gov/growthcharts/data/zscore/zstatage.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Failed to open
-'https://www.cdc.gov/growthcharts/data/zscore/zstatage.csv': Invalid HTTP
-header field was received: frame type: 1, stream: 1, name: [set-cookie], value:
-[TS0196e5be=015d0abe87633f1789c6f892bc5b696479311f9b8876703fd13abfcea7608e6eb23064126ac246db1b91e3c5c773d4f6f1c417cc3e;
-Path=/; Domain=.www.cdc.gov; Secure; HttpO</code></pre>
-</div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in open.connection(structure(4L, class = c("curl", "connection"), conn_id = &lt;pointer: 0x127451d10&gt;), : cannot open the connection</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>height_age <span class="ot">&lt;-</span> orig_height_age <span class="sc">|&gt;</span></span>
-<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">filter</span>(Sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb66-3"><a href="#cb66-3"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb66-4"><a href="#cb66-4"></a>    <span class="at">sex =</span> <span class="fu">recode</span>(Sex, <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"male"</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"female"</span>),</span>
-<span id="cb66-5"><a href="#cb66-5"></a>    <span class="at">age =</span> <span class="fu">as.numeric</span>(Agemos)<span class="sc">/</span><span class="dv">12</span>,</span>
-<span id="cb66-6"><a href="#cb66-6"></a>    <span class="at">sd =</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span></span>
-<span id="cb66-7"><a href="#cb66-7"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb66-8"><a href="#cb66-8"></a>  <span class="fu">select</span>(sex, age, <span class="at">mean =</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span>, sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'orig_height_age' not found</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>orig_height_age <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://www.cdc.gov/growthcharts/data/zscore/zstatage.csv"</span>) </span>
+<span id="cb60-2"><a href="#cb60-2"></a></span>
+<span id="cb60-3"><a href="#cb60-3"></a>height_age <span class="ot">&lt;-</span> orig_height_age <span class="sc">|&gt;</span></span>
+<span id="cb60-4"><a href="#cb60-4"></a>  <span class="fu">filter</span>(Sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb60-5"><a href="#cb60-5"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb60-6"><a href="#cb60-6"></a>    <span class="at">sex =</span> <span class="fu">recode</span>(Sex, <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"male"</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"female"</span>),</span>
+<span id="cb60-7"><a href="#cb60-7"></a>    <span class="at">age =</span> <span class="fu">as.numeric</span>(Agemos)<span class="sc">/</span><span class="dv">12</span>,</span>
+<span id="cb60-8"><a href="#cb60-8"></a>    <span class="at">sd =</span> <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="sc">-</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span></span>
+<span id="cb60-9"><a href="#cb60-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a>  <span class="fu">select</span>(sex, age, <span class="at">mean =</span> <span class="st">`</span><span class="at">0</span><span class="st">`</span>, sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="plot" class="level3" data-number="9.5.2"><h3 data-number="9.5.2" class="anchored" data-anchor-id="plot">
 <span class="header-section-number">9.5.2</span> Plot</h3>
 <p>Plot your new data frame to see how mean height changes with age for boys and girls.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">ggplot</span>(height_age, <span class="fu">aes</span>(age, mean, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
-<span id="cb68-2"><a href="#cb68-2"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
-<span id="cb68-3"><a href="#cb68-3"></a>                  <span class="at">ymax =</span> mean <span class="sc">+</span> sd),</span>
-<span id="cb68-4"><a href="#cb68-4"></a>              <span class="at">stat=</span><span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'height_age' not found</code></pre>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">ggplot</span>(height_age, <span class="fu">aes</span>(age, mean, <span class="at">color =</span> sex)) <span class="sc">+</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a>  <span class="fu">geom_smooth</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean <span class="sc">-</span> sd, </span>
+<span id="cb61-3"><a href="#cb61-3"></a>                  <span class="at">ymax =</span> mean <span class="sc">+</span> sd),</span>
+<span id="cb61-4"><a href="#cb61-4"></a>              <span class="at">stat=</span><span class="st">"identity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="images/figures/plot-height-means-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </section><section id="simulate-a-population" class="level3" data-number="9.5.3"><h3 data-number="9.5.3" class="anchored" data-anchor-id="simulate-a-population">
 <span class="header-section-number">9.5.3</span> Simulate a population</h3>
 <p>Simulate 50 random male heights and 50 random female heights for 20-year-olds using the <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code> function and the means and SDs from the <code>height_age</code> table. Plot the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>age_filter <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb70-2"><a href="#cb70-2"></a>m <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"male"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'height_age' not found</code></pre>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>age_filter <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb62-2"><a href="#cb62-2"></a>m <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"male"</span>)</span>
+<span id="cb62-3"><a href="#cb62-3"></a>f <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb62-4"><a href="#cb62-4"></a></span>
+<span id="cb62-5"><a href="#cb62-5"></a>sim_height <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb62-6"><a href="#cb62-6"></a>  <span class="at">male =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd),</span>
+<span id="cb62-7"><a href="#cb62-7"></a>  <span class="at">female =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd)</span>
+<span id="cb62-8"><a href="#cb62-8"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb62-9"><a href="#cb62-9"></a>  <span class="fu">gather</span>(<span class="st">"sex"</span>, <span class="st">"height"</span>, male<span class="sc">:</span>female)</span>
+<span id="cb62-10"><a href="#cb62-10"></a></span>
+<span id="cb62-11"><a href="#cb62-11"></a><span class="fu">ggplot</span>(sim_height) <span class="sc">+</span></span>
+<span id="cb62-12"><a href="#cb62-12"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(height, <span class="at">fill =</span> sex), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb62-13"><a href="#cb62-13"></a>  <span class="fu">xlim</span>(<span class="dv">125</span>, <span class="dv">225</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="images/figures/sim-height-20-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>f <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"female"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'height_age' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>sim_height <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb74-2"><a href="#cb74-2"></a>  <span class="at">male =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd),</span>
-<span id="cb74-3"><a href="#cb74-3"></a>  <span class="at">female =</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd)</span>
-<span id="cb74-4"><a href="#cb74-4"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb74-5"><a href="#cb74-5"></a>  <span class="fu">gather</span>(<span class="st">"sex"</span>, <span class="st">"height"</span>, male<span class="sc">:</span>female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'm' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="fu">ggplot</span>(sim_height) <span class="sc">+</span></span>
-<span id="cb76-2"><a href="#cb76-2"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(height, <span class="at">fill =</span> sex), <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb76-3"><a href="#cb76-3"></a>  <span class="fu">xlim</span>(<span class="dv">125</span>, <span class="dv">225</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'sim_height' not found</code></pre>
 </div>
 </div>
 <div class="try">
@@ -1542,33 +1617,26 @@ Path=/; Domain=.www.cdc.gov; Secure; HttpO</code></pre>
 <span class="header-section-number">9.5.4</span> Analyse simulated data</h3>
 <p>Use the <code>sim_t_ind(n, m1, sd1, m2, sd2)</code> function we created above to generate one simulation with a sample size of 50 in each group using the means and SDs of male and female 14-year-olds.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>age_filter <span class="ot">&lt;-</span> <span class="dv">14</span></span>
-<span id="cb78-2"><a href="#cb78-2"></a>m <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"male"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'height_age' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>f <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"female"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'height_age' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a><span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'm' not found</code></pre>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>age_filter <span class="ot">&lt;-</span> <span class="dv">14</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>m <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"male"</span>)</span>
+<span id="cb63-3"><a href="#cb63-3"></a>f <span class="ot">&lt;-</span> <span class="fu">filter</span>(height_age, age <span class="sc">==</span> age_filter, sex <span class="sc">==</span> <span class="st">"female"</span>)</span>
+<span id="cb63-4"><a href="#cb63-4"></a></span>
+<span id="cb63-5"><a href="#cb63-5"></a><span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.01183413</code></pre>
 </div>
 </div>
 </section><section id="replicate-simulation" class="level3" data-number="9.5.5"><h3 data-number="9.5.5" class="anchored" data-anchor-id="replicate-simulation">
 <span class="header-section-number">9.5.5</span> Replicate simulation</h3>
 <p>Now replicate this 1e4 times using the <code><a href="https://rdrr.io/r/base/lapply.html">replicate()</a></code> function. This function will save the returned p-values in a list (<code>my_reps</code>). We can then check what proportion of those p-values are less than our alpha value. This is the power of our test.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in FUN(X[[i]], ...): object 'm' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb86-2"><a href="#cb86-2"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
-<span id="cb86-3"><a href="#cb86-3"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd))</span>
+<span id="cb65-2"><a href="#cb65-2"></a></span>
+<span id="cb65-3"><a href="#cb65-3"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb65-4"><a href="#cb65-4"></a>power <span class="ot">&lt;-</span> <span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span>
+<span id="cb65-5"><a href="#cb65-5"></a>power</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.966</code></pre>
+<pre><code>[1] 0.6447</code></pre>
 </div>
 </div>
 </section><section id="one-tailed-prediction" class="level3" data-number="9.5.6"><h3 data-number="9.5.6" class="anchored" data-anchor-id="one-tailed-prediction">
@@ -1576,81 +1644,80 @@ Path=/; Domain=.www.cdc.gov; Secure; HttpO</code></pre>
 <p>This design has about 65% power to detect the sex difference in height (with a 2-tailed test). Modify the <code>sim_t_ind</code> function for a 1-tailed prediction.</p>
 <p>You could just set <code>alternative</code> equal to “greater” in the function, but it might be better to add the <code>alt</code> argument to your function (giving it the same default value as <code>t.test</code>) and change the value of <code>alternative</code> in the function to <code>alt</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1"></a>sim_t_ind <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m1, sd1, m2, sd2, <span class="at">alt =</span> <span class="st">"two.sided"</span>) {</span>
-<span id="cb88-2"><a href="#cb88-2"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m1, sd1)</span>
-<span id="cb88-3"><a href="#cb88-3"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
-<span id="cb88-4"><a href="#cb88-4"></a>  t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(v1, v2, <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> alt)</span>
-<span id="cb88-5"><a href="#cb88-5"></a>  </span>
-<span id="cb88-6"><a href="#cb88-6"></a>  <span class="fu">return</span>(t_ind<span class="sc">$</span>p.value)</span>
-<span id="cb88-7"><a href="#cb88-7"></a>}</span>
-<span id="cb88-8"><a href="#cb88-8"></a></span>
-<span id="cb88-9"><a href="#cb88-9"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb88-10"><a href="#cb88-10"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd, <span class="st">"greater"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in FUN(X[[i]], ...): object 'm' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a><span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>sim_t_ind <span class="ot">&lt;-</span> <span class="cf">function</span>(n, m1, sd1, m2, sd2, <span class="at">alt =</span> <span class="st">"two.sided"</span>) {</span>
+<span id="cb67-2"><a href="#cb67-2"></a>  v1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m1, sd1)</span>
+<span id="cb67-3"><a href="#cb67-3"></a>  v2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, m2, sd2)</span>
+<span id="cb67-4"><a href="#cb67-4"></a>  t_ind <span class="ot">&lt;-</span> <span class="fu">t.test</span>(v1, v2, <span class="at">paired =</span> <span class="cn">FALSE</span>, <span class="at">alternative =</span> alt)</span>
+<span id="cb67-5"><a href="#cb67-5"></a>  </span>
+<span id="cb67-6"><a href="#cb67-6"></a>  <span class="fu">return</span>(t_ind<span class="sc">$</span>p.value)</span>
+<span id="cb67-7"><a href="#cb67-7"></a>}</span>
+<span id="cb67-8"><a href="#cb67-8"></a></span>
+<span id="cb67-9"><a href="#cb67-9"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb67-10"><a href="#cb67-10"></a>my_reps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="fl">1e4</span>, <span class="fu">sim_t_ind</span>(<span class="dv">50</span>, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd, <span class="st">"greater"</span>))</span>
+<span id="cb67-11"><a href="#cb67-11"></a><span class="fu">mean</span>(my_reps <span class="sc">&lt;</span> alpha)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.966</code></pre>
+<pre><code>[1] 0.7613</code></pre>
 </div>
 </div>
 </section><section id="range-of-sample-sizes" class="level3" data-number="9.5.7"><h3 data-number="9.5.7" class="anchored" data-anchor-id="range-of-sample-sizes">
 <span class="header-section-number">9.5.7</span> Range of sample sizes</h3>
 <p>What if we want to find out what sample size will give us 80% power? We can try trial and error. We know the number should be slightly larger than 50. But you can search more systematically by repeating your power calculation for a range of sample sizes.</p>
-<div class="info">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>This might seem like overkill for a t-test, where you can easily look up sample size calculators online, but it is a valuable skill to learn for when your analyses become more complicated.</p>
+</div>
 </div>
 <p>Start with a relatively low number of replications and/or more spread-out samples to estimate where you should be looking more specifically. Then you can repeat with a narrower/denser range of sample sizes and more iterations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a><span class="co"># make another custom function to return power</span></span>
-<span id="cb92-2"><a href="#cb92-2"></a>pwr_func <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">reps =</span> <span class="dv">100</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) {</span>
-<span id="cb92-3"><a href="#cb92-3"></a>  ps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(reps, <span class="fu">sim_t_ind</span>(n, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd, <span class="st">"greater"</span>))</span>
-<span id="cb92-4"><a href="#cb92-4"></a>  <span class="fu">mean</span>(ps <span class="sc">&lt;</span> alpha)</span>
-<span id="cb92-5"><a href="#cb92-5"></a>}</span>
-<span id="cb92-6"><a href="#cb92-6"></a></span>
-<span id="cb92-7"><a href="#cb92-7"></a><span class="co"># make a table of the n values you want to check</span></span>
-<span id="cb92-8"><a href="#cb92-8"></a>power_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb92-9"><a href="#cb92-9"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
-<span id="cb92-10"><a href="#cb92-10"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb92-11"><a href="#cb92-11"></a>  <span class="co"># run the power function for each n</span></span>
-<span id="cb92-12"><a href="#cb92-12"></a>  <span class="fu">mutate</span>(<span class="at">power =</span> <span class="fu">map_dbl</span>(n, pwr_func))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `mutate()`:
-ℹ In argument: `power = map_dbl(n, pwr_func)`.
-Caused by error in `map_dbl()`:
-ℹ In index: 1.
-Caused by error in `FUN()`:
-! object 'm' not found</code></pre>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># make another custom function to return power</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a>pwr_func <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">reps =</span> <span class="dv">100</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb69-3"><a href="#cb69-3"></a>  ps <span class="ot">&lt;-</span> <span class="fu">replicate</span>(reps, <span class="fu">sim_t_ind</span>(n, m<span class="sc">$</span>mean, m<span class="sc">$</span>sd, f<span class="sc">$</span>mean, f<span class="sc">$</span>sd, <span class="st">"greater"</span>))</span>
+<span id="cb69-4"><a href="#cb69-4"></a>  <span class="fu">mean</span>(ps <span class="sc">&lt;</span> alpha)</span>
+<span id="cb69-5"><a href="#cb69-5"></a>}</span>
+<span id="cb69-6"><a href="#cb69-6"></a></span>
+<span id="cb69-7"><a href="#cb69-7"></a><span class="co"># make a table of the n values you want to check</span></span>
+<span id="cb69-8"><a href="#cb69-8"></a>power_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb69-9"><a href="#cb69-9"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb69-10"><a href="#cb69-10"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb69-11"><a href="#cb69-11"></a>  <span class="co"># run the power function for each n</span></span>
+<span id="cb69-12"><a href="#cb69-12"></a>  <span class="fu">mutate</span>(<span class="at">power =</span> <span class="fu">map_dbl</span>(n, pwr_func))</span>
+<span id="cb69-13"><a href="#cb69-13"></a></span>
+<span id="cb69-14"><a href="#cb69-14"></a><span class="co"># plot the results</span></span>
+<span id="cb69-15"><a href="#cb69-15"></a><span class="fu">ggplot</span>(power_table, <span class="fu">aes</span>(n, power)) <span class="sc">+</span></span>
+<span id="cb69-16"><a href="#cb69-16"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb69-17"><a href="#cb69-17"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb69-18"><a href="#cb69-18"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="images/figures/range-sample-sizes-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a><span class="co"># plot the results</span></span>
-<span id="cb94-2"><a href="#cb94-2"></a><span class="fu">ggplot</span>(power_table, <span class="fu">aes</span>(n, power)) <span class="sc">+</span></span>
-<span id="cb94-3"><a href="#cb94-3"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb94-4"><a href="#cb94-4"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb94-5"><a href="#cb94-5"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'power_table' not found</code></pre>
 </div>
 </div>
 <p>Now we can narrow down our search to values around 55 (plus or minus 5) and increase the number of replications from 1e3 to 1e4.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>power_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb96-2"><a href="#cb96-2"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">60</span>)</span>
-<span id="cb96-3"><a href="#cb96-3"></a>) <span class="sc">|&gt;</span></span>
-<span id="cb96-4"><a href="#cb96-4"></a>  <span class="fu">mutate</span>(<span class="at">power =</span> <span class="fu">map_dbl</span>(n, pwr_func, <span class="at">reps =</span> <span class="fl">1e4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in `mutate()`:
-ℹ In argument: `power = map_dbl(n, pwr_func, reps = 10000)`.
-Caused by error in `map_dbl()`:
-ℹ In index: 1.
-Caused by error in `FUN()`:
-! object 'm' not found</code></pre>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>power_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb70-2"><a href="#cb70-2"></a>  <span class="at">n =</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">60</span>)</span>
+<span id="cb70-3"><a href="#cb70-3"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a>  <span class="fu">mutate</span>(<span class="at">power =</span> <span class="fu">map_dbl</span>(n, pwr_func, <span class="at">reps =</span> <span class="fl">1e4</span>))</span>
+<span id="cb70-5"><a href="#cb70-5"></a></span>
+<span id="cb70-6"><a href="#cb70-6"></a><span class="fu">ggplot</span>(power_table, <span class="fu">aes</span>(n, power)) <span class="sc">+</span></span>
+<span id="cb70-7"><a href="#cb70-7"></a> <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb70-9"><a href="#cb70-9"></a> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="images/figures/narrow-range-sample-sizes-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a><span class="fu">ggplot</span>(power_table, <span class="fu">aes</span>(n, power)) <span class="sc">+</span></span>
-<span id="cb98-2"><a href="#cb98-2"></a> <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
-<span id="cb98-3"><a href="#cb98-3"></a> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb98-4"><a href="#cb98-4"></a> <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fl">0.8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error: object 'power_table' not found</code></pre>
 </div>
 </div>
 </section></section><section id="sec-glossary-sim" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="sec-glossary-sim">Glossary</h2>

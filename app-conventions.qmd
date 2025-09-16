@@ -82,28 +82,3 @@ Try it yourself.
 paste("Code", "Output", 1, sep = " ")
 ```
 
-
-```{r}
-#| echo: fenced
-#| fig-cap: "Set `#| echo: fenced` for code chunks with headers"
-#| label: fig-fenced-example
-#‎| fig-cap: "#| Set `echo: fenced` for code chunks with headers"
-#‎| echo: false
-
-hist(rnorm(100000))
-```
-
-:::{.callout-warning collapse="true"}
-## Showing `echo` in fenced code blocks
-
-Use a version of `#‎|` with an invisible character to show options in a fenced code block that you don't actually want to apply to this chunk, such as a second `echo` or a duplicate `label`. Copy and edit the text below into RStudio and you'll see a red highlighted dot between `#` and `|`. These lines have to go *below* any lines that you do want to apply to this code block.
-
-```
-#‎| echo: false
-```
-:::
-
-
-
-
-

@@ -1,6 +1,12 @@
-# Data Tidying {#sec-tidy .incomplete-chapter}
+# Data Tidying {#sec-tidy}
 
-```{r, include=FALSE, eval = FALSE}
+<div class="right meme"><img src="images/memes/messy_data.jpg" 
+     alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'" /></div>
+
+
+```{r}
+#| include: false
+#| eval: false
 # setup - doesn't need to run every time
 # creates and saves tidy_data.csv and untidy_data.csv
 set.seed(90210)
@@ -54,10 +60,18 @@ write_csv(untidy_data, "data/untidy_data.csv")
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
+````
+```{{r}}
+#| label: setup
+#| include: false
+
+library(tidyverse) # for data wrangling
+```
+````
+
 ```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+#| label: setup-tidy
+#| include: false
 
 library(tidyverse) # for data wrangling
 ```
@@ -66,7 +80,7 @@ You'll also need to make a folder called "data" and download two data files into
 <a href="https://psyteachr.github.io/ads-v2/data/tidy_data.csv" download>tidy_data.csv</a> and
 <a href="https://psyteachr.github.io/ads-v2/data/untidy_data.csv" download>untidy_data.csv</a>.
 
-Download the [Data tidying cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/tidyr.pdf).
+Download the [Data tidying cheat sheet](https://rstudio.github.io/cheatsheets/html/tidyr.html).
 
 ## Data Structures
 
@@ -87,7 +101,8 @@ A `r glossary("value")` is the data for one variable for one observation. For ex
 ::: {.try}
 The following table is data that shows the number of items each customer bought each year.
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 tidy_data <- read_csv("data/tidy_data.csv", show_col_types = FALSE)
 
 tidy_data |>
@@ -121,7 +136,9 @@ First, let's have a look at an example of a messy, or untidy, dataset. Each row 
 untidy_data <- read_csv("data/untidy_data.csv", show_col_types = FALSE)
 ```
 
-```{r tbl-untidy-data, echo = FALSE}
+```{r}
+#| label: tbl-untidy-data
+#| echo: false
 #| tbl-cap: Untidy table
 untidy_data
 ```
@@ -158,7 +175,9 @@ This is the tidy version:
 tidy_data <- read_csv("data/tidy_data.csv", show_col_types = FALSE)
 ```
 
-```{r tbl-tidy-data, echo = FALSE}
+```{r}
+#| label: tbl-tidy-data
+#| echo: false
 #| tbl-cap: Tidy table
 tidy_data
 ```
@@ -173,7 +192,8 @@ To calculate the total price per customer over the three years and the total num
 2.  sum the `items` column to get the total number of items bought per customer
 3.  sum the `totalprice` column to get the total price per customer
 
-```{r, message=FALSE}
+```{r}
+#| message: false
 tidy_data |>
   group_by(customer_id) |>
   summarise(
@@ -193,7 +213,11 @@ If you have control over how the data are recorded, it will make your life easie
 
 Data tables can be in `r glossary("wide")` format or `r glossary("long")` format (or a mix of the two). Wide data are where all of the observations about one thing are in the same row, while long data are where each observation is on a separate row. You often need to convert between these formats to do different types of summaries or visualisation. You may have done something similar using pivot tables in Excel.
 
-```{r img-pivot-table, echo=FALSE, fig.cap="Converting between wide and long formats using pivot tables in Excel."}
+```{r}
+#| label: fig-pivot-table
+#| echo: false
+#| fig-cap: "Converting between wide and long formats using pivot tables in Excel."
+#| fig-alt: "Two excel interfaces. The left shows a table with columns Row Labels, 2018, 2019, 2020 and Grand Total, with 5 rows, plus the pivot table builder popup interface. The right shows the same table in a longer format, with columns Row Labels and Total and a row for each year under the 5 row labels."
 
 knitr::include_graphics("images/tidy/excel_pivot_table.png")
 
@@ -224,7 +248,9 @@ wide_totalprice <- select(
 ```
 
 
-```{r tbl-wide-data, echo = FALSE}
+```{r}
+#| label: tbl-wide-data
+#| echo: false
 #| tbl-cap: Wide table
 wide_totalprice
 ```
@@ -242,7 +268,9 @@ long_totalprice <- pivot_longer(
 ```
 
 
-```{r tbl-long-data, echo = FALSE}
+```{r}
+#| label: tbl-long-data
+#| echo: false
 #| tbl-cap: Long table
 long_totalprice
 ```
@@ -250,9 +278,12 @@ long_totalprice
 
 It also makes it very easy to use with `ggplot()`. Run the following plot, and consider how you'd make it with the wide version (it is likely impossible).
 
-```{r long-ggplot-demo, fig.cap = "Most plots are easier to make with data in a long format."}
+```{r}
+#| label: fig-long-ggplot-demo
+#| fig-cap: "Most plots are easier to make with data in a long format."
+#| fig-alt: "A histogram with totalprice on the x-axis (0-60) and count on the y-0axis (0-4). The years are represented by colours: 2018 = red, 2019 = green, 2020. blue. The histogram shows "
 ggplot(long_totalprice, aes(x = totalprice, fill = year)) +
-  geom_histogram(binwidth = 10, color = "black")
+  geom_histogram(binwidth = 10, color = "black", border = 0)
 ```
 
 

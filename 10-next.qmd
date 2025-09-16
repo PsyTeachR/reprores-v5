@@ -1,4 +1,32 @@
-# Next Steps {#sec-next .incomplete-chapter}
+# Next Steps {#sec-next}
+
+```{r}
+#| label: setup-next
+#| include: false
+
+# packages needed for this chapter section
+library(tidyverse)   # for data wrangling
+library(ggthemes)    # for themes
+library(patchwork)   # for combining plots
+library(plotly)      # for interactive plots
+# devtools::install_github("hrbrmstr/waffle")
+library(waffle)      # for waffle plots
+library(ggbump)      # for bump plots
+library(treemap)     # for treemap plots
+library(ggwordcloud) # for word clouds
+library(tidytext)    # for manipulating text for word clouds
+library(gganimate)   # for animated plots
+
+#install.packages("rnaturalearthhires", repos = "http://packages.ropensci.org", type = "source")
+library(sf)          # for mapping geoms
+library(rnaturalearth) # for map data
+library(rnaturalearthdata) # extra mapping data
+
+
+library(DT)            # for interactive tables
+
+theme_set(theme_light())
+```
 
 ## Intended Learning Outcomes {#sec-ilo-next - .ilo}
 
@@ -15,10 +43,10 @@
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+````
+```{{r}}
+#| label: setup
+#| include: false
 
 # packages needed for this chapter section
 library(tidyverse)   # for data wrangling
@@ -40,6 +68,7 @@ library(rnaturalearthdata) # extra mapping data
 
 theme_set(theme_light())
 ```
+````
 
 Download the [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf).
 
@@ -94,7 +123,7 @@ Finally, combine the two plots using the `+` from `r pkg("patchwork")` to see th
 bar + point
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Try changing the theme using built-in themes or customising the colours or linetypes with scale_* functions. See Appendix\ \@ref(plotstyle) for details.
 :::
 
@@ -130,7 +159,7 @@ bar +
 ```
 
 
-::: {.try data-latex=""}
+::: {.try}
 
 See if you can work out how to make the figure below, starting with the following:
 
@@ -242,7 +271,7 @@ The `r pkg("plotly")` package can be used to make interactive graphs. Assign you
 ggplotly(point)
 ```
 
-::: {.info data-latex=""}
+::: {.callout-note}
 Hover over the data points above and click on the legend items.
 :::
 
@@ -250,7 +279,7 @@ Hover over the data points above and click on the legend items.
 
 In Chapter\ \@ref(ggplot), we mentioned that pie charts are such a poor way to visualise proportions that we refused to even show you how to make one. Waffle plots are a delicious alternative. 
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 Use `r pkg("waffle")` by [hrbrmstr on GitHub](https://github.com/hrbrmstr/waffle/) using the `install_github()` function below, rather than the one on CRAN you get from using `install.packages()`.
 
 ```{r, eval = FALSE}
@@ -491,7 +520,7 @@ rating5 <- filter(words, rating == 5) |>
 rating1 + rating5
 ```
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 It's worth highlighting that whilst word clouds are very common, they're really the equivalent of pie charts for text data because we're not very good at making accurate comparisons based on size. You might be able to see what's the most popular word, but can you accurately determine the 2nd, 3rd, 4th or 5th most popular word based on the clouds alone? There's also the issue that just because it's text data doesn't make it a qualitative analysis and just because something is said a lot doesn't mean it's useful or important. But, this argument is outwith the scope of this book, even if it is a recurring part of Emily's life thanks to her qualitative wife. 
 :::
 
@@ -565,7 +594,7 @@ scotmap_pop <- scotland_sf |>
   select(name, population, geometry)
 ```
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 There is a typo in the data from `r pkg("rnaturalearth")`, so you need to change "North Ayshire" to "North Ayrshire" before you join the population data.
 :::
 
@@ -656,7 +685,7 @@ knitr::include_graphics("images/gganim-demo.gif")
 ```
 
 
-::: {.warning data-latex=""}
+::: {.callout-warning}
 There are actually not many plots that are really improved by animating them. The plot below gives the same information at a single glance.
 
 ```{r anim-alternative, echo = FALSE}
@@ -709,18 +738,16 @@ There are so many more options for data visualisation in R than we have time to 
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
-```{r}
-#| echo: fenced
-#‎| label: setup
-#‎| include: false
+````
+```{{r}}
+#| label: setup
+#| include: false
 
 # packages needed for this chapter section
 library(tidyverse)     # data wrangling functions
-library(bookdown)      # for chaptered reports
-library(flexdashboard) # for dashboards
 library(DT)            # for interactive tables
 ```
-
+````
 
 ### Interactive tables
 
@@ -760,7 +787,7 @@ datatable(
 )
 ```
 
-::: {.try data-latex=""}
+::: {.try}
 Create an interactive table like the one below from the `diamonds` dataset of diamonds where the `table` value is greater than 65 (the whole table is *much* too large to display with an interactive table). Show 20 items by default and remove the search box, but leave in the filter and other default options.
 
 ```{r, echo = FALSE}
@@ -825,50 +852,29 @@ The code below shows how to load some packages and display text, a table, and a 
 
 `r unhide()`
 
-#### Dashboards
-
-Dashboards are a way to display text, tables, and plots with dynamic formatting. After you install `r pkg("flexdashboard")`, you can choose a flexdashboard template when you create a new R Markdown document. 
-
-```{r img-flx-template, echo=FALSE, fig.cap="Flexdashboard RMarkdown template."}
-knitr::include_graphics("images/present/flexdashboard-template.png")
-```
-
-The code below shows how to load some packages, display two tables in a tabset, and display two plots in a column. You can see the [HTML output here](demos/flexdashboard.html).
-
-`r hide()`
-
-```{embed, file = "demos/flexdashboard.Rmd"}
-# readLines("demos/flexdashboard.Rmd") |> 
-#   paste(collapse = "\n") |>
-#   paste0("<code style='font-size: smaller;'><pre>\n", ., "\n</pre></code>") |>
-#   cat()
-```
-
-`r unhide()`
-
-Change the size of your web browser to see how the boxes, tables and figures change.
-
-The best way to figure out how to format a dashboard is trial and error, but you can also look at some [sample layouts](https://pkgs.rstudio.com/flexdashboard/articles/layouts.html).
-
 #### Books
 
-You can create online books with `r pkg("bookdown")`. In fact, the book you're reading was created using bookdown. After you download the package, start a new project and choose "Book project using bookdown" from the list of project templates. 
+You can create online books with quarto. In fact, the book you're reading was created using quarto After you download the package, start a new project and choose "Quarto Book" from the list of project templates. 
 
-```{r img-bookdown-template, echo=FALSE, fig.cap="Bookdown project template."}
-knitr::include_graphics("images/present/bookdown.png")
-```
+Each chapter is written in a separate .qmd file and the general book settings can be changed in the `_quarto.yml` file.
 
-Each chapter is written in a separate .Rmd file and the general book settings can be changed in the `_bookdown.yml` and `_output.yml` files. 
+::: {.try}
+Create a new book project, add the .qmd files for your chapter notes and exercises, then render it as a book. What do you need to change to make this work?
+:::
 
 #### Websites
 
-You can create a simple website the same way you create any R Markdown document. Choose "Simple R Markdown Website" from the project templates to get started. See Appendix\ \@ref(webpages) for a step-by-step tutorial.
+You can create a simple website the same way you create any quarto document. Choose "Quarto Website" from the project templates to get started.
 
-For more complex, blog-style websites, you can investigate [`r pkg("blogdown")`](https://bookdown.org/yihui/blogdown/). After you install this package, you will also be able to create template blogdown projects to get you started.
+For more complex, blog-style websites, you can investigate [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html).
 
 #### Shiny
 
-To get truly interactive, you can take your R coding to the next level and learn Shiny. Shiny apps let your R code react to user input. You can do things like [make a word cloud](https://shiny.psy.gla.ac.uk/debruine/wordcloud/), [search a google spreadsheet](https://shiny.psy.gla.ac.uk/debruine/seen/), or [conduct a survey](https://shiny.psy.gla.ac.uk/debruine/question/).
+To get truly interactive, you can take your R coding to the next level and learn Shiny. Shiny apps let your R code react to user input. 
+
+<!--
+You can do things like [make a word cloud](https://shiny.psy.gla.ac.uk/debruine/wordcloud/), [search a google spreadsheet](https://shiny.psy.gla.ac.uk/debruine/seen/), or [conduct a survey](https://shiny.psy.gla.ac.uk/debruine/question/).
+-->
 
 This is well outside the scope of this class, but the skills you've learned here provide a good start. The free book [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/) by one of the authors of this book can get you started creating shiny apps.
 
@@ -876,9 +882,5 @@ This is well outside the scope of this class, but the skills you've learned here
 
 * [RStudio Formats](https://rmarkdown.rstudio.com/formats.html)
 * [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook)
-* [DT](https://rstudio.github.io/DT/)
-* [Flexdashboard](https://pkgs.rstudio.com/flexdashboard/)
-* [Bookdown](https://bookdown.org/yihui/bookdown/)
-* [Blogdown](https://bookdown.org/yihui/blogdown/)
 * [Shiny](https://shiny.rstudio.com/)
 * [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/)

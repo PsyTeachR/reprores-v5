@@ -20,7 +20,9 @@ output:
     toc_float: true
 ---
 
-```{r setup, include=FALSE}
+```{{r}}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
