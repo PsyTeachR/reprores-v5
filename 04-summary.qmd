@@ -201,7 +201,7 @@ births$livebirths[c(20,30,40)] # select multiple with c()
 ## Pipes {#sec-pipes-first}
 
 ::: {style="width: 200px; float: right;"}
-<img src="images/tidy/pipe_sticker.png" style="width: 100%"/>
+<img src="images/tidy/pipe_sticker.png" alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading 'Ceci n'est pas un pipe.'" style="width: 100%"/>
 :::
 
 Let's say you want to filter the dataset down to just the emergency C-sections, and then sum up the total number of live births per year, and then arrange the data from largest to smallest (don't worry, we'll introduce these functions soon). You could do it by creating intermediate objects for each step:

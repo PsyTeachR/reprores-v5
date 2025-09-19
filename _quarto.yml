@@ -26,7 +26,9 @@ book:
   author: "Lisa DeBruine, Dale Barr, Emily Nordmann, Rebecca Lai, David Pharis"
   description: "This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations."
   cover-image: images/logos/logo.png
+  cover-image-alt: A blue hexagon with Repro Res in Mackintosh art deco font
   image: images/logos/logo.png
+  image-alt: A blue hexagon with Repro Res in Mackintosh art deco font
   favicon: images/logos/favicon.ico
   # cookie-consent: true
   google-analytics: "G-6NP3MF25W3"
@@ -78,6 +80,7 @@ book:
   - app-datasets.qmd
 #  - app-exercises.qmd
   - app-debugging.qmd
+  - app-accessibility.qmd
   - app-import.qmd
   - app-datatypes.qmd
   - app-dates.qmd

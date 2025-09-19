@@ -1,5 +1,7 @@
 # Data Tidying {#sec-tidy}
 
+<!-- checked for alt-text -->
+
 <div class="right meme"><img src="images/memes/messy_data.jpg" 
      alt="A giant demon emerging from fire labelled 'messy data'; in front is a tiny human labelled 'R User'" /></div>
 
@@ -506,7 +508,11 @@ glimpse(tidy_data)
 ## Pipes {#sec-pipes}
 
 ::: {style="width: 200px; float: right;"}
-<img src="images/tidy/pipe_sticker.png" style="width: 100%"/>
+
+<img src="images/tidy/pipe_sticker.png" 
+     alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading 'Ceci n'est pas un pipe.'" 
+     style="width: 100%"/>
+
 :::
 
 We've already introduced pipes in @sec-pipes-first but this type of data processing is where they really start to shine, as they can significantly reduce the amount of code you write.  
@@ -655,7 +661,9 @@ Let's try a couple of examples.
 * Download a copy of [wide_exercise-1.csv](data/wide_exercise-1.csv) and [wide_exercise-2.csv](data/wide_exercise-2.csv) into your data folder.
 * In the set-up code chunk, load the <pkg>tidyverse</pkg> then load the two data files in using `read_csv()` and name the objects `wide1` and `wide2`
 
-```{r, message = FALSE,  webex.hide = TRUE}
+```{r}
+#| webex.hide: true
+#| message: false
 library(tidyverse)
 wide1 <- read_csv("data/wide_exercise-1.csv")
 wide2 <- read_csv("data/wide_exercise-2.csv")
@@ -685,7 +693,8 @@ As noted, it's important to think through what your tidied data should look like
 
 Transform `wide1` to long-form using `pivot_longer()` and store it in an object named `tidy1`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 tidy1 <- wide1 |>
   pivot_longer(cols = q1:q5,
                names_to = "question", 
@@ -729,7 +738,8 @@ This exercise requires multiple steps and you may need to look at the help docum
 
 `r unhide()`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 tidy2a <- wide2 |>
   pivot_longer(cols = q1_sat:q5_rec,
                names_to = "question", 
@@ -739,7 +749,8 @@ tidy2a <- wide2 |>
 ```
 
 
-```{r webex.hide = "Alternative solution"}
+```{r}
+#| webex.hide: "Alternative solution"
 # combine pivot_longer and separate by setting two values for names_to
 # must include names_sep to determine how to separate the column names
 tidy2a <- wide2 |>
@@ -778,7 +789,8 @@ You can reuse the code from `tidy2a`, you just need to add on an extra line that
 
 `r unhide()`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 tidy2b <- wide2 |>
   pivot_longer(cols = q1_sat:q5_rec,
                names_to = "question", 
@@ -791,7 +803,9 @@ tidy2b <- wide2 |>
 
 Using `group_by()` and `summarise()`, calculate the mean score for each participant for both satisfaction and recommendation. Do this for both versions of the dataset so that you can see how the structure of the dataset changes the approach you need to take.
 
-```{r eval = FALSE, webex.hide = TRUE}
+```{r}
+#| webex.hide: true
+#| eval: false
 tidy2a |>
   group_by(id, category) |>
   summarise(mean = mean(response),
@@ -815,18 +829,23 @@ Scatterplot showing the relationship between satisfaction and recommendation sco
 
 `r unhide()`
 
-```{r echo = FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: img-exc-plot-1
+#| echo: false
+#| fig-alt: A scatterplot plus regression line plot titled 'Satisfaction and recommendation scores' with 'Satisfaction score' on the x-axis with ticks 1-5, 'Recommendation score' on the y-axis with ticks 1-5. The legend for 'repeat_patient' is red for no and blue for yes. The plot shows no relationship, but satistfaction scores are higher for no than yes.
 ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
   geom_jitter() +
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", formula = y~x) +
   labs(x = "Satisfaction score", y = "Recommendation score", title = "Satisfaction and recommendation scores") +
   theme_classic()
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
+```{r}
+#| webex.hide: true
+#| eval: false
 ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
   geom_jitter() +
-  geom_smooth(method = "lm") +
+  geom_smooth(method = "lm", formula = y~x) +
   labs(x = "Satisfaction score", y = "Recommendation score", title = "Satisfaction and recommendation scores") +
   theme_classic()
 ```
@@ -836,7 +855,10 @@ ggplot(tidy2b, aes(x = sat, y = rec, colour = repeat_patient)) +
 
 Boxplots showing satisfaction and recommends scores for new and repeat patients separately.
 
-```{r echo = FALSE}
+```{r}
+#| label: img-exc-plot-2
+#| echo: false
+#| fig-alt: A pair of boxplots with 'repeat_patient' (no / yes) on the x-axis and 'response' (1-5) on the y-axis. The left boxplot facet header is 'rec' and the right one is 'sat'. The 'no' boxplots are green and the 'yes' ones are orange. 
 ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
   geom_boxplot(show.legend = FALSE) +
   facet_wrap(~category)+
@@ -844,7 +866,9 @@ ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
   scale_fill_brewer(palette = "Dark2")
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
+```{r}
+#| webex.hide: true
+#| eval: false
 ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
   geom_boxplot(show.legend = FALSE) +
   facet_wrap(~category)+
@@ -856,14 +880,19 @@ ggplot(tidy2a, aes(x = repeat_patient, y = response, fill = repeat_patient)) +
 
 Histogram showing the distribution of all responses, across questions and categories.
 
-```{r echo = FALSE}
+```{r}
+#| label: img-exc-plot-3
+#| echo: false
+#| fig-alt: A histogram with the x-axis 'Responses across all questions and categories' (1-5) and y-axis 'count' (0-150) and 5 grey bars with black borders (heights 63, 57, 135, 121, and 124).
 ggplot(tidy2a, aes(x = response)) +
   geom_histogram(binwidth = 1, colour = "black", fill = "Grey") +
   labs(x = "Responses across all questions and categories") +
   theme_bw()
 ```
 
-```{r webex.hide = TRUE, eval = FALSE}
+```{r}
+#| webex.hide: true
+#| eval: false
 ggplot(tidy2a, aes(x = response)) +
   geom_histogram(binwidth = 1, colour = "black", fill = "Grey") +
   labs(x = "Responses across all questions and categories") +

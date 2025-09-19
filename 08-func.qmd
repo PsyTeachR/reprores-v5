@@ -1,5 +1,7 @@
 # Iteration & Functions {#sec-func}
 
+<!-- checked for alt-text -->
+
 <div class="right meme"><img src="images/memes/functions.jpg" alt="History channel aliens conspiracy guy. Top text: I've got functions inside functions...; Bottom text: ... inside functions." /></div>
 
 ## Intended Learning Outcomes {#sec-ilo-func - .ilo}
@@ -190,7 +192,7 @@ mypower <- tibble(
 #| label: fig-purrr-plot
 #| echo: false
 #| fig-cap: "Power for a two-sample t-test with d = 0.2"
-#| fig-alt: ""
+#| fig-alt: "A plot with 'n' (0-1000) on the x-axis and 'power' (0 to 1.0) on the y-axis. There is a horizontal red reference line at power = 0.8 and points plotted every 100 along the x-axis with a blue curve through them. Power starts around 0.3 for n = 100 and increases to about 0.8 for n = 400 and 1.0 for n = 1000."
 
 ggplot(mypower, aes(n, power)) +
   geom_hline(yintercept = 0.8, color = "red") + 

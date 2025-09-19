@@ -22,16 +22,13 @@ library(sf)          # for mapping geoms
 library(rnaturalearth) # for map data
 library(rnaturalearthdata) # extra mapping data
 
-
-library(DT)            # for interactive tables
-
 theme_set(theme_light())
 ```
 
 ## Intended Learning Outcomes {#sec-ilo-next - .ilo}
 
 - [ ] Create and customise advanced types of plots
-- [ ] Structure data in report, presentation, and dashboard formats
+- [ ] Structure data in report, presentation, and website formats
 - [ ] Be aware of the ways to continue developing computational reproducibility skills
 
 ## Visualisation {#sec-custom-viz}
@@ -39,7 +36,7 @@ theme_set(theme_light())
 ### Set-up {#setup-custom-viz}
 
 1. Open your `reprores` project 
-1. Create a new quarto file called `10-viz.qmd`
+1. Create a new quarto file called `10-next.qmd`
 1. Update the YAML header 
 1. Replace the setup chunk with the one below: 
 
@@ -728,159 +725,3 @@ There are so many more options for data visualisation in R than we have time to 
 * [Drawing Beautiful Maps Programmatically](https://r-spatial.org/r/2018/10/25/ggplot2-sf.html)
 * [gganimate](https://gganimate.com/)
 
-
-## Reports {#sec-custom-reports}
-
-### Set-up {#setup-custom-reports}
-
-1. Close the file `10-viz.qmd`
-1. Create a new quarto file called `11-reports.qmd`
-1. Update the YAML header 
-1. Replace the setup chunk with the one below: 
-
-````
-```{{r}}
-#| label: setup
-#| include: false
-
-# packages needed for this chapter section
-library(tidyverse)     # data wrangling functions
-library(DT)            # for interactive tables
-```
-````
-
-### Interactive tables
-
-One way to make your reports more exciting is to use interactive tables. The `DT::datatable()` function displays a table with some extra interactive elements to allow readers to search and reorder the data, as well as controlling the number of rows shown at once. This can be especially helpful. This only works with HTML output types. The [DT website](https://rstudio.github.io/DT/) has extensive tutorials, but we'll cover the basics here.
-
-```{r}
-library(DT)
-
-scotpop <- read_csv("data/scottish_population.csv", 
-                    show_col_types = FALSE)
-
-datatable(data = scotpop)
-```
-
-
-You can customise the display, such as changing column names, adding a caption, moving the location of the filter boxes, removing row names, applying [classes](https://datatables.net/manual/styling/classes) to change table appearance, and applying [advanced options](https://datatables.net/reference/option/).
-
-```{r}
-# https://datatables.net/reference/option/
-my_options <- list(
-  pageLength = 5, # how many rows are displayed
-  lengthChange = FALSE, # whether pageLength can change
-  info = TRUE, # text with the total number of rows
-  paging = TRUE, # if FALSE, the whole table displays
-  ordering = FALSE, # whether you can reorder columns
-  searching = FALSE # whether you can search the table
-)
-
-datatable(
-  data = scotpop,
-  colnames = c("County", "Population"),
-  caption = "The population of Scottish counties.",
-  filter = "none", # "none", "bottom" or "top"
-  rownames = FALSE, # removes the number at the left
-  class = "cell-border hover stripe", # default is "display"
-  options = my_options
-)
-```
-
-::: {.try}
-Create an interactive table like the one below from the `diamonds` dataset of diamonds where the `table` value is greater than 65 (the whole table is *much* too large to display with an interactive table). Show 20 items by default and remove the search box, but leave in the filter and other default options.
-
-```{r, echo = FALSE}
-my_options <- list(
-  pageLength = 20, # how many rows are displayed
-  searching = FALSE # whether you can search the table
-)
-
-diamonds |> 
-  filter(table > 65) |>
-  select(-table, -(x:z)) |>
-  DT::datatable(
-    caption = "All diamonds with table > 65.",
-    options = my_options
-  )
-```
-
-```{r, webex.hide = TRUE, eval = FALSE}
-my_options <- list(
-  pageLength = 20, # how many rows are displayed
-  searching = FALSE # whether you can search the table
-)
-
-diamonds |> 
-  filter(table > 65) |>
-  select(-table, -(x:z)) |>
-  DT::datatable(
-    caption = "All diamonds with table > 65.",
-    options = my_options
-  )
-```
-:::
-
-
-
-### Other formats
-
-You can create more than just reports with R Markdown. You can also create presentations, interactive dashboards, books, websites, and web applications.
-
-#### Presentations
-
-You can choose a presentation template when you create a new R Markdown document. We'll use ioslides for this example, but the other formats work similarly.
-
-```{r img-ioslides-template, echo=FALSE, fig.cap="Ioslides RMarkdown template."}
-knitr::include_graphics("images/present/new-ioslides.png")
-```
-
-The main differences between this and the Rmd files you've been working with until now are that the `output` type in the `r glossary("YAML")` header is `ioslides_presentation` instead of `html_document` and this format requires a specific title structure. Each slide starts with a level-2 header.
-
-The template provides you with examples of text, bullet point, code, and plot slides. You can knit this template to create an `r glossary("HTML")` document with your presentation. It often looks odd in the RStudio built-in browser, so click the button to open it in a web browser. You can use the space bar or arrow keys to advance slides.
-
-The code below shows how to load some packages and display text, a table, and a plot. You can see the [HTML output here](demos/ioslides.html).
-
-`r hide()`
-
-```{embed, file = "demos/ioslides.Rmd"}
-# readLines("demos/ioslides.Rmd") |> 
-#   paste(collapse = "\n") |>
-#   paste0("<code style='font-size: smaller;'><pre>\n", ., "\n</pre></code>") |>
-#   cat()
-```
-
-`r unhide()`
-
-#### Books
-
-You can create online books with quarto. In fact, the book you're reading was created using quarto After you download the package, start a new project and choose "Quarto Book" from the list of project templates. 
-
-Each chapter is written in a separate .qmd file and the general book settings can be changed in the `_quarto.yml` file.
-
-::: {.try}
-Create a new book project, add the .qmd files for your chapter notes and exercises, then render it as a book. What do you need to change to make this work?
-:::
-
-#### Websites
-
-You can create a simple website the same way you create any quarto document. Choose "Quarto Website" from the project templates to get started.
-
-For more complex, blog-style websites, you can investigate [Quarto Blogs](https://quarto.org/docs/websites/website-blog.html).
-
-#### Shiny
-
-To get truly interactive, you can take your R coding to the next level and learn Shiny. Shiny apps let your R code react to user input. 
-
-<!--
-You can do things like [make a word cloud](https://shiny.psy.gla.ac.uk/debruine/wordcloud/), [search a google spreadsheet](https://shiny.psy.gla.ac.uk/debruine/seen/), or [conduct a survey](https://shiny.psy.gla.ac.uk/debruine/question/).
--->
-
-This is well outside the scope of this class, but the skills you've learned here provide a good start. The free book [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/) by one of the authors of this book can get you started creating shiny apps.
-
-### Resources {#sec-resources-report -}
-
-* [RStudio Formats](https://rmarkdown.rstudio.com/formats.html)
-* [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook)
-* [Shiny](https://shiny.rstudio.com/)
-* [Building Web Apps with R Shiny](https://debruine.github.io/shinyintro/)

@@ -546,6 +546,10 @@ The general syntax for adding an image in markdown is `![caption](url){#fig-name
 ![The ReproRes logo](images/logos/logo.png){#fig-logo width="33%" fig-alt="A blue hexagon with the words 'Repro' and 'RES'"}
 
 
+::: {.callout-note}
+Learn more about accessibility in @sec-accessibility.
+:::
+
 If you have a lot of customisations, you may prefer to show images from a code block like this. Note that here, `width` and `height` are called `out-width` and `out-height` to distinguish them from a generated image's rendered dimensions (controlled by `fig-width` and `fig-height`).
 
 ```{r}
@@ -706,6 +710,7 @@ Note that `fig-width` and `fig-height` control the original size and aspect rati
 #| fig-height: 5
 #| out-width: '100%'
 #| fig-cap: A plot with the default values
+#| fig-alt: "A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship."
 ggplot2::last_plot()
 ```
 
@@ -716,6 +721,7 @@ ggplot2::last_plot()
 #| fig-height: 2.5
 #| out-width: '100%'
 #| fig-cap: The same plot with half the default width and height
+#| fig-alt: The same plot as above, but the text and points are larger in proportion to the full plot size
 
 ggplot2::last_plot()
 ```
@@ -727,6 +733,7 @@ ggplot2::last_plot()
 #| fig-height: 2.5
 #| out-width: '50%'
 #| fig-cap: The same plot as above at half the output width
+#| fig-alt: The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width
 ggplot2::last_plot()
 ```
 
@@ -736,13 +743,15 @@ ggplot2::last_plot()
 
 These setup options change the behaviour for the entire document, however, you can override the behaviour for individual code chunks. 
 
-For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set `echo = FALSE` in your setup chunk to make hiding code the default but in the individual code chunk for your plot set `echo = TRUE`. Try this now and knit the file to see the results.
+For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set `#| echo: false` in your setup chunk to make hiding code the default but in the individual code chunk for your plot set `#| echo: true`. Try this now and knit the file to see the results.
 
 Additionally, you can also override the default image display size or dimensions.
 
-```{r}
-#| echo: fenced
+````
+```{{r}}
+#| echo: false
 #| label: fig-change-height
+#| fig-cap: Relationship between pre- and post-test by group
 #| fig-width: 10
 #| fig-height: 5
 ggplot(data = smalldata, 
@@ -751,10 +760,9 @@ ggplot(data = smalldata,
                      color = group)) +
   geom_point() +
   labs(x = "Pre-test Score",
-       y = "Post-test Score",
-       title = "Relationship between pre- and post-test by group")
+       y = "Post-test Score")
 ```
-
+````
 
 ### YAML options {#sec-yaml}
 
@@ -882,6 +890,7 @@ Please start using a reference manager consistently through your research career
 
 ```{r zotero, echo = FALSE}
 #| fig-cap: Export a bibliography file from Zotero
+#| fig-alt: The Zotero interface showing the location of the Export menu (like a try with an up arrow)
 knitr::include_graphics("images/repro/zotero.png")
 ```
 
@@ -935,6 +944,7 @@ citation(package="ggplot2") |> toBibtex()
 #| label: google-scholar
 #| echo: false
 #| fig-cap: "Get BibTex citations from Google Scholar."
+#| fig-alt: A screenshot of Google Scholar, showing the location of the BibTeX format link
 knitr::include_graphics("images/present/google-scholar.png")
 ```
 

@@ -657,7 +657,7 @@ The y-axis values are concentrated at the lower range. This plot might be easier
 ```{r}
 #| label: fig-build-plot-log10
 #| fig-cap: Transforming the y-axis to log10
-#| fag-alt: "The plot above with the y-axis set as a log10 scale, with breaks at 1, 2, 5, 10, 20, 50 and 100. The x-axis label is 'Mean Welfare (log10)'."
+#| fig-alt: "The plot above with the y-axis set as a log10 scale, with breaks at 1, 2, 5, 10, 20, 50 and 100. The x-axis label is 'Mean Welfare (log10)'."
 
 y_breaks <- c(1, 2, 5, 10, 20, 50, 100)
 y_breaks_minor <- c(1:5, seq(10, 50, 10), 50, 100)

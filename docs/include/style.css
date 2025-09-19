@@ -1,5 +1,11 @@
 /* (edit style.css for your own book styles) */
 
+/* 
+img:not([alt]), img[alt=''] {
+  border: 10px solid red;
+}
+*/
+
 .ilo {
   max-width: 58%;
 }

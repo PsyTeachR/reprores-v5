@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
 <title>2&nbsp; Reports – Data Skills for Reproducible Research</title>
@@ -19,9 +19,8 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -32,7 +31,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,20 +84,17 @@ div.csl-indent {
 <link href="./03-viz.html" rel="next">
 <link href="./01-intro.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-c3c2c9e745155556954bc4da23476b10.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-b6e6edf6cb1293d7f667c2f39c143ab5.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fa1d8026083a9bddc52b4aafc7f818e.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8e00f2f28a1266a720913de837032221.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-904ee2616c496a5b8f2248b0b558f1e7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-b56890a068b942f55e2563621ee82f98.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/bootstrap/bootstrap-c99093b127bbf7463951177fc80c9973.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-77ea140236b98739b7f0b0e161db6ea0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -134,169 +130,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
 </head>
-<body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
-    const toggleBodyColorMode = (bsSheetEl) => {
-      const mode = bsSheetEl.getAttribute("data-mode");
-      const bodyEl = window.document.querySelector("body");
-      if (mode === "dark") {
-        bodyEl.classList.add("quarto-dark");
-        bodyEl.classList.remove("quarto-light");
-      } else {
-        bodyEl.classList.add("quarto-light");
-        bodyEl.classList.remove("quarto-dark");
-      }
-    }
-    const toggleBodyColorPrimary = () => {
-      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
-      if (bsSheetEl) {
-        toggleBodyColorMode(bsSheetEl);
-      }
-    }
-    const setColorSchemeToggle = (alternate) => {
-      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-      for (let i=0; i < toggles.length; i++) {
-        const toggle = toggles[i];
-        if (toggle) {
-          if (alternate) {
-            toggle.classList.add("alternate");
-          } else {
-            toggle.classList.remove("alternate");
-          }
-        }
-      }
-    };
-    const toggleColorMode = (alternate) => {
-      // Switch the stylesheets
-      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
-      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-      manageTransitions('#quarto-margin-sidebar .nav-link', false);
-      if (alternate) {
-        // note: dark is layered on light, we don't disable primary!
-        enableStylesheet(alternateStylesheets);
-        for (const sheetNode of alternateStylesheets) {
-          if (sheetNode.id === "quarto-bootstrap") {
-            toggleBodyColorMode(sheetNode);
-          }
-        }
-      } else {
-        disableStylesheet(alternateStylesheets);
-        enableStylesheet(primaryStylesheets)
-        toggleBodyColorPrimary();
-      }
-      manageTransitions('#quarto-margin-sidebar .nav-link', true);
-      // Switch the toggles
-      setColorSchemeToggle(alternate)
-      // Hack to workaround the fact that safari doesn't
-      // properly recolor the scrollbar when toggling (#1455)
-      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-        manageTransitions("body", false);
-        window.scrollTo(0, 1);
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          manageTransitions("body", true);
-        }, 40);
-      }
-    }
-    const disableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        stylesheet.rel = 'disabled-stylesheet';
-      }
-    }
-    const enableStylesheet = (stylesheets) => {
-      for (let i=0; i < stylesheets.length; i++) {
-        const stylesheet = stylesheets[i];
-        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
-          stylesheet.rel = 'stylesheet';
-        }
-      }
-    }
-    const manageTransitions = (selector, allowTransitions) => {
-      const els = window.document.querySelectorAll(selector);
-      for (let i=0; i < els.length; i++) {
-        const el = els[i];
-        if (allowTransitions) {
-          el.classList.remove('notransition');
-        } else {
-          el.classList.add('notransition');
-        }
-      }
-    }
-    const isFileUrl = () => {
-      return window.location.protocol === 'file:';
-    }
-    const hasAlternateSentinel = () => {
-      let styleSentinel = getColorSchemeSentinel();
-      if (styleSentinel !== null) {
-        return styleSentinel === "alternate";
-      } else {
-        return false;
-      }
-    }
-    const setStyleSentinel = (alternate) => {
-      const value = alternate ? "alternate" : "default";
-      if (!isFileUrl()) {
-        window.localStorage.setItem("quarto-color-scheme", value);
-      } else {
-        localAlternateSentinel = value;
-      }
-    }
-    const getColorSchemeSentinel = () => {
-      if (!isFileUrl()) {
-        const storageValue = window.localStorage.getItem("quarto-color-scheme");
-        return storageValue != null ? storageValue : localAlternateSentinel;
-      } else {
-        return localAlternateSentinel;
-      }
-    }
-    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-      let newTheme = '';
-      if(authorPrefersDark) {
-        newTheme = isAlternate ? baseTheme : alternateTheme;
-      } else {
-        newTheme = isAlternate ? alternateTheme : baseTheme;
-      }
-      const changeGiscusTheme = () => {
-        // From: https://github.com/giscus/giscus/issues/336
-        const sendMessage = (message) => {
-          const iframe = document.querySelector('iframe.giscus-frame');
-          if (!iframe) return;
-          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-        }
-        sendMessage({
-          setConfig: {
-            theme: newTheme
-          }
-        });
-      }
-      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-      if (isGiscussLoaded) {
-        changeGiscusTheme();
-      }
-    };
-    const authorPrefersDark = false;
-    const darkModeDefault = authorPrefersDark;
-      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
-    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-    // Dark / light mode switch
-    window.quartoToggleColorScheme = () => {
-      // Read the current dark / light value
-      let toAlternate = !hasAlternateSentinel();
-      toggleColorMode(toAlternate);
-      setStyleSentinel(toAlternate);
-      toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
-    };
-    // Switch to dark mode if need be
-    if (hasAlternateSentinel()) {
-      toggleColorMode(true);
-    } else {
-      toggleColorMode(false);
-    }
-  </script>
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
@@ -482,38 +316,44 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Accessibility</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-import.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-datatypes.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Data Types</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Dates and Times</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Table Formatting</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-styling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Styling Plots</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -896,7 +736,7 @@ Figure&nbsp;2.2: The example code above shown in the visual editor.
 <p>Add a new level-2 header called “Code Chunks”, skip a line, and add the following text at the end:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="co"># this is a code chunk</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="in"># this is a code chunk</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -970,7 +810,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <div class="try">
 <p>Add a new level-2 header called “Inline Code”, then copy and paste the text below. If you used a different variable name than <code>halloween</code>, you should update this with the name of the object you created, but otherwise don’t change anything else.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>My name is Lisa and I am 48 years old. </span>
-<span id="cb6-2"><a href="#cb6-2"></a>It is 45 days until Halloween, </span>
+<span id="cb6-2"><a href="#cb6-2"></a>It is 42 days until Halloween, </span>
 <span id="cb6-3"><a href="#cb6-3"></a>which is my favourite holiday.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sec-render" class="level3" data-number="2.4.8"><h3 data-number="2.4.8" class="anchored" data-anchor-id="sec-render">
@@ -979,7 +819,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 48 years old. It is 45 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 48 years old. It is 42 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1012,10 +852,10 @@ Rendering with Code
 <div class="try">
 <p>Add the following just below the YAML header.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#| label: setup</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#| include: false</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="in">#| label: setup</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="in">#| include: false</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="in">library(tidyverse)</span></span>
 <span id="cb8-6"><a href="#cb8-6"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The function <code><a href="https://tidyverse.tidyverse.org">library(tidyverse)</a></code> makes tidyverse functions available to your script. You should always add the packages you need in your setup chunk. Often when you are working on a script, you will realize that you need to load another add-on package. Don’t bury the call to <code><a href="https://rdrr.io/r/base/library.html">library(package_I_need)</a></code> way down in the script. Put it in the setup chunk so the user has an overview of what packages are needed.</p>
@@ -1213,20 +1053,33 @@ Solution
 Figure&nbsp;2.5: The ReproRes logo
 </figcaption></figure>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Learn more about accessibility in <a href="app-accessibility.html" class="quarto-xref"><span>Appendix G</span></a>.</p>
+</div>
+</div>
 <p>If you have a lot of customisations, you may prefer to show images from a code block like this. Note that here, <code>width</code> and <code>height</code> are called <code>out-width</code> and <code>out-height</code> to distinguish them from a generated image’s rendered dimensions (controlled by <code>fig-width</code> and <code>fig-height</code>).</p>
 <div class="cell fig-cap-location-top" data-layout-align="right">
 <div class="sourceCode cell-code" id="cb19" data-cap-location="top"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1"></a><span class="in">```{r}</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="co">#| label: fig-psyteachr-logo</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co">#| fig-alt: "The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co">#| fig-align: right</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="co">#| out-width: "50%"</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="co">#| fig-link: https://psyteachr.github.io</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co">#| fig-cap: "PsyTeachR is a group of psychologists at the University of Glasgow who create open source teaching materials."</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="co">#| fig-cap-location: top</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/logos/psyTeachR_logo.png"</span>, )</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="in">#| label: fig-psyteachr-logo</span></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="in">#| fig-alt: "The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="in">#| fig-align: right</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="in">#| out-width: "50%"</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="in">#| fig-link: https://psyteachr.github.io</span></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="in">#| fig-cap: "PsyTeachR is a group of psychologists at the University of Glasgow who create open source teaching materials."</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="in">#| fig-cap-location: top</span></span>
+<span id="cb19-9"><a href="#cb19-9"></a><span class="in">knitr::include_graphics("images/logos/psyTeachR_logo.png", )</span></span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research" width="50%" data-fig-align="right">
+<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" width="50%" data-fig-align="right" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
 </div>
@@ -1237,7 +1090,7 @@ Figure&nbsp;2.6: PsyTeachR is a group of psychologists at the University of Glas
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1246,7 +1099,7 @@ Image Licenses
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Most images on Wikipedia are public domain or have an open license. You can search for images by license on Google Images by clicking on the <if>Tools</if> button and choosing “Creative Commons licenses” from the “Usage Rights” menu.</p>
 <div class="cell">
@@ -1477,7 +1330,7 @@ Table&nbsp;2.1: The raw data from the study.
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1486,9 +1339,9 @@ Advanced table customisation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If you’re feeling confident with what we have covered so far, you can do even fancier formatting with the <pkg>flextable</pkg> package (see <a href="app-tables.html" class="quarto-xref"><span>Appendix J</span></a>).</p>
+<p>If you’re feeling confident with what we have covered so far, you can do even fancier formatting with the <pkg>flextable</pkg> package (see <a href="app-tables.html" class="quarto-xref"><span>Appendix K</span></a>).</p>
 </div>
 </div>
 </div>
@@ -1509,7 +1362,7 @@ Advanced table customisation
 <span id="cb25-8"><a href="#cb25-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can also override defaults in a code cell. See <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">quarto code cells help</a> for a full list of options.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1518,22 +1371,23 @@ Figure versus output dimensions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Note that <code>fig-width</code> and <code>fig-height</code> control the original size and aspect ratio of images generated by R, such as plots. This will affect the relative size of text and other elements in plots. It does not affect the size of existing images at all. However, <code>out-width</code> controls the <strong>display</strong> size of both existing images and figures generated by R. This is usually set as a percentage of the page width.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="co">#| label: fig-full-100</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="co">#| fig-width: 8</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="co">#| out-width: '100%'</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="co">#| fig-cap: A plot with the default values</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="in">#| label: fig-full-100</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="in">#| fig-width: 8</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="in">#| fig-cap: A plot with the default values</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a><span class="in">#| fig-alt: "A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship."</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb26-9"><a href="#cb26-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-full-100" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-full-100" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-full-100-1.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-full-100-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A plot with pre-test score on the x-axis and post-test score on the y-axis, both running about 70 to 130. The control group is represented by red ddots, the experiemntal group by blue. There are 5 dots of each, with what looks like a positive relationship.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-full-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.7: A plot with the default values
@@ -1543,18 +1397,19 @@ Figure&nbsp;2.7: A plot with the default values
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1"></a><span class="in">```{r}</span></span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="co">#| label: fig-half-100</span></span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="co">#| fig-height: 2.5</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a><span class="co">#| out-width: '100%'</span></span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="co">#| fig-cap: The same plot with half the default width and height</span></span>
-<span id="cb27-7"><a href="#cb27-7"></a></span>
-<span id="cb27-8"><a href="#cb27-8"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
-<span id="cb27-9"><a href="#cb27-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="in">#| label: fig-half-100</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="in">#| out-width: '100%'</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="in">#| fig-cap: The same plot with half the default width and height</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="in">#| fig-alt: The same plot as above, but the text and points are larger in proportion to the full plot size</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a></span>
+<span id="cb27-9"><a href="#cb27-9"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-100" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-half-100" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but the text and points are larger in proportion to the full plot size">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-half-100-1.png" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-half-100-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot as above, but the text and points are larger in proportion to the full plot size">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-100-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.8: The same plot with half the default width and height
@@ -1564,17 +1419,18 @@ Figure&nbsp;2.8: The same plot with half the default width and height
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1"></a><span class="in">```{r}</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="co">#| label: fig-half-50</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="co">#| fig-width: 4</span></span>
-<span id="cb28-4"><a href="#cb28-4"></a><span class="co">#| fig-height: 2.5</span></span>
-<span id="cb28-5"><a href="#cb28-5"></a><span class="co">#| out-width: '50%'</span></span>
-<span id="cb28-6"><a href="#cb28-6"></a><span class="co">#| fig-cap: The same plot as above at half the output width</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>ggplot2<span class="sc">::</span><span class="fu">last_plot</span>()</span>
-<span id="cb28-8"><a href="#cb28-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="in">#| label: fig-half-50</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="in">#| fig-width: 4</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="in">#| fig-height: 2.5</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="in">#| out-width: '50%'</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="in">#| fig-cap: The same plot as above at half the output width</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="in">#| fig-alt: The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="in">ggplot2::last_plot()</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-half-50" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-half-50" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-half-50-1.png" class="img-fluid figure-img" style="width:50.0%">
+<img src="images/figures/fig-half-50-1.png" class="img-fluid figure-img" style="width:50.0%" alt="The same plot as above, with the same internal protoprtions as the original plot, but displayed smaller at half the page width">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-half-50-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2.9: The same plot as above at half the output width
@@ -1588,33 +1444,22 @@ Figure&nbsp;2.9: The same plot as above at half the output width
 </section><section id="override-defaults" class="level3" data-number="2.6.2"><h3 data-number="2.6.2" class="anchored" data-anchor-id="override-defaults">
 <span class="header-section-number">2.6.2</span> Override defaults</h3>
 <p>These setup options change the behaviour for the entire document, however, you can override the behaviour for individual code chunks.</p>
-<p>For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set <code>echo = FALSE</code> in your setup chunk to make hiding code the default but in the individual code chunk for your plot set <code>echo = TRUE</code>. Try this now and knit the file to see the results.</p>
+<p>For example, by default you might want to hide your code but there also might be an occasion where you want to show the code you used to analyse your data. You can set <code>#| echo: false</code> in your setup chunk to make hiding code the default but in the individual code chunk for your plot set <code>#| echo: true</code>. Try this now and knit the file to see the results.</p>
 <p>Additionally, you can also override the default image display size or dimensions.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1"></a><span class="in">```{r}</span></span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="co">#| label: fig-change-height</span></span>
-<span id="cb29-3"><a href="#cb29-3"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a><span class="co">#| fig-height: 5</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="fu">ggplot</span>(<span class="at">data =</span> smalldata, </span>
-<span id="cb29-6"><a href="#cb29-6"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> pre, </span>
-<span id="cb29-7"><a href="#cb29-7"></a>                     <span class="at">y =</span> post, </span>
-<span id="cb29-8"><a href="#cb29-8"></a>                     <span class="at">color =</span> group)) <span class="sc">+</span></span>
-<span id="cb29-9"><a href="#cb29-9"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb29-10"><a href="#cb29-10"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Pre-test Score"</span>,</span>
-<span id="cb29-11"><a href="#cb29-11"></a>       <span class="at">y =</span> <span class="st">"Post-test Score"</span>,</span>
-<span id="cb29-12"><a href="#cb29-12"></a>       <span class="at">title =</span> <span class="st">"Relationship between pre- and post-test by group"</span>)</span>
-<span id="cb29-13"><a href="#cb29-13"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div id="fig-change-height" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-change-height-1.png" id="fig-change-height" class="img-fluid figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-change-height-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.10
-</figcaption></figure>
-</div>
-</div>
-</div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1"></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="in">#| echo: false</span></span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="in">#| label: fig-change-height</span></span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="in">#| fig-cap: Relationship between pre- and post-test by group</span></span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="in">#| fig-width: 10</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="in">ggplot(data = smalldata, </span></span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="in">       mapping = aes(x = pre, </span></span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="in">                     y = post, </span></span>
+<span id="cb29-10"><a href="#cb29-10"></a><span class="in">                     color = group)) +</span></span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="in">  geom_point() +</span></span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="in">  labs(x = "Pre-test Score",</span></span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="in">       y = "Post-test Score")</span></span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="sec-yaml" class="level3" data-number="2.6.3"><h3 data-number="2.6.3" class="anchored" data-anchor-id="sec-yaml">
 <span class="header-section-number">2.6.3</span> YAML options</h3>
 <p>Finally, the <a href="https://psyteachr.github.io/glossary/y#yaml" target="_blank" class="glossary" title="A structured format for information">YAML</a> header is the bit at the very top of your quarto document. You can set several options here as well. See the <a href="https://quarto.org/docs/reference/formats/html.html">quarto HTML reference</a> for more options.</p>
@@ -1645,7 +1490,7 @@ Note
 <img src="images/reports/bootswatch.png" class="img-fluid figure-img" alt="A 6x4 grid showing the same text with headers and bullet points in 24 different themes.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bootswatch-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.11: Light themes in versions 3 and 4.
+Figure&nbsp;2.10: Light themes in versions 3 and 4.
 </figcaption></figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -1695,7 +1540,7 @@ Caution
 </div>
 </section><section id="sec-formats" class="level3" data-number="2.6.5"><h3 data-number="2.6.5" class="anchored" data-anchor-id="sec-formats">
 <span class="header-section-number">2.6.5</span> Formats</h3>
-<p>So far we’ve just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg><span class="citation" data-cites="R-tinytex">(<a href="02-reports.html#ref-R-tinytex" role="doc-biblioref">Xie, 2022</a>)</span> and run the following code in the console (do <strong>not</strong> add this to your Rmd file):</p>
+<p>So far we’ve just rendered to html. To generate PDF reports, you need to install <pkg>tinytex</pkg><span class="citation" data-cites="R-tinytex">(<a href="02-reports.html#ref-R-tinytex" role="doc-biblioref">Xie, 2025</a>)</span> and run the following code in the console (do <strong>not</strong> add this to your Rmd file):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">install.packages</span>(<span class="st">"tinytex"</span>)</span>
 <span id="cb34-2"><a href="#cb34-2"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1753,7 +1598,7 @@ Warning
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/repro/zotero.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/repro/zotero.png" class="img-fluid figure-img" style="width:100.0%" alt="The Zotero interface showing the location of the Export menu (like a try with an up arrow)"></p>
 <figcaption>Export a bibliography file from Zotero</figcaption></figure>
 </div>
 </div>
@@ -1815,7 +1660,7 @@ Warning
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/present/google-scholar.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/present/google-scholar.png" class="img-fluid figure-img" style="width:100.0%" alt="A screenshot of Google Scholar, showing the location of the BibTeX format link"></p>
 <figcaption>Get BibTex citations from Google Scholar.</figcaption></figure>
 </div>
 </div>
@@ -1894,13 +1739,13 @@ and teaching computational skills.
 <p>Make a subheading titled “Education” and use the following code to load a small table of your education (<a href="#sec-code-chunks" class="quarto-xref"><span>Section 2.4.5</span></a>). Edit it to be relevant to you (you can change the categories entirely if you want).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb48-1"><a href="#cb48-1"></a><span class="in">```{r}</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>tibble<span class="sc">::</span><span class="fu">tribble</span>(</span>
-<span id="cb48-3"><a href="#cb48-3"></a>  <span class="sc">~</span>degree, <span class="sc">~</span>topic, <span class="sc">~</span>school, <span class="sc">~</span>year,</span>
-<span id="cb48-4"><a href="#cb48-4"></a>  <span class="st">"BSc"</span>, <span class="st">"BioPsych/AnthroZoo"</span>, <span class="st">"University of Michigan"</span>, <span class="st">"1998"</span>,</span>
-<span id="cb48-5"><a href="#cb48-5"></a>  <span class="st">"MSc"</span>, <span class="st">"Biology"</span>, <span class="st">"University of Michigan"</span>, <span class="st">"2000"</span>,</span>
-<span id="cb48-6"><a href="#cb48-6"></a>  <span class="st">"GradCert"</span>, <span class="st">"Women's Studies"</span>, <span class="st">"University of Michigan"</span>, <span class="st">"2000"</span>,</span>
-<span id="cb48-7"><a href="#cb48-7"></a>  <span class="st">"PhD"</span>, <span class="st">"Psychology"</span>, <span class="st">"McMaster University"</span>, <span class="st">"2004"</span></span>
-<span id="cb48-8"><a href="#cb48-8"></a>)</span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="in">tibble::tribble(</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a><span class="in">  ~degree, ~topic, ~school, ~year,</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a><span class="in">  "BSc", "BioPsych/AnthroZoo", "University of Michigan", "1998",</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a><span class="in">  "MSc", "Biology", "University of Michigan", "2000",</span></span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="in">  "GradCert", "Women's Studies", "University of Michigan", "2000",</span></span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="in">  "PhD", "Psychology", "McMaster University", "2004"</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a><span class="in">)</span></span>
 <span id="cb48-9"><a href="#cb48-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -1970,12 +1815,12 @@ Solution
 </section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
 <span class="header-section-number">2.9.7</span> Use Inline R</h3>
 <p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2025-09-16.</p>
+<p>This CV was created on 2025-09-19.</p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on 2025-09-16.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on 2025-09-19.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
 <span class="header-section-number">2.9.8</span> Render</h3>
@@ -1985,6 +1830,8 @@ Solution
 Solution
 </button>
 <pre><code>Click on the render button or run the following code in the console. (Do not put it the script!)
+
+
 
 
 ::: {.cell}
@@ -2120,6 +1967,10 @@ Niebaum, J. C., Orben, A., Parsons, S., &amp; Schulte-Mecklenbeck, M.
 DeBruine, L. M., &amp; Barr, D. J. (2019). <em>Understanding mixed
 effects models through data simulation</em>. <a href="https://doi.org/10.31234/osf.io/xp5cy">https://doi.org/10.31234/osf.io/xp5cy</a>
 </div>
+<div id="ref-godfrey2020brailler" class="csl-entry" role="listitem">
+Godfrey, A. J. R., Warren, D., Murrell, P., Bilton, T., &amp; Sorge, V.
+(2020). <em>BrailleR: Improved access for blind users</em>. <a href="https://github.com/ajrgodfrey/BrailleR" class="uri">https://github.com/ajrgodfrey/BrailleR</a>.
+</div>
 <div id="ref-kathawalla_easing_2021" class="csl-entry" role="listitem">
 Kathawalla, U.-K., Silverstein, P., &amp; Syed, M. (2021). Easing into
 open science: A guide for graduate students and their advisors.
@@ -2160,16 +2011,24 @@ Parsons, S., Azevedo, F., others, &amp; Aczel, B. (2022). A
 community-sourced glossary of open scholarship terms. <em>Nature Human
 Behaviour</em>, <em>6</em>(3), 312–318. <a href="https://doi.org/10.1038/s41562-021-01269-4">https://doi.org/10.1038/s41562-021-01269-4</a>
 </div>
+<div id="ref-siegert2017sonify" class="csl-entry" role="listitem">
+Siegert, S., &amp; Williams, R. (2017). <em>Sonify: Data sonification -
+turning data into sound</em>. <a href="https://CRAN.R-project.org/package=sonify" class="uri">https://CRAN.R-project.org/package=sonify</a>.
+</div>
 <div id="ref-tidyverse" class="csl-entry" role="listitem">
 Wickham, H. (2017). <em>Tidyverse: Easily install and load the
 ’tidyverse’</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>
 </div>
 <div id="ref-R-tidyverse" class="csl-entry" role="listitem">
-Wickham, H. (2022). <em>Tidyverse: Easily install and load the
-tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D.,
+François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M.,
+Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J.,
+Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to
+the <span class="nocase">tidyverse</span>. <em>Journal of Open Source
+Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
 </div>
 <div id="ref-R-tinytex" class="csl-entry" role="listitem">
-Xie, Y. (2022). <em>Tinytex: Helper functions to install and maintain
+Xie, Y. (2025). <em>Tinytex: Helper functions to install and maintain
 TeX live, and compile LaTeX documents</em>. <a href="https://github.com/rstudio/tinytex">https://github.com/rstudio/tinytex</a>
 </div>
 </div>
@@ -2360,347 +2219,496 @@ $( document ).ready(function() {
   window.onresize = move_sidebar;
 });
 </script><script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    // Ensure there is a toggle, if there isn't float one in the top right
-    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-      const a = window.document.createElement('a');
-      a.classList.add('top-right');
-      a.classList.add('quarto-color-scheme-toggle');
-      a.href = "";
-      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-      const i = window.document.createElement("i");
-      i.classList.add('bi');
-      a.appendChild(i);
-      window.document.body.appendChild(a);
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    setColorSchemeToggle(hasAlternateSentinel())
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
         }
       }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
       return false;
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
     }
-    const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
-        }
-        return codeEl.innerText;
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
     }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
-    });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
-    }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v5");
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
-            // target, if specified
-            link.setAttribute("target", "_blank");
-            if (link.getAttribute("rel") === null) {
-              link.setAttribute("rel", "noopener");
-            }
-            // default icon
-            link.classList.add("external");
-        }
-      }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
-    }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
-        for (let i=0; i<annoteTargets.length; i++) {
-          const annoteTarget = annoteTargets[i];
-          const targetCell = annoteTarget.getAttribute("data-target-cell");
-          const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
-          const contentFn = () => {
-            const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-            if (content) {
-              const tipContent = content.cloneNode(true);
-              tipContent.classList.add("code-annotation-tip-content");
-              return tipContent.outerHTML;
-            }
-          }
-          const config = {
-            allowHTML: true,
-            content: contentFn,
-            onShow: (instance) => {
-              selectCodeLines(instance.reference);
-              instance.reference.classList.add('code-annotation-active');
-              window.tippy.hideAll();
-            },
-            onHide: (instance) => {
-              unselectCodeLines();
-              instance.reference.classList.remove('code-annotation-active');
-            },
-            maxWidth: 300,
-            delay: [50, 0],
-            duration: [200, 0],
-            offset: [5, 10],
-            arrow: true,
-            trigger: 'click',
-            appendTo: function(el) {
-              return el.parentElement.parentElement.parentElement;
-            },
-            interactive: true,
-            interactiveBorder: 10,
-            theme: 'quarto',
-            placement: 'right',
-            positionFixed: true,
-            popperOptions: {
-              modifiers: [
-              {
-                name: 'flip',
-                options: {
-                  flipVariations: false, // true by default
-                  allowedAutoPlacements: ['right'],
-                  fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
-                },
-              },
-              {
-                name: 'preventOverflow',
-                options: {
-                  mainAxis: false,
-                  altAxis: false
-                }
-              }
-              ]        
-            }      
-          };
-          window.tippy(annoteTarget, config); 
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
-      } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
-        });
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
       }
     }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("^(?:http:|https:)\/\/psyteachr\.github\.io\/reprores-v5");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          trigger: 'click',
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          positionFixed: true,
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./01-intro.html" class="pagination-link" aria-label="Introduction">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          

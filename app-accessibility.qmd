@@ -1,0 +1,115 @@
+# Accessibility {#sec-accessibility}
+
+```{r}
+#| label: setup-accessibility
+#| message: false
+
+library(tidyverse)
+library(sonify)
+```
+
+## Visual Impairment
+
+Here is some code to simulate different relationships.
+
+```{r}
+dat <- tibble(
+  x = seq(-3, 3, .01),
+) |>
+  mutate(
+    none = rnorm(n()),
+    linear_pos = x + rnorm(n()),
+    linear_neg = -x + rnorm(n()),
+    quadratic = x^2 + rnorm(n()),
+    category = sample(c("control", "experimental"), n(), TRUE)
+  )
+```
+
+
+### Sonify
+
+@siegert2017sonify
+
+No relationship sounds like a steady or randomly wavering tone.
+
+```{r}
+#| label: fig-none
+ggplot(dat, aes(x = x, y = none)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+sonify(dat$x, dat$none)
+```
+
+
+A linear positive relationship sounds like an increasing tone.
+
+```{r}
+#| label: fig-linear-pos
+ggplot(dat, aes(x = x, y = linear_pos)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+sonify(dat$x, dat$linear_pos)
+```
+
+A linear negative relationship sounds like a decreasing tone.
+
+```{r}
+#| label: fig-linear-neg
+ggplot(dat, aes(x = x, y = linear_neg)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+sonify(dat$x, dat$linear_neg)
+```
+
+This quadratic relationship decreases in pitch and then increases.
+
+```{r}
+#| label: fig-quadratic
+ggplot(dat, aes(x = x, y = quadratic)) +
+  geom_point() +
+  geom_smooth()
+```
+
+```{r}
+sonify(dat$x, dat$quadratic)
+```
+
+### BrailleR
+
+[BrailleR](https://ajrgodfrey.github.io/BrailleR/) @godfrey2020brailler
+
+```{r}
+#| message: false
+
+# BrailleR was removed from CRAN recently, if it's not back, try
+# remotes::install_github("ajrgodfrey/BrailleR")
+library(BrailleR)
+```
+
+```{r}
+ggplot(dat, aes(x = x, y = linear_neg)) +
+  geom_point() +
+  geom_smooth()
+```
+
+
+```{r}
+#| label: fig-violin
+ggplot(dat, aes(x = category, y = quadratic)) +
+  geom_violin()
+```
+
+## Resources
+
+* [arXiv Accessibility Forum 2023](https://accessibility2023.arxiv.org/index.html)
+* [Joo Young Accessible Data Science for the Blind Using R](https://jooyoungseo.me/post/ds4blind/)
+* [Resources For Using R With Screen Readers](https://ropensci.org/blog/2024/09/05/screen-readers-tools/)

@@ -1,5 +1,7 @@
 # Data Wrangling {#sec-wrangle}
 
+<!-- checked for alt-text -->
+
 <div class="right meme"><img src="images/memes/real_world_data.jpg"
      alt="A cute golden retriever labelled 'iris & mtcars' and a scary werewolf labelled 'Real world data'" /></div>
 
@@ -709,7 +711,10 @@ Employees 1-5 were trained by Michael and employees 6-10 were trained by Dwight.
 To add the trainer column you can use `case_when()` and specify multiple criteria (e.g., if the employee is 1-5, Michael, if the employee is 6-10 Dwight)
 ` r unhide()`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
+#| label: img-ex-new-cat
+#| fig.alt: Two histograms, with 'satisfaction' on the x-axis (1-5) and 'count' (0-125) on the y-axis. The left facet is labelled 'Dwight' and has red bars. The right panel is labelled 'Michael' and has blue bars. Dwight has a higher count than Michael in satisfaction categories 3-5.
 # case_when() method
 survey_data <- survey_data |>
   mutate(trainer = case_when(employee_id %in% c("E01", "E02", "E03", "E04", "E05") ~ "Michael",
@@ -736,7 +741,8 @@ First, calculate the average wait time and store this in an object named `mean_w
 There are multiple ways to achieve this. You could create the table and then pull out the single value, or just calculate the single value.
 `r unhide()`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 
 # method 1 - tidyverse
 mean_wait <- survey_data |>
@@ -750,14 +756,18 @@ mean_wait <- mean(survey_data$wait_time)
 
 Now create a dataset named `long_wait` that just contains data from customers who waited more than the average wait time.
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 long_wait <- survey_data |>
   filter(wait_time > mean_wait)
 ```
 
 Create a visualisation that shows how many customers waited more than the average wait time for each employee.
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
+#| label: img-ex-id-bar
+#| fig-alt: A bar plot with 'employee_id' on the x-axis and values E01 to E10. The y-axis shows 'count' from 0 to 55. Bars are grey with values 39, 33, 50, 27, 29, 42, 36, 51, 32, and 45. 
 long_wait |>
   ggplot(aes(x = employee_id)) +
   geom_bar()
@@ -775,7 +785,8 @@ This is quite complicated and there are multiple ways to achieve the desired out
 
 Call the final object `follow_data` and keep only the customer ID, employee ID, trainer, and follow up columns. 
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 
 # this is one possible solution, there are many other valid approaches 
 
@@ -815,7 +826,8 @@ Which employee needs to make the largest number of follow-up courtesy calls? `r 
 As above but add in an `ungroup()` and `slice_max()` along the way. 
 `r unhide()`
 
-```{r webex.hide = TRUE}
+```{r}
+#| webex.hide: true
 # in total
 follow_data |>
   group_by(follow_up) |>
@@ -866,7 +878,8 @@ In preparation for the summative assessment, explore the data to provide one ori
 
 ## Glossary {#sec-glossary-wwrangle -}
 
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 glossary_table()
 ```
 

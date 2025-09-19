@@ -73,7 +73,7 @@ In this class, you will be learning how to do `r glossary("reproducible research
 
 
 ::: {.meme .right}
-![](images/memes/forgetting.jpg){fig-alt = "Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory"}
+![](images/memes/forgetting.jpg){fig-alt="Fry from Futurama squinting; top text: Not sure if I have a bad memory; bottom text: Or a bad memory"}
 :::
 
 When you do things reproducibly, others can understand and check your work. This benefits science, but there is a selfish reason, too: the most important person who will benefit from a reproducible script is your future self. When you return to an analysis after two weeks of vacation, you will thank your earlier self for doing things in a transparent, reproducible way, as you can easily pick up right where you left off. It might take a little longer to set up the report in the first instance with reproducible methods, but the time it saves you in the long run is invaluable.
@@ -374,7 +374,7 @@ In this course, we will always write out the argument names the first time we us
 
 One very useful feature of RStudio is tab auto-complete for functions. If you write the name of the function and then press the tab key, RStudio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently. 
 
-![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete fig-alt = "The code reads `sample()` and there is a drop-down menu with the options `x =`, `size =`, replace =` and prob =`. The third option is highlighted blue and there is a yellow text box reading 'replace: should sampling be with replacements? Press F1 for additional help'"}
+![Tab auto-complete](images/intro/autocomplete.png){#fig-autocomplete fig-alt="The code reads `sample()` and there is a drop-down menu with the options `x =`, `size =`, replace =` and prob =`. The third option is highlighted blue and there is a yellow text box reading 'replace: should sampling be with replacements? Press F1 for additional help'"}
 
 ::: {.try}
 Use tab autocomplete to figure out the arguments to `rnorm()`. Create a vector of 20 numbers from a normal distribution with a mean of 100 and a standard deviation of 10.
