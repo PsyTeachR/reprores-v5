@@ -2,13 +2,13 @@
 
 This book is licensed under Creative Commons Attribution-ShareAlike 4.0 International License ([CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)). You are free to share and adapt this book. You must give appropriate credit, provide a link to the license, and indicate if changes were made. If you adapt the material, you must distribute your contributions under the same license as the original.
 
-This is the 4th version of the book and is currently under revision. You can access previous versions at: [v1](https://psyteachr.github.io/msc-data-skills), [v2](https://psyteachr.github.io/reprores-v2), and [v3](https://psyteachr.github.io/reprores-v3).
+This is the 5th version of the book and is currently under revision. You can access previous versions at: [v1](https://psyteachr.github.io/msc-data-skills), [v2](https://psyteachr.github.io/reprores-v2), [v3](https://psyteachr.github.io/reprores-v3), and [v4](https://psyteachr.github.io/reprores-v4).
 
-Parts of this book are shared with or derived from @nordmann2023ads. 
+The book was originally written by Dale Barr and Lisa DeBruine. Parts of this book are shared with or derived from @nordmann2023ads.
 
 ## Citation
 
-[![DOI](https://zenodo.org/badge/166541547.svg)](https://zenodo.org/badge/latestdoi/166541547)
+[![](https://zenodo.org/badge/166541547.svg)](https://zenodo.org/badge/latestdoi/166541547)
 
 
 ## Acknowledgements
@@ -28,9 +28,9 @@ We greatly appreciate [Iris Holzleitner](https://people.uwe.ac.uk/Person/IrisHol
 
 Several people contributed to testing these materials.
 
+* [David Pharis](https://www.gla.ac.uk/schools/healthwellbeing/staff/davidpharis/)
 * [Rebecca Lai](https://github.com/RebeccaJLai)
 * [Sean Westwood](https://mphiliastides.org/en/team/sean-westwood)
-* David Pharis
 * [Richard Morey](https://github.com/richarddmorey)
 * [Mossa Merhi Reimert](https://github.com/CGMossa)
 

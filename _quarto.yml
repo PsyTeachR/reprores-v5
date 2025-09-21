@@ -23,7 +23,7 @@ knitr:
 
 book:
   title: 'Data Skills for Reproducible Research'
-  author: "Lisa DeBruine, Dale Barr, Emily Nordmann, Rebecca Lai, David Pharis"
+  author: "Lisa DeBruine, Dale Barr, Emily Nordmann"
   description: "This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations."
   cover-image: images/logos/logo.png
   cover-image-alt: A blue hexagon with Repro Res in Mackintosh art deco font

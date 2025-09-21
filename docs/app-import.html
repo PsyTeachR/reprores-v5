@@ -376,11 +376,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li>
 <a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"><span class="header-section-number">H.8</span> Exercises</a>
   <ul class="collapse">
-<li><a href="#sec-exercises-new-rmd-4" id="toc-sec-exercises-new-rmd-4" class="nav-link" data-scroll-target="#sec-exercises-new-rmd-4"><span class="header-section-number">H.8.1</span> New Markdown</a></li>
+<li><a href="#sec-exercises-new-impost" id="toc-sec-exercises-new-impost" class="nav-link" data-scroll-target="#sec-exercises-new-impost"><span class="header-section-number">H.8.1</span> New Script</a></li>
   <li><a href="#sec-exercises-load" id="toc-sec-exercises-load" class="nav-link" data-scroll-target="#sec-exercises-load"><span class="header-section-number">H.8.2</span> Import and export the dataset</a></li>
   <li><a href="#convert-column-types" id="toc-convert-column-types" class="nav-link" data-scroll-target="#convert-column-types"><span class="header-section-number">H.8.3</span> Convert column types</a></li>
-  <li><a href="#sec-exercises-plots" id="toc-sec-exercises-plots" class="nav-link" data-scroll-target="#sec-exercises-plots"><span class="header-section-number">H.8.4</span> Plots</a></li>
-  <li><a href="#make-it-look-nice" id="toc-make-it-look-nice" class="nav-link" data-scroll-target="#make-it-look-nice"><span class="header-section-number">H.8.5</span> Make it look nice</a></li>
+  <li><a href="#label-attributes" id="toc-label-attributes" class="nav-link" data-scroll-target="#label-attributes"><span class="header-section-number">H.8.4</span> Label Attributes</a></li>
+  <li><a href="#sec-exercises-plots" id="toc-sec-exercises-plots" class="nav-link" data-scroll-target="#sec-exercises-plots"><span class="header-section-number">H.8.5</span> Plots</a></li>
+  <li><a href="#make-it-look-nice" id="toc-make-it-look-nice" class="nav-link" data-scroll-target="#make-it-look-nice"><span class="header-section-number">H.8.6</span> Make it look nice</a></li>
   </ul>
 </li>
   <li><a href="#sec-glossary-data" id="toc-sec-glossary-data" class="nav-link" data-scroll-target="#sec-glossary-data">Glossary</a></li>
@@ -595,7 +596,7 @@ $ factor    &lt;chr&gt; "high", "low", "med", "high", "low", "med"
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;lgl&gt; TRUE, TRUE, FALSE, FALSE, NA, TRUE
-$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
+$ date      &lt;date&gt; 2025-09-21, 2025-09-20, 2025-09-19, 2025-09-18, 2025-09-17, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -608,7 +609,7 @@ $ factor    &lt;chr&gt; "high", "low", "med", "high", "low", "med"
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;lgl&gt; TRUE, TRUE, FALSE, FALSE, NA, TRUE
-$ date      &lt;dttm&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
+$ date      &lt;dttm&gt; 2025-09-21, 2025-09-20, 2025-09-19, 2025-09-18, 2025-09-17, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -621,7 +622,7 @@ $ factor    &lt;dbl+lbl&gt; 3, 1, 2, 3, 1, 2
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;dbl&gt; 1, 1, 0, 0, NA, 1
-$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
+$ date      &lt;date&gt; 2025-09-21, 2025-09-20, 2025-09-19, 2025-09-18, 2025-09-17, …</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -716,7 +717,7 @@ $ factor    &lt;fct&gt; high, low, med, high, low, med
 $ integer   &lt;dbl&gt; 1, 2, 3, 4, 5, 6
 $ double    &lt;dbl&gt; 1.5, 2.5, 3.5, 4.5, 5.5, 6.5
 $ logical   &lt;dbl&gt; 1, 1, 0, 0, NA, 1
-$ date      &lt;date&gt; 2025-09-16, 2025-09-15, 2025-09-14, 2025-09-13, 2025-09-12, …</code></pre>
+$ date      &lt;date&gt; 2025-09-21, 2025-09-20, 2025-09-19, 2025-09-18, 2025-09-17, …</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1154,10 +1155,10 @@ e.g.:
 <p>You may also be tempted to fix messy datasets by, for example, opening up Excel and editing them there. Whilst this might seem easier in the short term, there’s two serious issues with doing this. First, you will likely work with datasets that have recurring messy problems. By taking the time to solve these problems with code, you can apply the same solutions to a large number of future datasets so it’s more efficient in the long run. Second, if you edit the spreadsheet, there’s no record of what you did. By solving these problems with code, you do so reproducibly and you don’t edit the original data file. This means that if you make an error, you haven’t lost the original data and can recover.</p>
 </section><section id="exercises" class="level2" data-number="H.8"><h2 data-number="H.8" class="anchored" data-anchor-id="exercises">
 <span class="header-section-number">H.8</span> Exercises</h2>
-<p>For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you knit at every step so that you can see how your output changes.</p>
-<section id="sec-exercises-new-rmd-4" class="level3" data-number="H.8.1"><h3 data-number="H.8.1" class="anchored" data-anchor-id="sec-exercises-new-rmd-4">
-<span class="header-section-number">H.8.1</span> New Markdown</h3>
-<p>Create and save a new R Markdown document named <code>starwars_report.Rmd</code>. In the set-up code chunk load the packages <code>tidyverse</code> and <code>rio</code>.</p>
+<p>We will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We’d also recommend you knit at every step so that you can see how your output changes.</p>
+<section id="sec-exercises-new-impost" class="level3" data-number="H.8.1"><h3 data-number="H.8.1" class="anchored" data-anchor-id="sec-exercises-new-impost">
+<span class="header-section-number">H.8.1</span> New Script</h3>
+<p>Create and save a new quarto document named <code>starwars_report.qmd</code>. In the set-up code chunk load the packages <code>tidyverse</code> and <code>rio</code>.</p>
 <p>We’re going to use the built-in <code>starwars</code> dataset that contains data about Star Wars characters. You can learn more about the dataset by using the <code><a href="https://rdrr.io/r/utils/help.html">?help</a></code> function.</p>
 </section><section id="sec-exercises-load" class="level3" data-number="H.8.2"><h3 data-number="H.8.2" class="anchored" data-anchor-id="sec-exercises-load">
 <span class="header-section-number">H.8.2</span> Import and export the dataset</h3>
@@ -1228,13 +1229,30 @@ Solution
 </div>
 </div>
 </div>
-</section><section id="sec-exercises-plots" class="level3" data-number="H.8.4"><h3 data-number="H.8.4" class="anchored" data-anchor-id="sec-exercises-plots">
-<span class="header-section-number">H.8.4</span> Plots</h3>
+</section><section id="label-attributes" class="level3" data-number="H.8.4"><h3 data-number="H.8.4" class="anchored" data-anchor-id="label-attributes">
+<span class="header-section-number">H.8.4</span> Label Attributes</h3>
+<p>Add useful labels to the columns <code>height</code>, <code>weight</code>, and <code>gender</code> for use in plotting below. For example, <code>height</code> would be best on a plot as <code>Height (cm)</code>.</p>
+<div class="cell" data-webex-hide="true">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">attr</span>(starwars<span class="sc">$</span>height) <span class="ot">&lt;-</span> <span class="st">"Height (cm)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `attr&lt;-`(`*tmp*`, value = "Height (cm)"): 2 arguments passed to 'attr&lt;-' which requires 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">attr</span>(starwars<span class="sc">$</span>mass) <span class="ot">&lt;-</span> <span class="st">"Weight (kg)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `attr&lt;-`(`*tmp*`, value = "Weight (kg)"): 2 arguments passed to 'attr&lt;-' which requires 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a><span class="fu">attr</span>(starwars<span class="sc">$</span>gender) <span class="ot">&lt;-</span> <span class="st">"Gender of character"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `attr&lt;-`(`*tmp*`, value = "Gender of character"): 2 arguments passed to 'attr&lt;-' which requires 3</code></pre>
+</div>
+</div>
+</section><section id="sec-exercises-plots" class="level3" data-number="H.8.5"><h3 data-number="H.8.5" class="anchored" data-anchor-id="sec-exercises-plots">
+<span class="header-section-number">H.8.5</span> Plots</h3>
 <p>Produce the following plots and one plot of your own choosing. Write a brief summary of what each plot shows and any conclusions you might reach from the data.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-25-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A histogram with the title 'Height (cm) distribution of Star Wars Characters. The x-axis 'Height (cm)' runs from 75 to 275 by 25, and the y-axis 'count' runs from 0 to 40 by 10. Bars are grey with black borders and 25 units wide, centered on each tick label. Most bars are below 10, except 175 (almost 40) and 200 (about 20)."></p>
 </figure>
 </div>
 </div>
@@ -1242,7 +1260,7 @@ Solution
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-26-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with the title 'Mass (kg) by height (cm) distribution of Star Wars Characters'. It has x-axis 'Height (cm)' with labels 0 to 300 by 50s. It has y-axis 'Mass (kg)' with labels 0 to 1400 by 100s. There are 59 solid circle points, mostly at mass below 200, with one outlier at mass 1350 and height 175."></p>
 </figure>
 </div>
 </div>
@@ -1250,7 +1268,7 @@ Solution
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-27-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-28-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A bar chart titled 'Number of Star Wars characters of each gender'. It has x-axis 'Gender of character' with labels Masculine, Feminine and Missing. It has y-axis 'count' with labels 0 to 60 by 20s. There are 3 vertical bars. Feminine = 17, masculine = 66, missing = 4."></p>
 </figure>
 </div>
 </div>
@@ -1260,32 +1278,32 @@ Solution
 Solution
 </button>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(height)) <span class="sc">+</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">25</span>, <span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">50</span>, <span class="at">to =</span> <span class="dv">300</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
-<span id="cb46-4"><a href="#cb46-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Height (cm) distribution of Star Wars Characters"</span>) <span class="sc">+</span></span>
-<span id="cb46-5"><a href="#cb46-5"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(height)) <span class="sc">+</span></span>
+<span id="cb52-2"><a href="#cb52-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">25</span>, <span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb52-3"><a href="#cb52-3"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">50</span>, <span class="at">to =</span> <span class="dv">300</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="sc">+</span></span>
+<span id="cb52-4"><a href="#cb52-4"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Height (cm) distribution of Star Wars Characters"</span>) <span class="sc">+</span></span>
+<span id="cb52-5"><a href="#cb52-5"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(height, mass)) <span class="sc">+</span></span>
-<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mass (kg) by height (cm) distribution of Star Wars Characters"</span>) <span class="sc">+</span></span>
-<span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb47-5"><a href="#cb47-5"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">300</span>, <span class="at">by =</span> <span class="dv">50</span>)) <span class="sc">+</span></span>
-<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">2000</span>, <span class="at">by =</span> <span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(height, mass)) <span class="sc">+</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mass (kg) by height (cm) distribution of Star Wars Characters"</span>) <span class="sc">+</span></span>
+<span id="cb53-4"><a href="#cb53-4"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">300</span>, <span class="at">by =</span> <span class="dv">50</span>)) <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">2000</span>, <span class="at">by =</span> <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb53-7"><a href="#cb53-7"></a>  <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">300</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
-<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Gender of character"</span>, <span class="at">labels =</span> (<span class="fu">c</span>(<span class="st">"Masculine"</span>, <span class="st">"Feminine"</span>, <span class="st">"Missing"</span>))) <span class="sc">+</span></span>
-<span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb48-5"><a href="#cb48-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Star Wars characters of each gender"</span>) <span class="sc">+</span></span>
-<span id="cb48-6"><a href="#cb48-6"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">ggplot</span>(starwars, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">fill =</span> gender)) <span class="sc">+</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> (<span class="fu">c</span>(<span class="st">"Masculine"</span>, <span class="st">"Feminine"</span>, <span class="st">"Missing"</span>))) <span class="sc">+</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb54-5"><a href="#cb54-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Number of Star Wars characters of each gender"</span>) <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-</section><section id="make-it-look-nice" class="level3" data-number="H.8.5"><h3 data-number="H.8.5" class="anchored" data-anchor-id="make-it-look-nice">
-<span class="header-section-number">H.8.5</span> Make it look nice</h3>
+</section><section id="make-it-look-nice" class="level3" data-number="H.8.6"><h3 data-number="H.8.6" class="anchored" data-anchor-id="make-it-look-nice">
+<span class="header-section-number">H.8.6</span> Make it look nice</h3>
 <ul>
 <li>Add at least one Star Wars related image from an online source</li>
 <li>Hide the code and any messages from the knitted output</li>
@@ -1295,13 +1313,13 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-2"><a href="#cb49-2"></a><span class="in">#| echo: false</span></span>
-<span id="cb49-3"><a href="#cb49-3"></a><span class="in">#| out-width: "50%"</span></span>
-<span id="cb49-4"><a href="#cb49-4"></a><span class="in">#| fig-cap: "Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"</span></span>
-<span id="cb49-5"><a href="#cb49-5"></a><span class="in">#| fig-alt: "The Star Wars logo, with the word STAR on top and WARS on the bottom."</span></span>
-<span id="cb49-6"><a href="#cb49-6"></a><span class="in">knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png")</span></span>
-<span id="cb49-7"><a href="#cb49-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb55-1"><a href="#cb55-1"></a><span class="in">```{r}</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="in">#| echo: false</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a><span class="in">#| out-width: "50%"</span></span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="in">#| fig-cap: "Adaptation of Star Wars logo created by Weweje; original logo by Suzy Rice, 1976. CC-BY-3.0"</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="in">#| fig-alt: "The Star Wars logo, with the word STAR on top and WARS on the bottom."</span></span>
+<span id="cb55-6"><a href="#cb55-6"></a><span class="in">knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/2880px-Star_wars2.svg.png")</span></span>
+<span id="cb55-7"><a href="#cb55-7"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">

@@ -6,6 +6,7 @@
 
 library(tidyverse)
 library(sonify)
+set.seed(8675309)
 ```
 
 ## Visual Impairment
@@ -34,12 +35,14 @@ No relationship sounds like a steady or randomly wavering tone.
 
 ```{r}
 #| label: fig-none
+#| fig-alt: A scatterplot with 'x' on the x axis with range -3 to 3, and 'none' on the y-axis with range -3 to 3. There are 601 points (solid black circles) and a trendline at about y = 0 that curves up slightly at both ends. 
 ggplot(dat, aes(x = x, y = none)) +
   geom_point() +
   geom_smooth()
 ```
 
 ```{r}
+#| eval: false
 sonify(dat$x, dat$none)
 ```
 
@@ -48,12 +51,14 @@ A linear positive relationship sounds like an increasing tone.
 
 ```{r}
 #| label: fig-linear-pos
+#| fig-alt: A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_pos' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of 1 (from -3, -3 to 3, 3). Points are spread out about +/- 2 from the trendline).
 ggplot(dat, aes(x = x, y = linear_pos)) +
   geom_point() +
   geom_smooth()
 ```
 
 ```{r}
+#| eval: false
 sonify(dat$x, dat$linear_pos)
 ```
 
@@ -61,12 +66,14 @@ A linear negative relationship sounds like a decreasing tone.
 
 ```{r}
 #| label: fig-linear-neg
+#| fig-alt: A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline).
 ggplot(dat, aes(x = x, y = linear_neg)) +
   geom_point() +
   geom_smooth()
 ```
 
 ```{r}
+#| eval: false
 sonify(dat$x, dat$linear_neg)
 ```
 
@@ -74,12 +81,14 @@ This quadratic relationship decreases in pitch and then increases.
 
 ```{r}
 #| label: fig-quadratic
+#| fig-alt: A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -12 to 10. There are 601 points (solid black circles) and a trendline with a U-shaped quadratic pattern starting about -3, 8, with a lowest point of 0, 0, and ending about 3, 8. Points are spread out about +/- 2 from the trendline).
 ggplot(dat, aes(x = x, y = quadratic)) +
   geom_point() +
   geom_smooth()
 ```
 
 ```{r}
+#| eval: false
 sonify(dat$x, dat$quadratic)
 ```
 
@@ -96,16 +105,29 @@ library(BrailleR)
 ```
 
 ```{r}
+#| label: fig-linear-neg-2
+#| fig-alt: A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline).
 ggplot(dat, aes(x = x, y = linear_neg)) +
   geom_point() +
   geom_smooth()
 ```
 
 
+You can see it doesn't alway get everything right. It only readds the axis labels if they have been explicitly set.
+
 ```{r}
 #| label: fig-violin
-ggplot(dat, aes(x = category, y = quadratic)) +
-  geom_violin()
+#| fig-alt: A violin plot with 'category' on the x-axis and labels 'contol' and 'experimental', and `quadratic' on the y-axis with range -2 to 12. Two white shapes show the distribution, which is bottom-heavy and ranging from about -2 to 9 for both categories with no obvious difference. 
+ggplot(dat, aes(x = category, y = quadratic, fill = category)) +
+  geom_violin(show.legend = FALSE) +
+  labs(x = "Category",
+       y = "Score")
+```
+
+
+```{r}
+#| echo: false
+detach("package:BrailleR", unload=TRUE)
 ```
 
 ## Resources

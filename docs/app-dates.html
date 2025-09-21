@@ -493,15 +493,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb10-20"><a href="#cb10-20"></a><span class="fu">str</span>(time_parts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 12
- $ second : num 32.5
- $ minute : int 19
- $ hour   : int 12
- $ day    : int 16
- $ wday   : num 3
- $ yday   : num 259
- $ week   : num 37
+ $ second : num 34.3
+ $ minute : int 26
+ $ hour   : int 11
+ $ day    : int 21
+ $ wday   : num 1
+ $ yday   : num 264
+ $ week   : num 38
  $ isoweek: num 38
- $ epiweek: num 38
+ $ epiweek: num 39
  $ month  : num 9
  $ year   : num 2025
  $ tz     : chr "GMT"</code></pre>
@@ -547,7 +547,7 @@ Levels: Sun &lt; Mon &lt; Tue &lt; Wed &lt; Thu &lt; Fri &lt; Sat</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">today</span>() <span class="sc">+</span> <span class="fu">weeks</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-09-23"</code></pre>
+<pre><code>[1] "2025-09-28"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -679,32 +679,37 @@ AM/PM:  AM/PM</code></pre>
 <span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">mutate</span>(<span class="at">weekday =</span> <span class="fu">wday</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb34-3"><a href="#cb34-3"></a>         <span class="at">hour =</span> <span class="fu">hour</span>(time)) <span class="sc">|&gt;</span></span>
 <span id="cb34-4"><a href="#cb34-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> hour, <span class="at">fill =</span> weekday)) <span class="sc">+</span></span>
-<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">geom_bar</span>(<span class="at">size =</span> <span class="dv">1</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  <span class="fu">geom_bar</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
 <span id="cb34-6"><a href="#cb34-6"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>weekday) <span class="sc">+</span></span>
 <span id="cb34-7"><a href="#cb34-7"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">rainbow</span>(<span class="dv">7</span>)) <span class="sc">+</span></span>
-<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in geom_bar(size = 1, alpha = 0.5, show.legend = FALSE): Ignoring
-unknown parameters: `size`</code></pre>
-</div>
+<span id="cb34-8"><a href="#cb34-8"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">24</span>, <span class="dv">6</span>)) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"tweets"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="images/figures/weekday-tweets-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
+<div id="fig-weekday-tweets" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Seven histograms, one for each day of the week starting with Sunday. The x-axis shows hours (0-24) and the y-axis shows tweets (0-60). Each day is a different rainbow colour and most tweets are between 8 and 20.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-weekday-tweets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-weekday-tweets-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Seven histograms, one for each day of the week starting with Sunday. The x-axis shows hours (0-24) and the y-axis shows tweets (0-60). Each day is a different rainbow colour and most tweets are between 8 and 20.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-weekday-tweets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;J.1: Tweets by hour for each day of the week.
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>A nice side-effect of using the lubridate function to get days of the week or months of the year is that the results are an ordered factor, so display correctly in a plot. Let’s display the months in Greek (if that’s available on your system).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>tweets <span class="sc">|&gt;</span></span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>, <span class="at">locale =</span> <span class="st">"el_GR.UTF-8"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">fill =</span> month)) <span class="sc">+</span></span>
-<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb36-5"><a href="#cb36-5"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge=</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>tweets <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">mutate</span>(<span class="at">month =</span> <span class="fu">month</span>(time, <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">abbr =</span> <span class="cn">FALSE</span>, <span class="at">locale =</span> <span class="st">"el_GR.UTF-8"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">fill =</span> month)) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4"></a>  <span class="fu">geom_bar</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>, <span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">n.dodge=</span><span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="images/figures/month-tweets-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
+<div id="fig-month-tweets" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A bar plot with months on the x-axis (labels in Greek) and count on the y-axis (0-375). Values (starting from January) are: 188, 193, 268, 305, 263, 222, 221, 356, 311, 373, 268, 119.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-month-tweets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-month-tweets-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A bar plot with months on the x-axis (labels in Greek) and count on the y-axis (0-375). Values (starting from January) are: 188, 193, 268, 305, 263, 222, 221, 356, 311, 373, 268, 119.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-month-tweets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;J.2: Tweets per month with months in Greek
+</figcaption></figure>
 </div>
 </div>
 </div>

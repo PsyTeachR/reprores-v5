@@ -496,11 +496,11 @@ You may also be tempted to fix messy datasets by, for example, opening up Excel 
 
 ## Exercises
 
-For the final step in this chapter, we will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you knit at every step so that you can see how your output changes.
+We will create a report using one of the in-built datasets to practice the skills you have used so far. You may need to refer back to previous chapters to help you complete these exercises and you may also want to take a break before you work through this section. We'd also recommend you knit at every step so that you can see how your output changes.
 
-### New Markdown {#sec-exercises-new-rmd-4}
+### New Script {#sec-exercises-new-impost}
 
-Create and save a new R Markdown document named `starwars_report.Rmd`. In the set-up code chunk load the packages `tidyverse` and `rio`.
+Create and save a new quarto document named `starwars_report.qmd`. In the set-up code chunk load the packages `tidyverse` and `rio`.
 
 We're going to use the built-in `starwars` dataset that contains data about Star Wars characters. You can learn more about the dataset by using the `?help` function.
 
@@ -512,7 +512,7 @@ We're going to use the built-in `starwars` dataset that contains data about Star
 
 `r hide()`
 
-```{r eval = TRUE}
+```{r}
 data(starwars)
 export(starwars, "data/starwars.csv")
 starwars <- read_csv("data/starwars.csv")
@@ -528,7 +528,7 @@ starwars <- read_csv("data/starwars.csv")
 
 `r hide()`
 
-```{r eval = TRUE}
+```{r}
 spec(starwars)
 corrected_cols <- cols(
   name = col_character(),
@@ -553,6 +553,20 @@ starwars <- read_csv("data/starwars.csv", col_types = corrected_cols)
 
 `r unhide()`
 
+### Label Attributes
+
+Add useful labels to the columns `height`, `weight`, and `gender` for use in plotting below. For example, `height` would be best on a plot as `Height (cm)`.
+
+```{r}
+#| webex-hide: true
+
+attr(starwars$height) <- "Height (cm)"
+attr(starwars$mass) <- "Weight (kg)"
+attr(starwars$gender) <- "Gender of character"
+
+```
+
+
 ### Plots {#sec-exercises-plots}
 
 Produce the following plots and one plot of your own choosing. Write a brief summary of what each plot shows and any conclusions you might reach from the data. 
@@ -560,7 +574,7 @@ Produce the following plots and one plot of your own choosing. Write a brief sum
 ```{r}
 #| echo: false
 #| warning: false
-#| fig-alt: ""
+#| fig-alt: "A histogram with the title 'Height (cm) distribution of Star Wars Characters. The x-axis 'Height (cm)' runs from 75 to 275 by 25, and the y-axis 'count' runs from 0 to 40 by 10. Bars are grey with black borders and 25 units wide, centered on each tick label. Most bars are below 10, except 175 (almost 40) and 200 (about 20)."
 ggplot(starwars, aes(height)) +
   geom_histogram(binwidth = 25, colour = "black", alpha = .3) +
   labs(title = "Height (cm) distribution of Star Wars Characters") +
@@ -571,7 +585,7 @@ ggplot(starwars, aes(height)) +
 ```{r}
 #| echo: false
 #| warning: false
-#| fig-alt: ""
+#| fig-alt: "A scatterplot with the title 'Mass (kg) by height (cm) distribution of Star Wars Characters'. It has x-axis 'Height (cm)' with labels 0 to 300 by 50s. It has y-axis 'Mass (kg)' with labels 0 to 1400 by 100s. There are 59 solid circle points, mostly at mass below 200, with one outlier at mass 1350 and height 175."
 ggplot(starwars, aes(height, mass)) +
   geom_point() +
   labs(title = "Mass (kg) by height (cm) distribution of Star Wars Characters") +
@@ -583,10 +597,10 @@ ggplot(starwars, aes(height, mass)) +
 
 ```{r}
 #| echo: false
-#| fig-alt: ""
+#| fig-alt: "A bar chart titled 'Number of Star Wars characters of each gender'. It has x-axis 'Gender of character' with labels Masculine, Feminine and Missing. It has y-axis 'count' with labels 0 to 60 by 20s. There are 3 vertical bars. Feminine = 17, masculine = 66, missing = 4."
 ggplot(starwars, aes(x = gender, fill = gender)) +
   geom_bar(show.legend = FALSE, colour = "black") +
-  scale_x_discrete(name = "Gender of character", labels = (c("Masculine", "Feminine", "Missing"))) +
+  scale_x_discrete(labels = c("Feminine", "Masculine", "Missing")) +
   scale_fill_brewer(palette = 2) +
   theme_bw() +
   labs(title = "Number of Star Wars characters of each gender")
@@ -617,7 +631,7 @@ ggplot(starwars, aes(height, mass)) +
 #| eval: false
 ggplot(starwars, aes(x = gender, fill = gender)) +
   geom_bar(show.legend = FALSE, colour = "black") +
-  scale_x_discrete(name = "Gender of character", labels = (c("Masculine", "Feminine", "Missing"))) +
+  scale_x_discrete(labels = (c("Masculine", "Feminine", "Missing"))) +
   scale_fill_brewer(palette = 2) +
   labs(title = "Number of Star Wars characters of each gender") +
   theme_bw()

@@ -240,25 +240,31 @@ tweets <- list.files(
 The `time` column is already in date/time (POSIXct) format, but what if we wanted to plot tweets by hour for each day of the week? 
 
 ```{r}
-#| label: weekday-tweets
+#| label: fig-weekday-tweets
 #| fig-width: 6
 #| fig-height: 1.25
+#| fig-cap: Tweets by hour for each day of the week.
+#| fig-alt: Seven histograms, one for each day of the week starting with Sunday. The x-axis shows hours (0-24) and the y-axis shows tweets (0-60). Each day is a different rainbow colour and most tweets are between 8 and 20. 
+
 tweets |>
   mutate(weekday = wday(time, label = TRUE),
          hour = hour(time)) |>
   ggplot(aes(x = hour, fill = weekday)) +
-  geom_bar(size = 1, alpha = 0.5, show.legend = FALSE) +
+  geom_bar(alpha = 0.5, show.legend = FALSE) +
   facet_grid(~weekday) +
   scale_fill_manual(values = rainbow(7)) +
-  scale_x_continuous(breaks = seq(0, 24, 4))
+  scale_x_continuous(breaks = seq(0, 24, 6)) +
+  labs(y = "tweets")
 ```
 
 
 A nice side-effect of using the lubridate function to get days of the week or months of the year is that the results are an ordered factor, so display correctly in a plot. Let's display the months in Greek (if that's available on your system).
 
 ```{r}
-#| label: month-tweets
+#| label: fig-month-tweets
 #| error: true
+#| fig-cap: Tweets per month with months in Greek 
+#| fig-alt: "A bar plot with months on the x-axis (labels in Greek) and count on the y-axis (0-375). Values (starting from January) are: 188, 193, 268, 305, 263, 222, 221, 356, 311, 373, 268, 119."
 tweets |>
   mutate(month = month(time, label = TRUE, abbr = FALSE, locale = "el_GR.UTF-8")) |>
   ggplot(aes(x = month, fill = month)) +

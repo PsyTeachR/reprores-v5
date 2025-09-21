@@ -49,13 +49,21 @@ There are a few settings you should fix immediately after updating RStudio. Go t
 
 You may also want to change the appearance of your code. Different fonts and themes can sometimes help with visual difficulties or [dyslexia](https://datacarpentry.org/blog/2017/09/coding-and-dyslexia). 
 
-```{r settings-general, eval = TRUE, echo=FALSE, fig.cap = "RStudio General and Appearance settings"}
+```{r}
+#| label: fig-settings-general
+#| echo: false
+#| fig-cap: "RStudio General and Appearance settings"
+#| fig-alt: "The settings interface for the General and Appearance tabs."
 knitr::include_graphics('images/appx/rstudio_settings_general_appearance.png')
 ```
 
 You may also want to change the settings in the Code tab. For example, Lisa prefers two spaces instead of tabs for my code and likes to be able to see the `r glossary("whitespace")` characters. But these are all a matter of personal preference.
 
-```{r settings-code, eval = TRUE, echo=FALSE, fig.cap = 'RStudio Code settings'}
+```{r}
+#| label: fig-settings-code
+#| echo: false
+#| fig-cap:  'RStudio Code settings'
+#| fig-alt: "The settings interface for the Code tab, showing the Editing and Display subtabs."
 knitr::include_graphics("images/appx/rstudio_settings_code.png")
 ```
 
@@ -81,7 +89,11 @@ RStudio is the easiest component to update. Typically, updates to RStudio won't 
 
 Click <if>Help > Check for updates</if>
 
-```{r img-updaterstudio, echo=FALSE, fig.cap="Updating RStudio"}
+```{r}
+#| label: fig-updaterstudio
+#| echo: false
+#| fig-cap: "Updating RStudio"
+#| fig-alt: "A screenshot of the RStudio interface showing the menu location of Help > Check for updates"
 knitr::include_graphics("images/appx/update_rstudio.jpg")
 ```
 
@@ -95,7 +107,9 @@ Finally, you may also wish to update R itself. The key thing to be aware of is t
 
 The easiest way to update R on Windows and not cause yourself a huge headache is to use the <pkg>installr</pkg> package. When you use the `updateR()` function, a series of dialogue boxes will appear. These should be fairly self-explanatory but there is a [full step-by-step guide available](https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/) for how to use `installr`, the important bit is to select "Yes" when it asked if you would like to copy your packages from the older version of R.
 
-```{r installr, eval = FALSE}
+```{r}
+#| label: installr
+#| eval: false
 # Install the installr package
 install.packages("installr")
 
@@ -107,7 +121,8 @@ installR::updateR()
 
 For a Mac, you can use the [<pkg>updateR</pkg>](https://github.com/AndreaCirilloAC/updateR) package. You'll need to install this from GitHub. You will be asked to type your system password (that you use to log into your computer) in the console pane. If relevant, it will ask you if you want to restore your packages for a new major version.
 
-```{r, eval = FALSE}
+```{r}
+#| eval: false
 # install from github
 devtools::install_github("AndreaCirilloAC/updateR")
 
@@ -123,13 +138,19 @@ Package developers will occasionally release updates to their packages. This is 
 
 To update an individual package, the easiest way is to use the `install.packages()` function, as this always installs the most recent version of the package.
 
-```{r update_one, eval = FALSE}
+```{r}
+#| label: update-one
+#| eval: false
 install.packages("tidyverse")
 ```
 
 To update multiple packages, or indeed all packages, RStudio provides helpful tools. Click <if>Tools > Check for Package Updates</if>. A dialogue box will appear and you can select the packages you wish to update. Be aware that if you select all packages, this may take some time and you will be unable to use R whilst the process completes.
 
-```{r img-updateall, echo=FALSE, fig.cap="Updating packages with RStudio"}
+```{r}
+#| label: fig-updateall
+#| echo: false
+#| fig-cap: "Updating packages with RStudio"
+#| fig-alt: "Package update popup interface showing a list of package names, installed version numbers, available version numbers, and notes."
 knitr::include_graphics("images/appx/update_packages.png")
 ```
 
@@ -142,7 +163,9 @@ Occasionally, you might have a few problem packages that seemingly refuse to upd
 
 If you try to update a package and get an error message that says something like `Warning in install.packages : installation of package ‘vctrs’ had non-zero exit status` or perhaps `Error in loadNamespace(i, c(lib.loc, .libPaths()), versionCheck = vI[[i]]) :  namespace 'rlang' 0.4.9 is being loaded, but >= 0.4.10 is required` one solution I have found is to manually uninstall the package, restart R, and then install the package new, rather than trying to update an existing version. The `installr` package also has a useful function for uninstalling packages.
 
-```{r problem_packages, eval = FALSE}
+```{r}
+#| label: problem-packages
+#| eval: false
 # Load installr
 library(installr)
 
@@ -166,7 +189,9 @@ This usually indicates a permissions problem with writing to the default library
 
 One other fix may be to change the library location using the following code (check in "C:/Program Files/R" for what version you should have instead of "R-3.5.2"):
 
-```{r, eval = FALSE}
+```{r}
+#| label: libPaths
+#| eval: false
 # change the library path
 .libPaths(c("C:/Program Files/R/R-3.5.2/library"))
 ```

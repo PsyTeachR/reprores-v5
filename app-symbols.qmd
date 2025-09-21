@@ -33,7 +33,11 @@
 | ...    | `glossary("ellipsis")`| dots     |
 
 
-```{r fig-soundimals-hash, echo=FALSE, fig.cap="[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)"}
+```{r}
+#| label: fig-soundimals-hash
+#| echo: false
+#| fig-cap: "[Image by James Chapman/Soundimals](https://soundimals.tumblr.com/post/167354564886/chapmangamo-the-symbol-has-too-many-names)"
+#| fig-alt: "Picture of # with the title: 'WHATEVER THIS IS CALLED (HASHTAG? POUND SIGN? OCTOTHORPE?) AROUND THE WORLD, JAMES CHAPMAN SOUNDIMALS.COM; Lumberyard (Swedish) brädgård; Well (Chinese) 井, Ladder (Croatian) ljestve, Little Gate (Italian) cancelletto, Double Cross (Hungarian) kettőskereszt, Bars (Estonian) trellid, Tic-Tac-Toe (Brazil) jogo da velha, Cat (Mexico, Chile) gato, Little Cushion (Spanish) almohadilla"
 
 knitr::include_graphics("images/appx/soundimals_hash.png")
 

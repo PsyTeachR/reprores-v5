@@ -18,40 +18,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -1929,9 +1895,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>The <code>alpha</code> argument changes transparency (0 = totally transparent, 1 = totally opaque).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/alpha-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Varying alpha values.</figcaption></figure>
+<div id="fig-alpha-demo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A demo with 'alpha' on the x-axis and ticks from 0.0 to 1.0 in 0.1 steps. The top line shows blue dota with increasing alpha (i.e., decreacing transparency) over a black line. The bottom line shows black dots with increasing alpha over a blue line.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-alpha-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-alpha-demo-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A demo with 'alpha' on the x-axis and ticks from 0.0 to 1.0 in 0.1 steps. The top line shows blue dota with increasing alpha (i.e., decreacing transparency) over a black line. The bottom line shows black dots with increasing alpha over a blue line.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-alpha-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.1: Varying alpha values
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1940,9 +1910,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>The <code>shape</code> argument changes the shape of points.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/shape-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>The 25 shape values</figcaption></figure>
+<div id="fig-shape-demo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The numbers 1-25 on the x-axis, with the 25 different point shapes above them: open cirlce, open up triangle, +, x, open diamond, open down triangle, box with x, *, diamond with +, circle with +, star of david, box with +, circle with x, box with up triangle, solid square, solid circle, solid up triangle, solid diamond, big solid circle, small solid circle, open circle, open square, open diamond, open up triangle, open down triangle">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-shape-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-shape-demo-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The numbers 1-25 on the x-axis, with the 25 different point shapes above them: open cirlce, open up triangle, +, x, open diamond, open down triangle, box with x, *, diamond with +, circle with +, star of david, box with +, circle with x, box with up triangle, solid square, solid circle, solid up triangle, solid diamond, big solid circle, small solid circle, open circle, open square, open diamond, open up triangle, open down triangle">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shape-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.2: The 25 shape values
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1951,9 +1925,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>You can probably guess what the <code>linetype</code> argument does.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/linetype-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>The 6 linetype values at different sizes.</figcaption></figure>
+<div id="fig-linetype-demo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The x-axis shows linetype, with 6 values (1-6). There are 4 facets of different linewidths (0.25, 0.5, 1, 2). Linetype 1 is solid, 2 is dashes, 3 is dots, 4 is alternating dot dash, 5 is long dashes, and 6 is longer dot dash.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-linetype-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-linetype-demo-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The x-axis shows linetype, with 6 values (1-6). There are 4 facets of different linewidths (0.25, 0.5, 1, 2). Linetype 1 is solid, 2 is dashes, 3 is dots, 4 is alternating dot dash, 5 is long dashes, and 6 is longer dot dash.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-linetype-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.3: The 6 linetype values at different sizes
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1962,9 +1940,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>Discrete palettes change depending on the number of categories.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-4-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Default discrete palette with different numbers of levels.</figcaption></figure>
+<div id="fig-default-discrete-palette" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A series of violin plots showing 1 to 8 violins and the colours that are used for each combination.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-default-discrete-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-default-discrete-palette-1.png" class="img-fluid figure-img" style="width:100.0%" alt="A series of violin plots showing 1 to 8 violins and the colours that are used for each combination.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-default-discrete-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.4: Default discrete palette with different numbers of levels.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -1976,9 +1958,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <p>Set <a href="https://psyteachr.github.io/glossary/d#discrete" target="_blank" class="glossary" title="Data that can only take certain values, such as integers.">discrete</a> viridis colours with <code>scale_colour_viridis_d()</code> or <code>scale_fill_viridis_d()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-5-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Discrete viridis palettes.</figcaption></figure>
+<div id="fig-viridis-palette" class="quarto-float quarto-figure quarto-figure-center anchored" alt="5 rows and 2 columns of violin plots. Each row shows a different colour palette from the viridis options: magma, inferno, plasma, viridis, and cividis. The left plot in each row shows the colours for 5 levels, the right plot shows the colours for 15 levles.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-viridis-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-viridis-palette-1.png" class="img-fluid figure-img" style="width:100.0%" alt="5 rows and 2 columns of violin plots. Each row shows a different colour palette from the viridis options: magma, inferno, plasma, viridis, and cividis. The left plot in each row shows the colours for 5 levels, the right plot shows the colours for 15 levles.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viridis-palette-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.5: Discrete viridis palettes
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2000,9 +1986,13 @@ Note
 <p>Set <a href="https://psyteachr.github.io/glossary/c#continuous" target="_blank" class="glossary" title="Data that can take on any values between other existing values.">continuous</a> viridis colours with <code>scale_colour_viridis_c()</code> or <code>scale_fill_viridis_c()</code> and set the <code>option</code> argument to one of the options below. Set <code>direction = -1</code> to reverse the order of colours.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-6-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Continuous viridis palettes.</figcaption></figure>
+<div id="fig-viridis-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Five hex plots showing density across the x and y axes, where lighter colours correspond to higher count.  Each panel shows a different colour palette from the viridis options: magma, inferno, plasma, viridis, and cividis.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-viridis-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-viridis-continuous-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Five hex plots showing density across the x and y axes, where lighter colours correspond to higher count.  Each panel shows a different colour palette from the viridis options: magma, inferno, plasma, viridis, and cividis.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-viridis-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.6: Continuous viridis palettes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2014,9 +2004,13 @@ Note
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/c#categorical" target="_blank" class="glossary" title="Data that can only take certain values, such as types of pet.">categorical</a> data with up to 8 categories (some palettes can handle up to 12). The “Paired” palette is useful if your categories are arranged in pairs.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Qualitative brewer palettes.</figcaption></figure>
+<div id="fig-quali-brewer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="8 violin plots showing the 8-12 colours in each palette (numebr of colours in parentheses): Accent (8), Dark2 (8), Paired (12), Pastel1 (8), Pastel2 (8), Set1 (9), Set2 (8), Set3 (12)">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quali-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-quali-brewer-1.png" class="img-fluid figure-img" style="width:100.0%" alt="8 violin plots showing the 8-12 colours in each palette (numebr of colours in parentheses): Accent (8), Dark2 (8), Paired (12), Pastel1 (8), Pastel2 (8), Set1 (9), Set2 (8), Set3 (12)">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quali-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.7: Qualitative brewer palettes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2025,9 +2019,13 @@ Note
 <p>These palettes are good for up to 9 <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with a lot of categories.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-8-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Sequential brewer palettes.</figcaption></figure>
+<div id="fig-sequential-brewer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="18 violin plots showing the 9 colours in each palette: Reds, RdPu, Oranges, OrRd, YlOrRd, YlOrBr, YlGn, YlGnBu, Greens, GnBu, Blues, BuGn, BuPu, Purples, PuRd, PuBu, PuBuGn, Greys">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-sequential-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-sequential-brewer-1.png" class="img-fluid figure-img" style="width:100.0%" alt="18 violin plots showing the 9 colours in each palette: Reds, RdPu, Oranges, OrRd, YlOrRd, YlOrBr, YlGn, YlGnBu, Greens, GnBu, Blues, BuGn, BuPu, Purples, PuRd, PuBu, PuBuGn, Greys">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sequential-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.8: Sequential brewer palettes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2036,9 +2034,13 @@ Note
 <p>These palettes are good for <a href="https://psyteachr.github.io/glossary/o#ordinal" target="_blank" class="glossary" title="Discrete variables that have an inherent order, such as level of education or dislike/like.">ordinal</a> categories with up to 11 levels where the centre level is a neutral or baseline category and the levels above and below it differ in an important way, such as agree versus disagree options.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-9-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Diverging brewer palettes.</figcaption></figure>
+<div id="fig-diverging-brewer" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Nine violin plots showing the 11 colours in each palette: BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, and Spectral">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-diverging-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-diverging-brewer-1.png" class="img-fluid figure-img" style="width:100.0%" alt="Nine violin plots showing the 11 colours in each palette: BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, and Spectral">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-diverging-brewer-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.9: Diverging brewer palettes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2047,9 +2049,13 @@ Note
 <p><pkg>ggplot2</pkg> has 8 built-in themes that you can add to a plot like <code>plot + theme_bw()</code> or set as the default theme at the top of your script like <code>theme_set(theme_bw())</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-10-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>{ggplot2} themes.</figcaption></figure>
+<div id="fig-ggplot2-themes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot in 8 different themes: bw, classic, dark, gray, light, linedraw, minimal, void">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggplot2-themes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-ggplot2-themes-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot in 8 different themes: bw, classic, dark, gray, light, linedraw, minimal, void">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggplot2-themes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.10: {ggplot2} themes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2058,9 +2064,13 @@ Note
 <p>You can get more themes from add-on packages, like <pkg>ggthemes”, “https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/”)<code>. Most of the themes also have custom</code>scale_<code>functions like</code>scale_colour_economist()`. Their website has extensive examples and instructions for alternate or dark versions of these themes.</pkg></p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-11-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>{ggthemes} themes.</figcaption></figure>
+<div id="fig-ggthemes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot in 17 different themes: calc, economist, economist_white, excel, excel_new, few, fivethirtyeight, gdocs, hc, igray, map, pander, solarized, solarized_2, stata, tufte, and wsj.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-ggthemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-ggthemes-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot in 17 different themes: calc, economist, economist_white, excel, excel_new, few, fivethirtyeight, gdocs, hc, igray, map, pander, solarized, solarized_2, stata, tufte, and wsj.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ggthemes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.11: {ggthemes} themes.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2068,20 +2078,14 @@ Note
 <span class="header-section-number">L.3.2</span> Fonts</h3>
 <p>You can customise the fonts used in themes. All computers should be able to recognise the families “sans”, “serif”, and “mono”, and some computers will be able to access other installed fonts by name.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>sans <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"sans"</span>) <span class="sc">+</span> </span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">ggtitle</span>(<span class="st">"Sans"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>serif <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"serif"</span>) <span class="sc">+</span> </span>
-<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">ggtitle</span>(<span class="st">"Serif"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a>mono <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"mono"</span>) <span class="sc">+</span> </span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">ggtitle</span>(<span class="st">"Mono"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>font <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme_bw</span>(<span class="at">base_family =</span> <span class="st">"Comic Sans MS"</span>) <span class="sc">+</span> </span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">ggtitle</span>(<span class="st">"Comic Sans MS"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>sans <span class="sc">+</span> serif <span class="sc">+</span> mono <span class="sc">+</span> font <span class="sc">+</span> <span class="fu">plot_layout</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/theme-font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Different fonts.</figcaption></figure>
+<div id="fig-theme-font-demo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot with the stystem standard Sans, Serif, Mono, fonts, plus Comic Sans MS.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-theme-font-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-theme-font-demo-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot with the stystem standard Sans, Serif, Mono, fonts, plus Comic Sans MS.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theme-font-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.12: Different fonts.
+</figcaption></figure>
 </div>
 </div>
 </div>
@@ -2100,58 +2104,31 @@ Warning
 </div>
 <p>The <pkg>showtext</pkg> package is a flexible way to add fonts.</p>
 <p>If you have a .ttf file from a font site, like <a href="https://www.fontsquirrel.com">Font Squirrel</a>, you can load the file directly using <code>font_add()</code>. Set <code>regular</code> as the path to the file for the regular version of the font, and optionally add other versions. Set the <code>family</code> to the name you want to use for the font. You will need to include any local font files if you are sharing your script with others.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(showtext)</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># font from https://www.fontsquirrel.com/fonts/SF-Cartoonist-Hand</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu">font_add</span>(</span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="at">regular =</span> <span class="st">"fonts/cartoonist/SF_Cartoonist_Hand.ttf"</span>,</span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="at">bold =</span> <span class="st">"fonts/cartoonist/SF_Cartoonist_Hand_Bold.ttf"</span>,</span>
-<span id="cb2-8"><a href="#cb2-8"></a>  <span class="at">italic =</span> <span class="st">"fonts/cartoonist/SF_Cartoonist_Hand_Italic.ttf"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9"></a>  <span class="at">bolditalic =</span> <span class="st">"fonts/cartoonist/SF_Cartoonist_Hand_Bold_Italic.ttf"</span>,</span>
-<span id="cb2-10"><a href="#cb2-10"></a>  <span class="at">family =</span> <span class="st">"cartoonist"</span> </span>
-<span id="cb2-11"><a href="#cb2-11"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>To download fonts directly from <a href="https://fonts.google.com/">Google fonts</a>, use the function <code>font_add_google()</code>, set the <code>name</code> to the exact name from the site, and the <code>family</code> to the name you want to use for the font.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># download fonts from Google</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Courgette"</span>, <span class="at">family =</span> <span class="st">"courgette"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">font_add_google</span>(<span class="at">name =</span> <span class="st">"Poiret One"</span>, <span class="at">family =</span> <span class="st">"poiret"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>After you’ve added fonts from local files or Google, you need to make them available to R using <code>showtext_auto()</code>. You will have to do these steps in each script where you want to use the custom fonts.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">showtext_auto</span>() <span class="co"># load the fonts</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <p>To change the fonts used overall in a plot, use the <code>theme()</code> function and set <code>text</code> to <code>element_text(family = "new_font_family")</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"courgette"</span>)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">ggtitle</span>(<span class="st">"Courgette"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>b <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"cartoonist"</span>)) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">ggtitle</span>(<span class="st">"Cartoonist Hand"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5"></a>c <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"poiret"</span>)) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">ggtitle</span>(<span class="st">"Poiret One"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>a <span class="sc">+</span> b <span class="sc">+</span> c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/font-demo-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Custom Fonts.</figcaption></figure>
+<div id="fig-font-demo" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot with three fonts: Courgette (italic handwriting), Cartoonist Hand (cartoon style), and Poiret One (thin art deco).">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-font-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-font-demo-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot with three fonts: Courgette (italic handwriting), Cartoonist Hand (cartoon style), and Poiret One (thin art deco).">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-font-demo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.13: Custom Fonts.
+</figcaption></figure>
 </div>
 </div>
 </div>
 <p>To set the fonts for individual elements in the plot, you need to find the specific argument for that element. You can use the argument <code>face</code> to choose “bold”, “italic”, or “bolditalic” versions, if they are available.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>g <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Cartoonist Hand"</span>) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">theme</span>(</span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"cartoonist"</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"cartoonist"</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
-<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"sans"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/figures/demo-multi-text-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption>Multiple custom fonts on the same plot.</figcaption></figure>
+<div id="fig-demo-multi-text" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot with the title in Cartoonist Hand bold, the facet strip titles in cartoonist hand italic, and the x-axis labels in sans serif font.">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-demo-multi-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-demo-multi-text-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot with the title in Cartoonist Hand bold, the facet strip titles in cartoonist hand italic, and the x-axis labels in sans serif font.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-demo-multi-text-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;L.14: Multiple custom fonts on the same plot.
+</figcaption></figure>
 </div>
 </div>
 </div>

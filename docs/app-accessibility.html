@@ -396,7 +396,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 </header><div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sonify)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(sonify)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="visual-impairment" class="level2" data-number="G.1"><h2 data-number="G.1" class="anchored" data-anchor-id="visual-impairment">
 <span class="header-section-number">G.1</span> Visual Impairment</h2>
@@ -422,9 +423,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-none" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-none" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'none' on the y-axis with range -3 to 3. There are 601 points (solid black circles) and a trendline at about y = 0 that curves up slightly at both ends." width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-none-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-none-1.png" id="fig-none" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-none-1.png" id="fig-none" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'none' on the y-axis with range -3 to 3. There are 601 points (solid black circles) and a trendline at about y = 0 that curves up slightly at both ends.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-none-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;G.1
@@ -441,9 +442,9 @@ Figure&nbsp;G.1
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-linear-pos" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-linear-pos" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_pos' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of 1 (from -3, -3 to 3, 3). Points are spread out about +/- 2 from the trendline)." width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-linear-pos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-linear-pos-1.png" id="fig-linear-pos" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-linear-pos-1.png" id="fig-linear-pos" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_pos' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of 1 (from -3, -3 to 3, 3). Points are spread out about +/- 2 from the trendline).">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-linear-pos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;G.2
@@ -460,9 +461,9 @@ Figure&nbsp;G.2
 <span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-linear-neg" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-linear-neg" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline)." width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-linear-neg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-linear-neg-1.png" id="fig-linear-neg" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-linear-neg-1.png" id="fig-linear-neg" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline).">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-linear-neg-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;G.3
@@ -479,9 +480,9 @@ Figure&nbsp;G.3
 <span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-quadratic" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-quadratic" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -12 to 10. There are 601 points (solid black circles) and a trendline with a U-shaped quadratic pattern starting about -3, 8, with a lowest point of 0, 0, and ending about 3, 8. Points are spread out about +/- 2 from the trendline)." width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-quadratic-1.png" id="fig-quadratic" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-quadratic-1.png" id="fig-quadratic" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -12 to 10. There are 601 points (solid black circles) and a trendline with a U-shaped quadratic pattern starting about -3, 8, with a lowest point of 0, 0, and ending about 3, 8. Points are spread out about +/- 2 from the trendline).">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-quadratic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;G.4
@@ -504,37 +505,44 @@ Figure&nbsp;G.4
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> linear_neg)) <span class="sc">+</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-7-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is an untitled chart with no subtitle or caption.
 It has x-axis '' with labels -2, 0 and 2.
-It has y-axis '' with labels -4, 0 and 4.
+It has y-axis '' with labels -6, -3, 0, 3 and 6.
 It has 2 layers.
 Layer 1 is a set of 601 big solid circle points of which about 93% can be seen.
-Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 2.6% of the graph.</code></pre>
+Layer 2 is a 'lowess' smoothed curve with 95% confidence intervals covering 2.9% of the graph.</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-linear-neg-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline)." width="100%">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-linear-neg-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/figures/fig-linear-neg-2-1.png" id="fig-linear-neg-2" class="img-fluid figure-img" style="width:100.0%" alt="A scatterplot with 'x' on the x axis with range -3 to 3, and 'linear_neg' on the y-axis with range -6 to 6. There are 601 points (solid black circles) and a trendline with a slope of -1 (from -3, 3, to 3, -3). Points are spread out about +/- 2 from the trendline).">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-linear-neg-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;G.5
+</figcaption></figure>
 </div>
 </div>
+</div>
+<p>You can see it doesn’t alway get everything right. It only readds the axis labels if they have been explicitly set.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> quadratic)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_violin</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(dat, <span class="fu">aes</span>(<span class="at">x =</span> category, <span class="at">y =</span> quadratic, <span class="at">fill =</span> category)) <span class="sc">+</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_violin</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Category"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>       <span class="at">y =</span> <span class="st">"Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>This is an untitled chart with no subtitle or caption.
-It has x-axis '' with labels control and experimental.
-It has y-axis '' with labels 0, 4 and 8.
+It has x-axis 'Category' with labels control and experimental.
+It has y-axis 'Score' with labels 0, 4 and 8.
 The chart is a violin graph that VI cannot process.</code></pre>
 </div>
 <div class="cell-output-display">
-<div id="fig-violin" class="quarto-float quarto-figure quarto-figure-center anchored" width="100%">
+<div id="fig-violin" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A violin plot with 'category' on the x-axis and labels 'contol' and 'experimental', and `quadratic' on the y-axis with range -2 to 12. Two white shapes show the distribution, which is bottom-heavy and ranging from about -2 to 9 for both categories with no obvious difference." width="100%">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/figures/fig-violin-1.png" id="fig-violin" class="img-fluid figure-img" style="width:100.0%">
+<img src="images/figures/fig-violin-1.png" id="fig-violin" class="img-fluid figure-img" style="width:100.0%" alt="A violin plot with 'category' on the x-axis and labels 'contol' and 'experimental', and `quadratic' on the y-axis with range -2 to 12. Two white shapes show the distribution, which is bottom-heavy and ranging from about -2 to 9 for both categories with no obvious difference.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-violin-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;G.5
+Figure&nbsp;G.6
 </figcaption></figure>
 </div>
 </div>
