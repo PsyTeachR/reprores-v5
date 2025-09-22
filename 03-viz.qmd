@@ -607,6 +607,7 @@ Set the y-axis name to "Mean Welfare per Capita" and the breaks to every 20 with
 
 
 ```{r}
+#| label: img-scale-y-continuous
 #| webex.hide: true
 #| fig-alt: "The plot above with the x-axis labelled 'Gini Index' and breaks at 0.3, 0.4, 0.5, and 0.6, and the y-axis labelled 'Mean Welfare per Capita' and breaks at 0, 20, 40, 60, and 80."
 ggplot(pip,  aes(x = gini, y = welfare_mean)) +
@@ -817,7 +818,7 @@ ggplot(pip, aes(x = region_code)) +
 ```
 
 ::: {.try}
-You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions `scale_fill_manual()` and `scale_x_discrete()` are new, but work in the same way as the other `scale_` functions. You'll learn more about this in @sec-custom-viz.
+You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions `scale_fill_manual()` and `scale_x_discrete()` are new, but work in the same way as the other `scale_` functions. You can learn more about this in @sec-more-plots.
 
 ```{r}
 #| label: custom-bar
@@ -885,7 +886,7 @@ ggplot(count_data, aes(x = region_code, y = n)) +
 
 #### Pie chart
 
-Pie charts are a [misleading form of data visualisation](https://www.data-to-viz.com/caveat/pie.html), so we won't cover them. We'll cover options for visualising proportions, like waffle, lollipop and treemap plots, in @sec-other-plots.
+Pie charts are a [misleading form of data visualisation](https://www.data-to-viz.com/caveat/pie.html), so we won't cover them. We cover options for visualising proportions, like waffle, lollipop and treemap plots, in @sec-more-plots.
 
 ::: {.try}
 
@@ -1213,14 +1214,13 @@ ggplot(pip,  aes(x = region_code,
   coord_cartesian(ylim = c(0, 100)) +
   guides(fill = "none", colour = "none") + 
   # add a violin plot
-  geom_violin(draw_quantiles = 0.5, # adds a line at median (50%) score
-              alpha = 0.4,
+  geom_violin(alpha = 0.4,
               scale = "width") + 
   # add a boxplot
   geom_boxplot(width = 0.25, 
                fill = "white", 
                alpha = 0.75, 
-               fatten = 0, # removes the median line
+               median.linewidth = 0, # removes the median line
                outlier.alpha = 0) + 
   # add a point that represents the mean
   stat_summary(fun = mean, 
@@ -1302,7 +1302,7 @@ aes <- sample(c(
 g <- ggplot(pip, aes(x = region_code, y = gini, fill = region_code)) +
   guides(fill = "none")
   
-v <- g + geom_violin(draw_quantiles = 0.5)
+v <- g + geom_violin(quantiles = 0.5, quantile.linetype = 1, scale="width")
 b <- g + geom_boxplot()
 
 v + b + plot_annotation(tag_levels = "A")
@@ -1497,7 +1497,7 @@ ggplot(simdat, aes(x = score)) +
 ::: {.callout-note}
 ## More plots styles
 
-These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in @sec-custom-viz). The [further resources](#resources-viz) section at the end of this chapter lists many resources, but the [R Graph Gallery](http://www.r-graph-gallery.com/) is especially useful to get inspiration for the kinds of beautiful plots you can make in R. 
+These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in @sec-more-plots). The [further resources](#resources-viz) section at the end of this chapter lists many resources, but the [R Graph Gallery](http://www.r-graph-gallery.com/) is especially useful to get inspiration for the kinds of beautiful plots you can make in R. 
 :::
 
 ## Exercises

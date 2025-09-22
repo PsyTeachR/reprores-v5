@@ -86,6 +86,7 @@ book:
   - app-dates.qmd
   - app-tables.qmd
   - app-styling.qmd
+  - app-plots.qmd
   - app-webpage.qmd
 
 bibliography:

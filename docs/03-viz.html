@@ -352,8 +352,14 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -595,14 +601,14 @@ Do not factor numbers
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># the current date</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>lubridate<span class="sc">::</span><span class="fu">today</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-09-19"</code></pre>
+<pre><code>[1] "2025-09-22"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># the current date and time in the GMT timezone</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"GMT"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2025-09-19 13:40:55 GMT"</code></pre>
+<pre><code>[1] "2025-09-22 09:05:30 GMT"</code></pre>
 </div>
 </div>
 <div class="try">
@@ -1194,7 +1200,7 @@ Solution
 <span id="cb39-10"><a href="#cb39-10"></a>                     <span class="at">minor_breaks =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-21-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The plot above with the x-axis labelled 'Gini Index' and breaks at 0.3, 0.4, 0.5, and 0.6, and the y-axis labelled 'Mean Welfare per Capita' and breaks at 0, 20, 40, 60, and 80."></p>
+<figure class="figure"><p><img src="images/figures/img-scale-y-continuous-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The plot above with the x-axis labelled 'Gini Index' and breaks at 0.3, 0.4, 0.5, and 0.6, and the y-axis labelled 'Mean Welfare per Capita' and breaks at 0, 20, 40, 60, and 80."></p>
 </figure>
 </div>
 </div>
@@ -1423,7 +1429,7 @@ Figure&nbsp;3.13: A basic bar plot.
 </div>
 </div>
 <div class="try">
-<p>You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions <code>scale_fill_manual()</code> and <code>scale_x_discrete()</code> are new, but work in the same way as the other <code>scale_</code> functions. You’ll learn more about this in <a href="10-next.html#sec-custom-viz" class="quarto-xref"><span>Section 10.1</span></a>.</p>
+<p>You probably want to customise some things, like the colours, order of the columns, and their labels. Inspect the code below and try running it layer by layer to figure out where these things change. The functions <code>scale_fill_manual()</code> and <code>scale_x_discrete()</code> are new, but work in the same way as the other <code>scale_</code> functions. You can learn more about this in <a href="app-plots.html" class="quarto-xref"><span>Appendix M</span></a>.</p>
 <div class="cell" data-webex.hide="Code">
 <div class="webex-solution">
 <button>
@@ -1534,7 +1540,7 @@ Figure&nbsp;3.14: A basic column plot.
 </div>
 </section><section id="pie-chart" class="level4" data-number="3.3.1.3"><h4 data-number="3.3.1.3" class="anchored" data-anchor-id="pie-chart">
 <span class="header-section-number">3.3.1.3</span> Pie chart</h4>
-<p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html">misleading form of data visualisation</a>, so we won’t cover them. We’ll cover options for visualising proportions, like waffle, lollipop and treemap plots, in <a href="10-next.html#sec-other-plots" class="quarto-xref"><span>Section 10.1.4</span></a>.</p>
+<p>Pie charts are a <a href="https://www.data-to-viz.com/caveat/pie.html">misleading form of data visualisation</a>, so we won’t cover them. We cover options for visualising proportions, like waffle, lollipop and treemap plots, in <a href="app-plots.html" class="quarto-xref"><span>Appendix M</span></a>.</p>
 <div class="try">
 <p>Test your understanding; here is a small data table.</p>
 <table class="caption-top table">
@@ -1577,8 +1583,8 @@ Figure&nbsp;3.14: A basic column plot.
 <option value="answer">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_VXZULJZDJJ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_VXZULJZDJJ" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_VXZULJZDJJ" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VXZULJZDJJ" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VXZULJZDJJ" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_VXZULJZDJJ" value="x"><span>aes(y = population)</span></label>
+<div id="radio_OMYYGXXBME" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OMYYGXXBME" value="answer"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_OMYYGXXBME" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_OMYYGXXBME" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_OMYYGXXBME" value="x"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_OMYYGXXBME" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 <li><p>What geom would you use to plot the number of countries on each island? <select class="webex-select"><option value="blank"></option>
@@ -1586,8 +1592,8 @@ Figure&nbsp;3.14: A basic column plot.
 <option value="x">geom_col</option></select></p></li>
 <li>
 <p>What mapping would you use?</p>
-<div id="radio_GOZZYJMHLY" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_GOZZYJMHLY" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_GOZZYJMHLY" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_GOZZYJMHLY" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_GOZZYJMHLY" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_GOZZYJMHLY" value="x"><span>aes(y = population)</span></label>
+<div id="radio_VJEHEJMGSY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VJEHEJMGSY" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_VJEHEJMGSY" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VJEHEJMGSY" value="x"><span>aes(x = country)</span></label><label><input type="radio" autocomplete="off" name="radio_VJEHEJMGSY" value="answer"><span>aes(x = island)</span></label><label><input type="radio" autocomplete="off" name="radio_VJEHEJMGSY" value="x"><span>aes(y = population)</span></label>
 </div>
 </li>
 </ul>
@@ -1668,8 +1674,8 @@ Figure&nbsp;3.17: Histogram with custom styles.
 </div>
 <ul>
 <li>How would you set the mapping for this plot?
-<div id="radio_REBTQHRFUQ" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_REBTQHRFUQ" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_REBTQHRFUQ" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_REBTQHRFUQ" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_REBTQHRFUQ" value="x"><span>aes(x = population, y = count)</span></label>
+<div id="radio_MKIHKFZWLM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MKIHKFZWLM" value="x"><span>aes(x = country, y = population)</span></label><label><input type="radio" autocomplete="off" name="radio_MKIHKFZWLM" value="x"><span>aes(x = population, y = country)</span></label><label><input type="radio" autocomplete="off" name="radio_MKIHKFZWLM" value="answer"><span>aes(x = population)</span></label><label><input type="radio" autocomplete="off" name="radio_MKIHKFZWLM" value="x"><span>aes(x = population, y = count)</span></label>
 </div>
 </li>
 <li>What is the <code>binwidth</code> of the histogram? <select class="webex-select"><option value="blank"></option>
@@ -1917,30 +1923,20 @@ Figure&nbsp;3.23: Boxplots.
 <span id="cb64-10"><a href="#cb64-10"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
 <span id="cb64-11"><a href="#cb64-11"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">"none"</span>, <span class="at">colour =</span> <span class="st">"none"</span>) <span class="sc">+</span> </span>
 <span id="cb64-12"><a href="#cb64-12"></a>  <span class="co"># add a violin plot</span></span>
-<span id="cb64-13"><a href="#cb64-13"></a>  <span class="fu">geom_violin</span>(<span class="at">draw_quantiles =</span> <span class="fl">0.5</span>, <span class="co"># adds a line at median (50%) score</span></span>
-<span id="cb64-14"><a href="#cb64-14"></a>              <span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
-<span id="cb64-15"><a href="#cb64-15"></a>              <span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span> </span>
-<span id="cb64-16"><a href="#cb64-16"></a>  <span class="co"># add a boxplot</span></span>
-<span id="cb64-17"><a href="#cb64-17"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, </span>
-<span id="cb64-18"><a href="#cb64-18"></a>               <span class="at">fill =</span> <span class="st">"white"</span>, </span>
-<span id="cb64-19"><a href="#cb64-19"></a>               <span class="at">alpha =</span> <span class="fl">0.75</span>, </span>
-<span id="cb64-20"><a href="#cb64-20"></a>               <span class="at">fatten =</span> <span class="dv">0</span>, <span class="co"># removes the median line</span></span>
-<span id="cb64-21"><a href="#cb64-21"></a>               <span class="at">outlier.alpha =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
-<span id="cb64-22"><a href="#cb64-22"></a>  <span class="co"># add a point that represents the mean</span></span>
-<span id="cb64-23"><a href="#cb64-23"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, </span>
-<span id="cb64-24"><a href="#cb64-24"></a>               <span class="at">geom =</span> <span class="st">"point"</span>, </span>
-<span id="cb64-25"><a href="#cb64-25"></a>               <span class="at">size =</span> <span class="dv">2</span>,</span>
-<span id="cb64-26"><a href="#cb64-26"></a>               <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span> </span>
-<span id="cb64-27"><a href="#cb64-27"></a>  <span class="fu">ggtitle</span>(<span class="st">"ViolinBox"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `draw_quantiles` argument of `geom_violin()` is deprecated as of ggplot2
-4.0.0.
-ℹ Please use the `quantiles.linetype` argument instead.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: The `fatten` argument of `geom_boxplot()` is deprecated as of ggplot2 4.0.0.
-ℹ Please use the `median.linewidth` argument instead.</code></pre>
-</div>
+<span id="cb64-13"><a href="#cb64-13"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>,</span>
+<span id="cb64-14"><a href="#cb64-14"></a>              <span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span> </span>
+<span id="cb64-15"><a href="#cb64-15"></a>  <span class="co"># add a boxplot</span></span>
+<span id="cb64-16"><a href="#cb64-16"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.25</span>, </span>
+<span id="cb64-17"><a href="#cb64-17"></a>               <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb64-18"><a href="#cb64-18"></a>               <span class="at">alpha =</span> <span class="fl">0.75</span>, </span>
+<span id="cb64-19"><a href="#cb64-19"></a>               <span class="at">median.linewidth =</span> <span class="dv">0</span>, <span class="co"># removes the median line</span></span>
+<span id="cb64-20"><a href="#cb64-20"></a>               <span class="at">outlier.alpha =</span> <span class="dv">0</span>) <span class="sc">+</span> </span>
+<span id="cb64-21"><a href="#cb64-21"></a>  <span class="co"># add a point that represents the mean</span></span>
+<span id="cb64-22"><a href="#cb64-22"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, </span>
+<span id="cb64-23"><a href="#cb64-23"></a>               <span class="at">geom =</span> <span class="st">"point"</span>, </span>
+<span id="cb64-24"><a href="#cb64-24"></a>               <span class="at">size =</span> <span class="dv">2</span>,</span>
+<span id="cb64-25"><a href="#cb64-25"></a>               <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span> </span>
+<span id="cb64-26"><a href="#cb64-26"></a>  <span class="fu">ggtitle</span>(<span class="st">"ViolinBox"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-violin-combos" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A plot labelled 'ViolinBox' with 'Mean welfare per Capita' on the y-axis (0-90) and 'Region' (7 categories) on the x-axis. Each region is represented by a rainbow coloured violin with a boxplot inside it.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-violin-combos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2005,8 +2001,8 @@ Figure&nbsp;3.25: Don’t plot continuous data with column plots. They are only 
 <option value="x">geom_violinplot()</option></select>
 </li>
 <li>What does the mapping look like for both plots?
-<div id="radio_UIADILWFDW" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UIADILWFDW" value="answer"><span>aes(x = region_code, y = gini, fill = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_UIADILWFDW" value="x"><span>aes(x = region_code, y = gini, colour = gini)</span></label><label><input type="radio" autocomplete="off" name="radio_UIADILWFDW" value="x"><span>aes(x = region_code, y = gini, colour = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_UIADILWFDW" value="x"><span>aes(x = region_code, y = gini, fill = gini)</span></label>
+<div id="radio_WOGVTKVFAV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WOGVTKVFAV" value="x"><span>aes(x = region_code, y = gini, colour = gini)</span></label><label><input type="radio" autocomplete="off" name="radio_WOGVTKVFAV" value="answer"><span>aes(x = region_code, y = gini, fill = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_WOGVTKVFAV" value="x"><span>aes(x = region_code, y = gini, colour = region_code)</span></label><label><input type="radio" autocomplete="off" name="radio_WOGVTKVFAV" value="x"><span>aes(x = region_code, y = gini, fill = gini)</span></label>
 </div>
 </li>
 <li>Which region has the highest median Gini index? <select class="webex-select"><option value="blank"></option>
@@ -2027,8 +2023,8 @@ Figure&nbsp;3.25: Don’t plot continuous data with column plots. They are only 
 <span class="header-section-number">3.3.4.1</span> Scatterplot</h4>
 <p>The function to create a scatterplot is called <code>geom_point()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb67-2"><a href="#cb67-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb65-2"><a href="#cb65-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-demo-point" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are solid black.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-demo-point-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2045,25 +2041,25 @@ Figure&nbsp;3.26: Scatterplot with geom_point().”
 <p>In <a href="#fig-layers" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>, we emphasised the relationship between Gini index and welfare with a trendline created by <code>geom_smooth()</code> using the argument <code>method = lm</code> (“lm” stands for “linear model” or a straight line relationship). You can also set <code>method = loess</code> to visualise a non-linear relationship.</p>
 <p>The <code>formula</code> will default to <code>y~x</code> (y predicted by x), but if you suspect a different relationship, you can change this, such as to the equation for a quadratic relationship (<code>y~x + I(x^2)</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>loess_plot <span class="ot">&lt;-</span> </span>
-<span id="cb68-2"><a href="#cb68-2"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb68-3"><a href="#cb68-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb68-4"><a href="#cb68-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
-<span id="cb68-5"><a href="#cb68-5"></a>  <span class="fu">ggtitle</span>(<span class="st">"Default: method = loess, formula = y~x"</span>)</span>
-<span id="cb68-6"><a href="#cb68-6"></a></span>
-<span id="cb68-7"><a href="#cb68-7"></a>lm_plot <span class="ot">&lt;-</span> </span>
-<span id="cb68-8"><a href="#cb68-8"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb68-9"><a href="#cb68-9"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb68-10"><a href="#cb68-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
-<span id="cb68-11"><a href="#cb68-11"></a>  <span class="fu">ggtitle</span>(<span class="st">"Linear: method = lm, formula = y~x"</span>)</span>
-<span id="cb68-12"><a href="#cb68-12"></a></span>
-<span id="cb68-13"><a href="#cb68-13"></a>lm2_plot <span class="ot">&lt;-</span> </span>
-<span id="cb68-14"><a href="#cb68-14"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
-<span id="cb68-15"><a href="#cb68-15"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb68-16"><a href="#cb68-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb68-17"><a href="#cb68-17"></a>  <span class="fu">ggtitle</span>(<span class="st">"Quadratic: method = lm, formula = y~x + I(x^2)"</span>)</span>
-<span id="cb68-18"><a href="#cb68-18"></a></span>
-<span id="cb68-19"><a href="#cb68-19"></a>loess_plot <span class="sc">/</span> lm_plot <span class="sc">/</span> lm2_plot </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>loess_plot <span class="ot">&lt;-</span> </span>
+<span id="cb66-2"><a href="#cb66-2"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb66-3"><a href="#cb66-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb66-4"><a href="#cb66-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> loess, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
+<span id="cb66-5"><a href="#cb66-5"></a>  <span class="fu">ggtitle</span>(<span class="st">"Default: method = loess, formula = y~x"</span>)</span>
+<span id="cb66-6"><a href="#cb66-6"></a></span>
+<span id="cb66-7"><a href="#cb66-7"></a>lm_plot <span class="ot">&lt;-</span> </span>
+<span id="cb66-8"><a href="#cb66-8"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb66-9"><a href="#cb66-9"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb66-10"><a href="#cb66-10"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
+<span id="cb66-11"><a href="#cb66-11"></a>  <span class="fu">ggtitle</span>(<span class="st">"Linear: method = lm, formula = y~x"</span>)</span>
+<span id="cb66-12"><a href="#cb66-12"></a></span>
+<span id="cb66-13"><a href="#cb66-13"></a>lm2_plot <span class="ot">&lt;-</span> </span>
+<span id="cb66-14"><a href="#cb66-14"></a>  <span class="fu">ggplot</span>(pip,  <span class="fu">aes</span>(<span class="at">x =</span> gini, <span class="at">y =</span> welfare_mean)) <span class="sc">+</span></span>
+<span id="cb66-15"><a href="#cb66-15"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb66-16"><a href="#cb66-16"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x <span class="sc">+</span> <span class="fu">I</span>(x<span class="sc">^</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb66-17"><a href="#cb66-17"></a>  <span class="fu">ggtitle</span>(<span class="st">"Quadratic: method = lm, formula = y~x + I(x^2)"</span>)</span>
+<span id="cb66-18"><a href="#cb66-18"></a></span>
+<span id="cb66-19"><a href="#cb66-19"></a>loess_plot <span class="sc">/</span> lm_plot <span class="sc">/</span> lm2_plot </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-2-continuous" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Thre versions of a trend line trhough the scatterplot above with gini (0.2-0.7) on the x-axis and welfare_mean (0-90) on the y-axis. The dots are transparent black. The top plot 'Default: method = loess, formula = y~x' shows a wavy line through the points. The middle plot 'Linear: method = lm, formula = y~x' shows a straight line. The bottom plot 'Quadratic: method = lm, formula = y~x + I(x^2)' shows a smoothly curved line.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-2-continuous-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2092,28 +2088,28 @@ Error shading
 <span class="header-section-number">3.3.4.3</span> Dates</h4>
 <p>We’ll need some different data for the next few plots. Run the following code to simulate some data with random dates in the year 2025, random rating on an ordinal scale from 1 to 5, and random scores on a continuous scale from 0-100 that increase over the year and have an inverted-U shaped relationship to rating We’ll use simulation a lot in this class to make data so we can change it and see how that affects our code output.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes the simulation reproducible</span></span>
-<span id="cb69-2"><a href="#cb69-2"></a></span>
-<span id="cb69-3"><a href="#cb69-3"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="co"># number of data points to simulate</span></span>
-<span id="cb69-4"><a href="#cb69-4"></a></span>
-<span id="cb69-5"><a href="#cb69-5"></a><span class="co"># make a vector of the first day of the month</span></span>
-<span id="cb69-6"><a href="#cb69-6"></a>d <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.POSIXct</span>(<span class="st">'2025-01-01'</span>), <span class="fu">as.POSIXct</span>(<span class="st">'2025-12-31'</span>), <span class="at">by =</span> <span class="st">"sec"</span>)</span>
-<span id="cb69-7"><a href="#cb69-7"></a></span>
-<span id="cb69-8"><a href="#cb69-8"></a><span class="co"># sample n datetimes and randomly assign groups A:E</span></span>
-<span id="cb69-9"><a href="#cb69-9"></a><span class="co"># create n scores from a random normal distribution</span></span>
-<span id="cb69-10"><a href="#cb69-10"></a><span class="co"># where the mean depends on the month and rating</span></span>
-<span id="cb69-11"><a href="#cb69-11"></a>simdat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb69-12"><a href="#cb69-12"></a>  <span class="at">datetime =</span> <span class="fu">sample</span>(d, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb69-13"><a href="#cb69-13"></a>  <span class="at">rating =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb69-14"><a href="#cb69-14"></a>  <span class="at">mean =</span> <span class="dv">50</span> <span class="sc">+</span> <span class="fu">month</span>(datetime) <span class="sc">-</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fu">abs</span>(rating <span class="sc">-</span> <span class="dv">3</span>)<span class="sc">*</span><span class="dv">5</span> <span class="sc">-</span> <span class="dv">5</span>,</span>
-<span id="cb69-15"><a href="#cb69-15"></a>  <span class="at">score =</span> <span class="fu">rnorm</span>(n, mean, <span class="at">sd =</span> <span class="dv">12</span>)</span>
-<span id="cb69-16"><a href="#cb69-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a><span class="fu">set.seed</span>(<span class="dv">8675309</span>) <span class="co"># makes the simulation reproducible</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a></span>
+<span id="cb67-3"><a href="#cb67-3"></a>n <span class="ot">&lt;-</span> <span class="dv">10000</span> <span class="co"># number of data points to simulate</span></span>
+<span id="cb67-4"><a href="#cb67-4"></a></span>
+<span id="cb67-5"><a href="#cb67-5"></a><span class="co"># make a vector of the first day of the month</span></span>
+<span id="cb67-6"><a href="#cb67-6"></a>d <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">as.POSIXct</span>(<span class="st">'2025-01-01'</span>), <span class="fu">as.POSIXct</span>(<span class="st">'2025-12-31'</span>), <span class="at">by =</span> <span class="st">"sec"</span>)</span>
+<span id="cb67-7"><a href="#cb67-7"></a></span>
+<span id="cb67-8"><a href="#cb67-8"></a><span class="co"># sample n datetimes and randomly assign groups A:E</span></span>
+<span id="cb67-9"><a href="#cb67-9"></a><span class="co"># create n scores from a random normal distribution</span></span>
+<span id="cb67-10"><a href="#cb67-10"></a><span class="co"># where the mean depends on the month and rating</span></span>
+<span id="cb67-11"><a href="#cb67-11"></a>simdat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb67-12"><a href="#cb67-12"></a>  <span class="at">datetime =</span> <span class="fu">sample</span>(d, <span class="at">size =</span> n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb67-13"><a href="#cb67-13"></a>  <span class="at">rating =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb67-14"><a href="#cb67-14"></a>  <span class="at">mean =</span> <span class="dv">50</span> <span class="sc">+</span> <span class="fu">month</span>(datetime) <span class="sc">-</span> <span class="dv">6</span> <span class="sc">+</span> <span class="fu">abs</span>(rating <span class="sc">-</span> <span class="dv">3</span>)<span class="sc">*</span><span class="dv">5</span> <span class="sc">-</span> <span class="dv">5</span>,</span>
+<span id="cb67-15"><a href="#cb67-15"></a>  <span class="at">score =</span> <span class="fu">rnorm</span>(n, mean, <span class="at">sd =</span> <span class="dv">12</span>)</span>
+<span id="cb67-16"><a href="#cb67-16"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>datetime</code> column contains both a date and a time, so use the <code><a href="https://rdrr.io/r/base/date.html">date()</a></code> function from <pkg>lubridate</pkg> to convert it to just a date. We’ll need it in this format to be able to transform the x-axis below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
-<span id="cb70-2"><a href="#cb70-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span> </span>
-<span id="cb70-3"><a href="#cb70-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
+<span id="cb68-2"><a href="#cb68-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span> </span>
+<span id="cb68-3"><a href="#cb68-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-date-x" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A line plot with `date(datetime) on the x-axis and tickes reading Jan 2025 to Jan 2026 in 3-month increments, and score on the y-axis with ticks ranging from 45.0 to 57.5. A blue linear trend line goes from the bottom left corner to the toop right.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-date-x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2127,13 +2123,13 @@ Figure&nbsp;3.28: Plotting dates.
 </div>
 <p>We can use <code>scale_x_date()</code> to set the <code>date_breaks</code> to be “1 month” apart. The <code>date_labels</code> argument uses a code for different date formats; you can see the full list of possibilities in the help for <code><a href="https://rdrr.io/r/base/strptime.html">?strptime</a></code>. For example, <code>%b</code> means “Abbreviated month name”, whilst if you wanted to use a format like “2020/01/31” you could try <code>"%Y/%m/%d"</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
-<span id="cb71-2"><a href="#cb71-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb71-3"><a href="#cb71-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
-<span id="cb71-4"><a href="#cb71-4"></a>  <span class="fu">scale_x_date</span>(<span class="at">name =</span> <span class="st">""</span>,</span>
-<span id="cb71-5"><a href="#cb71-5"></a>               <span class="at">date_breaks =</span> <span class="st">"1 month"</span>, </span>
-<span id="cb71-6"><a href="#cb71-6"></a>               <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
-<span id="cb71-7"><a href="#cb71-7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
+<span id="cb69-2"><a href="#cb69-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span></span>
+<span id="cb69-3"><a href="#cb69-3"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
+<span id="cb69-4"><a href="#cb69-4"></a>  <span class="fu">scale_x_date</span>(<span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb69-5"><a href="#cb69-5"></a>               <span class="at">date_breaks =</span> <span class="st">"1 month"</span>, </span>
+<span id="cb69-6"><a href="#cb69-6"></a>               <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
+<span id="cb69-7"><a href="#cb69-7"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-date-month" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, with each month labelled on the x-axis.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-date-month-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2152,19 +2148,19 @@ Figure&nbsp;3.29: Plotting dates with breaks one month apart.
 <button>
 Solution
 </button>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
-<span id="cb72-2"><a href="#cb72-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span></span>
-<span id="cb72-3"><a href="#cb72-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb72-4"><a href="#cb72-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,  <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
-<span id="cb72-5"><a href="#cb72-5"></a>  <span class="fu">scale_x_date</span>(<span class="at">name =</span> <span class="st">""</span>,</span>
-<span id="cb72-6"><a href="#cb72-6"></a>               <span class="at">date_breaks =</span> <span class="st">"1 month"</span>, </span>
-<span id="cb72-7"><a href="#cb72-7"></a>               <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
-<span id="cb72-8"><a href="#cb72-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
-<span id="cb72-9"><a href="#cb72-9"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
-<span id="cb72-10"><a href="#cb72-10"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="co"># changes limits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">date</span>(datetime), </span>
+<span id="cb70-2"><a href="#cb70-2"></a>                   <span class="at">y =</span> score)) <span class="sc">+</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm,  <span class="at">formula =</span> y<span class="sc">~</span>x) <span class="sc">+</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>  <span class="fu">scale_x_date</span>(<span class="at">name =</span> <span class="st">""</span>,</span>
+<span id="cb70-6"><a href="#cb70-6"></a>               <span class="at">date_breaks =</span> <span class="st">"1 month"</span>, </span>
+<span id="cb70-7"><a href="#cb70-7"></a>               <span class="at">date_labels =</span> <span class="st">"%b"</span>) <span class="sc">+</span></span>
+<span id="cb70-8"><a href="#cb70-8"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
+<span id="cb70-9"><a href="#cb70-9"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="co"># changes limits</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="images/figures/unnamed-chunk-30-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot as above, with Score ranging from 0 to 100 and transparent black points showing the raw data. There is a lot of overplotting, but the data gets less dense as you move away from the line."></p>
+<figure class="figure"><p><img src="images/figures/unnamed-chunk-29-1.png" class="img-fluid figure-img" style="width:100.0%" alt="The same plot as above, with Score ranging from 0 to 100 and transparent black points showing the raw data. There is a lot of overplotting, but the data gets less dense as you move away from the line."></p>
 </figure>
 </div>
 </div>
@@ -2176,8 +2172,8 @@ Solution
 <p>When you have a limited range of numeric values, such as an ordinal rating scale, sometimes overlapping data makes it difficult to see what is going on in a point plot. For example, the plot below shows score by rating, but because there are only 5 levels and a lot of data, it makes it hard to see exactly how many data points there are at each rating level.</p>
 <p>In this section, we’ll explore a few options for dealing with this.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
-<span id="cb73-2"><a href="#cb73-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
+<span id="cb71-2"><a href="#cb71-2"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-over-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A point plot with score (0-100) on the xi-axis and rating (1-5) on the y-axis. Since there are only 5 scores, all of the points are bunched up on the same 5 lines and span nearly the whole x-axis range. This is difficult to read.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-over-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2196,8 +2192,8 @@ Figure&nbsp;3.30: Overlapping data makes plots hard to understand.
 <p>Change these values to understand what jitter is doing</p>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
-<span id="cb74-2"><a href="#cb74-2"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">width =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score, <span class="at">y =</span> rating)) <span class="sc">+</span> </span>
+<span id="cb72-2"><a href="#cb72-2"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.2</span>, <span class="at">width =</span> <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-jitter-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The same plot as above, but with the 5 horizontal lines of points spread out from +/- 0.25 around the integer y axis.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-jitter-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2213,16 +2209,16 @@ Figure&nbsp;3.31: Jitter plot.
 <span class="header-section-number">3.3.5.2</span> Facets</h4>
 <p>Alternatively, you can use <code>facet_wrap()</code> to create a separate plot for each rating. <code>facet_wrap()</code> uses the tilde (~) symbol, which you can roughly translate as “by”, e.g., facet the plot <em>by</em> rating. The <code>labeller</code> function controls the labels above each plot. <code>label_both</code> specifies that we want both the variable name (rating) and the value (e.g., 1) printed on the plot to make it easier to read.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
-<span id="cb75-2"><a href="#cb75-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
-<span id="cb75-3"><a href="#cb75-3"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
-<span id="cb75-4"><a href="#cb75-4"></a>                 <span class="at">fill =</span> <span class="st">"dodgerblue"</span>, </span>
-<span id="cb75-5"><a href="#cb75-5"></a>                 <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb75-6"><a href="#cb75-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>rating, </span>
-<span id="cb75-7"><a href="#cb75-7"></a>             <span class="at">ncol =</span> <span class="dv">1</span>, <span class="co"># try changing this to 2 </span></span>
-<span id="cb75-8"><a href="#cb75-8"></a>             <span class="at">labeller =</span> label_both) <span class="sc">+</span></span>
-<span id="cb75-9"><a href="#cb75-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
-<span id="cb75-10"><a href="#cb75-10"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">ggplot</span>(simdat, <span class="fu">aes</span>(<span class="at">x =</span> score)) <span class="sc">+</span></span>
+<span id="cb73-2"><a href="#cb73-2"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>, </span>
+<span id="cb73-3"><a href="#cb73-3"></a>                 <span class="at">boundary =</span> <span class="dv">0</span>, </span>
+<span id="cb73-4"><a href="#cb73-4"></a>                 <span class="at">fill =</span> <span class="st">"dodgerblue"</span>, </span>
+<span id="cb73-5"><a href="#cb73-5"></a>                 <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb73-6"><a href="#cb73-6"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>rating, </span>
+<span id="cb73-7"><a href="#cb73-7"></a>             <span class="at">ncol =</span> <span class="dv">1</span>, <span class="co"># try changing this to 2 </span></span>
+<span id="cb73-8"><a href="#cb73-8"></a>             <span class="at">labeller =</span> label_both) <span class="sc">+</span></span>
+<span id="cb73-9"><a href="#cb73-9"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">name =</span> <span class="st">"Score"</span>,</span>
+<span id="cb73-10"><a href="#cb73-10"></a>                     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-facet-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Five plots, one for each rating level, showing a histogram of the score distribution. The x-axis shows score ranging from 0 to 100 and the y-axis shows count ranging from 0 to 300. All plots show a normal distribution centered around 55, 50, 45, 50, and 55 for the ratings 1-5.">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-facet-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -2244,7 +2240,7 @@ More plots styles
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in <a href="10-next.html#sec-custom-viz" class="quarto-xref"><span>Section 10.1</span></a>). The <a href="#resources-viz">further resources</a> section at the end of this chapter lists many resources, but the <a href="http://www.r-graph-gallery.com/">R Graph Gallery</a> is especially useful to get inspiration for the kinds of beautiful plots you can make in R.</p>
+<p>These are not, by any means, all the plot types that you can make in R. This chapter just gave you a basic overview, and we will go into more detail in <a href="app-plots.html" class="quarto-xref"><span>Appendix M</span></a>). The <a href="#resources-viz">further resources</a> section at the end of this chapter lists many resources, but the <a href="http://www.r-graph-gallery.com/">R Graph Gallery</a> is especially useful to get inspiration for the kinds of beautiful plots you can make in R.</p>
 </div>
 </div>
 </section></section></section><section id="exercises" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="exercises">
@@ -2259,16 +2255,16 @@ More plots styles
 <li>Remove the default template text</li>
 <li>Add the code below in the set-up code chunk:</li>
 </ul>
-<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href="#cb76-1"></a><span class="in">```{r}</span></span>
-<span id="cb76-2"><a href="#cb76-2"></a><span class="in">#| label: setup</span></span>
-<span id="cb76-3"><a href="#cb76-3"></a><span class="in">#| include: false</span></span>
-<span id="cb76-4"><a href="#cb76-4"></a></span>
-<span id="cb76-5"><a href="#cb76-5"></a><span class="in">library(tidyverse) </span></span>
-<span id="cb76-6"><a href="#cb76-6"></a><span class="in">library(patchwork) </span></span>
-<span id="cb76-7"><a href="#cb76-7"></a><span class="in">library(ggthemes)  </span></span>
-<span id="cb76-8"><a href="#cb76-8"></a></span>
-<span id="cb76-9"><a href="#cb76-9"></a><span class="in">personality &lt;- read_csv("https://psyteachr.github.io/reprores/data/personality_scores.csv")</span></span>
-<span id="cb76-10"><a href="#cb76-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb74-1"><a href="#cb74-1"></a><span class="in">```{r}</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a><span class="in">#| label: setup</span></span>
+<span id="cb74-3"><a href="#cb74-3"></a><span class="in">#| include: false</span></span>
+<span id="cb74-4"><a href="#cb74-4"></a></span>
+<span id="cb74-5"><a href="#cb74-5"></a><span class="in">library(tidyverse) </span></span>
+<span id="cb74-6"><a href="#cb74-6"></a><span class="in">library(patchwork) </span></span>
+<span id="cb74-7"><a href="#cb74-7"></a><span class="in">library(ggthemes)  </span></span>
+<span id="cb74-8"><a href="#cb74-8"></a></span>
+<span id="cb74-9"><a href="#cb74-9"></a><span class="in">personality &lt;- read_csv("https://psyteachr.github.io/reprores/data/personality_scores.csv")</span></span>
+<span id="cb74-10"><a href="#cb74-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="data-import" class="level3" data-number="3.4.2"><h3 data-number="3.4.2" class="anchored" data-anchor-id="data-import">
 <span class="header-section-number">3.4.2</span> Data import</h3>
 <p>Give human-readable labels to the columns you’ll be plotting:</p>

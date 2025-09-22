@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.6.42">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="description" content="This book provides an overview of skills needed for reproducible and open research using the statistical programming language R and tidyverse packages. It covers reproducible workflows, data visualisation, data tidying and wrangling, archiving, iteration and functions, probability and data simulations.">
-<title>Appendix M — Webpages – Data Skills for Reproducible Research</title>
+<title>Appendix N — Webpages – Data Skills for Reproducible Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./app-styling.html" rel="prev">
+<link href="./app-plots.html" rel="prev">
 <link href="./images/logos/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +116,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-webpage.html"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Webpages</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-webpage.html"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -331,8 +331,14 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./app-plots.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./app-webpage.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></span></a>
   </div>
 </li>
       </ul>
@@ -348,34 +354,34 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
    
   <ul>
 <li>
-<a href="#sec-webpage-create" id="toc-sec-webpage-create" class="nav-link active" data-scroll-target="#sec-webpage-create"><span class="header-section-number">M.1</span> Create a webpage</a>
+<a href="#sec-webpage-create" id="toc-sec-webpage-create" class="nav-link active" data-scroll-target="#sec-webpage-create"><span class="header-section-number">N.1</span> Create a webpage</a>
   <ul class="collapse">
-<li><a href="#create-a-project" id="toc-create-a-project" class="nav-link" data-scroll-target="#create-a-project"><span class="header-section-number">M.1.1</span> Create a project</a></li>
-  <li><a href="#render-the-site" id="toc-render-the-site" class="nav-link" data-scroll-target="#render-the-site"><span class="header-section-number">M.1.2</span> Render the site</a></li>
-  <li><a href="#site-header" id="toc-site-header" class="nav-link" data-scroll-target="#site-header"><span class="header-section-number">M.1.3</span> Site header</a></li>
-  <li><a href="#edit-the-pages" id="toc-edit-the-pages" class="nav-link" data-scroll-target="#edit-the-pages"><span class="header-section-number">M.1.4</span> Edit the pages</a></li>
+<li><a href="#create-a-project" id="toc-create-a-project" class="nav-link" data-scroll-target="#create-a-project"><span class="header-section-number">N.1.1</span> Create a project</a></li>
+  <li><a href="#render-the-site" id="toc-render-the-site" class="nav-link" data-scroll-target="#render-the-site"><span class="header-section-number">N.1.2</span> Render the site</a></li>
+  <li><a href="#site-header" id="toc-site-header" class="nav-link" data-scroll-target="#site-header"><span class="header-section-number">N.1.3</span> Site header</a></li>
+  <li><a href="#edit-the-pages" id="toc-edit-the-pages" class="nav-link" data-scroll-target="#edit-the-pages"><span class="header-section-number">N.1.4</span> Edit the pages</a></li>
   </ul>
 </li>
-  <li><a href="#sec-webpage-pages" id="toc-sec-webpage-pages" class="nav-link" data-scroll-target="#sec-webpage-pages"><span class="header-section-number">M.2</span> Add pages</a></li>
+  <li><a href="#sec-webpage-pages" id="toc-sec-webpage-pages" class="nav-link" data-scroll-target="#sec-webpage-pages"><span class="header-section-number">N.2</span> Add pages</a></li>
   <li>
-<a href="#sec-webpage-styles" id="toc-sec-webpage-styles" class="nav-link" data-scroll-target="#sec-webpage-styles"><span class="header-section-number">M.3</span> Styles</a>
+<a href="#sec-webpage-styles" id="toc-sec-webpage-styles" class="nav-link" data-scroll-target="#sec-webpage-styles"><span class="header-section-number">N.3</span> Styles</a>
   <ul class="collapse">
-<li><a href="#add-custom-styles" id="toc-add-custom-styles" class="nav-link" data-scroll-target="#add-custom-styles"><span class="header-section-number">M.3.1</span> Add custom styles</a></li>
-  <li><a href="#change-global-fonts-and-colours" id="toc-change-global-fonts-and-colours" class="nav-link" data-scroll-target="#change-global-fonts-and-colours"><span class="header-section-number">M.3.2</span> Change global fonts and colours</a></li>
-  <li><a href="#change-certain-elements" id="toc-change-certain-elements" class="nav-link" data-scroll-target="#change-certain-elements"><span class="header-section-number">M.3.3</span> Change certain elements</a></li>
+<li><a href="#add-custom-styles" id="toc-add-custom-styles" class="nav-link" data-scroll-target="#add-custom-styles"><span class="header-section-number">N.3.1</span> Add custom styles</a></li>
+  <li><a href="#change-global-fonts-and-colours" id="toc-change-global-fonts-and-colours" class="nav-link" data-scroll-target="#change-global-fonts-and-colours"><span class="header-section-number">N.3.2</span> Change global fonts and colours</a></li>
+  <li><a href="#change-certain-elements" id="toc-change-certain-elements" class="nav-link" data-scroll-target="#change-certain-elements"><span class="header-section-number">N.3.3</span> Change certain elements</a></li>
   </ul>
 </li>
   <li>
-<a href="#example-using-the-styles-above" id="toc-example-using-the-styles-above" class="nav-link" data-scroll-target="#example-using-the-styles-above"><span class="header-section-number">M.4</span> Example using the styles above</a>
+<a href="#example-using-the-styles-above" id="toc-example-using-the-styles-above" class="nav-link" data-scroll-target="#example-using-the-styles-above"><span class="header-section-number">N.4</span> Example using the styles above</a>
   <ul class="collapse">
-<li><a href="#level-3-header" id="toc-level-3-header" class="nav-link" data-scroll-target="#level-3-header"><span class="header-section-number">M.4.1</span> Level 3 header</a></li>
+<li><a href="#level-3-header" id="toc-level-3-header" class="nav-link" data-scroll-target="#level-3-header"><span class="header-section-number">N.4.1</span> Level 3 header</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/app-webpage.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/app-webpage.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-webpage.html"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Webpages</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-webpages" class="quarto-section-identifier">Appendix M — Webpages</span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app-installing-r.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app-webpage.html"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">Webpages</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-webpages" class="quarto-section-identifier">Appendix N — Webpages</span></h1>
 </div>
 
 
@@ -390,24 +396,24 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 
 
 </header><p>In this tutorial, you will learn how to create a simple webpage using <a href="https://psyteachr.github.io/glossary/q#quarto" target="_blank" class="glossary" title="An open-source scientific and technical publishing system.">quarto</a>, link multiple pages, and style your content using <a href="https://psyteachr.github.io/glossary/c#css" target="_blank" class="glossary" title="Cascading Style Sheet: A system for controlling the visual presentation of HTML in web pages.">css</a>.</p>
-<section id="sec-webpage-create" class="level2" data-number="M.1"><h2 data-number="M.1" class="anchored" data-anchor-id="sec-webpage-create">
-<span class="header-section-number">M.1</span> Create a webpage</h2>
-<section id="create-a-project" class="level3" data-number="M.1.1"><h3 data-number="M.1.1" class="anchored" data-anchor-id="create-a-project">
-<span class="header-section-number">M.1.1</span> Create a project</h3>
+<section id="sec-webpage-create" class="level2" data-number="N.1"><h2 data-number="N.1" class="anchored" data-anchor-id="sec-webpage-create">
+<span class="header-section-number">N.1</span> Create a webpage</h2>
+<section id="create-a-project" class="level3" data-number="N.1.1"><h3 data-number="N.1.1" class="anchored" data-anchor-id="create-a-project">
+<span class="header-section-number">N.1.1</span> Create a project</h3>
 <ol type="1">
 <li>Choose <code>New Project...</code> from the <code>File</code> menu (don’t save any workspaces)</li>
 <li>Choose <code>New Directory</code> &gt; <code>Quarto Website</code>
 </li>
 <li>Set your project name to “mywebpage”</li>
-</ol></section><section id="render-the-site" class="level3" data-number="M.1.2"><h3 data-number="M.1.2" class="anchored" data-anchor-id="render-the-site">
-<span class="header-section-number">M.1.2</span> Render the site</h3>
+</ol></section><section id="render-the-site" class="level3" data-number="N.1.2"><h3 data-number="N.1.2" class="anchored" data-anchor-id="render-the-site">
+<span class="header-section-number">N.1.2</span> Render the site</h3>
 <p>In the upper right “Build” pane, click on the “Build website” hammer icon. This will render the website and automatically open it in a browser window. Alternatively, type the following into the Console pane:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you accidentally close the website and want to look at it again, you don’t have to re-render it. Click on the <code>docs</code> directory in the <code>Files</code> tab of the lower right pane, then click on <code>index.html</code> and choose <if>View in Web Browser</if>.</p>
-</section><section id="site-header" class="level3" data-number="M.1.3"><h3 data-number="M.1.3" class="anchored" data-anchor-id="site-header">
-<span class="header-section-number">M.1.3</span> Site header</h3>
+</section><section id="site-header" class="level3" data-number="N.1.3"><h3 data-number="N.1.3" class="anchored" data-anchor-id="site-header">
+<span class="header-section-number">N.1.3</span> Site header</h3>
 <p>This is where you can set options like whether to show a table of contents and what the navigation bar will look like.</p>
 <ol type="1">
 <li><p>Open the file <code>_quarto.yml</code></p></li>
@@ -436,8 +442,8 @@ format:
 </li>
 <li><p>Save the file (do not change the name)</p></li>
 <li><p>Re-render the site</p></li>
-</ol></section><section id="edit-the-pages" class="level3" data-number="M.1.4"><h3 data-number="M.1.4" class="anchored" data-anchor-id="edit-the-pages">
-<span class="header-section-number">M.1.4</span> Edit the pages</h3>
+</ol></section><section id="edit-the-pages" class="level3" data-number="N.1.4"><h3 data-number="N.1.4" class="anchored" data-anchor-id="edit-the-pages">
+<span class="header-section-number">N.1.4</span> Edit the pages</h3>
 <p>Edit the text in the <code>index.qmd</code> and <code>about.qmd</code> pages. You can use R markdown, including code chunks.</p>
 <p>The project should open with the <code>index.qmd</code> file already open, and the following contents:</p>
 <pre><code>---
@@ -481,8 +487,8 @@ Note
 <p>I usually skip the title on the index page of a website (the default page that shows when you type the base <a href="https://psyteachr.github.io/glossary/u#url" target="_blank" class="glossary" title="The address of a web page (uniform resource locator)">url</a>. For other pages, you can add the title (and any other quarto header info that is different from the main site _quarto.yml) inside the YAML header markings (three dashes). Alternatively, you can use a level-1 header at the top to indicate the page title (e.g., <code># Page Title</code>).</p>
 </div>
 </div>
-</section></section><section id="sec-webpage-pages" class="level2" data-number="M.2"><h2 data-number="M.2" class="anchored" data-anchor-id="sec-webpage-pages">
-<span class="header-section-number">M.2</span> Add pages</h2>
+</section></section><section id="sec-webpage-pages" class="level2" data-number="N.2"><h2 data-number="N.2" class="anchored" data-anchor-id="sec-webpage-pages">
+<span class="header-section-number">N.2</span> Add pages</h2>
 <ol type="1">
 <li>Create a new .qmd file for each webpage</li>
 <li>Add content to the webpages using R Markdown</li>
@@ -490,19 +496,19 @@ Note
 </ol>
 <p>If you include linked content like image files, make sure they are copied to your main project directory and linked using <a href="https://psyteachr.github.io/glossary/r#relative-path" target="_blank" class="glossary" title="The location of a file in relation to the working directory.">relative paths</a>.</p>
 <p>To get your website online, copy the contents of the <code>docs</code> directory to a web server. If you don’t have access to a web server, you can make free websites using a GitHub repository and <a href="https://pages.github.com/">GitHub Pages</a>).</p>
-</section><section id="sec-webpage-styles" class="level2" data-number="M.3"><h2 data-number="M.3" class="anchored" data-anchor-id="sec-webpage-styles">
-<span class="header-section-number">M.3</span> Styles</h2>
+</section><section id="sec-webpage-styles" class="level2" data-number="N.3"><h2 data-number="N.3" class="anchored" data-anchor-id="sec-webpage-styles">
+<span class="header-section-number">N.3</span> Styles</h2>
 <p>You can change the appearance of your website by changing the theme in the <code>_quarto.yml</code> file (see <a href="app-styling.html" class="quarto-xref"><span>Appendix L</span></a>), but the instructions below will help you to customise things even further.</p>
-<section id="add-custom-styles" class="level3" data-number="M.3.1"><h3 data-number="M.3.1" class="anchored" data-anchor-id="add-custom-styles">
-<span class="header-section-number">M.3.1</span> Add custom styles</h3>
+<section id="add-custom-styles" class="level3" data-number="N.3.1"><h3 data-number="N.3.1" class="anchored" data-anchor-id="add-custom-styles">
+<span class="header-section-number">N.3.1</span> Add custom styles</h3>
 <p>A custom style sheet is a document that determines how each element of your website should look. The default website already created one for you called <code>styles.css</code> and referenced in to the _quarto.yml file. If you’re creating a website from scratch, you can make a plain text file and link it by adding <code>css: styles.css</code> under <code>format: html</code> in the _quarto.yml file like this:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> styles.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then you need to add your custom styles in this file The web has thousands of guides to CSS, but <a href="https://www.codecademy.com/en/tracks/htmlcss">codeacademy</a> has great interactive tutorials for learning html, css, and even more advanced web coding like javascript.</p>
 <p>However, the basics of css are easy to learn and it’s best to just start playing around with it. Add the following text to your <code>style.css</code> file and re-render the website.</p>
-</section><section id="change-global-fonts-and-colours" class="level3" data-number="M.3.2"><h3 data-number="M.3.2" class="anchored" data-anchor-id="change-global-fonts-and-colours">
-<span class="header-section-number">M.3.2</span> Change global fonts and colours</h3>
+</section><section id="change-global-fonts-and-colours" class="level3" data-number="N.3.2"><h3 data-number="N.3.2" class="anchored" data-anchor-id="change-global-fonts-and-colours">
+<span class="header-section-number">N.3.2</span> Change global fonts and colours</h3>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1"></a>body {</span>
 <span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">em</span><span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="st">"Times New Roman"</span><span class="op">;</span></span>
@@ -521,8 +527,8 @@ Note
 <p>This will make the text on your website larger, a different font, and change the text and background colours.</p>
 </div>
 <p>The theme you’re using might have css that blocks the styles you’re trying to change. You can add <code>!important</code> before the end colon to override that.</p>
-</section><section id="change-certain-elements" class="level3" data-number="M.3.3"><h3 data-number="M.3.3" class="anchored" data-anchor-id="change-certain-elements">
-<span class="header-section-number">M.3.3</span> Change certain elements</h3>
+</section><section id="change-certain-elements" class="level3" data-number="N.3.3"><h3 data-number="N.3.3" class="anchored" data-anchor-id="change-certain-elements">
+<span class="header-section-number">N.3.3</span> Change certain elements</h3>
 <p>Maybe you only want to change the font colour for your headings, not the rest of the text. You can apply a style to a specific <em>element</em> type by specifying the element name before the curly brackets.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3 {</span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
@@ -568,14 +574,14 @@ Note
     padding: 10px 30px;
   }
 </style></section></section><div id="h-example">
-<section id="example-using-the-styles-above" class="level2" data-number="M.4"><h2 data-number="M.4" class="anchored" data-anchor-id="example-using-the-styles-above">
-<span class="header-section-number">M.4</span> Example using the styles above</h2>
+<section id="example-using-the-styles-above" class="level2" data-number="N.4"><h2 data-number="N.4" class="anchored" data-anchor-id="example-using-the-styles-above">
+<span class="header-section-number">N.4</span> Example using the styles above</h2>
 <p>The CSS above changes the styles for three levels of headers (<code>h2</code>, <code>h3</code>, <code>h4</code>) and sets the third level to italics.</p>
-<section id="level-3-header" class="level3" data-number="M.4.1"><h3 data-number="M.4.1" class="anchored" data-anchor-id="level-3-header">
-<span class="header-section-number">M.4.1</span> Level 3 header</h3>
+<section id="level-3-header" class="level3" data-number="N.4.1"><h3 data-number="N.4.1" class="anchored" data-anchor-id="level-3-header">
+<span class="header-section-number">N.4.1</span> Level 3 header</h3>
 <p>It also gives paragraphs (<code>p</code>) a green border and double-spacing.</p>
-<section id="level-4-header" class="level4" data-number="M.4.1.1"><h4 data-number="M.4.1.1" class="anchored" data-anchor-id="level-4-header">
-<span class="header-section-number">M.4.1.1</span> Level 4 header</h4>
+<section id="level-4-header" class="level4" data-number="N.4.1.1"><h4 data-number="N.4.1.1" class="anchored" data-anchor-id="level-4-header">
+<span class="header-section-number">N.4.1.1</span> Level 4 header</h4>
 <p>Unordered Lists (<code>ul</code>) get:</p>
 <ul>
 <li>dotted red border</li>
@@ -1263,8 +1269,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./app-styling.html" class="pagination-link" aria-label="Styling Plots">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Styling Plots</span></span>
+      <a href="./app-plots.html" class="pagination-link" aria-label="More Plots">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">More Plots</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
