@@ -18,6 +18,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -321,8 +355,9 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
    
   <ul>
 <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">11.1</span> Instructions</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">11.2</span> Submission</a></li>
-  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">11.3</span> Marking Rubric</a></li>
+  <li><a href="#ai-declaration" id="toc-ai-declaration" class="nav-link" data-scroll-target="#ai-declaration"><span class="header-section-number">11.2</span> AI Declaration</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">11.3</span> Submission</a></li>
+  <li><a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">11.4</span> Marking Rubric</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/assessment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/assessment-1.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -368,8 +403,33 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><label><input type="checkbox">The quarto file should be renderable by the marker</label></li>
 </ul>
 <p>See <a href="demos/report1_demo.html">this report</a> for an example.</p>
-</section><section id="submission" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="submission">
-<span class="header-section-number">11.2</span> Submission</h2>
+</section><section id="ai-declaration" class="level2" data-number="11.2"><h2 data-number="11.2" class="anchored" data-anchor-id="ai-declaration">
+<span class="header-section-number">11.2</span> AI Declaration</h2>
+<p>It is School policy to include this specific AI declaration in any work that allows the use of generative AI. You can copy the code below and include it at the end of your assessment.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">### Generative AI Declaration</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>Indicate <span class="co">[</span><span class="ot">YES</span><span class="co">]</span> or <span class="co">[</span><span class="ot">NO</span><span class="co">]</span> to all statements below to show how you have used generative AI tools in this assignment. You MUST declare all use of AI and take responsibility for the content of the assignment. We consider it a misuse of generative AI if you do not declare all uses, including initial exploration of the subject, literature searching, writing and editing, corrections for grammar and spelling, as well as any other tasks from the course.</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Do you take full responsibility for the content of this submission, ensuring its adherence to academic integrity standards and compliance with University and subject-specific regulations regarding generative AI use as detailed in the assessment information sheet?</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>Did you use AI for:</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> General learning about a topic </span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Idea generation or scoping of topic or research question</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Searching and consulting the scientific literature</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Summarising or explaining primary sources like journal articles</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Planning the overall structure of a piece of work?</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Translation of your own text from another language into English</span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Rephrasing your own text at sentence level</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Language editing for spelling, grammar, clarity or tone</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Referencing support, for example checking or producing citations, DOIs or formatting</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Analysis support, for example statistical or qualitative analysis advice or interpreting output</span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Coding assistance, for example writing or debugging code</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Visuals or media support, for example figures, diagrams, slide layout or transcription of my own * recordings</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Something else (explain below)</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Avoided use of AI tools in any way to assist with this assignment or my learning of the topic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="submission" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="submission">
+<span class="header-section-number">11.3</span> Submission</h2>
 <ul>
 <li>Covers: chapters 1 and 2</li>
 <li>Worth: 10%</li>
@@ -383,8 +443,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>the rendered html report, named <code>report1_studentID.html</code>.</li>
 </ol>
 </li>
-</ul></section><section id="marking-rubric" class="level2" data-number="11.3"><h2 data-number="11.3" class="anchored" data-anchor-id="marking-rubric">
-<span class="header-section-number">11.3</span> Marking Rubric</h2>
+</ul></section><section id="marking-rubric" class="level2" data-number="11.4"><h2 data-number="11.4" class="anchored" data-anchor-id="marking-rubric">
+<span class="header-section-number">11.4</span> Marking Rubric</h2>
 <p>You will receive green/amber/red lights for each of 11 elements, and a generic feedback document explaining common issues. Each rubric element is weighted equally.</p>
 <ul>
 <li>Green: Perfect or nearly perfect</li>

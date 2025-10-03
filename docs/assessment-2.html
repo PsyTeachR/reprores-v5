@@ -18,6 +18,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -321,22 +355,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
    
   <ul>
 <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions"><span class="header-section-number">12.1</span> Instructions</a></li>
-  <li><a href="#hints-and-tips" id="toc-hints-and-tips" class="nav-link" data-scroll-target="#hints-and-tips"><span class="header-section-number">12.2</span> Hints and Tips</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">12.3</span> Submission</a></li>
+  <li><a href="#ai-declaration" id="toc-ai-declaration" class="nav-link" data-scroll-target="#ai-declaration"><span class="header-section-number">12.2</span> AI Declaration</a></li>
+  <li><a href="#hints-and-tips" id="toc-hints-and-tips" class="nav-link" data-scroll-target="#hints-and-tips"><span class="header-section-number">12.3</span> Hints and Tips</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">12.4</span> Submission</a></li>
   <li>
-<a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">12.4</span> Marking Rubric</a>
+<a href="#marking-rubric" id="toc-marking-rubric" class="nav-link" data-scroll-target="#marking-rubric"><span class="header-section-number">12.5</span> Marking Rubric</a>
   <ul class="collapse">
-<li><a href="#reproducible-project" id="toc-reproducible-project" class="nav-link" data-scroll-target="#reproducible-project"><span class="header-section-number">12.4.1</span> Reproducible project</a></li>
-  <li><a href="#document-replicated" id="toc-document-replicated" class="nav-link" data-scroll-target="#document-replicated"><span class="header-section-number">12.4.2</span> Document replicated</a></li>
-  <li><a href="#captionsreferences" id="toc-captionsreferences" class="nav-link" data-scroll-target="#captionsreferences"><span class="header-section-number">12.4.3</span> Captions/references</a></li>
-  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import"><span class="header-section-number">12.4.4</span> Data import</a></li>
-  <li><a href="#tables-replicated" id="toc-tables-replicated" class="nav-link" data-scroll-target="#tables-replicated"><span class="header-section-number">12.4.5</span> Tables replicated</a></li>
-  <li><a href="#figures-replicated" id="toc-figures-replicated" class="nav-link" data-scroll-target="#figures-replicated"><span class="header-section-number">12.4.6</span> Figures replicated</a></li>
-  <li><a href="#figure-4-appropriate" id="toc-figure-4-appropriate" class="nav-link" data-scroll-target="#figure-4-appropriate"><span class="header-section-number">12.4.7</span> Figure 4 appropriate</a></li>
-  <li><a href="#consistent-visualisations" id="toc-consistent-visualisations" class="nav-link" data-scroll-target="#consistent-visualisations"><span class="header-section-number">12.4.8</span> Consistent visualisations</a></li>
-  <li><a href="#clear-code" id="toc-clear-code" class="nav-link" data-scroll-target="#clear-code"><span class="header-section-number">12.4.9</span> Clear code</a></li>
-  <li><a href="#efficient-code" id="toc-efficient-code" class="nav-link" data-scroll-target="#efficient-code"><span class="header-section-number">12.4.10</span> Efficient code</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">12.4.11</span> Reflection</a></li>
+<li><a href="#reproducible-project" id="toc-reproducible-project" class="nav-link" data-scroll-target="#reproducible-project"><span class="header-section-number">12.5.1</span> Reproducible project</a></li>
+  <li><a href="#document-replicated" id="toc-document-replicated" class="nav-link" data-scroll-target="#document-replicated"><span class="header-section-number">12.5.2</span> Document replicated</a></li>
+  <li><a href="#captionsreferences" id="toc-captionsreferences" class="nav-link" data-scroll-target="#captionsreferences"><span class="header-section-number">12.5.3</span> Captions/references</a></li>
+  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import"><span class="header-section-number">12.5.4</span> Data import</a></li>
+  <li><a href="#tables-replicated" id="toc-tables-replicated" class="nav-link" data-scroll-target="#tables-replicated"><span class="header-section-number">12.5.5</span> Tables replicated</a></li>
+  <li><a href="#figures-replicated" id="toc-figures-replicated" class="nav-link" data-scroll-target="#figures-replicated"><span class="header-section-number">12.5.6</span> Figures replicated</a></li>
+  <li><a href="#figure-4-appropriate" id="toc-figure-4-appropriate" class="nav-link" data-scroll-target="#figure-4-appropriate"><span class="header-section-number">12.5.7</span> Figure 4 appropriate</a></li>
+  <li><a href="#consistent-visualisations" id="toc-consistent-visualisations" class="nav-link" data-scroll-target="#consistent-visualisations"><span class="header-section-number">12.5.8</span> Consistent visualisations</a></li>
+  <li><a href="#clear-code" id="toc-clear-code" class="nav-link" data-scroll-target="#clear-code"><span class="header-section-number">12.5.9</span> Clear code</a></li>
+  <li><a href="#efficient-code" id="toc-efficient-code" class="nav-link" data-scroll-target="#efficient-code"><span class="header-section-number">12.5.10</span> Efficient code</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">12.5.11</span> Reflection</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/psyteachr/reprores-v5/edit/master/assessment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/psyteachr/reprores-v5/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/psyteachr/reprores-v5/blob/master/assessment-2.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -375,8 +410,33 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><label><input type="checkbox">Appropriate alt-text for the figures for accessibility</label></li>
 <li><label><input type="checkbox">References created using bibtex</label></li>
 <li><label><input type="checkbox">A reflection on independent learning you did for this assessment</label></li>
-</ul></section><section id="hints-and-tips" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="hints-and-tips">
-<span class="header-section-number">12.2</span> Hints and Tips</h2>
+</ul></section><section id="ai-declaration" class="level2" data-number="12.2"><h2 data-number="12.2" class="anchored" data-anchor-id="ai-declaration">
+<span class="header-section-number">12.2</span> AI Declaration</h2>
+<p>It is School policy to include this specific AI declaration in any work that allows the use of generative AI. You can copy the code below and include it at the end of your assessment.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">### Generative AI Declaration</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>Indicate <span class="co">[</span><span class="ot">YES</span><span class="co">]</span> or <span class="co">[</span><span class="ot">NO</span><span class="co">]</span> to all statements below to show how you have used generative AI tools in this assignment. You MUST declare all use of AI and take responsibility for the content of the assignment. We consider it a misuse of generative AI if you do not declare all uses, including initial exploration of the subject, literature searching, writing and editing, corrections for grammar and spelling, as well as any other tasks from the course.</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Do you take full responsibility for the content of this submission, ensuring its adherence to academic integrity standards and compliance with University and subject-specific regulations regarding generative AI use as detailed in the assessment information sheet?</span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>Did you use AI for:</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> General learning about a topic </span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Idea generation or scoping of topic or research question</span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Searching and consulting the scientific literature</span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Summarising or explaining primary sources like journal articles</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Planning the overall structure of a piece of work?</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Translation of your own text from another language into English</span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Rephrasing your own text at sentence level</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Language editing for spelling, grammar, clarity or tone</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Referencing support, for example checking or producing citations, DOIs or formatting</span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Analysis support, for example statistical or qualitative analysis advice or interpreting output</span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Coding assistance, for example writing or debugging code</span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Visuals or media support, for example figures, diagrams, slide layout or transcription of my own * recordings</span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Something else (explain under **Sources of Learning**)</span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="ss">* </span><span class="co">[</span><span class="ot">YES/NO</span><span class="co">]</span> Avoided use of AI tools in any way to assist with this assignment or my learning of the topic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="hints-and-tips" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="hints-and-tips">
+<span class="header-section-number">12.3</span> Hints and Tips</h2>
 <ul>
 <li>The html theme used by the demo report is flatly</li>
 <li>The ggplot theme is <code>theme_bw()</code>
@@ -398,8 +458,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   address     = {New York},
   year        = {2024}
 }</code></pre>
-</section><section id="submission" class="level2" data-number="12.3"><h2 data-number="12.3" class="anchored" data-anchor-id="submission">
-<span class="header-section-number">12.3</span> Submission</h2>
+</section><section id="submission" class="level2" data-number="12.4"><h2 data-number="12.4" class="anchored" data-anchor-id="submission">
+<span class="header-section-number">12.4</span> Submission</h2>
 <ul>
 <li>Covers: chapters 1-4, emphasising 3 and 4</li>
 <li>Worth: 20%</li>
@@ -413,8 +473,8 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li>the rendered html report, named <code>report2_studentID.html</code>.</li>
 </ol>
 </li>
-</ul></section><section id="marking-rubric" class="level2" data-number="12.4"><h2 data-number="12.4" class="anchored" data-anchor-id="marking-rubric">
-<span class="header-section-number">12.4</span> Marking Rubric</h2>
+</ul></section><section id="marking-rubric" class="level2" data-number="12.5"><h2 data-number="12.5" class="anchored" data-anchor-id="marking-rubric">
+<span class="header-section-number">12.5</span> Marking Rubric</h2>
 <p>You will receive green/amber/red lights for each of the elements below, and a generic feedback document explaining common issues. Each rubric element is weighted equally.</p>
 <ul>
 <li>Green: Perfect or nearly perfect</li>
@@ -508,41 +568,41 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 </div>
 </div>
 <p>Total: <span id="sum">0</span>/22</p>
-<section id="reproducible-project" class="level3" data-number="12.4.1"><h3 data-number="12.4.1" class="anchored" data-anchor-id="reproducible-project">
-<span class="header-section-number">12.4.1</span> Reproducible project</h3>
+<section id="reproducible-project" class="level3" data-number="12.5.1"><h3 data-number="12.5.1" class="anchored" data-anchor-id="reproducible-project">
+<span class="header-section-number">12.5.1</span> Reproducible project</h3>
 <p>The project contains all of the necessary files and can be rendered by the marker.</p>
-</section><section id="document-replicated" class="level3" data-number="12.4.2"><h3 data-number="12.4.2" class="anchored" data-anchor-id="document-replicated">
-<span class="header-section-number">12.4.2</span> Document replicated</h3>
+</section><section id="document-replicated" class="level3" data-number="12.5.2"><h3 data-number="12.5.2" class="anchored" data-anchor-id="document-replicated">
+<span class="header-section-number">12.5.2</span> Document replicated</h3>
 <p>The non-code elements of the document are replicated, such as table of contents, text paragraphs, and Tables 1-2.</p>
-</section><section id="captionsreferences" class="level3" data-number="12.4.3"><h3 data-number="12.4.3" class="anchored" data-anchor-id="captionsreferences">
-<span class="header-section-number">12.4.3</span> Captions/references</h3>
+</section><section id="captionsreferences" class="level3" data-number="12.5.3"><h3 data-number="12.5.3" class="anchored" data-anchor-id="captionsreferences">
+<span class="header-section-number">12.5.3</span> Captions/references</h3>
 <p>The figure and table captions are created correctly and quarto cross referencing (not manual linking) is used for figures, tables, and bibliographic references. The figures have descriptive alt-text for accessibility.</p>
-</section><section id="data-import" class="level3" data-number="12.4.4"><h3 data-number="12.4.4" class="anchored" data-anchor-id="data-import">
-<span class="header-section-number">12.4.4</span> Data import</h3>
+</section><section id="data-import" class="level3" data-number="12.5.4"><h3 data-number="12.5.4" class="anchored" data-anchor-id="data-import">
+<span class="header-section-number">12.5.4</span> Data import</h3>
 <p>You imported the data with correct data types, including putting factors in sensible order for later plots or tables.</p>
-</section><section id="tables-replicated" class="level3" data-number="12.4.5"><h3 data-number="12.4.5" class="anchored" data-anchor-id="tables-replicated">
-<span class="header-section-number">12.4.5</span> Tables replicated</h3>
+</section><section id="tables-replicated" class="level3" data-number="12.5.5"><h3 data-number="12.5.5" class="anchored" data-anchor-id="tables-replicated">
+<span class="header-section-number">12.5.5</span> Tables replicated</h3>
 <p>Tables 3-4 are created by filtering the data using code, and have all of the features of the example table, such as the same rounding and coloured labels.</p>
-</section><section id="figures-replicated" class="level3" data-number="12.4.6"><h3 data-number="12.4.6" class="anchored" data-anchor-id="figures-replicated">
-<span class="header-section-number">12.4.6</span> Figures replicated</h3>
+</section><section id="figures-replicated" class="level3" data-number="12.5.6"><h3 data-number="12.5.6" class="anchored" data-anchor-id="figures-replicated">
+<span class="header-section-number">12.5.6</span> Figures replicated</h3>
 <p>Figures 1-3 are created using code, and have all of the features of the example plots, such as label, axis or colour customisation.</p>
-</section><section id="figure-4-appropriate" class="level3" data-number="12.4.7"><h3 data-number="12.4.7" class="anchored" data-anchor-id="figure-4-appropriate">
-<span class="header-section-number">12.4.7</span> Figure 4 appropriate</h3>
+</section><section id="figure-4-appropriate" class="level3" data-number="12.5.7"><h3 data-number="12.5.7" class="anchored" data-anchor-id="figure-4-appropriate">
+<span class="header-section-number">12.5.7</span> Figure 4 appropriate</h3>
 <p>You chose an appropriate geom (or set of geoms) for the relationship being demonstrated.</p>
-</section><section id="consistent-visualisations" class="level3" data-number="12.4.8"><h3 data-number="12.4.8" class="anchored" data-anchor-id="consistent-visualisations">
-<span class="header-section-number">12.4.8</span> Consistent visualisations</h3>
+</section><section id="consistent-visualisations" class="level3" data-number="12.5.8"><h3 data-number="12.5.8" class="anchored" data-anchor-id="consistent-visualisations">
+<span class="header-section-number">12.5.8</span> Consistent visualisations</h3>
 <p>Figure 4 has consistent features with Figures 1-3, such as the same labels or same colours for the same levels (or different colours if you use colour to highlight different levels).</p>
-</section><section id="clear-code" class="level3" data-number="12.4.9"><h3 data-number="12.4.9" class="anchored" data-anchor-id="clear-code">
-<span class="header-section-number">12.4.9</span> Clear code</h3>
+</section><section id="clear-code" class="level3" data-number="12.5.9"><h3 data-number="12.5.9" class="anchored" data-anchor-id="clear-code">
+<span class="header-section-number">12.5.9</span> Clear code</h3>
 <p>Your code is organised in the quarto script cleanly and clearly, using separate code chunks to intersperse text and relevant code. Your code chunks contain comments that clarify the purpose of the code, but not overly-explaining each step. The names you use for objects are clear, consistent, and concise.</p>
 <p>For example, if the marker wants to assess the code that creates a specific table, they should be easily able to identify that object in the environment from the name, and easily able to find the code that creates it.</p>
-</section><section id="efficient-code" class="level3" data-number="12.4.10"><h3 data-number="12.4.10" class="anchored" data-anchor-id="efficient-code">
-<span class="header-section-number">12.4.10</span> Efficient code</h3>
+</section><section id="efficient-code" class="level3" data-number="12.5.10"><h3 data-number="12.5.10" class="anchored" data-anchor-id="efficient-code">
+<span class="header-section-number">12.5.10</span> Efficient code</h3>
 <p>While there are many ways to do the same things in R, some ways are more efficient than others. These avoid unnecessary code (e.g., do not load packages you do not use) and redundancy (e.g., do not load or process the data the same way in several places).</p>
 <p>If you find yourself re-typing something repeatedly, see if you can define an object early in the script and use that instead.</p>
 <p>You will not be asked to do anything “tricky” in this assessment, so if you find yourself needing 20 lines of code just to customise the labels in a plot, try looking for more efficient alternatives.</p>
-</section><section id="reflection" class="level3" data-number="12.4.11"><h3 data-number="12.4.11" class="anchored" data-anchor-id="reflection">
-<span class="header-section-number">12.4.11</span> Reflection</h3>
+</section><section id="reflection" class="level3" data-number="12.5.11"><h3 data-number="12.5.11" class="anchored" data-anchor-id="reflection">
+<span class="header-section-number">12.5.11</span> Reflection</h3>
 <p>You summarise what you learned in the course of doing this assessment.</p>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script>
 $(document).ready(function(){
