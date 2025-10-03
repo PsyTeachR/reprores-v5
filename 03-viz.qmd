@@ -1589,6 +1589,7 @@ glossary_table()
 * [ggplot2 cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)
 * [Data visualisation using R, for researchers who don't use R](https://psyteachr.github.io/introdataviz/) [@nordmann_2021]
 * [Chapter 1: Data Visualisation](https://r4ds.hadley.nz/data-visualize) of *R for Data Science*
+* [Writing Meaningful Alt Texts for Data Visualizations in R](https://lizharedogs.github.io/RLadiesNYAltText)
 * [ggplot2 FAQs](https://ggplot2.tidyverse.org/articles/)
 * [ggplot2 documentation](https://ggplot2.tidyverse.org/reference/)
 * [ggplot2 version 4.0.0 changes](https://www.tidyverse.org/blog/2025/09/ggplot2-4-0-0)

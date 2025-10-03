@@ -132,6 +132,7 @@ detach("package:BrailleR", unload=TRUE)
 
 ## Resources
 
+* [Writing Meaningful Alt Texts for Data Visualizations in R](https://lizharedogs.github.io/RLadiesNYAltText)
 * [arXiv Accessibility Forum 2023](https://accessibility2023.arxiv.org/index.html)
 * [Joo Young Accessible Data Science for the Blind Using R](https://jooyoungseo.me/post/ds4blind/)
 * [Resources For Using R With Screen Readers](https://ropensci.org/blog/2024/09/05/screen-readers-tools/)

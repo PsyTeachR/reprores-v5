@@ -67,6 +67,35 @@ Run this custom function 100 times for each region and report what percent of th
 
 Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of **3** things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Do not simply list good coding practices such as consistent indentation. Each explanation should be about 100-200 words. 
 
+## AI Declaration
+
+It is School policy to include this specific AI declaration in any work that allows the use of generative AI. You can copy the code below and include it at the end of your assessment.
+
+``` markdown
+### Generative AI Declaration
+
+Indicate [YES] or [NO] to all statements below to show how you have used generative AI tools in this assignment. You MUST declare all use of AI and take responsibility for the content of the assignment. We consider it a misuse of generative AI if you do not declare all uses, including initial exploration of the subject, literature searching, writing and editing, corrections for grammar and spelling, as well as any other tasks from the course.
+
+* [YES/NO] Do you take full responsibility for the content of this submission, ensuring its adherence to academic integrity standards and compliance with University and subject-specific regulations regarding generative AI use as detailed in the assessment information sheet?
+
+Did you use AI for:
+
+* [YES/NO] General learning about a topic 
+* [YES/NO] Idea generation or scoping of topic or research question
+* [YES/NO] Searching and consulting the scientific literature
+* [YES/NO] Summarising or explaining primary sources like journal articles
+* [YES/NO] Planning the overall structure of a piece of work?
+* [YES/NO] Translation of your own text from another language into English
+* [YES/NO] Rephrasing your own text at sentence level
+* [YES/NO] Language editing for spelling, grammar, clarity or tone
+* [YES/NO] Referencing support, for example checking or producing citations, DOIs or formatting
+* [YES/NO] Analysis support, for example statistical or qualitative analysis advice or interpreting output
+* [YES/NO] Coding assistance, for example writing or debugging code
+* [YES/NO] Visuals or media support, for example figures, diagrams, slide layout or transcription of my own * recordings
+* [YES/NO] Something else (explain under **Sources of Learning**)
+* [YES/NO] Avoided use of AI tools in any way to assist with this assignment or my learning of the topic
+```
+
 ## Hints and Tips
 
 * The html theme used by the demo report is flatly
