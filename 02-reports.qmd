@@ -293,7 +293,7 @@ One important feature of quarto for reproducible reports is that you can combine
 
 Add a new level-2 header called "Inline Code", then copy and paste the text below. If you used a different variable name than `halloween`, you should update this with the name of the object you created, but otherwise don't change anything else.
 
-``` markdown
+```{verbatim}
 My name is `r name` and I am `r age` years old. 
 It is `r halloween - today` days until Halloween, 
 which is my favourite holiday.
@@ -474,7 +474,7 @@ group_counts
 ::: {.try}
 Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.
 
-``` md
+``` {verbatim}
 The total number of participants in the **control** condition was `r group_counts$n[1]`.
 ```
 :::

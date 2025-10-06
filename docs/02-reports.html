@@ -815,8 +815,8 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>One important feature of quarto for reproducible reports is that you can combine text and code to insert values into your writing using <strong>inline coding</strong>. If you’ve ever had to copy and paste a value or text from one file to another, you’ll know how easy it can be to make mistakes. Inline code avoids this.</p>
 <div class="try">
 <p>Add a new level-2 header called “Inline Code”, then copy and paste the text below. If you used a different variable name than <code>halloween</code>, you should update this with the name of the object you created, but otherwise don’t change anything else.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a>My name is Lisa and I am 48 years old. </span>
-<span id="cb6-2"><a href="#cb6-2"></a>It is 42 days until Halloween, </span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1"></a>My name is `r name` and I am `r age` years old. </span>
+<span id="cb6-2"><a href="#cb6-2"></a>It is `r halloween - today` days until Halloween, </span>
 <span id="cb6-3"><a href="#cb6-3"></a>which is my favourite holiday.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="sec-render" class="level3" data-number="2.4.8"><h3 data-number="2.4.8" class="anchored" data-anchor-id="sec-render">
@@ -825,7 +825,7 @@ Figure&nbsp;2.4: Use the keyboard shortcut to run only highlighted code, or run 
 <p>The console pane will open a tab called “Background Jobs”. This is because quarto is not an R package, but a separate application on your computer. You can make this application run with commands from R, or run it from the command line yourself. You may see some text in the Background Jobs window, like “Processing file: 02-reports.qmd” and eventually “Output created: 02-reports.html”. Your rendered html file may pop up in a separate web browser, a pop-up window in RStudio, or in the Viewer tab of the lower right pane, depending on your RStudio settings.</p>
 <p>That slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
 <blockquote class="blockquote">
-<p>My name is Lisa and I am 48 years old. It is 42 days until Halloween, which is my favourite holiday.</p>
+<p>My name is Lisa and I am 48 years old. It is 25 days until Halloween, which is my favourite holiday.</p>
 </blockquote>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -997,7 +997,7 @@ Tab-autocomplete file names
 </div>
 <div class="try">
 <p>Copy and paste the text below into the white space below the code chunk that loads in the data. Save the file and then render to view the results.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **control** condition was 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb14-1"><a href="#cb14-1"></a>The total number of participants in the **control** condition was `r group_counts$n[1]`.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Try and match up the inline code with what is in the <code>group_counts</code> table. Of note:</p>
 <ul>
@@ -1085,7 +1085,7 @@ Note
 <span id="cb19-9"><a href="#cb19-9"></a><span class="in">knitr::include_graphics("images/logos/psyTeachR_logo.png", )</span></span>
 <span id="cb19-10"><a href="#cb19-10"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" data-fig-align="right" width="50%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
+<div id="fig-psyteachr-logo" class="quarto-float quarto-figure quarto-figure-right anchored" width="50%" data-fig-align="right" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-psyteachr-logo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <a href="https://psyteachr.github.io"><img src="images/logos/psyTeachR_logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:50.0%" alt="The word #PsyTeachR in rainbow letters, and smaller letters after the R spelling Reproducible Research"></a>
 </div>
@@ -1821,12 +1821,12 @@ Solution
 </section><section id="use-inline-r" class="level3" data-number="2.9.7"><h3 data-number="2.9.7" class="anchored" data-anchor-id="use-inline-r">
 <span class="header-section-number">2.9.7</span> Use Inline R</h3>
 <p>Include the current date (<a href="#sec-inline-r" class="quarto-xref"><span>Section 2.4.7</span></a>) in a sentence like:</p>
-<p>This CV was created on 2025-09-19.</p>
+<p>This CV was created on 2025-10-06.</p>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on 2025-09-19.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href="#cb52-1"></a>This CV was created on 2025-10-06.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="render" class="level3" data-number="2.9.8"><h3 data-number="2.9.8" class="anchored" data-anchor-id="render">
 <span class="header-section-number">2.9.8</span> Render</h3>
