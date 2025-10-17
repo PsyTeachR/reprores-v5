@@ -771,11 +771,13 @@ Tip
 </div>
 </section></section><section id="sec-pipes-first" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="sec-pipes-first">
 <span class="header-section-number">4.2</span> Pipes</h2>
-<div style="width: 200px; float: right;">
-<p><img src="images/tidy/pipe_sticker.png" alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading ‘Ceci n’est pas un pipe.’” style=“width: 100%”/></p>
+<!--
+<div class="right meme">
+<img src="images/tidy/pipe_sticker.png" alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading 'Ceci n'est pas un pipe.'"/>
 </div>
+-->
 <p>Let’s say you want to filter the dataset down to just the emergency C-sections, and then sum up the total number of live births per year, and then arrange the data from largest to smallest (don’t worry, we’ll introduce these functions soon). You could do it by creating intermediate objects for each step:</p>
-<div class=" cell=""></p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># filter the table to just emergency c-sections</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a>c_sections <span class="ot">&lt;-</span> <span class="fu">filter</span>(births, </span>
 <span id="cb19-3"><a href="#cb19-3"></a>                     delivery <span class="sc">==</span> <span class="st">"Caesarean - Emergency"</span>)</span>
@@ -791,7 +793,7 @@ Tip
 <span id="cb19-13"><a href="#cb19-13"></a><span class="fu">head</span>(c_sorted)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="kable-table">
-<table class="caption-top table">
+<table class="caption-top table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;">financial_year</th>
 <th style="text-align: right;">n</th>
@@ -1094,8 +1096,8 @@ Note
 </div>
 </div>
 </div>
-<div id="radio_RUPQKRVMRM" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_RUPQKRVMRM" value="x"><span><code>count(births, induced)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RUPQKRVMRM" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RUPQKRVMRM" value="x"><span><code>count(induced, births)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RUPQKRVMRM" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label>
+<div id="radio_RZCGVQHXMK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_RZCGVQHXMK" value="x"><span><code>count(induced, births)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RZCGVQHXMK" value="answer"><span><code>count(births, induced, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RZCGVQHXMK" value="x"><span><code>count(induced, births, sort = TRUE)</code></span></label><label><input type="radio" autocomplete="off" name="radio_RZCGVQHXMK" value="x"><span><code>count(births, induced)</code></span></label>
 </div>
 </div>
 <p>However, the numbers above are not the number of births, but rather the number of rows in the data set. The column <code>live_births</code> contains the number per each category, so we will need to add those numbers together to see the total number of births.</p>
