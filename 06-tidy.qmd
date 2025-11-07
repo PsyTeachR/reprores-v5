@@ -507,14 +507,6 @@ glimpse(tidy_data)
 
 ## Pipes {#sec-pipes}
 
-::: {style="width: 200px; float: right;"}
-
-<img src="images/tidy/pipe_sticker.png" 
-     alt="Hexagon sticker with the magrittr pipe %>% and text in cursive below it reading 'Ceci n'est pas un pipe.'" 
-     style="width: 100%"/>
-
-:::
-
 We've already introduced pipes in @sec-pipes-first but this type of data processing is where they really start to shine, as they can significantly reduce the amount of code you write.  
 
 As a recap, a pipe takes the result of the previous function and sends it to the next function as its first argument, which means that you do not need to create intermediate objects. Below is all the code we've used in this chapter, and in the process we created five objects. This can get very confusing in longer scripts.

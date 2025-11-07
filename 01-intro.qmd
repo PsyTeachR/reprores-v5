@@ -351,7 +351,6 @@ In the above examples, we have written out the argument names in our code (i.e.,
 
 sample(x = letters, size = 5, replace = TRUE)
 sample(letters, 5, TRUE)
-
 ```
 
 Importantly, if you do not write out the argument names, R will use the default order of arguments. That is, for `sample` it will assume that the first value you enter is `x`, the second value is `size` and the third value is `replace`. 
