@@ -524,11 +524,10 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   <li>
 <a href="#specific-instructions" id="toc-specific-instructions" class="nav-link" data-scroll-target="#specific-instructions"><span class="header-section-number">14.2</span> Specific Instructions</a>
   <ul class="collapse">
-<li><a href="#table-2" id="toc-table-2" class="nav-link" data-scroll-target="#table-2"><span class="header-section-number">14.2.1</span> Table 2</a></li>
+<li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">14.2.1</span> Analysis</a></li>
   <li><a href="#simulation" id="toc-simulation" class="nav-link" data-scroll-target="#simulation"><span class="header-section-number">14.2.2</span> Simulation</a></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis"><span class="header-section-number">14.2.3</span> Analysis</a></li>
-  <li><a href="#iteration-and-power" id="toc-iteration-and-power" class="nav-link" data-scroll-target="#iteration-and-power"><span class="header-section-number">14.2.4</span> Iteration and Power</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">14.2.5</span> Reflection</a></li>
+  <li><a href="#iteration-and-power" id="toc-iteration-and-power" class="nav-link" data-scroll-target="#iteration-and-power"><span class="header-section-number">14.2.3</span> Iteration and Power</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">14.2.4</span> Reflection</a></li>
   </ul>
 </li>
   <li><a href="#ai-declaration" id="toc-ai-declaration" class="nav-link" data-scroll-target="#ai-declaration"><span class="header-section-number">14.3</span> AI Declaration</a></li>
@@ -589,21 +588,18 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <li><label><input type="checkbox">Reflect on areas where you used techniques that increase reproducibility</label></li>
 </ul></section><section id="specific-instructions" class="level2" data-number="14.2"><h2 data-number="14.2" class="anchored" data-anchor-id="specific-instructions">
 <span class="header-section-number">14.2</span> Specific Instructions</h2>
-<section id="table-2" class="level3" data-number="14.2.1"><h3 data-number="14.2.1" class="anchored" data-anchor-id="table-2">
-<span class="header-section-number">14.2.1</span> Table 2</h3>
-<p>Add standard deviations to Table 2.</p>
+<section id="analysis" class="level3" data-number="14.2.1"><h3 data-number="14.2.1" class="anchored" data-anchor-id="analysis">
+<span class="header-section-number">14.2.1</span> Analysis</h3>
+<p>Run a t-test on the UK data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.</p>
 </section><section id="simulation" class="level3" data-number="14.2.2"><h3 data-number="14.2.2" class="anchored" data-anchor-id="simulation">
 <span class="header-section-number">14.2.2</span> Simulation</h3>
-<p>Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 60 male and 60 female faces with simulated average ratings with those distributions.</p>
-</section><section id="analysis" class="level3" data-number="14.2.3"><h3 data-number="14.2.3" class="anchored" data-anchor-id="analysis">
-<span class="header-section-number">14.2.3</span> Analysis</h3>
-<p>Run a t-test on the simulated data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.</p>
-</section><section id="iteration-and-power" class="level3" data-number="14.2.4"><h3 data-number="14.2.4" class="anchored" data-anchor-id="iteration-and-power">
-<span class="header-section-number">14.2.4</span> Iteration and Power</h3>
+<p>Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 30 male and 30 female faces with simulated average ratings with those distributions.</p>
+</section><section id="iteration-and-power" class="level3" data-number="14.2.3"><h3 data-number="14.2.3" class="anchored" data-anchor-id="iteration-and-power">
+<span class="header-section-number">14.2.3</span> Iteration and Power</h3>
 <p>Create a new custom function that simulates the new dataset using your previous function. Add the t-test to this new custom function and return only the p-value.</p>
-<p>Run this custom function 100 times for each region and report what percent of the runs give a significant p-value with a critical alpha of 0.05/11 (i.e., the Bonferroni-corrected p-value for running all 11 regions).</p>
-</section><section id="reflection" class="level3" data-number="14.2.5"><h3 data-number="14.2.5" class="anchored" data-anchor-id="reflection">
-<span class="header-section-number">14.2.5</span> Reflection</h3>
+<p>Run this custom function 100 times for each face number and report what percent of the runs give a significant p-value with a critical alpha of 0.05. Plot the resulting power versus face sample size.</p>
+</section><section id="reflection" class="level3" data-number="14.2.4"><h3 data-number="14.2.4" class="anchored" data-anchor-id="reflection">
+<span class="header-section-number">14.2.4</span> Reflection</h3>
 <p>Reflect on the areas of this report where you used techniques that improve reproducibility and reusability. Include a list of <strong>3</strong> things you did to ensure reproducibility and explain what aspect of reproducibility the feature improves. Do not simply list good coding practices such as consistent indentation. Each explanation should be about 100-200 words.</p>
 </section></section><section id="ai-declaration" class="level2" data-number="14.3"><h2 data-number="14.3" class="anchored" data-anchor-id="ai-declaration">
 <span class="header-section-number">14.3</span> AI Declaration</h2>
@@ -661,23 +657,23 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
 <span class="header-section-number">14.6</span> Marking Rubric</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fuxdpmzyec" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fuxdpmzyec table {
+<div id="rzeawwuoqg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rzeawwuoqg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fuxdpmzyec thead, #fuxdpmzyec tbody, #fuxdpmzyec tfoot, #fuxdpmzyec tr, #fuxdpmzyec td, #fuxdpmzyec th {
+#rzeawwuoqg thead, #rzeawwuoqg tbody, #rzeawwuoqg tfoot, #rzeawwuoqg tr, #rzeawwuoqg td, #rzeawwuoqg th {
   border-style: none;
 }
 
-#fuxdpmzyec p {
+#rzeawwuoqg p {
   margin: 0;
   padding: 0;
 }
 
-#fuxdpmzyec .gt_table {
+#rzeawwuoqg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -703,12 +699,12 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-left-color: #D3D3D3;
 }
 
-#fuxdpmzyec .gt_caption {
+#rzeawwuoqg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fuxdpmzyec .gt_title {
+#rzeawwuoqg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -720,7 +716,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-width: 0;
 }
 
-#fuxdpmzyec .gt_subtitle {
+#rzeawwuoqg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -732,7 +728,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-width: 0;
 }
 
-#fuxdpmzyec .gt_heading {
+#rzeawwuoqg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -744,13 +740,13 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#fuxdpmzyec .gt_bottom_border {
+#rzeawwuoqg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_col_headings {
+#rzeawwuoqg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -765,7 +761,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#fuxdpmzyec .gt_col_heading {
+#rzeawwuoqg .gt_col_heading {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -785,7 +781,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#fuxdpmzyec .gt_column_spanner_outer {
+#rzeawwuoqg .gt_column_spanner_outer {
   color: #FFFFFF;
   background-color: #0076BA;
   font-size: 100%;
@@ -797,15 +793,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 4px;
 }
 
-#fuxdpmzyec .gt_column_spanner_outer:first-child {
+#rzeawwuoqg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fuxdpmzyec .gt_column_spanner_outer:last-child {
+#rzeawwuoqg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fuxdpmzyec .gt_column_spanner {
+#rzeawwuoqg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #5F5F5F;
@@ -817,11 +813,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   width: 100%;
 }
 
-#fuxdpmzyec .gt_spanner_row {
+#rzeawwuoqg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fuxdpmzyec .gt_group_heading {
+#rzeawwuoqg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -847,7 +843,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   text-align: left;
 }
 
-#fuxdpmzyec .gt_empty_group_heading {
+#rzeawwuoqg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -862,15 +858,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: middle;
 }
 
-#fuxdpmzyec .gt_from_md > :first-child {
+#rzeawwuoqg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fuxdpmzyec .gt_from_md > :last-child {
+#rzeawwuoqg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fuxdpmzyec .gt_row {
+#rzeawwuoqg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -889,7 +885,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   overflow-x: hidden;
 }
 
-#fuxdpmzyec .gt_stub {
+#rzeawwuoqg .gt_stub {
   color: #333333;
   background-color: #89D3FE;
   font-size: 100%;
@@ -902,7 +898,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#fuxdpmzyec .gt_stub_row_group {
+#rzeawwuoqg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -916,15 +912,15 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   vertical-align: top;
 }
 
-#fuxdpmzyec .gt_row_group_first td {
+#rzeawwuoqg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fuxdpmzyec .gt_row_group_first th {
+#rzeawwuoqg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fuxdpmzyec .gt_summary_row {
+#rzeawwuoqg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -934,16 +930,16 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#fuxdpmzyec .gt_first_summary_row {
+#rzeawwuoqg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_first_summary_row.thick {
+#rzeawwuoqg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fuxdpmzyec .gt_last_summary_row {
+#rzeawwuoqg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -953,7 +949,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_grand_summary_row {
+#rzeawwuoqg .gt_grand_summary_row {
   color: #333333;
   background-color: #D5D5D5;
   text-transform: inherit;
@@ -963,7 +959,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#fuxdpmzyec .gt_first_grand_summary_row {
+#rzeawwuoqg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -973,7 +969,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-top-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_last_grand_summary_row_top {
+#rzeawwuoqg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -983,11 +979,11 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_striped {
+#rzeawwuoqg .gt_striped {
   background-color: #EDF7FC;
 }
 
-#fuxdpmzyec .gt_table_body {
+#rzeawwuoqg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #5F5F5F;
@@ -996,7 +992,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-bottom-color: #5F5F5F;
 }
 
-#fuxdpmzyec .gt_footnotes {
+#rzeawwuoqg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1010,7 +1006,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#fuxdpmzyec .gt_footnote {
+#rzeawwuoqg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1019,7 +1015,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#fuxdpmzyec .gt_sourcenotes {
+#rzeawwuoqg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1033,7 +1029,7 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   border-right-color: #D3D3D3;
 }
 
-#fuxdpmzyec .gt_sourcenote {
+#rzeawwuoqg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1041,72 +1037,72 @@ gtag('config', 'G-6NP3MF25W3', { 'anonymize_ip': true});
   padding-right: 5px;
 }
 
-#fuxdpmzyec .gt_left {
+#rzeawwuoqg .gt_left {
   text-align: left;
 }
 
-#fuxdpmzyec .gt_center {
+#rzeawwuoqg .gt_center {
   text-align: center;
 }
 
-#fuxdpmzyec .gt_right {
+#rzeawwuoqg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fuxdpmzyec .gt_font_normal {
+#rzeawwuoqg .gt_font_normal {
   font-weight: normal;
 }
 
-#fuxdpmzyec .gt_font_bold {
+#rzeawwuoqg .gt_font_bold {
   font-weight: bold;
 }
 
-#fuxdpmzyec .gt_font_italic {
+#rzeawwuoqg .gt_font_italic {
   font-style: italic;
 }
 
-#fuxdpmzyec .gt_super {
+#rzeawwuoqg .gt_super {
   font-size: 65%;
 }
 
-#fuxdpmzyec .gt_footnote_marks {
+#rzeawwuoqg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fuxdpmzyec .gt_asterisk {
+#rzeawwuoqg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fuxdpmzyec .gt_indent_1 {
+#rzeawwuoqg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fuxdpmzyec .gt_indent_2 {
+#rzeawwuoqg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fuxdpmzyec .gt_indent_3 {
+#rzeawwuoqg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fuxdpmzyec .gt_indent_4 {
+#rzeawwuoqg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fuxdpmzyec .gt_indent_5 {
+#rzeawwuoqg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fuxdpmzyec .katex-display {
+#rzeawwuoqg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fuxdpmzyec div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rzeawwuoqg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

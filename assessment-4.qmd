@@ -43,25 +43,19 @@ Specific to assessment 4, you must demonstrate the following skills:
 
 ## Specific Instructions
 
-### Table 2
+### Analysis
 
-Add standard deviations to Table 2.
+Run a t-test on the UK data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.
 
 ### Simulation
 
-Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 60 male and 60 female faces with simulated average ratings with those distributions.
-
-
-### Analysis
-
-Run a t-test on the simulated data to see if there is a gender difference in the characteristic. Use a two-tailed test with an alpha value of 0.05. Report the outcome of the test using inline code.
-
+Create a custom function that takes the means and standard deviations for male and female faces for a specified region and creates a new dataset of 30 male and 30 female faces with simulated average ratings with those distributions.
 
 ### Iteration and Power
 
 Create a new custom function that simulates the new dataset using your previous function. Add the t-test to this new custom function and return only the p-value.
 
-Run this custom function 100 times for each region and report what percent of the runs give a significant p-value with a critical alpha of 0.05/11 (i.e., the Bonferroni-corrected p-value for running all 11 regions). 
+Run this custom function 100 times for each face number and report what percent of the runs give a significant p-value with a critical alpha of 0.05. Plot the resulting power versus face sample size.
 
 ### Reflection 
 
